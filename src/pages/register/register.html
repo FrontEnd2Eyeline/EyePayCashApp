@@ -1,0 +1,44 @@
+<ion-content class="imgBackground2 vignette">
+  <div style="margin-top:12%" class="center">
+    <ion-img class="logo" src="assets/imgs/EPCLogoPpal.png"></ion-img>
+  </div>
+  <div style="margin-top:10%" class="center">
+    <ion-list>
+      <ion-item class="≈" style="border-radius:10px">
+        <ion-label fixed>Nombres</ion-label>
+        <ion-input type="text"></ion-input>
+      </ion-item>
+
+      <ion-item style="border-radius:10px">
+        <ion-label fixed>Apellidos</ion-label>
+        <ion-input type="text"></ion-input>
+      </ion-item>
+
+      <ion-item style="border-radius:10px">
+        <ion-label fixed>País</ion-label>
+        <ion-input type="text"></ion-input>
+      </ion-item>
+
+      <ion-item style="border-radius:10px">
+        <ion-label fixed>Email</ion-label>
+        <ion-input type="email"></ion-input>
+      </ion-item>
+
+      <ion-item style="border-radius:10px">
+        <ion-label fixed>Móvil</ion-label>
+        <ion-input type="number"></ion-input>
+      </ion-item>
+
+      <ion-item style="border-radius:10px">
+        <ion-label fixed>Contraseña</ion-label>
+        <ion-input type="password"></ion-input>
+      </ion-item>
+
+    </ion-list>
+  </div>
+  <div class="center">
+    <button class="buttonBackground" (click)="navCancel()" ion-button small>Cancelar</button>
+    <button class="buttonBackground" (click)="presentAlert()" ion-button small>Registrarse</button>
+  </div>
+
+</ion-content>

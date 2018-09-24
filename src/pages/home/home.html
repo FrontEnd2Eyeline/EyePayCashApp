@@ -1,0 +1,31 @@
+<ion-content class="imgBackground vignette">
+
+  <div class="center">
+    <ion-img class="logo" src="assets/icon/EYEPAYCASHAPP.png"></ion-img>
+  </div>
+  <ion-list>
+
+    <ion-item style="border-radius:10px">
+      <ion-label floating>USUARIO</ion-label>
+      <ion-input type="text"></ion-input>
+    </ion-item>
+
+    <ion-item style="border-radius:10px; margin-top: 2%">
+      <ion-label floating>CONTRASEÑA</ion-label>
+      <ion-input type="password"></ion-input>
+    </ion-item>
+
+  </ion-list>
+
+  <div class="center">
+    <button class="buttonBackground" ion-button small>INGRESAR</button>
+  </div>
+  <div (click)="navRegister()"  padding class="center">
+    <ion-label style="color:white;  font-size:16px">Registrarse</ion-label>
+  </div>
+
+  <div padding class="center">
+    <ion-label style="color:white; font-size: 16px" floating>Políticas de uso</ion-label>
+    <ion-label style="color:white; font-size: 16px" floating>Privacidad de la información</ion-label>
+  </div>
+</ion-content>

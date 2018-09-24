@@ -1,0 +1,7 @@
+{
+  "name": "eyepaycash",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}
