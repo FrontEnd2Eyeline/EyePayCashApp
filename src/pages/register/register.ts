@@ -33,4 +33,5 @@ export class RegisterPage {
   navRegister() {
     this.navCtrl.pop();
   }
+
 }

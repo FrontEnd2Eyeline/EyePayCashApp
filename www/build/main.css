@@ -29080,6 +29080,29 @@ ion-list {
   transition: background-color 200ms linear;
 }
 
+.toast-ios .toast-wrapper {
+  left: 10px;
+  right: 10px;
+  margin: auto;
+  border-radius: 0.65rem;
+  position: absolute;
+  z-index: 10;
+  opacity: 8;
+  display: block;
+  max-width: 700px;
+  background: rgba(255, 255, 255, 0.986);
+}
+
+.toast-ios .toast-message {
+  font-size: 1.4rem;
+  color: black;
+  padding: 1.5rem;
+}
+
+.toast-button {
+  color: #063996;
+}
+
 @-webkit-keyframes float {
   0% {
     -webkit-transform: translatey(0px);
@@ -29113,6 +29136,25 @@ ion-list {
 .float {
   -webkit-animation: float 3s ease-in-out infinite;
   animation: float 3s ease-in-out infinite;
+}
+
+page-politics .imgBackground {
+  background: #063996;
+}
+
+page-politics .Titles {
+  color: black;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+page-politics .textNomral {
+  color: black;
+}
+
+page-politics .ftBold {
+  font-weight: bold;
+  color: black;
 }
 
 page-register .backGround {
@@ -29227,4 +29269,22 @@ page-register ion-label[fixed] {
   width: 100px;
   min-width: 100px;
   max-width: 200px;
+}
+
+page-register .item-input ion-input, page-register .item-input ion-textarea {
+  position: static;
+  margin-left: -8%;
+}
+
+page-register .select-text {
+  overflow: hidden;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  margin-left: -8%;
+  min-width: 16px;
+  font-size: inherit;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }

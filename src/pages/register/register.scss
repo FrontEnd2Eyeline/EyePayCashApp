@@ -111,4 +111,21 @@ page-register {
         min-width: 100px;
         max-width: 200px;
       }
+
+      .item-input ion-input, .item-input ion-textarea {
+        position: static;
+        margin-left: -8%;
+    }
+    .select-text {
+        overflow: hidden;
+        -webkit-box-flex: 1;
+        -webkit-flex: 1;
+        -ms-flex: 1;
+        flex: 1;
+        margin-left: -8%;
+        min-width: 16px;
+        font-size: inherit;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
 }

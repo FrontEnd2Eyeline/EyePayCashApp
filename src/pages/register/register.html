@@ -15,8 +15,18 @@
       </ion-item>
 
       <ion-item style="border-radius:10px">
-        <ion-label fixed>País</ion-label>
-        <ion-input type="text"></ion-input>
+        <ion-label>Género</ion-label>
+        <ion-select okText="Guardar" cancelText="Cancelar" [(ngModel)]="gender">
+          <ion-option value="f">Femenino</ion-option>
+          <ion-option value="m">Masculino</ion-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-item style="border-radius:10px">
+        <ion-label>País</ion-label>
+        <ion-select okText="Guardar" cancelText="Cancelar" [(ngModel)]="country">
+          <ion-option value="f">Colombia</ion-option>
+        </ion-select>
       </ion-item>
 
       <ion-item style="border-radius:10px">

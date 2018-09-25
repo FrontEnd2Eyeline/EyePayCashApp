@@ -1,4 +1,4 @@
-webpackJsonp([1],{
+webpackJsonp([2],{
 
 /***/ 108:
 /***/ (function(module, exports) {
@@ -21,6 +21,10 @@ webpackEmptyAsyncContext.id = 108;
 /***/ (function(module, exports, __webpack_require__) {
 
 var map = {
+	"../pages/politics/politics.module": [
+		269,
+		1
+	],
 	"../pages/register/register.module": [
 		268,
 		0
@@ -61,17 +65,21 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 var HomePage = /** @class */ (function () {
-    function HomePage(navCtrl) {
+    function HomePage(navCtrl, toastCtrl) {
         this.navCtrl = navCtrl;
+        this.toastCtrl = toastCtrl;
     }
     HomePage.prototype.navRegister = function () {
         this.navCtrl.push('RegisterPage');
     };
+    HomePage.prototype.navPoliPage = function () {
+        this.navCtrl.push('PoliticsPage');
+    };
     HomePage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-home',template:/*ion-inline-start:"/Users/santiago/eyepaycash/src/pages/home/home.html"*/'<ion-content class="imgBackground vignette">\n\n  <div class="center">\n    <ion-img class="logo" src="assets/icon/EYEPAYCASHAPP.png"></ion-img>\n  </div>\n  <ion-list>\n\n    <ion-item style="border-radius:10px">\n      <ion-label floating>USUARIO</ion-label>\n      <ion-input type="text"></ion-input>\n    </ion-item>\n\n    <ion-item style="border-radius:10px; margin-top: 2%">\n      <ion-label floating>CONTRASEÑA</ion-label>\n      <ion-input type="password"></ion-input>\n    </ion-item>\n\n  </ion-list>\n\n  <div class="center">\n    <button class="buttonBackground" ion-button small>INGRESAR</button>\n  </div>\n  <div (click)="navRegister()"  padding class="center">\n    <ion-label style="color:white;  font-size:16px">Registrarse</ion-label>\n  </div>\n\n  <div padding class="center">\n    <ion-label style="color:white; font-size: 16px" floating>Políticas de uso</ion-label>\n    <ion-label style="color:white; font-size: 16px" floating>Privacidad de la información</ion-label>\n  </div>\n</ion-content>'/*ion-inline-end:"/Users/santiago/eyepaycash/src/pages/home/home.html"*/
+            selector: 'page-home',template:/*ion-inline-start:"/Users/santiago/eyepaycash/src/pages/home/home.html"*/'<ion-content class="imgBackground vignette">\n\n  <div class="center">\n    <ion-img class="logo" src="assets/icon/EYEPAYCASHAPP.png"></ion-img>\n  </div>\n  <ion-list>\n\n    <ion-item style="border-radius:10px">\n      <ion-label floating>USUARIO</ion-label>\n      <ion-input type="text"></ion-input>\n    </ion-item>\n\n    <ion-item style="border-radius:10px; margin-top: 2%">\n      <ion-label floating>CONTRASEÑA</ion-label>\n      <ion-input type="password"></ion-input>\n    </ion-item>\n\n  </ion-list>\n\n  <div class="center">\n    <button class="buttonBackground" ion-button small>INGRESAR</button>\n  </div>\n  <div (click)="navRegister()"  padding class="center">\n    <ion-label style="color:white;  font-size:16px">Registrarse</ion-label>\n  </div>\n\n  <div padding class="center">\n    <ion-label (click)= "navPoliPage()" style="color:white; font-size: 16px" floating>Políticas de uso</ion-label>\n    <ion-label (click)= "presentToast2()" style="color:white; font-size: 16px" floating>Privacidad de la información</ion-label>\n  </div>\n</ion-content>'/*ion-inline-end:"/Users/santiago/eyepaycash/src/pages/home/home.html"*/
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* ToastController */]])
     ], HomePage);
     return HomePage;
 }());
@@ -132,7 +140,8 @@ var AppModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
                 __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["d" /* IonicModule */].forRoot(__WEBPACK_IMPORTED_MODULE_5__app_component__["a" /* MyApp */], {}, {
                     links: [
-                        { loadChildren: '../pages/register/register.module#RegisterPageModule', name: 'RegisterPage', segment: 'register', priority: 'low', defaultHistory: [] }
+                        { loadChildren: '../pages/register/register.module#RegisterPageModule', name: 'RegisterPage', segment: 'register', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/politics/politics.module#PoliticsPageModule', name: 'PoliticsPage', segment: 'politics', priority: 'low', defaultHistory: [] }
                     ]
                 })
             ],
