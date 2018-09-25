@@ -18,6 +18,8 @@ export class HomePage {
     this.navCtrl.push('PoliticsPage')
   }
 
-
+  navRegPhone(){
+    this.navCtrl.push('RegNumberPhonePage')
+  }
   
 }

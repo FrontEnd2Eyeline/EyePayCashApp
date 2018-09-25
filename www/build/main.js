@@ -1,4 +1,4 @@
-webpackJsonp([2],{
+webpackJsonp([5],{
 
 /***/ 108:
 /***/ (function(module, exports) {
@@ -21,13 +21,25 @@ webpackEmptyAsyncContext.id = 108;
 /***/ (function(module, exports, __webpack_require__) {
 
 var map = {
-	"../pages/politics/politics.module": [
+	"../pages/inndex/inndex.module": [
 		269,
+		3
+	],
+	"../pages/politics/politics.module": [
+		270,
+		2
+	],
+	"../pages/reg-number-phone/reg-number-phone.module": [
+		271,
 		1
 	],
 	"../pages/register/register.module": [
-		268,
+		272,
 		0
+	],
+	"../pages/testphone/testphone.module": [
+		273,
+		4
 	]
 };
 function webpackAsyncContext(req) {
@@ -50,9 +62,9 @@ module.exports = webpackAsyncContext;
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HomePage; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TestphonePage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(39);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(32);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -64,27 +76,30 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
-var HomePage = /** @class */ (function () {
-    function HomePage(navCtrl, toastCtrl) {
+/**
+ * Generated class for the TestphonePage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
+var TestphonePage = /** @class */ (function () {
+    function TestphonePage(navCtrl, navParams) {
         this.navCtrl = navCtrl;
-        this.toastCtrl = toastCtrl;
+        this.navParams = navParams;
     }
-    HomePage.prototype.navRegister = function () {
-        this.navCtrl.push('RegisterPage');
+    TestphonePage.prototype.ionViewDidLoad = function () {
+        console.log('ionViewDidLoad TestphonePage');
     };
-    HomePage.prototype.navPoliPage = function () {
-        this.navCtrl.push('PoliticsPage');
-    };
-    HomePage = __decorate([
+    TestphonePage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-home',template:/*ion-inline-start:"/Users/santiago/eyepaycash/src/pages/home/home.html"*/'<ion-content class="imgBackground vignette">\n\n  <div class="center">\n    <ion-img class="logo" src="assets/icon/EYEPAYCASHAPP.png"></ion-img>\n  </div>\n  <ion-list>\n\n    <ion-item style="border-radius:10px">\n      <ion-label floating>USUARIO</ion-label>\n      <ion-input type="text"></ion-input>\n    </ion-item>\n\n    <ion-item style="border-radius:10px; margin-top: 2%">\n      <ion-label floating>CONTRASEÑA</ion-label>\n      <ion-input type="password"></ion-input>\n    </ion-item>\n\n  </ion-list>\n\n  <div class="center">\n    <button class="buttonBackground" ion-button small>INGRESAR</button>\n  </div>\n  <div (click)="navRegister()"  padding class="center">\n    <ion-label style="color:white;  font-size:16px">Registrarse</ion-label>\n  </div>\n\n  <div padding class="center">\n    <ion-label (click)= "navPoliPage()" style="color:white; font-size: 16px" floating>Políticas de uso</ion-label>\n    <ion-label (click)= "presentToast2()" style="color:white; font-size: 16px" floating>Privacidad de la información</ion-label>\n  </div>\n</ion-content>'/*ion-inline-end:"/Users/santiago/eyepaycash/src/pages/home/home.html"*/
+            selector: 'page-testphone',template:/*ion-inline-start:"/Users/santiago/Documents/GitHub/eyepaycashapp/src/pages/testphone/testphone.html"*/'<ion-content class="vignette">\n    <div style="margin-top:10%" class="center">\n      <ion-list>\n        <ion-grid>\n          <ion-row>\n            <ion-col col-2>\n                <ion-input type="text">+</ion-input>\n            </ion-col>\n            <ion-col>\n              <ion-item style="border-radius:10px;">\n                <ion-label fixed>Número</ion-label>\n                <ion-input type="text"></ion-input>\n              </ion-item>\n            </ion-col>\n          </ion-row>\n        </ion-grid>\n  \n      </ion-list>\n    </div>\n    <div class="center">\n      <button class="buttonBackground" (click)="navCancel()" ion-button small>Cancelar</button>\n      <button class="buttonBackground" (click)="presentAlert()" ion-button small>Registrarse</button>\n    </div>\n  \n  </ion-content>'/*ion-inline-end:"/Users/santiago/Documents/GitHub/eyepaycashapp/src/pages/testphone/testphone.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* ToastController */]])
-    ], HomePage);
-    return HomePage;
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */]])
+    ], TestphonePage);
+    return TestphonePage;
 }());
 
-//# sourceMappingURL=home.js.map
+//# sourceMappingURL=testphone.js.map
 
 /***/ }),
 
@@ -109,17 +124,19 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__ = __webpack_require__(30);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(39);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(32);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(189);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_status_bar__ = __webpack_require__(192);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__app_component__ = __webpack_require__(267);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_home_home__ = __webpack_require__(193);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_home_home__ = __webpack_require__(268);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_testphone_testphone__ = __webpack_require__(193);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
 
 
 
@@ -134,21 +151,26 @@ var AppModule = /** @class */ (function () {
         Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["I" /* NgModule */])({
             declarations: [
                 __WEBPACK_IMPORTED_MODULE_5__app_component__["a" /* MyApp */],
-                __WEBPACK_IMPORTED_MODULE_6__pages_home_home__["a" /* HomePage */]
+                __WEBPACK_IMPORTED_MODULE_6__pages_home_home__["a" /* HomePage */],
+                __WEBPACK_IMPORTED_MODULE_7__pages_testphone_testphone__["a" /* TestphonePage */]
             ],
             imports: [
                 __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
                 __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["d" /* IonicModule */].forRoot(__WEBPACK_IMPORTED_MODULE_5__app_component__["a" /* MyApp */], {}, {
                     links: [
+                        { loadChildren: '../pages/inndex/inndex.module#InndexPageModule', name: 'InndexPage', segment: 'inndex', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/politics/politics.module#PoliticsPageModule', name: 'PoliticsPage', segment: 'politics', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/reg-number-phone/reg-number-phone.module#RegNumberPhonePageModule', name: 'RegNumberPhonePage', segment: 'reg-number-phone', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/register/register.module#RegisterPageModule', name: 'RegisterPage', segment: 'register', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/politics/politics.module#PoliticsPageModule', name: 'PoliticsPage', segment: 'politics', priority: 'low', defaultHistory: [] }
+                        { loadChildren: '../pages/testphone/testphone.module#TestphonePageModule', name: 'TestphonePage', segment: 'testphone', priority: 'low', defaultHistory: [] }
                     ]
                 })
             ],
             bootstrap: [__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["b" /* IonicApp */]],
             entryComponents: [
                 __WEBPACK_IMPORTED_MODULE_5__app_component__["a" /* MyApp */],
-                __WEBPACK_IMPORTED_MODULE_6__pages_home_home__["a" /* HomePage */]
+                __WEBPACK_IMPORTED_MODULE_6__pages_home_home__["a" /* HomePage */],
+                __WEBPACK_IMPORTED_MODULE_7__pages_testphone_testphone__["a" /* TestphonePage */]
             ],
             providers: [
                 __WEBPACK_IMPORTED_MODULE_4__ionic_native_status_bar__["a" /* StatusBar */],
@@ -170,10 +192,10 @@ var AppModule = /** @class */ (function () {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MyApp; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(39);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(32);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(192);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(189);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_home_home__ = __webpack_require__(193);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_testphone_testphone__ = __webpack_require__(193);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -191,7 +213,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 var MyApp = /** @class */ (function () {
     function MyApp(platform, statusBar, splashScreen, alertCtrl) {
-        this.rootPage = __WEBPACK_IMPORTED_MODULE_4__pages_home_home__["a" /* HomePage */];
+        this.rootPage = __WEBPACK_IMPORTED_MODULE_4__pages_testphone_testphone__["a" /* TestphonePage */];
         platform.ready().then(function () {
             // Okay, so the platform is ready and our plugins are available.
             // Here you can do any higher level native things you might need.
@@ -200,7 +222,7 @@ var MyApp = /** @class */ (function () {
         });
     }
     MyApp = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"/Users/santiago/eyepaycash/src/app/app.html"*/'<ion-nav [root]="rootPage"></ion-nav>\n'/*ion-inline-end:"/Users/santiago/eyepaycash/src/app/app.html"*/
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"/Users/santiago/Documents/GitHub/eyepaycashapp/src/app/app.html"*/'<ion-nav [root]="rootPage"></ion-nav>\n'/*ion-inline-end:"/Users/santiago/Documents/GitHub/eyepaycashapp/src/app/app.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* Platform */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */], __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */]])
     ], MyApp);
@@ -208,6 +230,51 @@ var MyApp = /** @class */ (function () {
 }());
 
 //# sourceMappingURL=app.component.js.map
+
+/***/ }),
+
+/***/ 268:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HomePage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(32);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+var HomePage = /** @class */ (function () {
+    function HomePage(navCtrl, toastCtrl) {
+        this.navCtrl = navCtrl;
+        this.toastCtrl = toastCtrl;
+    }
+    HomePage.prototype.navRegister = function () {
+        this.navCtrl.push('RegisterPage');
+    };
+    HomePage.prototype.navPoliPage = function () {
+        this.navCtrl.push('PoliticsPage');
+    };
+    HomePage.prototype.navRegPhone = function () {
+        this.navCtrl.push('RegNumberPhonePage');
+    };
+    HomePage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+            selector: 'page-home',template:/*ion-inline-start:"/Users/santiago/Documents/GitHub/eyepaycashapp/src/pages/home/home.html"*/'<ion-content class="imgBackground vignette">\n\n  <div class="center">\n    <ion-img class="logo" src="assets/icon/EYEPAYCASHAPP.png"></ion-img>\n  </div>\n  <ion-list>\n\n    <ion-item style="border-radius:10px">\n      <ion-label floating>EMAIL</ion-label>\n      <ion-input type="text"></ion-input>\n    </ion-item>\n\n    <ion-item style="border-radius:10px; margin-top: 2%">\n      <ion-label floating>CONTRASEÑA</ion-label>\n      <ion-input type="password"></ion-input>\n    </ion-item>\n\n  </ion-list>\n\n  <div class="center">\n    <button class="buttonBackground" ion-button small>INGRESAR</button>\n  </div>\n  <div (click)="navRegPhone()"  padding class="center">\n    <ion-label style="color:white;  font-size:16px">Registrarse</ion-label>\n  </div>\n\n  <div padding class="center">\n    <ion-label (click)= "navPoliPage()" style="color:white; font-size: 16px" floating>Políticas de uso</ion-label>\n    <ion-label (click)= "presentToast2()" style="color:white; font-size: 16px" floating>Privacidad de la información</ion-label>\n  </div>\n</ion-content>'/*ion-inline-end:"/Users/santiago/Documents/GitHub/eyepaycashapp/src/pages/home/home.html"*/
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* ToastController */]])
+    ], HomePage);
+    return HomePage;
+}());
+
+//# sourceMappingURL=home.js.map
 
 /***/ })
 

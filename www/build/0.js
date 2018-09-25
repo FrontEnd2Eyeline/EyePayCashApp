@@ -1,14 +1,14 @@
 webpackJsonp([0],{
 
-/***/ 268:
+/***/ 272:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RegisterPageModule", function() { return RegisterPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(39);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__register__ = __webpack_require__(270);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(32);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__register__ = __webpack_require__(277);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -38,13 +38,13 @@ var RegisterPageModule = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 270:
+/***/ 277:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return RegisterPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(39);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(32);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -83,7 +83,7 @@ var RegisterPage = /** @class */ (function () {
     };
     RegisterPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-register',template:/*ion-inline-start:"/Users/santiago/eyepaycash/src/pages/register/register.html"*/'<ion-content class="imgBackground2 vignette">\n  <div style="margin-top:12%" class="center">\n    <ion-img class="logo" src="assets/imgs/EPCLogoPpal.png"></ion-img>\n  </div>\n  <div style="margin-top:10%" class="center">\n    <ion-list>\n      <ion-item class="≈" style="border-radius:10px">\n        <ion-label fixed>Nombres</ion-label>\n        <ion-input type="text"></ion-input>\n      </ion-item>\n\n      <ion-item style="border-radius:10px">\n        <ion-label fixed>Apellidos</ion-label>\n        <ion-input type="text"></ion-input>\n      </ion-item>\n\n      <ion-item style="border-radius:10px">\n        <ion-label>Género</ion-label>\n        <ion-select okText="Guardar" cancelText="Cancelar" [(ngModel)]="gender">\n          <ion-option value="f">Femenino</ion-option>\n          <ion-option value="m">Masculino</ion-option>\n        </ion-select>\n      </ion-item>\n\n      <ion-item style="border-radius:10px">\n        <ion-label>País</ion-label>\n        <ion-select okText="Guardar" cancelText="Cancelar" [(ngModel)]="country">\n          <ion-option value="f">Colombia</ion-option>\n        </ion-select>\n      </ion-item>\n\n      <ion-item style="border-radius:10px">\n        <ion-label fixed>Email</ion-label>\n        <ion-input type="email"></ion-input>\n      </ion-item>\n\n      <ion-item style="border-radius:10px">\n        <ion-label fixed>Móvil</ion-label>\n        <ion-input type="number"></ion-input>\n      </ion-item>\n\n      <ion-item style="border-radius:10px">\n        <ion-label fixed>Contraseña</ion-label>\n        <ion-input type="password"></ion-input>\n      </ion-item>\n\n    </ion-list>\n  </div>\n  <div class="center">\n    <button class="buttonBackground" (click)="navCancel()" ion-button small>Cancelar</button>\n    <button class="buttonBackground" (click)="presentAlert()" ion-button small>Registrarse</button>\n  </div>\n\n</ion-content>'/*ion-inline-end:"/Users/santiago/eyepaycash/src/pages/register/register.html"*/,
+            selector: 'page-register',template:/*ion-inline-start:"/Users/santiago/Documents/GitHub/eyepaycashapp/src/pages/register/register.html"*/'<ion-content class="imgBackground2 vignette">\n  <div style="margin-top:12%" class="center">\n    <ion-img class="logo" src="assets/imgs/EPCLogoPpal.png"></ion-img>\n  </div>\n  <div style="margin-top:10%" class="center">\n    <ion-list>\n      <ion-item class="≈" style="border-radius:10px">\n        <ion-label fixed>Nombres</ion-label>\n        <ion-input type="text"></ion-input>\n      </ion-item>\n\n      <ion-item style="border-radius:10px">\n        <ion-label fixed>Apellidos</ion-label>\n        <ion-input type="text"></ion-input>\n      </ion-item>\n\n      <ion-item style="border-radius:10px">\n        <ion-label>Género</ion-label>\n        <ion-select okText="Guardar" cancelText="Cancelar" [(ngModel)]="gender">\n          <ion-option value="f">Femenino</ion-option>\n          <ion-option value="m">Masculino</ion-option>\n        </ion-select>\n      </ion-item>\n\n      <ion-item style="border-radius:10px">\n        <ion-label>País</ion-label>\n        <ion-select okText="Guardar" cancelText="Cancelar" [(ngModel)]="country">\n          <ion-option value="f">Colombia</ion-option>\n        </ion-select>\n      </ion-item>\n\n      <ion-item style="border-radius:10px">\n        <ion-label fixed>Email</ion-label>\n        <ion-input type="email"></ion-input>\n      </ion-item>\n\n      <ion-item style="border-radius:10px">\n        <ion-label fixed>Móvil</ion-label>\n        <ion-input type="number"></ion-input>\n      </ion-item>\n\n      <ion-item style="border-radius:10px">\n        <ion-label fixed>Contraseña</ion-label>\n        <ion-input type="password"></ion-input>\n      </ion-item>\n\n    </ion-list>\n  </div>\n  <div class="center">\n    <button class="buttonBackground" (click)="navCancel()" ion-button small>Cancelar</button>\n    <button class="buttonBackground" (click)="presentAlert()" ion-button small>Registrarse</button>\n  </div>\n\n</ion-content>'/*ion-inline-end:"/Users/santiago/Documents/GitHub/eyepaycashapp/src/pages/register/register.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */]])
     ], RegisterPage);

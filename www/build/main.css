@@ -29157,6 +29157,169 @@ page-politics .ftBold {
   color: black;
 }
 
+page-politics .buttonBackground {
+  background: #9569fc;
+  background: -webkit-gradient(left top, right top, color-stop(0%, #9569fc), color-stop(100%, #5974fb));
+  background: -webkit-gradient(linear, left top, right top, from(#9569fc), to(#5974fb));
+  background: linear-gradient(to right, #9569fc 0%, #5974fb 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#9569fc', endColorstr='#5974fb', GradientType=1);
+  color: white;
+  font-weight: bold;
+  font-size: 14px;
+  width: 32%;
+  height: 34px;
+}
+
+page-reg-number-phone ion-img {
+  display: inline-block;
+  min-width: 20px;
+  min-height: 20px;
+  background: transparent !important;
+  contain: strict;
+}
+
+page-reg-number-phone .imgBackground2 {
+  background-image: url(http://subirimagen.me/uploads/20180921145809.png);
+  background-repeat: initial;
+  background-attachment: fixed;
+  background-position: center center;
+  background-size: cover;
+}
+
+ion-list {
+  margin: 0;
+  padding-left: 50px;
+  padding-right: 50px;
+  border-radius: 20px;
+  display: block;
+  list-style-type: none;
+}
+
+.center {
+  margin: auto;
+  text-align: center;
+}
+
+.logo {
+  width: 240px;
+  height: 240px;
+  margin-top: 10%;
+}
+
+.vignette {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -webkit-box-shadow: 0 0 200px rgba(0, 0, 0, 0.336) inset;
+  box-shadow: 0 0 200px rgba(0, 0, 0, 0.336) inset;
+}
+
+.buttonBackground {
+  background: #9569fc;
+  background: -webkit-gradient(left top, right top, color-stop(0%, #9569fc), color-stop(100%, #5974fb));
+  background: -webkit-gradient(linear, left top, right top, from(#9569fc), to(#5974fb));
+  background: linear-gradient(to right, #9569fc 0%, #5974fb 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#9569fc', endColorstr='#5974fb', GradientType=1);
+  color: white;
+  font-weight: bold;
+  font-size: 14px;
+  width: 32%;
+  height: 34px;
+}
+
+.item-ios {
+  padding-left: 16px;
+  padding-left: 16px;
+  border-radius: 0;
+  position: relative;
+  font-size: 1.7rem;
+  margin-bottom: 1.5%;
+  border-radius: 12px;
+  color: #000;
+  background-color: #fff;
+  -webkit-transition: background-color 200ms linear;
+  transition: background-color 200ms linear;
+}
+
+.item-ios.item-label-stacked .text-input, .item-ios.item-label-floating .text-input {
+  margin-left: 0;
+  margin-top: 8px;
+  text-align: center;
+  margin-bottom: 8px;
+  width: calc(100% - 8px);
+}
+
+.item-ios {
+  padding-left: 16px;
+  padding-left: 16px;
+  border-radius: 0;
+  position: relative;
+  font-size: 1.7rem;
+  margin-bottom: 1.5%;
+  border-radius: 12px;
+  color: 063996;
+  background-color: #fff;
+  -webkit-transition: background-color 200ms linear;
+  transition: background-color 200ms linear;
+}
+
+.item-ios {
+  padding-left: 16px;
+  padding-left: 16px;
+  border-radius: 0;
+  position: relative;
+  font-size: 1.7rem;
+  color: #063996;
+  background-color: #fff;
+  -webkit-transition: background-color 200ms linear;
+  transition: background-color 200ms linear;
+}
+
+.toast-ios .toast-wrapper {
+  left: 10px;
+  right: 10px;
+  margin: auto;
+  border-radius: 0.65rem;
+  position: absolute;
+  z-index: 10;
+  opacity: 8;
+  display: block;
+  max-width: 700px;
+  background: rgba(255, 255, 255, 0.986);
+}
+
+.toast-ios .toast-message {
+  font-size: 1.4rem;
+  color: black;
+  padding: 1.5rem;
+}
+
+.toast-button {
+  color: #063996;
+}
+
+@keyframes float {
+  0% {
+    -webkit-transform: translatey(0px);
+    transform: translatey(0px);
+  }
+  50% {
+    -webkit-transform: translatey(-30px);
+    transform: translatey(-30px);
+  }
+  100% {
+    -webkit-transform: translatey(0px);
+    transform: translatey(0px);
+  }
+}
+
+.float {
+  -webkit-animation: float 3s ease-in-out infinite;
+  animation: float 3s ease-in-out infinite;
+}
+
 page-register .backGround {
   background-color: #063996;
 }

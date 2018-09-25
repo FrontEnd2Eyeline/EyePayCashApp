@@ -1,0 +1,25 @@
+<ion-content class="vignette">
+    <div style="margin-top:10%" class="center">
+      <ion-list>
+        <ion-grid>
+          <ion-row>
+            <ion-col col-2>
+                <ion-input type="text">+</ion-input>
+            </ion-col>
+            <ion-col>
+              <ion-item style="border-radius:10px;">
+                <ion-label fixed>Número</ion-label>
+                <ion-input type="text"></ion-input>
+              </ion-item>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+  
+      </ion-list>
+    </div>
+    <div class="center">
+      <button class="buttonBackground" (click)="navCancel()" ion-button small>Cancelar</button>
+      <button class="buttonBackground" (click)="presentAlert()" ion-button small>Registrarse</button>
+    </div>
+  
+  </ion-content>
