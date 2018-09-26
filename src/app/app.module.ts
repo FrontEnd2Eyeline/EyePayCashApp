@@ -27,7 +27,7 @@ import { TestphonePage } from '../pages/testphone/testphone';
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler, }
   ]
 })
 export class AppModule {}

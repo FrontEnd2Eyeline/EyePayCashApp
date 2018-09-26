@@ -21,5 +21,7 @@ export class RegNumberPhonePage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad RegNumberPhonePage');
   }
-
+  navCancel2() {
+    this.navCtrl.push('HomePage')
+  }
 }

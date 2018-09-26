@@ -1,23 +1,45 @@
 <ion-content class="imgBackground2 vignette">
   <div style="margin-top:12%" class="center">
-    <ion-img class="logo" src="assets/imgs/EPCLogoPpal.png"></ion-img>
+    <ion-img style="margin-bottom: 10%;" class="logo" src="assets/imgs/EPCLogoPpal.png"></ion-img>
+    <div class="center" style="margin-top: -30%">
+      <ion-label style="color:white" class="center"> Enviaremos un CÓDIGO de verificación a el número<br> que registres
+        a continuación.</ion-label>
+    </div>
   </div>
+
   <div style="margin-top:10%" class="center">
+
     <ion-list>
-      <ion-grid>
+      <ion-grid class="center">
         <ion-row>
           <ion-col col-2>
-              <ion-input type="text">+</ion-input>
+            <ion-item style="border-radius:10px; width: 65px">
+              <ion-label> + </ion-label>
+              <ion-select okText="Guardar" cancelText="Cancelar" [(ngModel)]="gender">
+                <ion-option value="2">57</ion-option>
+                <ion-option value="3">58</ion-option>
+                <ion-option value="4">59</ion-option>
+                <ion-option value="5">60</ion-option>
+                <ion-option value="6">61</ion-option>
+                <ion-option value="7">62</ion-option>
+                <ion-option value="8">63</ion-option>
+                <ion-option value="9">64</ion-option>
+                <ion-option value="10">65</ion-option>
+                <ion-option value="11">66</ion-option>
+                <ion-option value="12">67</ion-option>
+              </ion-select>
+            </ion-item>
           </ion-col>
           <ion-col>
-            <ion-item style="border-radius:10px;">
-              <ion-label fixed>Número</ion-label>
-              <ion-input type="text"></ion-input>
+            <ion-item style="border-radius:10px; width: 90%; margin-left: 10%">
+              <ion-input placeholder="Número celular" min="10" max="10" required type="number"></ion-input>
             </ion-item>
           </ion-col>
         </ion-row>
       </ion-grid>
-
+      <ion-item style="border-radius:10px; color: white; background: transparent; border-radius: 10px; text-align: center;">
+          <ion-input placeholder="Introduce el coódigo" maxlength="6" required style="text-align: center" type="text"></ion-input>
+        </ion-item>
     </ion-list>
   </div>
   <div class="center">

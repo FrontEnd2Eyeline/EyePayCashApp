@@ -158,3 +158,36 @@ page-reg-number-phone {
         animation: float 3s ease-in-out infinite; 
     }
 
+    .item-ios {
+        padding-left: 16px;
+        padding-left: 8px;
+        border-radius: 0;
+        position: relative;
+        font-size: 1.7rem;
+        color: #063996;
+        background-color: #fff;
+        -webkit-transition: background-color 200ms linear;
+        transition: background-color 200ms linear;
+    }
+
+    .select-ios {
+        padding: 0;
+    }
+
+    .select-text {
+        overflow: unset;
+        -webkit-box-flex: 1;
+        -webkit-flex: 1;
+        -ms-flex: 1;
+        flex: 1;
+        min-width: 16px;
+        font-size: inherit;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+    .text-input-ios {
+        margin: 11px 8px 11px 0;
+        padding: 0;
+        width: calc(100% - 8px);
+        text-align: center;
+    }
