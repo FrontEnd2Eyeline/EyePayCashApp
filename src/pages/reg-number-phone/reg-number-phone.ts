@@ -24,4 +24,8 @@ export class RegNumberPhonePage {
   navCancel2() {
     this.navCtrl.push('HomePage')
   }
+
+  navPinLockPage(){
+    this.navCtrl.push('PinlockPage')
+  }
 }

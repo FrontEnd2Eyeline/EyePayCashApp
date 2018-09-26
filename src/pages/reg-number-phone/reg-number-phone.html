@@ -30,21 +30,21 @@
               </ion-select>
             </ion-item>
           </ion-col>
-          <ion-col>
+          <ion-col col-10>
             <ion-item style="border-radius:10px; width: 90%; margin-left: 10%">
               <ion-input placeholder="Número celular" min="10" max="10" required type="number"></ion-input>
             </ion-item>
           </ion-col>
         </ion-row>
       </ion-grid>
-      <ion-item style="border-radius:10px; color: white; background: transparent; border-radius: 10px; text-align: center;">
+      <ion-item style="border-radius:10px; color: white; background: transparent; border-radius: 10px; text-align: center">
           <ion-input placeholder="Introduce el coódigo" maxlength="6" required style="text-align: center" type="text"></ion-input>
         </ion-item>
     </ion-list>
   </div>
   <div class="center">
     <button class="buttonBackground" (click)="navCancel()" ion-button small>Cancelar</button>
-    <button class="buttonBackground" (click)="presentAlert()" ion-button small>Registrarse</button>
+    <button class="buttonBackground" (click)="navPinLockPage()" ion-button small>Enviar</button>
   </div>
 
 </ion-content>

@@ -5,7 +5,6 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { AlertController } from 'ionic-angular';
 
 import { HomePage } from '../pages/home/home';
-import { TestphonePage } from '../pages/testphone/testphone';
 @Component({
   templateUrl: 'app.html'
 })
