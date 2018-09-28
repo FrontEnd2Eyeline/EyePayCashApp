@@ -22,4 +22,7 @@ export class PinlockPage {
     console.log('ionViewDidLoad PinlockPage');
   }
 
+  navIndex(){
+    this.navCtrl.push('InndexPage')
+  }
 }

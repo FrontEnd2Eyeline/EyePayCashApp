@@ -28,4 +28,8 @@ export class RegNumberPhonePage {
   navPinLockPage(){
     this.navCtrl.push('PinlockPage')
   }
+
+  navRegisterPage(){
+    this.navCtrl.push('RegisterPage')
+  }
 }

@@ -33,5 +33,8 @@ export class RegisterPage {
   navRegister() {
     this.navCtrl.pop();
   }
-
+  
+  navPoliPage(){
+    this.navCtrl.push('PoliticsPage')
+  }
 }

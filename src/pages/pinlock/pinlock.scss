@@ -38,7 +38,13 @@ page-pinlock {
         margin-top: 10%;
     }
     
-    
+    .button-ios.activated {
+        background-color: black;
+        opacity: 8;
+        color: white;   
+    }
+      
+      
     
     .vignette {
         position: fixed;
@@ -202,5 +208,25 @@ page-pinlock {
         padding: 0 1em;
         width: 50%;
         height: 60px;
+        border-radius: 50%;
     }
+
+    .button-md {
+        border-radius: 2px;
+        overflow: hidden;
+        height: 3.6rem;
+        font-size: 1.4rem;
+        font-weight: 500;
+        color: #063996;
+        text-transform: uppercase;
+        background-color: white;
+        margin: 0.4rem 0.2rem;
+        padding: 0 1.1em;
+        margin-left: 8%;
+    font-size: x-large;
+    width: 56%;
+    height: 65px;
+    border-radius: 50%;
+}
+    
 

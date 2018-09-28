@@ -23,20 +23,8 @@
       </ion-item>
 
       <ion-item style="border-radius:10px">
-        <ion-label>País</ion-label>
-        <ion-select okText="Guardar" cancelText="Cancelar" [(ngModel)]="country">
-          <ion-option value="f">Colombia</ion-option>
-        </ion-select>
-      </ion-item>
-
-      <ion-item style="border-radius:10px">
         <ion-label fixed>Email</ion-label>
         <ion-input type="email"></ion-input>
-      </ion-item>
-
-      <ion-item style="border-radius:10px">
-        <ion-label fixed>Móvil</ion-label>
-        <ion-input type="number"></ion-input>
       </ion-item>
 
       <ion-item style="border-radius:10px">
@@ -46,9 +34,15 @@
 
     </ion-list>
   </div>
-  <div class="center">
-    <button class="buttonBackground" (click)="navCancel()" ion-button small>Cancelar</button>
-    <button class="buttonBackground" (click)="presentAlert()" ion-button small>Registrarse</button>
+
+  <div style="margin-top: -20%" padding class="center">
+    <ion-label (click)="navPoliPage()" style="color:white; font-size: 16px" floating>Políticas de uso</ion-label>
+    <ion-label (click)="presentToast2()" style="color:white; font-size: 16px" floating>Privacidad de la información</ion-label>
+  </div>
+
+  <div style="margin-top: 6%" class="center">
+    <button style="border-radius: 0%" class="buttonBackground" (click)="navCancel()" ion-button small>Cancelar</button>
+    <button style="border-radius: 0%" class="buttonBackground" (click)="presentAlert()" ion-button small>Registrarse</button>
   </div>
 
 </ion-content>
