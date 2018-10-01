@@ -3,26 +3,24 @@
   <div class="center">
     <ion-img class="logo" src="assets/icon/EYEPAYCASHAPP.png"></ion-img>
   </div>
-  <ion-list>
-
-    <ion-item style="border-radius:10px">
-      <ion-label floating>EMAIL</ion-label>
-      <ion-input type="text"></ion-input>
-    </ion-item>
-
-    <ion-item style="border-radius:10px; margin-top: 2%">
-      <ion-label floating>CONTRASEÑA</ion-label>
-      <ion-input type="password"></ion-input>
-    </ion-item>
-
-  </ion-list>
-
-  <div class="center">
-    <button style="border-radius: 0%; margin-left: 0%;" class="buttonBackground" ion-button small>INGRESAR</button>
-  </div>
-  <div (click)="navRegPhone()"  padding class="center">
+  <form #formulario (submit)="login()">
+    <ion-list>
+      <ion-item style="border-radius:10px">
+        <ion-label stacked>EMAIL</ion-label>
+        <ion-input type="email" required name="correo" [(ngModel)]="mail" placeholder="Email"></ion-input>
+      </ion-item>
+      <ion-item style="border-radius:10px; margin-top: 2%">
+        <ion-label stacked>CONTRASEÑA</ion-label>
+        <ion-input type="password" [(ngModel)]="password" name="userpass"></ion-input>
+      </ion-item>
+    </ion-list>
+    <div class="center">
+      <button style="border-radius: 0%; margin-left: 0%;" class="buttonBackground" ion-button small>INGRESAR</button>
+    </div>
+  </form>
+  <div (click)="registro()" padding class="center">
     <ion-label style="color:white; font-size:16px; border-radius: 0%">Registrarse</ion-label>
   </div>
 
- 
+
 </ion-content>

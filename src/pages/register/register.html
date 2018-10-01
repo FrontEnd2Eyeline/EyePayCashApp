@@ -5,44 +5,55 @@
   <div style="margin-top:10%" class="center">
     <ion-list>
       <ion-item class="≈" style="border-radius:10px">
-        <ion-label fixed>Nombres</ion-label>
-        <ion-input type="text"></ion-input>
+        <ion-label stacked>Nombres</ion-label>
+        <ion-input type="text" required name="userregistronombre" [(ngModel)]="user_register.first_name"></ion-input>
       </ion-item>
 
       <ion-item style="border-radius:10px">
-        <ion-label fixed>Apellidos</ion-label>
-        <ion-input type="text"></ion-input>
+        <ion-label stacked>Apellidos</ion-label>
+        <ion-input type="text" required name="userregistroapellido"
+                   [(ngModel)]="user_register.last_name"></ion-input>
       </ion-item>
 
       <ion-item style="border-radius:10px">
-        <ion-label>Género</ion-label>
-        <ion-select okText="Guardar" cancelText="Cancelar" [(ngModel)]="gender">
+        <ion-label stacked>Género</ion-label>
+        <ion-select okText="Guardar" cancelText="Cancelar" [(ngModel)]="user_register.gender" name="userregistrogenero">
           <ion-option value="f">Femenino</ion-option>
           <ion-option value="m">Masculino</ion-option>
         </ion-select>
       </ion-item>
 
       <ion-item style="border-radius:10px">
-        <ion-label fixed>Email</ion-label>
-        <ion-input type="email"></ion-input>
+        <ion-label stacked>Email</ion-label>
+        <ion-input type="email" required name="userregistroemail"
+                   [(ngModel)]="user_register.mail"></ion-input>
       </ion-item>
 
       <ion-item style="border-radius:10px">
-        <ion-label fixed>Contraseña</ion-label>
-        <ion-input type="password"></ion-input>
+        <ion-label stacked>Contraseña</ion-label>
+        <ion-input type="{{type}}" name="userregistrocontrasena"
+                   required [(ngModel)]="user_register.password"></ion-input>
+        <button *ngIf="!showPass" ion-button clear color="dark" type="button" item-right (click)="showPassword()">
+          <ion-icon name="ios-eye-off-outline"></ion-icon>
+        </button>
+        <button *ngIf="showPass" ion-button clear color="dark" type="button" item-right (click)="showPassword()">
+          <ion-icon name="ios-eye-outline"></ion-icon>
+        </button>
       </ion-item>
 
     </ion-list>
   </div>
 
   <div style="margin-top: -20%" padding class="center">
-    <ion-label (click)="navPoliPage()" style="color:white; font-size: 16px" floating>Políticas de uso</ion-label>
-    <ion-label (click)="presentToast2()" style="color:white; font-size: 16px" floating>Privacidad de la información</ion-label>
+    <ion-label (click)="politicas()" style="color:white; font-size: 16px" floating>Políticas de uso</ion-label>
+    <ion-label (click)="privacidad()" style="color:white; font-size: 16px" floating>Privacidad de la información
+    </ion-label>
   </div>
 
   <div style="margin-top: 6%" class="center">
-    <button style="border-radius: 0%" class="buttonBackground" (click)="navCancel()" ion-button small>Cancelar</button>
-    <button style="border-radius: 0%" class="buttonBackground" (click)="presentAlert()" ion-button small>Registrarse</button>
+    <button style="border-radius: 0%" class="buttonBackground" (click)="cancel()" ion-button small>Cancelar</button>
+    <button style="border-radius: 0%" class="buttonBackground" (click)="register()" ion-button small>Registrarse
+    </button>
   </div>
 
 </ion-content>

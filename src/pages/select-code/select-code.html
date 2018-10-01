@@ -1,0 +1,12 @@
+<ion-content padding>
+  <ng-template #withFlags let-attrs="attrs">
+    <img src="{{attrs.data.flag}}" class="flag"/>
+    <span
+        [innerHTML]="'+'+attrs.data.callingCodes[0]+' '+attrs.data.name"></span>
+  </ng-template>
+  <ion-auto-complete #search item-content [dataProvider]="country"
+                     [options]="{placeholder : 'Search your country'}"
+                     [template]="withFlags"
+                     [showResultsFirst]="true"
+                     (itemSelected)="selectItem($event)"></ion-auto-complete>
+</ion-content>

@@ -3,48 +3,42 @@
     <ion-img style="margin-bottom: 10%;" class="logo" src="assets/imgs/EPCLogoPpal.png"></ion-img>
     <div class="center" style="margin-top: -30%">
       <ion-label style="color:white" class="center"> Enviaremos un CÓDIGO de verificación a el número<br> que registres
-        a continuación.</ion-label>
+        a continuación.
+      </ion-label>
     </div>
   </div>
 
   <div style="margin-top:10%" class="center">
 
-    <ion-list>
-      <ion-grid class="center">
-        <ion-row>
-          <ion-col col-2>
-            <ion-item style="border-radius:10px; width: 65px">
-              <ion-label> + </ion-label>
-              <ion-select okText="Guardar" cancelText="Cancelar" [(ngModel)]="gender">
-                <ion-option value="2">57</ion-option>
-                <ion-option value="3">58</ion-option>
-                <ion-option value="4">59</ion-option>
-                <ion-option value="5">60</ion-option>
-                <ion-option value="6">61</ion-option>
-                <ion-option value="7">62</ion-option>
-                <ion-option value="8">63</ion-option>
-                <ion-option value="9">64</ion-option>
-                <ion-option value="10">65</ion-option>
-                <ion-option value="11">66</ion-option>
-                <ion-option value="12">67</ion-option>
-              </ion-select>
-            </ion-item>
-          </ion-col>
-          <ion-col col-10>
-            <ion-item style="border-radius:10px; width: 122%; margin-left: -20%">
-              <ion-input placeholder="Número celular" min="10" max="10" required type="number"></ion-input>
-            </ion-item>
-          </ion-col>
-        </ion-row>
-      </ion-grid>
-      <ion-item style="border-radius:10px; color: white; background: transparent; border-radius: 10px; text-align: center">
-          <ion-input placeholder="Introduce el coódigo" maxlength="6" required style="text-align: center" type="text"></ion-input>
-        </ion-item>
-    </ion-list>
+    <ion-grid class="center">
+      <ion-row>
+        <ion-col col-5>
+          <ion-item class="item-flag">
+            <img [src]="user_register.flag" class="flagphone">
+            <button ion-button (click)="selectcountry()" class="transparente">+ {{user_register.country_code}}</button>
+          </ion-item>
+        </ion-col>
+        <ion-col col-7>
+          <ion-item style="border-radius:10px; width: 122%; margin-left: -20%">
+            <ion-input required type="text" name="numerocelular" [(ngModel)]="user_register.value"
+                       placeholder="Número movil (celular)"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    <ion-item style="border-radius:10px; color: white; background: transparent; text-align: center;">
+      <ion-input placeholder="Introduce el código" maxlength="6" required
+                 style="text-align: center" type="text" [(ngModel)]="code_verify"></ion-input>
+    </ion-item>
   </div>
   <div class="center">
-    <button style="border-radius: 0%" class="buttonBackground" (click)="navCancel()" ion-button small>Cancelar</button>
-    <button style="border-radius: 0%" class="buttonBackground" (click)="navRegisterPage()" ion-button small>Enviar</button>
+    <button style="border-radius: 0" class="buttonBackground" (click)="cancel()" ion-button small>Cancelar</button>
+    <button style="border-radius: 0" class="buttonBackground" (click)="sendNumberPhone()" ion-button small
+            *ngIf="response_verify.phone_code == null">Enviar
+    </button>
+    <button style="border-radius: 0" class="buttonBackground" (click)="verifyCode()" ion-button small
+            *ngIf="response_verify.phone_code != null">Continuar
+    </button>
   </div>
 
 </ion-content>
