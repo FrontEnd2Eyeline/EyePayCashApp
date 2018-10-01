@@ -14,14 +14,14 @@ import {IonicStorageModule} from "@ionic/storage";
 import {GeolocationProvider} from '../providers/geolocation/geolocation';
 import {Geolocation} from "@ionic-native/geolocation";
 import {NativeGeocoder} from "@ionic-native/native-geocoder";
-import {RegisterPage} from "../pages/register/register";
-import { AuthUserProvider } from '../providers/auth-user/auth-user';
+import {AuthUserProvider} from '../providers/auth-user/auth-user';
+import {RegNumberPhonePage} from "../pages/reg-number-phone/reg-number-phone";
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
-    RegisterPage,
+    RegNumberPhonePage,
   ],
   imports: [
     BrowserModule,
@@ -34,7 +34,7 @@ import { AuthUserProvider } from '../providers/auth-user/auth-user';
   entryComponents: [
     MyApp,
     HomePage,
-    RegisterPage,
+    RegNumberPhonePage
   ],
   providers: [
     StatusBar,

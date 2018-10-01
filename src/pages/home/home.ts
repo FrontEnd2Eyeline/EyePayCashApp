@@ -2,6 +2,7 @@ import {Component} from '@angular/core';
 import {LoadingController, NavController, ToastController} from 'ionic-angular';
 import {AuthUserProvider} from "../../providers/auth-user/auth-user";
 import {Api} from "../../providers/api";
+import {RegNumberPhonePage} from "../reg-number-phone/reg-number-phone";
 
 @Component({
   selector: 'page-home',
@@ -57,7 +58,7 @@ export class HomePage {
 
 
   registro() {
-    this.navCtrl.push('RegisterPage')
+    this.navCtrl.push(RegNumberPhonePage)
   }
 
 }
