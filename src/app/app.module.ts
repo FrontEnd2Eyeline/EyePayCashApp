@@ -15,13 +15,12 @@ import {GeolocationProvider} from '../providers/geolocation/geolocation';
 import {Geolocation} from "@ionic-native/geolocation";
 import {NativeGeocoder} from "@ionic-native/native-geocoder";
 import {AuthUserProvider} from '../providers/auth-user/auth-user';
-import {RegNumberPhonePage} from "../pages/reg-number-phone/reg-number-phone";
+import {RegNumberPhonePageModule} from "../pages/reg-number-phone/reg-number-phone.module";
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
-    RegNumberPhonePage,
   ],
   imports: [
     BrowserModule,
@@ -29,12 +28,12 @@ import {RegNumberPhonePage} from "../pages/reg-number-phone/reg-number-phone";
     IonicModule.forRoot(MyApp),
     IonicStorageModule.forRoot(),
     SelectCodePageModule,
+    RegNumberPhonePageModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
     HomePage,
-    RegNumberPhonePage
   ],
   providers: [
     StatusBar,
