@@ -5,6 +5,7 @@ import {Api} from "../../providers/api";
 import {GeolocationProvider} from "../../providers/geolocation/geolocation";
 import {RegisterPage} from "../register/register";
 import {HomePage} from "../home/home";
+import {LoginPage} from "../login/login";
 
 /**
  * Generated class for the RegNumberPhonePage page.
@@ -35,11 +36,11 @@ export class RegNumberPhonePage {
     country_id: null,
   };
   public country;
-
+  imagen='assets/backgrounds/Background2.png';
   constructor(public navCtrl: NavController,
               public navParams: NavParams,
               public modal: ModalController,
-              public api: Api,
+              private api: Api,
               public toastCtrl: ToastController,
               public loadingCtrl: LoadingController,
               public locationProvider: GeolocationProvider) {
@@ -52,7 +53,7 @@ export class RegNumberPhonePage {
 
 
   cancel() {
-    this.navCtrl.setRoot(HomePage);
+    this.navCtrl.setRoot(LoginPage);
   }
 
   sendNumberPhone() {

@@ -5,7 +5,6 @@ import {SplashScreen} from '@ionic-native/splash-screen';
 import {StatusBar} from '@ionic-native/status-bar';
 
 import {MyApp} from './app.component';
-import {HomePage} from '../pages/home/home';
 import {CountryProvider} from "../providers/country/country";
 import {SelectCodePageModule} from "../pages/select-code/select-code.module";
 import {HttpClientModule} from "@angular/common/http";
@@ -16,11 +15,29 @@ import {Geolocation} from "@ionic-native/geolocation";
 import {NativeGeocoder} from "@ionic-native/native-geocoder";
 import {AuthUserProvider} from '../providers/auth-user/auth-user';
 import {RegNumberPhonePageModule} from "../pages/reg-number-phone/reg-number-phone.module";
+import {LoginPage} from "../pages/login/login";
+import {RecoveryPasswordPage} from "../pages/recovery-password/recovery-password";
+import {PasswordUpdatePage} from "../pages/password-update/password-update";
+import {RegisterPage} from "../pages/register/register";
+import {HomePage} from "../pages/home/home";
+import {AccountPage} from "../pages/account/account";
+import {HistoryPage} from "../pages/history/history";
+import {TransactionPage} from "../pages/transaction/transaction";
+import {ModalWelcomePage} from "../pages/modal-welcome/modal-welcome";
+import { VerificationProvider } from '../providers/verification/verification';
 
 @NgModule({
   declarations: [
     MyApp,
+    LoginPage,
+    RecoveryPasswordPage,
+    PasswordUpdatePage,
+    RegisterPage,
     HomePage,
+    AccountPage,
+    HistoryPage,
+    TransactionPage,
+    ModalWelcomePage,
   ],
   imports: [
     BrowserModule,
@@ -33,7 +50,15 @@ import {RegNumberPhonePageModule} from "../pages/reg-number-phone/reg-number-pho
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
+    LoginPage,
+    RecoveryPasswordPage,
+    PasswordUpdatePage,
+    RegisterPage,
     HomePage,
+    AccountPage,
+    HistoryPage,
+    TransactionPage,
+    ModalWelcomePage,
   ],
   providers: [
     StatusBar,
@@ -45,6 +70,7 @@ import {RegNumberPhonePageModule} from "../pages/reg-number-phone/reg-number-pho
     {provide: ErrorHandler, useClass: IonicErrorHandler,},
     GeolocationProvider,
     AuthUserProvider,
+    VerificationProvider,
   ]
 })
 export class AppModule {

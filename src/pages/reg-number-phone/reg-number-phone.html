@@ -1,4 +1,4 @@
-<ion-content class="imgBackground2 vignette">
+<ion-content [ngStyle]="{'background-image':'url('+imagen+')'}">
   <div style="margin-top:12%" class="center">
     <ion-img style="margin-bottom: 10%;" class="logo" src="assets/imgs/EPCLogoPpal.png"></ion-img>
     <div class="center" style="margin-top: -30%">
@@ -9,7 +9,6 @@
   </div>
 
   <div style="margin-top:10%" class="center">
-
     <ion-grid class="center">
       <ion-row>
         <ion-col col-5>
@@ -32,11 +31,11 @@
     </ion-item>
   </div>
   <div class="center">
-    <button style="border-radius: 0" class="buttonBackground" (click)="cancel()" ion-button small>Cancelar</button>
-    <button style="border-radius: 0" class="buttonBackground" (click)="sendNumberPhone()" ion-button small
+    <button style="border-radius: 0" class="buttonPayCash" (click)="cancel()" ion-button small>Cancelar</button>
+    <button style="border-radius: 0" class="buttonPayCash" (click)="sendNumberPhone()" ion-button small
             *ngIf="response_verify.phone_code == null">Enviar
     </button>
-    <button style="border-radius: 0" class="buttonBackground" (click)="verifyCode()" ion-button small
+    <button style="border-radius: 0" class="buttonPayCash" (click)="verifyCode()" ion-button small
             *ngIf="response_verify.phone_code != null">Continuar
     </button>
   </div>

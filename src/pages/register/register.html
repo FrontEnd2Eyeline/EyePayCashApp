@@ -1,4 +1,4 @@
-<ion-content class="imgBackground2 vignette">
+<ion-content [ngStyle]="{'background-image':'url('+imagen+')'}">
   <div style="margin-top:12%" class="center">
     <ion-img class="logo" src="assets/imgs/EPCLogoPpal.png"></ion-img>
   </div>
@@ -51,8 +51,8 @@
   </div>
 
   <div style="margin-top: 6%" class="center">
-    <button style="border-radius: 0%" class="buttonBackground" (click)="cancel()" ion-button small>Cancelar</button>
-    <button style="border-radius: 0%" class="buttonBackground" (click)="register()" ion-button small>Registrarse
+    <button style="border-radius: 0%" class="buttonPayCash" (click)="cancel()" ion-button small>Cancelar</button>
+    <button style="border-radius: 0%" class="buttonPayCash" (click)="register()" ion-button small>Registrarse
     </button>
   </div>
 

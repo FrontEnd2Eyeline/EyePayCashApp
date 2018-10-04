@@ -1,26 +1,22 @@
-<ion-content class="imgBackground vignette">
-
-  <div class="center">
-    <ion-img class="logo" src="assets/icon/EYEPAYCASHAPP.png"></ion-img>
-  </div>
-  <form #formulario (submit)="login()">
-    <ion-list>
-      <ion-item style="border-radius:10px">
-        <ion-label stacked>EMAIL</ion-label>
-        <ion-input type="email" required name="correo" [(ngModel)]="mail" placeholder="Email"></ion-input>
-      </ion-item>
-      <ion-item style="border-radius:10px; margin-top: 2%">
-        <ion-label stacked>CONTRASEÑA</ion-label>
-        <ion-input type="password" [(ngModel)]="password" name="userpass"></ion-input>
-      </ion-item>
-    </ion-list>
-    <div class="center">
-      <button style="border-radius: 0%; margin-left: 0%;" class="buttonBackground" ion-button small>INGRESAR</button>
-    </div>
-  </form>
-  <div (click)="registro()" padding class="center">
-    <ion-label style="color:white; font-size:16px; border-radius: 0%">Registrarse</ion-label>
-  </div>
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Eyepaycash
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
 
 
 </ion-content>
+<ion-footer>
+  <ion-toolbar>
+    <ion-row>
+      <ion-col col-4 (click)="goPage('transaction')">
+        <ion-icon name="add"></ion-icon>
+        Transacciòn</ion-col>
+      <ion-col col-4 (click)="goPage('history')"> <ion-icon name="list-box"></ion-icon> Historial </ion-col>
+      <ion-col col-4 (click)="goPage('account')"> <ion-icon name="person"></ion-icon> Mi cuenta </ion-col>
+    </ion-row>
+  </ion-toolbar>
+</ion-footer>

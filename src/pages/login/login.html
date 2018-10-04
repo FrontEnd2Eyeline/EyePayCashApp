@@ -1,0 +1,36 @@
+<!--
+  Generated template for the LoginPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+
+<ion-content [ngStyle]="{'background-image':'url('+imagen+')'}">
+
+  <div class="center">
+    <ion-img class="logo" src="assets/icon/EYEPAYCASHAPP.png" text-center></ion-img>
+  </div>
+  <form #formulario (submit)="login()">
+    <ion-list>
+      <ion-item>
+        <ion-label stacked>Ingrese direcciòn email</ion-label>
+        <ion-input type="email" required name="correo" [(ngModel)]="mail"> </ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label stacked>Ingrese contraseña</ion-label>
+        <ion-input type="password" [(ngModel)]="password" name="userpass"> </ion-input>
+      </ion-item>
+      <ion-item>
+        <button class="buttonPayCash" ion-button small style="border-radius: 0%; margin-left: 0%;">INGRESAR</button>
+      </ion-item>
+    </ion-list>
+  </form>
+   <ion-item>
+     <ion-col col-6>
+       <button ion-button (click)="registro()" clear block class="transparente">Registrarme</button>
+     </ion-col>
+     <ion-col col-6>
+       <button ion-button (click)="recuperarcontrasena()" clear block class="transparente">Recuperar contraseña</button>
+     </ion-col>
+    </ion-item>
+</ion-content>

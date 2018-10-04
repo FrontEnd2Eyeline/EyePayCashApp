@@ -6,15 +6,40 @@ import {ToastController} from "ionic-angular";
 export class AuthUserProvider {
 
   tokenAppId: string;
-  public user: any = {
+  public user_Info: any = {
     first_name: null,
     last_name: null,
     phone: null,
     access_token: null,
     is_active: null,
+    gender: null,
+    mail: null,
+  };
+  public user_Country: any = {
+    id: null,
+    name: null,
+    is_active: null,
+    phone_code: null,
+    country_code: null,
+    currency: null
+  };
+  public User_Verify: any = {
+    id: null,
+    phone_code: null,
+    is_phone_verify: null,
+    mail_code: null,
+    is_mail_verify: null,
+    phone: null,
+    mail: null,
+    user_id: null
   };
 
-  constructor(public api: Api,
+  public userRecovery: any = {
+    user_id: null,
+    codigoVerify: null,
+  };
+
+  constructor(protected api: Api,
               public toastCtrl: ToastController
   ) {
     this.trylogin();
@@ -22,50 +47,59 @@ export class AuthUserProvider {
 
   login(usuario, password) {
     return new Promise((resolve, reject) => {
-      console.log(usuario);
-      console.log(password);
-      this.api.post('auth/login', {mail: usuario, password: password})
+      this.api.post('auth/login?expand=country,userVerify', {mail: usuario, password: password})
         .then((data: any) => {
-          console.log(data);
-          // if (data.success == 'ok') {
-          //   this.user = data;
-          //   resolve(data);
-          // } else {
-          //   let toast = this.toastCtrl.create({
-          //     message: data.mensaje,
-          //     duration: 15000,
-          //   });
-          //   toast.present();
-          // }
+          if (data.success == 'ok') {
+            this.setUser(data.user);
+            this.setUserCountry(data.user.country);
+            this.setUserVerify(data.user.userVerify);
+            resolve(data);
+          } else {
+            let toast = this.toastCtrl.create({
+              message: 'Usuario o contraseña incorrectos',
+              duration: 3000,
+            });
+            toast.present();
+          }
         })
         .catch(err => reject(err))
     });
   }
 
   isLogin() {
-    return this.user !== null;
+    return this.user_Info !== null;
   }
 
 
   trylogin() {
-    this.user = JSON.parse(window.localStorage.getItem('user'));
-    if (this.user == null)
-      this.user = {
+    this.user_Info = JSON.parse(window.localStorage.getItem('user'));
+    if (this.user_Info == null)
+      this.user_Info = {
         user: null,
       };
   }
 
   accessParam() {
-    if (this.user != null)
-      return this.user.access_token;
+    if (this.user_Info != null)
+      return this.user_Info.access_token;
     return null;
   }
 
   setUser(Usuario: any) {
-    this.user = Usuario;
-    window.localStorage.setItem('user', JSON.stringify(this.user));
+    this.user_Info = Usuario;
+    window.localStorage.setItem('user', JSON.stringify(this.user_Info));
   }
 
+  setUserCountry(Country: any) {
+    this.user_Country = Country;
+  }
+  setUserVerify(Verify: any) {
+    this.User_Verify = Verify;
+  }
+
+  setUserRecovery(data) {
+    this.userRecovery = data;
+  }
 
   setTokenNotification(tokenId) {
     this.tokenAppId = tokenId;
