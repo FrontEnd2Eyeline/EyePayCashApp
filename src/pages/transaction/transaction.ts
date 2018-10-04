@@ -55,13 +55,13 @@ export class TransactionPage {
   monedaSelect(moneda){
     let modalTransaction = this.modalCtrl.create(ModalTransactionPage,{
       'moneda':moneda,
+      'userCountry':this.userProvider.user_Country,
     });
     modalTransaction.present();
-  }
-  closeModal(){
+    modalTransaction.onDidDismiss((data:any)=>{
 
+    });
   }
-
 
 
 }

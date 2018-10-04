@@ -7,15 +7,34 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>modal-transaction</ion-title>
+    <ion-title>EYEPAYCASH</ion-title>
     <ion-buttons end>
       <button ion-button (click)="closeModal()">Cerrar</button>
     </ion-buttons>
   </ion-navbar>
-
 </ion-header>
-
-
 <ion-content padding>
+  <ion-card>
+    <ion-card-header>
+      {{moneda.full_name}}
+    </ion-card-header>
+    <ion-card-content>
+      <h6>1 {{moneda.full_name}} == {{moneda.local_usd_value}} {{userCountry.currency}} </h6>
+      <h6>1 {{moneda.full_name}} == {{moneda.usd_value}} USD </h6>
+    </ion-card-content>
+  </ion-card>
+  <ion-card>
+    <ion-card-header>
+      Informaciòn de la transaciòn
+    </ion-card-header>
+    <ion-card-content>
+      <label stacked>Ingresar nùmero celular</label>
+      <ion-input name="transaction-celular" [(ngModel)]="transaction.telefono"></ion-input>
+      <label stacked>Ingresar clave de seguridad (4  digitos)</label>
+      <ion-input name="transaction-clave" [(ngModel)]="transaction.clave"></ion-input>
+      <label stacked>Ingresar el valor de la transacciòn</label>
+      <ion-input name="transaction-valor" [(ngModel)]="transaction.cantidad"></ion-input>
+    </ion-card-content>
+  </ion-card>
 
 </ion-content>

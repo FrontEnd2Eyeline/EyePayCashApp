@@ -15,6 +15,14 @@ import {IonicPage, NavController, NavParams, ViewController} from 'ionic-angular
 })
 export class ModalTransactionPage {
 
+  public moneda:any = null;
+  public userCountry:any = null;
+  public transaction:any = {
+    cantidad:null,
+    telefono:null,
+    clave:null,
+  };
+
   constructor(public navCtrl: NavController,
               public navParams: NavParams,
               public viewCtrl: ViewController,
@@ -22,11 +30,16 @@ export class ModalTransactionPage {
   }
 
   ionViewWillLoad(){
-    
+    this.userCountry = this.navParams.get('userCountry');
+    this.moneda  = this.navParams.get('moneda');
+    console.log(this.moneda);
+    console.log(this.userCountry);
   }
 
   closeModal(){
     this.viewCtrl.dismiss();
   }
+
+
 
 }
