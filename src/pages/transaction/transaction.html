@@ -7,12 +7,35 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>transaction</ion-title>
+    <ion-title>EYEPAYCASH</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
+  <ion-label stacked>Seleccione paìs de interès</ion-label>
+  <ion-select [(ngModel)]="currency" (ionChange)="countrySelected()">
+    <ion-option *ngFor="let pais of countrys" value="{{pais.currency}}">{{pais.name}}</ion-option>
+  </ion-select>
+
+
+  <ion-card>
+    <ion-card-content>
+      <label stacked>Precio del dolar en el paìs</label>
+      <ion-item>
+        <h6>1 USD = {{infoCountry?.local_usd_value}} {{currency}}</h6>
+      </ion-item>
+      <label stacked>Informaciòn de las monedas</label>
+      <button ion-item *ngFor="let moneda of monedas" (click)="monedaSelect(moneda)">
+        <h4>Nombre: {{moneda.full_name}}</h4>
+        <h6>1 {{moneda.full_name}} = {{moneda.usd_value}} USD</h6>
+        <h5 stacked> 1 {{moneda.full_name}} >> {{currency}}  </h5>
+        <h5>{{moneda.local_usd_value}}</h5>
+        <hr>
+      </button>
+    </ion-card-content>
+  </ion-card>
+
 
 </ion-content>

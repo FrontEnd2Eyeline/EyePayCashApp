@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import {IonicPage, LoadingController, ModalController, NavController, NavParams, ToastController} from 'ionic-angular';
+import {Api} from "../../providers/api";
+import {AuthUserProvider} from "../../providers/auth-user/auth-user";
+import {ModalTransactionPage} from "../modal-transaction/modal-transaction";
 
 /**
  * Generated class for the TransactionPage page.
@@ -15,11 +18,50 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class TransactionPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  public countrys: any = [];
+  public currency = null;
+  public infoCountry:any = null;
+  public monedas:any = [];
+
+  constructor(public navCtrl: NavController,
+              public navParams: NavParams,
+              private api:Api,
+              private userProvider:AuthUserProvider,
+              public loadingCtrl: LoadingController,
+              public toastCtrl: ToastController,
+              public modalCtrl: ModalController) {
+    this.getInfo();
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad TransactionPage');
+  getInfo(){
+    this.currency = this.userProvider.user_Country.currency;
+    this.countrySelected();
+    this.api.get('app/get-countries').then((data:any)=>{
+      this.countrys = data;
+    }).catch();
   }
+
+  countrySelected(){
+      this.api.get('app/get-prices',this.userProvider,{
+        currency_code:this.currency,
+      }).then((data:any)=>{
+        this.infoCountry = data;
+        console.log(this.infoCountry);
+        this.monedas = this.infoCountry.coins;
+        console.log(this.monedas);
+      })
+  }
+
+  monedaSelect(moneda){
+    let modalTransaction = this.modalCtrl.create(ModalTransactionPage,{
+      'moneda':moneda,
+    });
+    modalTransaction.present();
+  }
+  closeModal(){
+
+  }
+
+
 
 }

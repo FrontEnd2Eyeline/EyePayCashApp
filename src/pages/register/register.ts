@@ -44,7 +44,6 @@ export class RegisterPage {
 
   }
 
-
   getInfo() {
     this.responseParams = this.navParams.get('response');
     this.registerParams = this.navParams.get('register');
@@ -129,4 +128,7 @@ export class RegisterPage {
     modalWelcome.present();
     this.userProvider.setUser(null);
   }
+
+
+
 }

@@ -94,7 +94,7 @@
           <label stacked>Seleccione el paìs e ingrese su nuevo nùmero celular</label>
           <ion-col col-4>
             <ion-item class="item-flag">
-              <img [src]="infoPhone.flag" class="flagphone">
+              <img [src]="infoPhone.flag" class="flagphone" *ngIf="infoPhone.flag !=null">
               <button ion-button (click)="selectcountry()">+ {{infoPhone.country_code}}</button>
             </ion-item>
           </ion-col>
