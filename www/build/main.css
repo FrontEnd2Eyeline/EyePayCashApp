@@ -25799,3 +25799,7 @@ page-select-code .flag {
   width: 25px;
   height: 15px;
 }
+
+page-transaction ion-select {
+  max-width: 100% !important;
+}
