@@ -1,5 +1,13 @@
 page-reg-number-phone {
 
+.imgBackground {
+    background-image: url(http://subirimagen.me/uploads/20180921121235.png);
+    background-repeat: initial;
+    background-attachment: fixed;
+    background-position: center center;
+    background-size: cover;
+}
+
 .logo{
     width: 100%;
     display: unset;
@@ -17,6 +25,9 @@ page-reg-number-phone {
     font-size: 1.2rem;
 }
 
+.divMargin{
+    margin-top: 10%;
+}
 .center{
     margin: auto;
     text-align: center;
@@ -30,6 +41,24 @@ page-reg-number-phone {
     height: 100%;
     box-shadow: 0 0 200px rgba(0, 0, 0, 0.336) inset;
 }
+
+.marGrid{
+    margin-top: 18%;
+}
+
+.marginBts{
+    margin-top: 20%;
+}
+
+.stylCel{
+    border-radius:10px; 
+    width: 122%; 
+    margin-left: -20%;
+}
+
+.borderBtns{
+    border-radius: 5px !important;
+  }
 
 .logo {
     width: 70%;

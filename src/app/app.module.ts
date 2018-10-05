@@ -26,6 +26,7 @@ import {TransactionPage} from "../pages/transaction/transaction";
 import {ModalWelcomePage} from "../pages/modal-welcome/modal-welcome";
 import { VerificationProvider } from '../providers/verification/verification';
 import {ModalTransactionPage} from "../pages/modal-transaction/modal-transaction";
+import { PoliticasPage } from '../pages/politicas/politicas';
 
 @NgModule({
   declarations: [
@@ -40,6 +41,7 @@ import {ModalTransactionPage} from "../pages/modal-transaction/modal-transaction
     TransactionPage,
     ModalWelcomePage,
     ModalTransactionPage,
+    PoliticasPage
   ],
   imports: [
     BrowserModule,
@@ -61,7 +63,9 @@ import {ModalTransactionPage} from "../pages/modal-transaction/modal-transaction
     HistoryPage,
     TransactionPage,
     ModalWelcomePage,
-    ModalTransactionPage
+    ModalTransactionPage,
+    PoliticasPage
+    
   ],
   providers: [
     StatusBar,
