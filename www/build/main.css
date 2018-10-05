@@ -25721,13 +25721,6 @@ ion-auto-complete ul li:hover {
   background: #f1f1f1;
 }
 
-/*!
- * animate.css -http://daneden.me/animate
- * Version - 3.7.0
- * Licensed under the MIT license - http://opensource.org/licenses/MIT
- *
- * Copyright (c) 2018 Daniel Eden
- */
 .buttonPayCash {
   background: #9569fc;
   background: -webkit-gradient(left top, right top, color-stop(0%, #9569fc), color-stop(100%, #5974fb));
@@ -25738,19 +25731,6 @@ ion-auto-complete ul li:hover {
   font-weight: bold;
 }
 
-.label-md[stacked], .label-md[floating] {
-  color: black;
-  font-weight: bold;
-}
-
-.transparente {
-  background-color: transparent !important;
-}
-
-.fondo_gris {
-  background-color: #5b71ff;
-}
-
 page-login .logo {
   width: 100%;
   display: unset;
@@ -25758,6 +25738,95 @@ page-login .logo {
 
 page-login .item-md, page-login .item-ios {
   background-color: transparent;
+}
+
+page-login .center {
+  margin: auto;
+  text-align: center;
+}
+
+page-login .list-md {
+  margin: -1px 0 16px;
+  padding: 12%;
+}
+
+page-login .imgBackground {
+  background-image: url(http://subirimagen.me/uploads/20180921121235.png);
+  background-repeat: initial;
+  background-attachment: fixed;
+  background-position: center center;
+  background-size: cover;
+}
+
+page-login .vignette {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -webkit-box-shadow: 0 0 200px rgba(0, 0, 0, 0.336) inset;
+  box-shadow: 0 0 200px rgba(0, 0, 0, 0.336) inset;
+}
+
+page-login .logo {
+  width: 70%;
+  background: transparent;
+  height: 80px;
+  margin-top: 20%;
+  display: inline-grid;
+}
+
+page-login .marginItems {
+  margin-bottom: 10%;
+}
+
+page-login .item-input .label-md, page-login .item-select .label-md, page-login .item-datetime .label-md {
+  color: white !important;
+}
+
+page-login .label-md[stacked] {
+  font-size: 1.6rem !important;
+  text-align: center !important;
+}
+
+page-login .inputClass {
+  background: white;
+  border-radius: 5px;
+}
+
+page-login .list-md .item-block .item-inner {
+  border-bottom: 0px solid #dedede !important;
+}
+
+page-login .item-md.item-block .item-inner {
+  padding-right: 8px;
+  border-bottom: 0px solid #dedede !important;
+}
+
+page-login .borderBtns {
+  border-radius: 5px !important;
+}
+
+page-login .text-input {
+  -moz-appearance: none;
+  -ms-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+  border-radius: 0;
+  display: inline-block;
+  text-align: center;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  width: 92%;
+  width: calc(100% - 10px);
+  border: 0;
+  background: transparent;
+}
+
+page-login .button-inner {
+  color: white !important;
 }
 
 page-modal-welcome {
@@ -25793,6 +25862,91 @@ page-modal-welcome ion-content.content-md div.scroll-content {
   -webkit-box-shadow: 0 16px 20px rgba(0, 0, 0, 0.4);
   box-shadow: 0 16px 20px rgba(0, 0, 0, 0.4);
   padding: 24px;
+}
+
+page-reg-number-phone .logo {
+  width: 100%;
+  display: unset;
+}
+
+page-reg-number-phone .item-md2, page-reg-number-phone .item-ios2 {
+  background-color: transparent;
+  margin-top: 4%;
+}
+
+page-reg-number-phone .item-md2 .item-button2 {
+  padding: 0 0.6em;
+  height: 25px;
+  margin-bottom: 23% !important;
+  font-size: 1.2rem;
+}
+
+page-reg-number-phone .center {
+  margin: auto;
+  text-align: center;
+}
+
+page-reg-number-phone .vignette {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -webkit-box-shadow: 0 0 200px rgba(0, 0, 0, 0.336) inset;
+  box-shadow: 0 0 200px rgba(0, 0, 0, 0.336) inset;
+}
+
+page-reg-number-phone .logo {
+  width: 70%;
+  background: transparent;
+  height: 80px;
+  margin-top: 10%;
+  display: inline-grid;
+}
+
+page-reg-number-phone .label-md {
+  margin: 0px !important;
+}
+
+page-reg-number-phone .banderaWidt {
+  width: 30% !important;
+}
+
+page-reg-number-phone .inputClass {
+  background: white;
+  border-radius: 5px;
+}
+
+page-reg-number-phone .text-input-md {
+  text-align: center !important;
+}
+
+page-reg-number-phone .list-md .item-block .item-inner {
+  border-bottom: 0px solid #dedede !important;
+}
+
+page-reg-number-phone .item-md.item-block .item-inner {
+  padding-right: 8px;
+  border-bottom: 0px solid #dedede !important;
+}
+
+page-reg-number-phone .button-md {
+  border-radius: 2px;
+  overflow: hidden;
+  height: 3.6rem;
+  font-size: 1.4rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  color: #fff;
+  background-color: transparent !important;
+  -webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0), 0 3px 1px -2px rgba(0, 0, 0, 0), 0 1px 5px 0 rgba(0, 0, 0, 0) !important;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0), 0 3px 1px -2px rgba(0, 0, 0, 0), 0 1px 5px 0 rgba(0, 0, 0, 0) !important;
+  -webkit-transition: background-color 300ms cubic-bezier(0.4, 0, 0.2, 1), color 300ms cubic-bezier(0.4, 0, 0.2, 1), -webkit-box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color 300ms cubic-bezier(0.4, 0, 0.2, 1), color 300ms cubic-bezier(0.4, 0, 0.2, 1), -webkit-box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1), background-color 300ms cubic-bezier(0.4, 0, 0.2, 1), color 300ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1), background-color 300ms cubic-bezier(0.4, 0, 0.2, 1), color 300ms cubic-bezier(0.4, 0, 0.2, 1), -webkit-box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1);
+  margin: 0.4rem 0.2rem;
+  padding: 0 1.1em;
 }
 
 page-select-code .flag {
