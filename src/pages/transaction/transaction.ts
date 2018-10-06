@@ -46,7 +46,9 @@ export class TransactionPage {
         currency_code:this.currency,
       }).then((data:any)=>{
         this.infoCountry = data;
+        console.log(this.infoCountry);
         this.monedas = this.infoCountry.coins;
+        console.log(this.monedas);
       })
   }
 

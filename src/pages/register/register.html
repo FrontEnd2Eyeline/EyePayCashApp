@@ -1,21 +1,21 @@
-<ion-content [ngStyle]="{'background-image':'url('+imagen+')'}">
+<ion-content class="imgBackground vignette">
   <div style="margin-top:12%" class="center">
-    <ion-img class="logo" src="assets/imgs/EPCLogoPpal.png"></ion-img>
+    <ion-img class="logo" src="assets/imgs/EPCLogo.png"></ion-img>
   </div>
-  <div style="margin-top:10%" class="center">
+  <div class="center">
     <ion-list>
-      <ion-item class="≈" style="border-radius:10px">
+      <ion-item class="marginlists" >
         <ion-label stacked>Nombres</ion-label>
         <ion-input type="text" required name="userregistronombre" [(ngModel)]="user_register.first_name"></ion-input>
       </ion-item>
 
-      <ion-item style="border-radius:10px">
+      <ion-item class="marginlists">
         <ion-label stacked>Apellidos</ion-label>
         <ion-input type="text" required name="userregistroapellido"
                    [(ngModel)]="user_register.last_name"></ion-input>
       </ion-item>
 
-      <ion-item style="border-radius:10px">
+      <ion-item class="marginlists">
         <ion-label stacked>Género</ion-label>
         <ion-select okText="Guardar" cancelText="Cancelar" [(ngModel)]="user_register.gender" name="userregistrogenero">
           <ion-option value="f">Femenino</ion-option>
@@ -23,13 +23,13 @@
         </ion-select>
       </ion-item>
 
-      <ion-item style="border-radius:10px">
+      <ion-item class="marginlists">
         <ion-label stacked>Email</ion-label>
         <ion-input type="email" required name="userregistroemail"
                    [(ngModel)]="user_register.mail"></ion-input>
       </ion-item>
 
-      <ion-item style="border-radius:10px">
+      <ion-item class="marginlists">
         <ion-label stacked>Contraseña</ion-label>
         <ion-input type="{{type}}" name="userregistrocontrasena"
                    required [(ngModel)]="user_register.password"></ion-input>

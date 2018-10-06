@@ -14,8 +14,10 @@ export class HomePage {
 
 
   constructor(public navCtrl: NavController,
+              private api: Api,
               public loadingCtrl: LoadingController,
               public toastCtrl: ToastController,
+              private userProvider: AuthUserProvider,
   ) {
 
   }

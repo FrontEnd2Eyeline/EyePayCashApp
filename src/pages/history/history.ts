@@ -1,7 +1,5 @@
-import {Component} from '@angular/core';
-import {IonicPage, NavController, NavParams} from 'ionic-angular';
-import {Api} from "../../providers/api";
-import {AuthUserProvider} from "../../providers/auth-user/auth-user";
+import { Component } from '@angular/core';
+import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 /**
  * Generated class for the HistoryPage page.
@@ -17,32 +15,11 @@ import {AuthUserProvider} from "../../providers/auth-user/auth-user";
 })
 export class HistoryPage {
 
-  public transactions: any = null;
-  public links: any = null;
-  public meta: any = null;
-
-  public filtro: any = {
-    status: 0,
-    page: null,
-    perpage: null
-
-  };
-
-  constructor(public navCtrl: NavController,
-              public navParams: NavParams,
-              public api: Api,
-              public userProvider: AuthUserProvider,
-  ) {
-    this.getInfo();
+  constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
-  getInfo() {
-    this.api.get('app/transactions', this.userProvider, this.filtro).then((data: any) => {
-      this.transactions = data.items;
-      this.links = data.links;
-      this.meta = data.meta;
-      console.log(data);
-    });
+  ionViewDidLoad() {
+    console.log('ionViewDidLoad HistoryPage');
   }
 
 }

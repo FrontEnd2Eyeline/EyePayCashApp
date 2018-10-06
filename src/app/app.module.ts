@@ -26,24 +26,22 @@ import {TransactionPage} from "../pages/transaction/transaction";
 import {ModalWelcomePage} from "../pages/modal-welcome/modal-welcome";
 import { VerificationProvider } from '../providers/verification/verification';
 import {ModalTransactionPage} from "../pages/modal-transaction/modal-transaction";
-import {ModalTransactionPageModule} from "../pages/modal-transaction/modal-transaction.module";
-import {AccountPageModule} from "../pages/account/account.module";
-import {HistoryPageModule} from "../pages/history/history.module";
-import {LoginPageModule} from "../pages/login/login.module";
-import {ModalWelcomePageModule} from "../pages/modal-welcome/modal-welcome.module";
-import {PasswordUpdatePageModule} from "../pages/password-update/password-update.module";
-import {PoliticasPageModule} from "../pages/politicas/politicas.module";
-import {RecoveryPasswordPageModule} from "../pages/recovery-password/recovery-password.module";
-import {RegisterPageModule} from "../pages/register/register.module";
-import {TerminosPageModule} from "../pages/terminos/terminos.module";
-import {TransactionPageModule} from "../pages/transaction/transaction.module";
-import {HomePageModule} from "../pages/home/home.module";
-import {TransactionResumePage} from "../pages/transaction-resume/transaction-resume";
-import {TransactionResumePageModule} from "../pages/transaction-resume/transaction-resume.module";
+import { PoliticasPage } from '../pages/politicas/politicas';
 
 @NgModule({
   declarations: [
     MyApp,
+    LoginPage,
+    RecoveryPasswordPage,
+    PasswordUpdatePage,
+    RegisterPage,
+    HomePage,
+    AccountPage,
+    HistoryPage,
+    TransactionPage,
+    ModalWelcomePage,
+    ModalTransactionPage,
+    PoliticasPage
   ],
   imports: [
     BrowserModule,
@@ -51,24 +49,23 @@ import {TransactionResumePageModule} from "../pages/transaction-resume/transacti
     IonicModule.forRoot(MyApp),
     IonicStorageModule.forRoot(),
     SelectCodePageModule,
-    RegNumberPhonePageModule,
-    AccountPageModule,
-    HistoryPageModule,
-    HomePageModule,
-    LoginPageModule,
-    ModalTransactionPageModule,
-    ModalWelcomePageModule,
-    PasswordUpdatePageModule,
-    PoliticasPageModule,
-    RecoveryPasswordPageModule,
-    RegisterPageModule,
-    TerminosPageModule,
-    TransactionPageModule,
-    TransactionResumePageModule,
+    RegNumberPhonePageModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
+    LoginPage,
+    RecoveryPasswordPage,
+    PasswordUpdatePage,
+    RegisterPage,
+    HomePage,
+    AccountPage,
+    HistoryPage,
+    TransactionPage,
+    ModalWelcomePage,
+    ModalTransactionPage,
+    PoliticasPage
+    
   ],
   providers: [
     StatusBar,
