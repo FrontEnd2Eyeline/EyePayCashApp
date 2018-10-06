@@ -25731,6 +25731,19 @@ ion-auto-complete ul li:hover {
   font-weight: bold;
 }
 
+page-account .toolbar-background {
+  background: #063996 !important;
+}
+
+page-account .toolbar-title-md {
+  color: white;
+}
+
+page-account .bar-button-default-md, page-account .bar-button-clear-md-default, page-account .bar-button-md-default {
+  color: white;
+  background-color: transparent;
+}
+
 page-home ion-img.img-loaded2 img {
   display: initial !important;
   width: 60% !important;
@@ -25891,6 +25904,119 @@ page-login .text-input {
 
 page-login .button-inner {
   color: white !important;
+}
+
+page-modal-transaction ion-select {
+  max-width: 100% !important;
+}
+
+page-modal-transaction .txtLbl {
+  color: black;
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 2%;
+}
+
+page-modal-transaction .margIcon {
+  margin-top: 10%;
+}
+
+page-modal-transaction .label-md[stacked] {
+  font-size: 1.8rem !important;
+}
+
+page-modal-transaction .toolbar-background {
+  background: #063996 !important;
+}
+
+page-modal-transaction .toolbar-title-md {
+  color: white;
+}
+
+page-modal-transaction .bar-button-default-md, page-modal-transaction .bar-button-clear-md-default, page-modal-transaction .bar-button-md-default {
+  color: white;
+  background-color: transparent;
+}
+
+page-modal-transaction .select-md .select-icon .select-icon-inner {
+  color: white;
+}
+
+page-modal-transaction .select-md {
+  padding: 13px 8px 13px 16px;
+  background: #063996;
+  border-radius: 10px;
+  color: white;
+  font-size: 18px;
+}
+
+page-modal-transaction label, page-modal-transaction input, page-modal-transaction select, page-modal-transaction textarea {
+  font-family: inherit;
+  line-height: normal;
+  font-weight: normal;
+}
+
+page-modal-transaction .card-content-md {
+  padding: 13px 16px;
+  font-size: 1.4rem;
+  line-height: font;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+page-modal-transaction .card-md {
+  margin: 10px;
+  border-radius: 15px;
+  width: calc(100% - 20px);
+  font-size: 1.4rem;
+  background: #063996;
+  color: white;
+  -webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+}
+
+page-modal-transaction .item-md {
+  background: transparent !important;
+  padding-left: 16px;
+  padding-right: 0;
+  position: relative;
+  font-size: 1.6rem;
+  font-weight: normal;
+  text-transform: none;
+  color: white;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  -webkit-transition: background-color 300ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color 300ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+page-modal-transaction h1,
+page-modal-transaction h2,
+page-modal-transaction h3,
+page-modal-transaction h4,
+page-modal-transaction h5,
+page-modal-transaction h6 {
+  margin-top: 1% !important;
+  color: white !important;
+}
+
+page-modal-transaction .content-md hr {
+  background: white;
+  size: 0.2px;
+}
+
+page-modal-transaction hr {
+  height: 0.3px;
+  border-width: 0;
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box;
+}
+
+page-modal-transaction .card-header-md {
+  font-size: 1.6rem;
+  color: white;
+  padding: 18px;
+  font-weight: bold;
 }
 
 page-modal-welcome {
@@ -26211,4 +26337,100 @@ page-select-code .flag {
 
 page-transaction ion-select {
   max-width: 100% !important;
+}
+
+page-transaction .txtLbl {
+  color: black;
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 2%;
+}
+
+page-transaction .margIcon {
+  margin-top: 10%;
+}
+
+page-transaction .label-md[stacked] {
+  font-size: 1.8rem !important;
+}
+
+page-transaction .toolbar-background {
+  background: #063996 !important;
+}
+
+page-transaction .toolbar-title-md {
+  color: white;
+}
+
+page-transaction .bar-button-default-md, page-transaction .bar-button-clear-md-default, page-transaction .bar-button-md-default {
+  color: white;
+  background-color: transparent;
+}
+
+page-transaction .select-md .select-icon .select-icon-inner {
+  color: white;
+}
+
+page-transaction .select-md {
+  padding: 13px 8px 13px 16px;
+  background: #063996;
+  border-radius: 10px;
+  color: white;
+  font-size: 18px;
+}
+
+page-transaction .card-content-md {
+  padding: 13px 16px;
+  font-size: 1.4rem;
+  line-height: font;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+page-transaction .card-md {
+  margin: 10px;
+  border-radius: 15px;
+  width: calc(100% - 20px);
+  font-size: 1.4rem;
+  background: #063996;
+  color: white;
+  -webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+}
+
+page-transaction .item-md {
+  background: transparent !important;
+  padding-left: 16px;
+  padding-right: 0;
+  position: relative;
+  font-size: 1.6rem;
+  font-weight: normal;
+  text-transform: none;
+  color: white;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  -webkit-transition: background-color 300ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color 300ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+page-transaction h1,
+page-transaction h2,
+page-transaction h3,
+page-transaction h4,
+page-transaction h5,
+page-transaction h6 {
+  margin-top: 1% !important;
+  color: white !important;
+}
+
+page-transaction .content-md hr {
+  background: white;
+  size: 0.2px;
+}
+
+page-transaction hr {
+  height: 0.3px;
+  border-width: 0;
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box;
 }
