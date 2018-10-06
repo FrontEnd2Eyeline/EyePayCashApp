@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {IonicPage, LoadingController, ModalController, NavParams, ToastController} from 'ionic-angular';
+import {IonicPage, LoadingController, ModalController, NavController, NavParams, ToastController} from 'ionic-angular';
 import {Api} from "../../providers/api";
 import {AuthUserProvider} from "../../providers/auth-user/auth-user";
 import {SelectCodePage} from "../select-code/select-code";
@@ -48,7 +48,7 @@ export class AccountPage {
 
 //===========================================
 
-  constructor(
+  constructor(public navCtrl: NavController,
               public navParams: NavParams,
               protected api: Api,
               protected userProvider: AuthUserProvider,

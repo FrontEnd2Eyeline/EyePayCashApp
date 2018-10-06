@@ -1,13 +1,6 @@
-<!--
-  Generated template for the ModalTransactionPage page.
-
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
 <ion-header>
-
   <ion-navbar>
-    <ion-title>EYEPAYCASH</ion-title>
+    <ion-title>Transacción</ion-title>
     <ion-buttons end>
       <button ion-button (click)="closeModal()">Cerrar</button>
     </ion-buttons>
@@ -19,8 +12,8 @@
       {{moneda.full_name}}
     </ion-card-header>
     <ion-card-content>
-      <h6>1 {{moneda.full_name}} == {{moneda.local_usd_value | number}} {{userCountry.currency}} </h6>
-      <h6>1 {{moneda.full_name}} == {{moneda.usd_value | number}} USD </h6>
+      <h6>1 {{moneda.full_name}} == {{moneda.local_usd_value}} {{userCountry.currency}} </h6>
+      <h6>1 {{moneda.full_name}} == {{moneda.usd_value}} USD </h6>
     </ion-card-content>
   </ion-card>
   <ion-card>
@@ -28,18 +21,12 @@
       Informaciòn de la transaciòn
     </ion-card-header>
     <ion-card-content>
-        <label stacked>Ingresar nùmero celular</label>
-        <ion-input name="transaction-celular" [(ngModel)]="transaction.phone_user_des"   [brmasker]="{type:'num'}"
-                   type="text"></ion-input>
-        <label stacked>Ingresar clave de seguridad (4 digitos)</label>
-        <ion-input name="transaction-clave" [brmasker]="{len:4}" [(ngModel)]="transaction.key_user" type="number"></ion-input>
-        <label stacked>Ingresar el valor de la transacciòn</label>
-        <ion-input type="text" name="transaction-valor"
-                   [brmasker]="{money:true,decimal:0,thousand:',',type:'num'}"
-                   [(ngModel)]="transaction.amount_local">
-
-        </ion-input>
-        <button ion-button (click)="doTrasaction()">Solicitar transacciòn</button>
+      <label stacked>Ingresar nùmero celular</label>
+      <ion-input name="transaction-celular" [(ngModel)]="transaction.telefono"></ion-input>
+      <label stacked>Ingresar clave de seguridad (4  digitos)</label>
+      <ion-input name="transaction-clave" [(ngModel)]="transaction.clave"></ion-input>
+      <label stacked>Ingresar el valor de la transacciòn</label>
+      <ion-input name="transaction-valor" [(ngModel)]="transaction.cantidad"></ion-input>
     </ion-card-content>
   </ion-card>
 

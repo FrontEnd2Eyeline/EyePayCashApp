@@ -1,12 +1,3 @@
-// Animates
-
-/*!
- * animate.css -http://daneden.me/animate
- * Version - 3.7.0
- * Licensed under the MIT license - http://opensource.org/licenses/MIT
- *
- * Copyright (c) 2018 Daniel Eden
- */
 
 .buttonPayCash {
   background: rgba(149, 105, 252, 1);
@@ -19,17 +10,4 @@
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#9569fc', endColorstr='#5974fb', GradientType=1);
   color: white;
   font-weight: bold;
-}
-.label-md[stacked], .label-md[floating] {
-  color: black;
-  font-weight: bold;
-}
-.transparente{
-  background-color: transparent !important;
-}
-//.list-md .item-block .item-inner, .list-ios .item-block .item-inner{
-//  border: 0;
-//}
-.fondo_gris{
-  background-color: #5b71ff;
 }
