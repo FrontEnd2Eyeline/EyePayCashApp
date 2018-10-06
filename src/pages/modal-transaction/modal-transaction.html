@@ -18,21 +18,21 @@
   </ion-card>
   <ion-card>
     <ion-card-header>
-      Informaciòn de la transaciòn
+      Información de la transación
     </ion-card-header>
     <ion-card-content>
-        <label stacked>Ingresar nùmero celular</label>
+        <label stacked>Ingresar número celular</label>
         <ion-input name="transaction-celular" [(ngModel)]="transaction.phone_user_des"   [brmasker]="{type:'num'}"
                    type="text"></ion-input>
         <label stacked>Ingresar clave de seguridad (4 digitos)</label>
         <ion-input name="transaction-clave" [brmasker]="{len:4}" [(ngModel)]="transaction.key_user" type="number"></ion-input>
-        <label stacked>Ingresar el valor de la transacciòn</label>
+        <label stacked>Ingresar el valor de la transacción</label>
         <ion-input type="text" name="transaction-valor"
                    [brmasker]="{money:true,decimal:0,thousand:',',type:'num'}"
                    [(ngModel)]="transaction.amount_local">
 
         </ion-input>
-        <button ion-button (click)="doTrasaction()">Solicitar transacciòn</button>
+        <button class="buttonPayCash" ion-button (click)="doTrasaction()">Solicitar transacción</button>
     </ion-card-content>
   </ion-card>
 
