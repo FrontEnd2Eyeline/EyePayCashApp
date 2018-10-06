@@ -6,6 +6,13 @@ import {RecoveryPasswordPage} from "../recovery-password/recovery-password";
 import {HomePage} from "../home/home";
 import {ModalWelcomePage} from "../modal-welcome/modal-welcome";
 
+/**
+ * Generated class for the LoginPage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
+
 @IonicPage()
 @Component({
   selector: 'page-login',
@@ -15,7 +22,7 @@ export class LoginPage {
 
   public mail = null;
   public password = null;
-  // imagen = 'assets/backgrounds/Background1.png';
+  imagen = 'assets/backgrounds/Background1.png';
 
   constructor(public navCtrl: NavController,
               public loadingCtrl: LoadingController,
@@ -59,7 +66,7 @@ export class LoginPage {
 
 
   registro() {
-    this.navCtrl.push(RegNumberPhonePage)
+    this.navCtrl.push(RegNumberPhonePage);
   }
 
 }

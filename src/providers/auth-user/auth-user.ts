@@ -39,6 +39,7 @@ export class AuthUserProvider {
     codigoVerify: null,
   };
 
+  public userId = null;
   constructor(protected api: Api,
               public toastCtrl: ToastController
   ) {
@@ -53,6 +54,7 @@ export class AuthUserProvider {
             this.setUser(data.user);
             this.setUserCountry(data.user.country);
             this.setUserVerify(data.user.userVerify);
+            this.userId = data.user.userVerify.user_id;
             resolve(data);
           } else {
             let toast = this.toastCtrl.create({

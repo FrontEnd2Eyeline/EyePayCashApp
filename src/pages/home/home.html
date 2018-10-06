@@ -1,18 +1,22 @@
-<ion-content class="imgBackground vignette">
-    <div class="center">
-        <ion-img class="logo" src="assets/imgs/EPCLogo.png"></ion-img>
-      </div>
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Eyepaycash
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
 
-  <div class="center">
-    <ion-img name="add" (click)="goPage('transaction')" class="img-loaded2 img" src="assets/icon/TransaccionIco.png"></ion-img>
-  </div>
-
-  <div class="center">
-    <ion-img name="list-box" (click)="goPage('history')" class="img-loaded2 img" src="assets/icon/HistoryIco.png"></ion-img>
-  </div>
-
-  <div class="center">
-    <ion-img name="person" (click)="goPage('account')" class="img-loaded2 img" src="assets/icon/CuentaIco.png"></ion-img>
-  </div>
 
 </ion-content>
+<ion-footer>
+  <ion-toolbar>
+    <ion-row>
+      <ion-col col-4 (click)="goPage('transaction')">
+        <ion-icon name="add"></ion-icon>
+        Transacciòn</ion-col>
+      <ion-col col-4 (click)="goPage('history')"> <ion-icon name="list-box"></ion-icon> Historial </ion-col>
+      <ion-col col-4 (click)="goPage('account')"> <ion-icon name="person"></ion-icon> Mi cuenta </ion-col>
+    </ion-row>
+  </ion-toolbar>
+</ion-footer>

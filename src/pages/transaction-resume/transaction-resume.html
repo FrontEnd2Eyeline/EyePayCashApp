@@ -1,0 +1,36 @@
+<!--
+  Generated template for the TransactionResumePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>EYEPAYCASH</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+  <h4>Resumen de la transacciòn</h4>
+<ion-card>
+  <ion-card-content>
+    <ion-row>
+      <label stacked>Nùmero de celular de destino</label>
+      <h4>{{transaction.phone_user_des}}</h4>
+      <label stacked>Nombre de la ciudad</label>
+      <h4>{{country.name}}</h4>
+      <label stacked>Costo local de la transacciòn</label>
+      <h4>{{transaction.amount_local}}</h4>
+      <label stacked>Nombre de la criptomoneda</label>
+      <h4>{{coin.full_name}}</h4>
+      <label stacked>Clave de transacciòn</label>
+      <h4>{{transaction.key_eyecash}}</h4>
+      <label stacked>Total en dolares</label>
+      <h4>{{transaction.amount_usd}}</h4>
+      <label stacked>Total en criptomoneda</label>
+      <h4>{{transaction.amount_btc}}</h4>
+    </ion-row>
+  </ion-card-content>
+</ion-card>
+
+</ion-content>
