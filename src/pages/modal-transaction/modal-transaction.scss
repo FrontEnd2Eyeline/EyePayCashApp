@@ -1,3 +1,48 @@
 page-modal-transaction {
+<<<<<<< HEAD
+=======
+    ion-select {
+        max-width: 100% !important;
+      }
+      .txtLbl{
+        color: black;
+        font-size: 18px;
+        font-weight: bold;
+        margin-bottom: 2%;
+      }
+    
+      .margIcon{
+        margin-top: 10%;
+      }
+    
+      .label-md[stacked] {
+        font-size: 1.8rem !important;
+        }
+    
+      .toolbar-background {
+        background: #063996 !important;
+    }
+    .toolbar-title-md {
+        color: white;
+    }
+    
+    .bar-button-default-md, .bar-button-clear-md-default, .bar-button-md-default {
+        color: white;
+        background-color: transparent;
+    }
+    
+    .select-md .select-icon .select-icon-inner {
+      color: white;
+      }
+    
+      
+    .select-md {
+      padding: 13px 8px 13px 16px;
+      background: #063996;
+      border-radius: 10px;
+      color: white;
+      font-size: 18px;
+      }
+>>>>>>> cbf0678cb066a0b0d5dc3ec9835f06a925df2bfd
 
 }
