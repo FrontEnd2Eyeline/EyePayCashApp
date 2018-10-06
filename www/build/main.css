@@ -25731,6 +25731,14 @@ ion-auto-complete ul li:hover {
   font-weight: bold;
 }
 
+.alert-md .alert-wrapper {
+  border-radius: 15px;
+  max-width: 280px;
+  background-color: #fafafa;
+  -webkit-box-shadow: 0 16px 20px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 16px 20px rgba(0, 0, 0, 0.4);
+}
+
 page-account .toolbar-background {
   background: #063996 !important;
 }
