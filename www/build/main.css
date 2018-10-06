@@ -25746,7 +25746,15 @@ page-account .bar-button-default-md, page-account .bar-button-clear-md-default, 
 
 page-home ion-img.img-loaded2 img {
   display: initial !important;
-  width: 60% !important;
+  width: 100% !important;
+}
+
+page-home ion-img {
+  display: inline-block;
+  min-width: 100px !important;
+  min-height: 100px !important;
+  background: #eee;
+  contain: strict;
 }
 
 page-home .imgBackground {
