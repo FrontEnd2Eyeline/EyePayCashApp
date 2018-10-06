@@ -16,9 +16,23 @@
 <ion-content padding>
   <ion-list>
     <ion-item *ngFor="let transaction of transactions">
-      <h2>{{transaction.country.name}}</h2>
-      <p>Hayao Miyazaki • 1988</p>
-      <button ion-button clear item-end>View</button>
+      <ion-row>
+        <ion-col col-6>
+          <h4>{{transaction.country.name}}</h4>
+        </ion-col>
+        <ion-col col-6>
+          {{transaction.date_request | date : format : timezone}}
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-6>
+          {{transaction.coin.full_name}}
+        </ion-col>
+        <ion-col col-6>
+          {{transaction.amount_local | currency:transaction.country.currency+" " : 2}}
+        </ion-col>
+      </ion-row>
+      <!--<button ion-button clear item-end>Ver</button>-->
     </ion-item>
   </ion-list>
 </ion-content>

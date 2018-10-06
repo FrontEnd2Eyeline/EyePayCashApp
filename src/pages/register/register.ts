@@ -118,7 +118,7 @@ export class RegisterPage {
   }
 
   presentWelcomeModal() {
-    let modalWelcome = this.modalCtrl.create(ModalWelcomePage, {name: this.userProvider.user_Info.first_name + this.userProvider.user_Info.last_name});
+    let modalWelcome = this.modalCtrl.create(ModalWelcomePage, {name: this.userProvider.user_Info.first_name +" "+ this.userProvider.user_Info.last_name});
     modalWelcome.onWillDismiss(() => {
       this.navCtrl.setRoot(LoginPage)
     });
