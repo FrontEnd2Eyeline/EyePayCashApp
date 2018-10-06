@@ -25721,13 +25721,6 @@ ion-auto-complete ul li:hover {
   background: #f1f1f1;
 }
 
-/*!
- * animate.css -http://daneden.me/animate
- * Version - 3.7.0
- * Licensed under the MIT license - http://opensource.org/licenses/MIT
- *
- * Copyright (c) 2018 Daniel Eden
- */
 .buttonPayCash {
   background: #9569fc;
   background: -webkit-gradient(left top, right top, color-stop(0%, #9569fc), color-stop(100%, #5974fb));
@@ -25738,17 +25731,81 @@ ion-auto-complete ul li:hover {
   font-weight: bold;
 }
 
-.label-md[stacked], .label-md[floating] {
-  color: black;
-  font-weight: bold;
+page-account .toolbar-background {
+  background: #063996 !important;
 }
 
-.transparente {
-  background-color: transparent !important;
+page-account .toolbar-title-md {
+  color: white;
 }
 
-.fondo_gris {
-  background-color: #5b71ff;
+page-account .bar-button-default-md, page-account .bar-button-clear-md-default, page-account .bar-button-md-default {
+  color: white;
+  background-color: transparent;
+}
+
+page-home ion-img.img-loaded2 img {
+  display: initial !important;
+  width: 60% !important;
+}
+
+page-home .imgBackground {
+  background-image: url(http://subirimagen.me/uploads/20181005150656.png);
+  background-repeat: initial;
+  background-attachment: fixed;
+  background-position: center center;
+  background-size: cover;
+}
+
+page-home .vignette {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -webkit-box-shadow: 0 0 200px rgba(0, 0, 0, 0.336) inset;
+  box-shadow: 0 0 200px rgba(0, 0, 0, 0.336) inset;
+}
+
+page-home .item-md2, page-home .item-ios2 {
+  background-color: transparent;
+  margin-top: 4%;
+}
+
+page-home .item-md2 .item-button2 {
+  padding: 0 0.6em;
+  height: 25px;
+  margin-bottom: 23% !important;
+  font-size: 1.2rem;
+}
+
+page-home .divMargin {
+  margin-top: 10%;
+}
+
+page-home .center {
+  margin: auto;
+  text-align: center;
+}
+
+page-home ion-img {
+  display: inline-block;
+  min-width: 20px;
+  min-height: 20px;
+  background: transparent !important;
+  contain: strict;
+}
+
+page-home .logo {
+  width: 70%;
+  background: transparent;
+  height: 80px;
+  margin-top: 20%;
+  display: inline-grid !important;
+}
+
+page-home .marginItems {
+  margin-bottom: 10%;
 }
 
 page-login .logo {
@@ -25758,6 +25815,95 @@ page-login .logo {
 
 page-login .item-md, page-login .item-ios {
   background-color: transparent;
+}
+
+page-login .center {
+  margin: auto;
+  text-align: center;
+}
+
+page-login .list-md {
+  margin: -1px 0 16px;
+  padding: 12%;
+}
+
+page-login .imgBackground {
+  background-image: url(http://subirimagen.me/uploads/20180921121235.png);
+  background-repeat: initial;
+  background-attachment: fixed;
+  background-position: center center;
+  background-size: cover;
+}
+
+page-login .vignette {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -webkit-box-shadow: 0 0 200px rgba(0, 0, 0, 0.336) inset;
+  box-shadow: 0 0 200px rgba(0, 0, 0, 0.336) inset;
+}
+
+page-login .logo {
+  width: 70%;
+  background: transparent;
+  height: 80px;
+  margin-top: 20%;
+  display: inline-grid;
+}
+
+page-login .marginItems {
+  margin-bottom: 10%;
+}
+
+page-login .item-input .label-md, page-login .item-select .label-md, page-login .item-datetime .label-md {
+  color: white !important;
+}
+
+page-login .label-md[stacked] {
+  font-size: 1.6rem !important;
+  text-align: center !important;
+}
+
+page-login .inputClass {
+  background: white;
+  border-radius: 5px;
+}
+
+page-login .list-md .item-block .item-inner {
+  border-bottom: 0px solid #dedede !important;
+}
+
+page-login .item-md.item-block .item-inner {
+  padding-right: 8px;
+  border-bottom: 0px solid #dedede !important;
+}
+
+page-login .borderBtns {
+  border-radius: 5px !important;
+}
+
+page-login .text-input {
+  -moz-appearance: none;
+  -ms-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+  border-radius: 0;
+  display: inline-block;
+  text-align: center;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  width: 92%;
+  width: calc(100% - 10px);
+  border: 0;
+  background: transparent;
+}
+
+page-login .button-inner {
+  color: white !important;
 }
 
 page-modal-transaction ion-select {
@@ -25804,6 +25950,75 @@ page-modal-transaction .select-md {
   font-size: 18px;
 }
 
+page-modal-transaction label, page-modal-transaction input, page-modal-transaction select, page-modal-transaction textarea {
+  font-family: inherit;
+  line-height: normal;
+  font-weight: normal;
+}
+
+page-modal-transaction .card-content-md {
+  padding: 13px 16px;
+  font-size: 1.4rem;
+  line-height: font;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+page-modal-transaction .card-md {
+  margin: 10px;
+  border-radius: 15px;
+  width: calc(100% - 20px);
+  font-size: 1.4rem;
+  background: #063996;
+  color: white;
+  -webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+}
+
+page-modal-transaction .item-md {
+  background: transparent !important;
+  padding-left: 16px;
+  padding-right: 0;
+  position: relative;
+  font-size: 1.6rem;
+  font-weight: normal;
+  text-transform: none;
+  color: white;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  -webkit-transition: background-color 300ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color 300ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+page-modal-transaction h1,
+page-modal-transaction h2,
+page-modal-transaction h3,
+page-modal-transaction h4,
+page-modal-transaction h5,
+page-modal-transaction h6 {
+  margin-top: 1% !important;
+  color: white !important;
+}
+
+page-modal-transaction .content-md hr {
+  background: white;
+  size: 0.2px;
+}
+
+page-modal-transaction hr {
+  height: 0.3px;
+  border-width: 0;
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box;
+}
+
+page-modal-transaction .card-header-md {
+  font-size: 1.6rem;
+  color: white;
+  padding: 18px;
+  font-weight: bold;
+}
+
 page-modal-welcome {
   padding: 16px;
   margin-top: 25%;
@@ -25839,6 +26054,282 @@ page-modal-welcome ion-content.content-md div.scroll-content {
   padding: 24px;
 }
 
+page-politicas .imgBackground {
+  background: #063996;
+}
+
+page-politicas .Titles {
+  color: black;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+page-politicas .textNomral {
+  color: black;
+}
+
+page-politicas .ftBold {
+  font-weight: bold;
+  color: black;
+}
+
+page-politicas .btnStyle {
+  color: white;
+  font-weight: bold;
+  font-size: 14px;
+  width: 32%;
+  height: 34px;
+}
+
+page-reg-number-phone .imgBackground {
+  background-image: url(http://subirimagen.me/uploads/20180921121235.png);
+  background-repeat: initial;
+  background-attachment: fixed;
+  background-position: center center;
+  background-size: cover;
+}
+
+page-reg-number-phone .logo {
+  width: 100%;
+  display: unset;
+}
+
+page-reg-number-phone .item-md2, page-reg-number-phone .item-ios2 {
+  background-color: transparent;
+  margin-top: 4%;
+}
+
+page-reg-number-phone .item-md2 .item-button2 {
+  padding: 0 0.6em;
+  height: 25px;
+  margin-bottom: 23% !important;
+  font-size: 1.2rem;
+}
+
+page-reg-number-phone .divMargin {
+  margin-top: 10%;
+}
+
+page-reg-number-phone .center {
+  margin: auto;
+  text-align: center;
+}
+
+page-reg-number-phone .vignette {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -webkit-box-shadow: 0 0 200px rgba(0, 0, 0, 0.336) inset;
+  box-shadow: 0 0 200px rgba(0, 0, 0, 0.336) inset;
+}
+
+page-reg-number-phone .marGrid {
+  margin-top: 18%;
+}
+
+page-reg-number-phone .marginBts {
+  margin-top: 20%;
+}
+
+page-reg-number-phone .stylCel {
+  border-radius: 10px;
+  width: 122%;
+  margin-left: -20%;
+}
+
+page-reg-number-phone .borderBtns {
+  border-radius: 5px !important;
+}
+
+page-reg-number-phone .logo {
+  width: 70%;
+  background: transparent;
+  height: 80px;
+  margin-top: 10%;
+  display: inline-grid;
+}
+
+page-reg-number-phone .label-md {
+  margin: 0px !important;
+}
+
+page-reg-number-phone .banderaWidt {
+  width: 30% !important;
+}
+
+page-reg-number-phone .inputClass {
+  background: white;
+  border-radius: 5px;
+}
+
+page-reg-number-phone .text-input-md {
+  text-align: center !important;
+}
+
+page-reg-number-phone .list-md .item-block .item-inner {
+  border-bottom: 0px solid #dedede !important;
+}
+
+page-reg-number-phone .item-md.item-block .item-inner {
+  padding-right: 8px;
+  border-bottom: 0px solid #dedede !important;
+}
+
+page-reg-number-phone .button-md {
+  border-radius: 2px;
+  overflow: hidden;
+  height: 3.6rem;
+  font-size: 1.4rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  color: #fff;
+  background-color: transparent !important;
+  -webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0), 0 3px 1px -2px rgba(0, 0, 0, 0), 0 1px 5px 0 rgba(0, 0, 0, 0) !important;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0), 0 3px 1px -2px rgba(0, 0, 0, 0), 0 1px 5px 0 rgba(0, 0, 0, 0) !important;
+  -webkit-transition: background-color 300ms cubic-bezier(0.4, 0, 0.2, 1), color 300ms cubic-bezier(0.4, 0, 0.2, 1), -webkit-box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color 300ms cubic-bezier(0.4, 0, 0.2, 1), color 300ms cubic-bezier(0.4, 0, 0.2, 1), -webkit-box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1), background-color 300ms cubic-bezier(0.4, 0, 0.2, 1), color 300ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1), background-color 300ms cubic-bezier(0.4, 0, 0.2, 1), color 300ms cubic-bezier(0.4, 0, 0.2, 1), -webkit-box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1);
+  margin: 0.4rem 0.2rem;
+  padding: 0 1.1em;
+}
+
+page-register .imgBackground {
+  background-image: url(http://subirimagen.me/uploads/20180921121235.png);
+  background-repeat: initial;
+  background-attachment: fixed;
+  background-position: center center;
+  background-size: cover;
+}
+
+page-register .vignette {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -webkit-box-shadow: 0 0 200px rgba(0, 0, 0, 0.336) inset;
+  box-shadow: 0 0 200px rgba(0, 0, 0, 0.336) inset;
+}
+
+page-register .logo {
+  width: 100%;
+  display: unset;
+}
+
+page-register .item-md2, page-register .item-ios2 {
+  background-color: transparent;
+  margin-top: 4%;
+}
+
+page-register .item-md2 .item-button2 {
+  padding: 0 0.6em;
+  height: 25px;
+  margin-bottom: 23% !important;
+  font-size: 1.2rem;
+}
+
+page-register .divMargin {
+  margin-top: 10%;
+}
+
+page-register .center {
+  margin: auto;
+  text-align: center;
+}
+
+page-register .marGrid {
+  margin-top: 18%;
+}
+
+page-register .marginBts {
+  margin-top: 20%;
+}
+
+page-register .stylCel {
+  border-radius: 10px;
+  width: 122%;
+  margin-left: -20%;
+}
+
+page-register .borderBtns {
+  border-radius: 5px !important;
+}
+
+page-register .logo {
+  width: 70%;
+  background: transparent;
+  height: 80px;
+  margin-top: 10%;
+  display: inline-grid;
+}
+
+page-register .label-md {
+  margin: 0px !important;
+}
+
+page-register .banderaWidt {
+  width: 30% !important;
+}
+
+page-register ion-list {
+  margin: 0;
+  padding: 10% !important;
+  display: block;
+  list-style-type: none;
+}
+
+page-register .inputClass {
+  background: white;
+  border-radius: 5px;
+}
+
+page-register .marginlists {
+  margin-bottom: 4%;
+  border-radius: 10px;
+}
+
+page-register .text-input-md {
+  text-align: center !important;
+}
+
+page-register .list-md .item-block .item-inner {
+  border-bottom: 0px solid #dedede !important;
+}
+
+page-register .item-md.item-block .item-inner {
+  padding-right: 8px;
+  border-bottom: 0px solid #dedede !important;
+}
+
+page-register .item-label-stacked .select-md, page-register .item-label-floating .select-md {
+  padding-left: 0;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  text-align: center;
+}
+
+page-register .button-md {
+  border-radius: 2px;
+  overflow: hidden;
+  height: 3.6rem;
+  font-size: 1.4rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  color: #fff;
+  background-color: transparent !important;
+  -webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0), 0 3px 1px -2px rgba(0, 0, 0, 0), 0 1px 5px 0 rgba(0, 0, 0, 0) !important;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0), 0 3px 1px -2px rgba(0, 0, 0, 0), 0 1px 5px 0 rgba(0, 0, 0, 0) !important;
+  -webkit-transition: background-color 300ms cubic-bezier(0.4, 0, 0.2, 1), color 300ms cubic-bezier(0.4, 0, 0.2, 1), -webkit-box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color 300ms cubic-bezier(0.4, 0, 0.2, 1), color 300ms cubic-bezier(0.4, 0, 0.2, 1), -webkit-box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1), background-color 300ms cubic-bezier(0.4, 0, 0.2, 1), color 300ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1), background-color 300ms cubic-bezier(0.4, 0, 0.2, 1), color 300ms cubic-bezier(0.4, 0, 0.2, 1), -webkit-box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1);
+  margin: 0.4rem 0.2rem;
+  padding: 0 1.1em;
+}
+
 page-select-code .flag {
   width: 25px;
   height: 15px;
@@ -25846,4 +26337,100 @@ page-select-code .flag {
 
 page-transaction ion-select {
   max-width: 100% !important;
+}
+
+page-transaction .txtLbl {
+  color: black;
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 2%;
+}
+
+page-transaction .margIcon {
+  margin-top: 10%;
+}
+
+page-transaction .label-md[stacked] {
+  font-size: 1.8rem !important;
+}
+
+page-transaction .toolbar-background {
+  background: #063996 !important;
+}
+
+page-transaction .toolbar-title-md {
+  color: white;
+}
+
+page-transaction .bar-button-default-md, page-transaction .bar-button-clear-md-default, page-transaction .bar-button-md-default {
+  color: white;
+  background-color: transparent;
+}
+
+page-transaction .select-md .select-icon .select-icon-inner {
+  color: white;
+}
+
+page-transaction .select-md {
+  padding: 13px 8px 13px 16px;
+  background: #063996;
+  border-radius: 10px;
+  color: white;
+  font-size: 18px;
+}
+
+page-transaction .card-content-md {
+  padding: 13px 16px;
+  font-size: 1.4rem;
+  line-height: font;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+page-transaction .card-md {
+  margin: 10px;
+  border-radius: 15px;
+  width: calc(100% - 20px);
+  font-size: 1.4rem;
+  background: #063996;
+  color: white;
+  -webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+}
+
+page-transaction .item-md {
+  background: transparent !important;
+  padding-left: 16px;
+  padding-right: 0;
+  position: relative;
+  font-size: 1.6rem;
+  font-weight: normal;
+  text-transform: none;
+  color: white;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  -webkit-transition: background-color 300ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color 300ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+page-transaction h1,
+page-transaction h2,
+page-transaction h3,
+page-transaction h4,
+page-transaction h5,
+page-transaction h6 {
+  margin-top: 1% !important;
+  color: white !important;
+}
+
+page-transaction .content-md hr {
+  background: white;
+  size: 0.2px;
+}
+
+page-transaction hr {
+  height: 0.3px;
+  border-width: 0;
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box;
 }
