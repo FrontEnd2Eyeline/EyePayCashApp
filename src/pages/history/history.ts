@@ -37,10 +37,10 @@ export class HistoryPage {
   }
 
   getInfo() {
-    this.api.get('app/transactions', this.userProvider, this.filtro).then((data: any) => {
-      this.transactions = data.items;
-      this.links = data.links;
-      this.meta = data.meta;
+    this.api.get('app/transactions?expand=country', this.userProvider, this.filtro).then((data: any) => {
+      // this.transactions = data.items;
+      // this.links = data.links;
+      // this.meta = data.meta;
       console.log(data);
     });
   }
