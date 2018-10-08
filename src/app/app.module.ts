@@ -37,7 +37,6 @@ import {PasswordUpdatePageModule} from "../pages/password-update/password-update
 import {PoliticasPageModule} from "../pages/politicas/politicas.module";
 import {RecoveryPasswordPageModule} from "../pages/recovery-password/recovery-password.module";
 import {RegisterPageModule} from "../pages/register/register.module";
-import {TerminosPageModule} from "../pages/terminos/terminos.module";
 import {TransactionPageModule} from "../pages/transaction/transaction.module";
 import {TransactionResumePageModule} from "../pages/transaction-resume/transaction-resume.module";
 
@@ -62,7 +61,6 @@ import {TransactionResumePageModule} from "../pages/transaction-resume/transacti
     PoliticasPageModule,
     RecoveryPasswordPageModule,
     RegisterPageModule,
-    TerminosPageModule,
     TransactionPageModule,
     TransactionResumePageModule,
   ],
