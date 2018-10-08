@@ -9,8 +9,6 @@
   <ion-select [(ngModel)]="currency" (ionChange)="countrySelected()">
     <ion-option *ngFor="let pais of countrys" value="{{pais.currency}}">{{pais.name}}</ion-option>
   </ion-select>
-  <ion-card>
-    <ion-card-content>
       <label stacked>Precio del dolar en el paìs</label>
       <ion-item>
         <h6>1 USD = {{infoCountry?.local_usd_value}} {{currency}}</h6>
@@ -31,6 +29,4 @@
           </ion-row>
         </ion-card-content>
       </ion-card>
-    </ion-card-content>
-  </ion-card>
 </ion-content>
