@@ -5,14 +5,58 @@
   Ionic pages and navigation.
 -->
 <ion-header>
-
   <ion-navbar>
-    <ion-title>history-resume</ion-title>
+    <ion-title>Detalle de la transacción</ion-title>
   </ion-navbar>
-
 </ion-header>
-
-
 <ion-content padding>
+  <ion-card>
+    <ion-card-content>
+      <ion-list>
+        <ion-row>
+          <ion-col col-12>
+            <label stacked>Información del país</label>
+            <p><b>Nombre: </b> {{country?.name}} </p>
+            <p><b>Moneda: </b>{{country?.currency}}</p>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col col-12>
+            <label stacked>Información de {{coin?.full_name}}</label>
+            <p><b>Costo: </b> {{coin?.usd_value}} </p>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col col-12>
+            <label stacked>Información de comisión</label>
+            <p><b>Total en USD: </b> {{comision?.total_in_usd}}</p>
+            <p><b>Total en Cryptomoneda: </b> {{comision?.total_in_crypto}}</p>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col col-12>
+            <label stacked>Información de transacción</label>
+            <p><b>Costo en moneda local: </b> {{historyInfo?.amount_local}}</p>
+            <p><b>Costo en USD: </b> {{historyInfo?.amount_usd}} </p>
+            <p><b>Fecha de la transacción: </b> {{historyInfo?.date_request}} </p>
+            <p><b>Número móvil de destino: </b> {{historyInfo?.phone_user_des}}</p>
+            <p *ngIf="historyInfo?.process_status==0"><b>Estado: PENDIENTE DE PAGO </b></p>
+            <p *ngIf="historyInfo?.process_status==1"><b>Estado: PAGADO Y PENDIENTE POR RETIRAR </b></p>
+            <p *ngIf="historyInfo?.process_status==2"><b>Estado: PAGADO Y RETIRADO </b></p>
 
+          </ion-col>
+        </ion-row>
+
+        <ion-col col-12 *ngIf="historyInfo?.process_status==0">
+          <h2 text-center>La transacción se encuentra pendiente por pagar. </h2>
+          <h2 text-center>Número de referencia de transacción:</h2>
+          <h1 text-center>{{historyInfo?.key_request}}</h1>
+        </ion-col>
+        <ion-col col-12>
+          <h2 text-center>Total de la transacción</h2>
+          <h1 text-center>{{historyInfo?.amount_btc}}</h1>
+        </ion-col>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
 </ion-content>
