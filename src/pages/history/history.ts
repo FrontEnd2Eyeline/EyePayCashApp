@@ -37,7 +37,9 @@ export class HistoryPage {
   }
 
   getInfo() {
-    this.api.get('app/transactions', this.userProvider, {'expand':'country,coin','status':this.filtro.status,'page':this.filtro.page,'per-page':this.filtro.perpage}).then((data: any) => {
+    this.api.get('app/transactions',
+      this.userProvider,
+      {'expand':'country,coin,commissions','status':this.filtro.status,'page':this.filtro.page,'per-page':this.filtro.perpage}).then((data: any) => {
       this.transactions = data.items;
       this.links = data.links;
       this.meta = data.meta;

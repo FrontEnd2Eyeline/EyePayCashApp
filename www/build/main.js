@@ -1135,7 +1135,7 @@ var HistoryPage = /** @class */ (function () {
     }
     HistoryPage.prototype.getInfo = function () {
         var _this = this;
-        this.api.get('app/transactions', this.userProvider, { 'expand': 'country,coin', 'status': this.filtro.status, 'page': this.filtro.page, 'per-page': this.filtro.perpage }).then(function (data) {
+        this.api.get('app/transactions', this.userProvider, { 'expand': 'country,coin,commissions', 'status': this.filtro.status, 'page': this.filtro.page, 'per-page': this.filtro.perpage }).then(function (data) {
             _this.transactions = data.items;
             _this.links = data.links;
             _this.meta = data.meta;
@@ -1144,14 +1144,12 @@ var HistoryPage = /** @class */ (function () {
     };
     HistoryPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-            selector: 'page-history',template:/*ion-inline-start:"/Users/eyeline/Documents/eyepaycashappGitHub/src/pages/history/history.html"*/'<!--\n  Generated template for the HistoryPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>history</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n  <ion-list>\n    <ion-item *ngFor="let transaction of transactions">\n      <ion-row>\n        <ion-col col-6>\n          <h4>{{transaction.country.name}}</h4>\n        </ion-col>\n        <ion-col col-6>\n          {{transaction.date_request | date : format : timezone}}\n        </ion-col>\n      </ion-row>\n      <ion-row>\n        <ion-col col-6>\n          {{transaction.coin.full_name}}\n        </ion-col>\n        <ion-col col-6>\n          {{transaction.amount_local | currency:transaction.country.currency+" " : 2}}\n        </ion-col>\n      </ion-row>\n      <!--<button ion-button clear item-end>Ver</button>-->\n    </ion-item>\n  </ion-list>\n</ion-content>\n'/*ion-inline-end:"/Users/eyeline/Documents/eyepaycashappGitHub/src/pages/history/history.html"*/,
+            selector: 'page-history',template:/*ion-inline-start:"/Users/eyeline/Documents/eyepaycashappGitHub/src/pages/history/history.html"*/'<!--\n  Generated template for the HistoryPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>history</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n  <ion-list>\n    <ion-item *ngFor="let transaction of transactions">\n      <ion-row>\n        <ion-col col-6>\n          <h4>{{transaction.country.name}}</h4>\n        </ion-col>\n        <ion-col col-6>\n          {{transaction.date_request |date:\'MM/dd/yyyy h:mma\'}}\n        </ion-col>\n      </ion-row>\n      <ion-row>\n        <ion-col col-6>\n          {{transaction.coin.full_name}}\n        </ion-col>\n        <ion-col col-6>\n          {{transaction.amount_local | currency:transaction.country.currency+" " : 2}}\n        </ion-col>\n      </ion-row>\n      <!--<button ion-button clear item-end>Ver</button>-->\n    </ion-item>\n  </ion-list>\n</ion-content>\n'/*ion-inline-end:"/Users/eyeline/Documents/eyepaycashappGitHub/src/pages/history/history.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */],
-            __WEBPACK_IMPORTED_MODULE_2__providers_api__["a" /* Api */],
-            __WEBPACK_IMPORTED_MODULE_3__providers_auth_user_auth_user__["a" /* AuthUserProvider */]])
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__providers_api__["a" /* Api */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__providers_api__["a" /* Api */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_3__providers_auth_user_auth_user__["a" /* AuthUserProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__providers_auth_user_auth_user__["a" /* AuthUserProvider */]) === "function" && _d || Object])
     ], HistoryPage);
     return HistoryPage;
+    var _a, _b, _c, _d;
 }());
 
 //# sourceMappingURL=history.js.map
