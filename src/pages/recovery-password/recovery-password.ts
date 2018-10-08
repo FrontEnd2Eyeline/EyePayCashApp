@@ -33,11 +33,11 @@ export class RecoveryPasswordPage {
 
   sendMessage() {
     this.type = 'phone';
-    let loading = this.loadingCtrl.create({
-      spinner:'dots'
-    });
-    loading.present();
     if (this.data != null) {
+      let loading = this.loadingCtrl.create({
+        spinner:'dots'
+      });
+      loading.present();
       this.api.post('auth/restar-password', {'type': this.type, 'data': this.data}).then(
         (data) => {
           loading.dismiss();
@@ -57,7 +57,6 @@ export class RecoveryPasswordPage {
         toast.present();
       });
     } else {
-      loading.dismiss();
       let toast = this.toastCtrl.create({
         message: 'Por favor ingrese su nùmero celular',
         duration: 3000
@@ -69,11 +68,11 @@ export class RecoveryPasswordPage {
 // 3114276555
   sendMail() {
     this.type = 'mail';
-    let loading = this.loadingCtrl.create({
-      spinner:'dots'
-    });
-    loading.present();
     if (this.data != null) {
+      let loading = this.loadingCtrl.create({
+        spinner:'dots'
+      });
+      loading.present();
       this.api.post('auth/restar-password',{'type':this.type, 'data':this.data}).then((data:any)=>{
         loading.dismiss();
         console.log(data);
@@ -93,13 +92,6 @@ export class RecoveryPasswordPage {
       toast.present();
     }
   }
-
-  // date_request: "2018-10-02 19:44:39"
-  // id: 1
-  // is_password_change: 0
-  // password_code_req: "269680"
-  // password_reset_token: "XMmQ9K_88oRs9hjSS6Fv7ksE11MU9TVVgprwE6tA9DuDtmnSxw"
-  // user_id: 4
 
   changeVisible() {
     if (this.isvisible)

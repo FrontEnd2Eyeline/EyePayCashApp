@@ -39,6 +39,8 @@ export class AuthUserProvider {
     codigoVerify: null,
   };
 
+  public check_terminos = false;
+
   constructor(protected api: Api,
               public toastCtrl: ToastController
   ) {
@@ -108,6 +110,11 @@ export class AuthUserProvider {
   registerTokenForUser(user_id) {
     this.api.post('auth/tokenapp', {'token': this.tokenAppId, 'id': user_id})
       .then().catch();
+  }
+
+  setCheck_Terminos(check){
+    this.check_terminos = check;
+    console.log(this.check_terminos);
   }
 
 }

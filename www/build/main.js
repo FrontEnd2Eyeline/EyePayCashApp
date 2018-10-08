@@ -6,9 +6,9 @@ webpackJsonp([0],{
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SelectCodePage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(8);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_country_country__ = __webpack_require__(122);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ionic2_auto_complete__ = __webpack_require__(222);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ionic2_auto_complete__ = __webpack_require__(223);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -50,11 +50,7 @@ var SelectCodePage = /** @class */ (function () {
     ], SelectCodePage.prototype, "searchbar", void 0);
     SelectCodePage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-<<<<<<< HEAD
             selector: 'page-select-code',template:/*ion-inline-start:"/Users/eyeline/Documents/eyepaycashappGitHub/src/pages/select-code/select-code.html"*/'<ion-content padding>\n  <ng-template #withFlags let-attrs="attrs">\n    <img src="{{attrs.data.flag}}" class="flag"/>\n    <span\n        [innerHTML]="\'+\'+attrs.data.callingCodes[0]+\' \'+attrs.data.name"></span>\n  </ng-template>\n  <ion-auto-complete #search item-content [dataProvider]="country"\n                     [options]="{placeholder : \'Search your country\'}"\n                     [template]="withFlags"\n                     [showResultsFirst]="true"\n                     (itemSelected)="selectItem($event)"></ion-auto-complete>\n</ion-content>\n'/*ion-inline-end:"/Users/eyeline/Documents/eyepaycashappGitHub/src/pages/select-code/select-code.html"*/,
-=======
-            selector: 'page-select-code',template:/*ion-inline-start:"/Users/eyeline/Documents/GitHub/eyepaycashapp/src/pages/select-code/select-code.html"*/'<ion-content padding>\n  <ng-template #withFlags let-attrs="attrs">\n    <img src="{{attrs.data.flag}}" class="flag"/>\n    <span\n        [innerHTML]="\'+\'+attrs.data.callingCodes[0]+\' \'+attrs.data.name"></span>\n  </ng-template>\n  <ion-auto-complete #search item-content [dataProvider]="country"\n                     [options]="{placeholder : \'Search your country\'}"\n                     [template]="withFlags"\n                     [showResultsFirst]="true"\n                     (itemSelected)="selectItem($event)"></ion-auto-complete>\n</ion-content>\n'/*ion-inline-end:"/Users/eyeline/Documents/GitHub/eyepaycashapp/src/pages/select-code/select-code.html"*/,
->>>>>>> 81951ee53228c71b0aa374e34045d5bcc1d6b23c
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */],
             __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */],
@@ -74,7 +70,7 @@ var SelectCodePage = /** @class */ (function () {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CountryProvider; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_add_operator_map__ = __webpack_require__(221);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_add_operator_map__ = __webpack_require__(222);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_rxjs_add_operator_map__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_common_http__ = __webpack_require__(58);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -229,19 +225,179 @@ var GeolocationProvider = /** @class */ (function () {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return RegisterPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_api__ = __webpack_require__(23);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_auth_user_auth_user__ = __webpack_require__(28);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__politicas_politicas__ = __webpack_require__(321);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__login_login__ = __webpack_require__(85);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__modal_welcome_modal_welcome__ = __webpack_require__(322);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+
+
+var RegisterPage = /** @class */ (function () {
+    function RegisterPage(navCtrl, navParams, toastCtl, api, userProvider, loadingCtrl, modalCtrl) {
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+        this.toastCtl = toastCtl;
+        this.api = api;
+        this.userProvider = userProvider;
+        this.loadingCtrl = loadingCtrl;
+        this.modalCtrl = modalCtrl;
+        this.responseParams = null;
+        this.registerParams = null;
+        this.user_register = {
+            first_name: null,
+            last_name: null,
+            gender: null,
+            mail: null,
+            password: null,
+            //datos obtenidos por el params
+            phone: null,
+            country_id: null,
+            user_verify_id: null,
+            confirm_verify: null,
+        };
+        this.type = 'password';
+        this.showPass = false;
+        this.imagen = 'assets/backgrounds/Background3.png';
+        this.ischecked = this.userProvider.check_terminos;
+        this.getInfo();
+        this.ischecked = this.userProvider.check_terminos;
+    }
+    RegisterPage.prototype.getInfo = function () {
+        this.responseParams = this.navParams.get('response');
+        this.registerParams = this.navParams.get('register');
+    };
+    RegisterPage.prototype.showPassword = function () {
+        this.showPass = !this.showPass;
+        if (this.showPass) {
+            this.type = 'text';
+        }
+        else {
+            this.type = 'password';
+        }
+    };
+    RegisterPage.prototype.cancel = function () {
+        this.navCtrl.pop();
+    };
+    RegisterPage.prototype.register = function () {
+        var _this = this;
+        if (this.user_register.first_name != null && this.user_register.last_name != null && this.user_register.gender != null && this.user_register.password != null && this.user_register.mail != null) {
+            var size = this.user_register.password;
+            if (size.length >= 6) {
+                if (this.userProvider.check_terminos) {
+                    var loading_1 = this.loadingCtrl.create({
+                        spinner: 'dots',
+                    });
+                    loading_1.present();
+                    this.user_register.phone = this.registerParams.value;
+                    this.user_register.country_id = this.responseParams.country_id;
+                    this.user_register.user_verify_id = this.responseParams.id;
+                    this.user_register.confirm_verify = 'phone';
+                    this.api.post('auth/sign-up', this.user_register).then(function (data) {
+                        _this.userProvider.setUser(data);
+                        _this.verifyConfirm();
+                        loading_1.dismiss();
+                        _this.presentWelcomeModal();
+                    });
+                }
+                else {
+                    var toast = this.toastCtl.create({
+                        message: 'Por favor lea y acepte las políticas de uso y tratamiento de datos.',
+                        duration: 3000
+                    });
+                    toast.present();
+                }
+            }
+            else {
+                var toast = this.toastCtl.create({
+                    message: 'Contraseña debe tener mínimo 6 letras o números.',
+                    duration: 3000,
+                });
+                toast.present();
+            }
+        }
+        else {
+            var toast = this.toastCtl.create({
+                message: 'Toda la información es requerida',
+                duration: 3000,
+            });
+            toast.present();
+        }
+    };
+    RegisterPage.prototype.verifyConfirm = function () {
+        var loading = this.loadingCtrl.create({
+            spinner: 'dots',
+        });
+        loading.present();
+        this.api.get('account/confirm-verify', this.userProvider, {
+            id: this.responseParams.id,
+            type: 'phone'
+        }).then(function (data) {
+            loading.dismiss();
+        });
+    };
+    RegisterPage.prototype.politicas = function () {
+        var _this = this;
+        var poli = this.modalCtrl.create(__WEBPACK_IMPORTED_MODULE_4__politicas_politicas__["a" /* PoliticasPage */]);
+        poli.present();
+        poli.onDidDismiss((function (data) {
+            _this.ischecked = true;
+        }));
+    };
+    RegisterPage.prototype.presentWelcomeModal = function () {
+        var _this = this;
+        var modalWelcome = this.modalCtrl.create(__WEBPACK_IMPORTED_MODULE_6__modal_welcome_modal_welcome__["a" /* ModalWelcomePage */], { name: this.userProvider.user_Info.first_name + " " + this.userProvider.user_Info.last_name });
+        modalWelcome.onWillDismiss(function () {
+            _this.navCtrl.setRoot(__WEBPACK_IMPORTED_MODULE_5__login_login__["a" /* LoginPage */]);
+        });
+        modalWelcome.onDidDismiss(function (data) {
+            console.log('close');
+        });
+        modalWelcome.present();
+        this.userProvider.setUser(null);
+    };
+    RegisterPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+            selector: 'page-register',template:/*ion-inline-start:"/Users/eyeline/Documents/eyepaycashappGitHub/src/pages/register/register.html"*/'<ion-content class="imgBackground vignette">\n  <div style="margin-top:12%" class="center">\n    <ion-img class="logo" src="assets/imgs/EPCLogo.png"></ion-img>\n  </div>\n  <div class="center">\n    <ion-list>\n      <ion-item class="marginlists" >\n        <ion-label stacked>Nombres</ion-label>\n        <ion-input type="text" required name="userregistronombre" [(ngModel)]="user_register.first_name"></ion-input>\n      </ion-item>\n\n      <ion-item class="marginlists">\n        <ion-label stacked>Apellidos</ion-label>\n        <ion-input type="text" required name="userregistroapellido"\n                   [(ngModel)]="user_register.last_name"></ion-input>\n      </ion-item>\n\n      <ion-item class="marginlists">\n        <ion-label stacked>Género</ion-label>\n        <ion-select okText="Guardar" cancelText="Cancelar" [(ngModel)]="user_register.gender" name="userregistrogenero">\n          <ion-option value="f">Femenino</ion-option>\n          <ion-option value="m">Masculino</ion-option>\n        </ion-select>\n      </ion-item>\n\n      <ion-item class="marginlists">\n        <ion-label stacked>Email</ion-label>\n        <ion-input type="email" required name="userregistroemail"\n                   [(ngModel)]="user_register.mail"></ion-input>\n      </ion-item>\n\n      <ion-item class="marginlists">\n        <ion-label stacked>Contraseña</ion-label>\n        <ion-input type="{{type}}" name="userregistrocontrasena"\n                   required [(ngModel)]="user_register.password"></ion-input>\n        <button *ngIf="!showPass" ion-button clear color="dark" type="button" item-right (click)="showPassword()">\n          <ion-icon name="ios-eye-off-outline"></ion-icon>\n        </button>\n        <button *ngIf="showPass" ion-button clear color="dark" type="button" item-right (click)="showPassword()">\n          <ion-icon name="ios-eye-outline"></ion-icon>\n        </button>\n      </ion-item>\n\n    </ion-list>\n  </div>\n\n  <ion-list>\n\n      <ion-col col-2>\n        <!--<ion-checkbox (ionChange)="aceptarTerminos()"></ion-checkbox>-->\n        <ion-checkbox [(ngModel)]="ischecked"></ion-checkbox>\n      </ion-col>\n      <ion-col col-10><span (click)="politicas()"> Leí y acepto las políticas de uso  y privacidad de la información</span></ion-col>\n\n  </ion-list>\n  <div style="margin-top: 6%" class="center">\n    <button style="border-radius: 0%" class="buttonPayCash" (click)="cancel()" ion-button small>Cancelar</button>\n    <button style="border-radius: 0%" class="buttonPayCash" (click)="register()" ion-button small>Registrarse\n    </button>\n  </div>\n\n</ion-content>'/*ion-inline-end:"/Users/eyeline/Documents/eyepaycashappGitHub/src/pages/register/register.html"*/,
+        }),
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* ToastController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* ToastController */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_2__providers_api__["a" /* Api */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__providers_api__["a" /* Api */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_3__providers_auth_user_auth_user__["a" /* AuthUserProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__providers_auth_user_auth_user__["a" /* AuthUserProvider */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* LoadingController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* LoadingController */]) === "function" && _f || Object, typeof (_g = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* ModalController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* ModalController */]) === "function" && _g || Object])
+    ], RegisterPage);
+    return RegisterPage;
+    var _a, _b, _c, _d, _e, _f, _g;
+}());
+
+//# sourceMappingURL=register.js.map
+
+/***/ }),
+
+/***/ 139:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HomePage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(8);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_api__ = __webpack_require__(23);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_auth_user_auth_user__ = __webpack_require__(31);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__account_account__ = __webpack_require__(216);
-<<<<<<< HEAD
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__history_history__ = __webpack_require__(316);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__transaction_transaction__ = __webpack_require__(326);
-=======
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__history_history__ = __webpack_require__(324);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_auth_user_auth_user__ = __webpack_require__(28);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__account_account__ = __webpack_require__(217);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__history_history__ = __webpack_require__(317);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__transaction_transaction__ = __webpack_require__(325);
->>>>>>> 81951ee53228c71b0aa374e34045d5bcc1d6b23c
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -276,11 +432,7 @@ var HomePage = /** @class */ (function () {
     };
     HomePage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-<<<<<<< HEAD
             selector: 'page-home',template:/*ion-inline-start:"/Users/eyeline/Documents/eyepaycashappGitHub/src/pages/home/home.html"*/'<ion-content class="imgBackground vignette">\n    <div class="center">\n        <ion-img class="logo" src="assets/imgs/EPCLogo.png"></ion-img>\n      </div>\n\n  <div class="center">\n    <ion-img name="add" (click)="goPage(\'transaction\')" class="img-loaded2 img" src="assets/icon/TransaccionIco.png"></ion-img>\n  </div>\n\n  <div class="center">\n    <ion-img name="list-box" (click)="goPage(\'history\')" class="img-loaded2 img" src="assets/icon/HistoryIco.png"></ion-img>\n  </div>\n\n  <div class="center">\n    <ion-img name="person" (click)="goPage(\'account\')" class="img-loaded2 img" src="assets/icon/CuentaIco.png"></ion-img>\n  </div>\n\n</ion-content>'/*ion-inline-end:"/Users/eyeline/Documents/eyepaycashappGitHub/src/pages/home/home.html"*/
-=======
-            selector: 'page-home',template:/*ion-inline-start:"/Users/eyeline/Documents/GitHub/eyepaycashapp/src/pages/home/home.html"*/'<ion-content class="imgBackground vignette">\n    <div class="center">\n        <ion-img class="logo" src="assets/imgs/EPCLogo.png"></ion-img>\n      </div>\n\n  <div class="center">\n    <ion-img name="add" (click)="goPage(\'transaction\')" class="img-loaded2 img" src="assets/icon/TransaccionIco.png"></ion-img>\n  </div>\n\n  <div class="center">\n    <ion-img name="list-box" (click)="goPage(\'history\')" class="img-loaded2 img" src="assets/icon/HistoryIco.png"></ion-img>\n  </div>\n\n  <div class="center">\n    <ion-img name="person" (click)="goPage(\'account\')" class="img-loaded2 img" src="assets/icon/CuentaIco.png"></ion-img>\n  </div>\n\n</ion-content>'/*ion-inline-end:"/Users/eyeline/Documents/GitHub/eyepaycashapp/src/pages/home/home.html"*/
->>>>>>> 81951ee53228c71b0aa374e34045d5bcc1d6b23c
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */],
             __WEBPACK_IMPORTED_MODULE_2__providers_api__["a" /* Api */],
@@ -295,7 +447,7 @@ var HomePage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 170:
+/***/ 171:
 /***/ (function(module, exports) {
 
 function webpackEmptyAsyncContext(req) {
@@ -308,74 +460,52 @@ function webpackEmptyAsyncContext(req) {
 webpackEmptyAsyncContext.keys = function() { return []; };
 webpackEmptyAsyncContext.resolve = webpackEmptyAsyncContext;
 module.exports = webpackEmptyAsyncContext;
-webpackEmptyAsyncContext.id = 170;
+webpackEmptyAsyncContext.id = 171;
 
 /***/ }),
 
-/***/ 214:
+/***/ 215:
 /***/ (function(module, exports, __webpack_require__) {
 
 var map = {
 	"../pages/account/account.module": [
-		215
+		216
 	],
 	"../pages/history/history.module": [
-<<<<<<< HEAD
-		315
+		316
 	],
 	"../pages/login/login.module": [
-		317
-=======
-		328
-	],
-	"../pages/login/login.module": [
-		315
->>>>>>> 81951ee53228c71b0aa374e34045d5bcc1d6b23c
+		318
 	],
 	"../pages/modal-transaction/modal-transaction.module": [
-		329
+		328
 	],
 	"../pages/modal-welcome/modal-welcome.module": [
-		332
+		331
 	],
 	"../pages/password-update/password-update.module": [
-		333
+		332
 	],
 	"../pages/politicas/politicas.module": [
-<<<<<<< HEAD
-		341
-=======
-		337
->>>>>>> 81951ee53228c71b0aa374e34045d5bcc1d6b23c
+		339
 	],
 	"../pages/recovery-password/recovery-password.module": [
-		334
+		333
 	],
 	"../pages/reg-number-phone/reg-number-phone.module": [
-		335
+		334
 	],
 	"../pages/register/register.module": [
-<<<<<<< HEAD
-		336
-=======
-		339
->>>>>>> 81951ee53228c71b0aa374e34045d5bcc1d6b23c
+		335
 	],
 	"../pages/select-code/select-code.module": [
-		337
-	],
-	"../pages/terminos/terminos.module": [
-		338
+		336
 	],
 	"../pages/transaction-resume/transaction-resume.module": [
-<<<<<<< HEAD
-		339
-=======
-		341
->>>>>>> 81951ee53228c71b0aa374e34045d5bcc1d6b23c
+		337
 	],
 	"../pages/transaction/transaction.module": [
-		340
+		338
 	]
 };
 function webpackAsyncContext(req) {
@@ -389,20 +519,20 @@ function webpackAsyncContext(req) {
 webpackAsyncContext.keys = function webpackAsyncContextKeys() {
 	return Object.keys(map);
 };
-webpackAsyncContext.id = 214;
+webpackAsyncContext.id = 215;
 module.exports = webpackAsyncContext;
 
 /***/ }),
 
-/***/ 215:
+/***/ 216:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AccountPageModule", function() { return AccountPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(7);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__account__ = __webpack_require__(216);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__account__ = __webpack_require__(217);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -432,15 +562,15 @@ var AccountPageModule = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 216:
+/***/ 217:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AccountPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(8);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_api__ = __webpack_require__(23);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_auth_user_auth_user__ = __webpack_require__(31);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_auth_user_auth_user__ = __webpack_require__(28);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__select_code_select_code__ = __webpack_require__(121);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -689,11 +819,7 @@ var AccountPage = /** @class */ (function () {
     };
     AccountPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-<<<<<<< HEAD
             selector: 'page-account',template:/*ion-inline-start:"/Users/eyeline/Documents/eyepaycashappGitHub/src/pages/account/account.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>\n        CUENTA\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n<ion-content padding>\n  <ion-card>\n    <ion-card-header>\n      <ion-icon name="person" item-start></ion-icon>\n      Información personal\n    </ion-card-header>\n    <ion-card-content>\n      <ion-list>\n        <ion-item>\n          <ion-label stacked>Nombres</ion-label>\n          <ion-input type="text" required name="userregistronombre" [(ngModel)]="usuario.first_name"></ion-input>\n        </ion-item>\n\n        <ion-item>\n          <ion-label stacked>Apellidos</ion-label>\n          <ion-input type="text" required name="userregistroapellido"\n                     [(ngModel)]="usuario.last_name"></ion-input>\n        </ion-item>\n        <ion-item>\n          <ion-label stacked>Género</ion-label>\n          <ion-select okText="Guardar" cancelText="Cancelar" [(ngModel)]="usuario.gender" name="userregistrogenero">\n            <ion-option value="f">Femenino</ion-option>\n            <ion-option value="m">Masculino</ion-option>\n          </ion-select>\n        </ion-item>\n        <button ion-button block class="buttonPayCash" (click)="actualizar()">Actualizar</button>\n      </ion-list>\n    </ion-card-content>\n  </ion-card>\n  <ion-card>\n    <ion-card-header>\n      <ion-icon name="key" item-start></ion-icon>\n      Información de cuenta\n    </ion-card-header>\n    <ion-card-content>\n      <ion-row>\n        <ion-label stacked>Email</ion-label>\n        {{usuario.mail}}\n      </ion-row>\n      <ion-row>\n        <ion-label stacked>Teléfono</ion-label>\n        {{usuario.phone}}\n      </ion-row>\n    </ion-card-content>\n  </ion-card>\n  <ion-card>\n    <ion-card-header>\n      <ion-icon name="locate" item-start></ion-icon>\n      Información de ubicaciòn\n    </ion-card-header>\n    <ion-card-content>\n      <ion-row>\n        <ion-label stacked>País</ion-label>\n        {{country.name}}\n      </ion-row>\n      <ion-row>\n        <ion-label stacked>Código de teléfono</ion-label>\n        {{country.phone_code}}\n      </ion-row>\n      <ion-row>\n        <ion-label stacked>Código de país</ion-label>\n        {{country.country_code}}\n      </ion-row>\n      <ion-row>\n        <ion-label stacked>Moneda del país</ion-label>\n        {{country.currency}}\n      </ion-row>\n    </ion-card-content>\n  </ion-card>\n\n\n  <ion-card>\n    <ion-card-header>\n      <ion-icon name="lock" item-start></ion-icon>\n      Información de seguridad\n    </ion-card-header>\n    <ion-card-content>\n      <div *ngIf="isphone">\n        <ion-row>\n\n          <label stacked>Seleccione el país e ingrese su nuevo número celular</label>\n          <ion-col col-4>\n            <ion-item class="item-flag">\n              <img [src]="infoPhone.flag" class="flagphone" *ngIf="infoPhone.flag !=null">\n              <button ion-button (click)="selectcountry()">+ {{infoPhone.country_code}}</button>\n            </ion-item>\n          </ion-col>\n          <ion-col col-8>\n              <ion-input required type="text" name="numerocelular" [(ngModel)]="infoPhone.value"\n                         placeholder="Número movil (celular)"></ion-input>\n          </ion-col>\n\n          <ion-col col-12 *ngIf="response_verify.phone_code != null">\n            <label stacked>Por favor ingrese el código de verificación</label>\n            <ion-input name="verifycode" [(ngModel)]="codeVerify"></ion-input>\n            <button class="buttonPayCash" (click)="verifyCode()" ion-button block>Verificar código</button>\n          </ion-col>\n        </ion-row>\n        <button ion-button block class="buttonPayCash" (click)="changePhone()" *ngIf="response_verify.phone_code==null">Actualizar número celular</button>\n        <button ion-button block class="buttonPayCash" (click)="pedirMail()">Cambiar dirección email</button>\n      </div>\n\n\n      <div *ngIf="ismail">\n        <ion-row>\n          <label stacked> Por favor ingrese la nueva dirección email</label>\n          <ion-col col-12 row>\n            <ion-input name="correoelectronico" [(ngModel)]="infoPhone.value" placeholder="Direcciòn email correo electrònico"></ion-input>\n          </ion-col>\n          <ion-col col-12 *ngIf="response_verify.mail_code != null">\n            <label stacked>Por favor ingrese el código de verificación</label>\n            <br>\n            <ion-input name="verifycode" [(ngModel)]="codeVerifyMail"></ion-input>\n            <button class="buttonPayCash" (click)="verifyCodeMail()" ion-button block>Verificar código</button>\n          </ion-col>\n        </ion-row>\n        <button ion-button block class="buttonPayCash" (click)="changeMail()" *ngIf="response_verify.mail_code==null">Actualizar dirección email</button>\n        <button ion-button block class="buttonPayCash" (click)="pedirPhone()">Cambiar número celular</button>\n      </div>\n    </ion-card-content>\n  </ion-card>\n\n</ion-content>\n'/*ion-inline-end:"/Users/eyeline/Documents/eyepaycashappGitHub/src/pages/account/account.html"*/,
-=======
-            selector: 'page-account',template:/*ion-inline-start:"/Users/eyeline/Documents/GitHub/eyepaycashapp/src/pages/account/account.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>\n        CUENTA\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n<ion-content padding>\n  <ion-card>\n    <ion-card-header>\n      <ion-icon name="person" item-start></ion-icon>\n      Información personal\n    </ion-card-header>\n    <ion-card-content>\n      <ion-list>\n        <ion-item>\n          <ion-label stacked>Nombres</ion-label>\n          <ion-input type="text" required name="userregistronombre" [(ngModel)]="usuario.first_name"></ion-input>\n        </ion-item>\n\n        <ion-item>\n          <ion-label stacked>Apellidos</ion-label>\n          <ion-input type="text" required name="userregistroapellido"\n                     [(ngModel)]="usuario.last_name"></ion-input>\n        </ion-item>\n        <ion-item>\n          <ion-label stacked>Género</ion-label>\n          <ion-select okText="Guardar" cancelText="Cancelar" [(ngModel)]="usuario.gender" name="userregistrogenero">\n            <ion-option value="f">Femenino</ion-option>\n            <ion-option value="m">Masculino</ion-option>\n          </ion-select>\n        </ion-item>\n        <button ion-button block class="buttonPayCash" (click)="actualizar()">Actualizar</button>\n      </ion-list>\n    </ion-card-content>\n  </ion-card>\n  <ion-card>\n    <ion-card-header>\n      <ion-icon name="key" item-start></ion-icon>\n      Información de cuenta\n    </ion-card-header>\n    <ion-card-content>\n      <ion-row>\n        <ion-label stacked>Email</ion-label>\n        {{usuario.mail}}\n      </ion-row>\n      <ion-row>\n        <ion-label stacked>Teléfono</ion-label>\n        {{usuario.phone}}\n      </ion-row>\n    </ion-card-content>\n  </ion-card>\n  <ion-card>\n    <ion-card-header>\n      <ion-icon name="locate" item-start></ion-icon>\n      Información de ubicaciòn\n    </ion-card-header>\n    <ion-card-content>\n      <ion-row>\n        <ion-label stacked>País</ion-label>\n        {{country.name}}\n      </ion-row>\n      <ion-row>\n        <ion-label stacked>Código de teléfono</ion-label>\n        {{country.phone_code}}\n      </ion-row>\n      <ion-row>\n        <ion-label stacked>Código de país</ion-label>\n        {{country.country_code}}\n      </ion-row>\n      <ion-row>\n        <ion-label stacked>Moneda del país</ion-label>\n        {{country.currency}}\n      </ion-row>\n    </ion-card-content>\n  </ion-card>\n\n\n  <ion-card>\n    <ion-card-header>\n      <ion-icon name="lock" item-start></ion-icon>\n      Información de seguridad\n    </ion-card-header>\n    <ion-card-content>\n      <div *ngIf="isphone">\n        <ion-row>\n\n          <label stacked>Seleccione el país e ingrese su nuevo número celular</label>\n          <ion-col col-4>\n            <ion-item class="item-flag">\n              <img [src]="infoPhone.flag" class="flagphone" *ngIf="infoPhone.flag !=null">\n              <button ion-button (click)="selectcountry()">+ {{infoPhone.country_code}}</button>\n            </ion-item>\n          </ion-col>\n          <ion-col col-8>\n              <ion-input required type="text" name="numerocelular" [(ngModel)]="infoPhone.value"\n                         placeholder="Número movil (celular)"></ion-input>\n          </ion-col>\n\n          <ion-col col-12 *ngIf="response_verify.phone_code != null">\n            <label stacked>Por favor ingrese el código de verificación</label>\n            <ion-input name="verifycode" [(ngModel)]="codeVerify"></ion-input>\n            <button class="buttonPayCash" (click)="verifyCode()" ion-button block>Verificar código</button>\n          </ion-col>\n        </ion-row>\n        <button ion-button block class="buttonPayCash" (click)="changePhone()" *ngIf="response_verify.phone_code==null">Actualizar número celular</button>\n        <button ion-button block class="buttonPayCash" (click)="pedirMail()">Cambiar dirección email</button>\n      </div>\n\n\n      <div *ngIf="ismail">\n        <ion-row>\n          <label stacked> Por favor ingrese la nueva dirección email</label>\n          <ion-col col-12 row>\n            <ion-input name="correoelectronico" [(ngModel)]="infoPhone.value" placeholder="Direcciòn email correo electrònico"></ion-input>\n          </ion-col>\n          <ion-col col-12 *ngIf="response_verify.mail_code != null">\n            <label stacked>Por favor ingrese el código de verificación</label>\n            <br>\n            <ion-input name="verifycode" [(ngModel)]="codeVerifyMail"></ion-input>\n            <button class="buttonPayCash" (click)="verifyCodeMail()" ion-button block>Verificar código</button>\n          </ion-col>\n        </ion-row>\n        <button ion-button block class="buttonPayCash" (click)="changeMail()" *ngIf="response_verify.mail_code==null">Actualizar dirección email</button>\n        <button ion-button block class="buttonPayCash" (click)="pedirPhone()">Cambiar número celular</button>\n      </div>\n    </ion-card-content>\n  </ion-card>\n\n</ion-content>\n'/*ion-inline-end:"/Users/eyeline/Documents/GitHub/eyepaycashapp/src/pages/account/account.html"*/,
->>>>>>> 81951ee53228c71b0aa374e34045d5bcc1d6b23c
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */],
             __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */],
@@ -717,7 +843,7 @@ var AccountPage = /** @class */ (function () {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Api; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common_http__ = __webpack_require__(58);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(219);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(220);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -794,15 +920,14 @@ var Api = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 31:
-<<<<<<< HEAD
+/***/ 28:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AuthUserProvider; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__api__ = __webpack_require__(23);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(8);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -850,6 +975,7 @@ var AuthUserProvider = /** @class */ (function () {
             user_id: null,
             codigoVerify: null,
         };
+        this.check_terminos = false;
         this.trylogin();
     }
     AuthUserProvider.prototype.login = function (usuario, password) {
@@ -909,27 +1035,31 @@ var AuthUserProvider = /** @class */ (function () {
         this.api.post('auth/tokenapp', { 'token': this.tokenAppId, 'id': user_id })
             .then().catch();
     };
+    AuthUserProvider.prototype.setCheck_Terminos = function (check) {
+        this.check_terminos = check;
+        console.log(this.check_terminos);
+    };
     AuthUserProvider = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["B" /* Injectable */])(),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__api__["a" /* Api */],
-            __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["j" /* ToastController */]])
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__api__["a" /* Api */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__api__["a" /* Api */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["j" /* ToastController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["j" /* ToastController */]) === "function" && _b || Object])
     ], AuthUserProvider);
     return AuthUserProvider;
+    var _a, _b;
 }());
 
 //# sourceMappingURL=auth-user.js.map
 
 /***/ }),
 
-/***/ 315:
+/***/ 316:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HistoryPageModule", function() { return HistoryPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(7);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__history__ = __webpack_require__(316);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__history__ = __webpack_require__(317);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -959,22 +1089,15 @@ var HistoryPageModule = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 316:
-=======
->>>>>>> 81951ee53228c71b0aa374e34045d5bcc1d6b23c
+/***/ 317:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AuthUserProvider; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HistoryPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-<<<<<<< HEAD
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(8);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_api__ = __webpack_require__(23);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_auth_user_auth_user__ = __webpack_require__(31);
-=======
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__api__ = __webpack_require__(23);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(7);
->>>>>>> 81951ee53228c71b0aa374e34045d5bcc1d6b23c
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_auth_user_auth_user__ = __webpack_require__(28);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -987,46 +1110,31 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
-var AuthUserProvider = /** @class */ (function () {
-    function AuthUserProvider(api, toastCtrl) {
+
+/**
+ * Generated class for the HistoryPage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
+var HistoryPage = /** @class */ (function () {
+    function HistoryPage(navCtrl, navParams, api, userProvider) {
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
         this.api = api;
-        this.toastCtrl = toastCtrl;
-        this.user_Info = {
-            first_name: null,
-            last_name: null,
-            phone: null,
-            access_token: null,
-            is_active: null,
-            gender: null,
-            mail: null,
+        this.userProvider = userProvider;
+        this.transactions = null;
+        this.links = null;
+        this.meta = null;
+        this.filtro = {
+            status: 0,
+            page: null,
+            perpage: null
         };
-        this.user_Country = {
-            id: null,
-            name: null,
-            is_active: null,
-            phone_code: null,
-            country_code: null,
-            currency: null
-        };
-        this.User_Verify = {
-            id: null,
-            phone_code: null,
-            is_phone_verify: null,
-            mail_code: null,
-            is_mail_verify: null,
-            phone: null,
-            mail: null,
-            user_id: null
-        };
-        this.userRecovery = {
-            user_id: null,
-            codigoVerify: null,
-        };
-        this.trylogin();
+        this.getInfo();
     }
-    AuthUserProvider.prototype.login = function (usuario, password) {
+    HistoryPage.prototype.getInfo = function () {
         var _this = this;
-<<<<<<< HEAD
         this.api.get('app/transactions', this.userProvider, { 'expand': 'country,coin', 'status': this.filtro.status, 'page': this.filtro.page, 'per-page': this.filtro.perpage }).then(function (data) {
             _this.transactions = data.items;
             _this.links = data.links;
@@ -1038,92 +1146,27 @@ var AuthUserProvider = /** @class */ (function () {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
             selector: 'page-history',template:/*ion-inline-start:"/Users/eyeline/Documents/eyepaycashappGitHub/src/pages/history/history.html"*/'<!--\n  Generated template for the HistoryPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>history</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n  <ion-list>\n    <ion-item *ngFor="let transaction of transactions">\n      <ion-row>\n        <ion-col col-6>\n          <h4>{{transaction.country.name}}</h4>\n        </ion-col>\n        <ion-col col-6>\n          {{transaction.date_request | date : format : timezone}}\n        </ion-col>\n      </ion-row>\n      <ion-row>\n        <ion-col col-6>\n          {{transaction.coin.full_name}}\n        </ion-col>\n        <ion-col col-6>\n          {{transaction.amount_local | currency:transaction.country.currency+" " : 2}}\n        </ion-col>\n      </ion-row>\n      <!--<button ion-button clear item-end>Ver</button>-->\n    </ion-item>\n  </ion-list>\n</ion-content>\n'/*ion-inline-end:"/Users/eyeline/Documents/eyepaycashappGitHub/src/pages/history/history.html"*/,
         }),
-        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__providers_api__["a" /* Api */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__providers_api__["a" /* Api */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_3__providers_auth_user_auth_user__["a" /* AuthUserProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__providers_auth_user_auth_user__["a" /* AuthUserProvider */]) === "function" && _d || Object])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */],
+            __WEBPACK_IMPORTED_MODULE_2__providers_api__["a" /* Api */],
+            __WEBPACK_IMPORTED_MODULE_3__providers_auth_user_auth_user__["a" /* AuthUserProvider */]])
     ], HistoryPage);
     return HistoryPage;
-    var _a, _b, _c, _d;
-=======
-        return new Promise(function (resolve, reject) {
-            _this.api.post('auth/login?expand=country,userVerify', { mail: usuario, password: password })
-                .then(function (data) {
-                if (data.success == 'ok') {
-                    _this.setUser(data.user);
-                    _this.setUserCountry(data.user.country);
-                    _this.setUserVerify(data.user.userVerify);
-                    resolve(data);
-                }
-                else {
-                    var toast = _this.toastCtrl.create({
-                        message: 'Usuario o contraseña incorrectos',
-                        duration: 3000,
-                    });
-                    toast.present();
-                }
-            })
-                .catch(function (err) { return reject(err); });
-        });
-    };
-    AuthUserProvider.prototype.isLogin = function () {
-        return this.user_Info !== null;
-    };
-    AuthUserProvider.prototype.trylogin = function () {
-        this.user_Info = JSON.parse(window.localStorage.getItem('user'));
-        if (this.user_Info == null)
-            this.user_Info = {
-                user: null,
-            };
-    };
-    AuthUserProvider.prototype.accessParam = function () {
-        if (this.user_Info != null)
-            return this.user_Info.access_token;
-        return null;
-    };
-    AuthUserProvider.prototype.setUser = function (Usuario) {
-        this.user_Info = Usuario;
-        window.localStorage.setItem('user', JSON.stringify(this.user_Info));
-    };
-    AuthUserProvider.prototype.setUserCountry = function (Country) {
-        this.user_Country = Country;
-    };
-    AuthUserProvider.prototype.setUserVerify = function (Verify) {
-        this.User_Verify = Verify;
-    };
-    AuthUserProvider.prototype.setUserRecovery = function (data) {
-        this.userRecovery = data;
-    };
-    AuthUserProvider.prototype.setTokenNotification = function (tokenId) {
-        this.tokenAppId = tokenId;
-    };
-    AuthUserProvider.prototype.registerTokenForUser = function (user_id) {
-        this.api.post('auth/tokenapp', { 'token': this.tokenAppId, 'id': user_id })
-            .then().catch();
-    };
-    AuthUserProvider = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["B" /* Injectable */])(),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__api__["a" /* Api */],
-            __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["j" /* ToastController */]])
-    ], AuthUserProvider);
-    return AuthUserProvider;
->>>>>>> 81951ee53228c71b0aa374e34045d5bcc1d6b23c
 }());
 
-//# sourceMappingURL=auth-user.js.map
+//# sourceMappingURL=history.js.map
 
 /***/ }),
 
-<<<<<<< HEAD
-/***/ 317:
-=======
-/***/ 315:
->>>>>>> 81951ee53228c71b0aa374e34045d5bcc1d6b23c
+/***/ 318:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LoginPageModule", function() { return LoginPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(7);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__login__ = __webpack_require__(66);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__login__ = __webpack_require__(85);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1153,26 +1196,18 @@ var LoginPageModule = /** @class */ (function () {
 
 /***/ }),
 
-<<<<<<< HEAD
-/***/ 318:
-=======
-/***/ 316:
->>>>>>> 81951ee53228c71b0aa374e34045d5bcc1d6b23c
+/***/ 319:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return RegNumberPhonePage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(8);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__select_code_select_code__ = __webpack_require__(121);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_api__ = __webpack_require__(23);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_geolocation_geolocation__ = __webpack_require__(134);
-<<<<<<< HEAD
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__register_register__ = __webpack_require__(320);
-=======
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__register_register__ = __webpack_require__(318);
->>>>>>> 81951ee53228c71b0aa374e34045d5bcc1d6b23c
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__login_login__ = __webpack_require__(66);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__register_register__ = __webpack_require__(138);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__login_login__ = __webpack_require__(85);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1282,7 +1317,7 @@ var RegNumberPhonePage = /** @class */ (function () {
     };
     RegNumberPhonePage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-            selector: 'page-reg-number-phone',template:/*ion-inline-start:"/Users/eyeline/Documents/GitHub/eyepaycashapp/src/pages/reg-number-phone/reg-number-phone.html"*/'<ion-content class="imgBackground vignette">\n  <div style="margin-top:12%" class="center">\n    <ion-img style="margin-bottom: 10%;" class="logo" src="assets/imgs/EPCLogo.png"></ion-img>\n    <div class="center">\n      <ion-label style="color:white" class="center"> Enviaremos un CÓDIGO de verificación a el número<br> que registres\n        a continuación.\n      </ion-label>\n    </div>\n  </div>\n\n  <div class="center divMargin">\n    <ion-grid class="center marGrid">\n      <ion-row>\n        <ion-col col-5>\n          <ion-item class="item-flag item-md2 item-ios2">\n            <img [src]="user_register.flag" class="flagphone banderaWidt">\n            <button ion-button (click)="selectcountry()" class="transparente item-md2 item-button2 button-md ">+\n              {{user_register.country_code}}</button>\n          </ion-item>\n        </ion-col>\n        <ion-col col-7>\n          <ion-item class="stylCel">\n            <ion-input required type="text" name="numerocelular" [(ngModel)]="user_register.value" placeholder="Número movil (celular)"></ion-input>\n          </ion-item>\n        </ion-col>\n      </ion-row>\n    </ion-grid>\n    <ion-item class="inputClass">\n      <ion-input placeholder="Introduce el código" maxlength="6" required style="text-align: center" type="text"\n        [(ngModel)]="code_verify"></ion-input>\n    </ion-item>\n  </div>\n  <div class="center marginBts">\n    <button class="buttonPayCash borderBtns" (click)="cancel()" ion-button small>Cancelar</button>\n    <button class="buttonPayCash borderBtns" (click)="sendNumberPhone()" ion-button small *ngIf="response_verify.phone_code == null">Enviar\n    </button>\n    <button class="buttonPayCash borderBtns" (click)="verifyCode()" ion-button small *ngIf="response_verify.phone_code != null">Continuar\n    </button>\n  </div>\n\n</ion-content>'/*ion-inline-end:"/Users/eyeline/Documents/GitHub/eyepaycashapp/src/pages/reg-number-phone/reg-number-phone.html"*/,
+            selector: 'page-reg-number-phone',template:/*ion-inline-start:"/Users/eyeline/Documents/eyepaycashappGitHub/src/pages/reg-number-phone/reg-number-phone.html"*/'<ion-content class="imgBackground vignette">\n  <div style="margin-top:12%" class="center">\n    <ion-img style="margin-bottom: 10%;" class="logo" src="assets/imgs/EPCLogo.png"></ion-img>\n    <div class="center">\n      <ion-label style="color:white" class="center"> Enviaremos un CÓDIGO de verificación a el número<br> que registres\n        a continuación.\n      </ion-label>\n    </div>\n  </div>\n\n  <div class="center divMargin">\n    <ion-grid class="center marGrid">\n      <ion-row>\n        <ion-col col-5>\n          <ion-item class="item-flag item-md2 item-ios2">\n            <img [src]="user_register.flag" class="flagphone banderaWidt">\n            <button ion-button (click)="selectcountry()" class="transparente item-md2 item-button2 button-md ">+\n              {{user_register.country_code}}</button>\n          </ion-item>\n        </ion-col>\n        <ion-col col-7>\n          <ion-item class="stylCel">\n            <ion-input required type="text" name="numerocelular" [(ngModel)]="user_register.value" placeholder="Número movil (celular)"></ion-input>\n          </ion-item>\n        </ion-col>\n      </ion-row>\n    </ion-grid>\n    <ion-item class="inputClass">\n      <ion-input placeholder="Introduce el código" maxlength="6" required style="text-align: center" type="text"\n        [(ngModel)]="code_verify"></ion-input>\n    </ion-item>\n  </div>\n  <div class="center marginBts">\n    <button class="buttonPayCash borderBtns" (click)="cancel()" ion-button small>Cancelar</button>\n    <button class="buttonPayCash borderBtns" (click)="sendNumberPhone()" ion-button small *ngIf="response_verify.phone_code == null">Enviar\n    </button>\n    <button class="buttonPayCash borderBtns" (click)="verifyCode()" ion-button small *ngIf="response_verify.phone_code != null">Continuar\n    </button>\n  </div>\n\n</ion-content>'/*ion-inline-end:"/Users/eyeline/Documents/eyepaycashappGitHub/src/pages/reg-number-phone/reg-number-phone.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */],
             __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */],
@@ -1299,186 +1334,14 @@ var RegNumberPhonePage = /** @class */ (function () {
 
 /***/ }),
 
-<<<<<<< HEAD
-/***/ 320:
-=======
-/***/ 318:
->>>>>>> 81951ee53228c71b0aa374e34045d5bcc1d6b23c
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return RegisterPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(7);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_api__ = __webpack_require__(23);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_auth_user_auth_user__ = __webpack_require__(31);
-<<<<<<< HEAD
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__politicas_politicas__ = __webpack_require__(321);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__terminos_terminos__ = __webpack_require__(322);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__login_login__ = __webpack_require__(66);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__modal_welcome_modal_welcome__ = __webpack_require__(323);
-=======
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__politicas_politicas__ = __webpack_require__(319);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__terminos_terminos__ = __webpack_require__(320);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__login_login__ = __webpack_require__(66);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__modal_welcome_modal_welcome__ = __webpack_require__(321);
->>>>>>> 81951ee53228c71b0aa374e34045d5bcc1d6b23c
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-
-
-
-
-
-var RegisterPage = /** @class */ (function () {
-    function RegisterPage(navCtrl, navParams, toastCtl, api, userProvider, loadingCtrl, modalCtrl) {
-        this.navCtrl = navCtrl;
-        this.navParams = navParams;
-        this.toastCtl = toastCtl;
-        this.api = api;
-        this.userProvider = userProvider;
-        this.loadingCtrl = loadingCtrl;
-        this.modalCtrl = modalCtrl;
-        this.responseParams = null;
-        this.registerParams = null;
-        this.user_register = {
-            first_name: null,
-            last_name: null,
-            gender: null,
-            mail: null,
-            password: null,
-            //datos obtenidos por el params
-            phone: null,
-            country_id: null,
-            user_verify_id: null,
-            confirm_verify: null,
-        };
-        this.type = 'password';
-        this.showPass = false;
-        this.imagen = 'assets/backgrounds/Background3.png';
-        this.getInfo();
-    }
-    RegisterPage.prototype.getInfo = function () {
-        this.responseParams = this.navParams.get('response');
-        this.registerParams = this.navParams.get('register');
-    };
-    RegisterPage.prototype.showPassword = function () {
-        this.showPass = !this.showPass;
-        if (this.showPass) {
-            this.type = 'text';
-        }
-        else {
-            this.type = 'password';
-        }
-    };
-    RegisterPage.prototype.cancel = function () {
-        this.navCtrl.pop();
-    };
-    RegisterPage.prototype.register = function () {
-        var _this = this;
-        if (this.user_register.first_name != null && this.user_register.last_name != null && this.user_register.gender != null && this.user_register.password != null && this.user_register.mail != null) {
-            var size = this.user_register.password;
-            if (size.length >= 6) {
-                var loading_1 = this.loadingCtrl.create({
-                    spinner: 'dots',
-                });
-                loading_1.present();
-                this.user_register.phone = this.registerParams.value;
-                this.user_register.country_id = this.responseParams.country_id;
-                this.user_register.user_verify_id = this.responseParams.id;
-                this.user_register.confirm_verify = 'phone';
-                this.api.post('auth/sign-up', this.user_register).then(function (data) {
-                    _this.userProvider.setUser(data);
-                    _this.verifyConfirm();
-                    loading_1.dismiss();
-                    _this.presentWelcomeModal();
-                });
-            }
-            else {
-                var toast = this.toastCtl.create({
-                    message: 'Contraseña debe tener mínimo 6 letras o números.',
-                    duration: 3000,
-                });
-                toast.present();
-            }
-        }
-        else {
-            var toast = this.toastCtl.create({
-                message: 'Toda la información es requerida',
-                duration: 3000,
-            });
-            toast.present();
-        }
-    };
-    RegisterPage.prototype.verifyConfirm = function () {
-        var loading = this.loadingCtrl.create({
-            spinner: 'dots',
-        });
-        loading.present();
-        this.api.get('account/confirm-verify', this.userProvider, {
-            id: this.responseParams.id,
-            type: 'phone'
-        }).then(function (data) {
-            loading.dismiss();
-        });
-    };
-    RegisterPage.prototype.politicas = function () {
-        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_4__politicas_politicas__["a" /* PoliticasPage */]);
-    };
-    RegisterPage.prototype.privacidad = function () {
-        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_5__terminos_terminos__["a" /* TerminosPage */]);
-    };
-    RegisterPage.prototype.presentWelcomeModal = function () {
-        var _this = this;
-        var modalWelcome = this.modalCtrl.create(__WEBPACK_IMPORTED_MODULE_7__modal_welcome_modal_welcome__["a" /* ModalWelcomePage */], { name: this.userProvider.user_Info.first_name + " " + this.userProvider.user_Info.last_name });
-        modalWelcome.onWillDismiss(function () {
-            _this.navCtrl.setRoot(__WEBPACK_IMPORTED_MODULE_6__login_login__["a" /* LoginPage */]);
-        });
-        modalWelcome.onDidDismiss(function (data) {
-            console.log('close');
-        });
-        modalWelcome.present();
-        this.userProvider.setUser(null);
-    };
-    RegisterPage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-<<<<<<< HEAD
-            selector: 'page-register',template:/*ion-inline-start:"/Users/eyeline/Documents/eyepaycashappGitHub/src/pages/register/register.html"*/'<ion-content class="imgBackground vignette">\n  <div style="margin-top:12%" class="center">\n    <ion-img class="logo" src="assets/imgs/EPCLogo.png"></ion-img>\n  </div>\n  <div class="center">\n    <ion-list>\n      <ion-item class="marginlists" >\n        <ion-label stacked>Nombres</ion-label>\n        <ion-input type="text" required name="userregistronombre" [(ngModel)]="user_register.first_name"></ion-input>\n      </ion-item>\n\n      <ion-item class="marginlists">\n        <ion-label stacked>Apellidos</ion-label>\n        <ion-input type="text" required name="userregistroapellido"\n                   [(ngModel)]="user_register.last_name"></ion-input>\n      </ion-item>\n\n      <ion-item class="marginlists">\n        <ion-label stacked>Género</ion-label>\n        <ion-select okText="Guardar" cancelText="Cancelar" [(ngModel)]="user_register.gender" name="userregistrogenero">\n          <ion-option value="f">Femenino</ion-option>\n          <ion-option value="m">Masculino</ion-option>\n        </ion-select>\n      </ion-item>\n\n      <ion-item class="marginlists">\n        <ion-label stacked>Email</ion-label>\n        <ion-input type="email" required name="userregistroemail"\n                   [(ngModel)]="user_register.mail"></ion-input>\n      </ion-item>\n\n      <ion-item class="marginlists">\n        <ion-label stacked>Contraseña</ion-label>\n        <ion-input type="{{type}}" name="userregistrocontrasena"\n                   required [(ngModel)]="user_register.password"></ion-input>\n        <button *ngIf="!showPass" ion-button clear color="dark" type="button" item-right (click)="showPassword()">\n          <ion-icon name="ios-eye-off-outline"></ion-icon>\n        </button>\n        <button *ngIf="showPass" ion-button clear color="dark" type="button" item-right (click)="showPassword()">\n          <ion-icon name="ios-eye-outline"></ion-icon>\n        </button>\n      </ion-item>\n\n    </ion-list>\n  </div>\n\n  <div style="margin-top: -20%" padding class="center">\n    <ion-label (click)="politicas()" style="color:white; font-size: 16px" floating>Políticas de uso</ion-label>\n    <ion-label (click)="privacidad()" style="color:white; font-size: 16px" floating>Privacidad de la información\n    </ion-label>\n  </div>\n\n  <div style="margin-top: 6%" class="center">\n    <button style="border-radius: 0%" class="buttonPayCash" (click)="cancel()" ion-button small>Cancelar</button>\n    <button style="border-radius: 0%" class="buttonPayCash" (click)="register()" ion-button small>Registrarse\n    </button>\n  </div>\n\n</ion-content>'/*ion-inline-end:"/Users/eyeline/Documents/eyepaycashappGitHub/src/pages/register/register.html"*/,
-=======
-            selector: 'page-register',template:/*ion-inline-start:"/Users/eyeline/Documents/GitHub/eyepaycashapp/src/pages/register/register.html"*/'<ion-content class="imgBackground vignette">\n  <div style="margin-top:12%" class="center">\n    <ion-img class="logo" src="assets/imgs/EPCLogo.png"></ion-img>\n  </div>\n  <div class="center">\n    <ion-list>\n      <ion-item class="marginlists" >\n        <ion-label stacked>Nombres</ion-label>\n        <ion-input type="text" required name="userregistronombre" [(ngModel)]="user_register.first_name"></ion-input>\n      </ion-item>\n\n      <ion-item class="marginlists">\n        <ion-label stacked>Apellidos</ion-label>\n        <ion-input type="text" required name="userregistroapellido"\n                   [(ngModel)]="user_register.last_name"></ion-input>\n      </ion-item>\n\n      <ion-item class="marginlists">\n        <ion-label stacked>Género</ion-label>\n        <ion-select okText="Guardar" cancelText="Cancelar" [(ngModel)]="user_register.gender" name="userregistrogenero">\n          <ion-option value="f">Femenino</ion-option>\n          <ion-option value="m">Masculino</ion-option>\n        </ion-select>\n      </ion-item>\n\n      <ion-item class="marginlists">\n        <ion-label stacked>Email</ion-label>\n        <ion-input type="email" required name="userregistroemail"\n                   [(ngModel)]="user_register.mail"></ion-input>\n      </ion-item>\n\n      <ion-item class="marginlists">\n        <ion-label stacked>Contraseña</ion-label>\n        <ion-input type="{{type}}" name="userregistrocontrasena"\n                   required [(ngModel)]="user_register.password"></ion-input>\n        <button *ngIf="!showPass" ion-button clear color="dark" type="button" item-right (click)="showPassword()">\n          <ion-icon name="ios-eye-off-outline"></ion-icon>\n        </button>\n        <button *ngIf="showPass" ion-button clear color="dark" type="button" item-right (click)="showPassword()">\n          <ion-icon name="ios-eye-outline"></ion-icon>\n        </button>\n      </ion-item>\n\n    </ion-list>\n  </div>\n\n  <div style="margin-top: -20%" padding class="center">\n    <ion-label (click)="politicas()" style="color:white; font-size: 16px" floating>Políticas de uso</ion-label>\n    <ion-label (click)="privacidad()" style="color:white; font-size: 16px" floating>Privacidad de la información\n    </ion-label>\n  </div>\n\n  <div style="margin-top: 6%" class="center">\n    <button style="border-radius: 0%" class="buttonPayCash" (click)="cancel()" ion-button small>Cancelar</button>\n    <button style="border-radius: 0%" class="buttonPayCash" (click)="register()" ion-button small>Registrarse\n    </button>\n  </div>\n\n</ion-content>'/*ion-inline-end:"/Users/eyeline/Documents/GitHub/eyepaycashapp/src/pages/register/register.html"*/,
->>>>>>> 81951ee53228c71b0aa374e34045d5bcc1d6b23c
-        }),
-        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* ToastController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* ToastController */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_2__providers_api__["a" /* Api */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__providers_api__["a" /* Api */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_3__providers_auth_user_auth_user__["a" /* AuthUserProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__providers_auth_user_auth_user__["a" /* AuthUserProvider */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* LoadingController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* LoadingController */]) === "function" && _f || Object, typeof (_g = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* ModalController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* ModalController */]) === "function" && _g || Object])
-    ], RegisterPage);
-    return RegisterPage;
-    var _a, _b, _c, _d, _e, _f, _g;
-}());
-
-//# sourceMappingURL=register.js.map
-
-/***/ }),
-
-<<<<<<< HEAD
 /***/ 321:
-=======
-/***/ 319:
->>>>>>> 81951ee53228c71b0aa374e34045d5bcc1d6b23c
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PoliticasPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_auth_user_auth_user__ = __webpack_require__(28);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1488,6 +1351,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+
 
 
 /**
@@ -1497,14 +1361,13 @@ var __metadata = (this && this.__metadata) || function (k, v) {
  * Ionic pages and navigation.
  */
 var PoliticasPage = /** @class */ (function () {
-    function PoliticasPage(navCtrl, navParams, toastCtrl) {
+    function PoliticasPage(navCtrl, navParams, toastCtrl, view, userProvider) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
         this.toastCtrl = toastCtrl;
+        this.view = view;
+        this.userProvider = userProvider;
     }
-    PoliticasPage.prototype.ionViewDidLoad = function () {
-        console.log('ionViewDidLoad PoliticasPage');
-    };
     PoliticasPage.prototype.presentToast = function () {
         var toast = this.toastCtrl.create({
             message: 'Si no acepta estos términos, no debe usar nuestros servicios. Puede utilizar nuestros servicios sólo si puede celebrar legalmente un acuerdo según la ley aplicable. Si utiliza nuestros servicios, acepta hacerlo de conformidad con estos términos y con las leyes y regulaciones aplicables.',
@@ -1806,83 +1669,34 @@ var PoliticasPage = /** @class */ (function () {
         });
         toast.present();
     };
+    PoliticasPage.prototype.aceptarTerminos = function () {
+        this.userProvider.setCheck_Terminos(true);
+        this.view.dismiss(true);
+    };
+    PoliticasPage.prototype.goRegister = function () {
+        this.navCtrl.pop();
+    };
     PoliticasPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-<<<<<<< HEAD
-            selector: 'page-politicas',template:/*ion-inline-start:"/Users/eyeline/Documents/eyepaycashappGitHub/src/pages/politicas/politicas.html"*/'<ion-content class="imgBackground">\n  <div padding>\n    <div style="background:white; border-radius:8px; padding: 2%">\n      <!-- <p class="Titles"> Términos de Uso de EyePayCash.</p>\n      <a class="textNomral">Por favor lea estos términos de uso cuidadosamente, al hacer clic en aceptar, acceder o\n        utilizar nuestros servicios, se compromete a respetar estos términos de uso y todos los términos incorporados\n        por referencia.Si está aceptando estos términos en nombre de una entidad, usted confirma que está autorizado en\n        nombre de esa entidad para aceptar y sujetarse a estos términos de uso y a todos los términos incorporados por\n        referencia.</a>\n\n      <p class="Titles"> Alcance.\n      </p>\n      <a class="textNomral">Estos términos de uso se refieren a nosotros como <b>“EyePayCash” </b>ó <b>“nosotros“</b>.\n        <b>EyePayCash</b> es\n        una compañía constituida bajo las leyes de Malta Europa. Estos términos se aplican a cualquier acceso, uso de\n        nuestro sitio web en https://eyepaycash.co, nuestros servicios en línea, nuestras aplicaciones móviles para\n        iOS\n        e Android, y/o cualquiera de nuestros servicios relacionados.\n\n        La República de Malta (en maltés: Repubblika ta’ Malta; en inglés: Republic of Malta) es un país insular\n        miembro de la Unión Europea, densamente poblado, compuesto por un archipiélago y situado en el centro del\n        Mediterráneo, al sur de Italia, al oriente de Túnez y al norte de Libia.</a>\n      <br><br>\n      <a class="textNomral">La República de Malta (en maltés: Repubblika ta’ Malta; en inglés: Republic of Malta) es un\n        país insular\n        miembro de la Unión Europea, densamente poblado, compuesto por un archipiélago y situado en el centro del\n        Mediterráneo, al sur de Italia, al oriente de Túnez y al norte de Libia.</a>\n      <br><br>\n      <a (click)="presentToast()" style="font-weight: bold">ELEGIBILIDAD Y ACUERDO.</a> <br>\n      <br>\n      <a (click)="presentToast2()" style="font-weight: bold">CAMBIOS EN ESTOS TÉRMINOS.</a>\n      <br>\n      <br>\n      <a (click)="presentToast3()" style="font-weight: bold">NOTA ACLARATORIA.</a>\n      <br>\n      <p class="Titles"> Los servicios de EyePayCash.\n      </p>\n      <a class="textNomral"> <b>EyePayCash </b>proporciona una forma de almacenar, usar y administrar\n        criptomonedas:</a>\n      <br>\n      <b>MONEDERO VIRTUAL: EyePayCash</b> es una billetera virtual basada en criptomonedas donde puede\n      enviar, recibir y\n      cambiar su dinero y criptomonedas de manera segura.\n      <br>\n      <b><i>Bóveda</i></b><a class="textNomral">: servicio de almacenamiento y de rentas fijas. Lo contenido\n        en el siguiente link\n        https://eyepaycash.com/boveda/ hace parte de estos términos y condiciones.</a>\n      <br><br>\n      <a class="textNomral"> -El Monto mínimo de de ingreso a la <b><i>Bóveda</i></b> es de 0.01 BTC.</a>\n      <br><br>\n      <a class="textNomral"> -Desde el momento en que ingrese sus criptomonedas debe escoger entre los plazos de\n        retiro que le\n        ofrecemos.</a>\n      <br><br>\n      <a class="textNomral"> -El retorno del capital y renta se realizarán una vez se haya cumplido la fecha de\n        finalización y la\n        respectiva\n        solicitud dentro del término establecido.</a>\n      <br><br>\n      <a class="textNomral"> -Una vez se cumpla la fecha de finalización, el plazo para retirar es de 3 días,\n        incluyendo la fecha de\n        finalización.</a>\n      <br><br>\n      <a class="textNomral"> – En caso de que se cumpla el plazo para retirar y no se haya realizado el retiro, la <b><i>Bóveda</i></b>\n        se renovará de\n        manera automática por el mismo plazo inicial.</a>\n      <br><br>\n      <a class="textNomral"> – El retorno de su capital y renta será realizado una vez se cumpla la fecha de\n        finalización.</a>\n      <br><br>\n      <a class="textNomral"> <b>EXCHANGE:</b> servicio de intercambio de criptomonedas y dinero fiat.</a>\n      <br><br>\n      <b>nota:</b>\n      <a class="textNomral">el usuario del sistema exchange debe ser extremadamente cuidadoso con los datos de cuentas\n        bancarias o\n        cuentas virtuales o cualquier dato solicitado para que exchange funcione y se pueda usar,</a>\n      <br><br>\n      <a class="textNomral">EyePayCash no se hace responsable si el usuario comete yerros al digitar, ingresar, colocar\n        sus datos, es decir\n        que las implicaciones de dichas imprecisiones correrán por cuenta del usuario; por lo tanto EyePayCash no se\n        hace responsable de los mismos.</a>\n      <br><br>\n      <a class="textNomral">Al ingresar a esta opción, puede realizar las siguientes operaciones:</a>\n      <br><br>\n      <b>Oferta de criptomonedas:</b>\n      <br><br>\n      <a class="textNomral">\n        Debe completar la información solicitada por los campos del sistema para vender sus criptomonedas, luego de la\n        publicación de la oferta, las criptomonedas se extraen de la cartera virtual e ingresan a un sistema aislado\n        para\n        asegurar la transacción.</a>\n      <br><br>\n      <b>Comprar criptomonedas:</b>\n      <br><br>\n      <a class="textNomral">\n        Debe ingresar a la lista de opciones de las ofertas y elegir la porción de criptomonedas que desea adquirir,\n        una vez realizada esta elección, el procedimiento requerido por el sistema debe agotarse para que tenga éxito y\n        el usuario obtenga el monto pagado en una manera legal de acuerdo con el orden jurídico del estado donde se\n        realiza la transacción.</a>\n      <br><br>\n      <a class="textNomral">\n        EyePayCash cuenta con una lista de todas las compras y ventas (TRANSACCIONES) realizada por sus usuarios; el\n        sistema EyePayCash funciona bajo la tecnología blockchain.</a>\n      <br><br>\n      <b>COMPRAR</b>\n      <br><br>\n      <a class="textNomral">\n        Para comprar y vender criptomonedas con EyePayCash, simplemente haga clic en el botón Exchange, que lo\n        redireccionará a un proceso que le mostrará distintas opciones. Para comprar criptomonedas utilizando\n        criptomonedas o dinero fiduciario. EyePayCash no se hace responsable en ningún caso por el éxito de las\n        compraventas realizadas por los usuarios en la plataforma.</a>\n      <br><br>\n      <a class="textNomral">\n        Si usted desea que la cantidad o porción de criptomonedas compradas en el sistema Exchange de EyePayCash sea\n        depositada directamente en un monedero virtual diferente a EyePayCash, tendrá un costo adicional de 1% de la\n        cantidad en mención; el proceso de transferencia se podrá demorar un día hábil, es oportuno resaltar que el\n        tiempo final depende del tiempo que tarde la validación de la transacción, hecha por la minería de\n        criptomonedas.</a>\n      <br><br>\n      <b>VENDER</b>\n      <br><br>\n      <a class="textNomral">\n        Una vez usted ofrece una cantidad de criptomonedas en Exchange de EyePayCash usted deberá esperar como mínimo\n        10\n        días hábiles para cancelar la oferta, si usted NO ESPERA DICHO TÉRMINO, se le penalizará con una disminución\n        del 0,4% de la cantidad ofertada; pasados estos 10 días hábiles no habrá penalización por retirar la oferta. La\n        solicitud de cancelación de oferta implica que su cantidad de criptomoneda sale del servicio de Exchange de\n        EyePayCash, pero sigue en el monedero.</a>\n      <br><br>\n      <a class="textNomral">\n        Las únicas criptomonedas admitidas por EyePayCash serán expresadas de forma inequívoca y pública en la página\n        web de EyePayCash. EyePayCash no será responsable de recibir o almacenar monedas digitales que no cumplan con\n        el\n        requisito anteriormente descrito; se le recuerda que si usted intenta hacer una transferencia de criptomonedas\n        que no cumplan el requisito de la referencia, usted puede perder cualquier derecho relacionado con dicha moneda\n        digital o valor sin ningún derecho a reclamar a EyePayCash.</a>\n      <br><br>\n      <a class="textNomral">\n        EyePayCash no se hará responsable por los datos equívocos que se ingresen en el módulo método de pago.</a>\n      <br><br>\n      <b>COSTOS POR EL USO DE EXCHANGE</b>\n      <br><br>\n      <a class="textNomral">\n        Toda transacción exitosa llevada a cabo por intermedio y/o usando nuestro sistema de EXCHANGE; tendrá un costo\n        del 1% del total de las cantidades objeto de cada transacción en concreto.</a>\n      <br><br>\n      <b>ESTADO DE MODERACIÓN</b>\n      <br><br>\n      <a class="textNomral">\n        Una vez se compre una fracción publicada y se allegue el respectivo comprobante de pago, el vendedor tendrá dos\n        horas para validarlo, es decir, aprobarlo o rechazarlo.</a>\n      <br><br>\n      <a class="textNomral">\n        Si el comprobante es rechazado y el comprador no ratifica y/o vuelve a subir el comprobante y el mismo nunca es\n        validado, EyePayCash cambia la compra a un estado de moderación donde ni el vendedor ni el comprador pueden\n        ejecutar alguna acción, ambos deberán esperar 3 días hábiles mientras EyePayCash hace la respectiva\n        investigación para saber qué sucedió.</a>\n      <br>\n      <p class="Titles"> Reserva de EyePayCash.</p>\n      <br>\n      <a class="textNomral">\n        La Reserva de <b>EyePayCash</b> está diseñada principalmente para cubrir la pérdida de criptomonedas\n        almacenadas por\n        nuestros usuarios en la <b><i>Bóveda</i></b>, nuestro servicio de almacenamiento incorpora múltiples capas de\n        seguridad\n        criptográfica para ayudar a proteger sus criptomonedas. Estos procesos incluyen autenticación de múltiples\n        factores y segmentación de clave privada entre otros.</a>\n      <br><br>\n      <a class="textNomral">\n        La Reserva de <b>EyePayCash</b> está diseñada para cubrir pérdidas directas y efectivas sufridas por los\n        usuarios como\n        resultado de ataques de hackers a nuestros sistemas, robo por parte de un tercero y/o empleado de <b>EyePayCash</b>\n        y/o\n        nuestra bancarrota. (<b>“Pérdidas que califican o Pérdidas Calificadas“</b>).</a>\n      <br><br>\n      <a class="textNomral">\n        La Reserva de <b>EyePayCash</b> no cubre casos de piratería de dispositivos de los usuarios y cuentas\n        personales como\n        teléfonos, computadoras, cuentas de correo electrónico, etc. Por ejemplo, una pérdida sufrida como resultado de\n        la falta de mantener la seguridad, el control o la confidencialidad adecuados de su información, incluidos los\n        números de identificación personal <b>PIN</b>, contraseñas, claves <b>API</b> u otros códigos asociados con su\n        cuenta y\n        cualquier actividad que se produzca dentro de esa cuenta, no se considerará una <b>Pérdida admisible</b>.</a>\n      <br><br>\n      <a class="textNomral">\n        Hemos diseñado la reserva de criptomonedas <b>EyePayCash</b> para ayudar a reducir el impacto de las pérdidas\n        de\n        criptomonedas que están fuera del control de nuestros usuarios, no podemos garantizar que la reserva de\n        criptomonedas de <b>EyePayCash</b> tenga un número suficiente de criptomonedas para cubrir cualquiera de las\n        pérdidas\n        sufridas por nuestros usuarios en estas circunstancias.</a>\n      <br><br>\n      <a class="textNomral">\n        En caso de una <b>Pérdida Calificada</b> Los usuarios que tengan almacenadas criptomonedas en nuestra <b><i>Bóveda</i></b>\n        tendrán\n        prioridad frente a los que solo tengan sus criptomonedas en el <b><i>Monedero Virtual</i></b>.</a>\n      <br><br>\n      <a class="textNomral">\n        La Reserva de <b>EyePayCash</b> cubrirá las <b>Pérdidas Calificadas</b> en el siguiente orden de prioridad:</a>\n      <br><br>\n      <a class="textNomral">\n        Si la Reserva de <b>EyePayCash</b> no es suficiente para cubrir el 100% de las <b>Pérdidas Calificadas</b> de\n        la <b><i>Bóveda</i></b> y\n        luego del <b><i>Monedero Virtual</i></b>, las pérdidas se cubrirán proporcionalmente, en función del valor\n        total de las\n        mismas y en proporción al valor total de criptomonedas perdidas por todos los Usuarios como resultado del\n        incidente.</a>\n      <br><br>\n      <a class="textNomral">\n        El uso de la Reserva <b>EyePayCash</b> es opcional para nuestros usuarios. Como condición para recibir\n        cualquier\n        cantidad de criptomonedas y/o fondos de la cobertura de la Reserva <b>EyePayCash</b> , usted acepta (i)\n        cooperar\n        oportunamente con <b>EyePayCash</b> a petición suya en relación con cualquier reclamación de cobertura\n        relacionada con\n        sus criptomonedas, lo que incluye el suministro oportuno de cualquier información o la documentación que\n        <b>EyePayCash</b> razonablemente solicita, y (ii) firmar cualquier documento que incluye, entre otros, la\n        liberación de\n        reclamos adicionales contra <b>EyePayCash</b> , que EyePayCash podría requerir.</a>\n      <br><br>\n      <a (click)="Transacciones()" style="font-weight: bold">TRANSACCIONES.</a>\n      <br><br>\n      <a (click)="Retrasos()" style="font-weight: bold">RETRASOS.</a>\n      <br><br>\n      <a (click)="DirClave()" style="font-weight: bold">DIRECCIÓN Y CLAVE PERDIDA.</a>\n      <br><br>\n      <a (click)="Crypto()" style="font-weight: bold">CUSTODIA DE CRIPTOMONEDAS.</a>\n      <br>\n      <p class="Titles">Derechos de propiedad intelectual.</p>\n      <br><br>\n      <a class="textNomral">\n        Conservamos todos los derechos, títulos e intereses (incluidos todos los derechos de autor, marcas registradas,\n        patentes, secretos comerciales y todos los demás derechos de propiedad intelectual) en nuestros servicios y\n        todo el contenido de nuestros servicios, incluidas nuestras marcas comerciales, marcas de servicio, diseños,\n        logotipos y URL. y los nombres comerciales que se muestran en nuestro servicio, a los que nos referimos en\n        estos términos, colectivamente, como Materiales de <b>EyePayCash</b>.</a>\n      <br><br>\n      <a class="textNomral">\n        Por la presente, le otorgamos una licencia limitada, no exclusiva y no sublicenciable para acceder y utilizar\n        los materiales de <b>EyePayCash</b> para su uso comercial personal o interno.</a>\n      <br><br>\n      <a class="textNomral">\n        Dicha licencia está sujeta a estos términos y no permite la reventa de los materiales <b>EyePayCash</b> ; la\n        distribución, ejecución pública o exhibición pública de cualquier material de <b>EyePayCash</b> ; modificar o\n        hacer\n        cualquier uso derivado de los Materiales de <b>EyePayCash</b> o cualquier parte del mismo; o cualquier uso de\n        los\n        Materiales <b>EyePayCash</b> que no sea para sus fines previstos. La licencia otorgada en virtud de esta\n        Sección\n        finalizará automáticamente si suspendemos o cancelamos su acceso a los servicios. Tendremos derechos\n        exclusivos, incluidos todos los derechos de propiedad intelectual, sobre cualquier comentario, sugerencia, idea\n        u otra información o material relacionado con <b>EyePayCash</b> , cualquier comentario que envíe no es\n        confidencial y\n        pasará a ser propiedad exclusiva de <b>EyePayCash</b> . Tendremos derecho a la utilización y difusión sin\n        restricciones\n        de dichos comentarios para cualquier fin, comercial o de otro tipo, sin reconocimiento o compensación para\n        usted. No puede usar, copiar o transmitir nada en nuestro sitio web sin nuestro permiso.</a>\n      <br>\n      <p class="Titles">Usos autorizados de nuestros servicios.</p>\n      <br><br>\n      <a class="textNomral">\n        Usted puede usar nuestros servicios únicamente en lo que le hemos autorizado. Usted es responsable de\n        garantizar que la información personal de su perfil en la cuenta sea actual y correcta, incluida su dirección\n        de correo electrónico y número de teléfono móvil. También es responsable de mantener la seguridad, el control y\n        la confidencialidad adecuados de la información de su cuenta, incluidos los números de identificación personal\n        (PIN), contraseñas, claves de API u otros códigos asociados con su cuenta y cualquier actividad que ocurra\n        dentro de esa cuenta. La pérdida o el compromiso de esta información puede ocasionar el acceso no autorizado de\n        su cuenta, lo que puede ocasionar la pérdida o robo de cualquier criptomoneda almacenada en su cuenta. Si cree\n        que su cuenta se ha visto comprometida, necesita informar un incidente de seguridad, si experimenta problemas\n        operacionales o tiene un problema de seguridad, por favor contáctenos inmediatamente describiendo el problema\n        en cuestión lo más detalladamente posible, incluyendo la fecha, el tipo de problema y parte del sitio de\n        <b>EyePayCash</b> o los servicios de <b>EyePayCash</b> donde experimentó ese problema. Usted es responsable de\n        (i) notificarnos\n        inmediatamente de cualquier uso no autorizado de su contraseña, cuenta o de cualquier otra violación de\n        seguridad, y (ii) asegurarse de salir de su cuenta al final de cada sesión al acceder a los servicios de\n        <b>EyePayCash</b>. No tenemos responsabilidad por ninguna pérdida que sufra como resultado de no cumplir con\n        esta\n        sección o su incumplimiento de los avisos o alertas que podamos enviarle.</a>\n      <br><br>\n      <a (click)="smsText()" style="font-weight: bold">USANDO SMS / TEXTO.</a>\n      <br><br>\n      <a (click)="infoPrerequisito()" style="font-weight: bold">INFORMACIÓN PRECISA Y REQUISITOS.</a>\n      <br><br>\n      <a (click)="actividadesProhibidas()" style="font-weight: bold">ACTIVIDADES PROHIBIDAS.</a>\n      <br><br>\n      <a (click)="cuentasSuspendidas()" style="font-weight: bold">CUENTAS SUSPENDIDAS.</a>\n      <br><br>\n      <a (click)="cuentasEliminadas()" style="font-weight: bold">CUENTAS ELIMINADAS.</a>\n      <br><br>\n      <a (click)="descargoGarantias()" style="font-weight: bold">DESCARGO DE GARANTÍAS.</a>\n      <br><br>\n      <a (click)="sinConsejos()" style="font-weight: bold">SIN CONSEJOS.</a>\n      <br><br>\n      <a (click)="indemnizacion()" style="font-weight: bold">INDEMNIZACIÓN.</a>\n      <br><br>\n      <a (click)="limiResponsabilidad()" style="font-weight: bold">LIMITACIÓN DE RESPONSABILIDAD.</a>\n      <br><br>\n      <a (click)="separabilidad()" style="font-weight: bold">SEPARABILIDAD.</a>\n      <br><br>\n      <a (click)="arbAplicable()" style="font-weight: bold">ARBITRAJE Y LEY APLICABLE.</a>\n      <br><br>\n      <a (click)="limitaciones()" style="font-weight: bold">LIMITACIONES.</a>\n      <br><br>\n      <a (click)="propiedadNReclamada()" style="font-weight: bold">PROPIEDAD NO RECLAMADA.</a>\n      <br><br>\n      <a (click)="acuerdoCompleto()" style="font-weight: bold">ASIGNACIÓN: ACUERDO COMPLETO.</a> -->\n      <br><br>\n      <a (click)="politicaPrivacidad()" style="font-weight: bold">POLÍTICA DE PRIVACIDAD.</a>\n      <br>\n      <p class="Titles"><i>Usos autorizados de nuestros servicios.</i></p>\n      <a class="textNomral">\n        <i><b>Datos que nos proporciona.</b> Recopilamos la información que nos proporciona, que incluye:</i></a>\n      <br><br>\n      <a class="textNomral">\n        - Su nombre, dirección de correo electrónico, número de teléfono móvil.</a>\n      <br><br>\n      <a class="textNomral">\n        - Información sobre las transacciones que completa utilizando nuestros servicios, incluida la cantidad de\n        fondos asociados con una transacción de criptomoneda, el tipo de transacción ejecutada y otra información\n        relacionada.</a>\n      <br><br>\n      <a class="textNomral">\n        - Los correos electrónicos y números de teléfono de sus contactos, si elige invitar a sus amigos a usar\n        EyePayCash como parte de nuestro programa de referencia cuando crea su cuenta.</a>\n      <br><br>\n      <a class="textNomral">\n        - Si usa nuestras aplicaciones móviles, recopilamos de su dispositivo móvil una ID única (donde su dispositivo\n        es un iPhone, también recolectamos el CFUUID recomendado por Apple (el identificador universal único de\n        información).</a>\n      <br>\n      <p class="Titles">Otros datos recopilados.</p>\n      <a class="textNomral">\n        También podemos recopilar automáticamente los siguientes datos:</a>\n      <br><br>\n      <b><i> - Analítica.</i></b>\n      <br><br>\n      <a class="textNomral">\n        Cuando visita nuestro sitio web, utilizamos herramientas de análisis de terceros para recopilar datos sobre su\n        computadora y conexión a Internet. Esa información incluye la dirección IP de su computadora y/o proveedor de\n        servicios de Internet, cuando accede a nuestro sitio web, la dirección de Internet de los sitios web desde los\n        cuales se conecta a nuestro sitio web y desde donde llegó antes de aterrizar en nuestro sitio web, el navegador\n        que usted está utilizando, y sus movimientos y preferencias en nuestro sitio web. Toda esta información se usa\n        internamente con el propósito de comprender cómo se está utilizando nuestro sitio web y mejorar nuestro sitio\n        web. También utilizamos herramientas de análisis de terceros para recopilar datos sobre su uso de nuestras\n        aplicaciones móviles. La información recopilada identifica los tipos y el momento de las acciones que realiza\n        dentro de nuestro dispositivo móvil, incluida la instalación, el registro, la carga y ciertos tipos de\n        navegación.</a>\n      <br><br>\n      <b><i> - Etiquetas de acción.</i></b>\n      <br><br>\n      <a class="textNomral">\n        Cuando visita nuestro sitio web, usamos etiquetas de acción (también llamadas etiquetas de píxeles, GIF claro o\n        balizas) para identificar algunas de las páginas que visita y cómo utiliza el contenido de esas páginas. Las\n        etiquetas de acción pueden recopilar y transmitir estos datos de una manera que lo identifique si se ha\n        registrado en nuestro sitio web o si ha iniciado sesión en nuestro sitio web. También usamos etiquetas de\n        acción en nuestros correos electrónicos para determinar si un correo electrónico se abrió o si se reenvió a\n        otra persona. Cuando utiliza nuestras aplicaciones móviles, utilizamos etiquetas de acción en las que accede a\n        sitios web desde enlaces en nuestras aplicaciones móviles. Estos pueden identificar las páginas que visita y\n        cómo utiliza el contenido en esas páginas.</a>\n      <b><i> - Gestión del sitio.</i></b>\n      <br><br>\n      <a class="textNomral">\n        Agregamos datos que recopilamos sobre el uso de nuestro sitio web para administrar, proteger y mejorar nuestro\n        sitio web y nuestros sistemas, para comprender mejor las preferencias de los visitantes de nuestro sitio web y\n        optimizar el contenido que servimos, para identificar problemas del servidor, compilar estadísticas agregadas\n        sobre el uso de nuestro sitio web y para mejorar nuestro marketing e investigación.</a>\n      <b><i> - No Track.</i></b>\n      <br><br>\n      <a class="textNomral">\n        Nuestro Servicio actualmente no responde a las señales de “No rastrear” y funciona como se describe en esta\n        Política de privacidad, ya sea que se reciba o no una señal de No rastrear. Si lo hacemos en el futuro,\n        describiremos cómo lo hacemos en esta Política de privacidad.</a>\n      <br><br>\n      <a class="textNomral">\n        Al proporcionarnos voluntariamente datos personales, usted acepta nuestro uso de acuerdo con esta Política de\n        privacidad. Si nos proporciona datos personales, reconoce y acepta que dichos datos personales pueden\n        transferirse desde su ubicación actual a las oficinas y servidores de <b>EyePayCash</b> y los terceros\n        autorizados\n        mencionados en esta política. Usamos medidas de seguridad físicas, electrónicas y de procedimientos razonables\n        para proteger la información personal que obtenemos de usted contra la pérdida, el uso indebido y el acceso,\n        divulgación, alteración y destrucción no autorizados. Tenga en cuenta que no somos responsables de la seguridad\n        de los datos que está transmitiendo a través de Internet ni de los datos que está almacenando, publicando o\n        proporcionando directamente en el sitio web de un tercero, que se rige por las políticas de esa parte. Tenga en\n        cuenta que ningún método de transmisión a través de Internet o método de almacenamiento electrónico es 100%\n        seguro. Si tiene más preguntas sobre seguridad, puede <a href="http://eyepaycash.co/contactenos"> Contáctenos</a>.</a>\n      <p class="Titles">Retención de datos.</p>\n      <a class="textNomral">\n        Si desea cerrar su cuenta de EyePayCash por completo, envienos un correo a <a href="http://eyepaycash.co/contactenos">\n          Contáctenos</a>\n        desde su dirección de correo electrónico registrada. Podemos retener información sobre usted en nuestras bases\n        de datos por el tiempo que su cuenta esté activa o según sea necesario para proporcionarle servicios y de\n        acuerdo con las leyes aplicables. Nuestra retención y uso de su información será tan necesaria para cumplir con\n        nuestras obligaciones legales, resolver disputas y hacer cumplir nuestros acuerdos. El período de retención\n        puede extenderse más allá del final de su relación con nosotros, pero solo será necesario siempre que tengamos\n        suficiente información para responder a cualquier problema que pueda surgir más adelante. Por ejemplo, es\n        posible que necesitemos o se nos solicite que retengamos cierta información para evitar actividades\n        fraudulentas, protegernos de responsabilidad, permitirnos buscar remedios disponibles o limitar cualquier daño\n        que podamos sufrir.</a>\n      <br>\n      <p class="Titles">Acceso a la información.</p>\n      <a class="textNomral">\n        Responderemos a su solicitud de acceso a la información que recopilamos sobre usted dentro del plazo requerido\n        por la ley aplicable.</a>\n      <br><br>\n      <a class="textNomral">\n        <b>Compartir datos.</b>\n        <a class="textNomral">Podemos compartir su información de la siguiente manera:</a>\n        <br><br>\n        <a class="textNomral">\n          - Usted ha consentido o nos ha dado permiso para compartir:</a>\n        <br><br>\n        <a class="textNomral">\n          - Hemos agregado o eliminado la identificación de la información, por lo que no se puede usar\n          razonablemente para identificarlo.</a>\n        <br><br>\n        <a class="textNomral">\n          - Con las empresas afiliadas al Grupo EyePayCash:</a>\n        <br><br>\n        <a class="textNomral">\n          - Con los proveedores de servicios externos que utilizamos para brindar nuestro servicio, incluidos\n          ciertos servicios de publicidad, referencias, operaciones, servicios financieros y tecnología (como\n          proveedores de hosting, verificación de identidad, soporte, pago y proveedores de servicios de correo\n          electrónico):</a>\n        <br><br>\n        <a class="textNomral">\n          - Si así lo requiere la ley o el proceso legal aplicable, o si creemos que está de acuerdo con la\n          ley\n          aplicable o el proceso legal:</a>\n        <br><br>\n        <a class="textNomral">\n          - Para proteger los derechos, propiedad y seguridad de EyePayCash, nuestros usuarios y el\n          público,\n          incluyendo, por ejemplo, en conexión con procedimientos judiciales, o para detectar o prevenir\n          actividad\n          criminal, fraude, tergiversación material, o para establecer nuestros derechos o defendernos\n          contra legal\n          reclamaciones; o En relación con la venta, la fusión, la transferencia o la reorganización de la\n          totalidad o\n          partes de nuestro negocio.</a>\n      </a>\n      <br><br>\n      <!-- <a (click)="comEmail()" style="font-weight: bold">COMUNICACIONES POR EMAIL.</a>\n      <br><br>\n      <a (click)="enlServicios()" style="font-weight: bold">ENLACES Y SERVICIOS.</a>\n      <br><br>\n      <a (click)="camPolitica()" style="font-weight: bold">CAMBIOS A ESTA POLÍTICA.</a>\n      <br><br> -->\n      <div class="center">\n        <button style="border-radius: 0%" (click)= "navHome()" class="buttonPayCash btnStyle" ion-button small>Acepto</button>\n      </div>\n    </div>\n  </div>\n</ion-content>'/*ion-inline-end:"/Users/eyeline/Documents/eyepaycashappGitHub/src/pages/politicas/politicas.html"*/,
-=======
-            selector: 'page-politicas',template:/*ion-inline-start:"/Users/eyeline/Documents/GitHub/eyepaycashapp/src/pages/politicas/politicas.html"*/'<ion-content class="imgBackground">\n  <div padding>\n    <div style="background:white; border-radius:8px; padding: 2%">\n      <!-- <p class="Titles"> Términos de Uso de EyePayCash.</p>\n      <a class="textNomral">Por favor lea estos términos de uso cuidadosamente, al hacer clic en aceptar, acceder o\n        utilizar nuestros servicios, se compromete a respetar estos términos de uso y todos los términos incorporados\n        por referencia.Si está aceptando estos términos en nombre de una entidad, usted confirma que está autorizado en\n        nombre de esa entidad para aceptar y sujetarse a estos términos de uso y a todos los términos incorporados por\n        referencia.</a>\n\n      <p class="Titles"> Alcance.\n      </p>\n      <a class="textNomral">Estos términos de uso se refieren a nosotros como <b>“EyePayCash” </b>ó <b>“nosotros“</b>.\n        <b>EyePayCash</b> es\n        una compañía constituida bajo las leyes de Malta Europa. Estos términos se aplican a cualquier acceso, uso de\n        nuestro sitio web en https://eyepaycash.co, nuestros servicios en línea, nuestras aplicaciones móviles para\n        iOS\n        e Android, y/o cualquiera de nuestros servicios relacionados.\n\n        La República de Malta (en maltés: Repubblika ta’ Malta; en inglés: Republic of Malta) es un país insular\n        miembro de la Unión Europea, densamente poblado, compuesto por un archipiélago y situado en el centro del\n        Mediterráneo, al sur de Italia, al oriente de Túnez y al norte de Libia.</a>\n      <br><br>\n      <a class="textNomral">La República de Malta (en maltés: Repubblika ta’ Malta; en inglés: Republic of Malta) es un\n        país insular\n        miembro de la Unión Europea, densamente poblado, compuesto por un archipiélago y situado en el centro del\n        Mediterráneo, al sur de Italia, al oriente de Túnez y al norte de Libia.</a>\n      <br><br>\n      <a (click)="presentToast()" style="font-weight: bold">ELEGIBILIDAD Y ACUERDO.</a> <br>\n      <br>\n      <a (click)="presentToast2()" style="font-weight: bold">CAMBIOS EN ESTOS TÉRMINOS.</a>\n      <br>\n      <br>\n      <a (click)="presentToast3()" style="font-weight: bold">NOTA ACLARATORIA.</a>\n      <br>\n      <p class="Titles"> Los servicios de EyePayCash.\n      </p>\n      <a class="textNomral"> <b>EyePayCash </b>proporciona una forma de almacenar, usar y administrar\n        criptomonedas:</a>\n      <br>\n      <b>MONEDERO VIRTUAL: EyePayCash</b> es una billetera virtual basada en criptomonedas donde puede\n      enviar, recibir y\n      cambiar su dinero y criptomonedas de manera segura.\n      <br>\n      <b><i>Bóveda</i></b><a class="textNomral">: servicio de almacenamiento y de rentas fijas. Lo contenido\n        en el siguiente link\n        https://eyepaycash.com/boveda/ hace parte de estos términos y condiciones.</a>\n      <br><br>\n      <a class="textNomral"> -El Monto mínimo de de ingreso a la <b><i>Bóveda</i></b> es de 0.01 BTC.</a>\n      <br><br>\n      <a class="textNomral"> -Desde el momento en que ingrese sus criptomonedas debe escoger entre los plazos de\n        retiro que le\n        ofrecemos.</a>\n      <br><br>\n      <a class="textNomral"> -El retorno del capital y renta se realizarán una vez se haya cumplido la fecha de\n        finalización y la\n        respectiva\n        solicitud dentro del término establecido.</a>\n      <br><br>\n      <a class="textNomral"> -Una vez se cumpla la fecha de finalización, el plazo para retirar es de 3 días,\n        incluyendo la fecha de\n        finalización.</a>\n      <br><br>\n      <a class="textNomral"> – En caso de que se cumpla el plazo para retirar y no se haya realizado el retiro, la <b><i>Bóveda</i></b>\n        se renovará de\n        manera automática por el mismo plazo inicial.</a>\n      <br><br>\n      <a class="textNomral"> – El retorno de su capital y renta será realizado una vez se cumpla la fecha de\n        finalización.</a>\n      <br><br>\n      <a class="textNomral"> <b>EXCHANGE:</b> servicio de intercambio de criptomonedas y dinero fiat.</a>\n      <br><br>\n      <b>nota:</b>\n      <a class="textNomral">el usuario del sistema exchange debe ser extremadamente cuidadoso con los datos de cuentas\n        bancarias o\n        cuentas virtuales o cualquier dato solicitado para que exchange funcione y se pueda usar,</a>\n      <br><br>\n      <a class="textNomral">EyePayCash no se hace responsable si el usuario comete yerros al digitar, ingresar, colocar\n        sus datos, es decir\n        que las implicaciones de dichas imprecisiones correrán por cuenta del usuario; por lo tanto EyePayCash no se\n        hace responsable de los mismos.</a>\n      <br><br>\n      <a class="textNomral">Al ingresar a esta opción, puede realizar las siguientes operaciones:</a>\n      <br><br>\n      <b>Oferta de criptomonedas:</b>\n      <br><br>\n      <a class="textNomral">\n        Debe completar la información solicitada por los campos del sistema para vender sus criptomonedas, luego de la\n        publicación de la oferta, las criptomonedas se extraen de la cartera virtual e ingresan a un sistema aislado\n        para\n        asegurar la transacción.</a>\n      <br><br>\n      <b>Comprar criptomonedas:</b>\n      <br><br>\n      <a class="textNomral">\n        Debe ingresar a la lista de opciones de las ofertas y elegir la porción de criptomonedas que desea adquirir,\n        una vez realizada esta elección, el procedimiento requerido por el sistema debe agotarse para que tenga éxito y\n        el usuario obtenga el monto pagado en una manera legal de acuerdo con el orden jurídico del estado donde se\n        realiza la transacción.</a>\n      <br><br>\n      <a class="textNomral">\n        EyePayCash cuenta con una lista de todas las compras y ventas (TRANSACCIONES) realizada por sus usuarios; el\n        sistema EyePayCash funciona bajo la tecnología blockchain.</a>\n      <br><br>\n      <b>COMPRAR</b>\n      <br><br>\n      <a class="textNomral">\n        Para comprar y vender criptomonedas con EyePayCash, simplemente haga clic en el botón Exchange, que lo\n        redireccionará a un proceso que le mostrará distintas opciones. Para comprar criptomonedas utilizando\n        criptomonedas o dinero fiduciario. EyePayCash no se hace responsable en ningún caso por el éxito de las\n        compraventas realizadas por los usuarios en la plataforma.</a>\n      <br><br>\n      <a class="textNomral">\n        Si usted desea que la cantidad o porción de criptomonedas compradas en el sistema Exchange de EyePayCash sea\n        depositada directamente en un monedero virtual diferente a EyePayCash, tendrá un costo adicional de 1% de la\n        cantidad en mención; el proceso de transferencia se podrá demorar un día hábil, es oportuno resaltar que el\n        tiempo final depende del tiempo que tarde la validación de la transacción, hecha por la minería de\n        criptomonedas.</a>\n      <br><br>\n      <b>VENDER</b>\n      <br><br>\n      <a class="textNomral">\n        Una vez usted ofrece una cantidad de criptomonedas en Exchange de EyePayCash usted deberá esperar como mínimo\n        10\n        días hábiles para cancelar la oferta, si usted NO ESPERA DICHO TÉRMINO, se le penalizará con una disminución\n        del 0,4% de la cantidad ofertada; pasados estos 10 días hábiles no habrá penalización por retirar la oferta. La\n        solicitud de cancelación de oferta implica que su cantidad de criptomoneda sale del servicio de Exchange de\n        EyePayCash, pero sigue en el monedero.</a>\n      <br><br>\n      <a class="textNomral">\n        Las únicas criptomonedas admitidas por EyePayCash serán expresadas de forma inequívoca y pública en la página\n        web de EyePayCash. EyePayCash no será responsable de recibir o almacenar monedas digitales que no cumplan con\n        el\n        requisito anteriormente descrito; se le recuerda que si usted intenta hacer una transferencia de criptomonedas\n        que no cumplan el requisito de la referencia, usted puede perder cualquier derecho relacionado con dicha moneda\n        digital o valor sin ningún derecho a reclamar a EyePayCash.</a>\n      <br><br>\n      <a class="textNomral">\n        EyePayCash no se hará responsable por los datos equívocos que se ingresen en el módulo método de pago.</a>\n      <br><br>\n      <b>COSTOS POR EL USO DE EXCHANGE</b>\n      <br><br>\n      <a class="textNomral">\n        Toda transacción exitosa llevada a cabo por intermedio y/o usando nuestro sistema de EXCHANGE; tendrá un costo\n        del 1% del total de las cantidades objeto de cada transacción en concreto.</a>\n      <br><br>\n      <b>ESTADO DE MODERACIÓN</b>\n      <br><br>\n      <a class="textNomral">\n        Una vez se compre una fracción publicada y se allegue el respectivo comprobante de pago, el vendedor tendrá dos\n        horas para validarlo, es decir, aprobarlo o rechazarlo.</a>\n      <br><br>\n      <a class="textNomral">\n        Si el comprobante es rechazado y el comprador no ratifica y/o vuelve a subir el comprobante y el mismo nunca es\n        validado, EyePayCash cambia la compra a un estado de moderación donde ni el vendedor ni el comprador pueden\n        ejecutar alguna acción, ambos deberán esperar 3 días hábiles mientras EyePayCash hace la respectiva\n        investigación para saber qué sucedió.</a>\n      <br>\n      <p class="Titles"> Reserva de EyePayCash.</p>\n      <br>\n      <a class="textNomral">\n        La Reserva de <b>EyePayCash</b> está diseñada principalmente para cubrir la pérdida de criptomonedas\n        almacenadas por\n        nuestros usuarios en la <b><i>Bóveda</i></b>, nuestro servicio de almacenamiento incorpora múltiples capas de\n        seguridad\n        criptográfica para ayudar a proteger sus criptomonedas. Estos procesos incluyen autenticación de múltiples\n        factores y segmentación de clave privada entre otros.</a>\n      <br><br>\n      <a class="textNomral">\n        La Reserva de <b>EyePayCash</b> está diseñada para cubrir pérdidas directas y efectivas sufridas por los\n        usuarios como\n        resultado de ataques de hackers a nuestros sistemas, robo por parte de un tercero y/o empleado de <b>EyePayCash</b>\n        y/o\n        nuestra bancarrota. (<b>“Pérdidas que califican o Pérdidas Calificadas“</b>).</a>\n      <br><br>\n      <a class="textNomral">\n        La Reserva de <b>EyePayCash</b> no cubre casos de piratería de dispositivos de los usuarios y cuentas\n        personales como\n        teléfonos, computadoras, cuentas de correo electrónico, etc. Por ejemplo, una pérdida sufrida como resultado de\n        la falta de mantener la seguridad, el control o la confidencialidad adecuados de su información, incluidos los\n        números de identificación personal <b>PIN</b>, contraseñas, claves <b>API</b> u otros códigos asociados con su\n        cuenta y\n        cualquier actividad que se produzca dentro de esa cuenta, no se considerará una <b>Pérdida admisible</b>.</a>\n      <br><br>\n      <a class="textNomral">\n        Hemos diseñado la reserva de criptomonedas <b>EyePayCash</b> para ayudar a reducir el impacto de las pérdidas\n        de\n        criptomonedas que están fuera del control de nuestros usuarios, no podemos garantizar que la reserva de\n        criptomonedas de <b>EyePayCash</b> tenga un número suficiente de criptomonedas para cubrir cualquiera de las\n        pérdidas\n        sufridas por nuestros usuarios en estas circunstancias.</a>\n      <br><br>\n      <a class="textNomral">\n        En caso de una <b>Pérdida Calificada</b> Los usuarios que tengan almacenadas criptomonedas en nuestra <b><i>Bóveda</i></b>\n        tendrán\n        prioridad frente a los que solo tengan sus criptomonedas en el <b><i>Monedero Virtual</i></b>.</a>\n      <br><br>\n      <a class="textNomral">\n        La Reserva de <b>EyePayCash</b> cubrirá las <b>Pérdidas Calificadas</b> en el siguiente orden de prioridad:</a>\n      <br><br>\n      <a class="textNomral">\n        Si la Reserva de <b>EyePayCash</b> no es suficiente para cubrir el 100% de las <b>Pérdidas Calificadas</b> de\n        la <b><i>Bóveda</i></b> y\n        luego del <b><i>Monedero Virtual</i></b>, las pérdidas se cubrirán proporcionalmente, en función del valor\n        total de las\n        mismas y en proporción al valor total de criptomonedas perdidas por todos los Usuarios como resultado del\n        incidente.</a>\n      <br><br>\n      <a class="textNomral">\n        El uso de la Reserva <b>EyePayCash</b> es opcional para nuestros usuarios. Como condición para recibir\n        cualquier\n        cantidad de criptomonedas y/o fondos de la cobertura de la Reserva <b>EyePayCash</b> , usted acepta (i)\n        cooperar\n        oportunamente con <b>EyePayCash</b> a petición suya en relación con cualquier reclamación de cobertura\n        relacionada con\n        sus criptomonedas, lo que incluye el suministro oportuno de cualquier información o la documentación que\n        <b>EyePayCash</b> razonablemente solicita, y (ii) firmar cualquier documento que incluye, entre otros, la\n        liberación de\n        reclamos adicionales contra <b>EyePayCash</b> , que EyePayCash podría requerir.</a>\n      <br><br>\n      <a (click)="Transacciones()" style="font-weight: bold">TRANSACCIONES.</a>\n      <br><br>\n      <a (click)="Retrasos()" style="font-weight: bold">RETRASOS.</a>\n      <br><br>\n      <a (click)="DirClave()" style="font-weight: bold">DIRECCIÓN Y CLAVE PERDIDA.</a>\n      <br><br>\n      <a (click)="Crypto()" style="font-weight: bold">CUSTODIA DE CRIPTOMONEDAS.</a>\n      <br>\n      <p class="Titles">Derechos de propiedad intelectual.</p>\n      <br><br>\n      <a class="textNomral">\n        Conservamos todos los derechos, títulos e intereses (incluidos todos los derechos de autor, marcas registradas,\n        patentes, secretos comerciales y todos los demás derechos de propiedad intelectual) en nuestros servicios y\n        todo el contenido de nuestros servicios, incluidas nuestras marcas comerciales, marcas de servicio, diseños,\n        logotipos y URL. y los nombres comerciales que se muestran en nuestro servicio, a los que nos referimos en\n        estos términos, colectivamente, como Materiales de <b>EyePayCash</b>.</a>\n      <br><br>\n      <a class="textNomral">\n        Por la presente, le otorgamos una licencia limitada, no exclusiva y no sublicenciable para acceder y utilizar\n        los materiales de <b>EyePayCash</b> para su uso comercial personal o interno.</a>\n      <br><br>\n      <a class="textNomral">\n        Dicha licencia está sujeta a estos términos y no permite la reventa de los materiales <b>EyePayCash</b> ; la\n        distribución, ejecución pública o exhibición pública de cualquier material de <b>EyePayCash</b> ; modificar o\n        hacer\n        cualquier uso derivado de los Materiales de <b>EyePayCash</b> o cualquier parte del mismo; o cualquier uso de\n        los\n        Materiales <b>EyePayCash</b> que no sea para sus fines previstos. La licencia otorgada en virtud de esta\n        Sección\n        finalizará automáticamente si suspendemos o cancelamos su acceso a los servicios. Tendremos derechos\n        exclusivos, incluidos todos los derechos de propiedad intelectual, sobre cualquier comentario, sugerencia, idea\n        u otra información o material relacionado con <b>EyePayCash</b> , cualquier comentario que envíe no es\n        confidencial y\n        pasará a ser propiedad exclusiva de <b>EyePayCash</b> . Tendremos derecho a la utilización y difusión sin\n        restricciones\n        de dichos comentarios para cualquier fin, comercial o de otro tipo, sin reconocimiento o compensación para\n        usted. No puede usar, copiar o transmitir nada en nuestro sitio web sin nuestro permiso.</a>\n      <br>\n      <p class="Titles">Usos autorizados de nuestros servicios.</p>\n      <br><br>\n      <a class="textNomral">\n        Usted puede usar nuestros servicios únicamente en lo que le hemos autorizado. Usted es responsable de\n        garantizar que la información personal de su perfil en la cuenta sea actual y correcta, incluida su dirección\n        de correo electrónico y número de teléfono móvil. También es responsable de mantener la seguridad, el control y\n        la confidencialidad adecuados de la información de su cuenta, incluidos los números de identificación personal\n        (PIN), contraseñas, claves de API u otros códigos asociados con su cuenta y cualquier actividad que ocurra\n        dentro de esa cuenta. La pérdida o el compromiso de esta información puede ocasionar el acceso no autorizado de\n        su cuenta, lo que puede ocasionar la pérdida o robo de cualquier criptomoneda almacenada en su cuenta. Si cree\n        que su cuenta se ha visto comprometida, necesita informar un incidente de seguridad, si experimenta problemas\n        operacionales o tiene un problema de seguridad, por favor contáctenos inmediatamente describiendo el problema\n        en cuestión lo más detalladamente posible, incluyendo la fecha, el tipo de problema y parte del sitio de\n        <b>EyePayCash</b> o los servicios de <b>EyePayCash</b> donde experimentó ese problema. Usted es responsable de\n        (i) notificarnos\n        inmediatamente de cualquier uso no autorizado de su contraseña, cuenta o de cualquier otra violación de\n        seguridad, y (ii) asegurarse de salir de su cuenta al final de cada sesión al acceder a los servicios de\n        <b>EyePayCash</b>. No tenemos responsabilidad por ninguna pérdida que sufra como resultado de no cumplir con\n        esta\n        sección o su incumplimiento de los avisos o alertas que podamos enviarle.</a>\n      <br><br>\n      <a (click)="smsText()" style="font-weight: bold">USANDO SMS / TEXTO.</a>\n      <br><br>\n      <a (click)="infoPrerequisito()" style="font-weight: bold">INFORMACIÓN PRECISA Y REQUISITOS.</a>\n      <br><br>\n      <a (click)="actividadesProhibidas()" style="font-weight: bold">ACTIVIDADES PROHIBIDAS.</a>\n      <br><br>\n      <a (click)="cuentasSuspendidas()" style="font-weight: bold">CUENTAS SUSPENDIDAS.</a>\n      <br><br>\n      <a (click)="cuentasEliminadas()" style="font-weight: bold">CUENTAS ELIMINADAS.</a>\n      <br><br>\n      <a (click)="descargoGarantias()" style="font-weight: bold">DESCARGO DE GARANTÍAS.</a>\n      <br><br>\n      <a (click)="sinConsejos()" style="font-weight: bold">SIN CONSEJOS.</a>\n      <br><br>\n      <a (click)="indemnizacion()" style="font-weight: bold">INDEMNIZACIÓN.</a>\n      <br><br>\n      <a (click)="limiResponsabilidad()" style="font-weight: bold">LIMITACIÓN DE RESPONSABILIDAD.</a>\n      <br><br>\n      <a (click)="separabilidad()" style="font-weight: bold">SEPARABILIDAD.</a>\n      <br><br>\n      <a (click)="arbAplicable()" style="font-weight: bold">ARBITRAJE Y LEY APLICABLE.</a>\n      <br><br>\n      <a (click)="limitaciones()" style="font-weight: bold">LIMITACIONES.</a>\n      <br><br>\n      <a (click)="propiedadNReclamada()" style="font-weight: bold">PROPIEDAD NO RECLAMADA.</a>\n      <br><br>\n      <a (click)="acuerdoCompleto()" style="font-weight: bold">ASIGNACIÓN: ACUERDO COMPLETO.</a> -->\n      <br><br>\n      <a (click)="politicaPrivacidad()" style="font-weight: bold">POLÍTICA DE PRIVACIDAD.</a>\n      <br>\n      <p class="Titles"><i>Usos autorizados de nuestros servicios.</i></p>\n      <a class="textNomral">\n        <i><b>Datos que nos proporciona.</b> Recopilamos la información que nos proporciona, que incluye:</i></a>\n      <br><br>\n      <a class="textNomral">\n        - Su nombre, dirección de correo electrónico, número de teléfono móvil.</a>\n      <br><br>\n      <a class="textNomral">\n        - Información sobre las transacciones que completa utilizando nuestros servicios, incluida la cantidad de\n        fondos asociados con una transacción de criptomoneda, el tipo de transacción ejecutada y otra información\n        relacionada.</a>\n      <br><br>\n      <a class="textNomral">\n        - Los correos electrónicos y números de teléfono de sus contactos, si elige invitar a sus amigos a usar\n        EyePayCash como parte de nuestro programa de referencia cuando crea su cuenta.</a>\n      <br><br>\n      <a class="textNomral">\n        - Si usa nuestras aplicaciones móviles, recopilamos de su dispositivo móvil una ID única (donde su dispositivo\n        es un iPhone, también recolectamos el CFUUID recomendado por Apple (el identificador universal único de\n        información).</a>\n      <br>\n      <p class="Titles">Otros datos recopilados.</p>\n      <a class="textNomral">\n        También podemos recopilar automáticamente los siguientes datos:</a>\n      <br><br>\n      <b><i> - Analítica.</i></b>\n      <br><br>\n      <a class="textNomral">\n        Cuando visita nuestro sitio web, utilizamos herramientas de análisis de terceros para recopilar datos sobre su\n        computadora y conexión a Internet. Esa información incluye la dirección IP de su computadora y/o proveedor de\n        servicios de Internet, cuando accede a nuestro sitio web, la dirección de Internet de los sitios web desde los\n        cuales se conecta a nuestro sitio web y desde donde llegó antes de aterrizar en nuestro sitio web, el navegador\n        que usted está utilizando, y sus movimientos y preferencias en nuestro sitio web. Toda esta información se usa\n        internamente con el propósito de comprender cómo se está utilizando nuestro sitio web y mejorar nuestro sitio\n        web. También utilizamos herramientas de análisis de terceros para recopilar datos sobre su uso de nuestras\n        aplicaciones móviles. La información recopilada identifica los tipos y el momento de las acciones que realiza\n        dentro de nuestro dispositivo móvil, incluida la instalación, el registro, la carga y ciertos tipos de\n        navegación.</a>\n      <br><br>\n      <b><i> - Etiquetas de acción.</i></b>\n      <br><br>\n      <a class="textNomral">\n        Cuando visita nuestro sitio web, usamos etiquetas de acción (también llamadas etiquetas de píxeles, GIF claro o\n        balizas) para identificar algunas de las páginas que visita y cómo utiliza el contenido de esas páginas. Las\n        etiquetas de acción pueden recopilar y transmitir estos datos de una manera que lo identifique si se ha\n        registrado en nuestro sitio web o si ha iniciado sesión en nuestro sitio web. También usamos etiquetas de\n        acción en nuestros correos electrónicos para determinar si un correo electrónico se abrió o si se reenvió a\n        otra persona. Cuando utiliza nuestras aplicaciones móviles, utilizamos etiquetas de acción en las que accede a\n        sitios web desde enlaces en nuestras aplicaciones móviles. Estos pueden identificar las páginas que visita y\n        cómo utiliza el contenido en esas páginas.</a>\n      <b><i> - Gestión del sitio.</i></b>\n      <br><br>\n      <a class="textNomral">\n        Agregamos datos que recopilamos sobre el uso de nuestro sitio web para administrar, proteger y mejorar nuestro\n        sitio web y nuestros sistemas, para comprender mejor las preferencias de los visitantes de nuestro sitio web y\n        optimizar el contenido que servimos, para identificar problemas del servidor, compilar estadísticas agregadas\n        sobre el uso de nuestro sitio web y para mejorar nuestro marketing e investigación.</a>\n      <b><i> - No Track.</i></b>\n      <br><br>\n      <a class="textNomral">\n        Nuestro Servicio actualmente no responde a las señales de “No rastrear” y funciona como se describe en esta\n        Política de privacidad, ya sea que se reciba o no una señal de No rastrear. Si lo hacemos en el futuro,\n        describiremos cómo lo hacemos en esta Política de privacidad.</a>\n      <br><br>\n      <a class="textNomral">\n        Al proporcionarnos voluntariamente datos personales, usted acepta nuestro uso de acuerdo con esta Política de\n        privacidad. Si nos proporciona datos personales, reconoce y acepta que dichos datos personales pueden\n        transferirse desde su ubicación actual a las oficinas y servidores de <b>EyePayCash</b> y los terceros\n        autorizados\n        mencionados en esta política. Usamos medidas de seguridad físicas, electrónicas y de procedimientos razonables\n        para proteger la información personal que obtenemos de usted contra la pérdida, el uso indebido y el acceso,\n        divulgación, alteración y destrucción no autorizados. Tenga en cuenta que no somos responsables de la seguridad\n        de los datos que está transmitiendo a través de Internet ni de los datos que está almacenando, publicando o\n        proporcionando directamente en el sitio web de un tercero, que se rige por las políticas de esa parte. Tenga en\n        cuenta que ningún método de transmisión a través de Internet o método de almacenamiento electrónico es 100%\n        seguro. Si tiene más preguntas sobre seguridad, puede <a href="http://eyepaycash.co/contactenos"> Contáctenos</a>.</a>\n      <p class="Titles">Retención de datos.</p>\n      <a class="textNomral">\n        Si desea cerrar su cuenta de EyePayCash por completo, envienos un correo a <a href="http://eyepaycash.co/contactenos">\n          Contáctenos</a>\n        desde su dirección de correo electrónico registrada. Podemos retener información sobre usted en nuestras bases\n        de datos por el tiempo que su cuenta esté activa o según sea necesario para proporcionarle servicios y de\n        acuerdo con las leyes aplicables. Nuestra retención y uso de su información será tan necesaria para cumplir con\n        nuestras obligaciones legales, resolver disputas y hacer cumplir nuestros acuerdos. El período de retención\n        puede extenderse más allá del final de su relación con nosotros, pero solo será necesario siempre que tengamos\n        suficiente información para responder a cualquier problema que pueda surgir más adelante. Por ejemplo, es\n        posible que necesitemos o se nos solicite que retengamos cierta información para evitar actividades\n        fraudulentas, protegernos de responsabilidad, permitirnos buscar remedios disponibles o limitar cualquier daño\n        que podamos sufrir.</a>\n      <br>\n      <p class="Titles">Acceso a la información.</p>\n      <a class="textNomral">\n        Responderemos a su solicitud de acceso a la información que recopilamos sobre usted dentro del plazo requerido\n        por la ley aplicable.</a>\n      <br><br>\n      <a class="textNomral">\n        <b>Compartir datos.</b>\n        <a class="textNomral">Podemos compartir su información de la siguiente manera:</a>\n        <br><br>\n        <a class="textNomral">\n          - Usted ha consentido o nos ha dado permiso para compartir:</a>\n        <br><br>\n        <a class="textNomral">\n          - Hemos agregado o eliminado la identificación de la información, por lo que no se puede usar\n          razonablemente para identificarlo.</a>\n        <br><br>\n        <a class="textNomral">\n          - Con las empresas afiliadas al Grupo EyePayCash:</a>\n        <br><br>\n        <a class="textNomral">\n          - Con los proveedores de servicios externos que utilizamos para brindar nuestro servicio, incluidos\n          ciertos servicios de publicidad, referencias, operaciones, servicios financieros y tecnología (como\n          proveedores de hosting, verificación de identidad, soporte, pago y proveedores de servicios de correo\n          electrónico):</a>\n        <br><br>\n        <a class="textNomral">\n          - Si así lo requiere la ley o el proceso legal aplicable, o si creemos que está de acuerdo con la\n          ley\n          aplicable o el proceso legal:</a>\n        <br><br>\n        <a class="textNomral">\n          - Para proteger los derechos, propiedad y seguridad de EyePayCash, nuestros usuarios y el\n          público,\n          incluyendo, por ejemplo, en conexión con procedimientos judiciales, o para detectar o prevenir\n          actividad\n          criminal, fraude, tergiversación material, o para establecer nuestros derechos o defendernos\n          contra legal\n          reclamaciones; o En relación con la venta, la fusión, la transferencia o la reorganización de la\n          totalidad o\n          partes de nuestro negocio.</a>\n      </a>\n      <br><br>\n      <!-- <a (click)="comEmail()" style="font-weight: bold">COMUNICACIONES POR EMAIL.</a>\n      <br><br>\n      <a (click)="enlServicios()" style="font-weight: bold">ENLACES Y SERVICIOS.</a>\n      <br><br>\n      <a (click)="camPolitica()" style="font-weight: bold">CAMBIOS A ESTA POLÍTICA.</a>\n      <br><br> -->\n      <div class="center">\n        <button style="border-radius: 0%" (click)= "navHome()" class="buttonPayCash btnStyle" ion-button small>Acepto</button>\n      </div>\n    </div>\n  </div>\n</ion-content>'/*ion-inline-end:"/Users/eyeline/Documents/GitHub/eyepaycashapp/src/pages/politicas/politicas.html"*/,
->>>>>>> 81951ee53228c71b0aa374e34045d5bcc1d6b23c
+            selector: 'page-politicas',template:/*ion-inline-start:"/Users/eyeline/Documents/eyepaycashappGitHub/src/pages/politicas/politicas.html"*/'<ion-content class="imgBackground">\n  <div padding>\n    <div style="background:white; border-radius:8px; padding: 2%">\n      <!-- <p class="Titles"> Términos de Uso de EyePayCash.</p>\n      <a class="textNomral">Por favor lea estos términos de uso cuidadosamente, al hacer clic en aceptar, acceder o\n        utilizar nuestros servicios, se compromete a respetar estos términos de uso y todos los términos incorporados\n        por referencia.Si está aceptando estos términos en nombre de una entidad, usted confirma que está autorizado en\n        nombre de esa entidad para aceptar y sujetarse a estos términos de uso y a todos los términos incorporados por\n        referencia.</a>\n\n      <p class="Titles"> Alcance.\n      </p>\n      <a class="textNomral">Estos términos de uso se refieren a nosotros como <b>“EyePayCash” </b>ó <b>“nosotros“</b>.\n        <b>EyePayCash</b> es\n        una compañía constituida bajo las leyes de Malta Europa. Estos términos se aplican a cualquier acceso, uso de\n        nuestro sitio web en https://eyepaycash.co, nuestros servicios en línea, nuestras aplicaciones móviles para\n        iOS\n        e Android, y/o cualquiera de nuestros servicios relacionados.\n\n        La República de Malta (en maltés: Repubblika ta’ Malta; en inglés: Republic of Malta) es un país insular\n        miembro de la Unión Europea, densamente poblado, compuesto por un archipiélago y situado en el centro del\n        Mediterráneo, al sur de Italia, al oriente de Túnez y al norte de Libia.</a>\n      <br><br>\n      <a class="textNomral">La República de Malta (en maltés: Repubblika ta’ Malta; en inglés: Republic of Malta) es un\n        país insular\n        miembro de la Unión Europea, densamente poblado, compuesto por un archipiélago y situado en el centro del\n        Mediterráneo, al sur de Italia, al oriente de Túnez y al norte de Libia.</a>\n      <br><br>\n      <a (click)="presentToast()" style="font-weight: bold">ELEGIBILIDAD Y ACUERDO.</a> <br>\n      <br>\n      <a (click)="presentToast2()" style="font-weight: bold">CAMBIOS EN ESTOS TÉRMINOS.</a>\n      <br>\n      <br>\n      <a (click)="presentToast3()" style="font-weight: bold">NOTA ACLARATORIA.</a>\n      <br>\n      <p class="Titles"> Los servicios de EyePayCash.\n      </p>\n      <a class="textNomral"> <b>EyePayCash </b>proporciona una forma de almacenar, usar y administrar\n        criptomonedas:</a>\n      <br>\n      <b>MONEDERO VIRTUAL: EyePayCash</b> es una billetera virtual basada en criptomonedas donde puede\n      enviar, recibir y\n      cambiar su dinero y criptomonedas de manera segura.\n      <br>\n      <b><i>Bóveda</i></b><a class="textNomral">: servicio de almacenamiento y de rentas fijas. Lo contenido\n        en el siguiente link\n        https://eyepaycash.com/boveda/ hace parte de estos términos y condiciones.</a>\n      <br><br>\n      <a class="textNomral"> -El Monto mínimo de de ingreso a la <b><i>Bóveda</i></b> es de 0.01 BTC.</a>\n      <br><br>\n      <a class="textNomral"> -Desde el momento en que ingrese sus criptomonedas debe escoger entre los plazos de\n        retiro que le\n        ofrecemos.</a>\n      <br><br>\n      <a class="textNomral"> -El retorno del capital y renta se realizarán una vez se haya cumplido la fecha de\n        finalización y la\n        respectiva\n        solicitud dentro del término establecido.</a>\n      <br><br>\n      <a class="textNomral"> -Una vez se cumpla la fecha de finalización, el plazo para retirar es de 3 días,\n        incluyendo la fecha de\n        finalización.</a>\n      <br><br>\n      <a class="textNomral"> – En caso de que se cumpla el plazo para retirar y no se haya realizado el retiro, la <b><i>Bóveda</i></b>\n        se renovará de\n        manera automática por el mismo plazo inicial.</a>\n      <br><br>\n      <a class="textNomral"> – El retorno de su capital y renta será realizado una vez se cumpla la fecha de\n        finalización.</a>\n      <br><br>\n      <a class="textNomral"> <b>EXCHANGE:</b> servicio de intercambio de criptomonedas y dinero fiat.</a>\n      <br><br>\n      <b>nota:</b>\n      <a class="textNomral">el usuario del sistema exchange debe ser extremadamente cuidadoso con los datos de cuentas\n        bancarias o\n        cuentas virtuales o cualquier dato solicitado para que exchange funcione y se pueda usar,</a>\n      <br><br>\n      <a class="textNomral">EyePayCash no se hace responsable si el usuario comete yerros al digitar, ingresar, colocar\n        sus datos, es decir\n        que las implicaciones de dichas imprecisiones correrán por cuenta del usuario; por lo tanto EyePayCash no se\n        hace responsable de los mismos.</a>\n      <br><br>\n      <a class="textNomral">Al ingresar a esta opción, puede realizar las siguientes operaciones:</a>\n      <br><br>\n      <b>Oferta de criptomonedas:</b>\n      <br><br>\n      <a class="textNomral">\n        Debe completar la información solicitada por los campos del sistema para vender sus criptomonedas, luego de la\n        publicación de la oferta, las criptomonedas se extraen de la cartera virtual e ingresan a un sistema aislado\n        para\n        asegurar la transacción.</a>\n      <br><br>\n      <b>Comprar criptomonedas:</b>\n      <br><br>\n      <a class="textNomral">\n        Debe ingresar a la lista de opciones de las ofertas y elegir la porción de criptomonedas que desea adquirir,\n        una vez realizada esta elección, el procedimiento requerido por el sistema debe agotarse para que tenga éxito y\n        el usuario obtenga el monto pagado en una manera legal de acuerdo con el orden jurídico del estado donde se\n        realiza la transacción.</a>\n      <br><br>\n      <a class="textNomral">\n        EyePayCash cuenta con una lista de todas las compras y ventas (TRANSACCIONES) realizada por sus usuarios; el\n        sistema EyePayCash funciona bajo la tecnología blockchain.</a>\n      <br><br>\n      <b>COMPRAR</b>\n      <br><br>\n      <a class="textNomral">\n        Para comprar y vender criptomonedas con EyePayCash, simplemente haga clic en el botón Exchange, que lo\n        redireccionará a un proceso que le mostrará distintas opciones. Para comprar criptomonedas utilizando\n        criptomonedas o dinero fiduciario. EyePayCash no se hace responsable en ningún caso por el éxito de las\n        compraventas realizadas por los usuarios en la plataforma.</a>\n      <br><br>\n      <a class="textNomral">\n        Si usted desea que la cantidad o porción de criptomonedas compradas en el sistema Exchange de EyePayCash sea\n        depositada directamente en un monedero virtual diferente a EyePayCash, tendrá un costo adicional de 1% de la\n        cantidad en mención; el proceso de transferencia se podrá demorar un día hábil, es oportuno resaltar que el\n        tiempo final depende del tiempo que tarde la validación de la transacción, hecha por la minería de\n        criptomonedas.</a>\n      <br><br>\n      <b>VENDER</b>\n      <br><br>\n      <a class="textNomral">\n        Una vez usted ofrece una cantidad de criptomonedas en Exchange de EyePayCash usted deberá esperar como mínimo\n        10\n        días hábiles para cancelar la oferta, si usted NO ESPERA DICHO TÉRMINO, se le penalizará con una disminución\n        del 0,4% de la cantidad ofertada; pasados estos 10 días hábiles no habrá penalización por retirar la oferta. La\n        solicitud de cancelación de oferta implica que su cantidad de criptomoneda sale del servicio de Exchange de\n        EyePayCash, pero sigue en el monedero.</a>\n      <br><br>\n      <a class="textNomral">\n        Las únicas criptomonedas admitidas por EyePayCash serán expresadas de forma inequívoca y pública en la página\n        web de EyePayCash. EyePayCash no será responsable de recibir o almacenar monedas digitales que no cumplan con\n        el\n        requisito anteriormente descrito; se le recuerda que si usted intenta hacer una transferencia de criptomonedas\n        que no cumplan el requisito de la referencia, usted puede perder cualquier derecho relacionado con dicha moneda\n        digital o valor sin ningún derecho a reclamar a EyePayCash.</a>\n      <br><br>\n      <a class="textNomral">\n        EyePayCash no se hará responsable por los datos equívocos que se ingresen en el módulo método de pago.</a>\n      <br><br>\n      <b>COSTOS POR EL USO DE EXCHANGE</b>\n      <br><br>\n      <a class="textNomral">\n        Toda transacción exitosa llevada a cabo por intermedio y/o usando nuestro sistema de EXCHANGE; tendrá un costo\n        del 1% del total de las cantidades objeto de cada transacción en concreto.</a>\n      <br><br>\n      <b>ESTADO DE MODERACIÓN</b>\n      <br><br>\n      <a class="textNomral">\n        Una vez se compre una fracción publicada y se allegue el respectivo comprobante de pago, el vendedor tendrá dos\n        horas para validarlo, es decir, aprobarlo o rechazarlo.</a>\n      <br><br>\n      <a class="textNomral">\n        Si el comprobante es rechazado y el comprador no ratifica y/o vuelve a subir el comprobante y el mismo nunca es\n        validado, EyePayCash cambia la compra a un estado de moderación donde ni el vendedor ni el comprador pueden\n        ejecutar alguna acción, ambos deberán esperar 3 días hábiles mientras EyePayCash hace la respectiva\n        investigación para saber qué sucedió.</a>\n      <br>\n      <p class="Titles"> Reserva de EyePayCash.</p>\n      <br>\n      <a class="textNomral">\n        La Reserva de <b>EyePayCash</b> está diseñada principalmente para cubrir la pérdida de criptomonedas\n        almacenadas por\n        nuestros usuarios en la <b><i>Bóveda</i></b>, nuestro servicio de almacenamiento incorpora múltiples capas de\n        seguridad\n        criptográfica para ayudar a proteger sus criptomonedas. Estos procesos incluyen autenticación de múltiples\n        factores y segmentación de clave privada entre otros.</a>\n      <br><br>\n      <a class="textNomral">\n        La Reserva de <b>EyePayCash</b> está diseñada para cubrir pérdidas directas y efectivas sufridas por los\n        usuarios como\n        resultado de ataques de hackers a nuestros sistemas, robo por parte de un tercero y/o empleado de <b>EyePayCash</b>\n        y/o\n        nuestra bancarrota. (<b>“Pérdidas que califican o Pérdidas Calificadas“</b>).</a>\n      <br><br>\n      <a class="textNomral">\n        La Reserva de <b>EyePayCash</b> no cubre casos de piratería de dispositivos de los usuarios y cuentas\n        personales como\n        teléfonos, computadoras, cuentas de correo electrónico, etc. Por ejemplo, una pérdida sufrida como resultado de\n        la falta de mantener la seguridad, el control o la confidencialidad adecuados de su información, incluidos los\n        números de identificación personal <b>PIN</b>, contraseñas, claves <b>API</b> u otros códigos asociados con su\n        cuenta y\n        cualquier actividad que se produzca dentro de esa cuenta, no se considerará una <b>Pérdida admisible</b>.</a>\n      <br><br>\n      <a class="textNomral">\n        Hemos diseñado la reserva de criptomonedas <b>EyePayCash</b> para ayudar a reducir el impacto de las pérdidas\n        de\n        criptomonedas que están fuera del control de nuestros usuarios, no podemos garantizar que la reserva de\n        criptomonedas de <b>EyePayCash</b> tenga un número suficiente de criptomonedas para cubrir cualquiera de las\n        pérdidas\n        sufridas por nuestros usuarios en estas circunstancias.</a>\n      <br><br>\n      <a class="textNomral">\n        En caso de una <b>Pérdida Calificada</b> Los usuarios que tengan almacenadas criptomonedas en nuestra <b><i>Bóveda</i></b>\n        tendrán\n        prioridad frente a los que solo tengan sus criptomonedas en el <b><i>Monedero Virtual</i></b>.</a>\n      <br><br>\n      <a class="textNomral">\n        La Reserva de <b>EyePayCash</b> cubrirá las <b>Pérdidas Calificadas</b> en el siguiente orden de prioridad:</a>\n      <br><br>\n      <a class="textNomral">\n        Si la Reserva de <b>EyePayCash</b> no es suficiente para cubrir el 100% de las <b>Pérdidas Calificadas</b> de\n        la <b><i>Bóveda</i></b> y\n        luego del <b><i>Monedero Virtual</i></b>, las pérdidas se cubrirán proporcionalmente, en función del valor\n        total de las\n        mismas y en proporción al valor total de criptomonedas perdidas por todos los Usuarios como resultado del\n        incidente.</a>\n      <br><br>\n      <a class="textNomral">\n        El uso de la Reserva <b>EyePayCash</b> es opcional para nuestros usuarios. Como condición para recibir\n        cualquier\n        cantidad de criptomonedas y/o fondos de la cobertura de la Reserva <b>EyePayCash</b> , usted acepta (i)\n        cooperar\n        oportunamente con <b>EyePayCash</b> a petición suya en relación con cualquier reclamación de cobertura\n        relacionada con\n        sus criptomonedas, lo que incluye el suministro oportuno de cualquier información o la documentación que\n        <b>EyePayCash</b> razonablemente solicita, y (ii) firmar cualquier documento que incluye, entre otros, la\n        liberación de\n        reclamos adicionales contra <b>EyePayCash</b> , que EyePayCash podría requerir.</a>\n      <br><br>\n      <a (click)="Transacciones()" style="font-weight: bold">TRANSACCIONES.</a>\n      <br><br>\n      <a (click)="Retrasos()" style="font-weight: bold">RETRASOS.</a>\n      <br><br>\n      <a (click)="DirClave()" style="font-weight: bold">DIRECCIÓN Y CLAVE PERDIDA.</a>\n      <br><br>\n      <a (click)="Crypto()" style="font-weight: bold">CUSTODIA DE CRIPTOMONEDAS.</a>\n      <br>\n      <p class="Titles">Derechos de propiedad intelectual.</p>\n      <br><br>\n      <a class="textNomral">\n        Conservamos todos los derechos, títulos e intereses (incluidos todos los derechos de autor, marcas registradas,\n        patentes, secretos comerciales y todos los demás derechos de propiedad intelectual) en nuestros servicios y\n        todo el contenido de nuestros servicios, incluidas nuestras marcas comerciales, marcas de servicio, diseños,\n        logotipos y URL. y los nombres comerciales que se muestran en nuestro servicio, a los que nos referimos en\n        estos términos, colectivamente, como Materiales de <b>EyePayCash</b>.</a>\n      <br><br>\n      <a class="textNomral">\n        Por la presente, le otorgamos una licencia limitada, no exclusiva y no sublicenciable para acceder y utilizar\n        los materiales de <b>EyePayCash</b> para su uso comercial personal o interno.</a>\n      <br><br>\n      <a class="textNomral">\n        Dicha licencia está sujeta a estos términos y no permite la reventa de los materiales <b>EyePayCash</b> ; la\n        distribución, ejecución pública o exhibición pública de cualquier material de <b>EyePayCash</b> ; modificar o\n        hacer\n        cualquier uso derivado de los Materiales de <b>EyePayCash</b> o cualquier parte del mismo; o cualquier uso de\n        los\n        Materiales <b>EyePayCash</b> que no sea para sus fines previstos. La licencia otorgada en virtud de esta\n        Sección\n        finalizará automáticamente si suspendemos o cancelamos su acceso a los servicios. Tendremos derechos\n        exclusivos, incluidos todos los derechos de propiedad intelectual, sobre cualquier comentario, sugerencia, idea\n        u otra información o material relacionado con <b>EyePayCash</b> , cualquier comentario que envíe no es\n        confidencial y\n        pasará a ser propiedad exclusiva de <b>EyePayCash</b> . Tendremos derecho a la utilización y difusión sin\n        restricciones\n        de dichos comentarios para cualquier fin, comercial o de otro tipo, sin reconocimiento o compensación para\n        usted. No puede usar, copiar o transmitir nada en nuestro sitio web sin nuestro permiso.</a>\n      <br>\n      <p class="Titles">Usos autorizados de nuestros servicios.</p>\n      <br><br>\n      <a class="textNomral">\n        Usted puede usar nuestros servicios únicamente en lo que le hemos autorizado. Usted es responsable de\n        garantizar que la información personal de su perfil en la cuenta sea actual y correcta, incluida su dirección\n        de correo electrónico y número de teléfono móvil. También es responsable de mantener la seguridad, el control y\n        la confidencialidad adecuados de la información de su cuenta, incluidos los números de identificación personal\n        (PIN), contraseñas, claves de API u otros códigos asociados con su cuenta y cualquier actividad que ocurra\n        dentro de esa cuenta. La pérdida o el compromiso de esta información puede ocasionar el acceso no autorizado de\n        su cuenta, lo que puede ocasionar la pérdida o robo de cualquier criptomoneda almacenada en su cuenta. Si cree\n        que su cuenta se ha visto comprometida, necesita informar un incidente de seguridad, si experimenta problemas\n        operacionales o tiene un problema de seguridad, por favor contáctenos inmediatamente describiendo el problema\n        en cuestión lo más detalladamente posible, incluyendo la fecha, el tipo de problema y parte del sitio de\n        <b>EyePayCash</b> o los servicios de <b>EyePayCash</b> donde experimentó ese problema. Usted es responsable de\n        (i) notificarnos\n        inmediatamente de cualquier uso no autorizado de su contraseña, cuenta o de cualquier otra violación de\n        seguridad, y (ii) asegurarse de salir de su cuenta al final de cada sesión al acceder a los servicios de\n        <b>EyePayCash</b>. No tenemos responsabilidad por ninguna pérdida que sufra como resultado de no cumplir con\n        esta\n        sección o su incumplimiento de los avisos o alertas que podamos enviarle.</a>\n      <br><br>\n      <a (click)="smsText()" style="font-weight: bold">USANDO SMS / TEXTO.</a>\n      <br><br>\n      <a (click)="infoPrerequisito()" style="font-weight: bold">INFORMACIÓN PRECISA Y REQUISITOS.</a>\n      <br><br>\n      <a (click)="actividadesProhibidas()" style="font-weight: bold">ACTIVIDADES PROHIBIDAS.</a>\n      <br><br>\n      <a (click)="cuentasSuspendidas()" style="font-weight: bold">CUENTAS SUSPENDIDAS.</a>\n      <br><br>\n      <a (click)="cuentasEliminadas()" style="font-weight: bold">CUENTAS ELIMINADAS.</a>\n      <br><br>\n      <a (click)="descargoGarantias()" style="font-weight: bold">DESCARGO DE GARANTÍAS.</a>\n      <br><br>\n      <a (click)="sinConsejos()" style="font-weight: bold">SIN CONSEJOS.</a>\n      <br><br>\n      <a (click)="indemnizacion()" style="font-weight: bold">INDEMNIZACIÓN.</a>\n      <br><br>\n      <a (click)="limiResponsabilidad()" style="font-weight: bold">LIMITACIÓN DE RESPONSABILIDAD.</a>\n      <br><br>\n      <a (click)="separabilidad()" style="font-weight: bold">SEPARABILIDAD.</a>\n      <br><br>\n      <a (click)="arbAplicable()" style="font-weight: bold">ARBITRAJE Y LEY APLICABLE.</a>\n      <br><br>\n      <a (click)="limitaciones()" style="font-weight: bold">LIMITACIONES.</a>\n      <br><br>\n      <a (click)="propiedadNReclamada()" style="font-weight: bold">PROPIEDAD NO RECLAMADA.</a>\n      <br><br>\n      <a (click)="acuerdoCompleto()" style="font-weight: bold">ASIGNACIÓN: ACUERDO COMPLETO.</a> -->\n      <br><br>\n      <a (click)="politicaPrivacidad()" style="font-weight: bold">POLÍTICA DE PRIVACIDAD.</a>\n      <br>\n      <p class="Titles"><i>Usos autorizados de nuestros servicios.</i></p>\n      <a class="textNomral">\n        <i><b>Datos que nos proporciona.</b> Recopilamos la información que nos proporciona, que incluye:</i></a>\n      <br><br>\n      <a class="textNomral">\n        - Su nombre, dirección de correo electrónico, número de teléfono móvil.</a>\n      <br><br>\n      <a class="textNomral">\n        - Información sobre las transacciones que completa utilizando nuestros servicios, incluida la cantidad de\n        fondos asociados con una transacción de criptomoneda, el tipo de transacción ejecutada y otra información\n        relacionada.</a>\n      <br><br>\n      <a class="textNomral">\n        - Los correos electrónicos y números de teléfono de sus contactos, si elige invitar a sus amigos a usar\n        EyePayCash como parte de nuestro programa de referencia cuando crea su cuenta.</a>\n      <br><br>\n      <a class="textNomral">\n        - Si usa nuestras aplicaciones móviles, recopilamos de su dispositivo móvil una ID única (donde su dispositivo\n        es un iPhone, también recolectamos el CFUUID recomendado por Apple (el identificador universal único de\n        información).</a>\n      <br>\n      <p class="Titles">Otros datos recopilados.</p>\n      <a class="textNomral">\n        También podemos recopilar automáticamente los siguientes datos:</a>\n      <br><br>\n      <b><i> - Analítica.</i></b>\n      <br><br>\n      <a class="textNomral">\n        Cuando visita nuestro sitio web, utilizamos herramientas de análisis de terceros para recopilar datos sobre su\n        computadora y conexión a Internet. Esa información incluye la dirección IP de su computadora y/o proveedor de\n        servicios de Internet, cuando accede a nuestro sitio web, la dirección de Internet de los sitios web desde los\n        cuales se conecta a nuestro sitio web y desde donde llegó antes de aterrizar en nuestro sitio web, el navegador\n        que usted está utilizando, y sus movimientos y preferencias en nuestro sitio web. Toda esta información se usa\n        internamente con el propósito de comprender cómo se está utilizando nuestro sitio web y mejorar nuestro sitio\n        web. También utilizamos herramientas de análisis de terceros para recopilar datos sobre su uso de nuestras\n        aplicaciones móviles. La información recopilada identifica los tipos y el momento de las acciones que realiza\n        dentro de nuestro dispositivo móvil, incluida la instalación, el registro, la carga y ciertos tipos de\n        navegación.</a>\n      <br><br>\n      <b><i> - Etiquetas de acción.</i></b>\n      <br><br>\n      <a class="textNomral">\n        Cuando visita nuestro sitio web, usamos etiquetas de acción (también llamadas etiquetas de píxeles, GIF claro o\n        balizas) para identificar algunas de las páginas que visita y cómo utiliza el contenido de esas páginas. Las\n        etiquetas de acción pueden recopilar y transmitir estos datos de una manera que lo identifique si se ha\n        registrado en nuestro sitio web o si ha iniciado sesión en nuestro sitio web. También usamos etiquetas de\n        acción en nuestros correos electrónicos para determinar si un correo electrónico se abrió o si se reenvió a\n        otra persona. Cuando utiliza nuestras aplicaciones móviles, utilizamos etiquetas de acción en las que accede a\n        sitios web desde enlaces en nuestras aplicaciones móviles. Estos pueden identificar las páginas que visita y\n        cómo utiliza el contenido en esas páginas.</a>\n      <b><i> - Gestión del sitio.</i></b>\n      <br><br>\n      <a class="textNomral">\n        Agregamos datos que recopilamos sobre el uso de nuestro sitio web para administrar, proteger y mejorar nuestro\n        sitio web y nuestros sistemas, para comprender mejor las preferencias de los visitantes de nuestro sitio web y\n        optimizar el contenido que servimos, para identificar problemas del servidor, compilar estadísticas agregadas\n        sobre el uso de nuestro sitio web y para mejorar nuestro marketing e investigación.</a>\n      <b><i> - No Track.</i></b>\n      <br><br>\n      <a class="textNomral">\n        Nuestro Servicio actualmente no responde a las señales de “No rastrear” y funciona como se describe en esta\n        Política de privacidad, ya sea que se reciba o no una señal de No rastrear. Si lo hacemos en el futuro,\n        describiremos cómo lo hacemos en esta Política de privacidad.</a>\n      <br><br>\n      <a class="textNomral">\n        Al proporcionarnos voluntariamente datos personales, usted acepta nuestro uso de acuerdo con esta Política de\n        privacidad. Si nos proporciona datos personales, reconoce y acepta que dichos datos personales pueden\n        transferirse desde su ubicación actual a las oficinas y servidores de <b>EyePayCash</b> y los terceros\n        autorizados\n        mencionados en esta política. Usamos medidas de seguridad físicas, electrónicas y de procedimientos razonables\n        para proteger la información personal que obtenemos de usted contra la pérdida, el uso indebido y el acceso,\n        divulgación, alteración y destrucción no autorizados. Tenga en cuenta que no somos responsables de la seguridad\n        de los datos que está transmitiendo a través de Internet ni de los datos que está almacenando, publicando o\n        proporcionando directamente en el sitio web de un tercero, que se rige por las políticas de esa parte. Tenga en\n        cuenta que ningún método de transmisión a través de Internet o método de almacenamiento electrónico es 100%\n        seguro. Si tiene más preguntas sobre seguridad, puede <a href="http://eyepaycash.co/contactenos"> Contáctenos</a>.</a>\n      <p class="Titles">Retención de datos.</p>\n      <a class="textNomral">\n        Si desea cerrar su cuenta de EyePayCash por completo, envienos un correo a <a href="http://eyepaycash.co/contactenos">\n          Contáctenos</a>\n        desde su dirección de correo electrónico registrada. Podemos retener información sobre usted en nuestras bases\n        de datos por el tiempo que su cuenta esté activa o según sea necesario para proporcionarle servicios y de\n        acuerdo con las leyes aplicables. Nuestra retención y uso de su información será tan necesaria para cumplir con\n        nuestras obligaciones legales, resolver disputas y hacer cumplir nuestros acuerdos. El período de retención\n        puede extenderse más allá del final de su relación con nosotros, pero solo será necesario siempre que tengamos\n        suficiente información para responder a cualquier problema que pueda surgir más adelante. Por ejemplo, es\n        posible que necesitemos o se nos solicite que retengamos cierta información para evitar actividades\n        fraudulentas, protegernos de responsabilidad, permitirnos buscar remedios disponibles o limitar cualquier daño\n        que podamos sufrir.</a>\n      <br>\n      <p class="Titles">Acceso a la información.</p>\n      <a class="textNomral">\n        Responderemos a su solicitud de acceso a la información que recopilamos sobre usted dentro del plazo requerido\n        por la ley aplicable.</a>\n      <br><br>\n      <a class="textNomral">\n        <b>Compartir datos.</b>\n        <a class="textNomral">Podemos compartir su información de la siguiente manera:</a>\n        <br><br>\n        <a class="textNomral">\n          - Usted ha consentido o nos ha dado permiso para compartir:</a>\n        <br><br>\n        <a class="textNomral">\n          - Hemos agregado o eliminado la identificación de la información, por lo que no se puede usar\n          razonablemente para identificarlo.</a>\n        <br><br>\n        <a class="textNomral">\n          - Con las empresas afiliadas al Grupo EyePayCash:</a>\n        <br><br>\n        <a class="textNomral">\n          - Con los proveedores de servicios externos que utilizamos para brindar nuestro servicio, incluidos\n          ciertos servicios de publicidad, referencias, operaciones, servicios financieros y tecnología (como\n          proveedores de hosting, verificación de identidad, soporte, pago y proveedores de servicios de correo\n          electrónico):</a>\n        <br><br>\n        <a class="textNomral">\n          - Si así lo requiere la ley o el proceso legal aplicable, o si creemos que está de acuerdo con la\n          ley\n          aplicable o el proceso legal:</a>\n        <br><br>\n        <a class="textNomral">\n          - Para proteger los derechos, propiedad y seguridad de EyePayCash, nuestros usuarios y el\n          público,\n          incluyendo, por ejemplo, en conexión con procedimientos judiciales, o para detectar o prevenir\n          actividad\n          criminal, fraude, tergiversación material, o para establecer nuestros derechos o defendernos\n          contra legal\n          reclamaciones; o En relación con la venta, la fusión, la transferencia o la reorganización de la\n          totalidad o\n          partes de nuestro negocio.</a>\n      </a>\n      <br><br>\n      <!-- <a (click)="comEmail()" style="font-weight: bold">COMUNICACIONES POR EMAIL.</a>\n      <br><br>\n      <a (click)="enlServicios()" style="font-weight: bold">ENLACES Y SERVICIOS.</a>\n      <br><br>\n      <a (click)="camPolitica()" style="font-weight: bold">CAMBIOS A ESTA POLÍTICA.</a>\n      <br><br> -->\n      <div class="center">\n        <button style="border-radius: 0%" (click)= "aceptarTerminos()" class="buttonPayCash btnStyle" ion-button small>Acepto</button>\n      </div>\n    </div>\n  </div>\n</ion-content>'/*ion-inline-end:"/Users/eyeline/Documents/eyepaycashappGitHub/src/pages/politicas/politicas.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* ToastController */]])
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* ToastController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* ToastController */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* ViewController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* ViewController */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_2__providers_auth_user_auth_user__["a" /* AuthUserProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__providers_auth_user_auth_user__["a" /* AuthUserProvider */]) === "function" && _e || Object])
     ], PoliticasPage);
     return PoliticasPage;
+    var _a, _b, _c, _d, _e;
 }());
 
 //# sourceMappingURL=politicas.js.map
 
 /***/ }),
 
-<<<<<<< HEAD
 /***/ 322:
-=======
-/***/ 320:
->>>>>>> 81951ee53228c71b0aa374e34045d5bcc1d6b23c
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TerminosPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(7);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-/**
- * Generated class for the TerminosPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-var TerminosPage = /** @class */ (function () {
-    function TerminosPage(navCtrl, navParams) {
-        this.navCtrl = navCtrl;
-        this.navParams = navParams;
-    }
-    TerminosPage.prototype.ionViewDidLoad = function () {
-        console.log('ionViewDidLoad TerminosPage');
-    };
-    TerminosPage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-            selector: 'page-terminos',template:/*ion-inline-start:"/Users/eyeline/Documents/GitHub/eyepaycashapp/src/pages/terminos/terminos.html"*/''/*ion-inline-end:"/Users/eyeline/Documents/GitHub/eyepaycashapp/src/pages/terminos/terminos.html"*/,
-        }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */]])
-    ], TerminosPage);
-    return TerminosPage;
-}());
-
-//# sourceMappingURL=terminos.js.map
-
-/***/ }),
-
-<<<<<<< HEAD
-/***/ 323:
-=======
-/***/ 321:
->>>>>>> 81951ee53228c71b0aa374e34045d5bcc1d6b23c
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ModalWelcomePage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(8);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1915,11 +1729,7 @@ var ModalWelcomePage = /** @class */ (function () {
     };
     ModalWelcomePage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-<<<<<<< HEAD
             selector: 'page-modal-welcome',template:/*ion-inline-start:"/Users/eyeline/Documents/eyepaycashappGitHub/src/pages/modal-welcome/modal-welcome.html"*/'<!--\n  Generated template for the ModalWelcomePage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-content padding class="tamano">\n  <ion-row>\n    <ion-col col-10>\n      <h4>Bienvenido {{name}}</h4>\n    </ion-col>\n    <ion-col col-2>\n      <ion-buttons end>\n        <button ion-button icon-only (click)="closeModal()">\n          <ion-icon item-right name="ios-close-outline"></ion-icon>\n        </button>\n      </ion-buttons>\n    </ion-col>\n  </ion-row>\n\n  <img src="assets/imgs/ok.png">\n</ion-content>\n'/*ion-inline-end:"/Users/eyeline/Documents/eyepaycashappGitHub/src/pages/modal-welcome/modal-welcome.html"*/,
-=======
-            selector: 'page-modal-welcome',template:/*ion-inline-start:"/Users/eyeline/Documents/GitHub/eyepaycashapp/src/pages/modal-welcome/modal-welcome.html"*/'<!--\n  Generated template for the ModalWelcomePage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-content padding class="tamano">\n  <ion-row>\n    <ion-col col-10>\n      <h4>Bienvenido {{name}}</h4>\n    </ion-col>\n    <ion-col col-2>\n      <ion-buttons end>\n        <button ion-button icon-only (click)="closeModal()">\n          <ion-icon item-right name="ios-close-outline"></ion-icon>\n        </button>\n      </ion-buttons>\n    </ion-col>\n  </ion-row>\n\n  <img src="assets/imgs/ok.png">\n</ion-content>\n'/*ion-inline-end:"/Users/eyeline/Documents/GitHub/eyepaycashapp/src/pages/modal-welcome/modal-welcome.html"*/,
->>>>>>> 81951ee53228c71b0aa374e34045d5bcc1d6b23c
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */],
             __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */]])
@@ -1931,24 +1741,16 @@ var ModalWelcomePage = /** @class */ (function () {
 
 /***/ }),
 
-<<<<<<< HEAD
-/***/ 324:
-=======
-/***/ 322:
->>>>>>> 81951ee53228c71b0aa374e34045d5bcc1d6b23c
+/***/ 323:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return RecoveryPasswordPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(8);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_api__ = __webpack_require__(23);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_auth_user_auth_user__ = __webpack_require__(31);
-<<<<<<< HEAD
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__password_update_password_update__ = __webpack_require__(325);
-=======
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__password_update_password_update__ = __webpack_require__(323);
->>>>>>> 81951ee53228c71b0aa374e34045d5bcc1d6b23c
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_auth_user_auth_user__ = __webpack_require__(28);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__password_update_password_update__ = __webpack_require__(324);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1986,13 +1788,13 @@ var RecoveryPasswordPage = /** @class */ (function () {
     RecoveryPasswordPage.prototype.sendMessage = function () {
         var _this = this;
         this.type = 'phone';
-        var loading = this.loadingCtrl.create({
-            spinner: 'dots'
-        });
-        loading.present();
         if (this.data != null) {
+            var loading_1 = this.loadingCtrl.create({
+                spinner: 'dots'
+            });
+            loading_1.present();
             this.api.post('auth/restar-password', { 'type': this.type, 'data': this.data }).then(function (data) {
-                loading.dismiss();
+                loading_1.dismiss();
                 if (!_this.iscodigo)
                     _this.iscodigo = true;
                 else
@@ -2000,7 +1802,7 @@ var RecoveryPasswordPage = /** @class */ (function () {
                 _this.userProvider.userRecovery.codigoVerify = data.password_code_req;
                 _this.userProvider.userRecovery.user_id = data.user_id;
             }).catch(function (err) {
-                loading.dismiss();
+                loading_1.dismiss();
                 var toast = _this.toastCtrl.create({
                     message: 'No se encontraron resultados',
                     duration: 3000,
@@ -2009,7 +1811,6 @@ var RecoveryPasswordPage = /** @class */ (function () {
             });
         }
         else {
-            loading.dismiss();
             var toast = this.toastCtrl.create({
                 message: 'Por favor ingrese su nùmero celular',
                 duration: 3000
@@ -2021,13 +1822,13 @@ var RecoveryPasswordPage = /** @class */ (function () {
     RecoveryPasswordPage.prototype.sendMail = function () {
         var _this = this;
         this.type = 'mail';
-        var loading = this.loadingCtrl.create({
-            spinner: 'dots'
-        });
-        loading.present();
         if (this.data != null) {
+            var loading_2 = this.loadingCtrl.create({
+                spinner: 'dots'
+            });
+            loading_2.present();
             this.api.post('auth/restar-password', { 'type': this.type, 'data': this.data }).then(function (data) {
-                loading.dismiss();
+                loading_2.dismiss();
                 console.log(data);
                 if (!_this.iscodigo)
                     _this.iscodigo = true;
@@ -2045,12 +1846,6 @@ var RecoveryPasswordPage = /** @class */ (function () {
             toast.present();
         }
     };
-    // date_request: "2018-10-02 19:44:39"
-    // id: 1
-    // is_password_change: 0
-    // password_code_req: "269680"
-    // password_reset_token: "XMmQ9K_88oRs9hjSS6Fv7ksE11MU9TVVgprwE6tA9DuDtmnSxw"
-    // user_id: 4
     RecoveryPasswordPage.prototype.changeVisible = function () {
         if (this.isvisible)
             this.isvisible = false;
@@ -2083,11 +1878,7 @@ var RecoveryPasswordPage = /** @class */ (function () {
     };
     RecoveryPasswordPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-<<<<<<< HEAD
             selector: 'page-recovery-password',template:/*ion-inline-start:"/Users/eyeline/Documents/eyepaycashappGitHub/src/pages/recovery-password/recovery-password.html"*/'<!--\n  Generated template for the RecoveryPasswordPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-content padding class="fondo_gris">\n  <div *ngIf="isvisible">\n    <ion-item>\n      <ion-label stacked>Ingrese nùmero celular</ion-label>\n      <ion-input type="text" [(ngModel)]="data" name="userdata"></ion-input>\n    </ion-item>\n    <ion-item *ngIf="iscodigo">\n      <ion-label stacked>Ingrese còdigo de verificaciòn</ion-label>\n      <ion-input type="text" [(ngModel)]="codigo" name="usercodigo"></ion-input>\n    </ion-item>\n    <ion-row>\n      <ion-col col-12 *ngIf="!iscodigo">\n        <button ion-button (click)="sendMessage()" block class="buttonPayCash">Enviar mensaje</button>\n      </ion-col>\n      <ion-col col-12 *ngIf="iscodigo">\n        <button ion-button (click)="confirmCode()" block class="buttonPayCash">Confirmar còdigo</button>\n      </ion-col>\n    </ion-row>\n    <ion-row>\n      <ion-col col-4>\n        <button ion-button (click)="cancelar()" class="buttonPayCash">Cancelar</button>\n      </ion-col>\n      <ion-col col-6 *ngIf="!iscodigo">\n        <button ion-button (click)="changeVisible()" class="buttonPayCash">Recuperar por email</button>\n      </ion-col>\n    </ion-row>\n  </div>\n\n  <div *ngIf="!isvisible">\n    <ion-item>\n      <ion-label stacked>Ingrese su direcciòn email</ion-label>\n      <ion-input type="text" [(ngModel)]="data" name="dataname"></ion-input>\n    </ion-item>\n\n\n    <ion-item *ngIf="iscodigo">\n      <ion-label stacked>Ingrese còdigo de verificaciòn</ion-label>\n      <ion-input type="text" [(ngModel)]="codigo" name="usercodigo"></ion-input>\n    </ion-item>\n    <ion-row>\n      <ion-col col-12 *ngIf="!iscodigo">\n        <button ion-button (click)="sendMail()" block class="buttonPayCash">Enviar email</button>\n      </ion-col>\n      <ion-col col-12 *ngIf="iscodigo">\n        <button ion-button (click)="confirmCode()" block class="buttonPayCash">Confirmar còdigo</button>\n      </ion-col>\n    </ion-row>\n    <ion-row>\n\n\n      <ion-col col-4>\n        <button ion-button (click)="cancelar()" class="buttonPayCash">Cancelar</button>\n      </ion-col>\n      <ion-col col-6>\n        <button ion-button (click)="changeVisible()" class="buttonPayCash">Recuperar por SMS</button>\n      </ion-col>\n    </ion-row>\n  </div>\n</ion-content>'/*ion-inline-end:"/Users/eyeline/Documents/eyepaycashappGitHub/src/pages/recovery-password/recovery-password.html"*/,
-=======
-            selector: 'page-recovery-password',template:/*ion-inline-start:"/Users/eyeline/Documents/GitHub/eyepaycashapp/src/pages/recovery-password/recovery-password.html"*/'<!--\n  Generated template for the RecoveryPasswordPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-content padding class="fondo_gris">\n  <div *ngIf="isvisible">\n    <ion-item>\n      <ion-label stacked>Ingrese nùmero celular</ion-label>\n      <ion-input type="text" [(ngModel)]="data" name="userdata"></ion-input>\n    </ion-item>\n    <ion-item *ngIf="iscodigo">\n      <ion-label stacked>Ingrese còdigo de verificaciòn</ion-label>\n      <ion-input type="text" [(ngModel)]="codigo" name="usercodigo"></ion-input>\n    </ion-item>\n    <ion-row>\n      <ion-col col-12 *ngIf="!iscodigo">\n        <button ion-button (click)="sendMessage()" block class="buttonPayCash">Enviar mensaje</button>\n      </ion-col>\n      <ion-col col-12 *ngIf="iscodigo">\n        <button ion-button (click)="confirmCode()" block class="buttonPayCash">Confirmar còdigo</button>\n      </ion-col>\n    </ion-row>\n    <ion-row>\n      <ion-col col-4>\n        <button ion-button (click)="cancelar()" class="buttonPayCash">Cancelar</button>\n      </ion-col>\n      <ion-col col-6 *ngIf="!iscodigo">\n        <button ion-button (click)="changeVisible()" class="buttonPayCash">Recuperar por email</button>\n      </ion-col>\n    </ion-row>\n  </div>\n\n  <div *ngIf="!isvisible">\n    <ion-item>\n      <ion-label stacked>Ingrese su direcciòn email</ion-label>\n      <ion-input type="text" [(ngModel)]="data" name="dataname"></ion-input>\n    </ion-item>\n\n\n    <ion-item *ngIf="iscodigo">\n      <ion-label stacked>Ingrese còdigo de verificaciòn</ion-label>\n      <ion-input type="text" [(ngModel)]="codigo" name="usercodigo"></ion-input>\n    </ion-item>\n    <ion-row>\n      <ion-col col-12 *ngIf="!iscodigo">\n        <button ion-button (click)="sendMail()" block class="buttonPayCash">Enviar email</button>\n      </ion-col>\n      <ion-col col-12 *ngIf="iscodigo">\n        <button ion-button (click)="confirmCode()" block class="buttonPayCash">Confirmar còdigo</button>\n      </ion-col>\n    </ion-row>\n    <ion-row>\n\n\n      <ion-col col-4>\n        <button ion-button (click)="cancelar()" class="buttonPayCash">Cancelar</button>\n      </ion-col>\n      <ion-col col-6>\n        <button ion-button (click)="changeVisible()" class="buttonPayCash">Recuperar por SMS</button>\n      </ion-col>\n    </ion-row>\n  </div>\n</ion-content>'/*ion-inline-end:"/Users/eyeline/Documents/GitHub/eyepaycashapp/src/pages/recovery-password/recovery-password.html"*/,
->>>>>>> 81951ee53228c71b0aa374e34045d5bcc1d6b23c
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */],
             __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */],
@@ -2103,20 +1894,16 @@ var RecoveryPasswordPage = /** @class */ (function () {
 
 /***/ }),
 
-<<<<<<< HEAD
-/***/ 325:
-=======
-/***/ 323:
->>>>>>> 81951ee53228c71b0aa374e34045d5bcc1d6b23c
+/***/ 324:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PasswordUpdatePage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(8);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_api__ = __webpack_require__(23);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_auth_user_auth_user__ = __webpack_require__(31);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__login_login__ = __webpack_require__(66);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_auth_user_auth_user__ = __webpack_require__(28);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__login_login__ = __webpack_require__(85);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2199,11 +1986,7 @@ var PasswordUpdatePage = /** @class */ (function () {
     };
     PasswordUpdatePage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-<<<<<<< HEAD
             selector: 'page-password-update',template:/*ion-inline-start:"/Users/eyeline/Documents/eyepaycashappGitHub/src/pages/password-update/password-update.html"*/'<!--\n  Generated template for the PasswordUpdatePage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-content padding class="fondo_gris">\n  <form #formulario (submit)="recovery()">\n    <ion-list>\n      <ion-item>\n        <ion-label stacked>Ingrese la nueva contraseña</ion-label>\n        <ion-input type="password" [(ngModel)]="infoRecovery.new_password" name="recovery_pass"></ion-input>\n      </ion-item>\n      <ion-item>\n        <ion-label stacked>Confirme la nueva contraseña</ion-label>\n        <ion-input type="password" [(ngModel)]="infoRecovery.new_password_conf" name="recovery_pass2"></ion-input>\n      </ion-item>\n      <ion-item>\n        <button ion-button class="buttonPayCash" block>Guardar</button>\n      </ion-item>\n    </ion-list>\n  </form>\n</ion-content>\n'/*ion-inline-end:"/Users/eyeline/Documents/eyepaycashappGitHub/src/pages/password-update/password-update.html"*/,
-=======
-            selector: 'page-password-update',template:/*ion-inline-start:"/Users/eyeline/Documents/GitHub/eyepaycashapp/src/pages/password-update/password-update.html"*/'<!--\n  Generated template for the PasswordUpdatePage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-content padding class="fondo_gris">\n  <form #formulario (submit)="recovery()">\n    <ion-list>\n      <ion-item>\n        <ion-label stacked>Ingrese la nueva contraseña</ion-label>\n        <ion-input type="password" [(ngModel)]="infoRecovery.new_password" name="recovery_pass"></ion-input>\n      </ion-item>\n      <ion-item>\n        <ion-label stacked>Confirme la nueva contraseña</ion-label>\n        <ion-input type="password" [(ngModel)]="infoRecovery.new_password_conf" name="recovery_pass2"></ion-input>\n      </ion-item>\n      <ion-item>\n        <button ion-button class="buttonPayCash" block>Guardar</button>\n      </ion-item>\n    </ion-list>\n  </form>\n</ion-content>\n'/*ion-inline-end:"/Users/eyeline/Documents/GitHub/eyepaycashapp/src/pages/password-update/password-update.html"*/,
->>>>>>> 81951ee53228c71b0aa374e34045d5bcc1d6b23c
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */],
             __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */],
@@ -2219,109 +2002,15 @@ var PasswordUpdatePage = /** @class */ (function () {
 
 /***/ }),
 
-<<<<<<< HEAD
-/***/ 326:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TransactionPage; });
-=======
-/***/ 324:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HistoryPage; });
->>>>>>> 81951ee53228c71b0aa374e34045d5bcc1d6b23c
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(7);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_api__ = __webpack_require__(23);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_auth_user_auth_user__ = __webpack_require__(31);
-<<<<<<< HEAD
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__modal_transaction_modal_transaction__ = __webpack_require__(327);
-=======
->>>>>>> 81951ee53228c71b0aa374e34045d5bcc1d6b23c
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-
-<<<<<<< HEAD
-
-/**
- * Generated class for the TransactionPage page.
-=======
-/**
- * Generated class for the HistoryPage page.
->>>>>>> 81951ee53228c71b0aa374e34045d5bcc1d6b23c
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-<<<<<<< HEAD
-var TransactionPage = /** @class */ (function () {
-    function TransactionPage(navCtrl, navParams, api, userProvider, loadingCtrl, toastCtrl, modalCtrl) {
-=======
-var HistoryPage = /** @class */ (function () {
-    function HistoryPage(navCtrl, navParams, api, userProvider) {
->>>>>>> 81951ee53228c71b0aa374e34045d5bcc1d6b23c
-        this.navCtrl = navCtrl;
-        this.navParams = navParams;
-        this.api = api;
-        this.userProvider = userProvider;
-<<<<<<< HEAD
-=======
-        this.transactions = null;
-        this.links = null;
-        this.meta = null;
-        this.filtro = {
-            status: 0,
-            page: null,
-            perpage: null
-        };
-        this.getInfo();
-    }
-    HistoryPage.prototype.getInfo = function () {
-        var _this = this;
-        this.api.get('app/transactions?expand=country', this.userProvider, this.filtro).then(function (data) {
-            _this.transactions = data.items;
-            _this.links = data.links;
-            _this.meta = data.meta;
-            console.log(data);
-        });
-    };
-    HistoryPage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-            selector: 'page-history',template:/*ion-inline-start:"/Users/eyeline/Documents/GitHub/eyepaycashapp/src/pages/history/history.html"*/'<!--\n  Generated template for the HistoryPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>history</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n  <ion-list>\n    <ion-item *ngFor="let transaction of transactions">\n      <h2>{{transaction.country.name}}</h2>\n      <p>Hayao Miyazaki • 1988</p>\n      <button ion-button clear item-end>View</button>\n    </ion-item>\n  </ion-list>\n</ion-content>\n'/*ion-inline-end:"/Users/eyeline/Documents/GitHub/eyepaycashapp/src/pages/history/history.html"*/,
-        }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */],
-            __WEBPACK_IMPORTED_MODULE_2__providers_api__["a" /* Api */],
-            __WEBPACK_IMPORTED_MODULE_3__providers_auth_user_auth_user__["a" /* AuthUserProvider */]])
-    ], HistoryPage);
-    return HistoryPage;
-}());
-
-//# sourceMappingURL=history.js.map
-
-/***/ }),
-
 /***/ 325:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TransactionPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(8);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_api__ = __webpack_require__(23);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_auth_user_auth_user__ = __webpack_require__(31);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_auth_user_auth_user__ = __webpack_require__(28);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__modal_transaction_modal_transaction__ = __webpack_require__(326);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -2349,7 +2038,6 @@ var TransactionPage = /** @class */ (function () {
         this.navParams = navParams;
         this.api = api;
         this.userProvider = userProvider;
->>>>>>> 81951ee53228c71b0aa374e34045d5bcc1d6b23c
         this.loadingCtrl = loadingCtrl;
         this.toastCtrl = toastCtrl;
         this.modalCtrl = modalCtrl;
@@ -2389,11 +2077,7 @@ var TransactionPage = /** @class */ (function () {
     };
     TransactionPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-<<<<<<< HEAD
             selector: 'page-transaction',template:/*ion-inline-start:"/Users/eyeline/Documents/eyepaycashappGitHub/src/pages/transaction/transaction.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>TRANSACCIONES</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n  <ion-label class="txtLbl" stacked>Seleccione país de interés</ion-label>\n  <ion-select [(ngModel)]="currency" (ionChange)="countrySelected()">\n    <ion-option *ngFor="let pais of countrys" value="{{pais.currency}}">{{pais.name}}</ion-option>\n  </ion-select>\n\n\n  <ion-card>\n    <ion-card-content>\n      <label stacked>Precio del dolar en el paìs</label>\n      <ion-item>\n        <h6>1 USD = {{infoCountry?.local_usd_value}} {{currency}}</h6>\n      </ion-item>\n      <label stacked>Información de las monedas</label>\n\n      <button ion-item *ngFor="let moneda of monedas" (click)="monedaSelect(moneda)">\n        <ion-row>\n          <ion-col col-10>\n            <h4>Nombre: {{moneda.full_name}}</h4>\n            <h6>1 {{moneda.full_name}} = {{moneda.usd_value}} USD</h6>\n            <h5 stacked> 1 {{moneda.full_name}} >> {{currency}} </h5>\n            <h5>{{moneda.local_usd_value}}</h5>\n          </ion-col>\n          <ion-col col-2 class="margIcon">\n            <ion-icon  name="add"></ion-icon>\n          </ion-col>\n        </ion-row>\n        <hr>\n      </button>\n\n    </ion-card-content>\n  </ion-card>\n</ion-content>'/*ion-inline-end:"/Users/eyeline/Documents/eyepaycashappGitHub/src/pages/transaction/transaction.html"*/,
-=======
-            selector: 'page-transaction',template:/*ion-inline-start:"/Users/eyeline/Documents/GitHub/eyepaycashapp/src/pages/transaction/transaction.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>TRANSACCIONES</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n  <ion-label class="txtLbl" stacked>Seleccione país de interés</ion-label>\n  <ion-select [(ngModel)]="currency" (ionChange)="countrySelected()">\n    <ion-option *ngFor="let pais of countrys" value="{{pais.currency}}">{{pais.name}}</ion-option>\n  </ion-select>\n\n\n  <ion-card>\n    <ion-card-content>\n      <label stacked>Precio del dolar en el paìs</label>\n      <ion-item>\n        <h6>1 USD = {{infoCountry?.local_usd_value}} {{currency}}</h6>\n      </ion-item>\n      <label stacked>Información de las monedas</label>\n\n      <button ion-item *ngFor="let moneda of monedas" (click)="monedaSelect(moneda)">\n        <ion-row>\n          <ion-col col-10>\n            <h4>Nombre: {{moneda.full_name}}</h4>\n            <h6>1 {{moneda.full_name}} = {{moneda.usd_value}} USD</h6>\n            <h5 stacked> 1 {{moneda.full_name}} >> {{currency}} </h5>\n            <h5>{{moneda.local_usd_value}}</h5>\n          </ion-col>\n          <ion-col col-2 class="margIcon">\n            <ion-icon  name="add"></ion-icon>\n          </ion-col>\n        </ion-row>\n        <hr>\n      </button>\n\n    </ion-card-content>\n  </ion-card>\n</ion-content>'/*ion-inline-end:"/Users/eyeline/Documents/GitHub/eyepaycashapp/src/pages/transaction/transaction.html"*/,
->>>>>>> 81951ee53228c71b0aa374e34045d5bcc1d6b23c
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */],
             __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */],
@@ -2416,15 +2100,11 @@ var TransactionPage = /** @class */ (function () {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ModalTransactionPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(8);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_api__ = __webpack_require__(23);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_auth_user_auth_user__ = __webpack_require__(31);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__home_home__ = __webpack_require__(138);
-<<<<<<< HEAD
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__transaction_resume_transaction_resume__ = __webpack_require__(328);
-=======
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_auth_user_auth_user__ = __webpack_require__(28);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__home_home__ = __webpack_require__(139);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__transaction_resume_transaction_resume__ = __webpack_require__(327);
->>>>>>> 81951ee53228c71b0aa374e34045d5bcc1d6b23c
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2511,7 +2191,7 @@ var ModalTransactionPage = /** @class */ (function () {
     };
     ModalTransactionPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-            selector: 'page-modal-transaction',template:/*ion-inline-start:"/Users/eyeline/Documents/GitHub/eyepaycashapp/src/pages/modal-transaction/modal-transaction.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>Transacción</ion-title>\n    <ion-buttons end>\n      <button ion-button (click)="closeModal()">Cerrar</button>\n    </ion-buttons>\n  </ion-navbar>\n</ion-header>\n<ion-content padding>\n  <ion-card>\n    <ion-card-header>\n      {{moneda.full_name}}\n    </ion-card-header>\n    <ion-card-content>\n      <h6>1 {{moneda.full_name}} == {{moneda.local_usd_value | number}} {{userCountry.currency}} </h6>\n      <h6>1 {{moneda.full_name}} == {{moneda.usd_value | number}} USD </h6>\n    </ion-card-content>\n  </ion-card>\n  <ion-card>\n    <ion-card-header>\n      Información de la transación\n    </ion-card-header>\n    <ion-card-content>\n        <label stacked>Ingresar número celular</label>\n        <ion-input name="transaction-celular" [(ngModel)]="transaction.phone_user_des"   [brmasker]="{type:\'num\'}"\n                   type="text"></ion-input>\n        <label stacked>Ingresar clave de seguridad (4 digitos)</label>\n        <ion-input name="transaction-clave" [brmasker]="{len:4}" [(ngModel)]="transaction.key_user" type="number"></ion-input>\n        <label stacked>Ingresar el valor de la transacción</label>\n        <ion-input type="text" name="transaction-valor"\n                   [brmasker]="{money:true,decimal:0,thousand:\',\',type:\'num\'}"\n                   [(ngModel)]="transaction.amount_local">\n\n        </ion-input>\n        <button class="buttonPayCash" ion-button (click)="doTrasaction()">Solicitar transacción</button>\n    </ion-card-content>\n  </ion-card>\n\n</ion-content>\n'/*ion-inline-end:"/Users/eyeline/Documents/GitHub/eyepaycashapp/src/pages/modal-transaction/modal-transaction.html"*/,
+            selector: 'page-modal-transaction',template:/*ion-inline-start:"/Users/eyeline/Documents/eyepaycashappGitHub/src/pages/modal-transaction/modal-transaction.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>Transacción</ion-title>\n    <ion-buttons end>\n      <button ion-button (click)="closeModal()">Cerrar</button>\n    </ion-buttons>\n  </ion-navbar>\n</ion-header>\n<ion-content padding>\n  <ion-card>\n    <ion-card-header>\n      {{moneda.full_name}}\n    </ion-card-header>\n    <ion-card-content>\n      <h6>1 {{moneda.full_name}} == {{moneda.local_usd_value | number}} {{userCountry.currency}} </h6>\n      <h6>1 {{moneda.full_name}} == {{moneda.usd_value | number}} USD </h6>\n    </ion-card-content>\n  </ion-card>\n  <ion-card>\n    <ion-card-header>\n      Información de la transación\n    </ion-card-header>\n    <ion-card-content>\n        <label stacked>Ingresar número celular</label>\n        <ion-input name="transaction-celular" [(ngModel)]="transaction.phone_user_des"   [brmasker]="{type:\'num\'}"\n                   type="text"></ion-input>\n        <label stacked>Ingresar clave de seguridad (4 digitos)</label>\n        <ion-input name="transaction-clave" [brmasker]="{len:4}" [(ngModel)]="transaction.key_user" type="number"></ion-input>\n        <label stacked>Ingresar el valor de la transacción</label>\n        <ion-input type="text" name="transaction-valor"\n                   [brmasker]="{money:true,decimal:0,thousand:\',\',type:\'num\'}"\n                   [(ngModel)]="transaction.amount_local">\n\n        </ion-input>\n        <button class="buttonPayCash" ion-button (click)="doTrasaction()">Solicitar transacción</button>\n    </ion-card-content>\n  </ion-card>\n\n</ion-content>\n'/*ion-inline-end:"/Users/eyeline/Documents/eyepaycashappGitHub/src/pages/modal-transaction/modal-transaction.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */],
             __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* ViewController */],
@@ -2528,17 +2208,13 @@ var ModalTransactionPage = /** @class */ (function () {
 
 /***/ }),
 
-<<<<<<< HEAD
-/***/ 328:
-=======
 /***/ 327:
->>>>>>> 81951ee53228c71b0aa374e34045d5bcc1d6b23c
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TransactionResumePage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(8);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2578,11 +2254,7 @@ var TransactionResumePage = /** @class */ (function () {
     };
     TransactionResumePage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-<<<<<<< HEAD
-            selector: 'page-transaction-resume',template:/*ion-inline-start:"/Users/eyeline/Documents/eyepaycashappGitHub/src/pages/transaction-resume/transaction-resume.html"*/'<!--\n  Generated template for the TransactionResumePage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>EYEPAYCASH</ion-title>\n  </ion-navbar>\n</ion-header>\n<ion-content padding>\n  <h4>Resumen de la transacciòn</h4>\n<ion-card>\n  <ion-card-content>\n    <ion-row>\n      <label stacked>Nùmero de celular de destino</label>\n      <h4>{{transaction.phone_user_des}}</h4>\n      <label stacked>Nombre de la ciudad</label>\n      <h4>{{country.name}}</h4>\n      <label stacked>Costo local de la transacciòn</label>\n      <h4>{{transaction.amount_local}}</h4>\n      <label stacked>Nombre de la criptomoneda</label>\n      <h4>{{coin.full_name}}</h4>\n      <label stacked>Clave de transacciòn</label>\n      <h4>{{transaction.key_eyecash}}</h4>\n      <label stacked>Total en dolares</label>\n      <h4>{{transaction.amount_usd}}</h4>\n      <label stacked>Total en criptomoneda</label>\n      <h4>{{transaction.amount_btc}}</h4>\n    </ion-row>\n  </ion-card-content>\n</ion-card>\n\n</ion-content>\n'/*ion-inline-end:"/Users/eyeline/Documents/eyepaycashappGitHub/src/pages/transaction-resume/transaction-resume.html"*/,
-=======
-            selector: 'page-transaction-resume',template:/*ion-inline-start:"/Users/eyeline/Documents/GitHub/eyepaycashapp/src/pages/transaction-resume/transaction-resume.html"*/'<ion-header>\n\n  <ion-navbar>\n    <ion-title>Resumen de la transacción</ion-title>\n  </ion-navbar>\n</ion-header>\n<ion-content padding>\n  <h4>Resumen de la transacción</h4>\n<ion-card>\n  <ion-card-content>\n    <ion-row>\n      <label stacked>Número de celular de destino</label>\n      <h4>{{transaction.phone_user_des}}</h4>\n      <label stacked>Nombre de la ciudad</label>\n      <h4>{{country.name}}</h4>\n      <label stacked>Costo local de la transacción</label>\n      <h4>{{transaction.amount_local}}</h4>\n      <label stacked>Nombre de la criptomoneda</label>\n      <h4>{{coin.full_name}}</h4>\n      <label stacked>Clave de transacción</label>\n      <h4>{{transaction.key_eyecash}}</h4>\n      <label stacked>Total en dolares</label>\n      <h4>{{transaction.amount_usd}}</h4>\n      <label stacked>Total en criptomoneda</label>\n      \n      <h4>{{transaction.amount_btc}}</h4>\n    </ion-row>\n  </ion-card-content>\n</ion-card>\n\n</ion-content>\n'/*ion-inline-end:"/Users/eyeline/Documents/GitHub/eyepaycashapp/src/pages/transaction-resume/transaction-resume.html"*/,
->>>>>>> 81951ee53228c71b0aa374e34045d5bcc1d6b23c
+            selector: 'page-transaction-resume',template:/*ion-inline-start:"/Users/eyeline/Documents/eyepaycashappGitHub/src/pages/transaction-resume/transaction-resume.html"*/'<ion-header>\n\n  <ion-navbar>\n    <ion-title>Resumen de la transacción</ion-title>\n  </ion-navbar>\n</ion-header>\n<ion-content padding>\n  <h4>Resumen de la transacción</h4>\n<ion-card>\n  <ion-card-content>\n    <ion-row>\n      <label stacked>Número de celular de destino</label>\n      <h4>{{transaction.phone_user_des}}</h4>\n      <label stacked>Nombre de la ciudad</label>\n      <h4>{{country.name}}</h4>\n      <label stacked>Costo local de la transacción</label>\n      <h4>{{transaction.amount_local}}</h4>\n      <label stacked>Nombre de la criptomoneda</label>\n      <h4>{{coin.full_name}}</h4>\n      <label stacked>Clave de transacción</label>\n      <h4>{{transaction.key_eyecash}}</h4>\n      <label stacked>Total en dolares</label>\n      <h4>{{transaction.amount_usd}}</h4>\n      <label stacked>Total en criptomoneda</label>\n      \n      <h4>{{transaction.amount_btc}}</h4>\n    </ion-row>\n  </ion-card-content>\n</ion-card>\n\n</ion-content>\n'/*ion-inline-end:"/Users/eyeline/Documents/eyepaycashappGitHub/src/pages/transaction-resume/transaction-resume.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */],
             __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */],
@@ -2622,58 +2294,16 @@ var TransactionResumePage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 329:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HistoryPageModule", function() { return HistoryPageModule; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(7);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__history__ = __webpack_require__(324);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-
-
-
-var HistoryPageModule = /** @class */ (function () {
-    function HistoryPageModule() {
-    }
-    HistoryPageModule = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["J" /* NgModule */])({
-            declarations: [
-                __WEBPACK_IMPORTED_MODULE_2__history__["a" /* HistoryPage */],
-            ],
-            imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__history__["a" /* HistoryPage */]),
-            ],
-        })
-    ], HistoryPageModule);
-    return HistoryPageModule;
-}());
-
-//# sourceMappingURL=history.module.js.map
-
-/***/ }),
-
-/***/ 329:
+/***/ 328:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ModalTransactionPageModule", function() { return ModalTransactionPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(7);
-<<<<<<< HEAD
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__modal_transaction__ = __webpack_require__(327);
-=======
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(8);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__modal_transaction__ = __webpack_require__(326);
->>>>>>> 81951ee53228c71b0aa374e34045d5bcc1d6b23c
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_brmasker_ionic_3__ = __webpack_require__(694);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_brmasker_ionic_3__ = __webpack_require__(692);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2705,19 +2335,15 @@ var ModalTransactionPageModule = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 332:
+/***/ 331:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ModalWelcomePageModule", function() { return ModalWelcomePageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(7);
-<<<<<<< HEAD
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__modal_welcome__ = __webpack_require__(323);
-=======
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__modal_welcome__ = __webpack_require__(321);
->>>>>>> 81951ee53228c71b0aa374e34045d5bcc1d6b23c
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__modal_welcome__ = __webpack_require__(322);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2747,19 +2373,15 @@ var ModalWelcomePageModule = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 333:
+/***/ 332:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PasswordUpdatePageModule", function() { return PasswordUpdatePageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(7);
-<<<<<<< HEAD
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__password_update__ = __webpack_require__(325);
-=======
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__password_update__ = __webpack_require__(323);
->>>>>>> 81951ee53228c71b0aa374e34045d5bcc1d6b23c
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__password_update__ = __webpack_require__(324);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2789,19 +2411,15 @@ var PasswordUpdatePageModule = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 334:
+/***/ 333:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RecoveryPasswordPageModule", function() { return RecoveryPasswordPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(7);
-<<<<<<< HEAD
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__recovery_password__ = __webpack_require__(324);
-=======
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__recovery_password__ = __webpack_require__(322);
->>>>>>> 81951ee53228c71b0aa374e34045d5bcc1d6b23c
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__recovery_password__ = __webpack_require__(323);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2831,19 +2449,15 @@ var RecoveryPasswordPageModule = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 335:
+/***/ 334:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RegNumberPhonePageModule", function() { return RegNumberPhonePageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(7);
-<<<<<<< HEAD
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__reg_number_phone__ = __webpack_require__(318);
-=======
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__reg_number_phone__ = __webpack_require__(316);
->>>>>>> 81951ee53228c71b0aa374e34045d5bcc1d6b23c
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__reg_number_phone__ = __webpack_require__(319);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_native_geocoder__ = __webpack_require__(137);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_geolocation__ = __webpack_require__(135);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -2881,158 +2495,15 @@ var RegNumberPhonePageModule = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 336:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SelectCodePageModule", function() { return SelectCodePageModule; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(7);
-<<<<<<< HEAD
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__register__ = __webpack_require__(320);
-=======
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__select_code__ = __webpack_require__(121);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ionic2_auto_complete__ = __webpack_require__(222);
->>>>>>> 81951ee53228c71b0aa374e34045d5bcc1d6b23c
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-
-
-
-
-var SelectCodePageModule = /** @class */ (function () {
-    function SelectCodePageModule() {
-    }
-<<<<<<< HEAD
-    RegisterPageModule = __decorate([
-=======
-    SelectCodePageModule = __decorate([
->>>>>>> 81951ee53228c71b0aa374e34045d5bcc1d6b23c
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["J" /* NgModule */])({
-            declarations: [
-                __WEBPACK_IMPORTED_MODULE_2__select_code__["a" /* SelectCodePage */],
-            ],
-            imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__select_code__["a" /* SelectCodePage */]),
-                __WEBPACK_IMPORTED_MODULE_3_ionic2_auto_complete__["b" /* AutoCompleteModule */],
-            ],
-        })
-    ], SelectCodePageModule);
-    return SelectCodePageModule;
-}());
-
-//# sourceMappingURL=select-code.module.js.map
-
-/***/ }),
-
-/***/ 337:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PoliticasPageModule", function() { return PoliticasPageModule; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(7);
-<<<<<<< HEAD
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__select_code__ = __webpack_require__(121);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ionic2_auto_complete__ = __webpack_require__(222);
-=======
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__politicas__ = __webpack_require__(319);
->>>>>>> 81951ee53228c71b0aa374e34045d5bcc1d6b23c
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-
-
-
-var PoliticasPageModule = /** @class */ (function () {
-    function PoliticasPageModule() {
-    }
-    PoliticasPageModule = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["J" /* NgModule */])({
-            declarations: [
-                __WEBPACK_IMPORTED_MODULE_2__politicas__["a" /* PoliticasPage */],
-            ],
-            imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__politicas__["a" /* PoliticasPage */]),
-            ],
-        })
-<<<<<<< HEAD
-    ], SelectCodePageModule);
-    return SelectCodePageModule;
-=======
-    ], PoliticasPageModule);
-    return PoliticasPageModule;
->>>>>>> 81951ee53228c71b0aa374e34045d5bcc1d6b23c
-}());
-
-//# sourceMappingURL=politicas.module.js.map
-
-/***/ }),
-
-/***/ 338:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TerminosPageModule", function() { return TerminosPageModule; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(7);
-<<<<<<< HEAD
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__terminos__ = __webpack_require__(322);
-=======
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__terminos__ = __webpack_require__(320);
->>>>>>> 81951ee53228c71b0aa374e34045d5bcc1d6b23c
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-
-
-
-var TerminosPageModule = /** @class */ (function () {
-    function TerminosPageModule() {
-    }
-    TerminosPageModule = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["J" /* NgModule */])({
-            declarations: [
-                __WEBPACK_IMPORTED_MODULE_2__terminos__["a" /* TerminosPage */],
-            ],
-            imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__terminos__["a" /* TerminosPage */]),
-            ],
-        })
-    ], TerminosPageModule);
-    return TerminosPageModule;
-}());
-
-//# sourceMappingURL=terminos.module.js.map
-
-/***/ }),
-
-/***/ 339:
+/***/ 335:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RegisterPageModule", function() { return RegisterPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(7);
-<<<<<<< HEAD
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__transaction_resume__ = __webpack_require__(328);
-=======
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__register__ = __webpack_require__(318);
->>>>>>> 81951ee53228c71b0aa374e34045d5bcc1d6b23c
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__register__ = __webpack_require__(138);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -3062,14 +2533,93 @@ var RegisterPageModule = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 340:
+/***/ 336:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SelectCodePageModule", function() { return SelectCodePageModule; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__select_code__ = __webpack_require__(121);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ionic2_auto_complete__ = __webpack_require__(223);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+
+
+
+var SelectCodePageModule = /** @class */ (function () {
+    function SelectCodePageModule() {
+    }
+    SelectCodePageModule = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["J" /* NgModule */])({
+            declarations: [
+                __WEBPACK_IMPORTED_MODULE_2__select_code__["a" /* SelectCodePage */],
+            ],
+            imports: [
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__select_code__["a" /* SelectCodePage */]),
+                __WEBPACK_IMPORTED_MODULE_3_ionic2_auto_complete__["b" /* AutoCompleteModule */],
+            ],
+        })
+    ], SelectCodePageModule);
+    return SelectCodePageModule;
+}());
+
+//# sourceMappingURL=select-code.module.js.map
+
+/***/ }),
+
+/***/ 337:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TransactionResumePageModule", function() { return TransactionResumePageModule; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__transaction_resume__ = __webpack_require__(327);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+
+
+var TransactionResumePageModule = /** @class */ (function () {
+    function TransactionResumePageModule() {
+    }
+    TransactionResumePageModule = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["J" /* NgModule */])({
+            declarations: [
+                __WEBPACK_IMPORTED_MODULE_2__transaction_resume__["a" /* TransactionResumePage */],
+            ],
+            imports: [
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__transaction_resume__["a" /* TransactionResumePage */]),
+            ],
+        })
+    ], TransactionResumePageModule);
+    return TransactionResumePageModule;
+}());
+
+//# sourceMappingURL=transaction-resume.module.js.map
+
+/***/ }),
+
+/***/ 338:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TransactionPageModule", function() { return TransactionPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(8);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__transaction__ = __webpack_require__(325);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -3100,19 +2650,15 @@ var TransactionPageModule = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 341:
+/***/ 339:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TransactionResumePageModule", function() { return TransactionResumePageModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PoliticasPageModule", function() { return PoliticasPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(7);
-<<<<<<< HEAD
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(8);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__politicas__ = __webpack_require__(321);
-=======
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__transaction_resume__ = __webpack_require__(327);
->>>>>>> 81951ee53228c71b0aa374e34045d5bcc1d6b23c
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -3122,42 +2668,33 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var TransactionResumePageModule = /** @class */ (function () {
-    function TransactionResumePageModule() {
+var PoliticasPageModule = /** @class */ (function () {
+    function PoliticasPageModule() {
     }
-<<<<<<< HEAD
     PoliticasPageModule = __decorate([
-=======
-    TransactionResumePageModule = __decorate([
->>>>>>> 81951ee53228c71b0aa374e34045d5bcc1d6b23c
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["J" /* NgModule */])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_2__transaction_resume__["a" /* TransactionResumePage */],
+                __WEBPACK_IMPORTED_MODULE_2__politicas__["a" /* PoliticasPage */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__transaction_resume__["a" /* TransactionResumePage */]),
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__politicas__["a" /* PoliticasPage */]),
             ],
         })
-<<<<<<< HEAD
     ], PoliticasPageModule);
     return PoliticasPageModule;
-=======
-    ], TransactionResumePageModule);
-    return TransactionResumePageModule;
->>>>>>> 81951ee53228c71b0aa374e34045d5bcc1d6b23c
 }());
 
-//# sourceMappingURL=transaction-resume.module.js.map
+//# sourceMappingURL=politicas.module.js.map
 
 /***/ }),
 
-/***/ 383:
+/***/ 381:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(384);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_module__ = __webpack_require__(388);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(382);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_module__ = __webpack_require__(386);
 
 
 Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* platformBrowserDynamic */])().bootstrapModule(__WEBPACK_IMPORTED_MODULE_1__app_module__["a" /* AppModule */]);
@@ -3165,63 +2702,46 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 
 /***/ }),
 
-/***/ 388:
+/***/ 386:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__ = __webpack_require__(45);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(7);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(381);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_status_bar__ = __webpack_require__(382);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__app_component__ = __webpack_require__(714);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(379);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_status_bar__ = __webpack_require__(380);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__app_component__ = __webpack_require__(712);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__providers_country_country__ = __webpack_require__(122);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_select_code_select_code_module__ = __webpack_require__(337);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_select_code_select_code_module__ = __webpack_require__(336);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__angular_common_http__ = __webpack_require__(58);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__providers_api__ = __webpack_require__(23);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__ionic_storage__ = __webpack_require__(219);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__ionic_storage__ = __webpack_require__(220);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__providers_geolocation_geolocation__ = __webpack_require__(134);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__ionic_native_geolocation__ = __webpack_require__(135);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__ionic_native_native_geocoder__ = __webpack_require__(137);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__providers_auth_user_auth_user__ = __webpack_require__(31);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__pages_reg_number_phone_reg_number_phone_module__ = __webpack_require__(335);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__providers_verification_verification__ = __webpack_require__(715);
-<<<<<<< HEAD
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__pages_login_login_module__ = __webpack_require__(317);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__pages_account_account_module__ = __webpack_require__(215);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__pages_history_history_module__ = __webpack_require__(315);
-=======
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__pages_login_login_module__ = __webpack_require__(315);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__pages_account_account_module__ = __webpack_require__(215);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__pages_history_history_module__ = __webpack_require__(328);
->>>>>>> 81951ee53228c71b0aa374e34045d5bcc1d6b23c
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__pages_home_home_module__ = __webpack_require__(716);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__pages_modal_transaction_modal_transaction_module__ = __webpack_require__(329);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__pages_modal_welcome_modal_welcome_module__ = __webpack_require__(332);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__pages_password_update_password_update_module__ = __webpack_require__(333);
-<<<<<<< HEAD
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__pages_politicas_politicas_module__ = __webpack_require__(341);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__pages_recovery_password_recovery_password_module__ = __webpack_require__(334);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__pages_register_register_module__ = __webpack_require__(336);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__pages_terminos_terminos_module__ = __webpack_require__(338);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__pages_transaction_transaction_module__ = __webpack_require__(340);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_29__pages_transaction_resume_transaction_resume_module__ = __webpack_require__(339);
-=======
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__pages_politicas_politicas_module__ = __webpack_require__(337);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__pages_recovery_password_recovery_password_module__ = __webpack_require__(334);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__pages_register_register_module__ = __webpack_require__(339);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__pages_terminos_terminos_module__ = __webpack_require__(338);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__pages_transaction_transaction_module__ = __webpack_require__(340);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_29__pages_transaction_resume_transaction_resume_module__ = __webpack_require__(341);
->>>>>>> 81951ee53228c71b0aa374e34045d5bcc1d6b23c
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__providers_auth_user_auth_user__ = __webpack_require__(28);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__pages_reg_number_phone_reg_number_phone_module__ = __webpack_require__(334);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__providers_verification_verification__ = __webpack_require__(713);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__pages_login_login_module__ = __webpack_require__(318);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__pages_account_account_module__ = __webpack_require__(216);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__pages_history_history_module__ = __webpack_require__(316);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__pages_home_home_module__ = __webpack_require__(714);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__pages_modal_transaction_modal_transaction_module__ = __webpack_require__(328);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__pages_modal_welcome_modal_welcome_module__ = __webpack_require__(331);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__pages_password_update_password_update_module__ = __webpack_require__(332);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__pages_politicas_politicas_module__ = __webpack_require__(339);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__pages_recovery_password_recovery_password_module__ = __webpack_require__(333);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__pages_register_register_module__ = __webpack_require__(335);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__pages_transaction_transaction_module__ = __webpack_require__(338);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__pages_transaction_resume_transaction_resume_module__ = __webpack_require__(337);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-
 
 
 
@@ -3265,29 +2785,18 @@ var AppModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["c" /* IonicModule */].forRoot(__WEBPACK_IMPORTED_MODULE_5__app_component__["a" /* MyApp */], {}, {
                     links: [
                         { loadChildren: '../pages/account/account.module#AccountPageModule', name: 'AccountPage', segment: 'account', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/login/login.module#LoginPageModule', name: 'LoginPage', segment: 'login', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/history/history.module#HistoryPageModule', name: 'HistoryPage', segment: 'history', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/login/login.module#LoginPageModule', name: 'LoginPage', segment: 'login', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/modal-transaction/modal-transaction.module#ModalTransactionPageModule', name: 'ModalTransactionPage', segment: 'modal-transaction', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/modal-welcome/modal-welcome.module#ModalWelcomePageModule', name: 'ModalWelcomePage', segment: 'modal-welcome', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/password-update/password-update.module#PasswordUpdatePageModule', name: 'PasswordUpdatePage', segment: 'password-update', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/recovery-password/recovery-password.module#RecoveryPasswordPageModule', name: 'RecoveryPasswordPage', segment: 'recovery-password', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/reg-number-phone/reg-number-phone.module#RegNumberPhonePageModule', name: 'RegNumberPhonePage', segment: 'reg-number-phone', priority: 'low', defaultHistory: [] },
-<<<<<<< HEAD
                         { loadChildren: '../pages/register/register.module#RegisterPageModule', name: 'RegisterPage', segment: 'register', priority: 'low', defaultHistory: [] },
-=======
->>>>>>> 81951ee53228c71b0aa374e34045d5bcc1d6b23c
                         { loadChildren: '../pages/select-code/select-code.module#SelectCodePageModule', name: 'SelectCodePage', segment: 'select-code', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/politicas/politicas.module#PoliticasPageModule', name: 'PoliticasPage', segment: 'politicas', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/terminos/terminos.module#TerminosPageModule', name: 'TerminosPage', segment: 'terminos', priority: 'low', defaultHistory: [] },
-<<<<<<< HEAD
                         { loadChildren: '../pages/transaction-resume/transaction-resume.module#TransactionResumePageModule', name: 'TransactionResumePage', segment: 'transaction-resume', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/transaction/transaction.module#TransactionPageModule', name: 'TransactionPage', segment: 'transaction', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/politicas/politicas.module#PoliticasPageModule', name: 'PoliticasPage', segment: 'politicas', priority: 'low', defaultHistory: [] }
-=======
-                        { loadChildren: '../pages/register/register.module#RegisterPageModule', name: 'RegisterPage', segment: 'register', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/transaction/transaction.module#TransactionPageModule', name: 'TransactionPage', segment: 'transaction', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/transaction-resume/transaction-resume.module#TransactionResumePageModule', name: 'TransactionResumePage', segment: 'transaction-resume', priority: 'low', defaultHistory: [] }
->>>>>>> 81951ee53228c71b0aa374e34045d5bcc1d6b23c
                     ]
                 }),
                 __WEBPACK_IMPORTED_MODULE_10__ionic_storage__["a" /* IonicStorageModule */].forRoot(),
@@ -3303,9 +2812,8 @@ var AppModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_24__pages_politicas_politicas_module__["PoliticasPageModule"],
                 __WEBPACK_IMPORTED_MODULE_25__pages_recovery_password_recovery_password_module__["RecoveryPasswordPageModule"],
                 __WEBPACK_IMPORTED_MODULE_26__pages_register_register_module__["RegisterPageModule"],
-                __WEBPACK_IMPORTED_MODULE_27__pages_terminos_terminos_module__["TerminosPageModule"],
-                __WEBPACK_IMPORTED_MODULE_28__pages_transaction_transaction_module__["TransactionPageModule"],
-                __WEBPACK_IMPORTED_MODULE_29__pages_transaction_resume_transaction_resume_module__["TransactionResumePageModule"],
+                __WEBPACK_IMPORTED_MODULE_27__pages_transaction_transaction_module__["TransactionPageModule"],
+                __WEBPACK_IMPORTED_MODULE_28__pages_transaction_resume_transaction_resume_module__["TransactionResumePageModule"],
             ],
             bootstrap: [__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["a" /* IonicApp */]],
             entryComponents: [
@@ -3332,116 +2840,17 @@ var AppModule = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 66:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LoginPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(7);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_auth_user_auth_user__ = __webpack_require__(31);
-<<<<<<< HEAD
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__reg_number_phone_reg_number_phone__ = __webpack_require__(318);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__recovery_password_recovery_password__ = __webpack_require__(324);
-=======
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__reg_number_phone_reg_number_phone__ = __webpack_require__(316);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__recovery_password_recovery_password__ = __webpack_require__(322);
->>>>>>> 81951ee53228c71b0aa374e34045d5bcc1d6b23c
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__home_home__ = __webpack_require__(138);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-
-
-
-var LoginPage = /** @class */ (function () {
-    // imagen = 'assets/backgrounds/Background1.png';
-    function LoginPage(navCtrl, loadingCtrl, userProvider, toastCtrl, modalCtrl) {
-        this.navCtrl = navCtrl;
-        this.loadingCtrl = loadingCtrl;
-        this.userProvider = userProvider;
-        this.toastCtrl = toastCtrl;
-        this.modalCtrl = modalCtrl;
-        this.mail = null;
-        this.password = null;
-    }
-    LoginPage.prototype.login = function () {
-        var _this = this;
-        var cargando = this.loadingCtrl.create({
-            spinner: 'dots',
-            duration: 3000,
-        });
-        cargando.present();
-        if (this.mail != null && this.password != null) {
-            this.userProvider.login(this.mail, this.password)
-                .then(function (data) {
-                if (data.success == 'ok') {
-                    _this.navCtrl.setRoot(__WEBPACK_IMPORTED_MODULE_5__home_home__["a" /* HomePage */]);
-                    cargando.dismiss();
-                }
-                else {
-                    cargando.dismiss();
-                }
-            }).catch(function (data) {
-            });
-        }
-        else {
-            cargando.dismiss();
-            var toast = this.toastCtrl.create({
-                message: 'Todos los datos son requeridos',
-                duration: 3000,
-            });
-            toast.present();
-        }
-    };
-    LoginPage.prototype.recuperarcontrasena = function () {
-        var modal = this.modalCtrl.create(__WEBPACK_IMPORTED_MODULE_4__recovery_password_recovery_password__["a" /* RecoveryPasswordPage */]);
-        modal.present();
-    };
-    LoginPage.prototype.registro = function () {
-        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_3__reg_number_phone_reg_number_phone__["a" /* RegNumberPhonePage */]);
-    };
-    LoginPage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-<<<<<<< HEAD
-            selector: 'page-login',template:/*ion-inline-start:"/Users/eyeline/Documents/eyepaycashappGitHub/src/pages/login/login.html"*/'<ion-content class="imgBackground vignette">\n  <div class="center">\n    <ion-img class="logo" src="assets/imgs/EPCLogo.png"></ion-img>\n  </div>\n  <form #formulario (submit)="login()">\n    <ion-list>\n      <ion-item>\n        <ion-input placeholder="Email" class="inputClass marginItems" type="email" required name="correo" [(ngModel)]="mail"> </ion-input>\n      </ion-item>\n      <ion-item>\n        <ion-input placeholder="Contraseña" class="inputClass marginItems" type="password" [(ngModel)]="password" name="userpass"> </ion-input>\n      </ion-item>\n      <ion-item class="center">\n        <button class="buttonPayCash borderBtns" ion-button small>INGRESAR</button>\n      </ion-item>\n    </ion-list>\n  </form>\n  <ion-item>\n    <ion-col col-6>\n      <button class="textWhite" ion-button (click)="registro()" clear block class="transparente">Registrarme</button>\n    </ion-col>\n    <ion-col col-6>\n      <button ion-button (click)="recuperarcontrasena()" clear block class="transparente">Recuperar contraseña</button>\n    </ion-col>\n  </ion-item>\n</ion-content>'/*ion-inline-end:"/Users/eyeline/Documents/eyepaycashappGitHub/src/pages/login/login.html"*/,
-=======
-            selector: 'page-login',template:/*ion-inline-start:"/Users/eyeline/Documents/GitHub/eyepaycashapp/src/pages/login/login.html"*/'<ion-content class="imgBackground vignette">\n  <div class="center">\n    <ion-img class="logo" src="assets/imgs/EPCLogo.png"></ion-img>\n  </div>\n  <form #formulario (submit)="login()">\n    <ion-list>\n      <ion-item>\n        <ion-input placeholder="Email" class="inputClass marginItems" type="email" required name="correo" [(ngModel)]="mail"> </ion-input>\n      </ion-item>\n      <ion-item>\n        <ion-input placeholder="Contraseña" class="inputClass marginItems" type="password" [(ngModel)]="password" name="userpass"> </ion-input>\n      </ion-item>\n      <ion-item class="center">\n        <button class="buttonPayCash borderBtns" ion-button small>INGRESAR</button>\n      </ion-item>\n    </ion-list>\n  </form>\n  <ion-item>\n    <ion-col col-6>\n      <button class="textWhite" ion-button (click)="registro()" clear block class="transparente">Registrarme</button>\n    </ion-col>\n    <ion-col col-6>\n      <button ion-button (click)="recuperarcontrasena()" clear block class="transparente">Recuperar contraseña</button>\n    </ion-col>\n  </ion-item>\n</ion-content>'/*ion-inline-end:"/Users/eyeline/Documents/GitHub/eyepaycashapp/src/pages/login/login.html"*/,
->>>>>>> 81951ee53228c71b0aa374e34045d5bcc1d6b23c
-        }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* LoadingController */],
-            __WEBPACK_IMPORTED_MODULE_2__providers_auth_user_auth_user__["a" /* AuthUserProvider */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* ToastController */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* ModalController */]])
-    ], LoginPage);
-    return LoginPage;
-}());
-
-//# sourceMappingURL=login.js.map
-
-/***/ }),
-
-/***/ 714:
+/***/ 712:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MyApp; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(7);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(382);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(381);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(380);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(379);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_geolocation_geolocation__ = __webpack_require__(134);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_login_login__ = __webpack_require__(66);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_login_login__ = __webpack_require__(85);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -3473,31 +2882,26 @@ var MyApp = /** @class */ (function () {
         this.locationProvider.basicInformacion;
     };
     MyApp = __decorate([
-<<<<<<< HEAD
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({template:/*ion-inline-start:"/Users/eyeline/Documents/eyepaycashappGitHub/src/app/app.html"*/'<ion-nav [root]="rootPage"></ion-nav>\n'/*ion-inline-end:"/Users/eyeline/Documents/eyepaycashappGitHub/src/app/app.html"*/
-=======
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({template:/*ion-inline-start:"/Users/eyeline/Documents/GitHub/eyepaycashapp/src/app/app.html"*/'<ion-nav [root]="rootPage"></ion-nav>\n'/*ion-inline-end:"/Users/eyeline/Documents/GitHub/eyepaycashapp/src/app/app.html"*/
->>>>>>> 81951ee53228c71b0aa374e34045d5bcc1d6b23c
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* Platform */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */],
-            __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */],
-            __WEBPACK_IMPORTED_MODULE_4__providers_geolocation_geolocation__["a" /* GeolocationProvider */]])
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* Platform */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* Platform */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_4__providers_geolocation_geolocation__["a" /* GeolocationProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__providers_geolocation_geolocation__["a" /* GeolocationProvider */]) === "function" && _d || Object])
     ], MyApp);
     return MyApp;
+    var _a, _b, _c, _d;
 }());
 
 //# sourceMappingURL=app.component.js.map
 
 /***/ }),
 
-/***/ 715:
+/***/ 713:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return VerificationProvider; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_common_http__ = __webpack_require__(58);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(8);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__api__ = __webpack_require__(23);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -3562,14 +2966,14 @@ var VerificationProvider = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 716:
+/***/ 714:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HomePageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(7);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__home__ = __webpack_require__(138);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__home__ = __webpack_require__(139);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -3597,7 +3001,97 @@ var HomePageModule = /** @class */ (function () {
 
 //# sourceMappingURL=home.module.js.map
 
+/***/ }),
+
+/***/ 85:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LoginPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_auth_user_auth_user__ = __webpack_require__(28);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__reg_number_phone_reg_number_phone__ = __webpack_require__(319);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__recovery_password_recovery_password__ = __webpack_require__(323);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__home_home__ = __webpack_require__(139);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+
+var LoginPage = /** @class */ (function () {
+    // imagen = 'assets/backgrounds/Background1.png';
+    function LoginPage(navCtrl, loadingCtrl, userProvider, toastCtrl, modalCtrl) {
+        this.navCtrl = navCtrl;
+        this.loadingCtrl = loadingCtrl;
+        this.userProvider = userProvider;
+        this.toastCtrl = toastCtrl;
+        this.modalCtrl = modalCtrl;
+        this.mail = null;
+        this.password = null;
+    }
+    LoginPage.prototype.login = function () {
+        var _this = this;
+        var cargando = this.loadingCtrl.create({
+            spinner: 'dots',
+            duration: 3000,
+        });
+        cargando.present();
+        if (this.mail != null && this.password != null) {
+            this.userProvider.login(this.mail, this.password)
+                .then(function (data) {
+                if (data.success == 'ok') {
+                    _this.navCtrl.setRoot(__WEBPACK_IMPORTED_MODULE_5__home_home__["a" /* HomePage */]);
+                    cargando.dismiss();
+                }
+                else {
+                    cargando.dismiss();
+                }
+            }).catch(function (data) {
+            });
+        }
+        else {
+            cargando.dismiss();
+            var toast = this.toastCtrl.create({
+                message: 'Todos los datos son requeridos',
+                duration: 3000,
+            });
+            toast.present();
+        }
+    };
+    LoginPage.prototype.recuperarcontrasena = function () {
+        var modal = this.modalCtrl.create(__WEBPACK_IMPORTED_MODULE_4__recovery_password_recovery_password__["a" /* RecoveryPasswordPage */]);
+        modal.present();
+    };
+    LoginPage.prototype.registro = function () {
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_3__reg_number_phone_reg_number_phone__["a" /* RegNumberPhonePage */]);
+    };
+    LoginPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+            selector: 'page-login',template:/*ion-inline-start:"/Users/eyeline/Documents/eyepaycashappGitHub/src/pages/login/login.html"*/'<ion-content class="imgBackground vignette">\n  <div class="center">\n    <ion-img class="logo" src="assets/imgs/EPCLogo.png"></ion-img>\n  </div>\n  <form #formulario (submit)="login()">\n    <ion-list>\n      <ion-item>\n        <ion-input placeholder="Email" class="inputClass marginItems" type="email" required name="correo" [(ngModel)]="mail"> </ion-input>\n      </ion-item>\n      <ion-item>\n        <ion-input placeholder="Contraseña" class="inputClass marginItems" type="password" [(ngModel)]="password" name="userpass"> </ion-input>\n      </ion-item>\n      <ion-item class="center">\n        <button class="buttonPayCash borderBtns" ion-button small>INGRESAR</button>\n      </ion-item>\n    </ion-list>\n  </form>\n  <ion-item>\n    <ion-col col-6>\n      <button class="textWhite" ion-button (click)="registro()" clear block class="transparente">Registrarme</button>\n    </ion-col>\n    <ion-col col-6>\n      <button ion-button (click)="recuperarcontrasena()" clear block class="transparente">Recuperar contraseña</button>\n    </ion-col>\n  </ion-item>\n</ion-content>'/*ion-inline-end:"/Users/eyeline/Documents/eyepaycashappGitHub/src/pages/login/login.html"*/,
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* LoadingController */],
+            __WEBPACK_IMPORTED_MODULE_2__providers_auth_user_auth_user__["a" /* AuthUserProvider */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* ToastController */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* ModalController */]])
+    ], LoginPage);
+    return LoginPage;
+}());
+
+//# sourceMappingURL=login.js.map
+
 /***/ })
 
-},[383]);
+},[381]);
 //# sourceMappingURL=main.js.map

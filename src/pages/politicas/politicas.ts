@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, ToastController } from 'ionic-angular';
+import {Component} from '@angular/core';
+import {IonicPage, NavController, NavParams, ToastController, ViewController} from 'ionic-angular';
+import {AuthUserProvider} from "../../providers/auth-user/auth-user";
 
 /**
  * Generated class for the PoliticasPage page.
@@ -15,12 +16,13 @@ import { IonicPage, NavController, NavParams, ToastController } from 'ionic-angu
 })
 export class PoliticasPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private toastCtrl: ToastController) {
+  constructor(public navCtrl: NavController,
+              public navParams: NavParams,
+              private toastCtrl: ToastController,
+              public view: ViewController,
+              private userProvider: AuthUserProvider) {
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad PoliticasPage');
-  }
   presentToast() {
     let toast = this.toastCtrl.create({
       message: 'Si no acepta estos términos, no debe usar nuestros servicios. Puede utilizar nuestros servicios sólo si puede celebrar legalmente un acuerdo según la ley aplicable. Si utiliza nuestros servicios, acepta hacerlo de conformidad con estos términos y con las leyes y regulaciones aplicables.',
@@ -82,6 +84,7 @@ export class PoliticasPage {
 
     toast.present();
   }
+
   Retrasos() {
     let toast = this.toastCtrl.create({
       message: 'Los servicios de EyePayCash implican varias medidas de seguridad para aumentar la seguridad de su almacenamiento de criptomonedas en EyePayCash. Por esta razón, cualquier transacción a una dirección de criptomonedas fuera de EyePayCash para una cantidad significativa, puede tomar más tiempo que una estándar. Usted reconoce y acepta que cualquier transacción dirigida a una dirección de criptomonedas fuera del sistema EyePayCash puede retrasarse y ser costosa.',
@@ -126,6 +129,7 @@ export class PoliticasPage {
 
     toast.present();
   }
+
   //Ventana de 15 subtitles
 
   smsText() {
@@ -157,6 +161,7 @@ export class PoliticasPage {
 
     toast.present();
   }
+
   actividadesProhibidas() {
     let toast = this.toastCtrl.create({
       message: 'Usted acepta que no utilizará los servicios de EyePayCash para realizar ningún tipo de actividad ilegal de ningún tipo ni para tomar ninguna medida que afecte negativamente el rendimiento de los servicios de EyePayCash. No puede participar en ninguna de las siguientes actividades a través de los servicios, ni puede ayudar a un tercero en dicha actividad: (1) intentar obtener acceso no autorizado a nuestros servicios o a la cuenta de otro usuario, (2) hacer cualquier intento de evadir o eludir la seguridad, (3) violar cualquier ley, estatuto, ordenanza o regulación, (4) reproducir, duplicar, copiar, vender o revender nuestros servicios para cualquier propósito excepto lo autorizado en estos términos, (5) participar en cualquier actividad que es abusiva o interfiere o interrumpe nuestros servicios. Si EyePayCash le bloquea el acceso a los servicios EyePayCash (incluso a bloquear su dirección IP), usted acepta no implementar ninguna medida para eludir dicho bloqueo (por ejemplo, enmascarando su dirección IP o usando una dirección IP proxy). El uso de nuestros servicios en conexión con cualquier transacción que involucre productos o servicios ilegales está prohibido. EyePayCash se reserva el derecho de suspender temporal o permanentemente su cuenta o restringir el uso de los servicios de EyePayCash si se produce una violación de esta sección.',
@@ -366,6 +371,7 @@ export class PoliticasPage {
 
     toast.present();
   }
+
   enlServicios() {
     let toast = this.toastCtrl.create({
       message: 'Nuestro sitio web puede incluir enlaces a otros sitios web o servicios en línea, Le recomendamos que lea detenidamente la declaración de privacidad de cualquier sitio web que visite.',
@@ -380,6 +386,7 @@ export class PoliticasPage {
 
     toast.present();
   }
+
   camPolitica() {
     let toast = this.toastCtrl.create({
       message: 'Podemos hacer cambios a esta Política de privacidad. Si hacemos cambios, se lo notificaremos mediante la revisión de la fecha en la parte superior de la política. Si realizamos cambios sustanciales, lo haremos de acuerdo con los requisitos legales aplicables, y publicaremos un aviso en nuestro sitio web y aplicaciones móviles que lo alertarán sobre los cambios sustanciales antes de que dichos cambios entren en vigencia. Le recomendamos que revise periódicamente esta página para obtener la información más reciente sobre nuestras prácticas de privacidad. Para mantener sus datos personales exactos, actualizados y completos, contáctenos como se especifica a continuación. Tomaremos las medidas razonables para actualizar o corregir los datos personales en nuestra posesión que haya enviado previamente utilizando nuestros servicios. Siéntase libre de contactarnos si tiene alguna pregunta sobre nuestra Política de privacidad o las prácticas de información de los Servicios de EyePayCash.',
@@ -394,4 +401,13 @@ export class PoliticasPage {
 
     toast.present();
   }
+
+  aceptarTerminos() {
+    this.userProvider.setCheck_Terminos(true);
+    this.view.dismiss(true);
+  }
+  goRegister(){
+    this.navCtrl.pop();
+  }
+
 }

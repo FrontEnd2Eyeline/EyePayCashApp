@@ -3,7 +3,6 @@ import {IonicPage, LoadingController, ModalController, NavController, NavParams,
 import {Api} from "../../providers/api";
 import {AuthUserProvider} from "../../providers/auth-user/auth-user";
 import {PoliticasPage} from "../politicas/politicas";
-import {TerminosPage} from "../terminos/terminos";
 import {LoginPage} from "../login/login";
 import {ModalWelcomePage} from "../modal-welcome/modal-welcome";
 
@@ -31,6 +30,7 @@ export class RegisterPage {
   public type = 'password';
   public showPass = false;
   imagen = 'assets/backgrounds/Background3.png';
+  ischecked = this.userProvider.check_terminos;
 
   constructor(public navCtrl: NavController,
               public navParams: NavParams,
@@ -41,8 +41,10 @@ export class RegisterPage {
               public modalCtrl: ModalController
   ) {
     this.getInfo();
-
+    this.ischecked = this.userProvider.check_terminos;
   }
+
+
 
   getInfo() {
     this.responseParams = this.navParams.get('response');
@@ -66,20 +68,28 @@ export class RegisterPage {
     if (this.user_register.first_name != null && this.user_register.last_name != null && this.user_register.gender != null && this.user_register.password != null && this.user_register.mail != null) {
       let size = this.user_register.password;
       if (size.length >= 6) {
-        let loading = this.loadingCtrl.create({
-          spinner: 'dots',
-        });
-        loading.present();
-        this.user_register.phone = this.registerParams.value;
-        this.user_register.country_id = this.responseParams.country_id;
-        this.user_register.user_verify_id = this.responseParams.id;
-        this.user_register.confirm_verify = 'phone';
-        this.api.post('auth/sign-up', this.user_register).then((data: any) => {
-          this.userProvider.setUser(data);
-          this.verifyConfirm();
-          loading.dismiss();
-          this.presentWelcomeModal();
-        });
+        if(this.userProvider.check_terminos){
+          let loading = this.loadingCtrl.create({
+            spinner: 'dots',
+          });
+          loading.present();
+          this.user_register.phone = this.registerParams.value;
+          this.user_register.country_id = this.responseParams.country_id;
+          this.user_register.user_verify_id = this.responseParams.id;
+          this.user_register.confirm_verify = 'phone';
+          this.api.post('auth/sign-up', this.user_register).then((data: any) => {
+            this.userProvider.setUser(data);
+            this.verifyConfirm();
+            loading.dismiss();
+            this.presentWelcomeModal();
+          });
+        }else{
+          let toast = this.toastCtl.create({
+            message:'Por favor lea y acepte las políticas de uso y tratamiento de datos.',
+            duration:3000
+          });
+          toast.present();
+        }
       } else {
         let toast = this.toastCtl.create({
           message: 'Contraseña debe tener mínimo 6 letras o números.',
@@ -110,11 +120,11 @@ export class RegisterPage {
   }
 
   politicas() {
-    this.navCtrl.push(PoliticasPage);
-  }
-
-  privacidad() {
-    this.navCtrl.push(TerminosPage);
+    let poli = this.modalCtrl.create(PoliticasPage);
+    poli.present();
+    poli.onDidDismiss((data => {
+      this.ischecked = true
+    }))
   }
 
   presentWelcomeModal() {
