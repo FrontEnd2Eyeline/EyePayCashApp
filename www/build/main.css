@@ -25759,8 +25759,8 @@ page-home ion-img.img-loaded2 img {
 
 page-home ion-img {
   display: inline-block;
-  min-width: 100px !important;
-  min-height: 100px !important;
+  min-width: 125px !important;
+  min-height: 125px !important;
   background: #eee;
   contain: strict;
 }
@@ -26095,6 +26095,141 @@ page-politicas .btnStyle {
   font-size: 14px;
   width: 32%;
   height: 34px;
+}
+
+page-recovery-password .vignette {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -webkit-box-shadow: 0 0 200px rgba(0, 0, 0, 0.336) inset;
+  box-shadow: 0 0 200px rgba(0, 0, 0, 0.336) inset;
+}
+
+page-recovery-password .item-md {
+  border-radius: 10px !important;
+}
+
+page-recovery-password .item-md2, page-recovery-password .item-ios2 {
+  background-color: transparent;
+  margin-top: 4%;
+}
+
+page-recovery-password .label-md[stacked] {
+  font-size: 1.6rem !important;
+}
+
+page-recovery-password .item-md2 .item-button2 {
+  padding: 0 0.6em;
+  height: 25px;
+  margin-bottom: 23% !important;
+  font-size: 1.2rem;
+}
+
+page-recovery-password .marginLft {
+  margin-left: 4%;
+}
+
+page-recovery-password .divMargin {
+  margin-top: 10%;
+}
+
+page-recovery-password .center {
+  margin: auto;
+  text-align: center;
+}
+
+page-recovery-password ion-img {
+  display: inline-block;
+  min-width: 20px;
+  min-height: 20px;
+  background: transparent !important;
+  contain: strict;
+}
+
+page-recovery-password .marginItems {
+  margin-bottom: 10%;
+}
+
+page-recovery-password .logo {
+  width: 100%;
+  display: unset;
+}
+
+page-recovery-password .back {
+  background: #063996;
+}
+
+page-recovery-password .marGrid {
+  margin-top: 18%;
+}
+
+page-recovery-password .marginBts {
+  margin-top: 20%;
+}
+
+page-recovery-password .stylCel {
+  border-radius: 10px;
+  width: 122%;
+  margin-left: -20%;
+}
+
+page-recovery-password .borderBtns {
+  border-radius: 5px !important;
+}
+
+page-recovery-password .logo {
+  width: 70%;
+  background: transparent;
+  height: 80px;
+  margin-top: 10%;
+  display: inline-grid;
+}
+
+page-recovery-password .label-md {
+  margin: 0px !important;
+}
+
+page-recovery-password .banderaWidt {
+  width: 30% !important;
+}
+
+page-recovery-password ion-list {
+  margin: 0;
+  padding: 10% !important;
+  display: block;
+  list-style-type: none;
+}
+
+page-recovery-password .inputClass {
+  background: white;
+  border-radius: 5px;
+}
+
+page-recovery-password .marginlists {
+  margin-bottom: 4%;
+  border-radius: 10px;
+}
+
+page-recovery-password .text-input-md {
+  text-align: center !important;
+}
+
+page-recovery-password .list-md .item-block .item-inner {
+  border-bottom: 0px solid #dedede !important;
+}
+
+page-recovery-password .item-md.item-block .item-inner {
+  padding-right: 8px;
+  border-bottom: 0px solid #dedede !important;
+}
+
+page-recovery-password .item-label-stacked .select-md, page-recovery-password .item-label-floating .select-md {
+  padding-left: 0;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  text-align: center;
 }
 
 page-reg-number-phone .imgBackground {
