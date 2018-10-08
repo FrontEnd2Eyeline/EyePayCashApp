@@ -25812,7 +25812,81 @@ page-history .bground {
 }
 
 page-history .item-md {
-  background: transparent !important;
+  background: transparent;
+  padding-left: 16px;
+  padding-right: 0;
+  position: relative;
+  font-size: 1.6rem;
+  font-weight: normal;
+  text-transform: none;
+  color: white;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  -webkit-transition: background-color 300ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color 300ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+page-history-resume .card-md h3, page-history-resume .card-md h4, page-history-resume .card-md h5, page-history-resume .card-md h6 {
+  margin: 2px 0;
+  font-size: 1.4rem;
+  font-weight: normal;
+  color: #222;
+  text-align: center;
+}
+
+page-history-resume .texLeft {
+  text-align: left;
+}
+
+page-history-resume [col-4] {
+  text-align: center !important;
+}
+
+page-history-resume [col-6] {
+  text-align: right !important;
+}
+
+page-history-resume h6:first-child {
+  margin-top: -0.3rem;
+  text-align: left !important;
+}
+
+page-history-resume .mrgLeft {
+  margin-left: 50% !important;
+}
+
+page-history-resume .card-md {
+  margin: 10px;
+  border-radius: 15px;
+  width: calc(100% - 20px);
+  font-size: 1.4rem;
+  background: white;
+  color: black;
+  -webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+}
+
+page-history-resume .toolbar-background {
+  background: #063996 !important;
+}
+
+page-history-resume .toolbar-title-md {
+  padding: 0 12px;
+  font-size: 2rem;
+  font-weight: 500;
+  color: white;
+}
+
+page-history-resume .button-inner {
+  color: white;
+}
+
+page-history-resume .bground {
+  background: #063996;
+}
+
+page-history-resume .item-md {
+  background: transparent;
   padding-left: 16px;
   padding-right: 0;
   position: relative;
@@ -26623,8 +26697,12 @@ page-transaction .card-md {
   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
 }
 
+page-transaction .txtboldblack {
+  color: black !important;
+  font-weight: bold !important;
+}
+
 page-transaction .item-md {
-  background: transparent !important;
   padding-left: 16px;
   padding-right: 0;
   position: relative;
