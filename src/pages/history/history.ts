@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import {Api} from "../../providers/api";
 import {AuthUserProvider} from "../../providers/auth-user/auth-user";
+import {HistoryResumePage} from "../history-resume/history-resume";
 
 /**
  * Generated class for the HistoryPage page.
@@ -45,6 +46,10 @@ export class HistoryPage {
       this.meta = data.meta;
       console.log(data);
     });
+  }
 
+  goDetalle(transaction){
+    console.log(transaction);
+    this.navCtrl.push(HistoryResumePage);
   }
 }
