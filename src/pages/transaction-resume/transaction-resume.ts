@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {IonicPage, LoadingController, NavController, NavParams} from 'ionic-angular';
+import {IonicPage, LoadingController, NavParams} from 'ionic-angular';
 
 /**
  * Generated class for the TransactionResumePage page.
@@ -22,7 +22,7 @@ export class TransactionResumePage {
   private country:any = null;
   private qrlink:any = null;
 
-  constructor(public navCtrl: NavController,
+  constructor(
               public navParams: NavParams,
               public loadingCtrl: LoadingController,
   ) {
@@ -37,8 +37,6 @@ export class TransactionResumePage {
     this.coin = parametros.coin;
     this.country = parametros.country;
     this.qrlink = parametros.qrlink;
-    console.log(this.coin);
-    console.log(this.coinhas);
 
   }
 }

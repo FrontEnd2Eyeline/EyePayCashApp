@@ -1,8 +1,7 @@
 import {Component} from '@angular/core';
-import {IonicPage, LoadingController, ModalController, NavController, NavParams, ToastController} from 'ionic-angular';
+import {IonicPage, LoadingController, ModalController, NavParams, ToastController} from 'ionic-angular';
 import {Api} from "../../providers/api";
 import {AuthUserProvider} from "../../providers/auth-user/auth-user";
-import {ModalTransactionPage} from "../modal-transaction/modal-transaction";
 import {LoadInformationProvider} from "../../providers/load-information/load-information";
 
 /**
@@ -25,7 +24,7 @@ export class TransactionPage {
   public monedas: any = [];
 
 
-  constructor(public navCtrl: NavController,
+  constructor(
               public navParams: NavParams,
               private api: Api,
               private userProvider: AuthUserProvider,
@@ -54,7 +53,7 @@ export class TransactionPage {
   }
 
   monedaSelect(moneda) {
-    let modalTransaction = this.modalCtrl.create(ModalTransactionPage, {
+    let modalTransaction = this.modalCtrl.create('ModalTransactionPage', {
       'moneda': moneda,
       'userCountry': this.userProvider.user_Country,
     });

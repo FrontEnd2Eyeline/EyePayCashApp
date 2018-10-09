@@ -1,9 +1,6 @@
 import {Component} from '@angular/core';
 import {IonicPage, LoadingController, ModalController, NavController, ToastController} from 'ionic-angular';
 import {AuthUserProvider} from "../../providers/auth-user/auth-user";
-import {RegNumberPhonePage} from "../reg-number-phone/reg-number-phone";
-import {RecoveryPasswordPage} from "../recovery-password/recovery-password";
-import {HomePage} from "../home/home";
 
 @IonicPage()
 @Component({
@@ -52,7 +49,7 @@ export class LoginPage {
   }
 
   recuperarcontrasena() {
-    const modal = this.modalCtrl.create(RecoveryPasswordPage);
+    const modal = this.modalCtrl.create('RecoveryPasswordPage');
     modal.present();
   }
 

@@ -3,7 +3,6 @@ import {IonicPage, LoadingController, ModalController, NavController, NavParams,
 import {Api} from "../../providers/api";
 import {AuthUserProvider} from "../../providers/auth-user/auth-user";
 import {PoliticasPage} from "../politicas/politicas";
-import {LoginPage} from "../login/login";
 import {ModalWelcomePage} from "../modal-welcome/modal-welcome";
 
 @IonicPage()
@@ -120,7 +119,7 @@ export class RegisterPage {
   }
 
   politicas() {
-    let poli = this.modalCtrl.create(PoliticasPage);
+    let poli = this.modalCtrl.create('PoliticasPage');
     poli.present();
     poli.onDidDismiss((data => {
       this.ischecked = true
@@ -130,7 +129,7 @@ export class RegisterPage {
   presentWelcomeModal() {
     let modalWelcome = this.modalCtrl.create(ModalWelcomePage, {name: this.userProvider.user_Info.first_name +" "+ this.userProvider.user_Info.last_name});
     modalWelcome.onWillDismiss(() => {
-      this.navCtrl.setRoot(LoginPage)
+      this.navCtrl.setRoot('LoginPage')
     });
     modalWelcome.onDidDismiss(data => {
       console.log('close');

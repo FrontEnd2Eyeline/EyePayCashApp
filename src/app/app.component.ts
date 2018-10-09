@@ -3,9 +3,7 @@ import {Platform} from 'ionic-angular';
 import {StatusBar} from '@ionic-native/status-bar';
 import {SplashScreen} from '@ionic-native/splash-screen';
 import {GeolocationProvider} from "../providers/geolocation/geolocation";
-import {LoginPage} from "../pages/login/login";
 import {AuthUserProvider} from "../providers/auth-user/auth-user";
-import {HomePage} from "../pages/home/home";
 import {LoadInformationProvider} from "../providers/load-information/load-information";
 
 @Component({

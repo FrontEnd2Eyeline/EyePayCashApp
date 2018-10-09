@@ -3,8 +3,6 @@ import {IonicPage, LoadingController, ModalController, NavController, NavParams,
 import {SelectCodePage} from "../select-code/select-code";
 import {Api} from "../../providers/api";
 import {GeolocationProvider} from "../../providers/geolocation/geolocation";
-import {RegisterPage} from "../register/register";
-import {LoginPage} from "../login/login";
 
 /**
  * Generated class for the RegNumberPhonePage page.
@@ -51,7 +49,7 @@ export class RegNumberPhonePage {
 
 
   cancel() {
-    this.navCtrl.setRoot(LoginPage);
+    this.navCtrl.setRoot('LoginPage');
   }
 
   sendNumberPhone() {
@@ -96,7 +94,7 @@ export class RegNumberPhonePage {
 
   verifyCode() {
     if (this.code_verify == this.response_verify.phone_code) {
-      this.navCtrl.push(RegisterPage, {'response': this.response_verify, 'register': this.user_register});
+      this.navCtrl.push('RegisterPage', {'response': this.response_verify, 'register': this.user_register});
     } else {
       let toast = this.toastCtrl.create({
         message: 'Código incorrecto.',

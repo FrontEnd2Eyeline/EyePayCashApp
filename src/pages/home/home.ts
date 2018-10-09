@@ -1,8 +1,5 @@
 import {Component} from '@angular/core';
 import {IonicPage, LoadingController, NavController, ToastController} from "ionic-angular";
-import {AccountPage} from "../account/account";
-import {HistoryPage} from "../history/history";
-import {TransactionPage} from "../transaction/transaction";
 
 @IonicPage({
   name: "HomePage",

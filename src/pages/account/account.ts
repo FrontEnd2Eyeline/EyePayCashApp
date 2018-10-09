@@ -3,7 +3,6 @@ import {IonicPage, LoadingController, ModalController, NavController, NavParams,
 import {Api} from "../../providers/api";
 import {AuthUserProvider} from "../../providers/auth-user/auth-user";
 import {SelectCodePage} from "../select-code/select-code";
-import {LoginPage} from "../login/login";
 
 /**
  * Generated class for the AccountPage page.
@@ -251,7 +250,7 @@ export class AccountPage {
 
   cerrarSesion(){
     window.localStorage.clear();
-    this.navCtrl.setRoot(LoginPage);
+    this.navCtrl.setRoot('LoginPage');
   }
 
 }

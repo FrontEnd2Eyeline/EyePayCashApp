@@ -2,8 +2,6 @@ import { Component } from '@angular/core';
 import {IonicPage, LoadingController, NavController, NavParams, ToastController, ViewController} from 'ionic-angular';
 import {Api} from "../../providers/api";
 import {AuthUserProvider} from "../../providers/auth-user/auth-user";
-import {HomePage} from "../home/home";
-import {TransactionResumePage} from "../transaction-resume/transaction-resume";
 
 /**
  * Generated class for the ModalTransactionPage page.
@@ -71,7 +69,7 @@ export class ModalTransactionPage {
               duration:3000,
             });
             this.closeModal();
-            this.navCtrl.setPages([{page:HomePage},{page:TransactionResumePage,params:data}],);
+            this.navCtrl.setPages([{page:'HomePage'},{page:'TransactionResumePage',params:data}],);
             toast.present();
         }).catch(data=>{
           loading.dismiss();

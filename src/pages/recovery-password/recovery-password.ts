@@ -2,7 +2,6 @@ import {Component} from '@angular/core';
 import {IonicPage, LoadingController, NavController, NavParams, ToastController} from 'ionic-angular';
 import {Api} from "../../providers/api";
 import {AuthUserProvider} from "../../providers/auth-user/auth-user";
-import {PasswordUpdatePage} from "../password-update/password-update";
 
 /**
  * Generated class for the RecoveryPasswordPage page.
@@ -107,7 +106,7 @@ export class RecoveryPasswordPage {
   confirmCode() {
     if (this.codigo != null) {
       if(this.userProvider.userRecovery.codigoVerify == this.codigo){
-        this.navCtrl.push(PasswordUpdatePage);
+        this.navCtrl.push('PasswordUpdatePage');
       }else{
         let toast = this.toastCtrl.create({
           message: 'El còdigo ingresado no coincide!',
