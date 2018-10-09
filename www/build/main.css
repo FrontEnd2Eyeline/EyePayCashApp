@@ -26283,6 +26283,10 @@ page-recovery-password .divMargin {
   margin-top: 10%;
 }
 
+page-recovery-password .divMargin20 {
+  margin-top: 20% !important;
+}
+
 page-recovery-password .center {
   margin: auto;
   text-align: center;
