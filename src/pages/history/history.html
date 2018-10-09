@@ -7,6 +7,7 @@
 </ion-header>
 <ion-content padding>
 
+<<<<<<< HEAD
   <ion-row>
     <ion-col col-6>
       <ion-select [(ngModel)]="filtro.status">
@@ -40,5 +41,34 @@
         </ion-row>
       </ion-card-content>
     </ion-card>
+=======
+<ion-content padding >
+  <ion-list class="center bground">
+
+    <button *ngFor="let transaction of transactions" (click)="goDetalle(transaction)">
+      <ion-card>
+        <ion-card-content>
+          <ion-row>
+            <ion-col col-6>
+              <h6>{{transaction.country.name}}</h6>
+            </ion-col>
+            <ion-col col-6>
+              {{transaction.date_request |date:'MM/dd/yyyy'}}
+              <!--transaction.date_request |date:'MM/dd/yyyy h:mma'}}-->
+            </ion-col>
+            <ion-col col-4>
+              {{transaction.coin.full_name}}
+            </ion-col>
+            <ion-col col-4>
+              {{transaction.amount_local | currency:transaction.country.currency+" " : 2}}
+            </ion-col>
+            <ion-col col-4 >
+              <ion-icon name="add"></ion-icon>
+            </ion-col>
+          </ion-row>
+        </ion-card-content>
+      </ion-card>
+    </button>
+>>>>>>> b54d1255eab5f07bbfba8f2a9bb7fa28a0147993
   </ion-list>
 </ion-content>

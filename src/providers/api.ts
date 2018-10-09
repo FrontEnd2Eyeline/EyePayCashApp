@@ -6,6 +6,7 @@ import {AuthUserProvider} from "./auth-user/auth-user";
 @Injectable()
 export class Api {
   url: string = 'http://10.160.170.115/eyepaycash/frontend/web/apiapp/';
+  // url: string = 'http://192.168.0.6/eyepaycash/frontend/web/apiapp/';
   headers: HttpHeaders;
 
   constructor(public http: HttpClient, public storage: Storage

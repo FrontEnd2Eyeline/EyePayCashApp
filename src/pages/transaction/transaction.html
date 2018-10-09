@@ -10,9 +10,15 @@
     <ion-option *ngFor="let pais of countrys" value="{{pais.currency}}">{{pais.name}}</ion-option>
   </ion-select>
       <label stacked>Precio del dolar en el paìs</label>
+<<<<<<< HEAD
       <ion-col col-12>
         <h6>1 USD = {{infoCountry?.local_usd_value}} {{currency}}</h6>
       </ion-col>
+=======
+      <ion-item>
+        <h6 class="txtboldblack">1 USD = {{infoCountry?.local_usd_value}} {{currency}}</h6>
+      </ion-item>
+>>>>>>> b54d1255eab5f07bbfba8f2a9bb7fa28a0147993
       <label stacked>Información de las monedas</label>
       <ion-card ion-item *ngFor="let moneda of monedas" (click)="monedaSelect(moneda)">
         <ion-card-content>

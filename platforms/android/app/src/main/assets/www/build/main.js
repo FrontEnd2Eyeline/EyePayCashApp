@@ -1,1 +1,3250 @@
-webpackJsonp([14],{103:function(l,n,u){"use strict";u.d(n,"a",function(){return e});u(1),u(13);var e=function(){function l(l,n,u,e){this.navCtrl=l,this.navParams=n,this.country=u,this.view=e}return l.prototype.ionViewDidLoad=function(){this.searchbar.getItems()},l.prototype.selectItem=function(l){this.view.dismiss({code:l.callingCodes[0],flag:l.flag})},l}()},106:function(l,n,u){"use strict";u.d(n,"a",function(){return e});u(1),u(13);var e=function(){function l(l,n,u){this.navCtrl=l,this.navParams=n,this.loadingCtrl=u,this.result=null,this.transaction=null,this.coinhas=null,this.coin=null,this.country=null,this.getIngfo()}return l.prototype.getIngfo=function(){var l=this.navParams.data;this.result=l.result,this.transaction=l.transaction,this.coinhas=l.coinhas,this.coin=l.coin,this.country=l.country},l}()},141:function(l,n,u){"use strict";u.d(n,"a",function(){return t});u(1),u(13);var e=u(145),a=u(146),o=u(154),t=function(){function l(l,n,u,e,a){this.navCtrl=l,this.api=n,this.loadingCtrl=u,this.toastCtrl=e,this.userProvider=a}return l.prototype.goPage=function(l){this.navCtrl.push("account"==l?e.a:"history"==l?a.a:o.a)},l}()},145:function(l,n,u){"use strict";u.d(n,"a",function(){return a});u(1),u(13);var e=u(103),a=function(){function l(l,n,u,e,a,o,t){this.navCtrl=l,this.navParams=n,this.api=u,this.userProvider=e,this.toastCtrl=a,this.loadingCtrl=o,this.modal=t,this.usuario=null,this.country=null,this.verify=null,this.type="password",this.showPass=!1,this.isphone=!0,this.ismail=!1,this.infoPhone={flag:null,type:null,value:null,country_code:null},this.response_verify={id:null,is_mail_verify:null,mail_code:null,phone_code:null,country_id:null},this.codeVerify=null,this.codeVerifyMail=null,this.getInfo()}return l.prototype.getInfo=function(){this.usuario=this.userProvider.user_Info,this.country=this.userProvider.user_Country,this.verify=this.userProvider.User_Verify},l.prototype.showPassword=function(){this.showPass=!this.showPass,this.type=this.showPass?"text":"password"},l.prototype.actualizar=function(){var l=this,n=this.loadingCtrl.create({spinner:"dots"});n.present();var u=this.toastCtrl.create({message:"Informaciòn personal actualizada correctamente",duration:3e3});if(null!=this.usuario.first_name&&null!=this.usuario.last_name&&""!=this.usuario.first_name&&""!=this.usuario.last_name)console.log(this.usuario),this.api.post("account/update-info",this.usuario,this.userProvider).then(function(e){l.usuario=e,n.dismiss(),u.present()}).catch();else{n.dismiss();this.toastCtrl.create({message:"Todos los campos son obligatorios",duration:3e3}).present()}},l.prototype.changePhone=function(){var l=this;if(null!=this.infoPhone.country_code&&null!=this.infoPhone.value){var n=this.loadingCtrl.create({spinner:"dots"}),u=this.toastCtrl.create({message:"Se ha enviado un código de verificación al nùmero celular.",duration:3e3});n.present(),this.infoPhone.type="phone",this.infoPhone.value=this.infoPhone.country_code+this.infoPhone.value,this.api.post("account/update-contact",this.infoPhone,this.userProvider).then(function(e){console.log(e),n.dismiss(),u.present(),l.response_verify=e}).catch()}else{this.toastCtrl.create({message:"Por favor seleccione el pais e ingrese su nuevo nùmero celular.",duration:3e3}).present()}},l.prototype.changeMail=function(){var l=this;if(null!=this.infoPhone.value){var n=this.loadingCtrl.create({spinner:"dots"}),u=this.toastCtrl.create({message:"Se ha enviado un correo electrònico de verificaciòn a su direcciòn email.",duration:3e3});n.present(),this.infoPhone.type="mail",this.api.post("account/update-contact",this.infoPhone,this.userProvider).then(function(e){n.dismiss(),u.present(),console.log(e),l.response_verify=e}).catch(function(l){n.dismiss()})}else{this.toastCtrl.create({message:"Por favor ingrese una direcciòn email",duration:3e3}).present()}},l.prototype.pedirMail=function(){this.isphone=!1,this.ismail=!0},l.prototype.pedirPhone=function(){this.ismail=!1,this.isphone=!0},l.prototype.selectcountry=function(){var l=this,n=this.modal.create(e.a);n.present(),n.onDidDismiss(function(n){void 0!==n&&(l.infoPhone.country_code=n.code,l.infoPhone.flag=n.flag)})},l.prototype.verifyCode=function(){var l=this;if(this.response_verify.phone_code===this.codeVerify)this.api.get("account/confirm-verify",this.userProvider,{id:this.response_verify.id,type:"phone"}).then(function(n){l.clearVar(),l.usuario.phone=n.phone;l.toastCtrl.create({duration:3e3,message:"Informaciòn actualizada correctamente"}).present()}).catch(function(l){console.log(l)});else{this.toastCtrl.create({message:"Código incorrecto.",duration:3e3}).present()}},l.prototype.verifyCodeMail=function(){var l=this;if(this.response_verify.mail_code===this.codeVerifyMail)this.api.get("account/confirm-verify",this.userProvider,{id:this.response_verify.id,type:"mail"}).then(function(n){console.log(n),l.usuario.mail=n.mail,l.clearVar();l.toastCtrl.create({duration:3e3,message:"Informaciòn actualizada correctamente"}).present()}).catch();else{this.toastCtrl.create({message:"Los còdigos de verificaciòn no coinciden",duration:3e3}).present()}},l.prototype.clearVar=function(){this.isphone=!0,this.ismail=!1,this.infoPhone={flag:null,type:null,value:null,country_code:null},this.response_verify={id:null,is_mail_verify:null,mail_code:null,phone_code:null,country_id:null},this.codeVerify=null,this.codeVerifyMail=null},l}()},146:function(l,n,u){"use strict";u.d(n,"a",function(){return e});u(1),u(13);var e=function(){function l(l,n,u,e){this.navCtrl=l,this.navParams=n,this.api=u,this.userProvider=e,this.transactions=null,this.links=null,this.meta=null,this.filtro={status:0,page:null,perpage:null},this.getInfo()}return l.prototype.getInfo=function(){var l=this;this.api.get("app/transactions",this.userProvider,{expand:"country,coin",status:this.filtro.status,page:this.filtro.page,"per-page":this.filtro.perpage}).then(function(n){l.transactions=n.items,l.links=n.links,l.meta=n.meta,console.log(n)})},l}()},147:function(l,n,u){"use strict";u.d(n,"a",function(){return t});u(1),u(13);var e=u(103),a=u(148),o=u(72),t=function(){function l(l,n,u,e,a,o,t){var i=this;this.navCtrl=l,this.navParams=n,this.modal=u,this.api=e,this.toastCtrl=a,this.loadingCtrl=o,this.locationProvider=t,this.user_register={country_code:"",flag:"",value:""},this.code_verify=null,this.response_verify={id:null,is_mail_verify:null,mail_code:null,phone_code:null,country_id:null},this.imagen="assets/backgrounds/Background2.png",this.locationProvider.getBasicInfo().then(function(l){i.user_register.country_code=l.country_code,i.user_register.flag=l.flag})}return l.prototype.cancel=function(){this.navCtrl.setRoot(o.a)},l.prototype.sendNumberPhone=function(){var l=this;if(""!=this.user_register.country_code&&""!=this.user_register.value){var n=this.loadingCtrl.create({spinner:"dots"}),u=this.toastCtrl.create({message:"Se ha enviado un código de verificación al número celular ingresado.",duration:3e3});n.present(),this.api.post("auth/pre-sign-up",this.user_register).then(function(e){n.dismiss(),u.present(),l.response_verify=e.verify,l.response_verify.country_id=e.country.id,console.log(l.response_verify.phone_code)}).catch()}else{this.toastCtrl.create({message:"Toda la información es obligatoria",duration:3e3}).present()}},l.prototype.selectcountry=function(){var l=this,n=this.modal.create(e.a);n.present(),n.onDidDismiss(function(n){void 0!==n&&(l.user_register.country_code=n.code,l.user_register.flag=n.flag)})},l.prototype.verifyCode=function(){if(this.code_verify==this.response_verify.phone_code)this.navCtrl.push(a.a,{response:this.response_verify,register:this.user_register});else{this.toastCtrl.create({message:"Código incorrecto.",duration:3e3}).present()}},l}()},148:function(l,n,u){"use strict";u.d(n,"a",function(){return i});u(1),u(13);var e=u(149),a=u(150),o=u(72),t=u(151),i=function(){function l(l,n,u,e,a,o,t){this.navCtrl=l,this.navParams=n,this.toastCtl=u,this.api=e,this.userProvider=a,this.loadingCtrl=o,this.modalCtrl=t,this.responseParams=null,this.registerParams=null,this.user_register={first_name:null,last_name:null,gender:null,mail:null,password:null,phone:null,country_id:null,user_verify_id:null,confirm_verify:null},this.type="password",this.showPass=!1,this.imagen="assets/backgrounds/Background3.png",this.getInfo()}return l.prototype.getInfo=function(){this.responseParams=this.navParams.get("response"),this.registerParams=this.navParams.get("register")},l.prototype.showPassword=function(){this.showPass=!this.showPass,this.type=this.showPass?"text":"password"},l.prototype.cancel=function(){this.navCtrl.pop()},l.prototype.register=function(){var l=this;if(null!=this.user_register.first_name&&null!=this.user_register.last_name&&null!=this.user_register.gender&&null!=this.user_register.password&&null!=this.user_register.mail){if(this.user_register.password.length>=6){var n=this.loadingCtrl.create({spinner:"dots"});n.present(),this.user_register.phone=this.registerParams.value,this.user_register.country_id=this.responseParams.country_id,this.user_register.user_verify_id=this.responseParams.id,this.user_register.confirm_verify="phone",this.api.post("auth/sign-up",this.user_register).then(function(u){l.userProvider.setUser(u),l.verifyConfirm(),n.dismiss(),l.presentWelcomeModal()})}else{this.toastCtl.create({message:"Contraseña debe tener mínimo 6 letras o números.",duration:3e3}).present()}}else{this.toastCtl.create({message:"Toda la información es requerida",duration:3e3}).present()}},l.prototype.verifyConfirm=function(){var l=this.loadingCtrl.create({spinner:"dots"});l.present(),this.api.get("account/confirm-verify",this.userProvider,{id:this.responseParams.id,type:"phone"}).then(function(n){l.dismiss()})},l.prototype.politicas=function(){this.navCtrl.push(e.a)},l.prototype.privacidad=function(){this.navCtrl.push(a.a)},l.prototype.presentWelcomeModal=function(){var l=this,n=this.modalCtrl.create(t.a,{name:this.userProvider.user_Info.first_name+" "+this.userProvider.user_Info.last_name});n.onWillDismiss(function(){l.navCtrl.setRoot(o.a)}),n.onDidDismiss(function(l){console.log("close")}),n.present(),this.userProvider.setUser(null)},l}()},149:function(l,n,u){"use strict";u.d(n,"a",function(){return e});u(1),u(13);var e=function(){function l(l,n,u){this.navCtrl=l,this.navParams=n,this.toastCtrl=u}return l.prototype.ionViewDidLoad=function(){console.log("ionViewDidLoad PoliticasPage")},l.prototype.presentToast=function(){var l=this.toastCtrl.create({message:"Si no acepta estos términos, no debe usar nuestros servicios. Puede utilizar nuestros servicios sólo si puede celebrar legalmente un acuerdo según la ley aplicable. Si utiliza nuestros servicios, acepta hacerlo de conformidad con estos términos y con las leyes y regulaciones aplicables.",position:"center",showCloseButton:!0,closeButtonText:"Acepto"});l.onDidDismiss(function(){console.log("Dismissed toast")}),l.present()},l.prototype.presentToast2=function(){var l=this.toastCtrl.create({message:"Podemos hacer cambios a estos términos, incluso cuando haya cambios en nuestros servicios, tecnología, regulación y por otros motivos. Si lo hacemos, le enviaremos un aviso de dichos cambios. Publicaremos los términos actualizados en nuestro sitio web.Los cambios realizados por razones legales entrarán en vigencia inmediatamente. El uso continuado de los servicios después de la fecha de vigencia de dichos cambios constituirá su aceptación de los mismos. Si no acepta los términos enmendados, debe dejar de usar los servicios.",position:"center",showCloseButton:!0,closeButtonText:"Acepto"});l.onDidDismiss(function(){console.log("Dismissed toast")}),l.present()},l.prototype.presentToast3=function(){var l=this.toastCtrl.create({message:"El costo y tiempo de realizar transacciones a través de la red fluctúa constantemente; dado que el costo de procesar las transacciones entrantes y salientes cambia contínuamente, recomendamos que siempre verifique esta información. EyePayCash no se hace responsable del tiempo y costo de las comisiones cobradas por la minería de criptomoneda inherente a cualquier tipo de transacción o tipología transaccional en la que haya cualquier cantidad de criptomonedas implicadas, esta nota también aplica para el servicio de Exchange, Bóveda, las transacciones salientes y entrantes contenidas en los términos de servicios pagados.",position:"center",showCloseButton:!0,closeButtonText:"Acepto"});l.onDidDismiss(function(){console.log("Dismissed toast")}),l.present()},l.prototype.Transacciones=function(){var l=this.toastCtrl.create({message:"EyePayCash no puede y no garantiza el valor de las criptomonedas, usted reconoce y acepta que el valor de las criptomonedas es altamente volátil y qué comprar, vender y mantener criptomonedas implica un alto riesgo. Además, la red de consenso de criptomonedas es la única responsable de verificar y confirmar las transacciones propuestas que se envíen a través de nuestros servicios, EyePayCash solo confirma la finalización de una transacción. La red de criptomonedas es operada por un sistema descentralizado de terceros independientes. Nuestros servicios lo ayudan a enviar su solicitud de transacción de criptomonedas para que sean confirmados por la red de criptomonedas, sin embargo, EyePayCash no tiene control sobre la red de criptomonedas y por lo tanto, no puede y no garantiza que se complete cualquier solicitud de transacción que se envíe a través de los servicios. Usted reconoce y acepta que las solicitudes de transacción que envíe a través de los servicios pueden completarse, o pueden retrasarse sustancialmente, por la red de criptomonedas. Cuando completa una solicitud de transacción a través de los servicios, nos autoriza a enviar su solicitud de transacción a la red de criptomonedas de acuerdo con las instrucciones que usted le brinde a nuestros servicios. EyePayCash no puede garantizar y no garantiza que cualquier transacción de criptomonedas revertida por un tercero, y/o criptomonedas enviadas directamente a cualquier dirección de envío diferente de EyePayCash sea recibida.",position:"center",showCloseButton:!0,closeButtonText:"Acepto"});l.onDidDismiss(function(){console.log("Dismissed toast")}),l.present()},l.prototype.Retrasos=function(){var l=this.toastCtrl.create({message:"Los servicios de EyePayCash implican varias medidas de seguridad para aumentar la seguridad de su almacenamiento de criptomonedas en EyePayCash. Por esta razón, cualquier transacción a una dirección de criptomonedas fuera de EyePayCash para una cantidad significativa, puede tomar más tiempo que una estándar. Usted reconoce y acepta que cualquier transacción dirigida a una dirección de criptomonedas fuera del sistema EyePayCash puede retrasarse y ser costosa.",position:"center",showCloseButton:!0,closeButtonText:"Acepto"});l.onDidDismiss(function(){console.log("Dismissed toast")}),l.present()},l.prototype.DirClave=function(){var l=this.toastCtrl.create({message:"El Cuando crea una cuenta, los servicios generan y almacenan un par de claves públicas y privadas criptográficas que se puede usar para enviar y recibir criptomonedas a través de la red criptomonedas . La clave pública generada por los servicios sirve como su dirección del Monedero Virtual, y puede compartirse en la red de cripto minería y con otros usuarios para completar las transacciones. La clave privada se adapta de manera única a la dirección de la billetera y se debe usar en conexión con la dirección de la billetera para autorizar la transferencia de criptomonedas desde o hacia esa dirección del Monedero Virtual.",position:"center",showCloseButton:!0,closeButtonText:"Acepto"});l.onDidDismiss(function(){console.log("Dismissed toast")}),l.present()},l.prototype.Crypto=function(){var l=this.toastCtrl.create({message:"EyePayCash es custodio de cualquier cantidad de criptomonedas transferidas a EyePayCash o la bóveda. EyePayCash no obtiene ningún derecho, título o interés legal sobre las criptomonedas almacenadas por usted.",position:"center",showCloseButton:!0,closeButtonText:"Acepto"});l.onDidDismiss(function(){console.log("Dismissed toast")}),l.present()},l.prototype.smsText=function(){var l=this.toastCtrl.create({message:"Para usar los servicios de EyePayCash, debe proporcionar un número de teléfono móvil válido. Este número se usa como parte del proceso de autenticación. Como parte del uso de los servicios EyePayCash, acepta recibir mensajes de texto o SMS de nuestra parte. Tenga en cuenta que si bien no le cobramos por mensajes de texto o SMS, se aplicarán las tarifas de mensajería estándar de su operador de telefonía móvil. Si no proporciona un número de teléfono móvil válido, podemos restringir su uso de los servicios de EyePayCash. Si EyePayCash sospecha que su número de teléfono móvil no es válido o que está utilizando un servicio de VOIP para eludir el requisito de proporcionar un número de teléfono móvil válido, EyePayCash puede suspender o restringir el uso de los servicios de EyePayCash. VOIP es un acrónimo de Voz sobre Protocolo de Internet (Voice Over Internet Protocol), el cual por sí mismo significa voz a través de internet. Es una tecnología que proporciona la comunicación de voz y sesiones multimedia (tales como vídeo) sobre Protocolo de Internet (IP).",position:"center",showCloseButton:!0,closeButtonText:"Acepto"});l.onDidDismiss(function(){console.log("Dismissed toast")}),l.present()},l.prototype.infoPrerequisito=function(){var l=this.toastCtrl.create({message:"EyePayCash se reserva el derecho, a su exclusivo criterio, de no abrir cuentas y suspender cuentas de forma temporal o permanente, incluso cuando sea requerido o recomendado por los requisitos gubernamentales, normativos o de aplicación de la ley, incluso cuando no proporcione información suficiente para verificar su identidad con EyePayCash. Los servicios de EyePayCash son para uso exclusivo del titular de la cuenta registrada. Usted acepta que la información que proporcione a EyePayCash durante la creación de la cuenta y cualquier proceso posterior de verificación de identidad es precisa y completa, y se actualizará según sea necesario para mantenerla. Si es menor de 18 años, no está autorizado a utilizar los servicios de EyePayCash, con o sin registro.",position:"center",showCloseButton:!0,closeButtonText:"Acepto"});l.onDidDismiss(function(){console.log("Dismissed toast")}),l.present()},l.prototype.actividadesProhibidas=function(){var l=this.toastCtrl.create({message:"Usted acepta que no utilizará los servicios de EyePayCash para realizar ningún tipo de actividad ilegal de ningún tipo ni para tomar ninguna medida que afecte negativamente el rendimiento de los servicios de EyePayCash. No puede participar en ninguna de las siguientes actividades a través de los servicios, ni puede ayudar a un tercero en dicha actividad: (1) intentar obtener acceso no autorizado a nuestros servicios o a la cuenta de otro usuario, (2) hacer cualquier intento de evadir o eludir la seguridad, (3) violar cualquier ley, estatuto, ordenanza o regulación, (4) reproducir, duplicar, copiar, vender o revender nuestros servicios para cualquier propósito excepto lo autorizado en estos términos, (5) participar en cualquier actividad que es abusiva o interfiere o interrumpe nuestros servicios. Si EyePayCash le bloquea el acceso a los servicios EyePayCash (incluso a bloquear su dirección IP), usted acepta no implementar ninguna medida para eludir dicho bloqueo (por ejemplo, enmascarando su dirección IP o usando una dirección IP proxy). El uso de nuestros servicios en conexión con cualquier transacción que involucre productos o servicios ilegales está prohibido. EyePayCash se reserva el derecho de suspender temporal o permanentemente su cuenta o restringir el uso de los servicios de EyePayCash si se produce una violación de esta sección.",position:"center",showCloseButton:!0,closeButtonText:"Acepto"});l.onDidDismiss(function(){console.log("Dismissed toast")}),l.present()},l.prototype.cuentasSuspendidas=function(){var l=this.toastCtrl.create({message:"Como se indicó en las secciones anteriores, EyePayCash se reserva el derecho, a su exclusivo criterio, de suspender las cuentas de manera temporal o permanente. El bloqueo o la suspensión de esta cuenta puede ser consecuencia, entre otros, de información inconsistente con respecto a su identidad (que es razonable a exclusivo criterio de EyePayCash), una revisión de cumplimiento pendiente, la solicitud de un tercero, la solicitud y/o el pedido de una autoridad, organismo gubernamental, regulador, entidad de justicia, policía, etc., que a criterio exclusivo de EyePayCash son razonables. Usted entiende y acepta que no puede acceder a fondos si su cuenta se suspende o se limita de otra manera, según se detallan en esta sección. En caso de que se resuelva la causa de la suspensión, EyePayCash puede requerir que proporcione una dirección de billetera virtual externa para enviarle los fondos disponibles en su cuenta, o puede transferir fondos a un tercero por orden de un regulador competente, la justicia. entidad, juez, tribunal u otro que sea razonable a la sola discreción de EyePayCash.",position:"center",showCloseButton:!0,closeButtonText:"Acepto"});l.onDidDismiss(function(){console.log("Dismissed toast")}),l.present()},l.prototype.cuentasEliminadas=function(){var l=this.toastCtrl.create({message:"El usuario es el responsable de respaldar sus fondos, es decir, pasarlos a otra cuenta, ya que una vez elimine su cuenta, el saldo que la persona deje en la billetera será eliminado. Si hace clic en acepto eliminar mi cuenta, sin rescatar el saldo, usted acepta que entiende y es consciente de que perderá el saldo hasta ahora depositado en cualquiera de nuestros servicios (wallet o bóveda); incluyendo las sumas ofertadas o compradas en el Exchange. Si usted elimina su cuenta debe tener presente que su usuario quedara eliminado por completo de la aplicación y que no podrá utilizar nuestro servicio de ninguna forma, perderá de forma permanente todo el historial de transacciones, configuraciones personales y la porción restante de su suscripción.",position:"center",showCloseButton:!0,closeButtonText:"Acepto"});l.onDidDismiss(function(){console.log("Dismissed toast")}),l.present()},l.prototype.descargoGarantias=function(){var l=this.toastCtrl.create({message:"Nuestros servicios se proporcionan “tal cual” sin ninguna garantía de ningún tipo. Su uso de nuestros servicios es bajo su propio riesgo. Nosotros y nuestros otorgantes de licencias, proveedores de servicios o subcontratistas (si corresponde) no hacemos declaraciones ni garantías sobre la idoneidad de la información, software, productos y servicios contenidos en nuestros servicios para ningún propósito o su cumplimiento con las reglas, principios o leyes contables, y expresamente renuncia a cualquier representación o garantía de que los servicios estarán libres de errores, virus u otros componentes dañinos, que las comunicaciones hacia o desde los servicios serán seguras y no interceptadas, que los servicios y otras capacidades ofrecidas por los servicios serán ininterrumpidas, o que su contenido será preciso, completo y oportuno. Salvo que se indique expresamente en estos términos, renunciamos a todas las garantías y condiciones, expresas, implícitas o reglamentadas entre otras, las garantías implícitas de título, no infracción, comerciabilidad e idoneidad para un propósito en particular. usted reconoce que no habrá entrado en este acuerdo en confianza bajo ninguna garantía o representación, excepto las establecidas específicamente en estos términos.",position:"center",showCloseButton:!0,closeButtonText:"Acepto"});l.onDidDismiss(function(){console.log("Dismissed toast")}),l.present()},l.prototype.sinConsejos=function(){var l=this.toastCtrl.create({message:"EyePayCash no está actuando y no puede actuar como asesor, incluidos los asuntos financieros, legales, de inversión, seguros y/o impuestos. Cualquier información proporcionada por EyePayCash es solo para información general. Usted es el único responsable de determinar si una transacción contemplada es apropiada para usted.",position:"center",showCloseButton:!0,closeButtonText:"Acepto"});l.onDidDismiss(function(){console.log("Dismissed toast")}),l.present()},l.prototype.indemnizacion=function(){var l=this.toastCtrl.create({message:"Usted acepta indemnizar a EyePayCash, defendernos y mantenernos a nosotros, a nuestros empleados, agentes, consultores, subsidiarios, socios, afiliados y licenciantes, libres de cualquier reclamo, costo, pérdida, daño, responsabilidad, juicio y gasto (incluidos los honorarios razonables de los abogados y otros profesionales) que surjan o estén relacionados con el uso de nuestros servicios, su violación de estos términos o su violación de cualquier derecho de cualquier otra persona o entidad.",position:"center",showCloseButton:!0,closeButtonText:"Acepto"});l.onDidDismiss(function(){console.log("Dismissed toast")}),l.present()},l.prototype.limiResponsabilidad=function(){var l=this.toastCtrl.create({message:"En ningún caso nosotros, nuestros licenciantes, proveedores de servicios o subcontratistas (si los hubiera) serán responsables de ningún daño indirecto, especial, incidental, punitivo o consecuencial (incluyendo, sin limitación, pérdida de ganancias, pérdida de uso, pérdida de datos o pérdida de buena voluntad), derivada de o en relación con estos términos de uso, o el desempeño, la operación de nuestros servicios, su acceso a, visualización, uso de los servicios, retraso o incapacidad para acceder, visualizar o utilizar los servicios, cualquier virus informático, información, software, sitios vinculados, productos o servicios obtenidos a través de los servicios, acto u omisión de cualquier empresa utilizando nuestros servicios u otros terceros, ya sea dicha responsabilidad derivada de algún reclamo basado en un incumplimiento del contrato, incumplimiento de garantía, agravio (incluyendo negligencia), responsabilidad por productos o de otra manera. Nosotros y nuestros licenciantes, proveedores de servicios o subcontratistas han sido advertidos de la posibilidad de dichos daños. La limitación de responsabilidad refleja la asignación de riesgo entre las partes. Las limitaciones especificadas en esta sección sobrevivirán y se aplicarán incluso si se encuentra que cualquier recurso limitado especificado en estos términos ha fallado en su propósito esencial. Las limitaciones de responsabilidad proporcionadas en estos términos se aplican en beneficio de nosotros, nuestros licenciantes, proveedores de servicios y subcontratistas. Algunas jurisdicciones no permiten ciertas exenciones de responsabilidad o limitaciones de garantía. solamente se aplicarán exclusiones de responsabilidad o limitaciones que son legales en la jurisdicción aplicable y nuestra responsabilidad se limitará al máximo permitido por la ley.",position:"center",showCloseButton:!0,closeButtonText:"Acepto"});l.onDidDismiss(function(){console.log("Dismissed toast")}),l.present()},l.prototype.separabilidad=function(){var l=this.toastCtrl.create({message:"Si, por algún motivo, un tribunal de jurisdicción competente considera que alguna disposición de estos términos es inválida o inaplicable, dicha disposición se aplicará en la máxima medida permitida y las demás disposiciones de estos términos seguirán en pleno vigor y efecto.",position:"center",showCloseButton:!0,closeButtonText:"Acepto"});l.onDidDismiss(function(){console.log("Dismissed toast")}),l.present()},l.prototype.arbAplicable=function(){var l=this.toastCtrl.create({message:"Por favor, lea el siguiente párrafo detenidamente porque requiere arbitrar las disputas con nosotros y limita la manera en la que puede solicitar alivio. Usted y EyePayCash acuerdan arbitrar cualquier disputa que surja de estos términos o su uso de nuestros servicios, a excepción de disputas en las que cualquiera de las partes busque una compensación equitativa y de otro tipo por el supuesto uso ilegal de derechos de autor, marcas comerciales, nombres comerciales, logotipos, secretos comerciales o patentes. el arbitraje le evita usted de juzgar en el tribunal o de tener un juicio con jurado. usted y EyePayCash acuerdan notificarse mutuamente por escrito sobre cualquier disputa dentro de los treinta (30) días posteriores a su surgimiento.El aviso a EyePayCash se enviará a legal@EyePayCash.com. Usted y EyePayCash además acuerdan: (a) intentar una resolución informal antes de cualquier demanda de arbitraje; (b) que cualquier arbitraje ocurrirá en Malta ; (c) que el arbitraje será conducido confidencialmente por un solo árbitro de acuerdo con las reglas de la Ordenanza de Arbitraje de Malta ; y (d) que los tribunales en Malta tienen jurisdicción exclusiva sobre cualquier apelación de un laudo arbitral y sobre cualquier demanda entre las partes no sujetas a arbitraje. Además de los procedimientos y recursos de la clase que se analizan a continuación, el árbitro tiene la autoridad para otorgar cualquier recurso que de otro modo estaría disponible en la corte. Cualquier disputa entre las partes se regirá por estos términos y las leyes de Malta, sin dar efecto a ningún conflicto de principios legales que puedan estipular la aplicación de la ley de otra jurisdicción.",position:"center",showCloseButton:!0,closeButtonText:"Acepto"});l.onDidDismiss(function(){console.log("Dismissed toast")}),l.present()},l.prototype.limitaciones=function(){var l=this.toastCtrl.create({message:"En la medida permitida por la ley aplicable, acepta que presentará cualquier reclamo o causa de acción que surja o esté relacionada con su acceso o uso de nuestros servicios dentro de los dos años posteriores a la fecha en que surgió o se acumuló dicho reclamo o acción, o dicho reclamo o la causa de acción será renunciar irrevocablemente.",position:"center",showCloseButton:!0,closeButtonText:"Acepto"});l.onDidDismiss(function(){console.log("Dismissed toast")}),l.present()},l.prototype.propiedadNReclamada=function(){var l=this.toastCtrl.create({message:"Conforme a la legislación aplicable, después de un período específico de inactividad por su parte con respecto a su cuenta de EyePayCash, se le puede solicitar a EyePayCash que informe y/o remita cualquier criptomonedas que tenga bajo custodia de acuerdo con las leyes de propiedad no reclamada.Nuestra incapacidad para ejercer o hacer cumplir cualquier derecho o disposición de estos términos no constituirá una renuncia a ese derecho o disposición.",position:"center",showCloseButton:!0,closeButtonText:"Acepto"});l.onDidDismiss(function(){console.log("Dismissed toast")}),l.present()},l.prototype.acuerdoCompleto=function(){var l=this.toastCtrl.create({message:"EyePayCash puede asignar estos términos a su compañía matriz, afiliada o subsidiaria, o en relación con una fusión, consolidación o venta u otra disposición de todos o sustancialmente todos sus activos. Estos términos, junto con otros acuerdos que se apliquen a usted.",position:"center",showCloseButton:!0,closeButtonText:"Acepto"});l.onDidDismiss(function(){console.log("Dismissed toast")}),l.present()},l.prototype.politicaPrivacidad=function(){var l=this.toastCtrl.create({message:"Esta Política de privacidad se aplica a la información que recopilamos de los usuarios de nuestro sitio web en https://eyepaycash.co , nuestros servicios en línea, nuestras aplicaciones móviles para Android e iOS, destinatarios de nuestros correos electrónicos o cuando usted interactúa de otra manera con nosotros. Describe los datos que recopilamos sobre usted y cómo usamos, compartimos y protegemos estos datos.",position:"center",showCloseButton:!0,closeButtonText:"Acepto"});l.onDidDismiss(function(){console.log("Dismissed toast")}),l.present()},l.prototype.comEmail=function(){var l=this.toastCtrl.create({message:"Si optó por recibir información sobre nuestros productos, actualizaciones y ofertas, utilizaremos su nombre y dirección de correo electrónico para enviarle esta información. Si ya no desea recibir estas comunicaciones, puede darse de baja siguiendo las instrucciones que figuran en los correos electrónicos que recibe o en nuestro sitio web. Tenga en cuenta que podemos enviarle mensajes transaccionales y de relación, incluso si se canceló la suscripción a nuestras comunicaciones de marketing. Por ejemplo, si nuestro servicio se suspende temporalmente por mantenimiento, podríamos enviarle un correo electrónico para que lo actualice.",position:"center",showCloseButton:!0,closeButtonText:"Acepto"});l.onDidDismiss(function(){console.log("Dismissed toast")}),l.present()},l.prototype.enlServicios=function(){var l=this.toastCtrl.create({message:"Nuestro sitio web puede incluir enlaces a otros sitios web o servicios en línea, Le recomendamos que lea detenidamente la declaración de privacidad de cualquier sitio web que visite.",position:"center",showCloseButton:!0,closeButtonText:"Acepto"});l.onDidDismiss(function(){console.log("Dismissed toast")}),l.present()},l.prototype.camPolitica=function(){var l=this.toastCtrl.create({message:"Podemos hacer cambios a esta Política de privacidad. Si hacemos cambios, se lo notificaremos mediante la revisión de la fecha en la parte superior de la política. Si realizamos cambios sustanciales, lo haremos de acuerdo con los requisitos legales aplicables, y publicaremos un aviso en nuestro sitio web y aplicaciones móviles que lo alertarán sobre los cambios sustanciales antes de que dichos cambios entren en vigencia. Le recomendamos que revise periódicamente esta página para obtener la información más reciente sobre nuestras prácticas de privacidad. Para mantener sus datos personales exactos, actualizados y completos, contáctenos como se especifica a continuación. Tomaremos las medidas razonables para actualizar o corregir los datos personales en nuestra posesión que haya enviado previamente utilizando nuestros servicios. Siéntase libre de contactarnos si tiene alguna pregunta sobre nuestra Política de privacidad o las prácticas de información de los Servicios de EyePayCash.",position:"center",showCloseButton:!0,closeButtonText:"Acepto"});l.onDidDismiss(function(){console.log("Dismissed toast")}),l.present()},l}()},150:function(l,n,u){"use strict";u.d(n,"a",function(){return e});u(1),u(13);var e=function(){function l(l,n){this.navCtrl=l,this.navParams=n}return l.prototype.ionViewDidLoad=function(){console.log("ionViewDidLoad TerminosPage")},l}()},151:function(l,n,u){"use strict";u.d(n,"a",function(){return e});u(1),u(13);var e=function(){function l(l,n){this.navCtrl=l,this.navParams=n,this.name=null,this.getInfo()}return l.prototype.getInfo=function(){this.name=this.navParams.get("name")},l.prototype.closeModal=function(){this.navCtrl.pop()},l}()},152:function(l,n,u){"use strict";u.d(n,"a",function(){return a});u(1),u(13);var e=u(153),a=function(){function l(l,n,u,e,a,o){this.navCtrl=l,this.navParams=n,this.api=u,this.toastCtrl=e,this.userProvider=a,this.loadingCtrl=o,this.data=null,this.type="phone",this.isvisible=!0,this.codigo=null,this.iscodigo=!1}return l.prototype.sendMessage=function(){var l=this;this.type="phone";var n=this.loadingCtrl.create({spinner:"dots"});if(n.present(),null!=this.data)this.api.post("auth/restar-password",{type:this.type,data:this.data}).then(function(u){n.dismiss(),l.iscodigo=!l.iscodigo,l.userProvider.userRecovery.codigoVerify=u.password_code_req,l.userProvider.userRecovery.user_id=u.user_id}).catch(function(u){n.dismiss();l.toastCtrl.create({message:"No se encontraron resultados",duration:3e3}).present()});else{n.dismiss();this.toastCtrl.create({message:"Por favor ingrese su nùmero celular",duration:3e3}).present()}},l.prototype.sendMail=function(){var l=this;this.type="mail";var n=this.loadingCtrl.create({spinner:"dots"});if(n.present(),null!=this.data)this.api.post("auth/restar-password",{type:this.type,data:this.data}).then(function(u){n.dismiss(),console.log(u),l.iscodigo=!l.iscodigo,l.userProvider.userRecovery.codigoVerify=u.password_code_req,l.userProvider.userRecovery.user_id=u.user_id});else{this.toastCtrl.create({message:"Por favor ingrese su direcciòn email",duration:3e3}).present()}},l.prototype.changeVisible=function(){this.isvisible=!this.isvisible},l.prototype.cancelar=function(){this.navCtrl.pop()},l.prototype.confirmCode=function(){if(null!=this.codigo)if(this.userProvider.userRecovery.codigoVerify==this.codigo)this.navCtrl.push(e.a);else{this.toastCtrl.create({message:"El còdigo ingresado no coincide!",duration:3e3}).present()}else{this.toastCtrl.create({message:"Por favor ingrese el còdigo de verificaciòn",duration:3e3}).present()}},l}()},153:function(l,n,u){"use strict";u.d(n,"a",function(){return a});u(1),u(13);var e=u(72),a=function(){function l(l,n,u,e,a,o){this.navCtrl=l,this.navParams=n,this.api=u,this.toastCtrl=e,this.userProvider=a,this.loadingCtrl=o,this.infoRecovery={new_password:null,new_password_conf:null,user_id:null}}return l.prototype.recovery=function(){var l=this;if(null!=this.infoRecovery.new_password&&null!=this.infoRecovery.new_password_conf)if(this.infoRecovery.new_password_conf==this.infoRecovery.new_password)if(this.infoRecovery.new_password.length>=6&&this.infoRecovery.new_password_conf.length>=6){var n=this.loadingCtrl.create({spinner:"dots"});n.present(),this.infoRecovery.user_id=this.userProvider.userRecovery.user_id,this.api.post("auth/update-password",this.infoRecovery).then(function(u){n.dismiss(),console.log(u);l.toastCtrl.create({message:"Contraseña actualizada correctamente",duration:3e3}).present(),l.navCtrl.setRoot(e.a)}).catch(function(l){n.dismiss()})}else{this.toastCtrl.create({message:"La constraseña debe tener mìnimo 6 caracteres"}).present()}else{this.toastCtrl.create({message:"Las contraseñas no coinciden",duration:3e3}).present()}else{this.toastCtrl.create({message:"Los datos son obligatorios",duration:3e3}).present()}},l}()},154:function(l,n,u){"use strict";u.d(n,"a",function(){return a});u(1),u(13);var e=u(155),a=function(){function l(l,n,u,e,a,o,t){this.navCtrl=l,this.navParams=n,this.api=u,this.userProvider=e,this.loadingCtrl=a,this.toastCtrl=o,this.modalCtrl=t,this.countrys=[],this.currency=null,this.infoCountry=null,this.monedas=[],this.getInfo()}return l.prototype.getInfo=function(){var l=this;this.currency=this.userProvider.user_Country.currency,this.countrySelected(),this.api.get("app/get-countries").then(function(n){l.countrys=n}).catch()},l.prototype.countrySelected=function(){var l=this;this.api.get("app/get-prices",this.userProvider,{currency_code:this.currency}).then(function(n){l.infoCountry=n,console.log(l.infoCountry),l.monedas=l.infoCountry.coins,console.log(l.monedas)})},l.prototype.monedaSelect=function(l){var n=this.modalCtrl.create(e.a,{moneda:l,userCountry:this.userProvider.user_Country});n.present(),n.onDidDismiss(function(l){})},l}()},155:function(l,n,u){"use strict";u.d(n,"a",function(){return o});u(1),u(13);var e=u(141),a=u(106),o=function(){function l(l,n,u,e,a,o,t){this.navParams=l,this.viewCtrl=n,this.toastCtrl=u,this.loadingCtrl=e,this.api=a,this.userProvider=o,this.navCtrl=t,this.moneda=null,this.userCountry=null,this.transaction={amount_local:0,phone_user_des:null,key_user:null,country_id:null,coin_id:null}}return l.prototype.ionViewWillLoad=function(){this.userCountry=this.navParams.get("userCountry"),this.moneda=this.navParams.get("moneda"),this.transaction.country_id=this.userCountry.id,this.transaction.coin_id=this.moneda.id},l.prototype.closeModal=function(){this.viewCtrl.dismiss()},l.prototype.doTrasaction=function(){var l=this;if(null!=this.transaction.amount_local&&null!=this.transaction.phone_user_des&&null!=this.transaction.key_user&&null!=this.transaction.country_id&&null!=this.transaction.coin_id){if(4===this.transaction.key_user.length&&this.transaction.phone_user_des>9){var n=this.loadingCtrl.create({spinner:"dots"});n.present();var u=this.transaction;u.amount_local=this.transaction.amount_local.replace(new RegExp("\\.","g"),""),u.amount_local=this.transaction.amount_local.replace(",","."),this.api.post("app/transaction",u,this.userProvider).then(function(u){n.dismiss();var o=l.toastCtrl.create({message:"Transacciòn solicitada correctamente.",duration:3e3});l.closeModal(),l.navCtrl.setPages([{page:e.a},{page:a.a,params:u}]),o.present()}).catch(function(l){n.dismiss(),console.log(l)})}}else{console.log(this.transaction);this.toastCtrl.create({message:"Todos los datos son obligatorios",duration:3e3}).present()}},l}()},217:function(l,n,u){"use strict";u.d(n,"a",function(){return e});u(1),u(13);var e=function(){return function(){}}()},218:function(l,n,u){"use strict";u.d(n,"a",function(){return e});u(1),u(13);var e=function(){return function(){}}()},219:function(l,n,u){"use strict";u.d(n,"a",function(){return e});u(1),u(13);var e=function(){return function(){}}()},220:function(l,n,u){"use strict";u.d(n,"a",function(){return e});u(1),u(13),u(692);var e=function(){return function(){}}()},222:function(l,n,u){"use strict";u.d(n,"a",function(){return e});u(1),u(13);var e=function(){return function(){}}()},223:function(l,n,u){"use strict";u.d(n,"a",function(){return e});u(1),u(13);var e=function(){return function(){}}()},224:function(l,n,u){"use strict";u.d(n,"a",function(){return e});u(1),u(13);var e=function(){return function(){}}()},225:function(l,n,u){"use strict";u.d(n,"a",function(){return e});u(1),u(13);var e=function(){return function(){}}()},226:function(l,n,u){"use strict";u.d(n,"a",function(){return e});u(1),u(13),u(105),u(104);var e=function(){return function(){}}()},227:function(l,n,u){"use strict";u.d(n,"a",function(){return e});u(1),u(13);var e=function(){return function(){}}()},228:function(l,n,u){"use strict";u.d(n,"a",function(){return e});u(1),u(13);var e=function(){return function(){}}()},229:function(l,n,u){"use strict";u.d(n,"a",function(){return e});u(1),u(13);var e=function(){return function(){}}()},230:function(l,n,u){"use strict";u.d(n,"a",function(){return e});u(1),u(13);var e=function(){return function(){}}()},231:function(l,n,u){"use strict";u.d(n,"a",function(){return e});u(1),u(13);var e=function(){return function(){}}()},24:function(l,n,u){"use strict";u.d(n,"a",function(){return a});u(1);var e=u(76),a=function(){function l(l,n){this.http=l,this.storage=n,this.url="http://10.160.170.115/eyepaycash/frontend/web/apiapp/",this.headers=new e.g({"Content-Type":"application/x-www-form-urlencoded"})}return l.prototype.get=function(l,n,u){var a=this;return null!=n&&(this.headers=new e.g({"Content-Type":"application/x-www-form-urlencoded",Authorization:"Bearer "+n.accessParam()})),new Promise(function(n,e){var o=a.url+l,t="";u&&(t=a.jsonToURLEncoded(u)),a.http.get(o+"?"+t,{headers:a.headers}).toPromise().then(function(u){a.storage.set(l,u),n(u)}).catch(function(u){a.storage.get(l).then(function(l){n(l)}).catch(function(l){e("Lo sentimos. No hemos podido mostrar información. Comunícate con nuestro equipo de soporte")})})})},l.prototype.post=function(l,n,u){var a=this.url+l;return null!=u&&(this.headers=new e.g({"Content-Type":"application/x-www-form-urlencoded",Authorization:"Bearer "+u.accessParam()})),this.http.post(a,this.jsonToURLEncoded(n),{headers:this.headers}).toPromise()},l.prototype.jsonToURLEncoded=function(l){return Object.keys(l).map(function(n){return encodeURIComponent(n)+"="+encodeURIComponent(l[n])}).join("&")},l}()},242:function(l,n){function u(l){return Promise.resolve().then(function(){throw new Error("Cannot find module '"+l+"'.")})}u.keys=function(){return[]},u.resolve=u,l.exports=u,u.id=242},27:function(l,n,u){"use strict";u.d(n,"a",function(){return e});u(1),u(24),u(13);var e=function(){function l(l,n){this.api=l,this.toastCtrl=n,this.user_Info={first_name:null,last_name:null,phone:null,access_token:null,is_active:null,gender:null,mail:null},this.user_Country={id:null,name:null,is_active:null,phone_code:null,country_code:null,currency:null},this.User_Verify={id:null,phone_code:null,is_phone_verify:null,mail_code:null,is_mail_verify:null,phone:null,mail:null,user_id:null},this.userRecovery={user_id:null,codigoVerify:null},this.trylogin()}return l.prototype.login=function(l,n){var u=this;return new Promise(function(e,a){u.api.post("auth/login?expand=country,userVerify",{mail:l,password:n}).then(function(l){if("ok"==l.success)u.setUser(l.user),u.setUserCountry(l.user.country),u.setUserVerify(l.user.userVerify),e(l);else{u.toastCtrl.create({message:"Usuario o contraseña incorrectos",duration:3e3}).present()}}).catch(function(l){return a(l)})})},l.prototype.isLogin=function(){return null!==this.user_Info},l.prototype.trylogin=function(){this.user_Info=JSON.parse(window.localStorage.getItem("user")),null==this.user_Info&&(this.user_Info={user:null})},l.prototype.accessParam=function(){return null!=this.user_Info?this.user_Info.access_token:null},l.prototype.setUser=function(l){this.user_Info=l,window.localStorage.setItem("user",JSON.stringify(this.user_Info))},l.prototype.setUserCountry=function(l){this.user_Country=l},l.prototype.setUserVerify=function(l){this.User_Verify=l},l.prototype.setUserRecovery=function(l){this.userRecovery=l},l.prototype.setTokenNotification=function(l){this.tokenAppId=l},l.prototype.registerTokenForUser=function(l){this.api.post("auth/tokenapp",{token:this.tokenAppId,id:l}).then().catch()},l}()},271:function(l,n,u){function e(l){var n=a[l];return n?u.e(n[1]).then(function(){return u(n[0])}):Promise.reject(new Error("Cannot find module '"+l+"'."))}var a={"../pages/account/account.module.ngfactory":[695,13],"../pages/history/history.module.ngfactory":[696,12],"../pages/login/login.module.ngfactory":[697,11],"../pages/modal-transaction/modal-transaction.module.ngfactory":[698,10],"../pages/modal-welcome/modal-welcome.module.ngfactory":[699,9],"../pages/password-update/password-update.module.ngfactory":[700,8],"../pages/politicas/politicas.module.ngfactory":[701,7],"../pages/recovery-password/recovery-password.module.ngfactory":[702,6],"../pages/reg-number-phone/reg-number-phone.module.ngfactory":[703,5],"../pages/register/register.module.ngfactory":[704,4],"../pages/select-code/select-code.module.ngfactory":[705,3],"../pages/terminos/terminos.module.ngfactory":[706,2],"../pages/transaction-resume/transaction-resume.module.ngfactory":[707,1],"../pages/transaction/transaction.module.ngfactory":[708,0]};e.keys=function(){return Object.keys(a)},e.id=271,l.exports=e},390:function(l,n,u){"use strict";function e(l){return d._22(0,[(l()(),d.Z(0,0,null,null,0,"img",[["class","flagphone"]],[[8,"src",4]],null,null,null,null))],null,function(l,n){l(n,0,0,n.component.infoPhone.flag)})}function a(l){return d._22(0,[(l()(),d.Z(0,0,null,null,15,"ion-col",[["class","col"],["col-12",""]],null,null,null,null,null)),d.Y(1,16384,null,0,p.a,[],null,null),(l()(),d._20(-1,null,["\n            "])),(l()(),d.Z(3,0,null,null,1,"label",[["stacked",""]],null,null,null,null,null)),(l()(),d._20(-1,null,["Por favor ingrese el código de verificación"])),(l()(),d._20(-1,null,["\n            "])),(l()(),d.Z(6,0,null,null,4,"ion-input",[["name","verifycode"]],[[2,"ng-untouched",null],[2,"ng-touched",null],[2,"ng-pristine",null],[2,"ng-dirty",null],[2,"ng-valid",null],[2,"ng-invalid",null],[2,"ng-pending",null]],[[null,"ngModelChange"]],function(l,n,u){var e=!0;if("ngModelChange"===n){e=!1!==(l.component.codeVerify=u)&&e}return e},g.b,g.a)),d.Y(7,671744,null,0,_.m,[[8,null],[8,null],[8,null],[8,null]],{name:[0,"name"],model:[1,"model"]},{update:"ngModelChange"}),d._16(2048,null,_.i,null,[_.m]),d.Y(9,16384,null,0,_.j,[_.i],null,null),d.Y(10,5423104,null,0,m.a,[h.a,f.a,y.a,v.a,d.j,d.z,[2,b.a],[2,C.a],[2,_.i],Z.a],null,null),(l()(),d._20(-1,null,["\n            "])),(l()(),d.Z(12,0,null,null,2,"button",[["block",""],["class","buttonPayCash"],["ion-button",""]],null,[[null,"click"]],function(l,n,u){var e=!0;if("click"===n){e=!1!==l.component.verifyCode()&&e}return e},P.b,P.a)),d.Y(13,1097728,null,0,Y.a,[[8,""],h.a,d.j,d.z],{block:[0,"block"]},null),(l()(),d._20(-1,0,["Verificar código"])),(l()(),d._20(-1,null,["\n          "]))],function(l,n){l(n,7,0,"verifycode",n.component.codeVerify);l(n,13,0,"")},function(l,n){l(n,6,0,d._11(n,9).ngClassUntouched,d._11(n,9).ngClassTouched,d._11(n,9).ngClassPristine,d._11(n,9).ngClassDirty,d._11(n,9).ngClassValid,d._11(n,9).ngClassInvalid,d._11(n,9).ngClassPending)})}function o(l){return d._22(0,[(l()(),d.Z(0,0,null,null,2,"button",[["block",""],["class","buttonPayCash"],["ion-button",""]],null,[[null,"click"]],function(l,n,u){var e=!0;if("click"===n){e=!1!==l.component.changePhone()&&e}return e},P.b,P.a)),d.Y(1,1097728,null,0,Y.a,[[8,""],h.a,d.j,d.z],{block:[0,"block"]},null),(l()(),d._20(-1,0,["Actualizar número celular"]))],function(l,n){l(n,1,0,"")},null)}function t(l){return d._22(0,[(l()(),d.Z(0,0,null,null,49,"div",[],null,null,null,null,null)),(l()(),d._20(-1,null,["\n        "])),(l()(),d.Z(2,0,null,null,39,"ion-row",[["class","row"]],null,null,null,null,null)),d.Y(3,16384,null,0,j.a,[],null,null),(l()(),d._20(-1,null,["\n\n          "])),(l()(),d.Z(5,0,null,null,1,"label",[["stacked",""]],null,null,null,null,null)),(l()(),d._20(-1,null,["Seleccione el país e ingrese su nuevo número celular"])),(l()(),d._20(-1,null,["\n          "])),(l()(),d.Z(8,0,null,null,17,"ion-col",[["class","col"],["col-4",""]],null,null,null,null,null)),d.Y(9,16384,null,0,p.a,[],null,null),(l()(),d._20(-1,null,["\n            "])),(l()(),d.Z(11,0,null,null,13,"ion-item",[["class","item-flag item item-block"]],null,null,null,k.b,k.a)),d.Y(12,1097728,null,3,C.a,[y.a,h.a,d.j,d.z,[2,z.a]],null,null),d._18(335544320,11,{contentLabel:0}),d._18(603979776,12,{_buttons:1}),d._18(603979776,13,{_icons:1}),d.Y(16,16384,null,0,w.a,[],null,null),(l()(),d._20(-1,2,["\n              "])),(l()(),d.U(16777216,null,2,1,null,e)),d.Y(19,16384,null,0,q.l,[d.I,d.F],{ngIf:[0,"ngIf"]},null),(l()(),d._20(-1,2,["\n              "])),(l()(),d.Z(21,0,null,2,2,"button",[["ion-button",""]],null,[[null,"click"]],function(l,n,u){var e=!0;if("click"===n){e=!1!==l.component.selectcountry()&&e}return e},P.b,P.a)),d.Y(22,1097728,[[12,4]],0,Y.a,[[8,""],h.a,d.j,d.z],null,null),(l()(),d._20(23,0,["+ ",""])),(l()(),d._20(-1,2,["\n            "])),(l()(),d._20(-1,null,["\n          "])),(l()(),d._20(-1,null,["\n          "])),(l()(),d.Z(27,0,null,null,10,"ion-col",[["class","col"],["col-8",""]],null,null,null,null,null)),d.Y(28,16384,null,0,p.a,[],null,null),(l()(),d._20(-1,null,["\n              "])),(l()(),d.Z(30,0,null,null,6,"ion-input",[["name","numerocelular"],["placeholder","Número movil (celular)"],["required",""],["type","text"]],[[1,"required",0],[2,"ng-untouched",null],[2,"ng-touched",null],[2,"ng-pristine",null],[2,"ng-dirty",null],[2,"ng-valid",null],[2,"ng-invalid",null],[2,"ng-pending",null]],[[null,"ngModelChange"]],function(l,n,u){var e=!0;if("ngModelChange"===n){e=!1!==(l.component.infoPhone.value=u)&&e}return e},g.b,g.a)),d.Y(31,16384,null,0,_.o,[],{required:[0,"required"]},null),d._16(1024,null,_.g,function(l){return[l]},[_.o]),d.Y(33,671744,null,0,_.m,[[8,null],[2,_.g],[8,null],[8,null]],{name:[0,"name"],model:[1,"model"]},{update:"ngModelChange"}),d._16(2048,null,_.i,null,[_.m]),d.Y(35,16384,null,0,_.j,[_.i],null,null),d.Y(36,5423104,null,0,m.a,[h.a,f.a,y.a,v.a,d.j,d.z,[2,b.a],[2,C.a],[2,_.i],Z.a],{type:[0,"type"],placeholder:[1,"placeholder"]},null),(l()(),d._20(-1,null,["\n          "])),(l()(),d._20(-1,null,["\n\n          "])),(l()(),d.U(16777216,null,null,1,null,a)),d.Y(40,16384,null,0,q.l,[d.I,d.F],{ngIf:[0,"ngIf"]},null),(l()(),d._20(-1,null,["\n        "])),(l()(),d._20(-1,null,["\n        "])),(l()(),d.U(16777216,null,null,1,null,o)),d.Y(44,16384,null,0,q.l,[d.I,d.F],{ngIf:[0,"ngIf"]},null),(l()(),d._20(-1,null,["\n        "])),(l()(),d.Z(46,0,null,null,2,"button",[["block",""],["class","buttonPayCash"],["ion-button",""]],null,[[null,"click"]],function(l,n,u){var e=!0;if("click"===n){e=!1!==l.component.pedirMail()&&e}return e},P.b,P.a)),d.Y(47,1097728,null,0,Y.a,[[8,""],h.a,d.j,d.z],{block:[0,"block"]},null),(l()(),d._20(-1,0,["Cambiar dirección email"])),(l()(),d._20(-1,null,["\n      "]))],function(l,n){var u=n.component;l(n,19,0,null!=u.infoPhone.flag);l(n,31,0,"");l(n,33,0,"numerocelular",u.infoPhone.value);l(n,36,0,"text","Número movil (celular)");l(n,40,0,null!=u.response_verify.phone_code);l(n,44,0,null==u.response_verify.phone_code);l(n,47,0,"")},function(l,n){l(n,23,0,n.component.infoPhone.country_code);l(n,30,0,d._11(n,31).required?"":null,d._11(n,35).ngClassUntouched,d._11(n,35).ngClassTouched,d._11(n,35).ngClassPristine,d._11(n,35).ngClassDirty,d._11(n,35).ngClassValid,d._11(n,35).ngClassInvalid,d._11(n,35).ngClassPending)})}function i(l){return d._22(0,[(l()(),d.Z(0,0,null,null,17,"ion-col",[["class","col"],["col-12",""]],null,null,null,null,null)),d.Y(1,16384,null,0,p.a,[],null,null),(l()(),d._20(-1,null,["\n            "])),(l()(),d.Z(3,0,null,null,1,"label",[["stacked",""]],null,null,null,null,null)),(l()(),d._20(-1,null,["Por favor ingrese el código de verificación"])),(l()(),d._20(-1,null,["\n            "])),(l()(),d.Z(6,0,null,null,0,"br",[],null,null,null,null,null)),(l()(),d._20(-1,null,["\n            "])),(l()(),d.Z(8,0,null,null,4,"ion-input",[["name","verifycode"]],[[2,"ng-untouched",null],[2,"ng-touched",null],[2,"ng-pristine",null],[2,"ng-dirty",null],[2,"ng-valid",null],[2,"ng-invalid",null],[2,"ng-pending",null]],[[null,"ngModelChange"]],function(l,n,u){var e=!0;if("ngModelChange"===n){e=!1!==(l.component.codeVerifyMail=u)&&e}return e},g.b,g.a)),d.Y(9,671744,null,0,_.m,[[8,null],[8,null],[8,null],[8,null]],{name:[0,"name"],model:[1,"model"]},{update:"ngModelChange"}),d._16(2048,null,_.i,null,[_.m]),d.Y(11,16384,null,0,_.j,[_.i],null,null),d.Y(12,5423104,null,0,m.a,[h.a,f.a,y.a,v.a,d.j,d.z,[2,b.a],[2,C.a],[2,_.i],Z.a],null,null),(l()(),d._20(-1,null,["\n            "])),(l()(),d.Z(14,0,null,null,2,"button",[["block",""],["class","buttonPayCash"],["ion-button",""]],null,[[null,"click"]],function(l,n,u){var e=!0;if("click"===n){e=!1!==l.component.verifyCodeMail()&&e}return e},P.b,P.a)),d.Y(15,1097728,null,0,Y.a,[[8,""],h.a,d.j,d.z],{block:[0,"block"]},null),(l()(),d._20(-1,0,["Verificar código"])),(l()(),d._20(-1,null,["\n          "]))],function(l,n){l(n,9,0,"verifycode",n.component.codeVerifyMail);l(n,15,0,"")},function(l,n){l(n,8,0,d._11(n,11).ngClassUntouched,d._11(n,11).ngClassTouched,d._11(n,11).ngClassPristine,d._11(n,11).ngClassDirty,d._11(n,11).ngClassValid,d._11(n,11).ngClassInvalid,d._11(n,11).ngClassPending)})}function s(l){return d._22(0,[(l()(),d.Z(0,0,null,null,2,"button",[["block",""],["class","buttonPayCash"],["ion-button",""]],null,[[null,"click"]],function(l,n,u){var e=!0;if("click"===n){e=!1!==l.component.changeMail()&&e}return e},P.b,P.a)),d.Y(1,1097728,null,0,Y.a,[[8,""],h.a,d.j,d.z],{block:[0,"block"]},null),(l()(),d._20(-1,0,["Actualizar dirección email"]))],function(l,n){l(n,1,0,"")},null)}function r(l){return d._22(0,[(l()(),d.Z(0,0,null,null,28,"div",[],null,null,null,null,null)),(l()(),d._20(-1,null,["\n        "])),(l()(),d.Z(2,0,null,null,18,"ion-row",[["class","row"]],null,null,null,null,null)),d.Y(3,16384,null,0,j.a,[],null,null),(l()(),d._20(-1,null,["\n          "])),(l()(),d.Z(5,0,null,null,1,"label",[["stacked",""]],null,null,null,null,null)),(l()(),d._20(-1,null,[" Por favor ingrese la nueva dirección email"])),(l()(),d._20(-1,null,["\n          "])),(l()(),d.Z(8,0,null,null,8,"ion-col",[["class","col"],["col-12",""],["row",""]],null,null,null,null,null)),d.Y(9,16384,null,0,p.a,[],null,null),(l()(),d._20(-1,null,["\n            "])),(l()(),d.Z(11,0,null,null,4,"ion-input",[["name","correoelectronico"],["placeholder","Direcciòn email correo electrònico"]],[[2,"ng-untouched",null],[2,"ng-touched",null],[2,"ng-pristine",null],[2,"ng-dirty",null],[2,"ng-valid",null],[2,"ng-invalid",null],[2,"ng-pending",null]],[[null,"ngModelChange"]],function(l,n,u){var e=!0;if("ngModelChange"===n){e=!1!==(l.component.infoPhone.value=u)&&e}return e},g.b,g.a)),d.Y(12,671744,null,0,_.m,[[8,null],[8,null],[8,null],[8,null]],{name:[0,"name"],model:[1,"model"]},{update:"ngModelChange"}),d._16(2048,null,_.i,null,[_.m]),d.Y(14,16384,null,0,_.j,[_.i],null,null),d.Y(15,5423104,null,0,m.a,[h.a,f.a,y.a,v.a,d.j,d.z,[2,b.a],[2,C.a],[2,_.i],Z.a],{placeholder:[0,"placeholder"]},null),(l()(),d._20(-1,null,["\n          "])),(l()(),d._20(-1,null,["\n          "])),(l()(),d.U(16777216,null,null,1,null,i)),d.Y(19,16384,null,0,q.l,[d.I,d.F],{ngIf:[0,"ngIf"]},null),(l()(),d._20(-1,null,["\n        "])),(l()(),d._20(-1,null,["\n        "])),(l()(),d.U(16777216,null,null,1,null,s)),d.Y(23,16384,null,0,q.l,[d.I,d.F],{ngIf:[0,"ngIf"]},null),(l()(),d._20(-1,null,["\n        "])),(l()(),d.Z(25,0,null,null,2,"button",[["block",""],["class","buttonPayCash"],["ion-button",""]],null,[[null,"click"]],function(l,n,u){var e=!0;if("click"===n){e=!1!==l.component.pedirPhone()&&e}return e},P.b,P.a)),d.Y(26,1097728,null,0,Y.a,[[8,""],h.a,d.j,d.z],{block:[0,"block"]},null),(l()(),d._20(-1,0,["Cambiar número celular"])),(l()(),d._20(-1,null,["\n      "]))],function(l,n){var u=n.component;l(n,12,0,"correoelectronico",u.infoPhone.value);l(n,15,0,"Direcciòn email correo electrònico");l(n,19,0,null!=u.response_verify.mail_code);l(n,23,0,null==u.response_verify.mail_code);l(n,26,0,"")},function(l,n){l(n,11,0,d._11(n,14).ngClassUntouched,d._11(n,14).ngClassTouched,d._11(n,14).ngClassPristine,d._11(n,14).ngClassDirty,d._11(n,14).ngClassValid,d._11(n,14).ngClassInvalid,d._11(n,14).ngClassPending)})}function c(l){return d._22(0,[(l()(),d.Z(0,0,null,null,10,"ion-header",[],null,null,null,null,null)),d.Y(1,16384,null,0,I.a,[h.a,d.j,d.z,[2,x.a]],null,null),(l()(),d._20(-1,null,["\n  "])),(l()(),d.Z(3,0,null,null,6,"ion-navbar",[["class","toolbar"]],[[8,"hidden",0],[2,"statusbar-padding",null]],null,null,M.b,M.a)),d.Y(4,49152,null,0,D.a,[v.a,[2,x.a],[2,T.a],h.a,d.j,d.z],null,null),(l()(),d._20(-1,3,["\n    "])),(l()(),d.Z(6,0,null,3,2,"ion-title",[],null,null,null,E.b,E.a)),d.Y(7,49152,null,0,U.a,[h.a,d.j,d.z,[2,V.a],[2,D.a]],null,null),(l()(),d._20(-1,0,["\n        CUENTA\n    "])),(l()(),d._20(-1,3,["\n  "])),(l()(),d._20(-1,null,["\n"])),(l()(),d._20(-1,null,["\n"])),(l()(),d.Z(12,0,null,null,193,"ion-content",[["padding",""]],[[2,"statusbar-padding",null],[2,"has-refresher",null]],null,null,B.b,B.a)),d.Y(13,4374528,null,0,b.a,[h.a,f.a,Z.a,d.j,d.z,v.a,R.a,d.u,[2,x.a],[2,T.a]],null,null),(l()(),d._20(-1,1,["\n  "])),(l()(),d.Z(15,0,null,1,90,"ion-card",[],null,null,null,null,null)),d.Y(16,16384,null,0,L.a,[h.a,d.j,d.z],null,null),(l()(),d._20(-1,null,["\n    "])),(l()(),d.Z(18,0,null,null,5,"ion-card-header",[],null,null,null,null,null)),d.Y(19,16384,null,0,N.a,[h.a,d.j,d.z],null,null),(l()(),d._20(-1,null,["\n      "])),(l()(),d.Z(21,0,null,null,1,"ion-icon",[["item-start",""],["name","person"],["role","img"]],[[2,"hide",null]],null,null,null,null)),d.Y(22,147456,null,0,S.a,[h.a,d.j,d.z],{name:[0,"name"]},null),(l()(),d._20(-1,null,["\n      Información personal\n    "])),(l()(),d._20(-1,null,["\n    "])),(l()(),d.Z(25,0,null,null,79,"ion-card-content",[],null,null,null,null,null)),d.Y(26,16384,null,0,F.a,[h.a,d.j,d.z],null,null),(l()(),d._20(-1,null,["\n      "])),(l()(),d.Z(28,0,null,null,75,"ion-list",[],null,null,null,null,null)),d.Y(29,16384,null,0,A.a,[h.a,d.j,d.z,f.a,O.l,Z.a],null,null),(l()(),d._20(-1,null,["\n        "])),(l()(),d.Z(31,0,null,null,18,"ion-item",[["class","item item-block"]],null,null,null,k.b,k.a)),d.Y(32,1097728,null,3,C.a,[y.a,h.a,d.j,d.z,[2,z.a]],null,null),d._18(335544320,1,{contentLabel:0}),d._18(603979776,2,{_buttons:1}),d._18(603979776,3,{_icons:1}),d.Y(36,16384,null,0,w.a,[],null,null),(l()(),d._20(-1,2,["\n          "])),(l()(),d.Z(38,0,null,1,2,"ion-label",[["stacked",""]],null,null,null,null,null)),d.Y(39,16384,[[1,4]],0,H.a,[h.a,d.j,d.z,[8,null],[8,""],[8,null],[8,null]],null,null),(l()(),d._20(-1,null,["Nombres"])),(l()(),d._20(-1,2,["\n          "])),(l()(),d.Z(42,0,null,3,6,"ion-input",[["name","userregistronombre"],["required",""],["type","text"]],[[1,"required",0],[2,"ng-untouched",null],[2,"ng-touched",null],[2,"ng-pristine",null],[2,"ng-dirty",null],[2,"ng-valid",null],[2,"ng-invalid",null],[2,"ng-pending",null]],[[null,"ngModelChange"]],function(l,n,u){var e=!0;if("ngModelChange"===n){e=!1!==(l.component.usuario.first_name=u)&&e}return e},g.b,g.a)),d.Y(43,16384,null,0,_.o,[],{required:[0,"required"]},null),d._16(1024,null,_.g,function(l){return[l]},[_.o]),d.Y(45,671744,null,0,_.m,[[8,null],[2,_.g],[8,null],[8,null]],{name:[0,"name"],model:[1,"model"]},{update:"ngModelChange"}),d._16(2048,null,_.i,null,[_.m]),d.Y(47,16384,null,0,_.j,[_.i],null,null),d.Y(48,5423104,null,0,m.a,[h.a,f.a,y.a,v.a,d.j,d.z,[2,b.a],[2,C.a],[2,_.i],Z.a],{type:[0,"type"]},null),(l()(),d._20(-1,2,["\n        "])),(l()(),d._20(-1,null,["\n\n        "])),(l()(),d.Z(51,0,null,null,18,"ion-item",[["class","item item-block"]],null,null,null,k.b,k.a)),d.Y(52,1097728,null,3,C.a,[y.a,h.a,d.j,d.z,[2,z.a]],null,null),d._18(335544320,4,{contentLabel:0}),d._18(603979776,5,{_buttons:1}),d._18(603979776,6,{_icons:1}),d.Y(56,16384,null,0,w.a,[],null,null),(l()(),d._20(-1,2,["\n          "])),(l()(),d.Z(58,0,null,1,2,"ion-label",[["stacked",""]],null,null,null,null,null)),d.Y(59,16384,[[4,4]],0,H.a,[h.a,d.j,d.z,[8,null],[8,""],[8,null],[8,null]],null,null),(l()(),d._20(-1,null,["Apellidos"])),(l()(),d._20(-1,2,["\n          "])),(l()(),d.Z(62,0,null,3,6,"ion-input",[["name","userregistroapellido"],["required",""],["type","text"]],[[1,"required",0],[2,"ng-untouched",null],[2,"ng-touched",null],[2,"ng-pristine",null],[2,"ng-dirty",null],[2,"ng-valid",null],[2,"ng-invalid",null],[2,"ng-pending",null]],[[null,"ngModelChange"]],function(l,n,u){var e=!0;if("ngModelChange"===n){e=!1!==(l.component.usuario.last_name=u)&&e}return e},g.b,g.a)),d.Y(63,16384,null,0,_.o,[],{required:[0,"required"]},null),d._16(1024,null,_.g,function(l){return[l]},[_.o]),d.Y(65,671744,null,0,_.m,[[8,null],[2,_.g],[8,null],[8,null]],{name:[0,"name"],model:[1,"model"]},{update:"ngModelChange"}),d._16(2048,null,_.i,null,[_.m]),d.Y(67,16384,null,0,_.j,[_.i],null,null),d.Y(68,5423104,null,0,m.a,[h.a,f.a,y.a,v.a,d.j,d.z,[2,b.a],[2,C.a],[2,_.i],Z.a],{type:[0,"type"]},null),(l()(),d._20(-1,2,["\n        "])),(l()(),d._20(-1,null,["\n        "])),(l()(),d.Z(71,0,null,null,27,"ion-item",[["class","item item-block"]],null,null,null,k.b,k.a)),d.Y(72,1097728,null,3,C.a,[y.a,h.a,d.j,d.z,[2,z.a]],null,null),d._18(335544320,7,{contentLabel:0}),d._18(603979776,8,{_buttons:1}),d._18(603979776,9,{_icons:1}),d.Y(76,16384,null,0,w.a,[],null,null),(l()(),d._20(-1,2,["\n          "])),(l()(),d.Z(78,0,null,1,2,"ion-label",[["stacked",""]],null,null,null,null,null)),d.Y(79,16384,[[7,4]],0,H.a,[h.a,d.j,d.z,[8,null],[8,""],[8,null],[8,null]],null,null),(l()(),d._20(-1,null,["Género"])),(l()(),d._20(-1,2,["\n          "])),(l()(),d.Z(82,0,null,3,15,"ion-select",[["cancelText","Cancelar"],["name","userregistrogenero"],["okText","Guardar"]],[[2,"select-disabled",null],[2,"ng-untouched",null],[2,"ng-touched",null],[2,"ng-pristine",null],[2,"ng-dirty",null],[2,"ng-valid",null],[2,"ng-invalid",null],[2,"ng-pending",null]],[[null,"ngModelChange"],[null,"click"],[null,"keyup.space"]],function(l,n,u){var e=!0,a=l.component;if("click"===n){e=!1!==d._11(l,83)._click(u)&&e}if("keyup.space"===n){e=!1!==d._11(l,83)._keyup()&&e}if("ngModelChange"===n){e=!1!==(a.usuario.gender=u)&&e}return e},X.b,X.a)),d.Y(83,1228800,null,1,G.a,[v.a,y.a,h.a,d.j,d.z,[2,C.a],$.a],{cancelText:[0,"cancelText"],okText:[1,"okText"]},null),d._18(603979776,10,{options:1}),d._16(1024,null,_.h,function(l){return[l]},[G.a]),d.Y(86,671744,null,0,_.m,[[8,null],[8,null],[8,null],[2,_.h]],{name:[0,"name"],model:[1,"model"]},{update:"ngModelChange"}),d._16(2048,null,_.i,null,[_.m]),d.Y(88,16384,null,0,_.j,[_.i],null,null),(l()(),d._20(-1,null,["\n            "])),(l()(),d.Z(90,0,null,null,2,"ion-option",[["value","f"]],null,null,null,null,null)),d.Y(91,16384,[[10,4]],0,W.a,[d.j],{value:[0,"value"]},null),(l()(),d._20(-1,null,["Femenino"])),(l()(),d._20(-1,null,["\n            "])),(l()(),d.Z(94,0,null,null,2,"ion-option",[["value","m"]],null,null,null,null,null)),d.Y(95,16384,[[10,4]],0,W.a,[d.j],{value:[0,"value"]},null),(l()(),d._20(-1,null,["Masculino"])),(l()(),d._20(-1,null,["\n          "])),(l()(),d._20(-1,2,["\n        "])),(l()(),d._20(-1,null,["\n        "])),(l()(),d.Z(100,0,null,null,2,"button",[["block",""],["class","buttonPayCash"],["ion-button",""]],null,[[null,"click"]],function(l,n,u){var e=!0;if("click"===n){e=!1!==l.component.actualizar()&&e}return e},P.b,P.a)),d.Y(101,1097728,null,0,Y.a,[[8,""],h.a,d.j,d.z],{block:[0,"block"]},null),(l()(),d._20(-1,0,["Actualizar"])),(l()(),d._20(-1,null,["\n      "])),(l()(),d._20(-1,null,["\n    "])),(l()(),d._20(-1,null,["\n  "])),(l()(),d._20(-1,1,["\n  "])),(l()(),d.Z(107,0,null,1,29,"ion-card",[],null,null,null,null,null)),d.Y(108,16384,null,0,L.a,[h.a,d.j,d.z],null,null),(l()(),d._20(-1,null,["\n    "])),(l()(),d.Z(110,0,null,null,5,"ion-card-header",[],null,null,null,null,null)),d.Y(111,16384,null,0,N.a,[h.a,d.j,d.z],null,null),(l()(),d._20(-1,null,["\n      "])),(l()(),d.Z(113,0,null,null,1,"ion-icon",[["item-start",""],["name","key"],["role","img"]],[[2,"hide",null]],null,null,null,null)),d.Y(114,147456,null,0,S.a,[h.a,d.j,d.z],{name:[0,"name"]},null),(l()(),d._20(-1,null,["\n      Información de cuenta\n    "])),(l()(),d._20(-1,null,["\n    "])),(l()(),d.Z(117,0,null,null,18,"ion-card-content",[],null,null,null,null,null)),d.Y(118,16384,null,0,F.a,[h.a,d.j,d.z],null,null),(l()(),d._20(-1,null,["\n      "])),(l()(),d.Z(120,0,null,null,6,"ion-row",[["class","row"]],null,null,null,null,null)),d.Y(121,16384,null,0,j.a,[],null,null),(l()(),d._20(-1,null,["\n        "])),(l()(),d.Z(123,0,null,null,2,"ion-label",[["stacked",""]],null,null,null,null,null)),d.Y(124,16384,null,0,H.a,[h.a,d.j,d.z,[8,null],[8,""],[8,null],[8,null]],null,null),(l()(),d._20(-1,null,["Email"])),(l()(),d._20(126,null,["\n        ","\n      "])),(l()(),d._20(-1,null,["\n      "])),(l()(),d.Z(128,0,null,null,6,"ion-row",[["class","row"]],null,null,null,null,null)),d.Y(129,16384,null,0,j.a,[],null,null),(l()(),d._20(-1,null,["\n        "])),(l()(),d.Z(131,0,null,null,2,"ion-label",[["stacked",""]],null,null,null,null,null)),d.Y(132,16384,null,0,H.a,[h.a,d.j,d.z,[8,null],[8,""],[8,null],[8,null]],null,null),(l()(),d._20(-1,null,["Teléfono"])),(l()(),d._20(134,null,["\n        ","\n      "])),(l()(),d._20(-1,null,["\n    "])),(l()(),d._20(-1,null,["\n  "])),(l()(),d._20(-1,1,["\n  "])),(l()(),d.Z(138,0,null,1,45,"ion-card",[],null,null,null,null,null)),d.Y(139,16384,null,0,L.a,[h.a,d.j,d.z],null,null),(l()(),d._20(-1,null,["\n    "])),(l()(),d.Z(141,0,null,null,5,"ion-card-header",[],null,null,null,null,null)),d.Y(142,16384,null,0,N.a,[h.a,d.j,d.z],null,null),(l()(),d._20(-1,null,["\n      "])),(l()(),d.Z(144,0,null,null,1,"ion-icon",[["item-start",""],["name","locate"],["role","img"]],[[2,"hide",null]],null,null,null,null)),d.Y(145,147456,null,0,S.a,[h.a,d.j,d.z],{name:[0,"name"]},null),(l()(),d._20(-1,null,["\n      Información de ubicaciòn\n    "])),(l()(),d._20(-1,null,["\n    "])),(l()(),d.Z(148,0,null,null,34,"ion-card-content",[],null,null,null,null,null)),d.Y(149,16384,null,0,F.a,[h.a,d.j,d.z],null,null),(l()(),d._20(-1,null,["\n      "])),(l()(),d.Z(151,0,null,null,6,"ion-row",[["class","row"]],null,null,null,null,null)),d.Y(152,16384,null,0,j.a,[],null,null),(l()(),d._20(-1,null,["\n        "])),(l()(),d.Z(154,0,null,null,2,"ion-label",[["stacked",""]],null,null,null,null,null)),d.Y(155,16384,null,0,H.a,[h.a,d.j,d.z,[8,null],[8,""],[8,null],[8,null]],null,null),(l()(),d._20(-1,null,["País"])),(l()(),d._20(157,null,["\n        ","\n      "])),(l()(),d._20(-1,null,["\n      "])),(l()(),d.Z(159,0,null,null,6,"ion-row",[["class","row"]],null,null,null,null,null)),d.Y(160,16384,null,0,j.a,[],null,null),(l()(),d._20(-1,null,["\n        "])),(l()(),d.Z(162,0,null,null,2,"ion-label",[["stacked",""]],null,null,null,null,null)),d.Y(163,16384,null,0,H.a,[h.a,d.j,d.z,[8,null],[8,""],[8,null],[8,null]],null,null),(l()(),d._20(-1,null,["Código de teléfono"])),(l()(),d._20(165,null,["\n        ","\n      "])),(l()(),d._20(-1,null,["\n      "])),(l()(),d.Z(167,0,null,null,6,"ion-row",[["class","row"]],null,null,null,null,null)),d.Y(168,16384,null,0,j.a,[],null,null),(l()(),d._20(-1,null,["\n        "])),(l()(),d.Z(170,0,null,null,2,"ion-label",[["stacked",""]],null,null,null,null,null)),d.Y(171,16384,null,0,H.a,[h.a,d.j,d.z,[8,null],[8,""],[8,null],[8,null]],null,null),(l()(),d._20(-1,null,["Código de país"])),(l()(),d._20(173,null,["\n        ","\n      "])),(l()(),d._20(-1,null,["\n      "])),(l()(),d.Z(175,0,null,null,6,"ion-row",[["class","row"]],null,null,null,null,null)),d.Y(176,16384,null,0,j.a,[],null,null),(l()(),d._20(-1,null,["\n        "])),(l()(),d.Z(178,0,null,null,2,"ion-label",[["stacked",""]],null,null,null,null,null)),d.Y(179,16384,null,0,H.a,[h.a,d.j,d.z,[8,null],[8,""],[8,null],[8,null]],null,null),(l()(),d._20(-1,null,["Moneda del país"])),(l()(),d._20(181,null,["\n        ","\n      "])),(l()(),d._20(-1,null,["\n    "])),(l()(),d._20(-1,null,["\n  "])),(l()(),d._20(-1,1,["\n\n\n  "])),(l()(),d.Z(185,0,null,1,19,"ion-card",[],null,null,null,null,null)),d.Y(186,16384,null,0,L.a,[h.a,d.j,d.z],null,null),(l()(),d._20(-1,null,["\n    "])),(l()(),d.Z(188,0,null,null,5,"ion-card-header",[],null,null,null,null,null)),d.Y(189,16384,null,0,N.a,[h.a,d.j,d.z],null,null),(l()(),d._20(-1,null,["\n      "])),(l()(),d.Z(191,0,null,null,1,"ion-icon",[["item-start",""],["name","lock"],["role","img"]],[[2,"hide",null]],null,null,null,null)),d.Y(192,147456,null,0,S.a,[h.a,d.j,d.z],{name:[0,"name"]},null),(l()(),d._20(-1,null,["\n      Información de seguridad\n    "])),(l()(),d._20(-1,null,["\n    "])),(l()(),d.Z(195,0,null,null,8,"ion-card-content",[],null,null,null,null,null)),d.Y(196,16384,null,0,F.a,[h.a,d.j,d.z],null,null),(l()(),d._20(-1,null,["\n      "])),(l()(),d.U(16777216,null,null,1,null,t)),d.Y(199,16384,null,0,q.l,[d.I,d.F],{ngIf:[0,"ngIf"]},null),(l()(),d._20(-1,null,["\n\n\n      "])),(l()(),d.U(16777216,null,null,1,null,r)),d.Y(202,16384,null,0,q.l,[d.I,d.F],{ngIf:[0,"ngIf"]},null),(l()(),d._20(-1,null,["\n    "])),(l()(),d._20(-1,null,["\n  "])),(l()(),d._20(-1,1,["\n\n"])),(l()(),d._20(-1,null,["\n"]))],function(l,n){var u=n.component;l(n,22,0,"person");l(n,43,0,"");l(n,45,0,"userregistronombre",u.usuario.first_name);l(n,48,0,"text");l(n,63,0,"");l(n,65,0,"userregistroapellido",u.usuario.last_name);l(n,68,0,"text");l(n,83,0,"Cancelar","Guardar");l(n,86,0,"userregistrogenero",u.usuario.gender);l(n,91,0,"f");l(n,95,0,"m");l(n,101,0,"");l(n,114,0,"key");l(n,145,0,"locate");l(n,192,0,"lock");l(n,199,0,u.isphone);l(n,202,0,u.ismail)},function(l,n){var u=n.component;l(n,3,0,d._11(n,4)._hidden,d._11(n,4)._sbPadding);l(n,12,0,d._11(n,13).statusbarPadding,d._11(n,13)._hasRefresher);l(n,21,0,d._11(n,22)._hidden);l(n,42,0,d._11(n,43).required?"":null,d._11(n,47).ngClassUntouched,d._11(n,47).ngClassTouched,d._11(n,47).ngClassPristine,d._11(n,47).ngClassDirty,d._11(n,47).ngClassValid,d._11(n,47).ngClassInvalid,d._11(n,47).ngClassPending);l(n,62,0,d._11(n,63).required?"":null,d._11(n,67).ngClassUntouched,d._11(n,67).ngClassTouched,d._11(n,67).ngClassPristine,d._11(n,67).ngClassDirty,d._11(n,67).ngClassValid,d._11(n,67).ngClassInvalid,d._11(n,67).ngClassPending);l(n,82,0,d._11(n,83)._disabled,d._11(n,88).ngClassUntouched,d._11(n,88).ngClassTouched,d._11(n,88).ngClassPristine,d._11(n,88).ngClassDirty,d._11(n,88).ngClassValid,d._11(n,88).ngClassInvalid,d._11(n,88).ngClassPending);l(n,113,0,d._11(n,114)._hidden);l(n,126,0,u.usuario.mail);l(n,134,0,u.usuario.phone);l(n,144,0,d._11(n,145)._hidden);l(n,157,0,u.country.name);l(n,165,0,u.country.phone_code);l(n,173,0,u.country.country_code);l(n,181,0,u.country.currency);l(n,191,0,d._11(n,192)._hidden)})}u.d(n,"a",function(){return ol});var d=u(0),p=u(50),g=u(63),_=u(17),m=u(44),h=u(3),f=u(5),y=u(20),v=u(8),b=u(19),C=u(21),Z=u(9),P=u(30),Y=u(23),j=u(51),k=u(53),z=u(37),w=u(45),q=u(16),I=u(70),x=u(6),M=u(100),D=u(39),T=u(18),E=u(101),U=u(64),V=u(46),B=u(36),R=u(25),L=u(74),N=u(118),S=u(42),F=u(75),A=u(52),O=u(10),H=u(43),X=u(188),G=u(77),$=u(29),W=u(78),K=u(145),J=u(14),Q=u(24),ll=u(27),nl=u(40),ul=u(38),el=u(65),al=d.X({encapsulation:2,styles:[],data:{}}),ol=d.V("page-account",K.a,function(l){return d._22(0,[(l()(),d.Z(0,0,null,null,1,"page-account",[],null,null,null,c,al)),d.Y(1,49152,null,0,K.a,[T.a,J.a,Q.a,ll.a,nl.a,ul.a,el.a],null,null)],null,null)},{},{},[])},391:function(l,n,u){"use strict";function e(l){return o._22(0,[(l()(),o.Z(0,0,null,null,36,"ion-item",[["class","item item-block"]],null,null,null,t.b,t.a)),o.Y(1,1097728,null,3,i.a,[s.a,r.a,o.j,o.z,[2,c.a]],null,null),o._18(335544320,1,{contentLabel:0}),o._18(603979776,2,{_buttons:1}),o._18(603979776,3,{_icons:1}),o.Y(5,16384,null,0,d.a,[],null,null),(l()(),o._20(-1,2,["\n      "])),(l()(),o.Z(7,0,null,2,14,"ion-row",[["class","row"]],null,null,null,null,null)),o.Y(8,16384,null,0,p.a,[],null,null),(l()(),o._20(-1,null,["\n        "])),(l()(),o.Z(10,0,null,null,5,"ion-col",[["class","col"],["col-6",""]],null,null,null,null,null)),o.Y(11,16384,null,0,g.a,[],null,null),(l()(),o._20(-1,null,["\n          "])),(l()(),o.Z(13,0,null,null,1,"h4",[],null,null,null,null,null)),(l()(),o._20(14,null,["",""])),(l()(),o._20(-1,null,["\n        "])),(l()(),o._20(-1,null,["\n        "])),(l()(),o.Z(17,0,null,null,3,"ion-col",[["class","col"],["col-6",""]],null,null,null,null,null)),o.Y(18,16384,null,0,g.a,[],null,null),(l()(),o._20(19,null,["\n          ","\n        "])),o._15(20,3),(l()(),o._20(-1,null,["\n      "])),(l()(),o._20(-1,2,["\n      "])),(l()(),o.Z(23,0,null,2,11,"ion-row",[["class","row"]],null,null,null,null,null)),o.Y(24,16384,null,0,p.a,[],null,null),(l()(),o._20(-1,null,["\n        "])),(l()(),o.Z(26,0,null,null,2,"ion-col",[["class","col"],["col-6",""]],null,null,null,null,null)),o.Y(27,16384,null,0,g.a,[],null,null),(l()(),o._20(28,null,["\n          ","\n        "])),(l()(),o._20(-1,null,["\n        "])),(l()(),o.Z(30,0,null,null,3,"ion-col",[["class","col"],["col-6",""]],null,null,null,null,null)),o.Y(31,16384,null,0,g.a,[],null,null),(l()(),o._20(32,null,["\n          ","\n        "])),o._15(33,3),(l()(),o._20(-1,null,["\n      "])),(l()(),o._20(-1,2,["\n      "])),(l()(),o._20(-1,2,["\n    "]))],null,function(l,n){var u=n.component;l(n,14,0,n.context.$implicit.country.name);l(n,19,0,o._21(n,19,0,l(n,20,0,o._11(n.parent,0),n.context.$implicit.date_request,u.format,u.timezone)));l(n,28,0,n.context.$implicit.coin.full_name);l(n,32,0,o._21(n,32,0,l(n,33,0,o._11(n.parent,1),n.context.$implicit.amount_local,n.context.$implicit.country.currency+" ",2)))})}function a(l){return o._22(0,[o._13(0,_.e,[o.r]),o._13(0,_.c,[o.r]),(l()(),o._20(-1,null,["\n"])),(l()(),o.Z(3,0,null,null,10,"ion-header",[],null,null,null,null,null)),o.Y(4,16384,null,0,m.a,[r.a,o.j,o.z,[2,h.a]],null,null),(l()(),o._20(-1,null,["\n\n  "])),(l()(),o.Z(6,0,null,null,6,"ion-navbar",[["class","toolbar"]],[[8,"hidden",0],[2,"statusbar-padding",null]],null,null,f.b,f.a)),o.Y(7,49152,null,0,y.a,[v.a,[2,h.a],[2,b.a],r.a,o.j,o.z],null,null),(l()(),o._20(-1,3,["\n    "])),(l()(),o.Z(9,0,null,3,2,"ion-title",[],null,null,null,C.b,C.a)),o.Y(10,49152,null,0,Z.a,[r.a,o.j,o.z,[2,P.a],[2,y.a]],null,null),(l()(),o._20(-1,0,["history"])),(l()(),o._20(-1,3,["\n  "])),(l()(),o._20(-1,null,["\n\n"])),(l()(),o._20(-1,null,["\n\n\n"])),(l()(),o.Z(15,0,null,null,9,"ion-content",[["padding",""]],[[2,"statusbar-padding",null],[2,"has-refresher",null]],null,null,Y.b,Y.a)),o.Y(16,4374528,null,0,j.a,[r.a,k.a,z.a,o.j,o.z,v.a,w.a,o.u,[2,h.a],[2,b.a]],null,null),(l()(),o._20(-1,1,["\n  "])),(l()(),o.Z(18,0,null,1,5,"ion-list",[],null,null,null,null,null)),o.Y(19,16384,null,0,q.a,[r.a,o.j,o.z,k.a,I.l,z.a],null,null),(l()(),o._20(-1,null,["\n    "])),(l()(),o.U(16777216,null,null,1,null,e)),o.Y(22,802816,null,0,_.k,[o.I,o.F,o.p],{ngForOf:[0,"ngForOf"]},null),(l()(),o._20(-1,null,["\n  "])),(l()(),o._20(-1,1,["\n"])),(l()(),o._20(-1,null,["\n"]))],function(l,n){l(n,22,0,n.component.transactions)},function(l,n){l(n,6,0,o._11(n,7)._hidden,o._11(n,7)._sbPadding);l(n,15,0,o._11(n,16).statusbarPadding,o._11(n,16)._hasRefresher)})}u.d(n,"a",function(){return U});var o=u(0),t=u(53),i=u(21),s=u(20),r=u(3),c=u(37),d=u(45),p=u(51),g=u(50),_=u(16),m=u(70),h=u(6),f=u(100),y=u(39),v=u(8),b=u(18),C=u(101),Z=u(64),P=u(46),Y=u(36),j=u(19),k=u(5),z=u(9),w=u(25),q=u(52),I=u(10),x=u(146),M=u(14),D=u(24),T=u(27),E=o.X({encapsulation:2,styles:[],data:{}}),U=o.V("page-history",x.a,function(l){return o._22(0,[(l()(),o.Z(0,0,null,null,1,"page-history",[],null,null,null,a,E)),o.Y(1,49152,null,0,x.a,[b.a,M.a,D.a,T.a],null,null)],null,null)},{},{},[])},392:function(l,n,u){"use strict";function e(l){return a._22(0,[(l()(),a.Z(0,0,null,null,87,"ion-content",[["class","imgBackground vignette"]],[[2,"statusbar-padding",null],[2,"has-refresher",null]],null,null,o.b,o.a)),a.Y(1,4374528,null,0,t.a,[i.a,s.a,r.a,a.j,a.z,c.a,d.a,a.u,[2,p.a],[2,g.a]],null,null),(l()(),a._20(-1,1,["\n  "])),(l()(),a.Z(3,0,null,1,4,"div",[["class","center"]],null,null,null,null,null)),(l()(),a._20(-1,null,["\n    "])),(l()(),a.Z(5,0,null,null,1,"ion-img",[["class","logo"],["src","assets/imgs/EPCLogo.png"]],null,null,null,_.b,_.a)),a.Y(6,1228800,null,0,m.a,[a.j,a.z,s.a,[2,t.a],r.a],{src:[0,"src"]},null),(l()(),a._20(-1,null,["\n  "])),(l()(),a._20(-1,1,["\n  "])),(l()(),a.Z(9,0,[["formulario",1]],1,53,"form",[["novalidate",""]],[[2,"ng-untouched",null],[2,"ng-touched",null],[2,"ng-pristine",null],[2,"ng-dirty",null],[2,"ng-valid",null],[2,"ng-invalid",null],[2,"ng-pending",null]],[[null,"submit"],[null,"reset"]],function(l,n,u){var e=!0,o=l.component;if("submit"===n){e=!1!==a._11(l,11).onSubmit(u)&&e}if("reset"===n){e=!1!==a._11(l,11).onReset()&&e}if("submit"===n){e=!1!==o.login()&&e}return e},null,null)),a.Y(10,16384,null,0,h.q,[],null,null),a.Y(11,4210688,null,0,h.l,[[8,null],[8,null]],null,null),a._16(2048,null,h.b,null,[h.l]),a.Y(13,16384,null,0,h.k,[h.b],null,null),(l()(),a._20(-1,null,["\n    "])),(l()(),a.Z(15,0,null,null,46,"ion-list",[],null,null,null,null,null)),a.Y(16,16384,null,0,f.a,[i.a,a.j,a.z,s.a,y.l,r.a],null,null),(l()(),a._20(-1,null,["\n      "])),(l()(),a.Z(18,0,null,null,15,"ion-item",[["class","item item-block"]],null,null,null,v.b,v.a)),a.Y(19,1097728,null,3,b.a,[C.a,i.a,a.j,a.z,[2,Z.a]],null,null),a._18(335544320,1,{contentLabel:0}),a._18(603979776,2,{_buttons:1}),a._18(603979776,3,{_icons:1}),a.Y(23,16384,null,0,P.a,[],null,null),(l()(),a._20(-1,2,["\n        "])),(l()(),a.Z(25,0,null,3,7,"ion-input",[["class","inputClass marginItems"],["name","correo"],["placeholder","Email"],["required",""],["type","email"]],[[1,"required",0],[2,"ng-untouched",null],[2,"ng-touched",null],[2,"ng-pristine",null],[2,"ng-dirty",null],[2,"ng-valid",null],[2,"ng-invalid",null],[2,"ng-pending",null]],[[null,"ngModelChange"]],function(l,n,u){var e=!0;if("ngModelChange"===n){e=!1!==(l.component.mail=u)&&e}return e},Y.b,Y.a)),a.Y(26,16384,null,0,h.o,[],{required:[0,"required"]},null),a._16(1024,null,h.g,function(l){return[l]},[h.o]),a.Y(28,671744,null,0,h.m,[[2,h.b],[2,h.g],[8,null],[8,null]],{name:[0,"name"],model:[1,"model"]},{update:"ngModelChange"}),a._16(2048,null,h.i,null,[h.m]),a.Y(30,16384,null,0,h.j,[h.i],null,null),a.Y(31,5423104,null,0,j.a,[i.a,s.a,C.a,c.a,a.j,a.z,[2,t.a],[2,b.a],[2,h.i],r.a],{type:[0,"type"],placeholder:[1,"placeholder"]},null),(l()(),a._20(-1,null,[" "])),(l()(),a._20(-1,2,["\n      "])),(l()(),a._20(-1,null,["\n      "])),(l()(),a.Z(35,0,null,null,13,"ion-item",[["class","item item-block"]],null,null,null,v.b,v.a)),a.Y(36,1097728,null,3,b.a,[C.a,i.a,a.j,a.z,[2,Z.a]],null,null),a._18(335544320,4,{contentLabel:0}),a._18(603979776,5,{_buttons:1}),a._18(603979776,6,{_icons:1}),a.Y(40,16384,null,0,P.a,[],null,null),(l()(),a._20(-1,2,["\n        "])),(l()(),a.Z(42,0,null,3,5,"ion-input",[["class","inputClass marginItems"],["name","userpass"],["placeholder","Contraseña"],["type","password"]],[[2,"ng-untouched",null],[2,"ng-touched",null],[2,"ng-pristine",null],[2,"ng-dirty",null],[2,"ng-valid",null],[2,"ng-invalid",null],[2,"ng-pending",null]],[[null,"ngModelChange"]],function(l,n,u){var e=!0;if("ngModelChange"===n){e=!1!==(l.component.password=u)&&e}return e},Y.b,Y.a)),a.Y(43,671744,null,0,h.m,[[2,h.b],[8,null],[8,null],[8,null]],{name:[0,"name"],model:[1,"model"]},{update:"ngModelChange"}),a._16(2048,null,h.i,null,[h.m]),a.Y(45,16384,null,0,h.j,[h.i],null,null),a.Y(46,5423104,null,0,j.a,[i.a,s.a,C.a,c.a,a.j,a.z,[2,t.a],[2,b.a],[2,h.i],r.a],{type:[0,"type"],placeholder:[1,"placeholder"]},null),(l()(),a._20(-1,null,[" "])),(l()(),a._20(-1,2,["\n      "])),(l()(),a._20(-1,null,["\n      "])),(l()(),a.Z(50,0,null,null,10,"ion-item",[["class","center item item-block"]],null,null,null,v.b,v.a)),a.Y(51,1097728,null,3,b.a,[C.a,i.a,a.j,a.z,[2,Z.a]],null,null),a._18(335544320,7,{contentLabel:0}),a._18(603979776,8,{_buttons:1}),a._18(603979776,9,{_icons:1}),a.Y(55,16384,null,0,P.a,[],null,null),(l()(),a._20(-1,2,["\n        "])),(l()(),a.Z(57,0,null,2,2,"button",[["class","buttonPayCash borderBtns"],["ion-button",""],["small",""]],null,null,null,k.b,k.a)),a.Y(58,1097728,[[8,4]],0,z.a,[[8,""],i.a,a.j,a.z],{small:[0,"small"]},null),(l()(),a._20(-1,0,["INGRESAR"])),(l()(),a._20(-1,2,["\n      "])),(l()(),a._20(-1,null,["\n    "])),(l()(),a._20(-1,null,["\n  "])),(l()(),a._20(-1,1,["\n  "])),(l()(),a.Z(64,0,null,1,22,"ion-item",[["class","item item-block"]],null,null,null,v.b,v.a)),a.Y(65,1097728,null,3,b.a,[C.a,i.a,a.j,a.z,[2,Z.a]],null,null),a._18(335544320,10,{contentLabel:0}),a._18(603979776,11,{_buttons:1}),a._18(603979776,12,{_icons:1}),a.Y(69,16384,null,0,P.a,[],null,null),(l()(),a._20(-1,2,["\n    "])),(l()(),a.Z(71,0,null,2,6,"ion-col",[["class","col"],["col-6",""]],null,null,null,null,null)),a.Y(72,16384,null,0,w.a,[],null,null),(l()(),a._20(-1,null,["\n      "])),(l()(),a.Z(74,0,null,null,2,"button",[["block",""],["class","transparente"],["clear",""],["ion-button",""]],null,[[null,"click"]],function(l,n,u){var e=!0;if("click"===n){e=!1!==l.component.registro()&&e}return e},k.b,k.a)),a.Y(75,1097728,null,0,z.a,[[8,""],i.a,a.j,a.z],{clear:[0,"clear"],block:[1,"block"]},null),(l()(),a._20(-1,0,["Registrarme"])),(l()(),a._20(-1,null,["\n    "])),(l()(),a._20(-1,2,["\n    "])),(l()(),a.Z(79,0,null,2,6,"ion-col",[["class","col"],["col-6",""]],null,null,null,null,null)),a.Y(80,16384,null,0,w.a,[],null,null),(l()(),a._20(-1,null,["\n      "])),(l()(),a.Z(82,0,null,null,2,"button",[["block",""],["class","transparente"],["clear",""],["ion-button",""]],null,[[null,"click"]],function(l,n,u){var e=!0;if("click"===n){e=!1!==l.component.recuperarcontrasena()&&e}return e},k.b,k.a)),a.Y(83,1097728,null,0,z.a,[[8,""],i.a,a.j,a.z],{clear:[0,"clear"],block:[1,"block"]},null),(l()(),a._20(-1,0,["Recuperar contraseña"])),(l()(),a._20(-1,null,["\n    "])),(l()(),a._20(-1,2,["\n  "])),(l()(),a._20(-1,1,["\n"]))],function(l,n){var u=n.component;l(n,6,0,"assets/imgs/EPCLogo.png");l(n,26,0,"");l(n,28,0,"correo",u.mail);l(n,31,0,"email","Email");l(n,43,0,"userpass",u.password);l(n,46,0,"password","Contraseña");l(n,58,0,"");l(n,75,0,"","");l(n,83,0,"","")},function(l,n){l(n,0,0,a._11(n,1).statusbarPadding,a._11(n,1)._hasRefresher);l(n,9,0,a._11(n,13).ngClassUntouched,a._11(n,13).ngClassTouched,a._11(n,13).ngClassPristine,a._11(n,13).ngClassDirty,a._11(n,13).ngClassValid,a._11(n,13).ngClassInvalid,a._11(n,13).ngClassPending);l(n,25,0,a._11(n,26).required?"":null,a._11(n,30).ngClassUntouched,a._11(n,30).ngClassTouched,a._11(n,30).ngClassPristine,a._11(n,30).ngClassDirty,a._11(n,30).ngClassValid,a._11(n,30).ngClassInvalid,a._11(n,30).ngClassPending);l(n,42,0,a._11(n,45).ngClassUntouched,a._11(n,45).ngClassTouched,a._11(n,45).ngClassPristine,a._11(n,45).ngClassDirty,a._11(n,45).ngClassValid,a._11(n,45).ngClassInvalid,a._11(n,45).ngClassPending)})}u.d(n,"a",function(){return E});var a=u(0),o=u(36),t=u(19),i=u(3),s=u(5),r=u(9),c=u(8),d=u(25),p=u(6),g=u(18),_=u(102),m=u(62),h=u(17),f=u(52),y=u(10),v=u(53),b=u(21),C=u(20),Z=u(37),P=u(45),Y=u(63),j=u(44),k=u(30),z=u(23),w=u(50),q=u(72),I=u(38),x=u(27),M=u(40),D=u(65),T=a.X({encapsulation:2,styles:[],data:{}}),E=a.V("page-login",q.a,function(l){return a._22(0,[(l()(),a.Z(0,0,null,null,1,"page-login",[],null,null,null,e,T)),a.Y(1,49152,null,0,q.a,[g.a,I.a,x.a,M.a,D.a],null,null)],null,null)},{},{},[])},393:function(l,n,u){"use strict";function e(l){return a._22(0,[a._13(0,o.f,[a.r]),(l()(),a.Z(1,0,null,null,19,"ion-header",[],null,null,null,null,null)),a.Y(2,16384,null,0,t.a,[i.a,a.j,a.z,[2,s.a]],null,null),(l()(),a._20(-1,null,["\n  "])),(l()(),a.Z(4,0,null,null,15,"ion-navbar",[["class","toolbar"]],[[8,"hidden",0],[2,"statusbar-padding",null]],null,null,r.b,r.a)),a.Y(5,49152,null,0,c.a,[d.a,[2,s.a],[2,p.a],i.a,a.j,a.z],null,null),(l()(),a._20(-1,3,["\n    "])),(l()(),a.Z(7,0,null,3,2,"ion-title",[],null,null,null,g.b,g.a)),a.Y(8,49152,null,0,_.a,[i.a,a.j,a.z,[2,m.a],[2,c.a]],null,null),(l()(),a._20(-1,0,["Transacción"])),(l()(),a._20(-1,3,["\n    "])),(l()(),a.Z(11,0,null,2,7,"ion-buttons",[["end",""]],null,null,null,null,null)),a.Y(12,16384,null,1,h.a,[i.a,a.j,a.z,[2,m.a],[2,c.a]],null,null),a._18(603979776,1,{_buttons:1}),(l()(),a._20(-1,null,["\n      "])),(l()(),a.Z(15,0,null,null,2,"button",[["ion-button",""]],null,[[null,"click"]],function(l,n,u){var e=!0;if("click"===n){e=!1!==l.component.closeModal()&&e}return e},f.b,f.a)),a.Y(16,1097728,[[1,4]],0,y.a,[[8,""],i.a,a.j,a.z],null,null),(l()(),a._20(-1,0,["Cerrar"])),(l()(),a._20(-1,null,["\n    "])),(l()(),a._20(-1,3,["\n  "])),(l()(),a._20(-1,null,["\n"])),(l()(),a._20(-1,null,["\n"])),(l()(),a.Z(22,0,null,null,78,"ion-content",[["padding",""]],[[2,"statusbar-padding",null],[2,"has-refresher",null]],null,null,v.b,v.a)),a.Y(23,4374528,null,0,b.a,[i.a,C.a,Z.a,a.j,a.z,d.a,P.a,a.u,[2,s.a],[2,p.a]],null,null),(l()(),a._20(-1,1,["\n  "])),(l()(),a.Z(25,0,null,1,18,"ion-card",[],null,null,null,null,null)),a.Y(26,16384,null,0,Y.a,[i.a,a.j,a.z],null,null),(l()(),a._20(-1,null,["\n    "])),(l()(),a.Z(28,0,null,null,2,"ion-card-header",[],null,null,null,null,null)),a.Y(29,16384,null,0,j.a,[i.a,a.j,a.z],null,null),(l()(),a._20(30,null,["\n      ","\n    "])),(l()(),a._20(-1,null,["\n    "])),(l()(),a.Z(32,0,null,null,10,"ion-card-content",[],null,null,null,null,null)),a.Y(33,16384,null,0,k.a,[i.a,a.j,a.z],null,null),(l()(),a._20(-1,null,["\n      "])),(l()(),a.Z(35,0,null,null,2,"h6",[],null,null,null,null,null)),(l()(),a._20(36,null,["1 "," == "," "," "])),a._15(37,1),(l()(),a._20(-1,null,["\n      "])),(l()(),a.Z(39,0,null,null,2,"h6",[],null,null,null,null,null)),(l()(),a._20(40,null,["1 "," == "," USD "])),a._15(41,1),(l()(),a._20(-1,null,["\n    "])),(l()(),a._20(-1,null,["\n  "])),(l()(),a._20(-1,1,["\n  "])),(l()(),a.Z(45,0,null,1,54,"ion-card",[],null,null,null,null,null)),a.Y(46,16384,null,0,Y.a,[i.a,a.j,a.z],null,null),(l()(),a._20(-1,null,["\n    "])),(l()(),a.Z(48,0,null,null,2,"ion-card-header",[],null,null,null,null,null)),a.Y(49,16384,null,0,j.a,[i.a,a.j,a.z],null,null),(l()(),a._20(-1,null,["\n      Información de la transación\n    "])),(l()(),a._20(-1,null,["\n    "])),(l()(),a.Z(52,0,null,null,46,"ion-card-content",[],null,null,null,null,null)),a.Y(53,16384,null,0,k.a,[i.a,a.j,a.z],null,null),(l()(),a._20(-1,null,["\n        "])),(l()(),a.Z(55,0,null,null,1,"label",[["stacked",""]],null,null,null,null,null)),(l()(),a._20(-1,null,["Ingresar número celular"])),(l()(),a._20(-1,null,["\n        "])),(l()(),a.Z(58,0,null,null,8,"ion-input",[["name","transaction-celular"],["type","text"]],[[2,"ng-untouched",null],[2,"ng-touched",null],[2,"ng-pristine",null],[2,"ng-dirty",null],[2,"ng-valid",null],[2,"ng-invalid",null],[2,"ng-pending",null]],[[null,"ngModelChange"],[null,"keyup"],[null,"ionBlur"],[null,"ionFocus"]],function(l,n,u){var e=!0,o=l.component;if("keyup"===n){e=!1!==a._11(l,59).inputKeyup(u)&&e}if("ionBlur"===n){e=!1!==a._11(l,59).inputOnblur(u)&&e}if("ionFocus"===n){e=!1!==a._11(l,59).inputFocus(u)&&e}if("ngModelChange"===n){e=!1!==(o.transaction.phone_user_des=u)&&e}return e},z.b,z.a)),a.Y(59,81920,null,0,w.a,[a.z,a.j],{brmasker:[0,"brmasker"]},null),a._14(60,{type:0}),a._16(1024,null,q.h,function(l){return[l]},[w.a]),a.Y(62,671744,null,0,q.m,[[8,null],[8,null],[8,null],[2,q.h]],{name:[0,"name"],model:[1,"model"]},{update:"ngModelChange"}),a._16(2048,null,q.i,null,[q.m]),a.Y(64,16384,null,0,q.j,[q.i],null,null),a.Y(65,5423104,null,0,I.a,[i.a,C.a,x.a,d.a,a.j,a.z,[2,b.a],[2,M.a],[2,q.i],Z.a],{type:[0,"type"]},{ionFocus:"ionFocus",ionBlur:"ionBlur"}),a.Y(66,81920,null,0,D.a,[],null,null),(l()(),a._20(-1,null,["\n        "])),(l()(),a.Z(68,0,null,null,1,"label",[["stacked",""]],null,null,null,null,null)),(l()(),a._20(-1,null,["Ingresar clave de seguridad (4 digitos)"])),(l()(),a._20(-1,null,["\n        "])),(l()(),a.Z(71,0,null,null,8,"ion-input",[["name","transaction-clave"],["type","number"]],[[2,"ng-untouched",null],[2,"ng-touched",null],[2,"ng-pristine",null],[2,"ng-dirty",null],[2,"ng-valid",null],[2,"ng-invalid",null],[2,"ng-pending",null]],[[null,"ngModelChange"],[null,"keyup"],[null,"ionBlur"],[null,"ionFocus"]],function(l,n,u){var e=!0,o=l.component;if("keyup"===n){e=!1!==a._11(l,72).inputKeyup(u)&&e}if("ionBlur"===n){e=!1!==a._11(l,72).inputOnblur(u)&&e}if("ionFocus"===n){e=!1!==a._11(l,72).inputFocus(u)&&e}if("ngModelChange"===n){e=!1!==(o.transaction.key_user=u)&&e}return e},z.b,z.a)),a.Y(72,81920,null,0,w.a,[a.z,a.j],{brmasker:[0,"brmasker"]},null),a._14(73,{len:0}),a._16(1024,null,q.h,function(l){return[l]},[w.a]),a.Y(75,671744,null,0,q.m,[[8,null],[8,null],[8,null],[2,q.h]],{name:[0,"name"],model:[1,"model"]},{update:"ngModelChange"}),a._16(2048,null,q.i,null,[q.m]),a.Y(77,16384,null,0,q.j,[q.i],null,null),a.Y(78,5423104,null,0,I.a,[i.a,C.a,x.a,d.a,a.j,a.z,[2,b.a],[2,M.a],[2,q.i],Z.a],{type:[0,"type"]},{ionFocus:"ionFocus",ionBlur:"ionBlur"}),a.Y(79,81920,null,0,D.a,[],null,null),(l()(),a._20(-1,null,["\n        "])),(l()(),a.Z(81,0,null,null,1,"label",[["stacked",""]],null,null,null,null,null)),(l()(),a._20(-1,null,["Ingresar el valor de la transacción"])),(l()(),a._20(-1,null,["\n        "])),(l()(),a.Z(84,0,null,null,9,"ion-input",[["name","transaction-valor"],["type","text"]],[[2,"ng-untouched",null],[2,"ng-touched",null],[2,"ng-pristine",null],[2,"ng-dirty",null],[2,"ng-valid",null],[2,"ng-invalid",null],[2,"ng-pending",null]],[[null,"ngModelChange"],[null,"keyup"],[null,"ionBlur"],[null,"ionFocus"]],function(l,n,u){var e=!0,o=l.component;if("keyup"===n){e=!1!==a._11(l,85).inputKeyup(u)&&e}if("ionBlur"===n){e=!1!==a._11(l,85).inputOnblur(u)&&e}if("ionFocus"===n){e=!1!==a._11(l,85).inputFocus(u)&&e}if("ngModelChange"===n){e=!1!==(o.transaction.amount_local=u)&&e}return e},z.b,z.a)),a.Y(85,81920,null,0,w.a,[a.z,a.j],{brmasker:[0,"brmasker"]},null),a._14(86,{money:0,decimal:1,thousand:2,type:3}),a._16(1024,null,q.h,function(l){return[l]},[w.a]),a.Y(88,671744,null,0,q.m,[[8,null],[8,null],[8,null],[2,q.h]],{name:[0,"name"],model:[1,"model"]},{update:"ngModelChange"}),a._16(2048,null,q.i,null,[q.m]),a.Y(90,16384,null,0,q.j,[q.i],null,null),a.Y(91,5423104,null,0,I.a,[i.a,C.a,x.a,d.a,a.j,a.z,[2,b.a],[2,M.a],[2,q.i],Z.a],{type:[0,"type"]},{ionFocus:"ionFocus",ionBlur:"ionBlur"}),a.Y(92,81920,null,0,D.a,[],null,null),(l()(),a._20(-1,null,["\n\n        "])),(l()(),a._20(-1,null,["\n        "])),(l()(),a.Z(95,0,null,null,2,"button",[["class","buttonPayCash"],["ion-button",""]],null,[[null,"click"]],function(l,n,u){var e=!0;if("click"===n){e=!1!==l.component.doTrasaction()&&e}return e},f.b,f.a)),a.Y(96,1097728,null,0,y.a,[[8,""],i.a,a.j,a.z],null,null),(l()(),a._20(-1,0,["Solicitar transacción"])),(l()(),a._20(-1,null,["\n    "])),(l()(),a._20(-1,null,["\n  "])),(l()(),a._20(-1,1,["\n\n"])),(l()(),a._20(-1,null,["\n"]))],function(l,n){var u=n.component;l(n,59,0,l(n,60,0,"num"));l(n,62,0,"transaction-celular",u.transaction.phone_user_des);l(n,65,0,"text"),l(n,66,0);l(n,72,0,l(n,73,0,4));l(n,75,0,"transaction-clave",u.transaction.key_user);l(n,78,0,"number"),l(n,79,0);l(n,85,0,l(n,86,0,!0,0,",","num"));l(n,88,0,"transaction-valor",u.transaction.amount_local);l(n,91,0,"text"),l(n,92,0)},function(l,n){var u=n.component;l(n,4,0,a._11(n,5)._hidden,a._11(n,5)._sbPadding);l(n,22,0,a._11(n,23).statusbarPadding,a._11(n,23)._hasRefresher);l(n,30,0,u.moneda.full_name);l(n,36,0,u.moneda.full_name,a._21(n,36,1,l(n,37,0,a._11(n,0),u.moneda.local_usd_value)),u.userCountry.currency);l(n,40,0,u.moneda.full_name,a._21(n,40,1,l(n,41,0,a._11(n,0),u.moneda.usd_value)));l(n,58,0,a._11(n,64).ngClassUntouched,a._11(n,64).ngClassTouched,a._11(n,64).ngClassPristine,a._11(n,64).ngClassDirty,a._11(n,64).ngClassValid,a._11(n,64).ngClassInvalid,a._11(n,64).ngClassPending);l(n,71,0,a._11(n,77).ngClassUntouched,a._11(n,77).ngClassTouched,a._11(n,77).ngClassPristine,a._11(n,77).ngClassDirty,a._11(n,77).ngClassValid,a._11(n,77).ngClassInvalid,a._11(n,77).ngClassPending);l(n,84,0,a._11(n,90).ngClassUntouched,a._11(n,90).ngClassTouched,a._11(n,90).ngClassPristine,a._11(n,90).ngClassDirty,a._11(n,90).ngClassValid,a._11(n,90).ngClassInvalid,a._11(n,90).ngClassPending)})}u.d(n,"a",function(){return N});var a=u(0),o=u(16),t=u(70),i=u(3),s=u(6),r=u(100),c=u(39),d=u(8),p=u(18),g=u(101),_=u(64),m=u(46),h=u(139),f=u(30),y=u(23),v=u(36),b=u(19),C=u(5),Z=u(9),P=u(25),Y=u(74),j=u(118),k=u(75),z=u(63),w=u(207),q=u(17),I=u(44),x=u(20),M=u(21),D=u(107),T=u(155),E=u(14),U=u(40),V=u(38),B=u(24),R=u(27),L=a.X({encapsulation:2,styles:[],data:{}}),N=a.V("page-modal-transaction",T.a,function(l){return a._22(0,[(l()(),a.Z(0,0,null,null,1,"page-modal-transaction",[],null,null,null,e,L)),a.Y(1,49152,null,0,T.a,[E.a,s.a,U.a,V.a,B.a,R.a,p.a],null,null)],null,null)},{},{},[])},394:function(l,n,u){"use strict";function e(l){return a._22(0,[(l()(),a._20(-1,null,["\n"])),(l()(),a.Z(1,0,null,null,31,"ion-content",[["class","tamano"],["padding",""]],[[2,"statusbar-padding",null],[2,"has-refresher",null]],null,null,o.b,o.a)),a.Y(2,4374528,null,0,t.a,[i.a,s.a,r.a,a.j,a.z,c.a,d.a,a.u,[2,p.a],[2,g.a]],null,null),(l()(),a._20(-1,1,["\n  "])),(l()(),a.Z(4,0,null,1,25,"ion-row",[["class","row"]],null,null,null,null,null)),a.Y(5,16384,null,0,_.a,[],null,null),(l()(),a._20(-1,null,["\n    "])),(l()(),a.Z(7,0,null,null,5,"ion-col",[["class","col"],["col-10",""]],null,null,null,null,null)),a.Y(8,16384,null,0,m.a,[],null,null),(l()(),a._20(-1,null,["\n      "])),(l()(),a.Z(10,0,null,null,1,"h4",[],null,null,null,null,null)),(l()(),a._20(11,null,["Bienvenido ",""])),(l()(),a._20(-1,null,["\n    "])),(l()(),a._20(-1,null,["\n    "])),(l()(),a.Z(14,0,null,null,14,"ion-col",[["class","col"],["col-2",""]],null,null,null,null,null)),a.Y(15,16384,null,0,m.a,[],null,null),(l()(),a._20(-1,null,["\n      "])),(l()(),a.Z(17,0,null,null,10,"ion-buttons",[["end",""]],null,null,null,null,null)),a.Y(18,16384,null,1,h.a,[i.a,a.j,a.z,[2,f.a],[2,y.a]],null,null),a._18(603979776,1,{_buttons:1}),(l()(),a._20(-1,null,["\n        "])),(l()(),a.Z(21,0,null,null,5,"button",[["icon-only",""],["ion-button",""]],null,[[null,"click"]],function(l,n,u){var e=!0;if("click"===n){e=!1!==l.component.closeModal()&&e}return e},v.b,v.a)),a.Y(22,1097728,[[1,4]],0,b.a,[[8,""],i.a,a.j,a.z],null,null),(l()(),a._20(-1,0,["\n          "])),(l()(),a.Z(24,0,null,0,1,"ion-icon",[["item-right",""],["name","ios-close-outline"],["role","img"]],[[2,"hide",null]],null,null,null,null)),a.Y(25,147456,null,0,C.a,[i.a,a.j,a.z],{name:[0,"name"]},null),(l()(),a._20(-1,0,["\n        "])),(l()(),a._20(-1,null,["\n      "])),(l()(),a._20(-1,null,["\n    "])),(l()(),a._20(-1,null,["\n  "])),(l()(),a._20(-1,1,["\n\n  "])),(l()(),a.Z(31,0,null,1,0,"img",[["src","assets/imgs/ok.png"]],null,null,null,null,null)),(l()(),a._20(-1,1,["\n"])),(l()(),a._20(-1,null,["\n"]))],function(l,n){l(n,25,0,"ios-close-outline")},function(l,n){var u=n.component;l(n,1,0,a._11(n,2).statusbarPadding,a._11(n,2)._hasRefresher);l(n,11,0,u.name);l(n,24,0,a._11(n,25)._hidden)})}u.d(n,"a",function(){return j});var a=u(0),o=u(36),t=u(19),i=u(3),s=u(5),r=u(9),c=u(8),d=u(25),p=u(6),g=u(18),_=u(51),m=u(50),h=u(139),f=u(46),y=u(39),v=u(30),b=u(23),C=u(42),Z=u(151),P=u(14),Y=a.X({encapsulation:2,styles:[],data:{}}),j=a.V("page-modal-welcome",Z.a,function(l){return a._22(0,[(l()(),a.Z(0,0,null,null,1,"page-modal-welcome",[],null,null,null,e,Y)),a.Y(1,49152,null,0,Z.a,[g.a,P.a],null,null)],null,null)},{},{},[])},395:function(l,n,u){"use strict";function e(l){return a._22(0,[(l()(),a._20(-1,null,["\n"])),(l()(),a.Z(1,0,null,null,61,"ion-content",[["class","fondo_gris"],["padding",""]],[[2,"statusbar-padding",null],[2,"has-refresher",null]],null,null,o.b,o.a)),a.Y(2,4374528,null,0,t.a,[i.a,s.a,r.a,a.j,a.z,c.a,d.a,a.u,[2,p.a],[2,g.a]],null,null),(l()(),a._20(-1,1,["\n  "])),(l()(),a.Z(4,0,[["formulario",1]],1,57,"form",[["novalidate",""]],[[2,"ng-untouched",null],[2,"ng-touched",null],[2,"ng-pristine",null],[2,"ng-dirty",null],[2,"ng-valid",null],[2,"ng-invalid",null],[2,"ng-pending",null]],[[null,"submit"],[null,"reset"]],function(l,n,u){var e=!0,o=l.component;if("submit"===n){e=!1!==a._11(l,6).onSubmit(u)&&e}if("reset"===n){e=!1!==a._11(l,6).onReset()&&e}if("submit"===n){e=!1!==o.recovery()&&e}return e},null,null)),a.Y(5,16384,null,0,_.q,[],null,null),a.Y(6,4210688,null,0,_.l,[[8,null],[8,null]],null,null),a._16(2048,null,_.b,null,[_.l]),a.Y(8,16384,null,0,_.k,[_.b],null,null),(l()(),a._20(-1,null,["\n    "])),(l()(),a.Z(10,0,null,null,50,"ion-list",[],null,null,null,null,null)),a.Y(11,16384,null,0,m.a,[i.a,a.j,a.z,s.a,h.l,r.a],null,null),(l()(),a._20(-1,null,["\n      "])),(l()(),a.Z(13,0,null,null,16,"ion-item",[["class","item item-block"]],null,null,null,f.b,f.a)),a.Y(14,1097728,null,3,y.a,[v.a,i.a,a.j,a.z,[2,b.a]],null,null),a._18(335544320,1,{contentLabel:0}),a._18(603979776,2,{_buttons:1}),a._18(603979776,3,{_icons:1}),a.Y(18,16384,null,0,C.a,[],null,null),(l()(),a._20(-1,2,["\n        "])),(l()(),a.Z(20,0,null,1,2,"ion-label",[["stacked",""]],null,null,null,null,null)),a.Y(21,16384,[[1,4]],0,Z.a,[i.a,a.j,a.z,[8,null],[8,""],[8,null],[8,null]],null,null),(l()(),a._20(-1,null,["Ingrese la nueva contraseña"])),(l()(),a._20(-1,2,["\n        "])),(l()(),a.Z(24,0,null,3,4,"ion-input",[["name","recovery_pass"],["type","password"]],[[2,"ng-untouched",null],[2,"ng-touched",null],[2,"ng-pristine",null],[2,"ng-dirty",null],[2,"ng-valid",null],[2,"ng-invalid",null],[2,"ng-pending",null]],[[null,"ngModelChange"]],function(l,n,u){var e=!0;if("ngModelChange"===n){e=!1!==(l.component.infoRecovery.new_password=u)&&e}return e},P.b,P.a)),a.Y(25,671744,null,0,_.m,[[2,_.b],[8,null],[8,null],[8,null]],{name:[0,"name"],model:[1,"model"]},{update:"ngModelChange"}),a._16(2048,null,_.i,null,[_.m]),a.Y(27,16384,null,0,_.j,[_.i],null,null),a.Y(28,5423104,null,0,Y.a,[i.a,s.a,v.a,c.a,a.j,a.z,[2,t.a],[2,y.a],[2,_.i],r.a],{type:[0,"type"]},null),(l()(),a._20(-1,2,["\n      "])),(l()(),a._20(-1,null,["\n      "])),(l()(),a.Z(31,0,null,null,16,"ion-item",[["class","item item-block"]],null,null,null,f.b,f.a)),a.Y(32,1097728,null,3,y.a,[v.a,i.a,a.j,a.z,[2,b.a]],null,null),a._18(335544320,4,{contentLabel:0}),a._18(603979776,5,{_buttons:1}),a._18(603979776,6,{_icons:1}),a.Y(36,16384,null,0,C.a,[],null,null),(l()(),a._20(-1,2,["\n        "])),(l()(),a.Z(38,0,null,1,2,"ion-label",[["stacked",""]],null,null,null,null,null)),a.Y(39,16384,[[4,4]],0,Z.a,[i.a,a.j,a.z,[8,null],[8,""],[8,null],[8,null]],null,null),(l()(),a._20(-1,null,["Confirme la nueva contraseña"])),(l()(),a._20(-1,2,["\n        "])),(l()(),a.Z(42,0,null,3,4,"ion-input",[["name","recovery_pass2"],["type","password"]],[[2,"ng-untouched",null],[2,"ng-touched",null],[2,"ng-pristine",null],[2,"ng-dirty",null],[2,"ng-valid",null],[2,"ng-invalid",null],[2,"ng-pending",null]],[[null,"ngModelChange"]],function(l,n,u){var e=!0;if("ngModelChange"===n){e=!1!==(l.component.infoRecovery.new_password_conf=u)&&e}return e},P.b,P.a)),a.Y(43,671744,null,0,_.m,[[2,_.b],[8,null],[8,null],[8,null]],{name:[0,"name"],model:[1,"model"]},{update:"ngModelChange"}),a._16(2048,null,_.i,null,[_.m]),a.Y(45,16384,null,0,_.j,[_.i],null,null),a.Y(46,5423104,null,0,Y.a,[i.a,s.a,v.a,c.a,a.j,a.z,[2,t.a],[2,y.a],[2,_.i],r.a],{type:[0,"type"]},null),(l()(),a._20(-1,2,["\n      "])),(l()(),a._20(-1,null,["\n      "])),(l()(),a.Z(49,0,null,null,10,"ion-item",[["class","item item-block"]],null,null,null,f.b,f.a)),a.Y(50,1097728,null,3,y.a,[v.a,i.a,a.j,a.z,[2,b.a]],null,null),a._18(335544320,7,{contentLabel:0}),a._18(603979776,8,{_buttons:1}),a._18(603979776,9,{_icons:1}),a.Y(54,16384,null,0,C.a,[],null,null),(l()(),a._20(-1,2,["\n        "])),(l()(),a.Z(56,0,null,2,2,"button",[["block",""],["class","buttonPayCash"],["ion-button",""]],null,null,null,j.b,j.a)),a.Y(57,1097728,[[8,4]],0,k.a,[[8,""],i.a,a.j,a.z],{block:[0,"block"]},null),(l()(),a._20(-1,0,["Guardar"])),(l()(),a._20(-1,2,["\n      "])),(l()(),a._20(-1,null,["\n    "])),(l()(),a._20(-1,null,["\n  "])),(l()(),a._20(-1,1,["\n"])),(l()(),a._20(-1,null,["\n"]))],function(l,n){var u=n.component;l(n,25,0,"recovery_pass",u.infoRecovery.new_password);l(n,28,0,"password");l(n,43,0,"recovery_pass2",u.infoRecovery.new_password_conf);l(n,46,0,"password");l(n,57,0,"")},function(l,n){l(n,1,0,a._11(n,2).statusbarPadding,a._11(n,2)._hasRefresher);l(n,4,0,a._11(n,8).ngClassUntouched,a._11(n,8).ngClassTouched,a._11(n,8).ngClassPristine,a._11(n,8).ngClassDirty,a._11(n,8).ngClassValid,a._11(n,8).ngClassInvalid,a._11(n,8).ngClassPending);l(n,24,0,a._11(n,27).ngClassUntouched,a._11(n,27).ngClassTouched,a._11(n,27).ngClassPristine,a._11(n,27).ngClassDirty,a._11(n,27).ngClassValid,a._11(n,27).ngClassInvalid,a._11(n,27).ngClassPending);l(n,42,0,a._11(n,45).ngClassUntouched,a._11(n,45).ngClassTouched,a._11(n,45).ngClassPristine,a._11(n,45).ngClassDirty,a._11(n,45).ngClassValid,a._11(n,45).ngClassInvalid,a._11(n,45).ngClassPending)})}u.d(n,"a",function(){return T});var a=u(0),o=u(36),t=u(19),i=u(3),s=u(5),r=u(9),c=u(8),d=u(25),p=u(6),g=u(18),_=u(17),m=u(52),h=u(10),f=u(53),y=u(21),v=u(20),b=u(37),C=u(45),Z=u(43),P=u(63),Y=u(44),j=u(30),k=u(23),z=u(153),w=u(14),q=u(24),I=u(40),x=u(27),M=u(38),D=a.X({encapsulation:2,styles:[],data:{}}),T=a.V("page-password-update",z.a,function(l){return a._22(0,[(l()(),a.Z(0,0,null,null,1,"page-password-update",[],null,null,null,e,D)),a.Y(1,49152,null,0,z.a,[g.a,w.a,q.a,I.a,x.a,M.a],null,null)],null,null)},{},{},[])},396:function(l,n,u){"use strict";function e(l){return a._22(0,[(l()(),a.Z(0,0,null,null,194,"ion-content",[["class","imgBackground"]],[[2,"statusbar-padding",null],[2,"has-refresher",null]],null,null,o.b,o.a)),a.Y(1,4374528,null,0,t.a,[i.a,s.a,r.a,a.j,a.z,c.a,d.a,a.u,[2,p.a],[2,g.a]],null,null),(l()(),a._20(-1,1,["\n  "])),(l()(),a.Z(3,0,null,1,190,"div",[["padding",""]],null,null,null,null,null)),(l()(),a._20(-1,null,["\n    "])),(l()(),a.Z(5,0,null,null,187,"div",[["style","background:white; border-radius:8px; padding: 2%"]],null,null,null,null,null)),(l()(),a._20(-1,null,["\n      "])),(l()(),a._20(-1,null,["\n      "])),(l()(),a.Z(8,0,null,null,0,"br",[],null,null,null,null,null)),(l()(),a.Z(9,0,null,null,0,"br",[],null,null,null,null,null)),(l()(),a._20(-1,null,["\n      "])),(l()(),a.Z(11,0,null,null,1,"a",[["style","font-weight: bold"]],null,[[null,"click"]],function(l,n,u){var e=!0;if("click"===n){e=!1!==l.component.politicaPrivacidad()&&e}return e},null,null)),(l()(),a._20(-1,null,["POLÍTICA DE PRIVACIDAD."])),(l()(),a._20(-1,null,["\n      "])),(l()(),a.Z(14,0,null,null,0,"br",[],null,null,null,null,null)),(l()(),a._20(-1,null,["\n      "])),(l()(),a.Z(16,0,null,null,2,"p",[["class","Titles"]],null,null,null,null,null)),(l()(),a.Z(17,0,null,null,1,"i",[],null,null,null,null,null)),(l()(),a._20(-1,null,["Usos autorizados de nuestros servicios."])),(l()(),a._20(-1,null,["\n      "])),(l()(),a.Z(20,0,null,null,5,"a",[["class","textNomral"]],null,null,null,null,null)),(l()(),a._20(-1,null,["\n        "])),(l()(),a.Z(22,0,null,null,3,"i",[],null,null,null,null,null)),(l()(),a.Z(23,0,null,null,1,"b",[],null,null,null,null,null)),(l()(),a._20(-1,null,["Datos que nos proporciona."])),(l()(),a._20(-1,null,[" Recopilamos la información que nos proporciona, que incluye:"])),(l()(),a._20(-1,null,["\n      "])),(l()(),a.Z(27,0,null,null,0,"br",[],null,null,null,null,null)),(l()(),a.Z(28,0,null,null,0,"br",[],null,null,null,null,null)),(l()(),a._20(-1,null,["\n      "])),(l()(),a.Z(30,0,null,null,1,"a",[["class","textNomral"]],null,null,null,null,null)),(l()(),a._20(-1,null,["\n        - Su nombre, dirección de correo electrónico, número de teléfono móvil."])),(l()(),a._20(-1,null,["\n      "])),(l()(),a.Z(33,0,null,null,0,"br",[],null,null,null,null,null)),(l()(),a.Z(34,0,null,null,0,"br",[],null,null,null,null,null)),(l()(),a._20(-1,null,["\n      "])),(l()(),a.Z(36,0,null,null,1,"a",[["class","textNomral"]],null,null,null,null,null)),(l()(),a._20(-1,null,["\n        - Información sobre las transacciones que completa utilizando nuestros servicios, incluida la cantidad de\n        fondos asociados con una transacción de criptomoneda, el tipo de transacción ejecutada y otra información\n        relacionada."])),(l()(),a._20(-1,null,["\n      "])),(l()(),a.Z(39,0,null,null,0,"br",[],null,null,null,null,null)),(l()(),a.Z(40,0,null,null,0,"br",[],null,null,null,null,null)),(l()(),a._20(-1,null,["\n      "])),(l()(),a.Z(42,0,null,null,1,"a",[["class","textNomral"]],null,null,null,null,null)),(l()(),a._20(-1,null,["\n        - Los correos electrónicos y números de teléfono de sus contactos, si elige invitar a sus amigos a usar\n        EyePayCash como parte de nuestro programa de referencia cuando crea su cuenta."])),(l()(),a._20(-1,null,["\n      "])),(l()(),a.Z(45,0,null,null,0,"br",[],null,null,null,null,null)),(l()(),a.Z(46,0,null,null,0,"br",[],null,null,null,null,null)),(l()(),a._20(-1,null,["\n      "])),(l()(),a.Z(48,0,null,null,1,"a",[["class","textNomral"]],null,null,null,null,null)),(l()(),a._20(-1,null,["\n        - Si usa nuestras aplicaciones móviles, recopilamos de su dispositivo móvil una ID única (donde su dispositivo\n        es un iPhone, también recolectamos el CFUUID recomendado por Apple (el identificador universal único de\n        información)."])),(l()(),a._20(-1,null,["\n      "])),(l()(),a.Z(51,0,null,null,0,"br",[],null,null,null,null,null)),(l()(),a._20(-1,null,["\n      "])),(l()(),a.Z(53,0,null,null,1,"p",[["class","Titles"]],null,null,null,null,null)),(l()(),a._20(-1,null,["Otros datos recopilados."])),(l()(),a._20(-1,null,["\n      "])),(l()(),a.Z(56,0,null,null,1,"a",[["class","textNomral"]],null,null,null,null,null)),(l()(),a._20(-1,null,["\n        También podemos recopilar automáticamente los siguientes datos:"])),(l()(),a._20(-1,null,["\n      "])),(l()(),a.Z(59,0,null,null,0,"br",[],null,null,null,null,null)),(l()(),a.Z(60,0,null,null,0,"br",[],null,null,null,null,null)),(l()(),a._20(-1,null,["\n      "])),(l()(),a.Z(62,0,null,null,2,"b",[],null,null,null,null,null)),(l()(),a.Z(63,0,null,null,1,"i",[],null,null,null,null,null)),(l()(),a._20(-1,null,[" - Analítica."])),(l()(),a._20(-1,null,["\n      "])),(l()(),a.Z(66,0,null,null,0,"br",[],null,null,null,null,null)),(l()(),a.Z(67,0,null,null,0,"br",[],null,null,null,null,null)),(l()(),a._20(-1,null,["\n      "])),(l()(),a.Z(69,0,null,null,1,"a",[["class","textNomral"]],null,null,null,null,null)),(l()(),a._20(-1,null,["\n        Cuando visita nuestro sitio web, utilizamos herramientas de análisis de terceros para recopilar datos sobre su\n        computadora y conexión a Internet. Esa información incluye la dirección IP de su computadora y/o proveedor de\n        servicios de Internet, cuando accede a nuestro sitio web, la dirección de Internet de los sitios web desde los\n        cuales se conecta a nuestro sitio web y desde donde llegó antes de aterrizar en nuestro sitio web, el navegador\n        que usted está utilizando, y sus movimientos y preferencias en nuestro sitio web. Toda esta información se usa\n        internamente con el propósito de comprender cómo se está utilizando nuestro sitio web y mejorar nuestro sitio\n        web. También utilizamos herramientas de análisis de terceros para recopilar datos sobre su uso de nuestras\n        aplicaciones móviles. La información recopilada identifica los tipos y el momento de las acciones que realiza\n        dentro de nuestro dispositivo móvil, incluida la instalación, el registro, la carga y ciertos tipos de\n        navegación."])),(l()(),a._20(-1,null,["\n      "])),(l()(),a.Z(72,0,null,null,0,"br",[],null,null,null,null,null)),(l()(),a.Z(73,0,null,null,0,"br",[],null,null,null,null,null)),(l()(),a._20(-1,null,["\n      "])),(l()(),a.Z(75,0,null,null,2,"b",[],null,null,null,null,null)),(l()(),a.Z(76,0,null,null,1,"i",[],null,null,null,null,null)),(l()(),a._20(-1,null,[" - Etiquetas de acción."])),(l()(),a._20(-1,null,["\n      "])),(l()(),a.Z(79,0,null,null,0,"br",[],null,null,null,null,null)),(l()(),a.Z(80,0,null,null,0,"br",[],null,null,null,null,null)),(l()(),a._20(-1,null,["\n      "])),(l()(),a.Z(82,0,null,null,1,"a",[["class","textNomral"]],null,null,null,null,null)),(l()(),a._20(-1,null,["\n        Cuando visita nuestro sitio web, usamos etiquetas de acción (también llamadas etiquetas de píxeles, GIF claro o\n        balizas) para identificar algunas de las páginas que visita y cómo utiliza el contenido de esas páginas. Las\n        etiquetas de acción pueden recopilar y transmitir estos datos de una manera que lo identifique si se ha\n        registrado en nuestro sitio web o si ha iniciado sesión en nuestro sitio web. También usamos etiquetas de\n        acción en nuestros correos electrónicos para determinar si un correo electrónico se abrió o si se reenvió a\n        otra persona. Cuando utiliza nuestras aplicaciones móviles, utilizamos etiquetas de acción en las que accede a\n        sitios web desde enlaces en nuestras aplicaciones móviles. Estos pueden identificar las páginas que visita y\n        cómo utiliza el contenido en esas páginas."])),(l()(),a._20(-1,null,["\n      "])),(l()(),a.Z(85,0,null,null,2,"b",[],null,null,null,null,null)),(l()(),a.Z(86,0,null,null,1,"i",[],null,null,null,null,null)),(l()(),a._20(-1,null,[" - Gestión del sitio."])),(l()(),a._20(-1,null,["\n      "])),(l()(),a.Z(89,0,null,null,0,"br",[],null,null,null,null,null)),(l()(),a.Z(90,0,null,null,0,"br",[],null,null,null,null,null)),(l()(),a._20(-1,null,["\n      "])),(l()(),a.Z(92,0,null,null,1,"a",[["class","textNomral"]],null,null,null,null,null)),(l()(),a._20(-1,null,["\n        Agregamos datos que recopilamos sobre el uso de nuestro sitio web para administrar, proteger y mejorar nuestro\n        sitio web y nuestros sistemas, para comprender mejor las preferencias de los visitantes de nuestro sitio web y\n        optimizar el contenido que servimos, para identificar problemas del servidor, compilar estadísticas agregadas\n        sobre el uso de nuestro sitio web y para mejorar nuestro marketing e investigación."])),(l()(),a._20(-1,null,["\n      "])),(l()(),a.Z(95,0,null,null,2,"b",[],null,null,null,null,null)),(l()(),a.Z(96,0,null,null,1,"i",[],null,null,null,null,null)),(l()(),a._20(-1,null,[" - No Track."])),(l()(),a._20(-1,null,["\n      "])),(l()(),a.Z(99,0,null,null,0,"br",[],null,null,null,null,null)),(l()(),a.Z(100,0,null,null,0,"br",[],null,null,null,null,null)),(l()(),a._20(-1,null,["\n      "])),(l()(),a.Z(102,0,null,null,1,"a",[["class","textNomral"]],null,null,null,null,null)),(l()(),a._20(-1,null,["\n        Nuestro Servicio actualmente no responde a las señales de “No rastrear” y funciona como se describe en esta\n        Política de privacidad, ya sea que se reciba o no una señal de No rastrear. Si lo hacemos en el futuro,\n        describiremos cómo lo hacemos en esta Política de privacidad."])),(l()(),a._20(-1,null,["\n      "])),(l()(),a.Z(105,0,null,null,0,"br",[],null,null,null,null,null)),(l()(),a.Z(106,0,null,null,0,"br",[],null,null,null,null,null)),(l()(),a._20(-1,null,["\n      "])),(l()(),a.Z(108,0,null,null,7,"a",[["class","textNomral"]],null,null,null,null,null)),(l()(),a._20(-1,null,["\n        Al proporcionarnos voluntariamente datos personales, usted acepta nuestro uso de acuerdo con esta Política de\n        privacidad. Si nos proporciona datos personales, reconoce y acepta que dichos datos personales pueden\n        transferirse desde su ubicación actual a las oficinas y servidores de "])),(l()(),a.Z(110,0,null,null,1,"b",[],null,null,null,null,null)),(l()(),a._20(-1,null,["EyePayCash"])),(l()(),a._20(-1,null,[" y los terceros\n        autorizados\n        mencionados en esta política. Usamos medidas de seguridad físicas, electrónicas y de procedimientos razonables\n        para proteger la información personal que obtenemos de usted contra la pérdida, el uso indebido y el acceso,\n        divulgación, alteración y destrucción no autorizados. Tenga en cuenta que no somos responsables de la seguridad\n        de los datos que está transmitiendo a través de Internet ni de los datos que está almacenando, publicando o\n        proporcionando directamente en el sitio web de un tercero, que se rige por las políticas de esa parte. Tenga en\n        cuenta que ningún método de transmisión a través de Internet o método de almacenamiento electrónico es 100%\n        seguro. Si tiene más preguntas sobre seguridad, puede "])),(l()(),a.Z(113,0,null,null,1,"a",[["href","http://eyepaycash.co/contactenos"]],null,null,null,null,null)),(l()(),a._20(-1,null,[" Contáctenos"])),(l()(),a._20(-1,null,["."])),(l()(),a._20(-1,null,["\n      "])),(l()(),a.Z(117,0,null,null,1,"p",[["class","Titles"]],null,null,null,null,null)),(l()(),a._20(-1,null,["Retención de datos."])),(l()(),a._20(-1,null,["\n      "])),(l()(),a.Z(120,0,null,null,4,"a",[["class","textNomral"]],null,null,null,null,null)),(l()(),a._20(-1,null,["\n        Si desea cerrar su cuenta de EyePayCash por completo, envienos un correo a "])),(l()(),a.Z(122,0,null,null,1,"a",[["href","http://eyepaycash.co/contactenos"]],null,null,null,null,null)),(l()(),a._20(-1,null,["\n          Contáctenos"])),(l()(),a._20(-1,null,["\n        desde su dirección de correo electrónico registrada. Podemos retener información sobre usted en nuestras bases\n        de datos por el tiempo que su cuenta esté activa o según sea necesario para proporcionarle servicios y de\n        acuerdo con las leyes aplicables. Nuestra retención y uso de su información será tan necesaria para cumplir con\n        nuestras obligaciones legales, resolver disputas y hacer cumplir nuestros acuerdos. El período de retención\n        puede extenderse más allá del final de su relación con nosotros, pero solo será necesario siempre que tengamos\n        suficiente información para responder a cualquier problema que pueda surgir más adelante. Por ejemplo, es\n        posible que necesitemos o se nos solicite que retengamos cierta información para evitar actividades\n        fraudulentas, protegernos de responsabilidad, permitirnos buscar remedios disponibles o limitar cualquier daño\n        que podamos sufrir."])),(l()(),a._20(-1,null,["\n      "])),(l()(),a.Z(126,0,null,null,0,"br",[],null,null,null,null,null)),(l()(),a._20(-1,null,["\n      "])),(l()(),a.Z(128,0,null,null,1,"p",[["class","Titles"]],null,null,null,null,null)),(l()(),a._20(-1,null,["Acceso a la información."])),(l()(),a._20(-1,null,["\n      "])),(l()(),a.Z(131,0,null,null,1,"a",[["class","textNomral"]],null,null,null,null,null)),(l()(),a._20(-1,null,["\n        Responderemos a su solicitud de acceso a la información que recopilamos sobre usted dentro del plazo requerido\n        por la ley aplicable."])),(l()(),a._20(-1,null,["\n      "])),(l()(),a.Z(134,0,null,null,0,"br",[],null,null,null,null,null)),(l()(),a.Z(135,0,null,null,0,"br",[],null,null,null,null,null)),(l()(),a._20(-1,null,["\n      "])),(l()(),a.Z(137,0,null,null,43,"a",[["class","textNomral"]],null,null,null,null,null)),(l()(),a._20(-1,null,["\n        "])),(l()(),a.Z(139,0,null,null,1,"b",[],null,null,null,null,null)),(l()(),a._20(-1,null,["Compartir datos."])),(l()(),a._20(-1,null,["\n        "])),(l()(),a.Z(142,0,null,null,1,"a",[["class","textNomral"]],null,null,null,null,null)),(l()(),a._20(-1,null,["Podemos compartir su información de la siguiente manera:"])),(l()(),a._20(-1,null,["\n        "])),(l()(),a.Z(145,0,null,null,0,"br",[],null,null,null,null,null)),(l()(),a.Z(146,0,null,null,0,"br",[],null,null,null,null,null)),(l()(),a._20(-1,null,["\n        "])),(l()(),a.Z(148,0,null,null,1,"a",[["class","textNomral"]],null,null,null,null,null)),(l()(),a._20(-1,null,["\n          - Usted ha consentido o nos ha dado permiso para compartir:"])),(l()(),a._20(-1,null,["\n        "])),(l()(),a.Z(151,0,null,null,0,"br",[],null,null,null,null,null)),(l()(),a.Z(152,0,null,null,0,"br",[],null,null,null,null,null)),(l()(),a._20(-1,null,["\n        "])),(l()(),a.Z(154,0,null,null,1,"a",[["class","textNomral"]],null,null,null,null,null)),(l()(),a._20(-1,null,["\n          - Hemos agregado o eliminado la identificación de la información, por lo que no se puede usar\n          razonablemente para identificarlo."])),(l()(),a._20(-1,null,["\n        "])),(l()(),a.Z(157,0,null,null,0,"br",[],null,null,null,null,null)),(l()(),a.Z(158,0,null,null,0,"br",[],null,null,null,null,null)),(l()(),a._20(-1,null,["\n        "])),(l()(),a.Z(160,0,null,null,1,"a",[["class","textNomral"]],null,null,null,null,null)),(l()(),a._20(-1,null,["\n          - Con las empresas afiliadas al Grupo EyePayCash:"])),(l()(),a._20(-1,null,["\n        "])),(l()(),a.Z(163,0,null,null,0,"br",[],null,null,null,null,null)),(l()(),a.Z(164,0,null,null,0,"br",[],null,null,null,null,null)),(l()(),a._20(-1,null,["\n        "])),(l()(),a.Z(166,0,null,null,1,"a",[["class","textNomral"]],null,null,null,null,null)),(l()(),a._20(-1,null,["\n          - Con los proveedores de servicios externos que utilizamos para brindar nuestro servicio, incluidos\n          ciertos servicios de publicidad, referencias, operaciones, servicios financieros y tecnología (como\n          proveedores de hosting, verificación de identidad, soporte, pago y proveedores de servicios de correo\n          electrónico):"])),(l()(),a._20(-1,null,["\n        "])),(l()(),a.Z(169,0,null,null,0,"br",[],null,null,null,null,null)),(l()(),a.Z(170,0,null,null,0,"br",[],null,null,null,null,null)),(l()(),a._20(-1,null,["\n        "])),(l()(),a.Z(172,0,null,null,1,"a",[["class","textNomral"]],null,null,null,null,null)),(l()(),a._20(-1,null,["\n          - Si así lo requiere la ley o el proceso legal aplicable, o si creemos que está de acuerdo con la\n          ley\n          aplicable o el proceso legal:"])),(l()(),a._20(-1,null,["\n        "])),(l()(),a.Z(175,0,null,null,0,"br",[],null,null,null,null,null)),(l()(),a.Z(176,0,null,null,0,"br",[],null,null,null,null,null)),(l()(),a._20(-1,null,["\n        "])),(l()(),a.Z(178,0,null,null,1,"a",[["class","textNomral"]],null,null,null,null,null)),(l()(),a._20(-1,null,["\n          - Para proteger los derechos, propiedad y seguridad de EyePayCash, nuestros usuarios y el\n          público,\n          incluyendo, por ejemplo, en conexión con procedimientos judiciales, o para detectar o prevenir\n          actividad\n          criminal, fraude, tergiversación material, o para establecer nuestros derechos o defendernos\n          contra legal\n          reclamaciones; o En relación con la venta, la fusión, la transferencia o la reorganización de la\n          totalidad o\n          partes de nuestro negocio."])),(l()(),a._20(-1,null,["\n      "])),(l()(),a._20(-1,null,["\n      "])),(l()(),a.Z(182,0,null,null,0,"br",[],null,null,null,null,null)),(l()(),a.Z(183,0,null,null,0,"br",[],null,null,null,null,null)),(l()(),a._20(-1,null,["\n      "])),(l()(),a._20(-1,null,["\n      "])),(l()(),a.Z(186,0,null,null,5,"div",[["class","center"]],null,null,null,null,null)),(l()(),a._20(-1,null,["\n        "])),(l()(),a.Z(188,0,null,null,2,"button",[["class","buttonPayCash btnStyle"],["ion-button",""],["small",""],["style","border-radius: 0%"]],null,[[null,"click"]],function(l,n,u){var e=!0;if("click"===n){e=!1!==l.component.navHome()&&e}return e},_.b,_.a)),a.Y(189,1097728,null,0,m.a,[[8,""],i.a,a.j,a.z],{small:[0,"small"]},null),(l()(),a._20(-1,0,["Acepto"])),(l()(),a._20(-1,null,["\n      "])),(l()(),a._20(-1,null,["\n    "])),(l()(),a._20(-1,null,["\n  "])),(l()(),a._20(-1,1,["\n"]))],function(l,n){l(n,189,0,"")},function(l,n){l(n,0,0,a._11(n,1).statusbarPadding,a._11(n,1)._hasRefresher)})}u.d(n,"a",function(){return b});var a=u(0),o=u(36),t=u(19),i=u(3),s=u(5),r=u(9),c=u(8),d=u(25),p=u(6),g=u(18),_=u(30),m=u(23),h=u(149),f=u(14),y=u(40),v=a.X({encapsulation:2,styles:[],data:{}}),b=a.V("page-politicas",h.a,function(l){return a._22(0,[(l()(),a.Z(0,0,null,null,1,"page-politicas",[],null,null,null,e,v)),a.Y(1,49152,null,0,h.a,[g.a,f.a,y.a],null,null)],null,null)},{},{},[])},397:function(l,n,u){"use strict";function e(l){return g._22(0,[(l()(),g.Z(0,0,null,null,16,"ion-item",[["class","item item-block"]],null,null,null,_.b,_.a)),g.Y(1,1097728,null,3,m.a,[h.a,f.a,g.j,g.z,[2,y.a]],null,null),g._18(335544320,4,{contentLabel:0}),g._18(603979776,5,{_buttons:1}),g._18(603979776,6,{_icons:1}),g.Y(5,16384,null,0,v.a,[],null,null),(l()(),g._20(-1,2,["\n      "])),(l()(),g.Z(7,0,null,1,2,"ion-label",[["stacked",""]],null,null,null,null,null)),g.Y(8,16384,[[4,4]],0,b.a,[f.a,g.j,g.z,[8,null],[8,""],[8,null],[8,null]],null,null),(l()(),g._20(-1,null,["Ingrese código de verificación"])),(l()(),g._20(-1,2,["\n      "])),(l()(),g.Z(11,0,null,3,4,"ion-input",[["name","usercodigo"],["type","text"]],[[2,"ng-untouched",null],[2,"ng-touched",null],[2,"ng-pristine",null],[2,"ng-dirty",null],[2,"ng-valid",null],[2,"ng-invalid",null],[2,"ng-pending",null]],[[null,"ngModelChange"]],function(l,n,u){var e=!0;if("ngModelChange"===n){e=!1!==(l.component.codigo=u)&&e}return e},C.b,C.a)),g.Y(12,671744,null,0,Z.m,[[8,null],[8,null],[8,null],[8,null]],{name:[0,"name"],model:[1,"model"]},{update:"ngModelChange"}),g._16(2048,null,Z.i,null,[Z.m]),g.Y(14,16384,null,0,Z.j,[Z.i],null,null),g.Y(15,5423104,null,0,P.a,[f.a,Y.a,h.a,j.a,g.j,g.z,[2,k.a],[2,m.a],[2,Z.i],z.a],{type:[0,"type"]},null),(l()(),g._20(-1,2,["\n    "]))],function(l,n){l(n,12,0,"usercodigo",n.component.codigo);l(n,15,0,"text")},function(l,n){l(n,11,0,g._11(n,14).ngClassUntouched,g._11(n,14).ngClassTouched,g._11(n,14).ngClassPristine,g._11(n,14).ngClassDirty,g._11(n,14).ngClassValid,g._11(n,14).ngClassInvalid,g._11(n,14).ngClassPending)})}function a(l){return g._22(0,[(l()(),g.Z(0,0,null,null,6,"ion-col",[["class","col"],["col-12",""]],null,null,null,null,null)),g.Y(1,16384,null,0,w.a,[],null,null),(l()(),g._20(-1,null,["\n        "])),(l()(),g.Z(3,0,null,null,2,"button",[["block",""],["class","buttonPayCash"],["ion-button",""]],null,[[null,"click"]],function(l,n,u){var e=!0;if("click"===n){e=!1!==l.component.sendMessage()&&e}return e},q.b,q.a)),g.Y(4,1097728,null,0,I.a,[[8,""],f.a,g.j,g.z],{block:[0,"block"]},null),(l()(),g._20(-1,0,["Enviar mensaje"])),(l()(),g._20(-1,null,["\n      "]))],function(l,n){l(n,4,0,"")},null)}function o(l){return g._22(0,[(l()(),g.Z(0,0,null,null,6,"ion-col",[["class","col"],["col-12",""]],null,null,null,null,null)),g.Y(1,16384,null,0,w.a,[],null,null),(l()(),g._20(-1,null,["\n        "])),(l()(),g.Z(3,0,null,null,2,"button",[["block",""],["class","buttonPayCash"],["ion-button",""]],null,[[null,"click"]],function(l,n,u){var e=!0;if("click"===n){e=!1!==l.component.confirmCode()&&e}return e},q.b,q.a)),g.Y(4,1097728,null,0,I.a,[[8,""],f.a,g.j,g.z],{block:[0,"block"]},null),(l()(),g._20(-1,0,["Confirmar código"])),(l()(),g._20(-1,null,["\n      "]))],function(l,n){l(n,4,0,"")},null)}function t(l){return g._22(0,[(l()(),g.Z(0,0,null,null,6,"ion-col",[["class","col"],["col-6",""]],null,null,null,null,null)),g.Y(1,16384,null,0,w.a,[],null,null),(l()(),g._20(-1,null,["\n        "])),(l()(),g.Z(3,0,null,null,2,"button",[["class","buttonPayCash"],["ion-button",""]],null,[[null,"click"]],function(l,n,u){var e=!0;if("click"===n){e=!1!==l.component.changeVisible()&&e}return e},q.b,q.a)),g.Y(4,1097728,null,0,I.a,[[8,""],f.a,g.j,g.z],null,null),(l()(),g._20(-1,0,["Recuperar por email"])),(l()(),g._20(-1,null,["\n      "]))],null,null)}function i(l){return g._22(0,[(l()(),g.Z(0,0,null,null,47,"div",[],null,null,null,null,null)),(l()(),g._20(-1,null,["\n    "])),(l()(),g.Z(2,0,null,null,16,"ion-item",[["class","item item-block"]],null,null,null,_.b,_.a)),g.Y(3,1097728,null,3,m.a,[h.a,f.a,g.j,g.z,[2,y.a]],null,null),g._18(335544320,1,{contentLabel:0}),g._18(603979776,2,{_buttons:1}),g._18(603979776,3,{_icons:1}),g.Y(7,16384,null,0,v.a,[],null,null),(l()(),g._20(-1,2,["\n      "])),(l()(),g.Z(9,0,null,1,2,"ion-label",[["stacked",""]],null,null,null,null,null)),g.Y(10,16384,[[1,4]],0,b.a,[f.a,g.j,g.z,[8,null],[8,""],[8,null],[8,null]],null,null),(l()(),g._20(-1,null,["Ingrese número celular"])),(l()(),g._20(-1,2,["\n      "])),(l()(),g.Z(13,0,null,3,4,"ion-input",[["name","userdata"],["type","text"]],[[2,"ng-untouched",null],[2,"ng-touched",null],[2,"ng-pristine",null],[2,"ng-dirty",null],[2,"ng-valid",null],[2,"ng-invalid",null],[2,"ng-pending",null]],[[null,"ngModelChange"]],function(l,n,u){var e=!0;if("ngModelChange"===n){e=!1!==(l.component.data=u)&&e}return e},C.b,C.a)),g.Y(14,671744,null,0,Z.m,[[8,null],[8,null],[8,null],[8,null]],{name:[0,"name"],model:[1,"model"]},{update:"ngModelChange"}),g._16(2048,null,Z.i,null,[Z.m]),g.Y(16,16384,null,0,Z.j,[Z.i],null,null),g.Y(17,5423104,null,0,P.a,[f.a,Y.a,h.a,j.a,g.j,g.z,[2,k.a],[2,m.a],[2,Z.i],z.a],{type:[0,"type"]},null),(l()(),g._20(-1,2,["\n    "])),(l()(),g._20(-1,null,["\n    "])),(l()(),g.U(16777216,null,null,1,null,e)),g.Y(21,16384,null,0,x.l,[g.I,g.F],{ngIf:[0,"ngIf"]},null),(l()(),g._20(-1,null,["\n    "])),(l()(),g.Z(23,0,null,null,8,"ion-row",[["class","row"]],null,null,null,null,null)),g.Y(24,16384,null,0,M.a,[],null,null),(l()(),g._20(-1,null,["\n      "])),(l()(),g.U(16777216,null,null,1,null,a)),g.Y(27,16384,null,0,x.l,[g.I,g.F],{ngIf:[0,"ngIf"]},null),(l()(),g._20(-1,null,["\n      "])),(l()(),g.U(16777216,null,null,1,null,o)),g.Y(30,16384,null,0,x.l,[g.I,g.F],{ngIf:[0,"ngIf"]},null),(l()(),g._20(-1,null,["\n    "])),(l()(),g._20(-1,null,["\n    "])),(l()(),g.Z(33,0,null,null,13,"ion-row",[["class","marginLft row"]],null,null,null,null,null)),g.Y(34,16384,null,0,M.a,[],null,null),(l()(),g._20(-1,null,["\n      "])),(l()(),g.Z(36,0,null,null,6,"ion-col",[["class","col"],["col-4",""]],null,null,null,null,null)),g.Y(37,16384,null,0,w.a,[],null,null),(l()(),g._20(-1,null,["\n        "])),(l()(),g.Z(39,0,null,null,2,"button",[["class","buttonPayCash"],["ion-button",""]],null,[[null,"click"]],function(l,n,u){var e=!0;if("click"===n){e=!1!==l.component.cancelar()&&e}return e},q.b,q.a)),g.Y(40,1097728,null,0,I.a,[[8,""],f.a,g.j,g.z],null,null),(l()(),g._20(-1,0,["Cancelar"])),(l()(),g._20(-1,null,["\n      "])),(l()(),g._20(-1,null,["\n      "])),(l()(),g.U(16777216,null,null,1,null,t)),g.Y(45,16384,null,0,x.l,[g.I,g.F],{ngIf:[0,"ngIf"]},null),(l()(),g._20(-1,null,["\n    "])),(l()(),g._20(-1,null,["\n  "]))],function(l,n){var u=n.component;l(n,14,0,"userdata",u.data);l(n,17,0,"text");l(n,21,0,u.iscodigo);l(n,27,0,!u.iscodigo);l(n,30,0,u.iscodigo);l(n,45,0,!u.iscodigo)},function(l,n){l(n,13,0,g._11(n,16).ngClassUntouched,g._11(n,16).ngClassTouched,g._11(n,16).ngClassPristine,g._11(n,16).ngClassDirty,g._11(n,16).ngClassValid,g._11(n,16).ngClassInvalid,g._11(n,16).ngClassPending)})}function s(l){return g._22(0,[(l()(),g.Z(0,0,null,null,16,"ion-item",[["class","item item-block"]],null,null,null,_.b,_.a)),g.Y(1,1097728,null,3,m.a,[h.a,f.a,g.j,g.z,[2,y.a]],null,null),g._18(335544320,10,{contentLabel:0}),g._18(603979776,11,{_buttons:1}),g._18(603979776,12,{_icons:1}),g.Y(5,16384,null,0,v.a,[],null,null),(l()(),g._20(-1,2,["\n      "])),(l()(),g.Z(7,0,null,1,2,"ion-label",[["stacked",""]],null,null,null,null,null)),g.Y(8,16384,[[10,4]],0,b.a,[f.a,g.j,g.z,[8,null],[8,""],[8,null],[8,null]],null,null),(l()(),g._20(-1,null,["Ingrese código de verificación"])),(l()(),g._20(-1,2,["\n      "])),(l()(),g.Z(11,0,null,3,4,"ion-input",[["name","usercodigo"],["type","text"]],[[2,"ng-untouched",null],[2,"ng-touched",null],[2,"ng-pristine",null],[2,"ng-dirty",null],[2,"ng-valid",null],[2,"ng-invalid",null],[2,"ng-pending",null]],[[null,"ngModelChange"]],function(l,n,u){var e=!0;if("ngModelChange"===n){e=!1!==(l.component.codigo=u)&&e}return e},C.b,C.a)),g.Y(12,671744,null,0,Z.m,[[8,null],[8,null],[8,null],[8,null]],{name:[0,"name"],model:[1,"model"]},{update:"ngModelChange"}),g._16(2048,null,Z.i,null,[Z.m]),g.Y(14,16384,null,0,Z.j,[Z.i],null,null),g.Y(15,5423104,null,0,P.a,[f.a,Y.a,h.a,j.a,g.j,g.z,[2,k.a],[2,m.a],[2,Z.i],z.a],{type:[0,"type"]},null),(l()(),g._20(-1,2,["\n    "]))],function(l,n){l(n,12,0,"usercodigo",n.component.codigo);l(n,15,0,"text")},function(l,n){l(n,11,0,g._11(n,14).ngClassUntouched,g._11(n,14).ngClassTouched,g._11(n,14).ngClassPristine,g._11(n,14).ngClassDirty,g._11(n,14).ngClassValid,g._11(n,14).ngClassInvalid,g._11(n,14).ngClassPending)})}function r(l){return g._22(0,[(l()(),g.Z(0,0,null,null,6,"ion-col",[["class","col"],["col-12",""]],null,null,null,null,null)),g.Y(1,16384,null,0,w.a,[],null,null),(l()(),g._20(-1,null,["\n        "])),(l()(),g.Z(3,0,null,null,2,"button",[["block",""],["class","buttonPayCash"],["ion-button",""]],null,[[null,"click"]],function(l,n,u){var e=!0;if("click"===n){e=!1!==l.component.sendMail()&&e}return e},q.b,q.a)),g.Y(4,1097728,null,0,I.a,[[8,""],f.a,g.j,g.z],{block:[0,"block"]},null),(l()(),g._20(-1,0,["Enviar email"])),(l()(),g._20(-1,null,["\n      "]))],function(l,n){l(n,4,0,"")},null)}function c(l){return g._22(0,[(l()(),g.Z(0,0,null,null,6,"ion-col",[["class","col"],["col-12",""]],null,null,null,null,null)),g.Y(1,16384,null,0,w.a,[],null,null),(l()(),g._20(-1,null,["\n        "])),(l()(),g.Z(3,0,null,null,2,"button",[["block",""],["class","buttonPayCash"],["ion-button",""]],null,[[null,"click"]],function(l,n,u){var e=!0;if("click"===n){e=!1!==l.component.confirmCode()&&e}return e},q.b,q.a)),g.Y(4,1097728,null,0,I.a,[[8,""],f.a,g.j,g.z],{block:[0,"block"]},null),(l()(),g._20(-1,0,["Confirmar código"])),(l()(),g._20(-1,null,["\n      "]))],function(l,n){l(n,4,0,"")},null)}function d(l){return g._22(0,[(l()(),g.Z(0,0,null,null,52,"div",[],null,null,null,null,null)),(l()(),g._20(-1,null,["\n    "])),(l()(),g.Z(2,0,null,null,16,"ion-item",[["class","item item-block"]],null,null,null,_.b,_.a)),g.Y(3,1097728,null,3,m.a,[h.a,f.a,g.j,g.z,[2,y.a]],null,null),g._18(335544320,7,{contentLabel:0}),g._18(603979776,8,{_buttons:1}),g._18(603979776,9,{_icons:1}),g.Y(7,16384,null,0,v.a,[],null,null),(l()(),g._20(-1,2,["\n      "])),(l()(),g.Z(9,0,null,1,2,"ion-label",[["stacked",""]],null,null,null,null,null)),g.Y(10,16384,[[7,4]],0,b.a,[f.a,g.j,g.z,[8,null],[8,""],[8,null],[8,null]],null,null),(l()(),g._20(-1,null,["Ingrese su email"])),(l()(),g._20(-1,2,["\n      "])),(l()(),g.Z(13,0,null,3,4,"ion-input",[["name","dataname"],["type","text"]],[[2,"ng-untouched",null],[2,"ng-touched",null],[2,"ng-pristine",null],[2,"ng-dirty",null],[2,"ng-valid",null],[2,"ng-invalid",null],[2,"ng-pending",null]],[[null,"ngModelChange"]],function(l,n,u){var e=!0;if("ngModelChange"===n){e=!1!==(l.component.data=u)&&e}return e},C.b,C.a)),g.Y(14,671744,null,0,Z.m,[[8,null],[8,null],[8,null],[8,null]],{name:[0,"name"],model:[1,"model"]},{update:"ngModelChange"}),g._16(2048,null,Z.i,null,[Z.m]),g.Y(16,16384,null,0,Z.j,[Z.i],null,null),g.Y(17,5423104,null,0,P.a,[f.a,Y.a,h.a,j.a,g.j,g.z,[2,k.a],[2,m.a],[2,Z.i],z.a],{type:[0,"type"]},null),(l()(),g._20(-1,2,["\n    "])),(l()(),g._20(-1,null,["\n\n\n    "])),(l()(),g.U(16777216,null,null,1,null,s)),g.Y(21,16384,null,0,x.l,[g.I,g.F],{ngIf:[0,"ngIf"]},null),(l()(),g._20(-1,null,["\n    "])),(l()(),g.Z(23,0,null,null,8,"ion-row",[["class","row"]],null,null,null,null,null)),g.Y(24,16384,null,0,M.a,[],null,null),(l()(),g._20(-1,null,["\n      "])),(l()(),g.U(16777216,null,null,1,null,r)),g.Y(27,16384,null,0,x.l,[g.I,g.F],{ngIf:[0,"ngIf"]},null),(l()(),g._20(-1,null,["\n      "])),(l()(),g.U(16777216,null,null,1,null,c)),g.Y(30,16384,null,0,x.l,[g.I,g.F],{ngIf:[0,"ngIf"]},null),(l()(),g._20(-1,null,["\n    "])),(l()(),g._20(-1,null,["\n    "])),(l()(),g.Z(33,0,null,null,18,"ion-row",[["class","marginLft row"]],null,null,null,null,null)),g.Y(34,16384,null,0,M.a,[],null,null),(l()(),g._20(-1,null,["\n      "])),(l()(),g.Z(36,0,null,null,6,"ion-col",[["class","col"],["col-4",""]],null,null,null,null,null)),g.Y(37,16384,null,0,w.a,[],null,null),(l()(),g._20(-1,null,["\n        "])),(l()(),g.Z(39,0,null,null,2,"button",[["class","buttonPayCash"],["ion-button",""]],null,[[null,"click"]],function(l,n,u){var e=!0;if("click"===n){e=!1!==l.component.cancelar()&&e}return e},q.b,q.a)),g.Y(40,1097728,null,0,I.a,[[8,""],f.a,g.j,g.z],null,null),(l()(),g._20(-1,0,["Cancelar"])),(l()(),g._20(-1,null,["\n      "])),(l()(),g._20(-1,null,["\n      "])),(l()(),g.Z(44,0,null,null,6,"ion-col",[["class","col"],["col-6",""]],null,null,null,null,null)),g.Y(45,16384,null,0,w.a,[],null,null),(l()(),g._20(-1,null,["\n        "])),(l()(),g.Z(47,0,null,null,2,"button",[["class","buttonPayCash"],["ion-button",""]],null,[[null,"click"]],function(l,n,u){var e=!0;if("click"===n){e=!1!==l.component.changeVisible()&&e}return e},q.b,q.a)),g.Y(48,1097728,null,0,I.a,[[8,""],f.a,g.j,g.z],null,null),(l()(),g._20(-1,0,["Recuperar por SMS"])),(l()(),g._20(-1,null,["\n      "])),(l()(),g._20(-1,null,["\n    "])),(l()(),g._20(-1,null,["\n  "]))],function(l,n){var u=n.component;l(n,14,0,"dataname",u.data);l(n,17,0,"text");l(n,21,0,u.iscodigo);l(n,27,0,!u.iscodigo);l(n,30,0,u.iscodigo)},function(l,n){l(n,13,0,g._11(n,16).ngClassUntouched,g._11(n,16).ngClassTouched,g._11(n,16).ngClassPristine,g._11(n,16).ngClassDirty,g._11(n,16).ngClassValid,g._11(n,16).ngClassInvalid,g._11(n,16).ngClassPending)})}function p(l){return g._22(0,[(l()(),g.Z(0,0,null,null,14,"ion-content",[["class","back vignette"],["padding",""]],[[2,"statusbar-padding",null],[2,"has-refresher",null]],null,null,D.b,D.a)),g.Y(1,4374528,null,0,k.a,[f.a,Y.a,z.a,g.j,g.z,j.a,T.a,g.u,[2,E.a],[2,U.a]],null,null),(l()(),g._20(-1,1,["\n  "])),(l()(),g.Z(3,0,null,1,4,"div",[["class","center"],["style","margin-top:12%"]],null,null,null,null,null)),(l()(),g._20(-1,null,["\n    "])),(l()(),g.Z(5,0,null,null,1,"ion-img",[["class","logo"],["src","assets/imgs/EPCLogo.png"]],null,null,null,V.b,V.a)),g.Y(6,1228800,null,0,B.a,[g.j,g.z,Y.a,[2,k.a],z.a],{src:[0,"src"]},null),(l()(),g._20(-1,null,["\n  "])),(l()(),g._20(-1,1,["\n  "])),(l()(),g.U(16777216,null,1,1,null,i)),g.Y(10,16384,null,0,x.l,[g.I,g.F],{ngIf:[0,"ngIf"]},null),(l()(),g._20(-1,1,["\n\n  "])),(l()(),g.U(16777216,null,1,1,null,d)),g.Y(13,16384,null,0,x.l,[g.I,g.F],{ngIf:[0,"ngIf"]},null),(l()(),g._20(-1,1,["\n"]))],function(l,n){var u=n.component;l(n,6,0,"assets/imgs/EPCLogo.png");l(n,10,0,u.isvisible);l(n,13,0,!u.isvisible)},function(l,n){l(n,0,0,g._11(n,1).statusbarPadding,g._11(n,1)._hasRefresher)})}u.d(n,"a",function(){return H});var g=u(0),_=u(53),m=u(21),h=u(20),f=u(3),y=u(37),v=u(45),b=u(43),C=u(63),Z=u(17),P=u(44),Y=u(5),j=u(8),k=u(19),z=u(9),w=u(50),q=u(30),I=u(23),x=u(16),M=u(51),D=u(36),T=u(25),E=u(6),U=u(18),V=u(102),B=u(62),R=u(152),L=u(14),N=u(24),S=u(40),F=u(27),A=u(38),O=g.X({encapsulation:2,styles:[],data:{}}),H=g.V("page-recovery-password",R.a,function(l){return g._22(0,[(l()(),g.Z(0,0,null,null,1,"page-recovery-password",[],null,null,null,p,O)),g.Y(1,49152,null,0,R.a,[U.a,L.a,N.a,S.a,F.a,A.a],null,null)],null,null)},{},{},[])},398:function(l,n,u){"use strict";function e(l){return t._22(0,[(l()(),t.Z(0,0,null,null,2,"button",[["class","buttonPayCash borderBtns"],["ion-button",""],["small",""]],null,[[null,"click"]],function(l,n,u){var e=!0;if("click"===n){e=!1!==l.component.sendNumberPhone()&&e}return e},i.b,i.a)),t.Y(1,1097728,null,0,s.a,[[8,""],r.a,t.j,t.z],{small:[0,"small"]},null),(l()(),t._20(-1,0,["Enviar\n    "]))],function(l,n){l(n,1,0,"")},null)}function a(l){return t._22(0,[(l()(),t.Z(0,0,null,null,2,"button",[["class","buttonPayCash borderBtns"],["ion-button",""],["small",""]],null,[[null,"click"]],function(l,n,u){var e=!0;if("click"===n){e=!1!==l.component.verifyCode()&&e}return e},i.b,i.a)),t.Y(1,1097728,null,0,s.a,[[8,""],r.a,t.j,t.z],{small:[0,"small"]},null),(l()(),t._20(-1,0,["Continuar\n    "]))],function(l,n){l(n,1,0,"")},null)}function o(l){return t._22(0,[(l()(),t.Z(0,0,null,null,96,"ion-content",[["class","imgBackground vignette"]],[[2,"statusbar-padding",null],[2,"has-refresher",null]],null,null,c.b,c.a)),t.Y(1,4374528,null,0,d.a,[r.a,p.a,g.a,t.j,t.z,_.a,m.a,t.u,[2,h.a],[2,f.a]],null,null),(l()(),t._20(-1,1,["\n  "])),(l()(),t.Z(3,0,null,1,13,"div",[["class","center"],["style","margin-top:12%"]],null,null,null,null,null)),(l()(),t._20(-1,null,["\n    "])),(l()(),t.Z(5,0,null,null,1,"ion-img",[["class","logo"],["src","assets/imgs/EPCLogo.png"],["style","margin-bottom: 10%;"]],null,null,null,y.b,y.a)),t.Y(6,1228800,null,0,v.a,[t.j,t.z,p.a,[2,d.a],g.a],{src:[0,"src"]},null),(l()(),t._20(-1,null,["\n    "])),(l()(),t.Z(8,0,null,null,7,"div",[["class","center"]],null,null,null,null,null)),(l()(),t._20(-1,null,["\n      "])),(l()(),t.Z(10,0,null,null,4,"ion-label",[["class","center"],["style","color:white"]],null,null,null,null,null)),t.Y(11,16384,null,0,b.a,[r.a,t.j,t.z,[8,null],[8,null],[8,null],[8,null]],null,null),(l()(),t._20(-1,null,[" Enviaremos un CÓDIGO de verificación a el número"])),(l()(),t.Z(13,0,null,null,0,"br",[],null,null,null,null,null)),(l()(),t._20(-1,null,[" que registres\n        a continuación.\n      "])),(l()(),t._20(-1,null,["\n    "])),(l()(),t._20(-1,null,["\n  "])),(l()(),t._20(-1,1,["\n\n  "])),(l()(),t.Z(18,0,null,1,64,"div",[["class","center divMargin"]],null,null,null,null,null)),(l()(),t._20(-1,null,["\n    "])),(l()(),t.Z(20,0,null,null,44,"ion-grid",[["class","center marGrid grid"]],null,null,null,null,null)),t.Y(21,16384,null,0,C.a,[],null,null),(l()(),t._20(-1,null,["\n      "])),(l()(),t.Z(23,0,null,null,40,"ion-row",[["class","row"]],null,null,null,null,null)),t.Y(24,16384,null,0,Z.a,[],null,null),(l()(),t._20(-1,null,["\n        "])),(l()(),t.Z(26,0,null,null,16,"ion-col",[["class","col"],["col-5",""]],null,null,null,null,null)),t.Y(27,16384,null,0,P.a,[],null,null),(l()(),t._20(-1,null,["\n          "])),(l()(),t.Z(29,0,null,null,12,"ion-item",[["class","item-flag item-md2 item-ios2 item item-block"]],null,null,null,Y.b,Y.a)),t.Y(30,1097728,null,3,j.a,[k.a,r.a,t.j,t.z,[2,z.a]],null,null),t._18(335544320,1,{contentLabel:0}),t._18(603979776,2,{_buttons:1}),t._18(603979776,3,{_icons:1}),t.Y(34,16384,null,0,w.a,[],null,null),(l()(),t._20(-1,2,["\n            "])),(l()(),t.Z(36,0,null,2,0,"img",[["class","flagphone banderaWidt"]],[[8,"src",4]],null,null,null,null)),(l()(),t._20(-1,2,["\n            "])),(l()(),t.Z(38,0,null,2,2,"button",[["class","transparente item-md2 item-button2 button-md "],["ion-button",""]],null,[[null,"click"]],function(l,n,u){var e=!0;if("click"===n){e=!1!==l.component.selectcountry()&&e}return e},i.b,i.a)),t.Y(39,1097728,[[2,4]],0,s.a,[[8,""],r.a,t.j,t.z],null,null),(l()(),t._20(40,0,["+\n              ",""])),(l()(),t._20(-1,2,["\n          "])),(l()(),t._20(-1,null,["\n        "])),(l()(),t._20(-1,null,["\n        "])),(l()(),t.Z(44,0,null,null,18,"ion-col",[["class","col"],["col-7",""]],null,null,null,null,null)),t.Y(45,16384,null,0,P.a,[],null,null),(l()(),t._20(-1,null,["\n          "])),(l()(),t.Z(47,0,null,null,14,"ion-item",[["class","stylCel item item-block"]],null,null,null,Y.b,Y.a)),t.Y(48,1097728,null,3,j.a,[k.a,r.a,t.j,t.z,[2,z.a]],null,null),t._18(335544320,4,{contentLabel:0}),t._18(603979776,5,{_buttons:1}),t._18(603979776,6,{_icons:1}),t.Y(52,16384,null,0,w.a,[],null,null),(l()(),t._20(-1,2,["\n            "])),(l()(),t.Z(54,0,null,3,6,"ion-input",[["name","numerocelular"],["placeholder","Número movil (celular)"],["required",""],["type","text"]],[[1,"required",0],[2,"ng-untouched",null],[2,"ng-touched",null],[2,"ng-pristine",null],[2,"ng-dirty",null],[2,"ng-valid",null],[2,"ng-invalid",null],[2,"ng-pending",null]],[[null,"ngModelChange"]],function(l,n,u){var e=!0;if("ngModelChange"===n){e=!1!==(l.component.user_register.value=u)&&e}return e},q.b,q.a)),t.Y(55,16384,null,0,I.o,[],{required:[0,"required"]},null),t._16(1024,null,I.g,function(l){return[l]},[I.o]),t.Y(57,671744,null,0,I.m,[[8,null],[2,I.g],[8,null],[8,null]],{name:[0,"name"],model:[1,"model"]},{update:"ngModelChange"}),t._16(2048,null,I.i,null,[I.m]),t.Y(59,16384,null,0,I.j,[I.i],null,null),t.Y(60,5423104,null,0,x.a,[r.a,p.a,k.a,_.a,t.j,t.z,[2,d.a],[2,j.a],[2,I.i],g.a],{type:[0,"type"],placeholder:[1,"placeholder"]},null),(l()(),t._20(-1,2,["\n          "])),(l()(),t._20(-1,null,["\n        "])),(l()(),t._20(-1,null,["\n      "])),(l()(),t._20(-1,null,["\n    "])),(l()(),t._20(-1,null,["\n    "])),(l()(),t.Z(66,0,null,null,15,"ion-item",[["class","inputClass item item-block"]],null,null,null,Y.b,Y.a)),t.Y(67,1097728,null,3,j.a,[k.a,r.a,t.j,t.z,[2,z.a]],null,null),t._18(335544320,7,{contentLabel:0}),t._18(603979776,8,{_buttons:1}),t._18(603979776,9,{_icons:1}),t.Y(71,16384,null,0,w.a,[],null,null),(l()(),t._20(-1,2,["\n      "])),(l()(),t.Z(73,0,null,3,7,"ion-input",[["maxlength","6"],["placeholder","Introduce el código"],["required",""],["style","text-align: center"],["type","text"]],[[1,"required",0],[1,"maxlength",0],[2,"ng-untouched",null],[2,"ng-touched",null],[2,"ng-pristine",null],[2,"ng-dirty",null],[2,"ng-valid",null],[2,"ng-invalid",null],[2,"ng-pending",null]],[[null,"ngModelChange"]],function(l,n,u){var e=!0;if("ngModelChange"===n){e=!1!==(l.component.code_verify=u)&&e}return e},q.b,q.a)),t.Y(74,16384,null,0,I.o,[],{required:[0,"required"]},null),t.Y(75,540672,null,0,I.f,[],{maxlength:[0,"maxlength"]},null),t._16(1024,null,I.g,function(l,n){return[l,n]},[I.o,I.f]),t.Y(77,671744,null,0,I.m,[[8,null],[2,I.g],[8,null],[8,null]],{model:[0,"model"]},{update:"ngModelChange"}),t._16(2048,null,I.i,null,[I.m]),t.Y(79,16384,null,0,I.j,[I.i],null,null),t.Y(80,5423104,null,0,x.a,[r.a,p.a,k.a,_.a,t.j,t.z,[2,d.a],[2,j.a],[2,I.i],g.a],{type:[0,"type"],placeholder:[1,"placeholder"]},null),(l()(),t._20(-1,2,["\n    "])),(l()(),t._20(-1,null,["\n  "])),(l()(),t._20(-1,1,["\n  "])),(l()(),t.Z(84,0,null,1,11,"div",[["class","center marginBts"]],null,null,null,null,null)),(l()(),t._20(-1,null,["\n    "])),(l()(),t.Z(86,0,null,null,2,"button",[["class","buttonPayCash borderBtns"],["ion-button",""],["small",""]],null,[[null,"click"]],function(l,n,u){var e=!0;if("click"===n){e=!1!==l.component.cancel()&&e}return e},i.b,i.a)),t.Y(87,1097728,null,0,s.a,[[8,""],r.a,t.j,t.z],{small:[0,"small"]},null),(l()(),t._20(-1,0,["Cancelar"])),(l()(),t._20(-1,null,["\n    "])),(l()(),t.U(16777216,null,null,1,null,e)),t.Y(91,16384,null,0,M.l,[t.I,t.F],{ngIf:[0,"ngIf"]},null),(l()(),t._20(-1,null,["\n    "])),(l()(),t.U(16777216,null,null,1,null,a)),t.Y(94,16384,null,0,M.l,[t.I,t.F],{ngIf:[0,"ngIf"]},null),(l()(),t._20(-1,null,["\n  "])),(l()(),t._20(-1,1,["\n\n"]))],function(l,n){var u=n.component;l(n,6,0,"assets/imgs/EPCLogo.png");l(n,55,0,"");l(n,57,0,"numerocelular",u.user_register.value);l(n,60,0,"text","Número movil (celular)");l(n,74,0,"");l(n,75,0,"6");l(n,77,0,u.code_verify);l(n,80,0,"text","Introduce el código");l(n,87,0,"");l(n,91,0,null==u.response_verify.phone_code);l(n,94,0,null!=u.response_verify.phone_code)},function(l,n){var u=n.component;l(n,0,0,t._11(n,1).statusbarPadding,t._11(n,1)._hasRefresher);l(n,36,0,u.user_register.flag);l(n,40,0,u.user_register.country_code);l(n,54,0,t._11(n,55).required?"":null,t._11(n,59).ngClassUntouched,t._11(n,59).ngClassTouched,t._11(n,59).ngClassPristine,t._11(n,59).ngClassDirty,t._11(n,59).ngClassValid,t._11(n,59).ngClassInvalid,t._11(n,59).ngClassPending);l(n,73,0,t._11(n,74).required?"":null,t._11(n,75).maxlength?t._11(n,75).maxlength:null,t._11(n,79).ngClassUntouched,t._11(n,79).ngClassTouched,t._11(n,79).ngClassPristine,t._11(n,79).ngClassDirty,t._11(n,79).ngClassValid,t._11(n,79).ngClassInvalid,t._11(n,79).ngClassPending)})}u.d(n,"a",function(){return N});var t=u(0),i=u(30),s=u(23),r=u(3),c=u(36),d=u(19),p=u(5),g=u(9),_=u(8),m=u(25),h=u(6),f=u(18),y=u(102),v=u(62),b=u(43),C=u(167),Z=u(51),P=u(50),Y=u(53),j=u(21),k=u(20),z=u(37),w=u(45),q=u(63),I=u(17),x=u(44),M=u(16),D=u(147),T=u(14),E=u(65),U=u(24),V=u(40),B=u(38),R=u(79),L=t.X({encapsulation:2,styles:[],data:{}}),N=t.V("page-reg-number-phone",D.a,function(l){return t._22(0,[(l()(),t.Z(0,0,null,null,1,"page-reg-number-phone",[],null,null,null,o,L)),t.Y(1,49152,null,0,D.a,[f.a,T.a,E.a,U.a,V.a,B.a,R.a],null,null)],null,null)},{},{},[])},399:function(l,n,u){"use strict";function e(l){return t._22(0,[(l()(),t.Z(0,0,null,null,5,"button",[["clear",""],["color","dark"],["ion-button",""],["item-right",""],["type","button"]],null,[[null,"click"]],function(l,n,u){var e=!0;if("click"===n){e=!1!==l.component.showPassword()&&e}return e},i.b,i.a)),t.Y(1,1097728,[[15,4]],0,s.a,[[8,""],r.a,t.j,t.z],{color:[0,"color"],clear:[1,"clear"]},null),(l()(),t._20(-1,0,["\n          "])),(l()(),t.Z(3,0,null,0,1,"ion-icon",[["name","ios-eye-off-outline"],["role","img"]],[[2,"hide",null]],null,null,null,null)),t.Y(4,147456,null,0,c.a,[r.a,t.j,t.z],{name:[0,"name"]},null),(l()(),t._20(-1,0,["\n        "]))],function(l,n){l(n,1,0,"dark","");l(n,4,0,"ios-eye-off-outline")},function(l,n){l(n,3,0,t._11(n,4)._hidden)})}function a(l){return t._22(0,[(l()(),t.Z(0,0,null,null,5,"button",[["clear",""],["color","dark"],["ion-button",""],["item-right",""],["type","button"]],null,[[null,"click"]],function(l,n,u){var e=!0;if("click"===n){e=!1!==l.component.showPassword()&&e}return e},i.b,i.a)),t.Y(1,1097728,[[15,4]],0,s.a,[[8,""],r.a,t.j,t.z],{color:[0,"color"],clear:[1,"clear"]},null),(l()(),t._20(-1,0,["\n          "])),(l()(),t.Z(3,0,null,0,1,"ion-icon",[["name","ios-eye-outline"],["role","img"]],[[2,"hide",null]],null,null,null,null)),t.Y(4,147456,null,0,c.a,[r.a,t.j,t.z],{name:[0,"name"]},null),(l()(),t._20(-1,0,["\n        "]))],function(l,n){l(n,1,0,"dark","");l(n,4,0,"ios-eye-outline")},function(l,n){l(n,3,0,t._11(n,4)._hidden)})}function o(l){return t._22(0,[(l()(),t.Z(0,0,null,null,152,"ion-content",[["class","imgBackground vignette"]],[[2,"statusbar-padding",null],[2,"has-refresher",null]],null,null,d.b,d.a)),t.Y(1,4374528,null,0,p.a,[r.a,g.a,_.a,t.j,t.z,m.a,h.a,t.u,[2,f.a],[2,y.a]],null,null),(l()(),t._20(-1,1,["\n  "])),(l()(),t.Z(3,0,null,1,4,"div",[["class","center"],["style","margin-top:12%"]],null,null,null,null,null)),(l()(),t._20(-1,null,["\n    "])),(l()(),t.Z(5,0,null,null,1,"ion-img",[["class","logo"],["src","assets/imgs/EPCLogo.png"]],null,null,null,v.b,v.a)),t.Y(6,1228800,null,0,b.a,[t.j,t.z,g.a,[2,p.a],_.a],{src:[0,"src"]},null),(l()(),t._20(-1,null,["\n  "])),(l()(),t._20(-1,1,["\n  "])),(l()(),t.Z(9,0,null,1,120,"div",[["class","center"]],null,null,null,null,null)),(l()(),t._20(-1,null,["\n    "])),(l()(),t.Z(11,0,null,null,117,"ion-list",[],null,null,null,null,null)),t.Y(12,16384,null,0,C.a,[r.a,t.j,t.z,g.a,Z.l,_.a],null,null),(l()(),t._20(-1,null,["\n      "])),(l()(),t.Z(14,0,null,null,18,"ion-item",[["class","marginlists item item-block"]],null,null,null,P.b,P.a)),t.Y(15,1097728,null,3,Y.a,[j.a,r.a,t.j,t.z,[2,k.a]],null,null),t._18(335544320,1,{contentLabel:0}),t._18(603979776,2,{_buttons:1}),t._18(603979776,3,{_icons:1}),t.Y(19,16384,null,0,z.a,[],null,null),(l()(),t._20(-1,2,["\n        "])),(l()(),t.Z(21,0,null,1,2,"ion-label",[["stacked",""]],null,null,null,null,null)),t.Y(22,16384,[[1,4]],0,w.a,[r.a,t.j,t.z,[8,null],[8,""],[8,null],[8,null]],null,null),(l()(),t._20(-1,null,["Nombres"])),(l()(),t._20(-1,2,["\n        "])),(l()(),t.Z(25,0,null,3,6,"ion-input",[["name","userregistronombre"],["required",""],["type","text"]],[[1,"required",0],[2,"ng-untouched",null],[2,"ng-touched",null],[2,"ng-pristine",null],[2,"ng-dirty",null],[2,"ng-valid",null],[2,"ng-invalid",null],[2,"ng-pending",null]],[[null,"ngModelChange"]],function(l,n,u){var e=!0;if("ngModelChange"===n){e=!1!==(l.component.user_register.first_name=u)&&e}return e},q.b,q.a)),t.Y(26,16384,null,0,I.o,[],{required:[0,"required"]},null),t._16(1024,null,I.g,function(l){return[l]},[I.o]),t.Y(28,671744,null,0,I.m,[[8,null],[2,I.g],[8,null],[8,null]],{name:[0,"name"],model:[1,"model"]},{update:"ngModelChange"}),t._16(2048,null,I.i,null,[I.m]),t.Y(30,16384,null,0,I.j,[I.i],null,null),t.Y(31,5423104,null,0,x.a,[r.a,g.a,j.a,m.a,t.j,t.z,[2,p.a],[2,Y.a],[2,I.i],_.a],{type:[0,"type"]},null),(l()(),t._20(-1,2,["\n      "])),(l()(),t._20(-1,null,["\n\n      "])),(l()(),t.Z(34,0,null,null,18,"ion-item",[["class","marginlists item item-block"]],null,null,null,P.b,P.a)),t.Y(35,1097728,null,3,Y.a,[j.a,r.a,t.j,t.z,[2,k.a]],null,null),t._18(335544320,4,{contentLabel:0}),t._18(603979776,5,{_buttons:1}),t._18(603979776,6,{_icons:1}),t.Y(39,16384,null,0,z.a,[],null,null),(l()(),t._20(-1,2,["\n        "])),(l()(),t.Z(41,0,null,1,2,"ion-label",[["stacked",""]],null,null,null,null,null)),t.Y(42,16384,[[4,4]],0,w.a,[r.a,t.j,t.z,[8,null],[8,""],[8,null],[8,null]],null,null),(l()(),t._20(-1,null,["Apellidos"])),(l()(),t._20(-1,2,["\n        "])),(l()(),t.Z(45,0,null,3,6,"ion-input",[["name","userregistroapellido"],["required",""],["type","text"]],[[1,"required",0],[2,"ng-untouched",null],[2,"ng-touched",null],[2,"ng-pristine",null],[2,"ng-dirty",null],[2,"ng-valid",null],[2,"ng-invalid",null],[2,"ng-pending",null]],[[null,"ngModelChange"]],function(l,n,u){var e=!0;if("ngModelChange"===n){e=!1!==(l.component.user_register.last_name=u)&&e}return e},q.b,q.a)),t.Y(46,16384,null,0,I.o,[],{required:[0,"required"]},null),t._16(1024,null,I.g,function(l){return[l]},[I.o]),t.Y(48,671744,null,0,I.m,[[8,null],[2,I.g],[8,null],[8,null]],{name:[0,"name"],model:[1,"model"]},{update:"ngModelChange"}),t._16(2048,null,I.i,null,[I.m]),t.Y(50,16384,null,0,I.j,[I.i],null,null),t.Y(51,5423104,null,0,x.a,[r.a,g.a,j.a,m.a,t.j,t.z,[2,p.a],[2,Y.a],[2,I.i],_.a],{type:[0,"type"]},null),(l()(),t._20(-1,2,["\n      "])),(l()(),t._20(-1,null,["\n\n      "])),(l()(),t.Z(54,0,null,null,27,"ion-item",[["class","marginlists item item-block"]],null,null,null,P.b,P.a)),t.Y(55,1097728,null,3,Y.a,[j.a,r.a,t.j,t.z,[2,k.a]],null,null),t._18(335544320,7,{contentLabel:0}),t._18(603979776,8,{_buttons:1}),t._18(603979776,9,{_icons:1}),t.Y(59,16384,null,0,z.a,[],null,null),(l()(),t._20(-1,2,["\n        "])),(l()(),t.Z(61,0,null,1,2,"ion-label",[["stacked",""]],null,null,null,null,null)),t.Y(62,16384,[[7,4]],0,w.a,[r.a,t.j,t.z,[8,null],[8,""],[8,null],[8,null]],null,null),(l()(),t._20(-1,null,["Género"])),(l()(),t._20(-1,2,["\n        "])),(l()(),t.Z(65,0,null,3,15,"ion-select",[["cancelText","Cancelar"],["name","userregistrogenero"],["okText","Guardar"]],[[2,"select-disabled",null],[2,"ng-untouched",null],[2,"ng-touched",null],[2,"ng-pristine",null],[2,"ng-dirty",null],[2,"ng-valid",null],[2,"ng-invalid",null],[2,"ng-pending",null]],[[null,"ngModelChange"],[null,"click"],[null,"keyup.space"]],function(l,n,u){var e=!0,a=l.component;if("click"===n){e=!1!==t._11(l,66)._click(u)&&e}if("keyup.space"===n){e=!1!==t._11(l,66)._keyup()&&e}if("ngModelChange"===n){e=!1!==(a.user_register.gender=u)&&e}return e},M.b,M.a)),t.Y(66,1228800,null,1,D.a,[m.a,j.a,r.a,t.j,t.z,[2,Y.a],T.a],{cancelText:[0,"cancelText"],okText:[1,"okText"]},null),t._18(603979776,10,{options:1}),t._16(1024,null,I.h,function(l){return[l]},[D.a]),t.Y(69,671744,null,0,I.m,[[8,null],[8,null],[8,null],[2,I.h]],{name:[0,"name"],model:[1,"model"]},{update:"ngModelChange"}),t._16(2048,null,I.i,null,[I.m]),t.Y(71,16384,null,0,I.j,[I.i],null,null),(l()(),t._20(-1,null,["\n          "])),(l()(),t.Z(73,0,null,null,2,"ion-option",[["value","f"]],null,null,null,null,null)),t.Y(74,16384,[[10,4]],0,E.a,[t.j],{value:[0,"value"]},null),(l()(),t._20(-1,null,["Femenino"])),(l()(),t._20(-1,null,["\n          "])),(l()(),t.Z(77,0,null,null,2,"ion-option",[["value","m"]],null,null,null,null,null)),t.Y(78,16384,[[10,4]],0,E.a,[t.j],{value:[0,"value"]},null),(l()(),t._20(-1,null,["Masculino"])),(l()(),t._20(-1,null,["\n        "])),(l()(),t._20(-1,2,["\n      "])),(l()(),t._20(-1,null,["\n\n      "])),(l()(),t.Z(83,0,null,null,18,"ion-item",[["class","marginlists item item-block"]],null,null,null,P.b,P.a)),t.Y(84,1097728,null,3,Y.a,[j.a,r.a,t.j,t.z,[2,k.a]],null,null),t._18(335544320,11,{contentLabel:0}),t._18(603979776,12,{_buttons:1}),t._18(603979776,13,{_icons:1}),t.Y(88,16384,null,0,z.a,[],null,null),(l()(),t._20(-1,2,["\n        "])),(l()(),t.Z(90,0,null,1,2,"ion-label",[["stacked",""]],null,null,null,null,null)),t.Y(91,16384,[[11,4]],0,w.a,[r.a,t.j,t.z,[8,null],[8,""],[8,null],[8,null]],null,null),(l()(),t._20(-1,null,["Email"])),(l()(),t._20(-1,2,["\n        "])),(l()(),t.Z(94,0,null,3,6,"ion-input",[["name","userregistroemail"],["required",""],["type","email"]],[[1,"required",0],[2,"ng-untouched",null],[2,"ng-touched",null],[2,"ng-pristine",null],[2,"ng-dirty",null],[2,"ng-valid",null],[2,"ng-invalid",null],[2,"ng-pending",null]],[[null,"ngModelChange"]],function(l,n,u){var e=!0;if("ngModelChange"===n){e=!1!==(l.component.user_register.mail=u)&&e}return e},q.b,q.a)),t.Y(95,16384,null,0,I.o,[],{required:[0,"required"]},null),t._16(1024,null,I.g,function(l){return[l]},[I.o]),t.Y(97,671744,null,0,I.m,[[8,null],[2,I.g],[8,null],[8,null]],{name:[0,"name"],model:[1,"model"]},{update:"ngModelChange"}),t._16(2048,null,I.i,null,[I.m]),t.Y(99,16384,null,0,I.j,[I.i],null,null),t.Y(100,5423104,null,0,x.a,[r.a,g.a,j.a,m.a,t.j,t.z,[2,p.a],[2,Y.a],[2,I.i],_.a],{type:[0,"type"]},null),(l()(),t._20(-1,2,["\n      "])),(l()(),t._20(-1,null,["\n\n      "])),(l()(),t.Z(103,0,null,null,24,"ion-item",[["class","marginlists item item-block"]],null,null,null,P.b,P.a)),t.Y(104,1097728,null,3,Y.a,[j.a,r.a,t.j,t.z,[2,k.a]],null,null),t._18(335544320,14,{contentLabel:0}),t._18(603979776,15,{_buttons:1}),t._18(603979776,16,{_icons:1}),t.Y(108,16384,null,0,z.a,[],null,null),(l()(),t._20(-1,2,["\n        "])),(l()(),t.Z(110,0,null,1,2,"ion-label",[["stacked",""]],null,null,null,null,null)),t.Y(111,16384,[[14,4]],0,w.a,[r.a,t.j,t.z,[8,null],[8,""],[8,null],[8,null]],null,null),(l()(),t._20(-1,null,["Contraseña"])),(l()(),t._20(-1,2,["\n        "])),(l()(),t.Z(114,0,null,3,6,"ion-input",[["name","userregistrocontrasena"],["required",""]],[[1,"required",0],[2,"ng-untouched",null],[2,"ng-touched",null],[2,"ng-pristine",null],[2,"ng-dirty",null],[2,"ng-valid",null],[2,"ng-invalid",null],[2,"ng-pending",null]],[[null,"ngModelChange"]],function(l,n,u){var e=!0;if("ngModelChange"===n){e=!1!==(l.component.user_register.password=u)&&e}return e},q.b,q.a)),t.Y(115,16384,null,0,I.o,[],{required:[0,"required"]},null),t._16(1024,null,I.g,function(l){return[l]},[I.o]),t.Y(117,671744,null,0,I.m,[[8,null],[2,I.g],[8,null],[8,null]],{name:[0,"name"],model:[1,"model"]},{update:"ngModelChange"}),t._16(2048,null,I.i,null,[I.m]),t.Y(119,16384,null,0,I.j,[I.i],null,null),t.Y(120,5423104,null,0,x.a,[r.a,g.a,j.a,m.a,t.j,t.z,[2,p.a],[2,Y.a],[2,I.i],_.a],{type:[0,"type"]},null),(l()(),t._20(-1,2,["\n        "])),(l()(),t.U(16777216,null,4,1,null,e)),t.Y(123,16384,null,0,U.l,[t.I,t.F],{ngIf:[0,"ngIf"]},null),(l()(),t._20(-1,2,["\n        "])),(l()(),t.U(16777216,null,4,1,null,a)),t.Y(126,16384,null,0,U.l,[t.I,t.F],{ngIf:[0,"ngIf"]},null),(l()(),t._20(-1,2,["\n      "])),(l()(),t._20(-1,null,["\n\n    "])),(l()(),t._20(-1,null,["\n  "])),(l()(),t._20(-1,1,["\n\n  "])),(l()(),t.Z(131,0,null,1,9,"div",[["class","center"],["padding",""],["style","margin-top: -20%"]],null,null,null,null,null)),(l()(),t._20(-1,null,["\n    "])),(l()(),t.Z(133,0,null,null,2,"ion-label",[["floating",""],["style","color:white; font-size: 16px"]],null,[[null,"click"]],function(l,n,u){var e=!0;if("click"===n){e=!1!==l.component.politicas()&&e}return e},null,null)),t.Y(134,16384,null,0,w.a,[r.a,t.j,t.z,[8,""],[8,null],[8,null],[8,null]],null,null),(l()(),t._20(-1,null,["Políticas de uso"])),(l()(),t._20(-1,null,["\n    "])),(l()(),t.Z(137,0,null,null,2,"ion-label",[["floating",""],["style","color:white; font-size: 16px"]],null,[[null,"click"]],function(l,n,u){var e=!0;if("click"===n){e=!1!==l.component.privacidad()&&e}return e},null,null)),t.Y(138,16384,null,0,w.a,[r.a,t.j,t.z,[8,""],[8,null],[8,null],[8,null]],null,null),(l()(),t._20(-1,null,["Privacidad de la información\n    "])),(l()(),t._20(-1,null,["\n  "])),(l()(),t._20(-1,1,["\n\n  "])),(l()(),t.Z(142,0,null,1,9,"div",[["class","center"],["style","margin-top: 6%"]],null,null,null,null,null)),(l()(),t._20(-1,null,["\n    "])),(l()(),t.Z(144,0,null,null,2,"button",[["class","buttonPayCash"],["ion-button",""],["small",""],["style","border-radius: 0%"]],null,[[null,"click"]],function(l,n,u){var e=!0;if("click"===n){e=!1!==l.component.cancel()&&e}return e},i.b,i.a)),t.Y(145,1097728,null,0,s.a,[[8,""],r.a,t.j,t.z],{small:[0,"small"]},null),(l()(),t._20(-1,0,["Cancelar"])),(l()(),t._20(-1,null,["\n    "])),(l()(),t.Z(148,0,null,null,2,"button",[["class","buttonPayCash"],["ion-button",""],["small",""],["style","border-radius: 0%"]],null,[[null,"click"]],function(l,n,u){var e=!0;if("click"===n){e=!1!==l.component.register()&&e}return e},i.b,i.a)),t.Y(149,1097728,null,0,s.a,[[8,""],r.a,t.j,t.z],{small:[0,"small"]},null),(l()(),t._20(-1,0,["Registrarse\n    "])),(l()(),t._20(-1,null,["\n  "])),(l()(),t._20(-1,1,["\n\n"]))],function(l,n){var u=n.component;l(n,6,0,"assets/imgs/EPCLogo.png");l(n,26,0,"");l(n,28,0,"userregistronombre",u.user_register.first_name);l(n,31,0,"text");l(n,46,0,"");l(n,48,0,"userregistroapellido",u.user_register.last_name);l(n,51,0,"text");l(n,66,0,"Cancelar","Guardar");l(n,69,0,"userregistrogenero",u.user_register.gender);l(n,74,0,"f");l(n,78,0,"m");l(n,95,0,"");l(n,97,0,"userregistroemail",u.user_register.mail);l(n,100,0,"email");l(n,115,0,"");l(n,117,0,"userregistrocontrasena",u.user_register.password);l(n,120,0,t._2(1,"",u.type,""));l(n,123,0,!u.showPass);l(n,126,0,u.showPass);l(n,145,0,"");l(n,149,0,"")},function(l,n){l(n,0,0,t._11(n,1).statusbarPadding,t._11(n,1)._hasRefresher);l(n,25,0,t._11(n,26).required?"":null,t._11(n,30).ngClassUntouched,t._11(n,30).ngClassTouched,t._11(n,30).ngClassPristine,t._11(n,30).ngClassDirty,t._11(n,30).ngClassValid,t._11(n,30).ngClassInvalid,t._11(n,30).ngClassPending);l(n,45,0,t._11(n,46).required?"":null,t._11(n,50).ngClassUntouched,t._11(n,50).ngClassTouched,t._11(n,50).ngClassPristine,t._11(n,50).ngClassDirty,t._11(n,50).ngClassValid,t._11(n,50).ngClassInvalid,t._11(n,50).ngClassPending);l(n,65,0,t._11(n,66)._disabled,t._11(n,71).ngClassUntouched,t._11(n,71).ngClassTouched,t._11(n,71).ngClassPristine,t._11(n,71).ngClassDirty,t._11(n,71).ngClassValid,t._11(n,71).ngClassInvalid,t._11(n,71).ngClassPending);l(n,94,0,t._11(n,95).required?"":null,t._11(n,99).ngClassUntouched,t._11(n,99).ngClassTouched,t._11(n,99).ngClassPristine,t._11(n,99).ngClassDirty,t._11(n,99).ngClassValid,t._11(n,99).ngClassInvalid,t._11(n,99).ngClassPending);l(n,114,0,t._11(n,115).required?"":null,t._11(n,119).ngClassUntouched,t._11(n,119).ngClassTouched,t._11(n,119).ngClassPristine,t._11(n,119).ngClassDirty,t._11(n,119).ngClassValid,t._11(n,119).ngClassInvalid,t._11(n,119).ngClassPending)})}u.d(n,"a",function(){return O});var t=u(0),i=u(30),s=u(23),r=u(3),c=u(42),d=u(36),p=u(19),g=u(5),_=u(9),m=u(8),h=u(25),f=u(6),y=u(18),v=u(102),b=u(62),C=u(52),Z=u(10),P=u(53),Y=u(21),j=u(20),k=u(37),z=u(45),w=u(43),q=u(63),I=u(17),x=u(44),M=u(188),D=u(77),T=u(29),E=u(78),U=u(16),V=u(148),B=u(14),R=u(40),L=u(24),N=u(27),S=u(38),F=u(65),A=t.X({encapsulation:2,styles:[],data:{}}),O=t.V("page-register",V.a,function(l){return t._22(0,[(l()(),t.Z(0,0,null,null,1,"page-register",[],null,null,null,o,A)),t.Y(1,49152,null,0,V.a,[y.a,B.a,R.a,L.a,N.a,S.a,F.a],null,null)],null,null)},{},{},[])},400:function(l,n,u){"use strict";function e(l){return o._22(0,[(l()(),o._20(-1,null,["\n    "])),(l()(),o.Z(1,0,null,null,0,"img",[["class","flag"]],[[8,"src",4]],null,null,null,null)),(l()(),o._20(-1,null,["\n    "])),(l()(),o.Z(3,0,null,null,0,"span",[],[[8,"innerHTML",1]],null,null,null,null)),(l()(),o._20(-1,null,["\n  "]))],null,function(l,n){l(n,1,0,o._2(1,"",n.context.attrs.data.flag,""));l(n,3,0,"+"+n.context.attrs.data.callingCodes[0]+" "+n.context.attrs.data.name)})}function a(l){return o._22(0,[o._18(402653184,1,{searchbar:0}),(l()(),o.Z(1,0,null,null,9,"ion-content",[["padding",""]],[[2,"statusbar-padding",null],[2,"has-refresher",null]],null,null,t.b,t.a)),o.Y(2,4374528,null,0,i.a,[s.a,r.a,c.a,o.j,o.z,d.a,p.a,o.u,[2,g.a],[2,_.a]],null,null),(l()(),o._20(-1,1,["\n  "])),(l()(),o.U(0,[["withFlags",2]],1,0,null,e)),(l()(),o._20(-1,1,["\n  "])),(l()(),o.Z(6,0,null,1,3,"ion-auto-complete",[["item-content",""]],null,[[null,"itemSelected"],["document","click"]],function(l,n,u){var e=!0,a=l.component;if("document:click"===n){e=!1!==o._11(l,8).documentClickHandler(u)&&e}if("itemSelected"===n){e=!1!==a.selectItem(u)&&e}return e},m.b,m.a)),o._16(5120,null,h.h,function(l){return[l]},[f.a]),o.Y(8,8437760,[[1,4],["search",4]],0,f.a,[],{dataProvider:[0,"dataProvider"],options:[1,"options"],showResultsFirst:[2,"showResultsFirst"],template:[3,"template"]},{itemSelected:"itemSelected"}),o._14(9,{placeholder:0}),(l()(),o._20(-1,1,["\n"])),(l()(),o._20(-1,null,["\n"]))],function(l,n){l(n,8,0,n.component.country,l(n,9,0,"Search your country"),!0,o._11(n,4))},function(l,n){l(n,1,0,o._11(n,2).statusbarPadding,o._11(n,2)._hasRefresher)})}u.d(n,"a",function(){return Z});var o=u(0),t=u(36),i=u(19),s=u(3),r=u(5),c=u(9),d=u(8),p=u(25),g=u(6),_=u(18),m=u(693),h=u(17),f=u(80),y=u(103),v=u(14),b=u(91),C=o.X({encapsulation:2,styles:[],data:{}}),Z=o.V("page-select-code",y.a,function(l){return o._22(0,[(l()(),o.Z(0,0,null,null,1,"page-select-code",[],null,null,null,a,C)),o.Y(1,49152,null,0,y.a,[_.a,v.a,b.a,g.a],null,null)],null,null)},{},{},[])},401:function(l,n,u){"use strict";function e(l){return a._22(0,[],null,null)}u.d(n,"a",function(){return r});var a=u(0),o=u(150),t=u(18),i=u(14),s=a.X({encapsulation:2,styles:[],data:{}}),r=a.V("page-terminos",o.a,function(l){return a._22(0,[(l()(),a.Z(0,0,null,null,1,"page-terminos",[],null,null,null,e,s)),a.Y(1,49152,null,0,o.a,[t.a,i.a],null,null)],null,null)},{},{},[])},402:function(l,n,u){"use strict";function e(l){return a._22(0,[(l()(),a.Z(0,0,null,null,10,"ion-header",[],null,null,null,null,null)),a.Y(1,16384,null,0,o.a,[t.a,a.j,a.z,[2,i.a]],null,null),(l()(),a._20(-1,null,["\n\n  "])),(l()(),a.Z(3,0,null,null,6,"ion-navbar",[["class","toolbar"]],[[8,"hidden",0],[2,"statusbar-padding",null]],null,null,s.b,s.a)),a.Y(4,49152,null,0,r.a,[c.a,[2,i.a],[2,d.a],t.a,a.j,a.z],null,null),(l()(),a._20(-1,3,["\n    "])),(l()(),a.Z(6,0,null,3,2,"ion-title",[],null,null,null,p.b,p.a)),a.Y(7,49152,null,0,g.a,[t.a,a.j,a.z,[2,_.a],[2,r.a]],null,null),(l()(),a._20(-1,0,["Resumen de la transacción"])),(l()(),a._20(-1,3,["\n  "])),(l()(),a._20(-1,null,["\n"])),(l()(),a._20(-1,null,["\n"])),(l()(),a.Z(12,0,null,null,59,"ion-content",[["padding",""]],[[2,"statusbar-padding",null],[2,"has-refresher",null]],null,null,m.b,m.a)),a.Y(13,4374528,null,0,h.a,[t.a,f.a,y.a,a.j,a.z,c.a,v.a,a.u,[2,i.a],[2,d.a]],null,null),(l()(),a._20(-1,1,["\n  "])),(l()(),a.Z(15,0,null,1,1,"h4",[],null,null,null,null,null)),(l()(),a._20(-1,null,["Resumen de la transacción"])),(l()(),a._20(-1,1,["\n"])),(l()(),a.Z(18,0,null,1,52,"ion-card",[],null,null,null,null,null)),a.Y(19,16384,null,0,b.a,[t.a,a.j,a.z],null,null),(l()(),a._20(-1,null,["\n  "])),(l()(),a.Z(21,0,null,null,48,"ion-card-content",[],null,null,null,null,null)),a.Y(22,16384,null,0,C.a,[t.a,a.j,a.z],null,null),(l()(),a._20(-1,null,["\n    "])),(l()(),a.Z(24,0,null,null,44,"ion-row",[["class","row"]],null,null,null,null,null)),a.Y(25,16384,null,0,Z.a,[],null,null),(l()(),a._20(-1,null,["\n      "])),(l()(),a.Z(27,0,null,null,1,"label",[["stacked",""]],null,null,null,null,null)),(l()(),a._20(-1,null,["Número de celular de destino"])),(l()(),a._20(-1,null,["\n      "])),(l()(),a.Z(30,0,null,null,1,"h4",[],null,null,null,null,null)),(l()(),a._20(31,null,["",""])),(l()(),a._20(-1,null,["\n      "])),(l()(),a.Z(33,0,null,null,1,"label",[["stacked",""]],null,null,null,null,null)),(l()(),a._20(-1,null,["Nombre de la ciudad"])),(l()(),a._20(-1,null,["\n      "])),(l()(),a.Z(36,0,null,null,1,"h4",[],null,null,null,null,null)),(l()(),a._20(37,null,["",""])),(l()(),a._20(-1,null,["\n      "])),(l()(),a.Z(39,0,null,null,1,"label",[["stacked",""]],null,null,null,null,null)),(l()(),a._20(-1,null,["Costo local de la transacción"])),(l()(),a._20(-1,null,["\n      "])),(l()(),a.Z(42,0,null,null,1,"h4",[],null,null,null,null,null)),(l()(),a._20(43,null,["",""])),(l()(),a._20(-1,null,["\n      "])),(l()(),a.Z(45,0,null,null,1,"label",[["stacked",""]],null,null,null,null,null)),(l()(),a._20(-1,null,["Nombre de la criptomoneda"])),(l()(),a._20(-1,null,["\n      "])),(l()(),a.Z(48,0,null,null,1,"h4",[],null,null,null,null,null)),(l()(),a._20(49,null,["",""])),(l()(),a._20(-1,null,["\n      "])),(l()(),a.Z(51,0,null,null,1,"label",[["stacked",""]],null,null,null,null,null)),(l()(),a._20(-1,null,["Clave de transacción"])),(l()(),a._20(-1,null,["\n      "])),(l()(),a.Z(54,0,null,null,1,"h4",[],null,null,null,null,null)),(l()(),a._20(55,null,["",""])),(l()(),a._20(-1,null,["\n      "])),(l()(),a.Z(57,0,null,null,1,"label",[["stacked",""]],null,null,null,null,null)),(l()(),a._20(-1,null,["Total en dolares"])),(l()(),a._20(-1,null,["\n      "])),(l()(),a.Z(60,0,null,null,1,"h4",[],null,null,null,null,null)),(l()(),a._20(61,null,["",""])),(l()(),a._20(-1,null,["\n      "])),(l()(),a.Z(63,0,null,null,1,"label",[["stacked",""]],null,null,null,null,null)),(l()(),a._20(-1,null,["Total en criptomoneda"])),(l()(),a._20(-1,null,["\n      "])),(l()(),a.Z(66,0,null,null,1,"h4",[],null,null,null,null,null)),(l()(),a._20(67,null,["",""])),(l()(),a._20(-1,null,["\n    "])),(l()(),a._20(-1,null,["\n  "])),(l()(),a._20(-1,null,["\n"])),(l()(),a._20(-1,1,["\n\n"])),(l()(),a._20(-1,null,["\n"]))],null,function(l,n){var u=n.component;l(n,3,0,a._11(n,4)._hidden,a._11(n,4)._sbPadding);l(n,12,0,a._11(n,13).statusbarPadding,a._11(n,13)._hasRefresher);l(n,31,0,u.transaction.phone_user_des);l(n,37,0,u.country.name);l(n,43,0,u.transaction.amount_local);l(n,49,0,u.coin.full_name);l(n,55,0,u.transaction.key_eyecash);l(n,61,0,u.transaction.amount_usd);l(n,67,0,u.transaction.amount_btc)})}u.d(n,"a",function(){return z});var a=u(0),o=u(70),t=u(3),i=u(6),s=u(100),r=u(39),c=u(8),d=u(18),p=u(101),g=u(64),_=u(46),m=u(36),h=u(19),f=u(5),y=u(9),v=u(25),b=u(74),C=u(75),Z=u(51),P=u(106),Y=u(14),j=u(38),k=a.X({encapsulation:2,styles:[],data:{}}),z=a.V("page-transaction-resume",P.a,function(l){return a._22(0,[(l()(),a.Z(0,0,null,null,1,"page-transaction-resume",[],null,null,null,e,k)),a.Y(1,49152,null,0,P.a,[d.a,Y.a,j.a],null,null)],null,null)},{},{},[])},403:function(l,n,u){"use strict";function e(l){return t._22(0,[(l()(),t.Z(0,0,null,null,2,"ion-option",[],null,null,null,null,null)),t.Y(1,16384,[[1,4]],0,i.a,[t.j],{value:[0,"value"]},null),(l()(),t._20(2,null,["",""]))],function(l,n){l(n,1,0,t._2(1,"",n.context.$implicit.currency,""))},function(l,n){l(n,2,0,n.context.$implicit.name)})}function a(l){return t._22(0,[(l()(),t.Z(0,0,null,null,35,"button",[["class","item item-block"],["ion-item",""]],null,[[null,"click"]],function(l,n,u){var e=!0;if("click"===n){e=!1!==l.component.monedaSelect(l.context.$implicit)&&e}return e},s.b,s.a)),t.Y(1,1097728,null,3,r.a,[c.a,d.a,t.j,t.z,[2,p.a]],null,null),t._18(335544320,5,{contentLabel:0}),t._18(603979776,6,{_buttons:1}),t._18(603979776,7,{_icons:1}),t.Y(5,16384,null,0,g.a,[],null,null),(l()(),t._20(-1,2,["\n        "])),(l()(),t.Z(7,0,null,2,25,"ion-row",[["class","row"]],null,null,null,null,null)),t.Y(8,16384,null,0,_.a,[],null,null),(l()(),t._20(-1,null,["\n          "])),(l()(),t.Z(10,0,null,null,14,"ion-col",[["class","col"],["col-10",""]],null,null,null,null,null)),t.Y(11,16384,null,0,m.a,[],null,null),(l()(),t._20(-1,null,["\n            "])),(l()(),t.Z(13,0,null,null,1,"h4",[],null,null,null,null,null)),(l()(),t._20(14,null,["Nombre: ",""])),(l()(),t._20(-1,null,["\n            "])),(l()(),t.Z(16,0,null,null,1,"h6",[],null,null,null,null,null)),(l()(),t._20(17,null,["1 "," = "," USD"])),(l()(),t._20(-1,null,["\n            "])),(l()(),t.Z(19,0,null,null,1,"h5",[["stacked",""]],null,null,null,null,null)),(l()(),t._20(20,null,[" 1 "," >> "," "])),(l()(),t._20(-1,null,["\n            "])),(l()(),t.Z(22,0,null,null,1,"h5",[],null,null,null,null,null)),(l()(),t._20(23,null,["",""])),(l()(),t._20(-1,null,["\n          "])),(l()(),t._20(-1,null,["\n          "])),(l()(),t.Z(26,0,null,null,5,"ion-col",[["class","margIcon col"],["col-2",""]],null,null,null,null,null)),t.Y(27,16384,null,0,m.a,[],null,null),(l()(),t._20(-1,null,["\n            "])),(l()(),t.Z(29,0,null,null,1,"ion-icon",[["name","add"],["role","img"]],[[2,"hide",null]],null,null,null,null)),t.Y(30,147456,null,0,h.a,[d.a,t.j,t.z],{name:[0,"name"]},null),(l()(),t._20(-1,null,["\n          "])),(l()(),t._20(-1,null,["\n        "])),(l()(),t._20(-1,2,["\n        "])),(l()(),t.Z(34,0,null,2,0,"hr",[],null,null,null,null,null)),(l()(),t._20(-1,2,["\n      "]))],function(l,n){l(n,30,0,"add")},function(l,n){var u=n.component;l(n,14,0,n.context.$implicit.full_name);l(n,17,0,n.context.$implicit.full_name,n.context.$implicit.usd_value);l(n,20,0,n.context.$implicit.full_name,u.currency);l(n,23,0,n.context.$implicit.local_usd_value);l(n,29,0,t._11(n,30)._hidden)})}function o(l){return t._22(0,[(l()(),t.Z(0,0,null,null,10,"ion-header",[],null,null,null,null,null)),t.Y(1,16384,null,0,f.a,[d.a,t.j,t.z,[2,y.a]],null,null),(l()(),t._20(-1,null,["\n  "])),(l()(),t.Z(3,0,null,null,6,"ion-navbar",[["class","toolbar"]],[[8,"hidden",0],[2,"statusbar-padding",null]],null,null,v.b,v.a)),t.Y(4,49152,null,0,b.a,[C.a,[2,y.a],[2,Z.a],d.a,t.j,t.z],null,null),(l()(),t._20(-1,3,["\n    "])),(l()(),t.Z(6,0,null,3,2,"ion-title",[],null,null,null,P.b,P.a)),t.Y(7,49152,null,0,Y.a,[d.a,t.j,t.z,[2,j.a],[2,b.a]],null,null),(l()(),t._20(-1,0,["TRANSACCIONES"])),(l()(),t._20(-1,3,["\n  "])),(l()(),t._20(-1,null,["\n"])),(l()(),t._20(-1,null,["\n\n"])),(l()(),t.Z(12,0,null,null,46,"ion-content",[["padding",""]],[[2,"statusbar-padding",null],[2,"has-refresher",null]],null,null,k.b,k.a)),t.Y(13,4374528,null,0,z.a,[d.a,w.a,q.a,t.j,t.z,C.a,I.a,t.u,[2,y.a],[2,Z.a]],null,null),(l()(),t._20(-1,1,["\n  "])),(l()(),t.Z(15,0,null,1,2,"ion-label",[["class","txtLbl"],["stacked",""]],null,null,null,null,null)),t.Y(16,16384,null,0,x.a,[d.a,t.j,t.z,[8,null],[8,""],[8,null],[8,null]],null,null),(l()(),t._20(-1,null,["Seleccione país de interés"])),(l()(),t._20(-1,1,["\n  "])),(l()(),t.Z(19,0,null,1,10,"ion-select",[],[[2,"select-disabled",null],[2,"ng-untouched",null],[2,"ng-touched",null],[2,"ng-pristine",null],[2,"ng-dirty",null],[2,"ng-valid",null],[2,"ng-invalid",null],[2,"ng-pending",null]],[[null,"ngModelChange"],[null,"ionChange"],[null,"click"],[null,"keyup.space"]],function(l,n,u){var e=!0,a=l.component;if("click"===n){e=!1!==t._11(l,20)._click(u)&&e}if("keyup.space"===n){e=!1!==t._11(l,20)._keyup()&&e}if("ngModelChange"===n){e=!1!==(a.currency=u)&&e}if("ionChange"===n){e=!1!==a.countrySelected()&&e}return e},M.b,M.a)),t.Y(20,1228800,null,1,D.a,[C.a,c.a,d.a,t.j,t.z,[2,r.a],T.a],null,{ionChange:"ionChange"}),t._18(603979776,1,{options:1}),t._16(1024,null,E.h,function(l){return[l]},[D.a]),t.Y(23,671744,null,0,E.m,[[8,null],[8,null],[8,null],[2,E.h]],{model:[0,"model"]},{update:"ngModelChange"}),t._16(2048,null,E.i,null,[E.m]),t.Y(25,16384,null,0,E.j,[E.i],null,null),(l()(),t._20(-1,null,["\n    "])),(l()(),t.U(16777216,null,null,1,null,e)),t.Y(28,802816,null,0,U.k,[t.I,t.F,t.p],{ngForOf:[0,"ngForOf"]},null),(l()(),t._20(-1,null,["\n  "])),(l()(),t._20(-1,1,["\n\n\n  "])),(l()(),t.Z(31,0,null,1,26,"ion-card",[],null,null,null,null,null)),t.Y(32,16384,null,0,V.a,[d.a,t.j,t.z],null,null),(l()(),t._20(-1,null,["\n    "])),(l()(),t.Z(34,0,null,null,22,"ion-card-content",[],null,null,null,null,null)),t.Y(35,16384,null,0,B.a,[d.a,t.j,t.z],null,null),(l()(),t._20(-1,null,["\n      "])),(l()(),t.Z(37,0,null,null,1,"label",[["stacked",""]],null,null,null,null,null)),(l()(),t._20(-1,null,["Precio del dolar en el paìs"])),(l()(),t._20(-1,null,["\n      "])),(l()(),t.Z(40,0,null,null,9,"ion-item",[["class","item item-block"]],null,null,null,s.b,s.a)),t.Y(41,1097728,null,3,r.a,[c.a,d.a,t.j,t.z,[2,p.a]],null,null),t._18(335544320,2,{contentLabel:0}),t._18(603979776,3,{_buttons:1}),t._18(603979776,4,{_icons:1}),t.Y(45,16384,null,0,g.a,[],null,null),(l()(),t._20(-1,2,["\n        "])),(l()(),t.Z(47,0,null,2,1,"h6",[],null,null,null,null,null)),(l()(),t._20(48,null,["1 USD = "," ",""])),(l()(),t._20(-1,2,["\n      "])),(l()(),t._20(-1,null,["\n      "])),(l()(),t.Z(51,0,null,null,1,"label",[["stacked",""]],null,null,null,null,null)),(l()(),t._20(-1,null,["Información de las monedas"])),(l()(),t._20(-1,null,["\n\n      "])),(l()(),t.U(16777216,null,null,1,null,a)),t.Y(55,802816,null,0,U.k,[t.I,t.F,t.p],{ngForOf:[0,"ngForOf"]},null),(l()(),t._20(-1,null,["\n\n    "])),(l()(),t._20(-1,null,["\n  "])),(l()(),t._20(-1,1,["\n"]))],function(l,n){var u=n.component;l(n,23,0,u.currency);l(n,28,0,u.countrys);l(n,55,0,u.monedas)},function(l,n){var u=n.component;l(n,3,0,t._11(n,4)._hidden,t._11(n,4)._sbPadding);l(n,12,0,t._11(n,13).statusbarPadding,t._11(n,13)._hasRefresher);l(n,19,0,t._11(n,20)._disabled,t._11(n,25).ngClassUntouched,t._11(n,25).ngClassTouched,t._11(n,25).ngClassPristine,t._11(n,25).ngClassDirty,t._11(n,25).ngClassValid,t._11(n,25).ngClassInvalid,t._11(n,25).ngClassPending);l(n,48,0,null==u.infoCountry?null:u.infoCountry.local_usd_value,u.currency)})}u.d(n,"a",function(){return X});var t=u(0),i=u(78),s=u(53),r=u(21),c=u(20),d=u(3),p=u(37),g=u(45),_=u(51),m=u(50),h=u(42),f=u(70),y=u(6),v=u(100),b=u(39),C=u(8),Z=u(18),P=u(101),Y=u(64),j=u(46),k=u(36),z=u(19),w=u(5),q=u(9),I=u(25),x=u(43),M=u(188),D=u(77),T=u(29),E=u(17),U=u(16),V=u(74),B=u(75),R=u(154),L=u(14),N=u(24),S=u(27),F=u(38),A=u(40),O=u(65),H=t.X({encapsulation:2,styles:[],data:{}}),X=t.V("page-transaction",R.a,function(l){return t._22(0,[(l()(),t.Z(0,0,null,null,1,"page-transaction",[],null,null,null,o,H)),t.Y(1,49152,null,0,R.a,[Z.a,L.a,N.a,S.a,F.a,A.a,O.a],null,null)],null,null)},{},{},[])},404:function(l,n,u){"use strict";function e(l){return t._22(0,[(l()(),t.Z(0,0,null,null,26,"ion-content",[["class","imgBackground vignette"]],[[2,"statusbar-padding",null],[2,"has-refresher",null]],null,null,K.b,K.a)),t.Y(1,4374528,null,0,J.a,[Q.a,ll.a,nl.a,t.j,t.z,ul.a,el.a,t.u,[2,al.a],[2,ol.a]],null,null),(l()(),t._20(-1,1,["\n    "])),(l()(),t.Z(3,0,null,1,4,"div",[["class","center"]],null,null,null,null,null)),(l()(),t._20(-1,null,["\n        "])),(l()(),t.Z(5,0,null,null,1,"ion-img",[["class","logo"],["src","assets/imgs/EPCLogo.png"]],null,null,null,tl.b,tl.a)),t.Y(6,1228800,null,0,il.a,[t.j,t.z,ll.a,[2,J.a],nl.a],{src:[0,"src"]},null),(l()(),t._20(-1,null,["\n      "])),(l()(),t._20(-1,1,["\n\n  "])),(l()(),t.Z(9,0,null,1,4,"div",[["class","center"]],null,null,null,null,null)),(l()(),t._20(-1,null,["\n    "])),(l()(),t.Z(11,0,null,null,1,"ion-img",[["class","img-loaded2 img"],["name","add"],["src","assets/icon/TransaccionIco.png"]],null,[[null,"click"]],function(l,n,u){var e=!0;if("click"===n){e=!1!==l.component.goPage("transaction")&&e}return e},tl.b,tl.a)),t.Y(12,1228800,null,0,il.a,[t.j,t.z,ll.a,[2,J.a],nl.a],{src:[0,"src"]},null),(l()(),t._20(-1,null,["\n  "])),(l()(),t._20(-1,1,["\n\n  "])),(l()(),t.Z(15,0,null,1,4,"div",[["class","center"]],null,null,null,null,null)),(l()(),t._20(-1,null,["\n    "])),(l()(),t.Z(17,0,null,null,1,"ion-img",[["class","img-loaded2 img"],["name","list-box"],["src","assets/icon/HistoryIco.png"]],null,[[null,"click"]],function(l,n,u){var e=!0;if("click"===n){e=!1!==l.component.goPage("history")&&e}return e},tl.b,tl.a)),t.Y(18,1228800,null,0,il.a,[t.j,t.z,ll.a,[2,J.a],nl.a],{src:[0,"src"]},null),(l()(),t._20(-1,null,["\n  "])),(l()(),t._20(-1,1,["\n\n  "])),(l()(),t.Z(21,0,null,1,4,"div",[["class","center"]],null,null,null,null,null)),(l()(),t._20(-1,null,["\n    "])),(l()(),t.Z(23,0,null,null,1,"ion-img",[["class","img-loaded2 img"],["name","person"],["src","assets/icon/CuentaIco.png"]],null,[[null,"click"]],function(l,n,u){var e=!0;if("click"===n){e=!1!==l.component.goPage("account")&&e}return e},tl.b,tl.a)),t.Y(24,1228800,null,0,il.a,[t.j,t.z,ll.a,[2,J.a],nl.a],{src:[0,"src"]},null),(l()(),t._20(-1,null,["\n  "])),(l()(),t._20(-1,1,["\n\n"]))],function(l,n){l(n,6,0,"assets/imgs/EPCLogo.png");l(n,12,0,"assets/icon/TransaccionIco.png");l(n,18,0,"assets/icon/HistoryIco.png");l(n,24,0,"assets/icon/CuentaIco.png")},function(l,n){l(n,0,0,t._11(n,1).statusbarPadding,t._11(n,1)._hasRefresher)})}function a(l){return t._22(0,[(l()(),t.Z(0,0,null,null,2,"ion-nav",[],null,null,null,Zl.b,Zl.a)),t._16(6144,null,Pl.a,null,[Yl.a]),t.Y(2,4374528,null,0,Yl.a,[[2,al.a],[2,ol.a],ul.a,Q.a,ll.a,t.j,t.u,t.z,t.i,jl.l,kl.a,[2,zl.a],nl.a,t.k],{root:[0,"root"]},null),(l()(),t._20(-1,null,["\n"]))],function(l,n){l(n,2,0,n.component.rootPage)},null)}Object.defineProperty(n,"__esModule",{value:!0});var o=u(66),t=u(0),i=(u(1),u(13),u(142)),s=u(143),r=u(79),c=u(72),d=function(){function l(l,n,u,e){var a=this;this.locationProvider=e,this.rootPage=c.a,l.ready().then(function(){n.styleDefault(),u.hide(),l.is("cordova")&&a.getLocation()})}return l.prototype.getLocation=function(){},l}(),p=u(91),g=u(228),_=u(76),m=u(24),h=u(176),f=u(104),y=u(105),v=u(27),b=u(226),C=function(){function l(l,n,u,e){this.http=l,this.toastCtrl=n,this.loadingCtrl=u,this.api=e,this.response_verify={id:null,is_mail_verify:null,mail_code:null,phone_code:null,country_id:null},this.infoPhone={country_code:"",flag:"",value:""}}return l.prototype.sendNumberPhone=function(){var l=this;this.api.post("auth/pre-sign-up",this.infoPhone).then(function(n){return l.response_verify=n.verify,l.response_verify.country_id=n.country.id,console.log(l.response_verify.phone_code),l.response_verify}).catch(function(l){console.log(l)})},l}(),Z=u(219),P=u(217),Y=u(218),j=u(141),k=function(){return function(){}}(),z=u(220),w=u(222),q=u(223),I=u(224),x=u(225),M=u(227),D=u(229),T=u(231),E=u(230),U=function(){return function(){}}(),V=u(85),B=u(208),R=u(209),L=u(210),N=u(211),S=u(212),F=u(213),A=u(214),O=u(215),H=u(216),X=u(400),G=u(398),$=u(390),W=u(391),K=u(36),J=u(19),Q=u(3),ll=u(5),nl=u(9),ul=u(8),el=u(25),al=u(6),ol=u(18),tl=u(102),il=u(62),sl=u(38),rl=u(40),cl=t.X({encapsulation:2,styles:[],data:{}}),dl=t.V("page-home",j.a,function(l){return t._22(0,[(l()(),t.Z(0,0,null,null,1,"page-home",[],null,null,null,e,cl)),t.Y(1,49152,null,0,j.a,[ol.a,m.a,sl.a,rl.a,v.a],null,null)],null,null)},{},{},[]),pl=u(392),gl=u(393),_l=u(394),ml=u(395),hl=u(396),fl=u(397),yl=u(399),vl=u(401),bl=u(403),Cl=u(402),Zl=u(694),Pl=u(69),Yl=u(90),jl=u(10),kl=u(59),zl=u(29),wl=t.X({encapsulation:2,styles:[],data:{}}),ql=t.V("ng-component",d,function(l){return t._22(0,[(l()(),t.Z(0,0,null,null,1,"ng-component",[],null,null,null,a,wl)),t.Y(1,49152,null,0,d,[ll.a,s.a,i.a,r.a],null,null)],null,null)},{},{},[]),Il=u(16),xl=u(191),Ml=u(17),Dl=u(107),Tl=u(162),El=u(164),Ul=u(190),Vl=u(20),Bl=u(61),Rl=u(144),Ll=u(87),Nl=u(71),Sl=u(65),Fl=u(119),Al=u(197),Ol=u(193),Hl=u(389),Xl=u(192),Gl=u(57),$l=u(172),Wl=u(194),Kl=u(80),Jl=u(221),Ql=u(106),ln=t.W(U,[V.b],function(l){return t._7([t._8(512,t.i,t.S,[[8,[B.a,R.a,L.a,N.a,S.a,F.a,A.a,O.a,H.a,X.a,G.a,$.a,W.a,dl,pl.a,gl.a,_l.a,ml.a,hl.a,fl.a,yl.a,vl.a,bl.a,Cl.a,ql]],[3,t.i],t.s]),t._8(5120,t.r,t._17,[[3,t.r]]),t._8(4608,Il.n,Il.m,[t.r,[2,Il.w]]),t._8(5120,t.b,t._1,[]),t._8(5120,t.p,t._9,[]),t._8(5120,t.q,t._12,[]),t._8(4608,o.c,o.q,[Il.d]),t._8(6144,t.D,null,[o.c]),t._8(4608,o.f,xl.a,[]),t._8(5120,o.d,function(l,n,u,e,a){return[new o.k(l,n),new o.o(u),new o.n(e,a)]},[Il.d,t.u,Il.d,Il.d,o.f]),t._8(4608,o.e,o.e,[o.d,t.u]),t._8(135680,o.m,o.m,[Il.d]),t._8(4608,o.l,o.l,[o.e,o.m]),t._8(6144,t.B,null,[o.l]),t._8(6144,o.p,null,[o.m]),t._8(4608,t.G,t.G,[t.u]),t._8(4608,o.h,o.h,[Il.d]),t._8(4608,o.i,o.i,[Il.d]),t._8(4608,_.i,_.o,[Il.d,t.w,_.m]),t._8(4608,_.p,_.p,[_.i,_.n]),t._8(5120,_.a,function(l){return[l]},[_.p]),t._8(4608,_.l,_.l,[]),t._8(6144,_.j,null,[_.l]),t._8(4608,_.h,_.h,[_.j]),t._8(6144,_.b,null,[_.h]),t._8(4608,_.f,_.k,[_.b,t.o]),t._8(4608,_.c,_.c,[_.f]),t._8(4608,Ml.r,Ml.r,[]),t._8(4608,Ml.d,Ml.d,[]),t._8(4608,y.a,y.a,[]),t._8(4608,f.a,f.a,[]),t._8(4608,Dl.a,Dl.a,[]),t._8(4608,Tl.a,Tl.a,[ul.a,Q.a]),t._8(4608,El.a,El.a,[ul.a,Q.a]),t._8(4608,Ul.a,Ul.a,[]),t._8(4608,Vl.a,Vl.a,[]),t._8(4608,Bl.a,Bl.a,[ll.a]),t._8(4608,el.a,el.a,[Q.a,ll.a,t.u,nl.a]),t._8(4608,sl.a,sl.a,[ul.a,Q.a]),t._8(5120,Il.i,Rl.c,[Il.u,[2,Il.a],Q.a]),t._8(4608,Il.h,Il.h,[Il.i]),t._8(5120,Ll.b,Ll.d,[ul.a,Ll.a]),t._8(5120,zl.a,zl.b,[ul.a,Ll.b,Il.h,Nl.b,t.i]),t._8(4608,Sl.a,Sl.a,[ul.a,Q.a,zl.a]),t._8(4608,Fl.a,Fl.a,[ul.a,Q.a]),t._8(4608,Al.a,Al.a,[ul.a,Q.a,zl.a]),t._8(4608,Ol.a,Ol.a,[Q.a,ll.a,nl.a,ul.a,jl.l]),t._8(4608,rl.a,rl.a,[ul.a,Q.a]),t._8(4608,kl.a,kl.a,[ll.a,Q.a]),t._8(5120,h.b,h.d,[h.c]),t._8(4608,s.a,s.a,[]),t._8(4608,i.a,i.a,[]),t._8(4608,p.a,p.a,[_.c]),t._8(4608,m.a,m.a,[_.c,h.b]),t._8(4608,r.a,r.a,[_.c,f.a,y.a,p.a]),t._8(4608,v.a,v.a,[m.a,rl.a]),t._8(4608,C,C,[_.c,rl.a,sl.a,m.a]),t._8(512,Il.b,Il.b,[]),t._8(512,t.k,Hl.a,[]),t._8(256,Q.b,{},[]),t._8(1024,Xl.a,Xl.b,[]),t._8(1024,ll.a,ll.b,[o.b,Xl.a,t.u]),t._8(1024,Q.a,Q.c,[Q.b,ll.a]),t._8(512,nl.a,nl.a,[ll.a]),t._8(512,Gl.a,Gl.a,[]),t._8(512,ul.a,ul.a,[Q.a,ll.a,[2,Gl.a]]),t._8(512,jl.l,jl.l,[ul.a]),t._8(256,Ll.a,{links:[{loadChildren:"../pages/account/account.module.ngfactory#AccountPageModuleNgFactory",name:"AccountPage",segment:"account",priority:"low",defaultHistory:[]},{loadChildren:"../pages/history/history.module.ngfactory#HistoryPageModuleNgFactory",name:"HistoryPage",segment:"history",priority:"low",defaultHistory:[]},{loadChildren:"../pages/login/login.module.ngfactory#LoginPageModuleNgFactory",name:"LoginPage",segment:"login",priority:"low",defaultHistory:[]},{loadChildren:"../pages/modal-transaction/modal-transaction.module.ngfactory#ModalTransactionPageModuleNgFactory",name:"ModalTransactionPage",segment:"modal-transaction",priority:"low",defaultHistory:[]},{loadChildren:"../pages/modal-welcome/modal-welcome.module.ngfactory#ModalWelcomePageModuleNgFactory",name:"ModalWelcomePage",segment:"modal-welcome",priority:"low",defaultHistory:[]},{loadChildren:"../pages/password-update/password-update.module.ngfactory#PasswordUpdatePageModuleNgFactory",name:"PasswordUpdatePage",segment:"password-update",priority:"low",defaultHistory:[]},{loadChildren:"../pages/politicas/politicas.module.ngfactory#PoliticasPageModuleNgFactory",name:"PoliticasPage",segment:"politicas",priority:"low",defaultHistory:[]},{loadChildren:"../pages/recovery-password/recovery-password.module.ngfactory#RecoveryPasswordPageModuleNgFactory",name:"RecoveryPasswordPage",segment:"recovery-password",priority:"low",defaultHistory:[]},{loadChildren:"../pages/reg-number-phone/reg-number-phone.module.ngfactory#RegNumberPhonePageModuleNgFactory",name:"RegNumberPhonePage",segment:"reg-number-phone",priority:"low",defaultHistory:[]},{loadChildren:"../pages/register/register.module.ngfactory#RegisterPageModuleNgFactory",name:"RegisterPage",segment:"register",priority:"low",defaultHistory:[]},{loadChildren:"../pages/select-code/select-code.module.ngfactory#SelectCodePageModuleNgFactory",name:"SelectCodePage",segment:"select-code",priority:"low",defaultHistory:[]},{loadChildren:"../pages/terminos/terminos.module.ngfactory#TerminosPageModuleNgFactory",name:"TerminosPage",segment:"terminos",priority:"low",defaultHistory:[]},{loadChildren:"../pages/transaction-resume/transaction-resume.module.ngfactory#TransactionResumePageModuleNgFactory",name:"TransactionResumePage",segment:"transaction-resume",priority:"low",defaultHistory:[]},{loadChildren:"../pages/transaction/transaction.module.ngfactory#TransactionPageModuleNgFactory",name:"TransactionPage",segment:"transaction",priority:"low",defaultHistory:[]}]},[]),t._8(512,t.h,t.h,[]),t._8(512,$l.a,$l.a,[t.h]),t._8(1024,Nl.b,Nl.c,[$l.a,t.o]),t._8(1024,t.c,function(l,n,u,e,a,t,i,s,r,c,d,p,g){return[o.s(l),Wl.a(n),Ul.b(u,e),Ol.b(a,t,i,s,r),Nl.d(c,d,p,g)]},[[2,t.t],Q.a,ll.a,nl.a,Q.a,ll.a,nl.a,ul.a,jl.l,Q.a,Ll.a,Nl.b,t.u]),t._8(512,t.d,t.d,[[2,t.c]]),t._8(131584,t.f,t.f,[t.u,t.T,t.o,t.k,t.i,t.d]),t._8(512,t.e,t.e,[t.f]),t._8(512,o.a,o.a,[[3,o.a]]),t._8(512,_.e,_.e,[]),t._8(512,_.d,_.d,[]),t._8(512,Ml.p,Ml.p,[]),t._8(512,Ml.e,Ml.e,[]),t._8(512,Ml.n,Ml.n,[]),t._8(512,Rl.a,Rl.a,[]),t._8(512,h.a,h.a,[]),t._8(512,Rl.b,Rl.b,[]),t._8(512,Kl.b,Kl.b,[]),t._8(512,g.a,g.a,[]),t._8(512,b.a,b.a,[]),t._8(512,P.a,P.a,[]),t._8(512,Y.a,Y.a,[]),t._8(512,k,k,[]),t._8(512,Z.a,Z.a,[]),t._8(512,Jl.a,Jl.a,[]),t._8(512,z.a,z.a,[]),t._8(512,w.a,w.a,[]),t._8(512,q.a,q.a,[]),t._8(512,I.a,I.a,[]),t._8(512,x.a,x.a,[]),t._8(512,M.a,M.a,[]),t._8(512,D.a,D.a,[]),t._8(512,T.a,T.a,[]),t._8(512,E.a,E.a,[]),t._8(512,U,U,[]),t._8(256,_.m,"XSRF-TOKEN",[]),t._8(256,_.n,"X-XSRF-TOKEN",[]),t._8(256,Nl.a,Ql.a,[]),t._8(256,V.a,d,[]),t._8(256,Il.a,"/",[]),t._8(256,h.c,null,[])])});Object(t.M)(),Object(o.j)().bootstrapModuleFactory(ln)},72:function(l,n,u){"use strict";u.d(n,"a",function(){return t});u(1),u(13);var e=u(147),a=u(152),o=u(141),t=function(){function l(l,n,u,e,a){this.navCtrl=l,this.loadingCtrl=n,this.userProvider=u,this.toastCtrl=e,this.modalCtrl=a,this.mail=null,this.password=null}return l.prototype.login=function(){var l=this,n=this.loadingCtrl.create({spinner:"dots",duration:3e3});if(n.present(),null!=this.mail&&null!=this.password)this.userProvider.login(this.mail,this.password).then(function(u){"ok"==u.success?(l.navCtrl.setRoot(o.a),n.dismiss()):n.dismiss()}).catch(function(l){});else{n.dismiss();this.toastCtrl.create({message:"Todos los datos son requeridos",duration:3e3}).present()}},l.prototype.recuperarcontrasena=function(){this.modalCtrl.create(a.a).present()},l.prototype.registro=function(){this.navCtrl.push(e.a)},l}()},79:function(l,n,u){"use strict";u.d(n,"a",function(){return e});u(1),u(104),u(91),u(105);var e=function(){function l(l,n,u,e){this.http=l,this.geoCtrl=n,this.geocode=u,this.countryProvider=e,this.basicInformacion={country_code:null,flag:null},this.fullInformation=null,this.load=!1,this.getInformation(),this.getBasicInfo()}return l.prototype.getInformation=function(){var l=this;return new Promise(function(n,u){l.load?n(!0):l.geoCtrl.getCurrentPosition({enableHighAccuracy:!1,timeout:1e4}).then(function(u){l.geocode.reverseGeocode(u.coords.latitude,u.coords.longitude).then(function(u){if(l.countryProvider.getResults(u[0].countryName).length){var e=l.countryProvider.getResults(u[0].countryName)[0];l.fullInformation=e,l.basicInformacion.country_code=e.callingCodes[0],l.basicInformacion.flag=e.flag,l.load=!0,n(!0)}}).catch(function(l){return console.log("reversegeocode",l)})}).catch(function(l){return console.log("getcurrentposition",l)})})},l.prototype.getBasicInfo=function(){var l=this;return new Promise(function(n){l.getInformation().then(function(){n(l.basicInformacion)})})},l}()},91:function(l,n,u){"use strict";u.d(n,"a",function(){return a});u(1);var e=u(275),a=(u.n(e),function(){function l(l){this.http=l,this.labelAttribute="name",this.countries=[],this.init()}return l.prototype.init=function(){var l=this;console.log("Loading countries"),this.http.get("https://restcountries.eu/rest/v2/all/").toPromise().then(function(n){l.countries=n})},l.prototype.getResults=function(l){return""==l?this.countries:this.countries.filter(function(n){return n.name.toLowerCase().startsWith(l.toLowerCase())})},l}())}},[404]);
+webpackJsonp([0],{
+
+/***/ 121:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SelectCodePage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_country_country__ = __webpack_require__(122);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ionic2_auto_complete__ = __webpack_require__(222);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+/**
+ * Generated class for the SelectCodePage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
+var SelectCodePage = /** @class */ (function () {
+    function SelectCodePage(navCtrl, navParams, country, view) {
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+        this.country = country;
+        this.view = view;
+    }
+    SelectCodePage.prototype.ionViewDidLoad = function () {
+        this.searchbar.getItems();
+    };
+    SelectCodePage.prototype.selectItem = function (ev) {
+        this.view.dismiss({
+            code: ev.callingCodes[0],
+            flag: ev.flag
+        });
+    };
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_9" /* ViewChild */])('search'),
+        __metadata("design:type", __WEBPACK_IMPORTED_MODULE_3_ionic2_auto_complete__["a" /* AutoCompleteComponent */])
+    ], SelectCodePage.prototype, "searchbar", void 0);
+    SelectCodePage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+            selector: 'page-select-code',template:/*ion-inline-start:"/Users/eyeline/Documents/GitHub/eyepaycashapp/src/pages/select-code/select-code.html"*/'<ion-content padding>\n  <ng-template #withFlags let-attrs="attrs">\n    <img src="{{attrs.data.flag}}" class="flag"/>\n    <span\n        [innerHTML]="\'+\'+attrs.data.callingCodes[0]+\' \'+attrs.data.name"></span>\n  </ng-template>\n  <ion-auto-complete #search item-content [dataProvider]="country"\n                     [options]="{placeholder : \'Search your country\'}"\n                     [template]="withFlags"\n                     [showResultsFirst]="true"\n                     (itemSelected)="selectItem($event)"></ion-auto-complete>\n</ion-content>\n'/*ion-inline-end:"/Users/eyeline/Documents/GitHub/eyepaycashapp/src/pages/select-code/select-code.html"*/,
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */],
+            __WEBPACK_IMPORTED_MODULE_2__providers_country_country__["a" /* CountryProvider */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* ViewController */]])
+    ], SelectCodePage);
+    return SelectCodePage;
+}());
+
+//# sourceMappingURL=select-code.js.map
+
+/***/ }),
+
+/***/ 122:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CountryProvider; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_add_operator_map__ = __webpack_require__(221);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_rxjs_add_operator_map__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_common_http__ = __webpack_require__(58);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+/*
+  Generated class for the CountryProvider provider.
+
+  See https://angular.io/guide/dependency-injection for more info on providers
+  and Angular DI.
+*/
+var CountryProvider = /** @class */ (function () {
+    function CountryProvider(http) {
+        this.http = http;
+        this.labelAttribute = "name";
+        this.countries = [];
+        this.init();
+    }
+    CountryProvider.prototype.init = function () {
+        var _this = this;
+        console.log("Loading countries");
+        this.http.get("https://restcountries.eu/rest/v2/all/").toPromise()
+            .then(function (result) {
+            _this.countries = result;
+        });
+    };
+    CountryProvider.prototype.getResults = function (keyword) {
+        if (keyword == '') {
+            return this.countries;
+        }
+        else {
+            return this.countries
+                .filter(function (item) { return item.name.toLowerCase().startsWith(keyword.toLowerCase()); });
+        }
+    };
+    CountryProvider = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["B" /* Injectable */])(),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2__angular_common_http__["a" /* HttpClient */]])
+    ], CountryProvider);
+    return CountryProvider;
+}());
+
+//# sourceMappingURL=country.js.map
+
+/***/ }),
+
+/***/ 134:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return GeolocationProvider; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_common_http__ = __webpack_require__(58);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_geolocation__ = __webpack_require__(135);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__country_country__ = __webpack_require__(122);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_native_geocoder__ = __webpack_require__(137);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+/*
+  Generated class for the GeolocationProvider provider.
+
+  See https://angular.io/guide/dependency-injection for more info on providers
+  and Angular DI.
+*/
+var GeolocationProvider = /** @class */ (function () {
+    function GeolocationProvider(http, geoCtrl, geocode, countryProvider) {
+        this.http = http;
+        this.geoCtrl = geoCtrl;
+        this.geocode = geocode;
+        this.countryProvider = countryProvider;
+        this.basicInformacion = {
+            country_code: null,
+            flag: null,
+        };
+        this.fullInformation = null;
+        this.load = false;
+        this.getInformation();
+        this.getBasicInfo();
+    }
+    GeolocationProvider.prototype.getInformation = function () {
+        var _this = this;
+        return new Promise((function (resolve, reject) {
+            if (!_this.load) {
+                _this.geoCtrl.getCurrentPosition({
+                    enableHighAccuracy: false,
+                    timeout: 10000,
+                })
+                    .then((function (value) {
+                    _this.geocode.reverseGeocode(value.coords.latitude, value.coords.longitude)
+                        .then(function (data) {
+                        var countries = _this.countryProvider.getResults(data[0].countryName);
+                        if (countries.length) {
+                            var countryS = _this.countryProvider.getResults(data[0].countryName)[0];
+                            _this.fullInformation = countryS;
+                            _this.basicInformacion.country_code = countryS.callingCodes[0];
+                            _this.basicInformacion.flag = countryS.flag;
+                            _this.load = true;
+                            resolve(true);
+                        }
+                    }).catch(function (err) { return console.log("reversegeocode", err); });
+                }))
+                    .catch(function (err) { return console.log("getcurrentposition", err); });
+            }
+            else
+                resolve(true);
+        }));
+    };
+    GeolocationProvider.prototype.getBasicInfo = function () {
+        var _this = this;
+        return new Promise(function (resolve) {
+            _this.getInformation().then(function () {
+                resolve(_this.basicInformacion);
+            });
+        });
+    };
+    GeolocationProvider = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["B" /* Injectable */])(),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_0__angular_common_http__["a" /* HttpClient */],
+            __WEBPACK_IMPORTED_MODULE_2__ionic_native_geolocation__["a" /* Geolocation */],
+            __WEBPACK_IMPORTED_MODULE_4__ionic_native_native_geocoder__["a" /* NativeGeocoder */],
+            __WEBPACK_IMPORTED_MODULE_3__country_country__["a" /* CountryProvider */]])
+    ], GeolocationProvider);
+    return GeolocationProvider;
+}());
+
+//# sourceMappingURL=geolocation.js.map
+
+/***/ }),
+
+/***/ 138:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HomePage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_api__ = __webpack_require__(23);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_auth_user_auth_user__ = __webpack_require__(28);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__account_account__ = __webpack_require__(216);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__history_history__ = __webpack_require__(318);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__transaction_transaction__ = __webpack_require__(327);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+
+
+var HomePage = /** @class */ (function () {
+    function HomePage(navCtrl, api, loadingCtrl, toastCtrl, userProvider) {
+        this.navCtrl = navCtrl;
+        this.api = api;
+        this.loadingCtrl = loadingCtrl;
+        this.toastCtrl = toastCtrl;
+        this.userProvider = userProvider;
+    }
+    HomePage.prototype.goPage = function (page) {
+        if (page == 'account')
+            this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_4__account_account__["a" /* AccountPage */]);
+        else if (page == 'history')
+            this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_5__history_history__["a" /* HistoryPage */]);
+        else
+            this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_6__transaction_transaction__["a" /* TransactionPage */]);
+    };
+    HomePage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+            selector: 'page-home',template:/*ion-inline-start:"/Users/eyeline/Documents/GitHub/eyepaycashapp/src/pages/home/home.html"*/'<ion-content class="imgBackground vignette">\n    <div class="center">\n        <ion-img class="logo" src="assets/imgs/EPCLogo.png"></ion-img>\n      </div>\n\n  <div class="center">\n    <ion-img name="add" (click)="goPage(\'transaction\')" class="img-loaded2 img" src="assets/icon/TransaccionIco.png"></ion-img>\n  </div>\n\n  <div class="center">\n    <ion-img name="list-box" (click)="goPage(\'history\')" class="img-loaded2 img" src="assets/icon/HistoryIco.png"></ion-img>\n  </div>\n\n  <div class="center">\n    <ion-img name="person" (click)="goPage(\'account\')" class="img-loaded2 img" src="assets/icon/CuentaIco.png"></ion-img>\n  </div>\n\n</ion-content>'/*ion-inline-end:"/Users/eyeline/Documents/GitHub/eyepaycashapp/src/pages/home/home.html"*/
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */],
+            __WEBPACK_IMPORTED_MODULE_2__providers_api__["a" /* Api */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* LoadingController */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* ToastController */],
+            __WEBPACK_IMPORTED_MODULE_3__providers_auth_user_auth_user__["a" /* AuthUserProvider */]])
+    ], HomePage);
+    return HomePage;
+}());
+
+//# sourceMappingURL=home.js.map
+
+/***/ }),
+
+/***/ 170:
+/***/ (function(module, exports) {
+
+function webpackEmptyAsyncContext(req) {
+	// Here Promise.resolve().then() is used instead of new Promise() to prevent
+	// uncatched exception popping up in devtools
+	return Promise.resolve().then(function() {
+		throw new Error("Cannot find module '" + req + "'.");
+	});
+}
+webpackEmptyAsyncContext.keys = function() { return []; };
+webpackEmptyAsyncContext.resolve = webpackEmptyAsyncContext;
+module.exports = webpackEmptyAsyncContext;
+webpackEmptyAsyncContext.id = 170;
+
+/***/ }),
+
+/***/ 214:
+/***/ (function(module, exports, __webpack_require__) {
+
+var map = {
+	"../pages/account/account.module": [
+		215
+	],
+	"../pages/history-resume/history-resume.module": [
+		315
+	],
+	"../pages/history/history.module": [
+		317
+	],
+	"../pages/login/login.module": [
+		319
+	],
+	"../pages/modal-transaction/modal-transaction.module": [
+		330
+	],
+	"../pages/modal-welcome/modal-welcome.module": [
+		333
+	],
+	"../pages/password-update/password-update.module": [
+		334
+	],
+	"../pages/politicas/politicas.module": [
+		336
+	],
+	"../pages/recovery-password/recovery-password.module": [
+		335
+	],
+	"../pages/reg-number-phone/reg-number-phone.module": [
+		337
+	],
+	"../pages/register/register.module": [
+		339
+	],
+	"../pages/select-code/select-code.module": [
+		338
+	],
+	"../pages/transaction-resume/transaction-resume.module": [
+		340
+	],
+	"../pages/transaction/transaction.module": [
+		341
+	]
+};
+function webpackAsyncContext(req) {
+	var ids = map[req];
+	if(!ids)
+		return Promise.reject(new Error("Cannot find module '" + req + "'."));
+	return Promise.all(ids.slice(1).map(__webpack_require__.e)).then(function() {
+		return __webpack_require__(ids[0]);
+	});
+};
+webpackAsyncContext.keys = function webpackAsyncContextKeys() {
+	return Object.keys(map);
+};
+webpackAsyncContext.id = 214;
+module.exports = webpackAsyncContext;
+
+/***/ }),
+
+/***/ 215:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AccountPageModule", function() { return AccountPageModule; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__account__ = __webpack_require__(216);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+
+
+var AccountPageModule = /** @class */ (function () {
+    function AccountPageModule() {
+    }
+    AccountPageModule = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["J" /* NgModule */])({
+            declarations: [
+                __WEBPACK_IMPORTED_MODULE_2__account__["a" /* AccountPage */],
+            ],
+            imports: [
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__account__["a" /* AccountPage */]),
+            ],
+        })
+    ], AccountPageModule);
+    return AccountPageModule;
+}());
+
+//# sourceMappingURL=account.module.js.map
+
+/***/ }),
+
+/***/ 216:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AccountPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_api__ = __webpack_require__(23);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_auth_user_auth_user__ = __webpack_require__(28);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__select_code_select_code__ = __webpack_require__(121);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+/**
+ * Generated class for the AccountPage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
+var AccountPage = /** @class */ (function () {
+    //===========================================
+    function AccountPage(navCtrl, navParams, api, userProvider, toastCtrl, loadingCtrl, modal) {
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+        this.api = api;
+        this.userProvider = userProvider;
+        this.toastCtrl = toastCtrl;
+        this.loadingCtrl = loadingCtrl;
+        this.modal = modal;
+        this.usuario = null;
+        this.country = null;
+        this.verify = null;
+        this.type = 'password';
+        this.showPass = false;
+        //=================================== controlar visibilidad inputs y botones
+        this.isphone = true;
+        this.ismail = false;
+        //==================================== variables para la verificacion
+        this.infoPhone = {
+            flag: null,
+            type: null,
+            value: null,
+            country_code: null
+        };
+        this.response_verify = {
+            id: null,
+            is_mail_verify: null,
+            mail_code: null,
+            phone_code: null,
+            country_id: null,
+        };
+        this.codeVerify = null;
+        this.codeVerifyMail = null;
+        this.getInfo();
+    }
+    AccountPage.prototype.getInfo = function () {
+        this.usuario = this.userProvider.user_Info;
+        this.country = this.userProvider.user_Country;
+        this.verify = this.userProvider.User_Verify;
+    };
+    AccountPage.prototype.showPassword = function () {
+        this.showPass = !this.showPass;
+        if (this.showPass) {
+            this.type = 'text';
+        }
+        else {
+            this.type = 'password';
+        }
+    };
+    AccountPage.prototype.actualizar = function () {
+        var _this = this;
+        var loading = this.loadingCtrl.create({
+            spinner: 'dots',
+        });
+        loading.present();
+        var toast = this.toastCtrl.create({
+            message: 'Informaciòn personal actualizada correctamente',
+            duration: 3000,
+        });
+        if (this.usuario.first_name != null && this.usuario.last_name != null &&
+            this.usuario.first_name != "" && this.usuario.last_name != "") {
+            console.log(this.usuario);
+            this.api.post('account/update-info', this.usuario, this.userProvider).then(function (data) {
+                _this.usuario = data;
+                loading.dismiss();
+                toast.present();
+            }).catch();
+        }
+        else {
+            loading.dismiss();
+            var toast_1 = this.toastCtrl.create({
+                message: 'Todos los campos son obligatorios',
+                duration: 3000,
+            });
+            toast_1.present();
+        }
+    };
+    AccountPage.prototype.changePhone = function () {
+        var _this = this;
+        if (this.infoPhone.country_code != null && this.infoPhone.value != null) {
+            var loading_1 = this.loadingCtrl.create({
+                spinner: 'dots',
+            });
+            var toast_2 = this.toastCtrl.create({
+                message: 'Se ha enviado un código de verificación al nùmero celular.',
+                duration: 3000
+            });
+            loading_1.present();
+            this.infoPhone.type = "phone";
+            this.infoPhone.value = this.infoPhone.country_code + this.infoPhone.value;
+            this.api.post('account/update-contact', this.infoPhone, this.userProvider).then(function (data) {
+                console.log(data);
+                loading_1.dismiss();
+                toast_2.present();
+                _this.response_verify = data;
+            })
+                .catch();
+        }
+        else {
+            var toast = this.toastCtrl.create({
+                message: 'Por favor seleccione el pais e ingrese su nuevo nùmero celular.',
+                duration: 3000,
+            });
+            toast.present();
+        }
+    };
+    AccountPage.prototype.changeMail = function () {
+        var _this = this;
+        if (this.infoPhone.value != null) {
+            var loading_2 = this.loadingCtrl.create({
+                spinner: 'dots',
+            });
+            var toast_3 = this.toastCtrl.create({
+                message: 'Se ha enviado un correo electrònico de verificaciòn a su direcciòn email.',
+                duration: 3000,
+            });
+            loading_2.present();
+            this.infoPhone.type = 'mail';
+            this.api.post('account/update-contact', this.infoPhone, this.userProvider).then(function (data) {
+                loading_2.dismiss();
+                toast_3.present();
+                console.log(data);
+                _this.response_verify = data;
+            }).catch(function (data) {
+                loading_2.dismiss();
+            });
+        }
+        else {
+            var toast = this.toastCtrl.create({
+                message: 'Por favor ingrese una direcciòn email',
+                duration: 3000
+            });
+            toast.present();
+        }
+    };
+    AccountPage.prototype.pedirMail = function () {
+        this.isphone = false;
+        this.ismail = true;
+    };
+    AccountPage.prototype.pedirPhone = function () {
+        this.ismail = false;
+        this.isphone = true;
+    };
+    AccountPage.prototype.selectcountry = function () {
+        var _this = this;
+        var modal = this.modal.create(__WEBPACK_IMPORTED_MODULE_4__select_code_select_code__["a" /* SelectCodePage */]);
+        modal.present();
+        modal.onDidDismiss(function (data) {
+            if (data !== undefined) {
+                _this.infoPhone.country_code = data.code;
+                _this.infoPhone.flag = data.flag;
+            }
+        });
+    };
+    AccountPage.prototype.verifyCode = function () {
+        var _this = this;
+        if (this.response_verify.phone_code === this.codeVerify) {
+            this.api.get('account/confirm-verify', this.userProvider, {
+                id: this.response_verify.id,
+                type: 'phone',
+            }).then(function (data) {
+                _this.clearVar();
+                _this.usuario.phone = data.phone;
+                var toast = _this.toastCtrl.create({
+                    duration: 3000,
+                    message: 'Informaciòn actualizada correctamente',
+                });
+                toast.present();
+            }).catch(function (data) {
+                console.log(data);
+            });
+        }
+        else {
+            var toast = this.toastCtrl.create({
+                message: 'Código incorrecto.',
+                duration: 3000,
+            });
+            toast.present();
+        }
+    };
+    AccountPage.prototype.verifyCodeMail = function () {
+        var _this = this;
+        if (this.response_verify.mail_code === this.codeVerifyMail) {
+            this.api.get('account/confirm-verify', this.userProvider, {
+                id: this.response_verify.id,
+                type: 'mail',
+            }).then(function (data) {
+                console.log(data);
+                _this.usuario.mail = data.mail;
+                _this.clearVar();
+                var toast = _this.toastCtrl.create({
+                    duration: 3000,
+                    message: 'Informaciòn actualizada correctamente',
+                });
+                toast.present();
+            }).catch();
+        }
+        else {
+            var toast = this.toastCtrl.create({
+                message: 'Los còdigos de verificaciòn no coinciden',
+                duration: 3000
+            });
+            toast.present();
+        }
+    };
+    AccountPage.prototype.clearVar = function () {
+        this.isphone = true;
+        this.ismail = false;
+        this.infoPhone = {
+            flag: null,
+            type: null,
+            value: null,
+            country_code: null
+        };
+        this.response_verify = {
+            id: null,
+            is_mail_verify: null,
+            mail_code: null,
+            phone_code: null,
+            country_id: null,
+        };
+        this.codeVerify = null;
+        this.codeVerifyMail = null;
+    };
+    AccountPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+            selector: 'page-account',template:/*ion-inline-start:"/Users/eyeline/Documents/GitHub/eyepaycashapp/src/pages/account/account.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>\n        CUENTA\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n<ion-content padding>\n  <ion-card>\n    <ion-card-header>\n      <ion-icon name="person" item-start></ion-icon>\n      Información personal\n    </ion-card-header>\n    <ion-card-content>\n      <ion-list>\n        <ion-item>\n          <ion-label stacked>Nombres</ion-label>\n          <ion-input type="text" required name="userregistronombre" [(ngModel)]="usuario.first_name"></ion-input>\n        </ion-item>\n\n        <ion-item>\n          <ion-label stacked>Apellidos</ion-label>\n          <ion-input type="text" required name="userregistroapellido"\n                     [(ngModel)]="usuario.last_name"></ion-input>\n        </ion-item>\n        <ion-item>\n          <ion-label stacked>Género</ion-label>\n          <ion-select okText="Guardar" cancelText="Cancelar" [(ngModel)]="usuario.gender" name="userregistrogenero">\n            <ion-option value="f">Femenino</ion-option>\n            <ion-option value="m">Masculino</ion-option>\n          </ion-select>\n        </ion-item>\n        <button ion-button block class="buttonPayCash" (click)="actualizar()">Actualizar</button>\n      </ion-list>\n    </ion-card-content>\n  </ion-card>\n  <ion-card>\n    <ion-card-header>\n      <ion-icon name="key" item-start></ion-icon>\n      Información de cuenta\n    </ion-card-header>\n    <ion-card-content>\n      <ion-row>\n        <ion-label stacked>Email</ion-label>\n        {{usuario.mail}}\n      </ion-row>\n      <ion-row>\n        <ion-label stacked>Teléfono</ion-label>\n        {{usuario.phone}}\n      </ion-row>\n    </ion-card-content>\n  </ion-card>\n  <ion-card>\n    <ion-card-header>\n      <ion-icon name="locate" item-start></ion-icon>\n      Información de ubicaciòn\n    </ion-card-header>\n    <ion-card-content>\n      <ion-row>\n        <ion-label stacked>País</ion-label>\n        {{country.name}}\n      </ion-row>\n      <ion-row>\n        <ion-label stacked>Código de teléfono</ion-label>\n        {{country.phone_code}}\n      </ion-row>\n      <ion-row>\n        <ion-label stacked>Código de país</ion-label>\n        {{country.country_code}}\n      </ion-row>\n      <ion-row>\n        <ion-label stacked>Moneda del país</ion-label>\n        {{country.currency}}\n      </ion-row>\n    </ion-card-content>\n  </ion-card>\n\n\n  <ion-card>\n    <ion-card-header>\n      <ion-icon name="lock" item-start></ion-icon>\n      Información de seguridad\n    </ion-card-header>\n    <ion-card-content>\n      <div *ngIf="isphone">\n        <ion-row>\n\n          <label stacked>Seleccione el país e ingrese su nuevo número celular</label>\n          <ion-col col-4>\n            <ion-item class="item-flag">\n              <img [src]="infoPhone.flag" class="flagphone" *ngIf="infoPhone.flag !=null">\n              <button ion-button (click)="selectcountry()">+ {{infoPhone.country_code}}</button>\n            </ion-item>\n          </ion-col>\n          <ion-col col-8>\n              <ion-input required type="text" name="numerocelular" [(ngModel)]="infoPhone.value"\n                         placeholder="Número movil (celular)"></ion-input>\n          </ion-col>\n\n          <ion-col col-12 *ngIf="response_verify.phone_code != null">\n            <label stacked>Por favor ingrese el código de verificación</label>\n            <ion-input name="verifycode" [(ngModel)]="codeVerify"></ion-input>\n            <button class="buttonPayCash" (click)="verifyCode()" ion-button block>Verificar código</button>\n          </ion-col>\n        </ion-row>\n        <button ion-button block class="buttonPayCash" (click)="changePhone()" *ngIf="response_verify.phone_code==null">Actualizar número celular</button>\n        <button ion-button block class="buttonPayCash" (click)="pedirMail()">Cambiar dirección email</button>\n      </div>\n\n\n      <div *ngIf="ismail">\n        <ion-row>\n          <label stacked> Por favor ingrese la nueva dirección email</label>\n          <ion-col col-12 row>\n            <ion-input name="correoelectronico" [(ngModel)]="infoPhone.value" placeholder="Direcciòn email correo electrònico"></ion-input>\n          </ion-col>\n          <ion-col col-12 *ngIf="response_verify.mail_code != null">\n            <label stacked>Por favor ingrese el código de verificación</label>\n            <br>\n            <ion-input name="verifycode" [(ngModel)]="codeVerifyMail"></ion-input>\n            <button class="buttonPayCash" (click)="verifyCodeMail()" ion-button block>Verificar código</button>\n          </ion-col>\n        </ion-row>\n        <button ion-button block class="buttonPayCash" (click)="changeMail()" *ngIf="response_verify.mail_code==null">Actualizar dirección email</button>\n        <button ion-button block class="buttonPayCash" (click)="pedirPhone()">Cambiar número celular</button>\n      </div>\n    </ion-card-content>\n  </ion-card>\n\n</ion-content>\n'/*ion-inline-end:"/Users/eyeline/Documents/GitHub/eyepaycashapp/src/pages/account/account.html"*/,
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */],
+            __WEBPACK_IMPORTED_MODULE_2__providers_api__["a" /* Api */],
+            __WEBPACK_IMPORTED_MODULE_3__providers_auth_user_auth_user__["a" /* AuthUserProvider */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* ToastController */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* LoadingController */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* ModalController */]])
+    ], AccountPage);
+    return AccountPage;
+}());
+
+//# sourceMappingURL=account.js.map
+
+/***/ }),
+
+/***/ 23:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Api; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common_http__ = __webpack_require__(58);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(219);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+var Api = /** @class */ (function () {
+    function Api(http, storage) {
+        this.http = http;
+        this.storage = storage;
+        this.url = 'http://192.168.0.6/eyepaycash/frontend/web/apiapp/';
+        this.headers = new __WEBPACK_IMPORTED_MODULE_1__angular_common_http__["c" /* HttpHeaders */]({
+            'Content-Type': 'application/x-www-form-urlencoded',
+        });
+    }
+    Api.prototype.get = function (endpoint, user, params) {
+        var _this = this;
+        if (user != null) {
+            this.headers = new __WEBPACK_IMPORTED_MODULE_1__angular_common_http__["c" /* HttpHeaders */]({
+                'Content-Type': 'application/x-www-form-urlencoded',
+                'Authorization': 'Bearer ' + user.accessParam()
+            });
+        }
+        return new Promise(function (resolve, reject) {
+            var url = _this.url + endpoint;
+            var urlParams = '';
+            if (params) {
+                urlParams = _this.jsonToURLEncoded(params);
+            }
+            _this.http.get(url + '?' + urlParams, { headers: _this.headers }).toPromise()
+                .then(function (value) {
+                _this.storage.set(endpoint, value);
+                resolve(value);
+            }).catch(function (err) {
+                _this.storage.get(endpoint).then(function (value) {
+                    resolve(value);
+                }).catch(function (err) {
+                    reject("Lo sentimos. No hemos podido mostrar información. Comunícate con nuestro equipo de soporte");
+                });
+            });
+        });
+    };
+    Api.prototype.post = function (endpoint, body, user) {
+        var url = this.url + endpoint;
+        if (user != null) {
+            this.headers = new __WEBPACK_IMPORTED_MODULE_1__angular_common_http__["c" /* HttpHeaders */]({
+                'Content-Type': 'application/x-www-form-urlencoded',
+                'Authorization': 'Bearer ' + user.accessParam()
+            });
+        }
+        return this.http.post(url, this.jsonToURLEncoded(body), {
+            headers: this.headers
+        }).toPromise();
+    };
+    Api.prototype.jsonToURLEncoded = function (jsonString) {
+        return Object.keys(jsonString).map(function (key) {
+            return encodeURIComponent(key) + '=' + encodeURIComponent(jsonString[key]);
+        }).join('&');
+    };
+    Api = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["B" /* Injectable */])(),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_common_http__["a" /* HttpClient */], __WEBPACK_IMPORTED_MODULE_2__ionic_storage__["b" /* Storage */]])
+    ], Api);
+    return Api;
+}());
+
+//# sourceMappingURL=api.js.map
+
+/***/ }),
+
+/***/ 28:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AuthUserProvider; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__api__ = __webpack_require__(23);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(7);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+var AuthUserProvider = /** @class */ (function () {
+    function AuthUserProvider(api, toastCtrl) {
+        this.api = api;
+        this.toastCtrl = toastCtrl;
+        this.user_Info = {
+            first_name: null,
+            last_name: null,
+            phone: null,
+            access_token: null,
+            is_active: null,
+            gender: null,
+            mail: null,
+        };
+        this.user_Country = {
+            id: null,
+            name: null,
+            is_active: null,
+            phone_code: null,
+            country_code: null,
+            currency: null
+        };
+        this.User_Verify = {
+            id: null,
+            phone_code: null,
+            is_phone_verify: null,
+            mail_code: null,
+            is_mail_verify: null,
+            phone: null,
+            mail: null,
+            user_id: null
+        };
+        this.userRecovery = {
+            user_id: null,
+            codigoVerify: null,
+        };
+        this.check_terminos = false;
+        this.trylogin();
+    }
+    AuthUserProvider.prototype.login = function (usuario, password) {
+        var _this = this;
+        return new Promise(function (resolve, reject) {
+            _this.api.post('auth/login?expand=country,userVerify', { mail: usuario, password: password })
+                .then(function (data) {
+                if (data.success == 'ok') {
+                    _this.setUser(data.user);
+                    _this.setUserCountry(data.user.country);
+                    _this.setUserVerify(data.user.userVerify);
+                    resolve(data);
+                }
+                else {
+                    var toast = _this.toastCtrl.create({
+                        message: 'Usuario o contraseña incorrectos',
+                        duration: 3000,
+                    });
+                    toast.present();
+                }
+            })
+                .catch(function (err) { return reject(err); });
+        });
+    };
+    AuthUserProvider.prototype.isLogin = function () {
+        return this.user_Info !== null;
+    };
+    AuthUserProvider.prototype.trylogin = function () {
+        this.user_Info = JSON.parse(window.localStorage.getItem('user'));
+        if (this.user_Info == null)
+            this.user_Info = {
+                user: null,
+            };
+    };
+    AuthUserProvider.prototype.accessParam = function () {
+        if (this.user_Info != null)
+            return this.user_Info.access_token;
+        return null;
+    };
+    AuthUserProvider.prototype.setUser = function (Usuario) {
+        this.user_Info = Usuario;
+        window.localStorage.setItem('user', JSON.stringify(this.user_Info));
+    };
+    AuthUserProvider.prototype.setUserCountry = function (Country) {
+        this.user_Country = Country;
+    };
+    AuthUserProvider.prototype.setUserVerify = function (Verify) {
+        this.User_Verify = Verify;
+    };
+    AuthUserProvider.prototype.setUserRecovery = function (data) {
+        this.userRecovery = data;
+    };
+    AuthUserProvider.prototype.setTokenNotification = function (tokenId) {
+        this.tokenAppId = tokenId;
+    };
+    AuthUserProvider.prototype.registerTokenForUser = function (user_id) {
+        this.api.post('auth/tokenapp', { 'token': this.tokenAppId, 'id': user_id })
+            .then().catch();
+    };
+    AuthUserProvider.prototype.setCheck_Terminos = function (check) {
+        this.check_terminos = check;
+        console.log(this.check_terminos);
+    };
+    AuthUserProvider = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["B" /* Injectable */])(),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__api__["a" /* Api */],
+            __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["j" /* ToastController */]])
+    ], AuthUserProvider);
+    return AuthUserProvider;
+}());
+
+//# sourceMappingURL=auth-user.js.map
+
+/***/ }),
+
+/***/ 315:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HistoryResumePageModule", function() { return HistoryResumePageModule; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__history_resume__ = __webpack_require__(316);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+
+
+var HistoryResumePageModule = /** @class */ (function () {
+    function HistoryResumePageModule() {
+    }
+    HistoryResumePageModule = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["J" /* NgModule */])({
+            declarations: [
+                __WEBPACK_IMPORTED_MODULE_2__history_resume__["a" /* HistoryResumePage */],
+            ],
+            imports: [
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__history_resume__["a" /* HistoryResumePage */]),
+            ],
+        })
+    ], HistoryResumePageModule);
+    return HistoryResumePageModule;
+}());
+
+//# sourceMappingURL=history-resume.module.js.map
+
+/***/ }),
+
+/***/ 316:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HistoryResumePage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(7);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+/**
+ * Generated class for the HistoryResumePage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
+var HistoryResumePage = /** @class */ (function () {
+    function HistoryResumePage(navCtrl, navParams) {
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+        this.historyInfo = null;
+        this.country = null;
+        this.coin = null;
+        this.comision = null;
+        this.getInfo();
+    }
+    HistoryResumePage.prototype.getInfo = function () {
+        this.historyInfo = this.navParams.get('transaction');
+        this.country = this.historyInfo.country;
+        this.coin = this.historyInfo.coin;
+        this.comision = this.historyInfo.transactionCommission;
+        console.log(this.country);
+    };
+    HistoryResumePage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+            selector: 'page-history-resume',template:/*ion-inline-start:"/Users/eyeline/Documents/GitHub/eyepaycashapp/src/pages/history-resume/history-resume.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>Detalle de la transacción</ion-title>\n  </ion-navbar>\n</ion-header>\n<ion-content>\n  <ion-card>\n    <ion-card-content>\n      <ion-list>\n        <ion-row>\n          <ion-col col-12>\n            <label stacked>Información del país</label>\n            <p><b>Nombre: </b> {{country?.name}} </p>\n            <p><b>Moneda: </b>{{country?.currency}}</p>\n          </ion-col>\n        </ion-row>\n        <ion-row>\n          <ion-col col-12>\n            <label stacked>Información de {{coin?.full_name}}</label>\n            <p><b>Costo: </b> {{coin?.usd_value}} </p>\n          </ion-col>\n        </ion-row>\n        <ion-row>\n          <ion-col col-12>\n            <label stacked>Información de comisión</label>\n            <p><b>Total en USD: </b> {{comision?.total_in_usd}}</p>\n            <p><b>Total en Cryptomoneda: </b> {{comision?.total_in_crypto}}</p>\n          </ion-col>\n        </ion-row>\n        <ion-row>\n          <ion-col col-12>\n            <label stacked>Información de transacción</label>\n            <p><b>Costo en moneda local: </b> {{historyInfo?.amount_local}}</p>\n            <p><b>Costo en USD: </b> {{historyInfo?.amount_usd}} </p>\n            <p><b>Fecha de la transacción: </b> {{historyInfo?.date_request}} </p>\n            <p><b>Número móvil de destino: </b> {{historyInfo?.phone_user_des}}</p>\n            <p *ngIf="historyInfo?.process_status==0"><b>Estado: PENDIENTE DE PAGO </b></p>\n            <p *ngIf="historyInfo?.process_status==1"><b>Estado: PAGADO Y PENDIENTE POR RETIRAR </b></p>\n            <p *ngIf="historyInfo?.process_status==2"><b>Estado: PAGADO Y RETIRADO </b></p>\n\n          </ion-col>\n        </ion-row>\n\n        <ion-col col-12 *ngIf="historyInfo?.process_status==0">\n          <h2 text-center>La transacción se encuentra pendiente por pagar. </h2>\n          <h2 text-center>Número de referencia de transacción:</h2>\n          <h1 text-center>{{historyInfo?.key_request}}</h1>\n        </ion-col>\n        <ion-col col-12>\n          <h2 text-center>Total de la transacción</h2>\n          <h1 text-center>{{historyInfo?.amount_btc}}</h1>\n        </ion-col>\n      </ion-list>\n    </ion-card-content>\n  </ion-card>\n</ion-content>\n'/*ion-inline-end:"/Users/eyeline/Documents/GitHub/eyepaycashapp/src/pages/history-resume/history-resume.html"*/,
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */]])
+    ], HistoryResumePage);
+    return HistoryResumePage;
+}());
+
+// {user_id: 4, country_id: 1, coin_id: 2, company_id: null, phone_user_des: "435345", …}
+// amount_btc: "0.00273469"
+// amount_local: "34.53"
+// amount_usd: "0.01"
+// coin:
+//   date_update: "2018-10-05 11:31:14"
+// full_name: "Ethereum"
+// id: 2
+// is_active: 1
+// short_name: "ETH"
+// usd_value: "223.0600"
+// __proto__: Object
+// coin_id: 2
+// company_id: null
+// country:
+//   country_code: "CO"
+// currency: "COP"
+// id: 1
+// is_active: 1
+// name: "Colombia"
+// phone_code: "57"
+// __proto__: Object
+// country_id: 1
+// date_pay_confirm: null
+// date_request: "2018-10-08 15:36:22"
+// entity_add_data: null
+// key_eyecash: "2716"
+// key_request: "6837898708911006"
+// phone_user_des: "435345"
+// process_status: 0
+// transactionCommission:
+//   commission_ids: "["1","2"]"
+// crypto_value_to_usd: "223.06"
+// id: 58
+// money_local_to_usd: 3039
+// total_in_crypto: "0.00268986"
+// total_in_usd: "0.60"
+// transaction_id: 81
+// __proto__: Object
+// user_id: 4 
+//# sourceMappingURL=history-resume.js.map
+
+/***/ }),
+
+/***/ 317:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HistoryPageModule", function() { return HistoryPageModule; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__history__ = __webpack_require__(318);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+
+
+var HistoryPageModule = /** @class */ (function () {
+    function HistoryPageModule() {
+    }
+    HistoryPageModule = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["J" /* NgModule */])({
+            declarations: [
+                __WEBPACK_IMPORTED_MODULE_2__history__["a" /* HistoryPage */],
+            ],
+            imports: [
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__history__["a" /* HistoryPage */]),
+            ],
+        })
+    ], HistoryPageModule);
+    return HistoryPageModule;
+}());
+
+//# sourceMappingURL=history.module.js.map
+
+/***/ }),
+
+/***/ 318:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HistoryPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_api__ = __webpack_require__(23);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_auth_user_auth_user__ = __webpack_require__(28);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__history_resume_history_resume__ = __webpack_require__(316);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+/**
+ * Generated class for the HistoryPage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
+var HistoryPage = /** @class */ (function () {
+    function HistoryPage(navCtrl, navParams, api, userProvider) {
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+        this.api = api;
+        this.userProvider = userProvider;
+        this.transactions = null;
+        this.links = null;
+        this.meta = null;
+        this.filtro = {
+            status: 0,
+            page: null,
+            perpage: null
+        };
+        this.getInfo();
+    }
+    HistoryPage.prototype.getInfo = function () {
+        var _this = this;
+        this.api.get('app/transactions', this.userProvider, { 'expand': 'country,coin,transactionCommission', 'status': this.filtro.status, 'page': this.filtro.page, 'per-page': this.filtro.perpage }).then(function (data) {
+            _this.transactions = data.items;
+            _this.links = data.links;
+            _this.meta = data.meta;
+        });
+    };
+    HistoryPage.prototype.goDetalle = function (transaction) {
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_4__history_resume_history_resume__["a" /* HistoryResumePage */], { 'transaction': transaction });
+    };
+    HistoryPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+            selector: 'page-history',template:/*ion-inline-start:"/Users/eyeline/Documents/GitHub/eyepaycashapp/src/pages/history/history.html"*/'<ion-header>\n\n  <ion-navbar>\n    <ion-title>Historial</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n<ion-content padding >\n  <ion-list class="center bground">\n\n    <button *ngFor="let transaction of transactions" (click)="goDetalle(transaction)">\n      <ion-card>\n        <ion-card-content>\n          <ion-row>\n            <ion-col col-6>\n              <h6>{{transaction.country.name}}</h6>\n            </ion-col>\n            <ion-col col-6>\n              {{transaction.date_request |date:\'MM/dd/yyyy\'}}\n              <!--transaction.date_request |date:\'MM/dd/yyyy h:mma\'}}-->\n            </ion-col>\n            <ion-col col-4>\n              {{transaction.coin.full_name}}\n            </ion-col>\n            <ion-col col-4>\n              {{transaction.amount_local | currency:transaction.country.currency+" " : 2}}\n            </ion-col>\n            <ion-col col-4 >\n              <ion-icon name="add"></ion-icon>\n            </ion-col>\n          </ion-row>\n        </ion-card-content>\n      </ion-card>\n    </button>\n  </ion-list>\n</ion-content>'/*ion-inline-end:"/Users/eyeline/Documents/GitHub/eyepaycashapp/src/pages/history/history.html"*/,
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */],
+            __WEBPACK_IMPORTED_MODULE_2__providers_api__["a" /* Api */],
+            __WEBPACK_IMPORTED_MODULE_3__providers_auth_user_auth_user__["a" /* AuthUserProvider */]])
+    ], HistoryPage);
+    return HistoryPage;
+}());
+
+//# sourceMappingURL=history.js.map
+
+/***/ }),
+
+/***/ 319:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LoginPageModule", function() { return LoginPageModule; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__login__ = __webpack_require__(66);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+
+
+var LoginPageModule = /** @class */ (function () {
+    function LoginPageModule() {
+    }
+    LoginPageModule = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["J" /* NgModule */])({
+            declarations: [
+                __WEBPACK_IMPORTED_MODULE_2__login__["a" /* LoginPage */],
+            ],
+            imports: [
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__login__["a" /* LoginPage */]),
+            ],
+        })
+    ], LoginPageModule);
+    return LoginPageModule;
+}());
+
+//# sourceMappingURL=login.module.js.map
+
+/***/ }),
+
+/***/ 320:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return RegNumberPhonePage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__select_code_select_code__ = __webpack_require__(121);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_api__ = __webpack_require__(23);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_geolocation_geolocation__ = __webpack_require__(134);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__register_register__ = __webpack_require__(322);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__login_login__ = __webpack_require__(66);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+
+
+/**
+ * Generated class for the RegNumberPhonePage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
+var RegNumberPhonePage = /** @class */ (function () {
+    function RegNumberPhonePage(navCtrl, navParams, modal, api, toastCtrl, loadingCtrl, locationProvider) {
+        var _this = this;
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+        this.modal = modal;
+        this.api = api;
+        this.toastCtrl = toastCtrl;
+        this.loadingCtrl = loadingCtrl;
+        this.locationProvider = locationProvider;
+        // hay que pasarle los datos del provier al user en registro.
+        this.user_register = {
+            country_code: '',
+            flag: '',
+            value: '',
+        };
+        this.code_verify = null;
+        this.response_verify = {
+            id: null,
+            is_mail_verify: null,
+            mail_code: null,
+            phone_code: null,
+            country_id: null,
+        };
+        this.imagen = 'assets/backgrounds/Background2.png';
+        this.locationProvider.getBasicInfo().then(function (value) {
+            _this.user_register.country_code = value.country_code;
+            _this.user_register.flag = value.flag;
+            // this.user_register = Object.assign(value, this.user_register);
+        });
+    }
+    RegNumberPhonePage.prototype.cancel = function () {
+        this.navCtrl.setRoot(__WEBPACK_IMPORTED_MODULE_6__login_login__["a" /* LoginPage */]);
+    };
+    RegNumberPhonePage.prototype.sendNumberPhone = function () {
+        var _this = this;
+        if (this.user_register.country_code != "" && this.user_register.value != "") {
+            var loading_1 = this.loadingCtrl.create({
+                spinner: 'dots',
+            });
+            var toast_1 = this.toastCtrl.create({
+                message: 'Se ha enviado un código de verificación al número celular ingresado.',
+                duration: 3000
+            });
+            loading_1.present();
+            this.api.post('auth/pre-sign-up', this.user_register).then(function (data) {
+                loading_1.dismiss();
+                toast_1.present();
+                _this.response_verify = data.verify;
+                _this.response_verify.country_id = data.country.id;
+                console.log(_this.response_verify.phone_code);
+            })
+                .catch();
+        }
+        else {
+            var toast = this.toastCtrl.create({
+                message: 'Toda la información es obligatoria',
+                duration: 3000,
+            });
+            toast.present();
+        }
+    };
+    RegNumberPhonePage.prototype.selectcountry = function () {
+        var _this = this;
+        var modal = this.modal.create(__WEBPACK_IMPORTED_MODULE_2__select_code_select_code__["a" /* SelectCodePage */]);
+        modal.present();
+        modal.onDidDismiss(function (data) {
+            if (data !== undefined) {
+                _this.user_register.country_code = data.code;
+                _this.user_register.flag = data.flag;
+            }
+        });
+    };
+    RegNumberPhonePage.prototype.verifyCode = function () {
+        if (this.code_verify == this.response_verify.phone_code) {
+            this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_5__register_register__["a" /* RegisterPage */], { 'response': this.response_verify, 'register': this.user_register });
+        }
+        else {
+            var toast = this.toastCtrl.create({
+                message: 'Código incorrecto.',
+                duration: 3000,
+            });
+            toast.present();
+        }
+    };
+    RegNumberPhonePage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+            selector: 'page-reg-number-phone',template:/*ion-inline-start:"/Users/eyeline/Documents/GitHub/eyepaycashapp/src/pages/reg-number-phone/reg-number-phone.html"*/'<ion-content class="imgBackground vignette">\n  <div style="margin-top:12%" class="center">\n    <ion-img style="margin-bottom: 10%;" class="logo" src="assets/imgs/EPCLogo.png"></ion-img>\n    <div class="center">\n      <ion-label style="color:white" class="center"> Enviaremos un CÓDIGO de verificación a el número<br> que registres\n        a continuación.\n      </ion-label>\n    </div>\n  </div>\n\n  <div class="center divMargin">\n    <ion-grid class="center marGrid">\n      <ion-row>\n        <ion-col col-5>\n          <ion-item class="item-flag item-md2 item-ios2">\n            <img [src]="user_register.flag" class="flagphone banderaWidt">\n            <button ion-button (click)="selectcountry()" class="transparente item-md2 item-button2 button-md ">+\n              {{user_register.country_code}}</button>\n          </ion-item>\n        </ion-col>\n        <ion-col col-7>\n          <ion-item class="stylCel">\n            <ion-input required type="text" name="numerocelular" [(ngModel)]="user_register.value" placeholder="Número movil (celular)"></ion-input>\n          </ion-item>\n        </ion-col>\n      </ion-row>\n    </ion-grid>\n    <ion-item class="inputClass">\n      <ion-input placeholder="Introduce el código" maxlength="6" required style="text-align: center" type="text"\n        [(ngModel)]="code_verify"></ion-input>\n    </ion-item>\n  </div>\n  <div class="center marginBts">\n    <button class="buttonPayCash borderBtns" (click)="cancel()" ion-button small>Cancelar</button>\n    <button class="buttonPayCash borderBtns" (click)="sendNumberPhone()" ion-button small *ngIf="response_verify.phone_code == null">Enviar\n    </button>\n    <button class="buttonPayCash borderBtns" (click)="verifyCode()" ion-button small *ngIf="response_verify.phone_code != null">Continuar\n    </button>\n  </div>\n\n</ion-content>'/*ion-inline-end:"/Users/eyeline/Documents/GitHub/eyepaycashapp/src/pages/reg-number-phone/reg-number-phone.html"*/,
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* ModalController */],
+            __WEBPACK_IMPORTED_MODULE_3__providers_api__["a" /* Api */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* ToastController */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* LoadingController */],
+            __WEBPACK_IMPORTED_MODULE_4__providers_geolocation_geolocation__["a" /* GeolocationProvider */]])
+    ], RegNumberPhonePage);
+    return RegNumberPhonePage;
+}());
+
+//# sourceMappingURL=reg-number-phone.js.map
+
+/***/ }),
+
+/***/ 322:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return RegisterPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_api__ = __webpack_require__(23);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_auth_user_auth_user__ = __webpack_require__(28);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__politicas_politicas__ = __webpack_require__(323);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__login_login__ = __webpack_require__(66);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__modal_welcome_modal_welcome__ = __webpack_require__(324);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+
+
+var RegisterPage = /** @class */ (function () {
+    function RegisterPage(navCtrl, navParams, toastCtl, api, userProvider, loadingCtrl, modalCtrl) {
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+        this.toastCtl = toastCtl;
+        this.api = api;
+        this.userProvider = userProvider;
+        this.loadingCtrl = loadingCtrl;
+        this.modalCtrl = modalCtrl;
+        this.responseParams = null;
+        this.registerParams = null;
+        this.user_register = {
+            first_name: null,
+            last_name: null,
+            gender: null,
+            mail: null,
+            password: null,
+            //datos obtenidos por el params
+            phone: null,
+            country_id: null,
+            user_verify_id: null,
+            confirm_verify: null,
+        };
+        this.type = 'password';
+        this.showPass = false;
+        this.imagen = 'assets/backgrounds/Background3.png';
+        this.ischecked = this.userProvider.check_terminos;
+        this.getInfo();
+        this.ischecked = this.userProvider.check_terminos;
+    }
+    RegisterPage.prototype.getInfo = function () {
+        this.responseParams = this.navParams.get('response');
+        this.registerParams = this.navParams.get('register');
+    };
+    RegisterPage.prototype.showPassword = function () {
+        this.showPass = !this.showPass;
+        if (this.showPass) {
+            this.type = 'text';
+        }
+        else {
+            this.type = 'password';
+        }
+    };
+    RegisterPage.prototype.cancel = function () {
+        this.navCtrl.pop();
+    };
+    RegisterPage.prototype.register = function () {
+        var _this = this;
+        if (this.user_register.first_name != null && this.user_register.last_name != null && this.user_register.gender != null && this.user_register.password != null && this.user_register.mail != null) {
+            var size = this.user_register.password;
+            if (size.length >= 6) {
+                if (this.userProvider.check_terminos) {
+                    var loading_1 = this.loadingCtrl.create({
+                        spinner: 'dots',
+                    });
+                    loading_1.present();
+                    this.user_register.phone = this.registerParams.value;
+                    this.user_register.country_id = this.responseParams.country_id;
+                    this.user_register.user_verify_id = this.responseParams.id;
+                    this.user_register.confirm_verify = 'phone';
+                    this.api.post('auth/sign-up', this.user_register).then(function (data) {
+                        _this.userProvider.setUser(data);
+                        _this.verifyConfirm();
+                        loading_1.dismiss();
+                        _this.presentWelcomeModal();
+                    });
+                }
+                else {
+                    var toast = this.toastCtl.create({
+                        message: 'Por favor lea y acepte las políticas de uso y tratamiento de datos.',
+                        duration: 3000
+                    });
+                    toast.present();
+                }
+            }
+            else {
+                var toast = this.toastCtl.create({
+                    message: 'Contraseña debe tener mínimo 6 letras o números.',
+                    duration: 3000,
+                });
+                toast.present();
+            }
+        }
+        else {
+            var toast = this.toastCtl.create({
+                message: 'Toda la información es requerida',
+                duration: 3000,
+            });
+            toast.present();
+        }
+    };
+    RegisterPage.prototype.verifyConfirm = function () {
+        var loading = this.loadingCtrl.create({
+            spinner: 'dots',
+        });
+        loading.present();
+        this.api.get('account/confirm-verify', this.userProvider, {
+            id: this.responseParams.id,
+            type: 'phone'
+        }).then(function (data) {
+            loading.dismiss();
+        });
+    };
+    RegisterPage.prototype.politicas = function () {
+        var _this = this;
+        var poli = this.modalCtrl.create(__WEBPACK_IMPORTED_MODULE_4__politicas_politicas__["a" /* PoliticasPage */]);
+        poli.present();
+        poli.onDidDismiss((function (data) {
+            _this.ischecked = true;
+        }));
+    };
+    RegisterPage.prototype.presentWelcomeModal = function () {
+        var _this = this;
+        var modalWelcome = this.modalCtrl.create(__WEBPACK_IMPORTED_MODULE_6__modal_welcome_modal_welcome__["a" /* ModalWelcomePage */], { name: this.userProvider.user_Info.first_name + " " + this.userProvider.user_Info.last_name });
+        modalWelcome.onWillDismiss(function () {
+            _this.navCtrl.setRoot(__WEBPACK_IMPORTED_MODULE_5__login_login__["a" /* LoginPage */]);
+        });
+        modalWelcome.onDidDismiss(function (data) {
+            console.log('close');
+        });
+        modalWelcome.present();
+        this.userProvider.setUser(null);
+    };
+    RegisterPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+            selector: 'page-register',template:/*ion-inline-start:"/Users/eyeline/Documents/GitHub/eyepaycashapp/src/pages/register/register.html"*/'<ion-content class="imgBackground vignette">\n  <div style="margin-top:12%" class="center">\n    <ion-img class="logo" src="assets/imgs/EPCLogo.png"></ion-img>\n  </div>\n  <div class="center">\n    <ion-list>\n      <ion-item class="marginlists" >\n        <ion-label stacked>Nombres</ion-label>\n        <ion-input type="text" required name="userregistronombre" [(ngModel)]="user_register.first_name"></ion-input>\n      </ion-item>\n\n      <ion-item class="marginlists">\n        <ion-label stacked>Apellidos</ion-label>\n        <ion-input type="text" required name="userregistroapellido"\n                   [(ngModel)]="user_register.last_name"></ion-input>\n      </ion-item>\n\n      <ion-item class="marginlists">\n        <ion-label stacked>Género</ion-label>\n        <ion-select okText="Guardar" cancelText="Cancelar" [(ngModel)]="user_register.gender" name="userregistrogenero">\n          <ion-option value="f">Femenino</ion-option>\n          <ion-option value="m">Masculino</ion-option>\n        </ion-select>\n      </ion-item>\n\n      <ion-item class="marginlists">\n        <ion-label stacked>Email</ion-label>\n        <ion-input type="email" required name="userregistroemail"\n                   [(ngModel)]="user_register.mail"></ion-input>\n      </ion-item>\n\n      <ion-item class="marginlists">\n        <ion-label stacked>Contraseña</ion-label>\n        <ion-input type="{{type}}" name="userregistrocontrasena"\n                   required [(ngModel)]="user_register.password"></ion-input>\n        <button *ngIf="!showPass" ion-button clear color="dark" type="button" item-right (click)="showPassword()">\n          <ion-icon name="ios-eye-off-outline"></ion-icon>\n        </button>\n        <button *ngIf="showPass" ion-button clear color="dark" type="button" item-right (click)="showPassword()">\n          <ion-icon name="ios-eye-outline"></ion-icon>\n        </button>\n      </ion-item>\n\n    </ion-list>\n  </div>\n\n  <ion-list>\n\n      <ion-col col-2>\n        <!--<ion-checkbox (ionChange)="aceptarTerminos()"></ion-checkbox>-->\n        <ion-checkbox [(ngModel)]="ischecked"></ion-checkbox>\n      </ion-col>\n      <ion-col col-10><span (click)="politicas()"> Leí y acepto las políticas de uso  y privacidad de la información</span></ion-col>\n\n  </ion-list>\n  <div style="margin-top: 6%" class="center">\n    <button style="border-radius: 0%" class="buttonPayCash" (click)="cancel()" ion-button small>Cancelar</button>\n    <button style="border-radius: 0%" class="buttonPayCash" (click)="register()" ion-button small>Registrarse\n    </button>\n  </div>\n\n</ion-content>'/*ion-inline-end:"/Users/eyeline/Documents/GitHub/eyepaycashapp/src/pages/register/register.html"*/,
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* ToastController */],
+            __WEBPACK_IMPORTED_MODULE_2__providers_api__["a" /* Api */],
+            __WEBPACK_IMPORTED_MODULE_3__providers_auth_user_auth_user__["a" /* AuthUserProvider */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* LoadingController */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* ModalController */]])
+    ], RegisterPage);
+    return RegisterPage;
+}());
+
+//# sourceMappingURL=register.js.map
+
+/***/ }),
+
+/***/ 323:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PoliticasPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_auth_user_auth_user__ = __webpack_require__(28);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+/**
+ * Generated class for the PoliticasPage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
+var PoliticasPage = /** @class */ (function () {
+    function PoliticasPage(navCtrl, navParams, toastCtrl, view, userProvider) {
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+        this.toastCtrl = toastCtrl;
+        this.view = view;
+        this.userProvider = userProvider;
+    }
+    PoliticasPage.prototype.presentToast = function () {
+        var toast = this.toastCtrl.create({
+            message: 'Si no acepta estos términos, no debe usar nuestros servicios. Puede utilizar nuestros servicios sólo si puede celebrar legalmente un acuerdo según la ley aplicable. Si utiliza nuestros servicios, acepta hacerlo de conformidad con estos términos y con las leyes y regulaciones aplicables.',
+            position: 'center',
+            showCloseButton: true,
+            closeButtonText: "Acepto"
+        });
+        toast.onDidDismiss(function () {
+            console.log('Dismissed toast');
+        });
+        toast.present();
+    };
+    PoliticasPage.prototype.presentToast2 = function () {
+        var toast = this.toastCtrl.create({
+            message: 'Podemos hacer cambios a estos términos, incluso cuando haya cambios en nuestros servicios, tecnología, regulación y por otros motivos. Si lo hacemos, le enviaremos un aviso de dichos cambios. Publicaremos los términos actualizados en nuestro sitio web.Los cambios realizados por razones legales entrarán en vigencia inmediatamente. El uso continuado de los servicios después de la fecha de vigencia de dichos cambios constituirá su aceptación de los mismos. Si no acepta los términos enmendados, debe dejar de usar los servicios.',
+            position: 'center',
+            showCloseButton: true,
+            closeButtonText: "Acepto"
+        });
+        toast.onDidDismiss(function () {
+            console.log('Dismissed toast');
+        });
+        toast.present();
+    };
+    PoliticasPage.prototype.presentToast3 = function () {
+        var toast = this.toastCtrl.create({
+            message: 'El costo y tiempo de realizar transacciones a través de la red fluctúa constantemente; dado que el costo de procesar las transacciones entrantes y salientes cambia contínuamente, recomendamos que siempre verifique esta información. EyePayCash no se hace responsable del tiempo y costo de las comisiones cobradas por la minería de criptomoneda inherente a cualquier tipo de transacción o tipología transaccional en la que haya cualquier cantidad de criptomonedas implicadas, esta nota también aplica para el servicio de Exchange, Bóveda, las transacciones salientes y entrantes contenidas en los términos de servicios pagados.',
+            position: 'center',
+            showCloseButton: true,
+            closeButtonText: "Acepto"
+        });
+        toast.onDidDismiss(function () {
+            console.log('Dismissed toast');
+        });
+        toast.present();
+    };
+    PoliticasPage.prototype.Transacciones = function () {
+        var toast = this.toastCtrl.create({
+            message: 'EyePayCash no puede y no garantiza el valor de las criptomonedas, usted reconoce y acepta que el valor de las criptomonedas es altamente volátil y qué comprar, vender y mantener criptomonedas implica un alto riesgo. Además, la red de consenso de criptomonedas es la única responsable de verificar y confirmar las transacciones propuestas que se envíen a través de nuestros servicios, EyePayCash solo confirma la finalización de una transacción. La red de criptomonedas es operada por un sistema descentralizado de terceros independientes. Nuestros servicios lo ayudan a enviar su solicitud de transacción de criptomonedas para que sean confirmados por la red de criptomonedas, sin embargo, EyePayCash no tiene control sobre la red de criptomonedas y por lo tanto, no puede y no garantiza que se complete cualquier solicitud de transacción que se envíe a través de los servicios. Usted reconoce y acepta que las solicitudes de transacción que envíe a través de los servicios pueden completarse, o pueden retrasarse sustancialmente, por la red de criptomonedas. Cuando completa una solicitud de transacción a través de los servicios, nos autoriza a enviar su solicitud de transacción a la red de criptomonedas de acuerdo con las instrucciones que usted le brinde a nuestros servicios. EyePayCash no puede garantizar y no garantiza que cualquier transacción de criptomonedas revertida por un tercero, y/o criptomonedas enviadas directamente a cualquier dirección de envío diferente de EyePayCash sea recibida.',
+            position: 'center',
+            showCloseButton: true,
+            closeButtonText: "Acepto"
+        });
+        toast.onDidDismiss(function () {
+            console.log('Dismissed toast');
+        });
+        toast.present();
+    };
+    PoliticasPage.prototype.Retrasos = function () {
+        var toast = this.toastCtrl.create({
+            message: 'Los servicios de EyePayCash implican varias medidas de seguridad para aumentar la seguridad de su almacenamiento de criptomonedas en EyePayCash. Por esta razón, cualquier transacción a una dirección de criptomonedas fuera de EyePayCash para una cantidad significativa, puede tomar más tiempo que una estándar. Usted reconoce y acepta que cualquier transacción dirigida a una dirección de criptomonedas fuera del sistema EyePayCash puede retrasarse y ser costosa.',
+            position: 'center',
+            showCloseButton: true,
+            closeButtonText: "Acepto"
+        });
+        toast.onDidDismiss(function () {
+            console.log('Dismissed toast');
+        });
+        toast.present();
+    };
+    PoliticasPage.prototype.DirClave = function () {
+        var toast = this.toastCtrl.create({
+            message: 'El Cuando crea una cuenta, los servicios generan y almacenan un par de claves públicas y privadas criptográficas que se puede usar para enviar y recibir criptomonedas a través de la red criptomonedas . La clave pública generada por los servicios sirve como su dirección del Monedero Virtual, y puede compartirse en la red de cripto minería y con otros usuarios para completar las transacciones. La clave privada se adapta de manera única a la dirección de la billetera y se debe usar en conexión con la dirección de la billetera para autorizar la transferencia de criptomonedas desde o hacia esa dirección del Monedero Virtual.',
+            position: 'center',
+            showCloseButton: true,
+            closeButtonText: "Acepto"
+        });
+        toast.onDidDismiss(function () {
+            console.log('Dismissed toast');
+        });
+        toast.present();
+    };
+    PoliticasPage.prototype.Crypto = function () {
+        var toast = this.toastCtrl.create({
+            message: 'EyePayCash es custodio de cualquier cantidad de criptomonedas transferidas a EyePayCash o la bóveda. EyePayCash no obtiene ningún derecho, título o interés legal sobre las criptomonedas almacenadas por usted.',
+            position: 'center',
+            showCloseButton: true,
+            closeButtonText: "Acepto"
+        });
+        toast.onDidDismiss(function () {
+            console.log('Dismissed toast');
+        });
+        toast.present();
+    };
+    //Ventana de 15 subtitles
+    PoliticasPage.prototype.smsText = function () {
+        var toast = this.toastCtrl.create({
+            message: 'Para usar los servicios de EyePayCash, debe proporcionar un número de teléfono móvil válido. Este número se usa como parte del proceso de autenticación. Como parte del uso de los servicios EyePayCash, acepta recibir mensajes de texto o SMS de nuestra parte. Tenga en cuenta que si bien no le cobramos por mensajes de texto o SMS, se aplicarán las tarifas de mensajería estándar de su operador de telefonía móvil. Si no proporciona un número de teléfono móvil válido, podemos restringir su uso de los servicios de EyePayCash. Si EyePayCash sospecha que su número de teléfono móvil no es válido o que está utilizando un servicio de VOIP para eludir el requisito de proporcionar un número de teléfono móvil válido, EyePayCash puede suspender o restringir el uso de los servicios de EyePayCash. VOIP es un acrónimo de Voz sobre Protocolo de Internet (Voice Over Internet Protocol), el cual por sí mismo significa voz a través de internet. Es una tecnología que proporciona la comunicación de voz y sesiones multimedia (tales como vídeo) sobre Protocolo de Internet (IP).',
+            position: 'center',
+            showCloseButton: true,
+            closeButtonText: "Acepto"
+        });
+        toast.onDidDismiss(function () {
+            console.log('Dismissed toast');
+        });
+        toast.present();
+    };
+    PoliticasPage.prototype.infoPrerequisito = function () {
+        var toast = this.toastCtrl.create({
+            message: 'EyePayCash se reserva el derecho, a su exclusivo criterio, de no abrir cuentas y suspender cuentas de forma temporal o permanente, incluso cuando sea requerido o recomendado por los requisitos gubernamentales, normativos o de aplicación de la ley, incluso cuando no proporcione información suficiente para verificar su identidad con EyePayCash. Los servicios de EyePayCash son para uso exclusivo del titular de la cuenta registrada. Usted acepta que la información que proporcione a EyePayCash durante la creación de la cuenta y cualquier proceso posterior de verificación de identidad es precisa y completa, y se actualizará según sea necesario para mantenerla. Si es menor de 18 años, no está autorizado a utilizar los servicios de EyePayCash, con o sin registro.',
+            position: 'center',
+            showCloseButton: true,
+            closeButtonText: "Acepto"
+        });
+        toast.onDidDismiss(function () {
+            console.log('Dismissed toast');
+        });
+        toast.present();
+    };
+    PoliticasPage.prototype.actividadesProhibidas = function () {
+        var toast = this.toastCtrl.create({
+            message: 'Usted acepta que no utilizará los servicios de EyePayCash para realizar ningún tipo de actividad ilegal de ningún tipo ni para tomar ninguna medida que afecte negativamente el rendimiento de los servicios de EyePayCash. No puede participar en ninguna de las siguientes actividades a través de los servicios, ni puede ayudar a un tercero en dicha actividad: (1) intentar obtener acceso no autorizado a nuestros servicios o a la cuenta de otro usuario, (2) hacer cualquier intento de evadir o eludir la seguridad, (3) violar cualquier ley, estatuto, ordenanza o regulación, (4) reproducir, duplicar, copiar, vender o revender nuestros servicios para cualquier propósito excepto lo autorizado en estos términos, (5) participar en cualquier actividad que es abusiva o interfiere o interrumpe nuestros servicios. Si EyePayCash le bloquea el acceso a los servicios EyePayCash (incluso a bloquear su dirección IP), usted acepta no implementar ninguna medida para eludir dicho bloqueo (por ejemplo, enmascarando su dirección IP o usando una dirección IP proxy). El uso de nuestros servicios en conexión con cualquier transacción que involucre productos o servicios ilegales está prohibido. EyePayCash se reserva el derecho de suspender temporal o permanentemente su cuenta o restringir el uso de los servicios de EyePayCash si se produce una violación de esta sección.',
+            position: 'center',
+            showCloseButton: true,
+            closeButtonText: "Acepto"
+        });
+        toast.onDidDismiss(function () {
+            console.log('Dismissed toast');
+        });
+        toast.present();
+    };
+    PoliticasPage.prototype.cuentasSuspendidas = function () {
+        var toast = this.toastCtrl.create({
+            message: 'Como se indicó en las secciones anteriores, EyePayCash se reserva el derecho, a su exclusivo criterio, de suspender las cuentas de manera temporal o permanente. El bloqueo o la suspensión de esta cuenta puede ser consecuencia, entre otros, de información inconsistente con respecto a su identidad (que es razonable a exclusivo criterio de EyePayCash), una revisión de cumplimiento pendiente, la solicitud de un tercero, la solicitud y/o el pedido de una autoridad, organismo gubernamental, regulador, entidad de justicia, policía, etc., que a criterio exclusivo de EyePayCash son razonables. Usted entiende y acepta que no puede acceder a fondos si su cuenta se suspende o se limita de otra manera, según se detallan en esta sección. En caso de que se resuelva la causa de la suspensión, EyePayCash puede requerir que proporcione una dirección de billetera virtual externa para enviarle los fondos disponibles en su cuenta, o puede transferir fondos a un tercero por orden de un regulador competente, la justicia. entidad, juez, tribunal u otro que sea razonable a la sola discreción de EyePayCash.',
+            position: 'center',
+            showCloseButton: true,
+            closeButtonText: "Acepto"
+        });
+        toast.onDidDismiss(function () {
+            console.log('Dismissed toast');
+        });
+        toast.present();
+    };
+    PoliticasPage.prototype.cuentasEliminadas = function () {
+        var toast = this.toastCtrl.create({
+            message: 'El usuario es el responsable de respaldar sus fondos, es decir, pasarlos a otra cuenta, ya que una vez elimine su cuenta, el saldo que la persona deje en la billetera será eliminado. Si hace clic en acepto eliminar mi cuenta, sin rescatar el saldo, usted acepta que entiende y es consciente de que perderá el saldo hasta ahora depositado en cualquiera de nuestros servicios (wallet o bóveda); incluyendo las sumas ofertadas o compradas en el Exchange. Si usted elimina su cuenta debe tener presente que su usuario quedara eliminado por completo de la aplicación y que no podrá utilizar nuestro servicio de ninguna forma, perderá de forma permanente todo el historial de transacciones, configuraciones personales y la porción restante de su suscripción.',
+            position: 'center',
+            showCloseButton: true,
+            closeButtonText: "Acepto"
+        });
+        toast.onDidDismiss(function () {
+            console.log('Dismissed toast');
+        });
+        toast.present();
+    };
+    PoliticasPage.prototype.descargoGarantias = function () {
+        var toast = this.toastCtrl.create({
+            message: 'Nuestros servicios se proporcionan “tal cual” sin ninguna garantía de ningún tipo. Su uso de nuestros servicios es bajo su propio riesgo. Nosotros y nuestros otorgantes de licencias, proveedores de servicios o subcontratistas (si corresponde) no hacemos declaraciones ni garantías sobre la idoneidad de la información, software, productos y servicios contenidos en nuestros servicios para ningún propósito o su cumplimiento con las reglas, principios o leyes contables, y expresamente renuncia a cualquier representación o garantía de que los servicios estarán libres de errores, virus u otros componentes dañinos, que las comunicaciones hacia o desde los servicios serán seguras y no interceptadas, que los servicios y otras capacidades ofrecidas por los servicios serán ininterrumpidas, o que su contenido será preciso, completo y oportuno. Salvo que se indique expresamente en estos términos, renunciamos a todas las garantías y condiciones, expresas, implícitas o reglamentadas entre otras, las garantías implícitas de título, no infracción, comerciabilidad e idoneidad para un propósito en particular. usted reconoce que no habrá entrado en este acuerdo en confianza bajo ninguna garantía o representación, excepto las establecidas específicamente en estos términos.',
+            position: 'center',
+            showCloseButton: true,
+            closeButtonText: "Acepto"
+        });
+        toast.onDidDismiss(function () {
+            console.log('Dismissed toast');
+        });
+        toast.present();
+    };
+    PoliticasPage.prototype.sinConsejos = function () {
+        var toast = this.toastCtrl.create({
+            message: 'EyePayCash no está actuando y no puede actuar como asesor, incluidos los asuntos financieros, legales, de inversión, seguros y/o impuestos. Cualquier información proporcionada por EyePayCash es solo para información general. Usted es el único responsable de determinar si una transacción contemplada es apropiada para usted.',
+            position: 'center',
+            showCloseButton: true,
+            closeButtonText: "Acepto"
+        });
+        toast.onDidDismiss(function () {
+            console.log('Dismissed toast');
+        });
+        toast.present();
+    };
+    PoliticasPage.prototype.indemnizacion = function () {
+        var toast = this.toastCtrl.create({
+            message: 'Usted acepta indemnizar a EyePayCash, defendernos y mantenernos a nosotros, a nuestros empleados, agentes, consultores, subsidiarios, socios, afiliados y licenciantes, libres de cualquier reclamo, costo, pérdida, daño, responsabilidad, juicio y gasto (incluidos los honorarios razonables de los abogados y otros profesionales) que surjan o estén relacionados con el uso de nuestros servicios, su violación de estos términos o su violación de cualquier derecho de cualquier otra persona o entidad.',
+            position: 'center',
+            showCloseButton: true,
+            closeButtonText: "Acepto"
+        });
+        toast.onDidDismiss(function () {
+            console.log('Dismissed toast');
+        });
+        toast.present();
+    };
+    PoliticasPage.prototype.limiResponsabilidad = function () {
+        var toast = this.toastCtrl.create({
+            message: 'En ningún caso nosotros, nuestros licenciantes, proveedores de servicios o subcontratistas (si los hubiera) serán responsables de ningún daño indirecto, especial, incidental, punitivo o consecuencial (incluyendo, sin limitación, pérdida de ganancias, pérdida de uso, pérdida de datos o pérdida de buena voluntad), derivada de o en relación con estos términos de uso, o el desempeño, la operación de nuestros servicios, su acceso a, visualización, uso de los servicios, retraso o incapacidad para acceder, visualizar o utilizar los servicios, cualquier virus informático, información, software, sitios vinculados, productos o servicios obtenidos a través de los servicios, acto u omisión de cualquier empresa utilizando nuestros servicios u otros terceros, ya sea dicha responsabilidad derivada de algún reclamo basado en un incumplimiento del contrato, incumplimiento de garantía, agravio (incluyendo negligencia), responsabilidad por productos o de otra manera. Nosotros y nuestros licenciantes, proveedores de servicios o subcontratistas han sido advertidos de la posibilidad de dichos daños. La limitación de responsabilidad refleja la asignación de riesgo entre las partes. Las limitaciones especificadas en esta sección sobrevivirán y se aplicarán incluso si se encuentra que cualquier recurso limitado especificado en estos términos ha fallado en su propósito esencial. Las limitaciones de responsabilidad proporcionadas en estos términos se aplican en beneficio de nosotros, nuestros licenciantes, proveedores de servicios y subcontratistas. Algunas jurisdicciones no permiten ciertas exenciones de responsabilidad o limitaciones de garantía. solamente se aplicarán exclusiones de responsabilidad o limitaciones que son legales en la jurisdicción aplicable y nuestra responsabilidad se limitará al máximo permitido por la ley.',
+            position: 'center',
+            showCloseButton: true,
+            closeButtonText: "Acepto"
+        });
+        toast.onDidDismiss(function () {
+            console.log('Dismissed toast');
+        });
+        toast.present();
+    };
+    PoliticasPage.prototype.separabilidad = function () {
+        var toast = this.toastCtrl.create({
+            message: 'Si, por algún motivo, un tribunal de jurisdicción competente considera que alguna disposición de estos términos es inválida o inaplicable, dicha disposición se aplicará en la máxima medida permitida y las demás disposiciones de estos términos seguirán en pleno vigor y efecto.',
+            position: 'center',
+            showCloseButton: true,
+            closeButtonText: "Acepto"
+        });
+        toast.onDidDismiss(function () {
+            console.log('Dismissed toast');
+        });
+        toast.present();
+    };
+    PoliticasPage.prototype.arbAplicable = function () {
+        var toast = this.toastCtrl.create({
+            message: 'Por favor, lea el siguiente párrafo detenidamente porque requiere arbitrar las disputas con nosotros y limita la manera en la que puede solicitar alivio. Usted y EyePayCash acuerdan arbitrar cualquier disputa que surja de estos términos o su uso de nuestros servicios, a excepción de disputas en las que cualquiera de las partes busque una compensación equitativa y de otro tipo por el supuesto uso ilegal de derechos de autor, marcas comerciales, nombres comerciales, logotipos, secretos comerciales o patentes. el arbitraje le evita usted de juzgar en el tribunal o de tener un juicio con jurado. usted y EyePayCash acuerdan notificarse mutuamente por escrito sobre cualquier disputa dentro de los treinta (30) días posteriores a su surgimiento.El aviso a EyePayCash se enviará a legal@EyePayCash.com. Usted y EyePayCash además acuerdan: (a) intentar una resolución informal antes de cualquier demanda de arbitraje; (b) que cualquier arbitraje ocurrirá en Malta ; (c) que el arbitraje será conducido confidencialmente por un solo árbitro de acuerdo con las reglas de la Ordenanza de Arbitraje de Malta ; y (d) que los tribunales en Malta tienen jurisdicción exclusiva sobre cualquier apelación de un laudo arbitral y sobre cualquier demanda entre las partes no sujetas a arbitraje. Además de los procedimientos y recursos de la clase que se analizan a continuación, el árbitro tiene la autoridad para otorgar cualquier recurso que de otro modo estaría disponible en la corte. Cualquier disputa entre las partes se regirá por estos términos y las leyes de Malta, sin dar efecto a ningún conflicto de principios legales que puedan estipular la aplicación de la ley de otra jurisdicción.',
+            position: 'center',
+            showCloseButton: true,
+            closeButtonText: "Acepto"
+        });
+        toast.onDidDismiss(function () {
+            console.log('Dismissed toast');
+        });
+        toast.present();
+    };
+    PoliticasPage.prototype.limitaciones = function () {
+        var toast = this.toastCtrl.create({
+            message: 'En la medida permitida por la ley aplicable, acepta que presentará cualquier reclamo o causa de acción que surja o esté relacionada con su acceso o uso de nuestros servicios dentro de los dos años posteriores a la fecha en que surgió o se acumuló dicho reclamo o acción, o dicho reclamo o la causa de acción será renunciar irrevocablemente.',
+            position: 'center',
+            showCloseButton: true,
+            closeButtonText: "Acepto"
+        });
+        toast.onDidDismiss(function () {
+            console.log('Dismissed toast');
+        });
+        toast.present();
+    };
+    PoliticasPage.prototype.propiedadNReclamada = function () {
+        var toast = this.toastCtrl.create({
+            message: 'Conforme a la legislación aplicable, después de un período específico de inactividad por su parte con respecto a su cuenta de EyePayCash, se le puede solicitar a EyePayCash que informe y/o remita cualquier criptomonedas que tenga bajo custodia de acuerdo con las leyes de propiedad no reclamada.Nuestra incapacidad para ejercer o hacer cumplir cualquier derecho o disposición de estos términos no constituirá una renuncia a ese derecho o disposición.',
+            position: 'center',
+            showCloseButton: true,
+            closeButtonText: "Acepto"
+        });
+        toast.onDidDismiss(function () {
+            console.log('Dismissed toast');
+        });
+        toast.present();
+    };
+    PoliticasPage.prototype.acuerdoCompleto = function () {
+        var toast = this.toastCtrl.create({
+            message: 'EyePayCash puede asignar estos términos a su compañía matriz, afiliada o subsidiaria, o en relación con una fusión, consolidación o venta u otra disposición de todos o sustancialmente todos sus activos. Estos términos, junto con otros acuerdos que se apliquen a usted.',
+            position: 'center',
+            showCloseButton: true,
+            closeButtonText: "Acepto"
+        });
+        toast.onDidDismiss(function () {
+            console.log('Dismissed toast');
+        });
+        toast.present();
+    };
+    PoliticasPage.prototype.politicaPrivacidad = function () {
+        var toast = this.toastCtrl.create({
+            message: 'Esta Política de privacidad se aplica a la información que recopilamos de los usuarios de nuestro sitio web en https://eyepaycash.co , nuestros servicios en línea, nuestras aplicaciones móviles para Android e iOS, destinatarios de nuestros correos electrónicos o cuando usted interactúa de otra manera con nosotros. Describe los datos que recopilamos sobre usted y cómo usamos, compartimos y protegemos estos datos.',
+            position: 'center',
+            showCloseButton: true,
+            closeButtonText: "Acepto"
+        });
+        toast.onDidDismiss(function () {
+            console.log('Dismissed toast');
+        });
+        toast.present();
+    };
+    PoliticasPage.prototype.comEmail = function () {
+        var toast = this.toastCtrl.create({
+            message: 'Si optó por recibir información sobre nuestros productos, actualizaciones y ofertas, utilizaremos su nombre y dirección de correo electrónico para enviarle esta información. Si ya no desea recibir estas comunicaciones, puede darse de baja siguiendo las instrucciones que figuran en los correos electrónicos que recibe o en nuestro sitio web. Tenga en cuenta que podemos enviarle mensajes transaccionales y de relación, incluso si se canceló la suscripción a nuestras comunicaciones de marketing. Por ejemplo, si nuestro servicio se suspende temporalmente por mantenimiento, podríamos enviarle un correo electrónico para que lo actualice.',
+            position: 'center',
+            showCloseButton: true,
+            closeButtonText: "Acepto"
+        });
+        toast.onDidDismiss(function () {
+            console.log('Dismissed toast');
+        });
+        toast.present();
+    };
+    PoliticasPage.prototype.enlServicios = function () {
+        var toast = this.toastCtrl.create({
+            message: 'Nuestro sitio web puede incluir enlaces a otros sitios web o servicios en línea, Le recomendamos que lea detenidamente la declaración de privacidad de cualquier sitio web que visite.',
+            position: 'center',
+            showCloseButton: true,
+            closeButtonText: "Acepto"
+        });
+        toast.onDidDismiss(function () {
+            console.log('Dismissed toast');
+        });
+        toast.present();
+    };
+    PoliticasPage.prototype.camPolitica = function () {
+        var toast = this.toastCtrl.create({
+            message: 'Podemos hacer cambios a esta Política de privacidad. Si hacemos cambios, se lo notificaremos mediante la revisión de la fecha en la parte superior de la política. Si realizamos cambios sustanciales, lo haremos de acuerdo con los requisitos legales aplicables, y publicaremos un aviso en nuestro sitio web y aplicaciones móviles que lo alertarán sobre los cambios sustanciales antes de que dichos cambios entren en vigencia. Le recomendamos que revise periódicamente esta página para obtener la información más reciente sobre nuestras prácticas de privacidad. Para mantener sus datos personales exactos, actualizados y completos, contáctenos como se especifica a continuación. Tomaremos las medidas razonables para actualizar o corregir los datos personales en nuestra posesión que haya enviado previamente utilizando nuestros servicios. Siéntase libre de contactarnos si tiene alguna pregunta sobre nuestra Política de privacidad o las prácticas de información de los Servicios de EyePayCash.',
+            position: 'center',
+            showCloseButton: true,
+            closeButtonText: "Acepto"
+        });
+        toast.onDidDismiss(function () {
+            console.log('Dismissed toast');
+        });
+        toast.present();
+    };
+    PoliticasPage.prototype.aceptarTerminos = function () {
+        this.userProvider.setCheck_Terminos(true);
+        this.view.dismiss(true);
+    };
+    PoliticasPage.prototype.goRegister = function () {
+        this.navCtrl.pop();
+    };
+    PoliticasPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+            selector: 'page-politicas',template:/*ion-inline-start:"/Users/eyeline/Documents/GitHub/eyepaycashapp/src/pages/politicas/politicas.html"*/'<ion-content class="imgBackground">\n  <div padding>\n    <div style="background:white; border-radius:8px; padding: 2%">\n      <!-- <p class="Titles"> Términos de Uso de EyePayCash.</p>\n      <a class="textNomral">Por favor lea estos términos de uso cuidadosamente, al hacer clic en aceptar, acceder o\n        utilizar nuestros servicios, se compromete a respetar estos términos de uso y todos los términos incorporados\n        por referencia.Si está aceptando estos términos en nombre de una entidad, usted confirma que está autorizado en\n        nombre de esa entidad para aceptar y sujetarse a estos términos de uso y a todos los términos incorporados por\n        referencia.</a>\n\n      <p class="Titles"> Alcance.\n      </p>\n      <a class="textNomral">Estos términos de uso se refieren a nosotros como <b>“EyePayCash” </b>ó <b>“nosotros“</b>.\n        <b>EyePayCash</b> es\n        una compañía constituida bajo las leyes de Malta Europa. Estos términos se aplican a cualquier acceso, uso de\n        nuestro sitio web en https://eyepaycash.co, nuestros servicios en línea, nuestras aplicaciones móviles para\n        iOS\n        e Android, y/o cualquiera de nuestros servicios relacionados.\n\n        La República de Malta (en maltés: Repubblika ta’ Malta; en inglés: Republic of Malta) es un país insular\n        miembro de la Unión Europea, densamente poblado, compuesto por un archipiélago y situado en el centro del\n        Mediterráneo, al sur de Italia, al oriente de Túnez y al norte de Libia.</a>\n      <br><br>\n      <a class="textNomral">La República de Malta (en maltés: Repubblika ta’ Malta; en inglés: Republic of Malta) es un\n        país insular\n        miembro de la Unión Europea, densamente poblado, compuesto por un archipiélago y situado en el centro del\n        Mediterráneo, al sur de Italia, al oriente de Túnez y al norte de Libia.</a>\n      <br><br>\n      <a (click)="presentToast()" style="font-weight: bold">ELEGIBILIDAD Y ACUERDO.</a> <br>\n      <br>\n      <a (click)="presentToast2()" style="font-weight: bold">CAMBIOS EN ESTOS TÉRMINOS.</a>\n      <br>\n      <br>\n      <a (click)="presentToast3()" style="font-weight: bold">NOTA ACLARATORIA.</a>\n      <br>\n      <p class="Titles"> Los servicios de EyePayCash.\n      </p>\n      <a class="textNomral"> <b>EyePayCash </b>proporciona una forma de almacenar, usar y administrar\n        criptomonedas:</a>\n      <br>\n      <b>MONEDERO VIRTUAL: EyePayCash</b> es una billetera virtual basada en criptomonedas donde puede\n      enviar, recibir y\n      cambiar su dinero y criptomonedas de manera segura.\n      <br>\n      <b><i>Bóveda</i></b><a class="textNomral">: servicio de almacenamiento y de rentas fijas. Lo contenido\n        en el siguiente link\n        https://eyepaycash.com/boveda/ hace parte de estos términos y condiciones.</a>\n      <br><br>\n      <a class="textNomral"> -El Monto mínimo de de ingreso a la <b><i>Bóveda</i></b> es de 0.01 BTC.</a>\n      <br><br>\n      <a class="textNomral"> -Desde el momento en que ingrese sus criptomonedas debe escoger entre los plazos de\n        retiro que le\n        ofrecemos.</a>\n      <br><br>\n      <a class="textNomral"> -El retorno del capital y renta se realizarán una vez se haya cumplido la fecha de\n        finalización y la\n        respectiva\n        solicitud dentro del término establecido.</a>\n      <br><br>\n      <a class="textNomral"> -Una vez se cumpla la fecha de finalización, el plazo para retirar es de 3 días,\n        incluyendo la fecha de\n        finalización.</a>\n      <br><br>\n      <a class="textNomral"> – En caso de que se cumpla el plazo para retirar y no se haya realizado el retiro, la <b><i>Bóveda</i></b>\n        se renovará de\n        manera automática por el mismo plazo inicial.</a>\n      <br><br>\n      <a class="textNomral"> – El retorno de su capital y renta será realizado una vez se cumpla la fecha de\n        finalización.</a>\n      <br><br>\n      <a class="textNomral"> <b>EXCHANGE:</b> servicio de intercambio de criptomonedas y dinero fiat.</a>\n      <br><br>\n      <b>nota:</b>\n      <a class="textNomral">el usuario del sistema exchange debe ser extremadamente cuidadoso con los datos de cuentas\n        bancarias o\n        cuentas virtuales o cualquier dato solicitado para que exchange funcione y se pueda usar,</a>\n      <br><br>\n      <a class="textNomral">EyePayCash no se hace responsable si el usuario comete yerros al digitar, ingresar, colocar\n        sus datos, es decir\n        que las implicaciones de dichas imprecisiones correrán por cuenta del usuario; por lo tanto EyePayCash no se\n        hace responsable de los mismos.</a>\n      <br><br>\n      <a class="textNomral">Al ingresar a esta opción, puede realizar las siguientes operaciones:</a>\n      <br><br>\n      <b>Oferta de criptomonedas:</b>\n      <br><br>\n      <a class="textNomral">\n        Debe completar la información solicitada por los campos del sistema para vender sus criptomonedas, luego de la\n        publicación de la oferta, las criptomonedas se extraen de la cartera virtual e ingresan a un sistema aislado\n        para\n        asegurar la transacción.</a>\n      <br><br>\n      <b>Comprar criptomonedas:</b>\n      <br><br>\n      <a class="textNomral">\n        Debe ingresar a la lista de opciones de las ofertas y elegir la porción de criptomonedas que desea adquirir,\n        una vez realizada esta elección, el procedimiento requerido por el sistema debe agotarse para que tenga éxito y\n        el usuario obtenga el monto pagado en una manera legal de acuerdo con el orden jurídico del estado donde se\n        realiza la transacción.</a>\n      <br><br>\n      <a class="textNomral">\n        EyePayCash cuenta con una lista de todas las compras y ventas (TRANSACCIONES) realizada por sus usuarios; el\n        sistema EyePayCash funciona bajo la tecnología blockchain.</a>\n      <br><br>\n      <b>COMPRAR</b>\n      <br><br>\n      <a class="textNomral">\n        Para comprar y vender criptomonedas con EyePayCash, simplemente haga clic en el botón Exchange, que lo\n        redireccionará a un proceso que le mostrará distintas opciones. Para comprar criptomonedas utilizando\n        criptomonedas o dinero fiduciario. EyePayCash no se hace responsable en ningún caso por el éxito de las\n        compraventas realizadas por los usuarios en la plataforma.</a>\n      <br><br>\n      <a class="textNomral">\n        Si usted desea que la cantidad o porción de criptomonedas compradas en el sistema Exchange de EyePayCash sea\n        depositada directamente en un monedero virtual diferente a EyePayCash, tendrá un costo adicional de 1% de la\n        cantidad en mención; el proceso de transferencia se podrá demorar un día hábil, es oportuno resaltar que el\n        tiempo final depende del tiempo que tarde la validación de la transacción, hecha por la minería de\n        criptomonedas.</a>\n      <br><br>\n      <b>VENDER</b>\n      <br><br>\n      <a class="textNomral">\n        Una vez usted ofrece una cantidad de criptomonedas en Exchange de EyePayCash usted deberá esperar como mínimo\n        10\n        días hábiles para cancelar la oferta, si usted NO ESPERA DICHO TÉRMINO, se le penalizará con una disminución\n        del 0,4% de la cantidad ofertada; pasados estos 10 días hábiles no habrá penalización por retirar la oferta. La\n        solicitud de cancelación de oferta implica que su cantidad de criptomoneda sale del servicio de Exchange de\n        EyePayCash, pero sigue en el monedero.</a>\n      <br><br>\n      <a class="textNomral">\n        Las únicas criptomonedas admitidas por EyePayCash serán expresadas de forma inequívoca y pública en la página\n        web de EyePayCash. EyePayCash no será responsable de recibir o almacenar monedas digitales que no cumplan con\n        el\n        requisito anteriormente descrito; se le recuerda que si usted intenta hacer una transferencia de criptomonedas\n        que no cumplan el requisito de la referencia, usted puede perder cualquier derecho relacionado con dicha moneda\n        digital o valor sin ningún derecho a reclamar a EyePayCash.</a>\n      <br><br>\n      <a class="textNomral">\n        EyePayCash no se hará responsable por los datos equívocos que se ingresen en el módulo método de pago.</a>\n      <br><br>\n      <b>COSTOS POR EL USO DE EXCHANGE</b>\n      <br><br>\n      <a class="textNomral">\n        Toda transacción exitosa llevada a cabo por intermedio y/o usando nuestro sistema de EXCHANGE; tendrá un costo\n        del 1% del total de las cantidades objeto de cada transacción en concreto.</a>\n      <br><br>\n      <b>ESTADO DE MODERACIÓN</b>\n      <br><br>\n      <a class="textNomral">\n        Una vez se compre una fracción publicada y se allegue el respectivo comprobante de pago, el vendedor tendrá dos\n        horas para validarlo, es decir, aprobarlo o rechazarlo.</a>\n      <br><br>\n      <a class="textNomral">\n        Si el comprobante es rechazado y el comprador no ratifica y/o vuelve a subir el comprobante y el mismo nunca es\n        validado, EyePayCash cambia la compra a un estado de moderación donde ni el vendedor ni el comprador pueden\n        ejecutar alguna acción, ambos deberán esperar 3 días hábiles mientras EyePayCash hace la respectiva\n        investigación para saber qué sucedió.</a>\n      <br>\n      <p class="Titles"> Reserva de EyePayCash.</p>\n      <br>\n      <a class="textNomral">\n        La Reserva de <b>EyePayCash</b> está diseñada principalmente para cubrir la pérdida de criptomonedas\n        almacenadas por\n        nuestros usuarios en la <b><i>Bóveda</i></b>, nuestro servicio de almacenamiento incorpora múltiples capas de\n        seguridad\n        criptográfica para ayudar a proteger sus criptomonedas. Estos procesos incluyen autenticación de múltiples\n        factores y segmentación de clave privada entre otros.</a>\n      <br><br>\n      <a class="textNomral">\n        La Reserva de <b>EyePayCash</b> está diseñada para cubrir pérdidas directas y efectivas sufridas por los\n        usuarios como\n        resultado de ataques de hackers a nuestros sistemas, robo por parte de un tercero y/o empleado de <b>EyePayCash</b>\n        y/o\n        nuestra bancarrota. (<b>“Pérdidas que califican o Pérdidas Calificadas“</b>).</a>\n      <br><br>\n      <a class="textNomral">\n        La Reserva de <b>EyePayCash</b> no cubre casos de piratería de dispositivos de los usuarios y cuentas\n        personales como\n        teléfonos, computadoras, cuentas de correo electrónico, etc. Por ejemplo, una pérdida sufrida como resultado de\n        la falta de mantener la seguridad, el control o la confidencialidad adecuados de su información, incluidos los\n        números de identificación personal <b>PIN</b>, contraseñas, claves <b>API</b> u otros códigos asociados con su\n        cuenta y\n        cualquier actividad que se produzca dentro de esa cuenta, no se considerará una <b>Pérdida admisible</b>.</a>\n      <br><br>\n      <a class="textNomral">\n        Hemos diseñado la reserva de criptomonedas <b>EyePayCash</b> para ayudar a reducir el impacto de las pérdidas\n        de\n        criptomonedas que están fuera del control de nuestros usuarios, no podemos garantizar que la reserva de\n        criptomonedas de <b>EyePayCash</b> tenga un número suficiente de criptomonedas para cubrir cualquiera de las\n        pérdidas\n        sufridas por nuestros usuarios en estas circunstancias.</a>\n      <br><br>\n      <a class="textNomral">\n        En caso de una <b>Pérdida Calificada</b> Los usuarios que tengan almacenadas criptomonedas en nuestra <b><i>Bóveda</i></b>\n        tendrán\n        prioridad frente a los que solo tengan sus criptomonedas en el <b><i>Monedero Virtual</i></b>.</a>\n      <br><br>\n      <a class="textNomral">\n        La Reserva de <b>EyePayCash</b> cubrirá las <b>Pérdidas Calificadas</b> en el siguiente orden de prioridad:</a>\n      <br><br>\n      <a class="textNomral">\n        Si la Reserva de <b>EyePayCash</b> no es suficiente para cubrir el 100% de las <b>Pérdidas Calificadas</b> de\n        la <b><i>Bóveda</i></b> y\n        luego del <b><i>Monedero Virtual</i></b>, las pérdidas se cubrirán proporcionalmente, en función del valor\n        total de las\n        mismas y en proporción al valor total de criptomonedas perdidas por todos los Usuarios como resultado del\n        incidente.</a>\n      <br><br>\n      <a class="textNomral">\n        El uso de la Reserva <b>EyePayCash</b> es opcional para nuestros usuarios. Como condición para recibir\n        cualquier\n        cantidad de criptomonedas y/o fondos de la cobertura de la Reserva <b>EyePayCash</b> , usted acepta (i)\n        cooperar\n        oportunamente con <b>EyePayCash</b> a petición suya en relación con cualquier reclamación de cobertura\n        relacionada con\n        sus criptomonedas, lo que incluye el suministro oportuno de cualquier información o la documentación que\n        <b>EyePayCash</b> razonablemente solicita, y (ii) firmar cualquier documento que incluye, entre otros, la\n        liberación de\n        reclamos adicionales contra <b>EyePayCash</b> , que EyePayCash podría requerir.</a>\n      <br><br>\n      <a (click)="Transacciones()" style="font-weight: bold">TRANSACCIONES.</a>\n      <br><br>\n      <a (click)="Retrasos()" style="font-weight: bold">RETRASOS.</a>\n      <br><br>\n      <a (click)="DirClave()" style="font-weight: bold">DIRECCIÓN Y CLAVE PERDIDA.</a>\n      <br><br>\n      <a (click)="Crypto()" style="font-weight: bold">CUSTODIA DE CRIPTOMONEDAS.</a>\n      <br>\n      <p class="Titles">Derechos de propiedad intelectual.</p>\n      <br><br>\n      <a class="textNomral">\n        Conservamos todos los derechos, títulos e intereses (incluidos todos los derechos de autor, marcas registradas,\n        patentes, secretos comerciales y todos los demás derechos de propiedad intelectual) en nuestros servicios y\n        todo el contenido de nuestros servicios, incluidas nuestras marcas comerciales, marcas de servicio, diseños,\n        logotipos y URL. y los nombres comerciales que se muestran en nuestro servicio, a los que nos referimos en\n        estos términos, colectivamente, como Materiales de <b>EyePayCash</b>.</a>\n      <br><br>\n      <a class="textNomral">\n        Por la presente, le otorgamos una licencia limitada, no exclusiva y no sublicenciable para acceder y utilizar\n        los materiales de <b>EyePayCash</b> para su uso comercial personal o interno.</a>\n      <br><br>\n      <a class="textNomral">\n        Dicha licencia está sujeta a estos términos y no permite la reventa de los materiales <b>EyePayCash</b> ; la\n        distribución, ejecución pública o exhibición pública de cualquier material de <b>EyePayCash</b> ; modificar o\n        hacer\n        cualquier uso derivado de los Materiales de <b>EyePayCash</b> o cualquier parte del mismo; o cualquier uso de\n        los\n        Materiales <b>EyePayCash</b> que no sea para sus fines previstos. La licencia otorgada en virtud de esta\n        Sección\n        finalizará automáticamente si suspendemos o cancelamos su acceso a los servicios. Tendremos derechos\n        exclusivos, incluidos todos los derechos de propiedad intelectual, sobre cualquier comentario, sugerencia, idea\n        u otra información o material relacionado con <b>EyePayCash</b> , cualquier comentario que envíe no es\n        confidencial y\n        pasará a ser propiedad exclusiva de <b>EyePayCash</b> . Tendremos derecho a la utilización y difusión sin\n        restricciones\n        de dichos comentarios para cualquier fin, comercial o de otro tipo, sin reconocimiento o compensación para\n        usted. No puede usar, copiar o transmitir nada en nuestro sitio web sin nuestro permiso.</a>\n      <br>\n      <p class="Titles">Usos autorizados de nuestros servicios.</p>\n      <br><br>\n      <a class="textNomral">\n        Usted puede usar nuestros servicios únicamente en lo que le hemos autorizado. Usted es responsable de\n        garantizar que la información personal de su perfil en la cuenta sea actual y correcta, incluida su dirección\n        de correo electrónico y número de teléfono móvil. También es responsable de mantener la seguridad, el control y\n        la confidencialidad adecuados de la información de su cuenta, incluidos los números de identificación personal\n        (PIN), contraseñas, claves de API u otros códigos asociados con su cuenta y cualquier actividad que ocurra\n        dentro de esa cuenta. La pérdida o el compromiso de esta información puede ocasionar el acceso no autorizado de\n        su cuenta, lo que puede ocasionar la pérdida o robo de cualquier criptomoneda almacenada en su cuenta. Si cree\n        que su cuenta se ha visto comprometida, necesita informar un incidente de seguridad, si experimenta problemas\n        operacionales o tiene un problema de seguridad, por favor contáctenos inmediatamente describiendo el problema\n        en cuestión lo más detalladamente posible, incluyendo la fecha, el tipo de problema y parte del sitio de\n        <b>EyePayCash</b> o los servicios de <b>EyePayCash</b> donde experimentó ese problema. Usted es responsable de\n        (i) notificarnos\n        inmediatamente de cualquier uso no autorizado de su contraseña, cuenta o de cualquier otra violación de\n        seguridad, y (ii) asegurarse de salir de su cuenta al final de cada sesión al acceder a los servicios de\n        <b>EyePayCash</b>. No tenemos responsabilidad por ninguna pérdida que sufra como resultado de no cumplir con\n        esta\n        sección o su incumplimiento de los avisos o alertas que podamos enviarle.</a>\n      <br><br>\n      <a (click)="smsText()" style="font-weight: bold">USANDO SMS / TEXTO.</a>\n      <br><br>\n      <a (click)="infoPrerequisito()" style="font-weight: bold">INFORMACIÓN PRECISA Y REQUISITOS.</a>\n      <br><br>\n      <a (click)="actividadesProhibidas()" style="font-weight: bold">ACTIVIDADES PROHIBIDAS.</a>\n      <br><br>\n      <a (click)="cuentasSuspendidas()" style="font-weight: bold">CUENTAS SUSPENDIDAS.</a>\n      <br><br>\n      <a (click)="cuentasEliminadas()" style="font-weight: bold">CUENTAS ELIMINADAS.</a>\n      <br><br>\n      <a (click)="descargoGarantias()" style="font-weight: bold">DESCARGO DE GARANTÍAS.</a>\n      <br><br>\n      <a (click)="sinConsejos()" style="font-weight: bold">SIN CONSEJOS.</a>\n      <br><br>\n      <a (click)="indemnizacion()" style="font-weight: bold">INDEMNIZACIÓN.</a>\n      <br><br>\n      <a (click)="limiResponsabilidad()" style="font-weight: bold">LIMITACIÓN DE RESPONSABILIDAD.</a>\n      <br><br>\n      <a (click)="separabilidad()" style="font-weight: bold">SEPARABILIDAD.</a>\n      <br><br>\n      <a (click)="arbAplicable()" style="font-weight: bold">ARBITRAJE Y LEY APLICABLE.</a>\n      <br><br>\n      <a (click)="limitaciones()" style="font-weight: bold">LIMITACIONES.</a>\n      <br><br>\n      <a (click)="propiedadNReclamada()" style="font-weight: bold">PROPIEDAD NO RECLAMADA.</a>\n      <br><br>\n      <a (click)="acuerdoCompleto()" style="font-weight: bold">ASIGNACIÓN: ACUERDO COMPLETO.</a> -->\n      <br><br>\n      <a (click)="politicaPrivacidad()" style="font-weight: bold">POLÍTICA DE PRIVACIDAD.</a>\n      <br>\n      <p class="Titles"><i>Usos autorizados de nuestros servicios.</i></p>\n      <a class="textNomral">\n        <i><b>Datos que nos proporciona.</b> Recopilamos la información que nos proporciona, que incluye:</i></a>\n      <br><br>\n      <a class="textNomral">\n        - Su nombre, dirección de correo electrónico, número de teléfono móvil.</a>\n      <br><br>\n      <a class="textNomral">\n        - Información sobre las transacciones que completa utilizando nuestros servicios, incluida la cantidad de\n        fondos asociados con una transacción de criptomoneda, el tipo de transacción ejecutada y otra información\n        relacionada.</a>\n      <br><br>\n      <a class="textNomral">\n        - Los correos electrónicos y números de teléfono de sus contactos, si elige invitar a sus amigos a usar\n        EyePayCash como parte de nuestro programa de referencia cuando crea su cuenta.</a>\n      <br><br>\n      <a class="textNomral">\n        - Si usa nuestras aplicaciones móviles, recopilamos de su dispositivo móvil una ID única (donde su dispositivo\n        es un iPhone, también recolectamos el CFUUID recomendado por Apple (el identificador universal único de\n        información).</a>\n      <br>\n      <p class="Titles">Otros datos recopilados.</p>\n      <a class="textNomral">\n        También podemos recopilar automáticamente los siguientes datos:</a>\n      <br><br>\n      <b><i> - Analítica.</i></b>\n      <br><br>\n      <a class="textNomral">\n        Cuando visita nuestro sitio web, utilizamos herramientas de análisis de terceros para recopilar datos sobre su\n        computadora y conexión a Internet. Esa información incluye la dirección IP de su computadora y/o proveedor de\n        servicios de Internet, cuando accede a nuestro sitio web, la dirección de Internet de los sitios web desde los\n        cuales se conecta a nuestro sitio web y desde donde llegó antes de aterrizar en nuestro sitio web, el navegador\n        que usted está utilizando, y sus movimientos y preferencias en nuestro sitio web. Toda esta información se usa\n        internamente con el propósito de comprender cómo se está utilizando nuestro sitio web y mejorar nuestro sitio\n        web. También utilizamos herramientas de análisis de terceros para recopilar datos sobre su uso de nuestras\n        aplicaciones móviles. La información recopilada identifica los tipos y el momento de las acciones que realiza\n        dentro de nuestro dispositivo móvil, incluida la instalación, el registro, la carga y ciertos tipos de\n        navegación.</a>\n      <br><br>\n      <b><i> - Etiquetas de acción.</i></b>\n      <br><br>\n      <a class="textNomral">\n        Cuando visita nuestro sitio web, usamos etiquetas de acción (también llamadas etiquetas de píxeles, GIF claro o\n        balizas) para identificar algunas de las páginas que visita y cómo utiliza el contenido de esas páginas. Las\n        etiquetas de acción pueden recopilar y transmitir estos datos de una manera que lo identifique si se ha\n        registrado en nuestro sitio web o si ha iniciado sesión en nuestro sitio web. También usamos etiquetas de\n        acción en nuestros correos electrónicos para determinar si un correo electrónico se abrió o si se reenvió a\n        otra persona. Cuando utiliza nuestras aplicaciones móviles, utilizamos etiquetas de acción en las que accede a\n        sitios web desde enlaces en nuestras aplicaciones móviles. Estos pueden identificar las páginas que visita y\n        cómo utiliza el contenido en esas páginas.</a>\n      <b><i> - Gestión del sitio.</i></b>\n      <br><br>\n      <a class="textNomral">\n        Agregamos datos que recopilamos sobre el uso de nuestro sitio web para administrar, proteger y mejorar nuestro\n        sitio web y nuestros sistemas, para comprender mejor las preferencias de los visitantes de nuestro sitio web y\n        optimizar el contenido que servimos, para identificar problemas del servidor, compilar estadísticas agregadas\n        sobre el uso de nuestro sitio web y para mejorar nuestro marketing e investigación.</a>\n      <b><i> - No Track.</i></b>\n      <br><br>\n      <a class="textNomral">\n        Nuestro Servicio actualmente no responde a las señales de “No rastrear” y funciona como se describe en esta\n        Política de privacidad, ya sea que se reciba o no una señal de No rastrear. Si lo hacemos en el futuro,\n        describiremos cómo lo hacemos en esta Política de privacidad.</a>\n      <br><br>\n      <a class="textNomral">\n        Al proporcionarnos voluntariamente datos personales, usted acepta nuestro uso de acuerdo con esta Política de\n        privacidad. Si nos proporciona datos personales, reconoce y acepta que dichos datos personales pueden\n        transferirse desde su ubicación actual a las oficinas y servidores de <b>EyePayCash</b> y los terceros\n        autorizados\n        mencionados en esta política. Usamos medidas de seguridad físicas, electrónicas y de procedimientos razonables\n        para proteger la información personal que obtenemos de usted contra la pérdida, el uso indebido y el acceso,\n        divulgación, alteración y destrucción no autorizados. Tenga en cuenta que no somos responsables de la seguridad\n        de los datos que está transmitiendo a través de Internet ni de los datos que está almacenando, publicando o\n        proporcionando directamente en el sitio web de un tercero, que se rige por las políticas de esa parte. Tenga en\n        cuenta que ningún método de transmisión a través de Internet o método de almacenamiento electrónico es 100%\n        seguro. Si tiene más preguntas sobre seguridad, puede <a href="http://eyepaycash.co/contactenos"> Contáctenos</a>.</a>\n      <p class="Titles">Retención de datos.</p>\n      <a class="textNomral">\n        Si desea cerrar su cuenta de EyePayCash por completo, envienos un correo a <a href="http://eyepaycash.co/contactenos">\n          Contáctenos</a>\n        desde su dirección de correo electrónico registrada. Podemos retener información sobre usted en nuestras bases\n        de datos por el tiempo que su cuenta esté activa o según sea necesario para proporcionarle servicios y de\n        acuerdo con las leyes aplicables. Nuestra retención y uso de su información será tan necesaria para cumplir con\n        nuestras obligaciones legales, resolver disputas y hacer cumplir nuestros acuerdos. El período de retención\n        puede extenderse más allá del final de su relación con nosotros, pero solo será necesario siempre que tengamos\n        suficiente información para responder a cualquier problema que pueda surgir más adelante. Por ejemplo, es\n        posible que necesitemos o se nos solicite que retengamos cierta información para evitar actividades\n        fraudulentas, protegernos de responsabilidad, permitirnos buscar remedios disponibles o limitar cualquier daño\n        que podamos sufrir.</a>\n      <br>\n      <p class="Titles">Acceso a la información.</p>\n      <a class="textNomral">\n        Responderemos a su solicitud de acceso a la información que recopilamos sobre usted dentro del plazo requerido\n        por la ley aplicable.</a>\n      <br><br>\n      <a class="textNomral">\n        <b>Compartir datos.</b>\n        <a class="textNomral">Podemos compartir su información de la siguiente manera:</a>\n        <br><br>\n        <a class="textNomral">\n          - Usted ha consentido o nos ha dado permiso para compartir:</a>\n        <br><br>\n        <a class="textNomral">\n          - Hemos agregado o eliminado la identificación de la información, por lo que no se puede usar\n          razonablemente para identificarlo.</a>\n        <br><br>\n        <a class="textNomral">\n          - Con las empresas afiliadas al Grupo EyePayCash:</a>\n        <br><br>\n        <a class="textNomral">\n          - Con los proveedores de servicios externos que utilizamos para brindar nuestro servicio, incluidos\n          ciertos servicios de publicidad, referencias, operaciones, servicios financieros y tecnología (como\n          proveedores de hosting, verificación de identidad, soporte, pago y proveedores de servicios de correo\n          electrónico):</a>\n        <br><br>\n        <a class="textNomral">\n          - Si así lo requiere la ley o el proceso legal aplicable, o si creemos que está de acuerdo con la\n          ley\n          aplicable o el proceso legal:</a>\n        <br><br>\n        <a class="textNomral">\n          - Para proteger los derechos, propiedad y seguridad de EyePayCash, nuestros usuarios y el\n          público,\n          incluyendo, por ejemplo, en conexión con procedimientos judiciales, o para detectar o prevenir\n          actividad\n          criminal, fraude, tergiversación material, o para establecer nuestros derechos o defendernos\n          contra legal\n          reclamaciones; o En relación con la venta, la fusión, la transferencia o la reorganización de la\n          totalidad o\n          partes de nuestro negocio.</a>\n      </a>\n      <br><br>\n      <!-- <a (click)="comEmail()" style="font-weight: bold">COMUNICACIONES POR EMAIL.</a>\n      <br><br>\n      <a (click)="enlServicios()" style="font-weight: bold">ENLACES Y SERVICIOS.</a>\n      <br><br>\n      <a (click)="camPolitica()" style="font-weight: bold">CAMBIOS A ESTA POLÍTICA.</a>\n      <br><br> -->\n      <div class="center">\n        <button style="border-radius: 0%" (click)= "aceptarTerminos()" class="buttonPayCash btnStyle" ion-button small>Acepto</button>\n      </div>\n    </div>\n  </div>\n</ion-content>'/*ion-inline-end:"/Users/eyeline/Documents/GitHub/eyepaycashapp/src/pages/politicas/politicas.html"*/,
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* ToastController */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* ViewController */],
+            __WEBPACK_IMPORTED_MODULE_2__providers_auth_user_auth_user__["a" /* AuthUserProvider */]])
+    ], PoliticasPage);
+    return PoliticasPage;
+}());
+
+//# sourceMappingURL=politicas.js.map
+
+/***/ }),
+
+/***/ 324:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ModalWelcomePage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(7);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+/**
+ * Generated class for the ModalWelcomePage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
+var ModalWelcomePage = /** @class */ (function () {
+    function ModalWelcomePage(navCtrl, navParams) {
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+        this.name = null;
+        this.getInfo();
+    }
+    ModalWelcomePage.prototype.getInfo = function () {
+        this.name = this.navParams.get('name');
+    };
+    ModalWelcomePage.prototype.closeModal = function () {
+        this.navCtrl.pop();
+    };
+    ModalWelcomePage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+            selector: 'page-modal-welcome',template:/*ion-inline-start:"/Users/eyeline/Documents/GitHub/eyepaycashapp/src/pages/modal-welcome/modal-welcome.html"*/'<!--\n  Generated template for the ModalWelcomePage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-content padding class="tamano">\n  <ion-row>\n    <ion-col col-10>\n      <h4>Bienvenido {{name}}</h4>\n    </ion-col>\n    <ion-col col-2>\n      <ion-buttons end>\n        <button ion-button icon-only (click)="closeModal()">\n          <ion-icon item-right name="ios-close-outline"></ion-icon>\n        </button>\n      </ion-buttons>\n    </ion-col>\n  </ion-row>\n\n  <img src="assets/imgs/ok.png">\n</ion-content>\n'/*ion-inline-end:"/Users/eyeline/Documents/GitHub/eyepaycashapp/src/pages/modal-welcome/modal-welcome.html"*/,
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */]])
+    ], ModalWelcomePage);
+    return ModalWelcomePage;
+}());
+
+//# sourceMappingURL=modal-welcome.js.map
+
+/***/ }),
+
+/***/ 325:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return RecoveryPasswordPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_api__ = __webpack_require__(23);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_auth_user_auth_user__ = __webpack_require__(28);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__password_update_password_update__ = __webpack_require__(326);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+/**
+ * Generated class for the RecoveryPasswordPage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
+var RecoveryPasswordPage = /** @class */ (function () {
+    function RecoveryPasswordPage(navCtrl, navParams, api, toastCtrl, userProvider, loadingCtrl) {
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+        this.api = api;
+        this.toastCtrl = toastCtrl;
+        this.userProvider = userProvider;
+        this.loadingCtrl = loadingCtrl;
+        this.data = null;
+        this.type = 'phone';
+        this.isvisible = true;
+        this.codigo = null;
+        this.iscodigo = false;
+    }
+    RecoveryPasswordPage.prototype.sendMessage = function () {
+        var _this = this;
+        this.type = 'phone';
+        if (this.data != null) {
+            var loading_1 = this.loadingCtrl.create({
+                spinner: 'dots'
+            });
+            loading_1.present();
+            this.api.post('auth/restar-password', { 'type': this.type, 'data': this.data }).then(function (data) {
+                loading_1.dismiss();
+                if (!_this.iscodigo)
+                    _this.iscodigo = true;
+                else
+                    _this.iscodigo = false;
+                _this.userProvider.userRecovery.codigoVerify = data.password_code_req;
+                _this.userProvider.userRecovery.user_id = data.user_id;
+            }).catch(function (err) {
+                loading_1.dismiss();
+                var toast = _this.toastCtrl.create({
+                    message: 'No se encontraron resultados',
+                    duration: 3000,
+                });
+                toast.present();
+            });
+        }
+        else {
+            var toast = this.toastCtrl.create({
+                message: 'Por favor ingrese su nùmero celular',
+                duration: 3000
+            });
+            toast.present();
+        }
+    };
+    // 3114276555
+    RecoveryPasswordPage.prototype.sendMail = function () {
+        var _this = this;
+        this.type = 'mail';
+        if (this.data != null) {
+            var loading_2 = this.loadingCtrl.create({
+                spinner: 'dots'
+            });
+            loading_2.present();
+            this.api.post('auth/restar-password', { 'type': this.type, 'data': this.data }).then(function (data) {
+                loading_2.dismiss();
+                console.log(data);
+                if (!_this.iscodigo)
+                    _this.iscodigo = true;
+                else
+                    _this.iscodigo = false;
+                _this.userProvider.userRecovery.codigoVerify = data.password_code_req;
+                _this.userProvider.userRecovery.user_id = data.user_id;
+            });
+        }
+        else {
+            var toast = this.toastCtrl.create({
+                message: 'Por favor ingrese su direcciòn email',
+                duration: 3000
+            });
+            toast.present();
+        }
+    };
+    RecoveryPasswordPage.prototype.changeVisible = function () {
+        if (this.isvisible)
+            this.isvisible = false;
+        else
+            this.isvisible = true;
+    };
+    RecoveryPasswordPage.prototype.cancelar = function () {
+        this.navCtrl.pop();
+    };
+    RecoveryPasswordPage.prototype.confirmCode = function () {
+        if (this.codigo != null) {
+            if (this.userProvider.userRecovery.codigoVerify == this.codigo) {
+                this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_4__password_update_password_update__["a" /* PasswordUpdatePage */]);
+            }
+            else {
+                var toast = this.toastCtrl.create({
+                    message: 'El còdigo ingresado no coincide!',
+                    duration: 3000
+                });
+                toast.present();
+            }
+        }
+        else {
+            var toast = this.toastCtrl.create({
+                message: 'Por favor ingrese el còdigo de verificaciòn',
+                duration: 3000
+            });
+            toast.present();
+        }
+    };
+    RecoveryPasswordPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+            selector: 'page-recovery-password',template:/*ion-inline-start:"/Users/eyeline/Documents/GitHub/eyepaycashapp/src/pages/recovery-password/recovery-password.html"*/'<ion-content padding class="back vignette">\n  <div style="margin-top:12%" class="center">\n    <ion-img class="logo" src="assets/imgs/EPCLogo.png"></ion-img>\n  </div>\n  <div *ngIf="isvisible">\n    <ion-item>\n      <ion-label stacked>Ingrese número celular</ion-label>\n      <ion-input type="text" [(ngModel)]="data" name="userdata"></ion-input>\n    </ion-item>\n    <ion-item *ngIf="iscodigo">\n      <ion-label stacked>Ingrese código de verificación</ion-label>\n      <ion-input type="text" [(ngModel)]="codigo" name="usercodigo"></ion-input>\n    </ion-item>\n    <ion-row>\n      <ion-col col-12 *ngIf="!iscodigo">\n        <button ion-button (click)="sendMessage()" block class="buttonPayCash">Enviar mensaje</button>\n      </ion-col>\n      <ion-col col-12 *ngIf="iscodigo">\n        <button ion-button (click)="confirmCode()" block class="buttonPayCash">Confirmar código</button>\n      </ion-col>\n    </ion-row>\n    <ion-row class="marginLft">\n      <ion-col col-4>\n        <button ion-button (click)="cancelar()" class="buttonPayCash">Cancelar</button>\n      </ion-col>\n      <ion-col col-6 *ngIf="!iscodigo">\n        <button ion-button (click)="changeVisible()" class="buttonPayCash">Recuperar por email</button>\n      </ion-col>\n    </ion-row>\n  </div>\n\n  <div *ngIf="!isvisible">\n    <ion-item>\n      <ion-label stacked>Ingrese su email</ion-label>\n      <ion-input type="text" [(ngModel)]="data" name="dataname"></ion-input>\n    </ion-item>\n\n\n    <ion-item *ngIf="iscodigo">\n      <ion-label stacked>Ingrese código de verificación</ion-label>\n      <ion-input type="text" [(ngModel)]="codigo" name="usercodigo"></ion-input>\n    </ion-item>\n    <ion-row>\n      <ion-col col-12 *ngIf="!iscodigo">\n        <button ion-button (click)="sendMail()" block class="buttonPayCash">Enviar email</button>\n      </ion-col>\n      <ion-col col-12 *ngIf="iscodigo">\n        <button ion-button (click)="confirmCode()" block class="buttonPayCash">Confirmar código</button>\n      </ion-col>\n    </ion-row>\n    <ion-row class="marginLft">\n      <ion-col col-4>\n        <button ion-button (click)="cancelar()" class="buttonPayCash">Cancelar</button>\n      </ion-col>\n      <ion-col col-6>\n        <button ion-button (click)="changeVisible()" class="buttonPayCash">Recuperar por SMS</button>\n      </ion-col>\n    </ion-row>\n  </div>\n</ion-content>'/*ion-inline-end:"/Users/eyeline/Documents/GitHub/eyepaycashapp/src/pages/recovery-password/recovery-password.html"*/,
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */],
+            __WEBPACK_IMPORTED_MODULE_2__providers_api__["a" /* Api */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* ToastController */],
+            __WEBPACK_IMPORTED_MODULE_3__providers_auth_user_auth_user__["a" /* AuthUserProvider */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* LoadingController */]])
+    ], RecoveryPasswordPage);
+    return RecoveryPasswordPage;
+}());
+
+//# sourceMappingURL=recovery-password.js.map
+
+/***/ }),
+
+/***/ 326:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PasswordUpdatePage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_api__ = __webpack_require__(23);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_auth_user_auth_user__ = __webpack_require__(28);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__login_login__ = __webpack_require__(66);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+/**
+ * Generated class for the PasswordUpdatePage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
+var PasswordUpdatePage = /** @class */ (function () {
+    function PasswordUpdatePage(navCtrl, navParams, api, toastCtrl, userProvider, loadingCtrl) {
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+        this.api = api;
+        this.toastCtrl = toastCtrl;
+        this.userProvider = userProvider;
+        this.loadingCtrl = loadingCtrl;
+        this.infoRecovery = {
+            new_password: null,
+            new_password_conf: null,
+            user_id: null,
+        };
+    }
+    PasswordUpdatePage.prototype.recovery = function () {
+        var _this = this;
+        if (this.infoRecovery.new_password != null && this.infoRecovery.new_password_conf != null) {
+            if (this.infoRecovery.new_password_conf == this.infoRecovery.new_password) {
+                if (this.infoRecovery.new_password.length >= 6 && this.infoRecovery.new_password_conf.length >= 6) {
+                    var loading_1 = this.loadingCtrl.create({
+                        spinner: 'dots',
+                    });
+                    loading_1.present();
+                    this.infoRecovery.user_id = this.userProvider.userRecovery.user_id;
+                    this.api.post('auth/update-password', this.infoRecovery).then(function (data) {
+                        loading_1.dismiss();
+                        console.log(data);
+                        var toast = _this.toastCtrl.create({
+                            message: 'Contraseña actualizada correctamente',
+                            duration: 3000,
+                        });
+                        toast.present();
+                        _this.navCtrl.setRoot(__WEBPACK_IMPORTED_MODULE_4__login_login__["a" /* LoginPage */]);
+                    }).catch(function (error) {
+                        loading_1.dismiss();
+                    });
+                }
+                else {
+                    var toast = this.toastCtrl.create({
+                        message: 'La constraseña debe tener mìnimo 6 caracteres'
+                    });
+                    toast.present();
+                }
+            }
+            else {
+                var toast = this.toastCtrl.create({
+                    message: 'Las contraseñas no coinciden',
+                    duration: 3000,
+                });
+                toast.present();
+            }
+        }
+        else {
+            var toast = this.toastCtrl.create({
+                message: 'Los datos son obligatorios',
+                duration: 3000,
+            });
+            toast.present();
+        }
+    };
+    PasswordUpdatePage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+            selector: 'page-password-update',template:/*ion-inline-start:"/Users/eyeline/Documents/GitHub/eyepaycashapp/src/pages/password-update/password-update.html"*/'<!--\n  Generated template for the PasswordUpdatePage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-content padding class="fondo_gris">\n  <form #formulario (submit)="recovery()">\n    <ion-list>\n      <ion-item>\n        <ion-label stacked>Ingrese la nueva contraseña</ion-label>\n        <ion-input type="password" [(ngModel)]="infoRecovery.new_password" name="recovery_pass"></ion-input>\n      </ion-item>\n      <ion-item>\n        <ion-label stacked>Confirme la nueva contraseña</ion-label>\n        <ion-input type="password" [(ngModel)]="infoRecovery.new_password_conf" name="recovery_pass2"></ion-input>\n      </ion-item>\n      <ion-item>\n        <button ion-button class="buttonPayCash" block>Guardar</button>\n      </ion-item>\n    </ion-list>\n  </form>\n</ion-content>\n'/*ion-inline-end:"/Users/eyeline/Documents/GitHub/eyepaycashapp/src/pages/password-update/password-update.html"*/,
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */],
+            __WEBPACK_IMPORTED_MODULE_2__providers_api__["a" /* Api */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* ToastController */],
+            __WEBPACK_IMPORTED_MODULE_3__providers_auth_user_auth_user__["a" /* AuthUserProvider */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* LoadingController */]])
+    ], PasswordUpdatePage);
+    return PasswordUpdatePage;
+}());
+
+//# sourceMappingURL=password-update.js.map
+
+/***/ }),
+
+/***/ 327:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TransactionPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_api__ = __webpack_require__(23);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_auth_user_auth_user__ = __webpack_require__(28);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__modal_transaction_modal_transaction__ = __webpack_require__(328);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+/**
+ * Generated class for the TransactionPage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
+var TransactionPage = /** @class */ (function () {
+    function TransactionPage(navCtrl, navParams, api, userProvider, loadingCtrl, toastCtrl, modalCtrl) {
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+        this.api = api;
+        this.userProvider = userProvider;
+        this.loadingCtrl = loadingCtrl;
+        this.toastCtrl = toastCtrl;
+        this.modalCtrl = modalCtrl;
+        this.countrys = [];
+        this.currency = null;
+        this.infoCountry = null;
+        this.monedas = [];
+        this.getInfo();
+    }
+    TransactionPage.prototype.getInfo = function () {
+        var _this = this;
+        this.currency = this.userProvider.user_Country.currency;
+        this.countrySelected();
+        this.api.get('app/get-countries').then(function (data) {
+            _this.countrys = data;
+        }).catch();
+    };
+    TransactionPage.prototype.countrySelected = function () {
+        var _this = this;
+        this.api.get('app/get-prices', this.userProvider, {
+            currency_code: this.currency,
+        }).then(function (data) {
+            _this.infoCountry = data;
+            console.log(_this.infoCountry);
+            _this.monedas = _this.infoCountry.coins;
+            console.log(_this.monedas);
+        });
+    };
+    TransactionPage.prototype.monedaSelect = function (moneda) {
+        var modalTransaction = this.modalCtrl.create(__WEBPACK_IMPORTED_MODULE_4__modal_transaction_modal_transaction__["a" /* ModalTransactionPage */], {
+            'moneda': moneda,
+            'userCountry': this.userProvider.user_Country,
+        });
+        modalTransaction.present();
+        modalTransaction.onDidDismiss(function (data) {
+        });
+    };
+    TransactionPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+            selector: 'page-transaction',template:/*ion-inline-start:"/Users/eyeline/Documents/GitHub/eyepaycashapp/src/pages/transaction/transaction.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>TRANSACCIONES</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n  <ion-label class="txtLbl" stacked>Seleccione país de interés</ion-label>\n  <ion-select [(ngModel)]="currency" (ionChange)="countrySelected()">\n    <ion-option *ngFor="let pais of countrys" value="{{pais.currency}}">{{pais.name}}</ion-option>\n  </ion-select>\n      <label stacked>Precio del dolar en el paìs</label>\n      <ion-item>\n        <h6 class="txtboldblack">1 USD = {{infoCountry?.local_usd_value}} {{currency}}</h6>\n      </ion-item>\n      <label stacked>Información de las monedas</label>\n      <ion-card ion-item *ngFor="let moneda of monedas" (click)="monedaSelect(moneda)">\n        <ion-card-content>\n          <ion-row>\n            <ion-col col-10>\n              <h4>Nombre: {{moneda.full_name}}</h4>\n              <h6>1 {{moneda.full_name}} = {{moneda.usd_value}} USD</h6>\n              <h5 stacked> 1 {{moneda.full_name}} >> {{currency}} </h5>\n              <h5>{{moneda.local_usd_value}}</h5>\n            </ion-col>\n            <ion-col col-2 class="margIcon">\n              <ion-icon name="add"></ion-icon>\n            </ion-col>\n          </ion-row>\n        </ion-card-content>\n      </ion-card>\n</ion-content>'/*ion-inline-end:"/Users/eyeline/Documents/GitHub/eyepaycashapp/src/pages/transaction/transaction.html"*/,
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */],
+            __WEBPACK_IMPORTED_MODULE_2__providers_api__["a" /* Api */],
+            __WEBPACK_IMPORTED_MODULE_3__providers_auth_user_auth_user__["a" /* AuthUserProvider */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* LoadingController */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* ToastController */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* ModalController */]])
+    ], TransactionPage);
+    return TransactionPage;
+}());
+
+//# sourceMappingURL=transaction.js.map
+
+/***/ }),
+
+/***/ 328:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ModalTransactionPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_api__ = __webpack_require__(23);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_auth_user_auth_user__ = __webpack_require__(28);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__home_home__ = __webpack_require__(138);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__transaction_resume_transaction_resume__ = __webpack_require__(329);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+
+/**
+ * Generated class for the ModalTransactionPage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
+var ModalTransactionPage = /** @class */ (function () {
+    function ModalTransactionPage(navParams, viewCtrl, toastCtrl, loadingCtrl, api, userProvider, navCtrl) {
+        this.navParams = navParams;
+        this.viewCtrl = viewCtrl;
+        this.toastCtrl = toastCtrl;
+        this.loadingCtrl = loadingCtrl;
+        this.api = api;
+        this.userProvider = userProvider;
+        this.navCtrl = navCtrl;
+        this.moneda = null;
+        this.userCountry = null;
+        this.transaction = {
+            amount_local: 0,
+            phone_user_des: null,
+            key_user: null,
+            country_id: null,
+            coin_id: null,
+        };
+    }
+    ModalTransactionPage.prototype.ionViewWillLoad = function () {
+        this.userCountry = this.navParams.get('userCountry');
+        this.moneda = this.navParams.get('moneda');
+        this.transaction.country_id = this.userCountry.id;
+        this.transaction.coin_id = this.moneda.id;
+    };
+    ModalTransactionPage.prototype.closeModal = function () {
+        this.viewCtrl.dismiss();
+    };
+    ModalTransactionPage.prototype.doTrasaction = function () {
+        var _this = this;
+        if (this.transaction.amount_local != null && this.transaction.phone_user_des != null && this.transaction.key_user != null && this.transaction.country_id != null && this.transaction.coin_id != null) {
+            if (this.transaction.key_user.length === 4 && this.transaction.phone_user_des > 9) {
+                var loading_1 = this.loadingCtrl.create({
+                    spinner: 'dots',
+                });
+                loading_1.present();
+                var objtoSub = this.transaction;
+                objtoSub.amount_local = this.transaction.amount_local.replace(new RegExp('\\.', 'g'), '');
+                objtoSub.amount_local = this.transaction.amount_local.replace(',', '.');
+                this.api.post('app/transaction', objtoSub, this.userProvider).then(function (data) {
+                    loading_1.dismiss();
+                    var toast = _this.toastCtrl.create({
+                        message: 'Transacciòn solicitada correctamente.',
+                        duration: 3000,
+                    });
+                    _this.closeModal();
+                    _this.navCtrl.setPages([{ page: __WEBPACK_IMPORTED_MODULE_4__home_home__["a" /* HomePage */] }, { page: __WEBPACK_IMPORTED_MODULE_5__transaction_resume_transaction_resume__["a" /* TransactionResumePage */], params: data }]);
+                    toast.present();
+                }).catch(function (data) {
+                    loading_1.dismiss();
+                    console.log(data);
+                });
+            }
+        }
+        else {
+            console.log(this.transaction);
+            var toast = this.toastCtrl.create({
+                message: 'Todos los datos son obligatorios',
+                duration: 3000
+            });
+            toast.present();
+        }
+    };
+    ModalTransactionPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+            selector: 'page-modal-transaction',template:/*ion-inline-start:"/Users/eyeline/Documents/GitHub/eyepaycashapp/src/pages/modal-transaction/modal-transaction.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>Transacción</ion-title>\n    <ion-buttons end>\n      <button ion-button (click)="closeModal()">Cerrar</button>\n    </ion-buttons>\n  </ion-navbar>\n</ion-header>\n<ion-content padding>\n  <ion-card>\n    <ion-card-header>\n      {{moneda.full_name}}\n    </ion-card-header>\n    <ion-card-content>\n      <h6>1 {{moneda.full_name}} == {{moneda.local_usd_value | number}} {{userCountry.currency}} </h6>\n      <h6>1 {{moneda.full_name}} == {{moneda.usd_value | number}} USD </h6>\n    </ion-card-content>\n  </ion-card>\n  <ion-card>\n    <ion-card-header>\n      Información de la transación\n    </ion-card-header>\n    <ion-card-content>\n        <label stacked>Ingresar número celular</label>\n        <ion-input name="transaction-celular" [(ngModel)]="transaction.phone_user_des"   [brmasker]="{type:\'num\'}"\n                   type="text"></ion-input>\n        <label stacked>Ingresar clave de seguridad (4 digitos)</label>\n        <ion-input name="transaction-clave" [brmasker]="{len:4}" [(ngModel)]="transaction.key_user" type="number"></ion-input>\n        <label stacked>Ingresar el valor de la transacción</label>\n        <ion-input type="text" name="transaction-valor"\n                   [brmasker]="{money:true,decimal:0,thousand:\',\',type:\'num\'}"\n                   [(ngModel)]="transaction.amount_local">\n\n        </ion-input>\n        <button class="buttonPayCash" ion-button (click)="doTrasaction()">Solicitar transacción</button>\n    </ion-card-content>\n  </ion-card>\n\n</ion-content>\n'/*ion-inline-end:"/Users/eyeline/Documents/GitHub/eyepaycashapp/src/pages/modal-transaction/modal-transaction.html"*/,
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* ViewController */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* ToastController */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* LoadingController */],
+            __WEBPACK_IMPORTED_MODULE_2__providers_api__["a" /* Api */],
+            __WEBPACK_IMPORTED_MODULE_3__providers_auth_user_auth_user__["a" /* AuthUserProvider */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */]])
+    ], ModalTransactionPage);
+    return ModalTransactionPage;
+}());
+
+//# sourceMappingURL=modal-transaction.js.map
+
+/***/ }),
+
+/***/ 329:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TransactionResumePage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(7);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+/**
+ * Generated class for the TransactionResumePage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
+var TransactionResumePage = /** @class */ (function () {
+    function TransactionResumePage(navCtrl, navParams, loadingCtrl) {
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+        this.loadingCtrl = loadingCtrl;
+        this.result = null;
+        this.transaction = null;
+        this.coinhas = null;
+        this.coin = null;
+        this.country = null;
+        this.getIngfo();
+    }
+    TransactionResumePage.prototype.getIngfo = function () {
+        var parametros = this.navParams.data;
+        this.result = parametros.result;
+        this.transaction = parametros.transaction;
+        this.coinhas = parametros.coinhas;
+        this.coin = parametros.coin;
+        this.country = parametros.country;
+    };
+    TransactionResumePage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+            selector: 'page-transaction-resume',template:/*ion-inline-start:"/Users/eyeline/Documents/GitHub/eyepaycashapp/src/pages/transaction-resume/transaction-resume.html"*/'<ion-header>\n\n  <ion-navbar>\n    <ion-title>Resumen de la transacción</ion-title>\n  </ion-navbar>\n</ion-header>\n<ion-content padding>\n  <h4>Resumen de la transacción</h4>\n<ion-card>\n  <ion-card-content>\n    <ion-row>\n      <label stacked>Número de celular de destino</label>\n      <h4>{{transaction.phone_user_des}}</h4>\n      <label stacked>Nombre de la ciudad</label>\n      <h4>{{country.name}}</h4>\n      <label stacked>Costo local de la transacción</label>\n      <h4>{{transaction.amount_local}}</h4>\n      <label stacked>Nombre de la criptomoneda</label>\n      <h4>{{coin.full_name}}</h4>\n      <label stacked>Clave de transacción</label>\n      <h4>{{transaction.key_eyecash}}</h4>\n      <label stacked>Total en dolares</label>\n      <h4>{{transaction.amount_usd}}</h4>\n      <label stacked>Total en criptomoneda</label>\n      <h4>{{transaction.amount_btc}}</h4>\n    </ion-row>\n  </ion-card-content>\n</ion-card>\n\n</ion-content>\n'/*ion-inline-end:"/Users/eyeline/Documents/GitHub/eyepaycashapp/src/pages/transaction-resume/transaction-resume.html"*/,
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* LoadingController */]])
+    ], TransactionResumePage);
+    return TransactionResumePage;
+}());
+
+// "coin": {
+//   "id": 1,
+//     "full_name": "Bitcoin",
+//     "short_name": "BTC",
+//     "usd_value": "6575.4200",
+//     "date_update": "2018-10-05 11:31:14",
+//     "is_active": 1
+// },
+// "transaction": {
+//   "user_id": 4,
+//     "phone_user_des": "320347659",
+//     "country_id": "1",
+//     "amount_local": 200000,
+//     "coin_id": "1",
+//     "key_eyecash": "6555",
+//     "date_request": "2018-10-05 21:42:42",
+//     "key_request": "8448465643098825",
+//     "amount_usd": "65.95",
+//     "amount_btc": "0.01010582"
+// },
+// "coinhash": {
+//   "id": 1,
+//     "coin_id": 1,
+//     "country_id": null,
+//     "eye_hash": "1JZ7D5sDEibvz7gA1qyu3gMtjXtef1B993"
+// },
+// "qrlink": "http://10.160.170.115/eyepaycash/frontend/web/qr/1.png" 
+//# sourceMappingURL=transaction-resume.js.map
+
+/***/ }),
+
+/***/ 330:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ModalTransactionPageModule", function() { return ModalTransactionPageModule; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__modal_transaction__ = __webpack_require__(328);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_brmasker_ionic_3__ = __webpack_require__(694);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+
+
+
+var ModalTransactionPageModule = /** @class */ (function () {
+    function ModalTransactionPageModule() {
+    }
+    ModalTransactionPageModule = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["J" /* NgModule */])({
+            declarations: [
+                __WEBPACK_IMPORTED_MODULE_2__modal_transaction__["a" /* ModalTransactionPage */],
+            ],
+            imports: [
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__modal_transaction__["a" /* ModalTransactionPage */]),
+                __WEBPACK_IMPORTED_MODULE_3_brmasker_ionic_3__["a" /* BrMaskerModule */],
+            ],
+        })
+    ], ModalTransactionPageModule);
+    return ModalTransactionPageModule;
+}());
+
+//# sourceMappingURL=modal-transaction.module.js.map
+
+/***/ }),
+
+/***/ 333:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ModalWelcomePageModule", function() { return ModalWelcomePageModule; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__modal_welcome__ = __webpack_require__(324);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+
+
+var ModalWelcomePageModule = /** @class */ (function () {
+    function ModalWelcomePageModule() {
+    }
+    ModalWelcomePageModule = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["J" /* NgModule */])({
+            declarations: [
+                __WEBPACK_IMPORTED_MODULE_2__modal_welcome__["a" /* ModalWelcomePage */],
+            ],
+            imports: [
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__modal_welcome__["a" /* ModalWelcomePage */]),
+            ],
+        })
+    ], ModalWelcomePageModule);
+    return ModalWelcomePageModule;
+}());
+
+//# sourceMappingURL=modal-welcome.module.js.map
+
+/***/ }),
+
+/***/ 334:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PasswordUpdatePageModule", function() { return PasswordUpdatePageModule; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__password_update__ = __webpack_require__(326);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+
+
+var PasswordUpdatePageModule = /** @class */ (function () {
+    function PasswordUpdatePageModule() {
+    }
+    PasswordUpdatePageModule = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["J" /* NgModule */])({
+            declarations: [
+                __WEBPACK_IMPORTED_MODULE_2__password_update__["a" /* PasswordUpdatePage */],
+            ],
+            imports: [
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__password_update__["a" /* PasswordUpdatePage */]),
+            ],
+        })
+    ], PasswordUpdatePageModule);
+    return PasswordUpdatePageModule;
+}());
+
+//# sourceMappingURL=password-update.module.js.map
+
+/***/ }),
+
+/***/ 335:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RecoveryPasswordPageModule", function() { return RecoveryPasswordPageModule; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__recovery_password__ = __webpack_require__(325);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+
+
+var RecoveryPasswordPageModule = /** @class */ (function () {
+    function RecoveryPasswordPageModule() {
+    }
+    RecoveryPasswordPageModule = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["J" /* NgModule */])({
+            declarations: [
+                __WEBPACK_IMPORTED_MODULE_2__recovery_password__["a" /* RecoveryPasswordPage */],
+            ],
+            imports: [
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__recovery_password__["a" /* RecoveryPasswordPage */]),
+            ],
+        })
+    ], RecoveryPasswordPageModule);
+    return RecoveryPasswordPageModule;
+}());
+
+//# sourceMappingURL=recovery-password.module.js.map
+
+/***/ }),
+
+/***/ 336:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PoliticasPageModule", function() { return PoliticasPageModule; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__politicas__ = __webpack_require__(323);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+
+
+var PoliticasPageModule = /** @class */ (function () {
+    function PoliticasPageModule() {
+    }
+    PoliticasPageModule = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["J" /* NgModule */])({
+            declarations: [
+                __WEBPACK_IMPORTED_MODULE_2__politicas__["a" /* PoliticasPage */],
+            ],
+            imports: [
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__politicas__["a" /* PoliticasPage */]),
+            ],
+        })
+    ], PoliticasPageModule);
+    return PoliticasPageModule;
+}());
+
+//# sourceMappingURL=politicas.module.js.map
+
+/***/ }),
+
+/***/ 337:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RegNumberPhonePageModule", function() { return RegNumberPhonePageModule; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__reg_number_phone__ = __webpack_require__(320);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_native_geocoder__ = __webpack_require__(137);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_geolocation__ = __webpack_require__(135);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+
+
+
+
+var RegNumberPhonePageModule = /** @class */ (function () {
+    function RegNumberPhonePageModule() {
+    }
+    RegNumberPhonePageModule = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["J" /* NgModule */])({
+            declarations: [
+                __WEBPACK_IMPORTED_MODULE_2__reg_number_phone__["a" /* RegNumberPhonePage */],
+            ],
+            imports: [
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__reg_number_phone__["a" /* RegNumberPhonePage */]),
+            ],
+            providers: [
+                __WEBPACK_IMPORTED_MODULE_3__ionic_native_native_geocoder__["a" /* NativeGeocoder */],
+                __WEBPACK_IMPORTED_MODULE_4__ionic_native_geolocation__["a" /* Geolocation */]
+            ]
+        })
+    ], RegNumberPhonePageModule);
+    return RegNumberPhonePageModule;
+}());
+
+//# sourceMappingURL=reg-number-phone.module.js.map
+
+/***/ }),
+
+/***/ 338:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SelectCodePageModule", function() { return SelectCodePageModule; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__select_code__ = __webpack_require__(121);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ionic2_auto_complete__ = __webpack_require__(222);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+
+
+
+var SelectCodePageModule = /** @class */ (function () {
+    function SelectCodePageModule() {
+    }
+    SelectCodePageModule = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["J" /* NgModule */])({
+            declarations: [
+                __WEBPACK_IMPORTED_MODULE_2__select_code__["a" /* SelectCodePage */],
+            ],
+            imports: [
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__select_code__["a" /* SelectCodePage */]),
+                __WEBPACK_IMPORTED_MODULE_3_ionic2_auto_complete__["b" /* AutoCompleteModule */],
+            ],
+        })
+    ], SelectCodePageModule);
+    return SelectCodePageModule;
+}());
+
+//# sourceMappingURL=select-code.module.js.map
+
+/***/ }),
+
+/***/ 339:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RegisterPageModule", function() { return RegisterPageModule; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__register__ = __webpack_require__(322);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+
+
+var RegisterPageModule = /** @class */ (function () {
+    function RegisterPageModule() {
+    }
+    RegisterPageModule = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["J" /* NgModule */])({
+            declarations: [
+                __WEBPACK_IMPORTED_MODULE_2__register__["a" /* RegisterPage */],
+            ],
+            imports: [
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__register__["a" /* RegisterPage */]),
+            ],
+        })
+    ], RegisterPageModule);
+    return RegisterPageModule;
+}());
+
+//# sourceMappingURL=register.module.js.map
+
+/***/ }),
+
+/***/ 340:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TransactionResumePageModule", function() { return TransactionResumePageModule; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__transaction_resume__ = __webpack_require__(329);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+
+
+var TransactionResumePageModule = /** @class */ (function () {
+    function TransactionResumePageModule() {
+    }
+    TransactionResumePageModule = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["J" /* NgModule */])({
+            declarations: [
+                __WEBPACK_IMPORTED_MODULE_2__transaction_resume__["a" /* TransactionResumePage */],
+            ],
+            imports: [
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__transaction_resume__["a" /* TransactionResumePage */]),
+            ],
+        })
+    ], TransactionResumePageModule);
+    return TransactionResumePageModule;
+}());
+
+//# sourceMappingURL=transaction-resume.module.js.map
+
+/***/ }),
+
+/***/ 341:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TransactionPageModule", function() { return TransactionPageModule; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__transaction__ = __webpack_require__(327);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+
+
+var TransactionPageModule = /** @class */ (function () {
+    function TransactionPageModule() {
+    }
+    TransactionPageModule = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["J" /* NgModule */])({
+            declarations: [
+                __WEBPACK_IMPORTED_MODULE_2__transaction__["a" /* TransactionPage */],
+            ],
+            imports: [
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__transaction__["a" /* TransactionPage */]),
+            ],
+        })
+    ], TransactionPageModule);
+    return TransactionPageModule;
+}());
+
+//# sourceMappingURL=transaction.module.js.map
+
+/***/ }),
+
+/***/ 383:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(384);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_module__ = __webpack_require__(388);
+
+
+Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* platformBrowserDynamic */])().bootstrapModule(__WEBPACK_IMPORTED_MODULE_1__app_module__["a" /* AppModule */]);
+//# sourceMappingURL=main.js.map
+
+/***/ }),
+
+/***/ 388:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__ = __webpack_require__(45);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(381);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_status_bar__ = __webpack_require__(382);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__app_component__ = __webpack_require__(714);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__providers_country_country__ = __webpack_require__(122);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_select_code_select_code_module__ = __webpack_require__(338);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__angular_common_http__ = __webpack_require__(58);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__providers_api__ = __webpack_require__(23);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__ionic_storage__ = __webpack_require__(219);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__providers_geolocation_geolocation__ = __webpack_require__(134);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__ionic_native_geolocation__ = __webpack_require__(135);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__ionic_native_native_geocoder__ = __webpack_require__(137);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__providers_auth_user_auth_user__ = __webpack_require__(28);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__pages_reg_number_phone_reg_number_phone_module__ = __webpack_require__(337);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__providers_verification_verification__ = __webpack_require__(715);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__pages_login_login_module__ = __webpack_require__(319);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__pages_account_account_module__ = __webpack_require__(215);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__pages_history_history_module__ = __webpack_require__(317);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__pages_home_home_module__ = __webpack_require__(716);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__pages_modal_transaction_modal_transaction_module__ = __webpack_require__(330);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__pages_modal_welcome_modal_welcome_module__ = __webpack_require__(333);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__pages_password_update_password_update_module__ = __webpack_require__(334);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__pages_politicas_politicas_module__ = __webpack_require__(336);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__pages_recovery_password_recovery_password_module__ = __webpack_require__(335);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__pages_register_register_module__ = __webpack_require__(339);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__pages_transaction_transaction_module__ = __webpack_require__(341);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__pages_transaction_resume_transaction_resume_module__ = __webpack_require__(340);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_29__pages_history_resume_history_resume_module__ = __webpack_require__(315);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+var AppModule = /** @class */ (function () {
+    function AppModule() {
+    }
+    AppModule = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["J" /* NgModule */])({
+            declarations: [
+                __WEBPACK_IMPORTED_MODULE_5__app_component__["a" /* MyApp */],
+            ],
+            imports: [
+                __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
+                __WEBPACK_IMPORTED_MODULE_8__angular_common_http__["b" /* HttpClientModule */],
+                __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["c" /* IonicModule */].forRoot(__WEBPACK_IMPORTED_MODULE_5__app_component__["a" /* MyApp */], {}, {
+                    links: [
+                        { loadChildren: '../pages/account/account.module#AccountPageModule', name: 'AccountPage', segment: 'account', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/history-resume/history-resume.module#HistoryResumePageModule', name: 'HistoryResumePage', segment: 'history-resume', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/history/history.module#HistoryPageModule', name: 'HistoryPage', segment: 'history', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/login/login.module#LoginPageModule', name: 'LoginPage', segment: 'login', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/modal-transaction/modal-transaction.module#ModalTransactionPageModule', name: 'ModalTransactionPage', segment: 'modal-transaction', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/modal-welcome/modal-welcome.module#ModalWelcomePageModule', name: 'ModalWelcomePage', segment: 'modal-welcome', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/password-update/password-update.module#PasswordUpdatePageModule', name: 'PasswordUpdatePage', segment: 'password-update', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/recovery-password/recovery-password.module#RecoveryPasswordPageModule', name: 'RecoveryPasswordPage', segment: 'recovery-password', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/politicas/politicas.module#PoliticasPageModule', name: 'PoliticasPage', segment: 'politicas', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/reg-number-phone/reg-number-phone.module#RegNumberPhonePageModule', name: 'RegNumberPhonePage', segment: 'reg-number-phone', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/select-code/select-code.module#SelectCodePageModule', name: 'SelectCodePage', segment: 'select-code', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/register/register.module#RegisterPageModule', name: 'RegisterPage', segment: 'register', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/transaction-resume/transaction-resume.module#TransactionResumePageModule', name: 'TransactionResumePage', segment: 'transaction-resume', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/transaction/transaction.module#TransactionPageModule', name: 'TransactionPage', segment: 'transaction', priority: 'low', defaultHistory: [] }
+                    ]
+                }),
+                __WEBPACK_IMPORTED_MODULE_10__ionic_storage__["a" /* IonicStorageModule */].forRoot(),
+                __WEBPACK_IMPORTED_MODULE_7__pages_select_code_select_code_module__["SelectCodePageModule"],
+                __WEBPACK_IMPORTED_MODULE_15__pages_reg_number_phone_reg_number_phone_module__["RegNumberPhonePageModule"],
+                __WEBPACK_IMPORTED_MODULE_18__pages_account_account_module__["AccountPageModule"],
+                __WEBPACK_IMPORTED_MODULE_19__pages_history_history_module__["HistoryPageModule"],
+                __WEBPACK_IMPORTED_MODULE_20__pages_home_home_module__["a" /* HomePageModule */],
+                __WEBPACK_IMPORTED_MODULE_17__pages_login_login_module__["LoginPageModule"],
+                __WEBPACK_IMPORTED_MODULE_21__pages_modal_transaction_modal_transaction_module__["ModalTransactionPageModule"],
+                __WEBPACK_IMPORTED_MODULE_22__pages_modal_welcome_modal_welcome_module__["ModalWelcomePageModule"],
+                __WEBPACK_IMPORTED_MODULE_23__pages_password_update_password_update_module__["PasswordUpdatePageModule"],
+                __WEBPACK_IMPORTED_MODULE_24__pages_politicas_politicas_module__["PoliticasPageModule"],
+                __WEBPACK_IMPORTED_MODULE_25__pages_recovery_password_recovery_password_module__["RecoveryPasswordPageModule"],
+                __WEBPACK_IMPORTED_MODULE_26__pages_register_register_module__["RegisterPageModule"],
+                __WEBPACK_IMPORTED_MODULE_27__pages_transaction_transaction_module__["TransactionPageModule"],
+                __WEBPACK_IMPORTED_MODULE_28__pages_transaction_resume_transaction_resume_module__["TransactionResumePageModule"],
+                __WEBPACK_IMPORTED_MODULE_29__pages_history_resume_history_resume_module__["HistoryResumePageModule"],
+            ],
+            bootstrap: [__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["a" /* IonicApp */]],
+            entryComponents: [
+                __WEBPACK_IMPORTED_MODULE_5__app_component__["a" /* MyApp */],
+            ],
+            providers: [
+                __WEBPACK_IMPORTED_MODULE_4__ionic_native_status_bar__["a" /* StatusBar */],
+                __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */],
+                __WEBPACK_IMPORTED_MODULE_6__providers_country_country__["a" /* CountryProvider */],
+                __WEBPACK_IMPORTED_MODULE_9__providers_api__["a" /* Api */],
+                __WEBPACK_IMPORTED_MODULE_12__ionic_native_geolocation__["a" /* Geolocation */],
+                __WEBPACK_IMPORTED_MODULE_13__ionic_native_native_geocoder__["a" /* NativeGeocoder */],
+                { provide: __WEBPACK_IMPORTED_MODULE_1__angular_core__["v" /* ErrorHandler */], useClass: __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["b" /* IonicErrorHandler */], },
+                __WEBPACK_IMPORTED_MODULE_11__providers_geolocation_geolocation__["a" /* GeolocationProvider */],
+                __WEBPACK_IMPORTED_MODULE_14__providers_auth_user_auth_user__["a" /* AuthUserProvider */],
+                __WEBPACK_IMPORTED_MODULE_16__providers_verification_verification__["a" /* VerificationProvider */],
+            ]
+        })
+    ], AppModule);
+    return AppModule;
+}());
+
+//# sourceMappingURL=app.module.js.map
+
+/***/ }),
+
+/***/ 66:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LoginPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_auth_user_auth_user__ = __webpack_require__(28);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__reg_number_phone_reg_number_phone__ = __webpack_require__(320);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__recovery_password_recovery_password__ = __webpack_require__(325);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__home_home__ = __webpack_require__(138);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+
+var LoginPage = /** @class */ (function () {
+    // imagen = 'assets/backgrounds/Background1.png';
+    function LoginPage(navCtrl, loadingCtrl, userProvider, toastCtrl, modalCtrl) {
+        this.navCtrl = navCtrl;
+        this.loadingCtrl = loadingCtrl;
+        this.userProvider = userProvider;
+        this.toastCtrl = toastCtrl;
+        this.modalCtrl = modalCtrl;
+        this.mail = null;
+        this.password = null;
+    }
+    LoginPage.prototype.login = function () {
+        var _this = this;
+        var cargando = this.loadingCtrl.create({
+            spinner: 'dots',
+            duration: 3000,
+        });
+        cargando.present();
+        if (this.mail != null && this.password != null) {
+            this.userProvider.login(this.mail, this.password)
+                .then(function (data) {
+                if (data.success == 'ok') {
+                    _this.navCtrl.setRoot(__WEBPACK_IMPORTED_MODULE_5__home_home__["a" /* HomePage */]);
+                    cargando.dismiss();
+                }
+                else {
+                    cargando.dismiss();
+                }
+            }).catch(function (data) {
+            });
+        }
+        else {
+            cargando.dismiss();
+            var toast = this.toastCtrl.create({
+                message: 'Todos los datos son requeridos',
+                duration: 3000,
+            });
+            toast.present();
+        }
+    };
+    LoginPage.prototype.recuperarcontrasena = function () {
+        var modal = this.modalCtrl.create(__WEBPACK_IMPORTED_MODULE_4__recovery_password_recovery_password__["a" /* RecoveryPasswordPage */]);
+        modal.present();
+    };
+    LoginPage.prototype.registro = function () {
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_3__reg_number_phone_reg_number_phone__["a" /* RegNumberPhonePage */]);
+    };
+    LoginPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+            selector: 'page-login',template:/*ion-inline-start:"/Users/eyeline/Documents/GitHub/eyepaycashapp/src/pages/login/login.html"*/'<ion-content class="imgBackground vignette">\n  <div class="center">\n    <ion-img class="logo" src="assets/imgs/EPCLogo.png"></ion-img>\n  </div>\n  <form #formulario (submit)="login()">\n    <ion-list>\n      <ion-item>\n        <ion-input placeholder="Email" class="inputClass marginItems" type="email" required name="correo" [(ngModel)]="mail"> </ion-input>\n      </ion-item>\n      <ion-item>\n        <ion-input placeholder="Contraseña" class="inputClass marginItems" type="password" [(ngModel)]="password" name="userpass"> </ion-input>\n      </ion-item>\n      <ion-item class="center">\n        <button class="buttonPayCash borderBtns" ion-button small>INGRESAR</button>\n      </ion-item>\n    </ion-list>\n  </form>\n  <ion-item>\n    <ion-col col-6>\n      <button class="textWhite" ion-button (click)="registro()" clear block class="transparente">Registrarme</button>\n    </ion-col>\n    <ion-col col-6>\n      <button ion-button (click)="recuperarcontrasena()" clear block class="transparente">Recuperar contraseña</button>\n    </ion-col>\n  </ion-item>\n</ion-content>'/*ion-inline-end:"/Users/eyeline/Documents/GitHub/eyepaycashapp/src/pages/login/login.html"*/,
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* LoadingController */],
+            __WEBPACK_IMPORTED_MODULE_2__providers_auth_user_auth_user__["a" /* AuthUserProvider */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* ToastController */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* ModalController */]])
+    ], LoginPage);
+    return LoginPage;
+}());
+
+//# sourceMappingURL=login.js.map
+
+/***/ }),
+
+/***/ 714:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MyApp; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(382);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(381);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_geolocation_geolocation__ = __webpack_require__(134);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_login_login__ = __webpack_require__(66);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+
+var MyApp = /** @class */ (function () {
+    function MyApp(platform, statusBar, splashScreen, locationProvider) {
+        var _this = this;
+        this.locationProvider = locationProvider;
+        this.rootPage = __WEBPACK_IMPORTED_MODULE_5__pages_login_login__["a" /* LoginPage */];
+        platform.ready().then(function () {
+            statusBar.styleDefault();
+            splashScreen.hide();
+            if (platform.is('cordova'))
+                _this.getLocation();
+        });
+    }
+    MyApp.prototype.getLocation = function () {
+        this.locationProvider.basicInformacion;
+    };
+    MyApp = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({template:/*ion-inline-start:"/Users/eyeline/Documents/GitHub/eyepaycashapp/src/app/app.html"*/'<ion-nav [root]="rootPage"></ion-nav>\n'/*ion-inline-end:"/Users/eyeline/Documents/GitHub/eyepaycashapp/src/app/app.html"*/
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* Platform */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */],
+            __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */],
+            __WEBPACK_IMPORTED_MODULE_4__providers_geolocation_geolocation__["a" /* GeolocationProvider */]])
+    ], MyApp);
+    return MyApp;
+}());
+
+//# sourceMappingURL=app.component.js.map
+
+/***/ }),
+
+/***/ 715:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return VerificationProvider; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_common_http__ = __webpack_require__(58);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__api__ = __webpack_require__(23);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+/*
+  Generated class for the VerificationProvider provider.
+
+  See https://angular.io/guide/dependency-injection for more info on providers
+  and Angular DI.
+*/
+var VerificationProvider = /** @class */ (function () {
+    function VerificationProvider(http, toastCtrl, loadingCtrl, api) {
+        this.http = http;
+        this.toastCtrl = toastCtrl;
+        this.loadingCtrl = loadingCtrl;
+        this.api = api;
+        this.response_verify = {
+            id: null,
+            is_mail_verify: null,
+            mail_code: null,
+            phone_code: null,
+            country_id: null,
+        };
+        this.infoPhone = {
+            country_code: '',
+            flag: '',
+            value: '',
+        };
+    }
+    VerificationProvider.prototype.sendNumberPhone = function () {
+        var _this = this;
+        this.api.post('auth/pre-sign-up', this.infoPhone).then(function (data) {
+            _this.response_verify = data.verify;
+            _this.response_verify.country_id = data.country.id;
+            console.log(_this.response_verify.phone_code);
+            return _this.response_verify;
+        }).catch(function (data) {
+            console.log(data);
+        });
+    };
+    VerificationProvider = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["B" /* Injectable */])(),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_0__angular_common_http__["a" /* HttpClient */],
+            __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["j" /* ToastController */],
+            __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["e" /* LoadingController */],
+            __WEBPACK_IMPORTED_MODULE_3__api__["a" /* Api */]])
+    ], VerificationProvider);
+    return VerificationProvider;
+}());
+
+//# sourceMappingURL=verification.js.map
+
+/***/ }),
+
+/***/ 716:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HomePageModule; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__home__ = __webpack_require__(138);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+
+
+var HomePageModule = /** @class */ (function () {
+    function HomePageModule() {
+    }
+    HomePageModule = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["J" /* NgModule */])({
+            declarations: [
+                __WEBPACK_IMPORTED_MODULE_2__home__["a" /* HomePage */],
+            ],
+            imports: [
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__home__["a" /* HomePage */]),
+            ],
+        })
+    ], HomePageModule);
+    return HomePageModule;
+}());
+
+//# sourceMappingURL=home.module.js.map
+
+/***/ })
+
+},[383]);
+//# sourceMappingURL=main.js.map
