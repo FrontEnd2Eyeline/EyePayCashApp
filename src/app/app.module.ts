@@ -15,8 +15,9 @@ import {Geolocation} from "@ionic-native/geolocation";
 import {NativeGeocoder} from "@ionic-native/native-geocoder";
 import {AuthUserProvider} from '../providers/auth-user/auth-user';
 import {RegNumberPhonePageModule} from "../pages/reg-number-phone/reg-number-phone.module";
-import { VerificationProvider } from '../providers/verification/verification';
-import { LoadInformationProvider } from '../providers/load-information/load-information';
+import {VerificationProvider} from '../providers/verification/verification';
+import {LoadInformationProvider} from '../providers/load-information/load-information';
+import {GoogleMaps} from "@ionic-native/google-maps";
 
 @NgModule({
   declarations: [
@@ -46,6 +47,7 @@ import { LoadInformationProvider } from '../providers/load-information/load-info
     AuthUserProvider,
     VerificationProvider,
     LoadInformationProvider,
+    GoogleMaps,
   ]
 })
 export class AppModule {

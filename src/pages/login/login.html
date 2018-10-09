@@ -5,10 +5,12 @@
   <form #formulario (submit)="login()">
     <ion-list>
       <ion-item>
-        <ion-input placeholder="Email" class="inputClass marginItems" type="email" required name="correo" [(ngModel)]="mail"> </ion-input>
+        <ion-input placeholder="Email" class="inputClass marginItems" type="email" required name="correo"
+                   [(ngModel)]="mail"></ion-input>
       </ion-item>
       <ion-item>
-        <ion-input placeholder="Contraseña" class="inputClass marginItems" type="password" [(ngModel)]="password" name="userpass"> </ion-input>
+        <ion-input placeholder="Contraseña" class="inputClass marginItems" type="password" [(ngModel)]="password"
+                   name="userpass"></ion-input>
       </ion-item>
       <ion-item class="center">
         <button class="buttonPayCash borderBtns" ion-button small>INGRESAR</button>

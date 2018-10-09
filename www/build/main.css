@@ -26082,6 +26082,11 @@ page-login .button-inner {
   color: white !important;
 }
 
+page-map #map {
+  height: 100%;
+  width: 100%;
+}
+
 page-modal-transaction ion-select {
   max-width: 100% !important;
 }

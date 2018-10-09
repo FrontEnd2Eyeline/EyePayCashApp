@@ -22,6 +22,7 @@ export class RecoveryPasswordPage {
   public isvisible = true;
   public codigo = null;
   public iscodigo = false;
+
   constructor(public navCtrl: NavController,
               public navParams: NavParams,
               private api: Api,
@@ -34,7 +35,7 @@ export class RecoveryPasswordPage {
     this.type = 'phone';
     if (this.data != null) {
       let loading = this.loadingCtrl.create({
-        spinner:'dots'
+        spinner: 'dots'
       });
       loading.present();
       this.api.post('auth/restar-password', {'type': this.type, 'data': this.data}).then(
@@ -69,10 +70,10 @@ export class RecoveryPasswordPage {
     this.type = 'mail';
     if (this.data != null) {
       let loading = this.loadingCtrl.create({
-        spinner:'dots'
+        spinner: 'dots'
       });
       loading.present();
-      this.api.post('auth/restar-password',{'type':this.type, 'data':this.data}).then((data:any)=>{
+      this.api.post('auth/restar-password', {'type': this.type, 'data': this.data}).then((data: any) => {
         loading.dismiss();
         console.log(data);
         if (!this.iscodigo)
@@ -105,9 +106,9 @@ export class RecoveryPasswordPage {
 
   confirmCode() {
     if (this.codigo != null) {
-      if(this.userProvider.userRecovery.codigoVerify == this.codigo){
+      if (this.userProvider.userRecovery.codigoVerify == this.codigo) {
         this.navCtrl.push('PasswordUpdatePage');
-      }else{
+      } else {
         let toast = this.toastCtrl.create({
           message: 'El còdigo ingresado no coincide!',
           duration: 3000

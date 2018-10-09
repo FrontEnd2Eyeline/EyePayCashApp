@@ -44,7 +44,6 @@ export class RegisterPage {
   }
 
 
-
   getInfo() {
     this.responseParams = this.navParams.get('response');
     this.registerParams = this.navParams.get('register');
@@ -67,7 +66,7 @@ export class RegisterPage {
     if (this.user_register.first_name != null && this.user_register.last_name != null && this.user_register.gender != null && this.user_register.password != null && this.user_register.mail != null) {
       let size = this.user_register.password;
       if (size.length >= 6) {
-        if(this.userProvider.check_terminos){
+        if (this.userProvider.check_terminos) {
           let loading = this.loadingCtrl.create({
             spinner: 'dots',
           });
@@ -82,10 +81,10 @@ export class RegisterPage {
             loading.dismiss();
             this.presentWelcomeModal();
           });
-        }else{
+        } else {
           let toast = this.toastCtl.create({
-            message:'Por favor lea y acepte las políticas de uso y tratamiento de datos.',
-            duration:3000
+            message: 'Por favor lea y acepte las políticas de uso y tratamiento de datos.',
+            duration: 3000
           });
           toast.present();
         }
@@ -127,7 +126,7 @@ export class RegisterPage {
   }
 
   presentWelcomeModal() {
-    let modalWelcome = this.modalCtrl.create(ModalWelcomePage, {name: this.userProvider.user_Info.first_name +" "+ this.userProvider.user_Info.last_name});
+    let modalWelcome = this.modalCtrl.create(ModalWelcomePage, {name: this.userProvider.user_Info.first_name + " " + this.userProvider.user_Info.last_name});
     modalWelcome.onWillDismiss(() => {
       this.navCtrl.setRoot('LoginPage')
     });
@@ -137,7 +136,6 @@ export class RegisterPage {
     modalWelcome.present();
     this.userProvider.setUser(null);
   }
-
 
 
 }

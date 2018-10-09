@@ -1,75 +1,75 @@
 page-home {
 
-   ion-img.img-loaded2 img {
-        display: initial !important;
-        width: 100% !important;
-    }
+  ion-img.img-loaded2 img {
+    display: initial !important;
+    width: 100% !important;
+  }
 
-    ion-img {
-        display: inline-block;
-        min-width: 125px !important;
-        min-height: 125px !important;
-        background: #eee;
-        contain: strict;
-        
-    }
+  ion-img {
+    display: inline-block;
+    min-width: 125px !important;
+    min-height: 125px !important;
+    background: #eee;
+    contain: strict;
 
-    .imgBackground {
-        background-image: url(http://subirimagen.me/uploads/20181005150656.png);
-        background-repeat: initial;
-        background-attachment: fixed;
-        background-position: center center;
-        background-size: cover;
-    }
+  }
 
-    .vignette {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        box-shadow: 0 0 200px rgba(0, 0, 0, 0.336) inset;
-    }
-    
-    .item-md2, .item-ios2{
-        background-color: transparent;
-        margin-top: 4%
-    }
-    
-    .item-md2 .item-button2 {
-        padding: 0 0.6em;
-        height: 25px;
-        margin-bottom: 23% !important;
-        font-size: 1.2rem;
-    }
-    
-    .divMargin{
-        margin-top: 10%;
-    }
+  .imgBackground {
+    background-image: url(http://subirimagen.me/uploads/20181005150656.png);
+    background-repeat: initial;
+    background-attachment: fixed;
+    background-position: center center;
+    background-size: cover;
+  }
 
-    .center{
-        margin: auto;
-        text-align: center;
-    }
+  .vignette {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    box-shadow: 0 0 200px rgba(0, 0, 0, 0.336) inset;
+  }
 
-    ion-img {
-        display: inline-block;
-        min-width: 20px;
-        min-height: 20px;
-        background: transparent !important;
-        contain: strict;
-    }
+  .item-md2, .item-ios2 {
+    background-color: transparent;
+    margin-top: 4%
+  }
 
-    .logo {
-        width: 70%;
-        background: transparent;
-        height: 80px;
-        margin-top: 20%;
-        display: inline-grid !important;
-      }
-    
-      .marginItems{
-        margin-bottom: 10%;
-      }
+  .item-md2 .item-button2 {
+    padding: 0 0.6em;
+    height: 25px;
+    margin-bottom: 23% !important;
+    font-size: 1.2rem;
+  }
+
+  .divMargin {
+    margin-top: 10%;
+  }
+
+  .center {
+    margin: auto;
+    text-align: center;
+  }
+
+  ion-img {
+    display: inline-block;
+    min-width: 20px;
+    min-height: 20px;
+    background: transparent !important;
+    contain: strict;
+  }
+
+  .logo {
+    width: 70%;
+    background: transparent;
+    height: 80px;
+    margin-top: 20%;
+    display: inline-grid !important;
+  }
+
+  .marginItems {
+    margin-bottom: 10%;
+  }
 }
 

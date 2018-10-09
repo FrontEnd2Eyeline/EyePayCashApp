@@ -79,17 +79,17 @@ export class AccountPage {
     });
     loading.present();
     let toast = this.toastCtrl.create({
-      message:'Informaciòn personal actualizada correctamente',
-      duration:3000,
+      message: 'Informaciòn personal actualizada correctamente',
+      duration: 3000,
     });
-    if (this.usuario.first_name != null && this.usuario.last_name!=null &&
-        this.usuario.first_name != "" && this.usuario.last_name != "") {
+    if (this.usuario.first_name != null && this.usuario.last_name != null &&
+      this.usuario.first_name != "" && this.usuario.last_name != "") {
       console.log(this.usuario);
-        this.api.post('account/update-info',this.usuario,this.userProvider).then((data:any)=>{
-          this.usuario = data;
-          loading.dismiss();
-          toast.present();
-        }).catch();
+      this.api.post('account/update-info', this.usuario, this.userProvider).then((data: any) => {
+        this.usuario = data;
+        loading.dismiss();
+        toast.present();
+      }).catch();
     } else {
       loading.dismiss();
       let toast = this.toastCtrl.create({
@@ -131,28 +131,28 @@ export class AccountPage {
   }
 
   changeMail() {
-    if(this.infoPhone.value!=null){
+    if (this.infoPhone.value != null) {
       let loading = this.loadingCtrl.create({
-        spinner:'dots',
+        spinner: 'dots',
       });
       let toast = this.toastCtrl.create({
-        message:'Se ha enviado un correo electrònico de verificaciòn a su direcciòn email.',
-        duration:3000,
+        message: 'Se ha enviado un correo electrònico de verificaciòn a su direcciòn email.',
+        duration: 3000,
       });
       loading.present();
-      this.infoPhone.type='mail';
-      this.api.post('account/update-contact',this.infoPhone,this.userProvider).then((data:any)=>{
+      this.infoPhone.type = 'mail';
+      this.api.post('account/update-contact', this.infoPhone, this.userProvider).then((data: any) => {
         loading.dismiss();
         toast.present();
         console.log(data);
         this.response_verify = data;
-      }).catch(data=>{
+      }).catch(data => {
         loading.dismiss();
       });
-    }else{
+    } else {
       let toast = this.toastCtrl.create({
-        message:'Por favor ingrese una direcciòn email',
-        duration:3000
+        message: 'Por favor ingrese una direcciòn email',
+        duration: 3000
       });
       toast.present();
     }
@@ -204,14 +204,14 @@ export class AccountPage {
     }
   }
 
-  verifyCodeMail(){
-    if(this.response_verify.mail_code === this.codeVerifyMail){
-      this.api.get('account/confirm-verify',this.userProvider,{
-        id:this.response_verify.id,
-        type:'mail',
-      }).then((data:any)=>{
+  verifyCodeMail() {
+    if (this.response_verify.mail_code === this.codeVerifyMail) {
+      this.api.get('account/confirm-verify', this.userProvider, {
+        id: this.response_verify.id,
+        type: 'mail',
+      }).then((data: any) => {
         console.log(data);
-          this.usuario.mail= data.mail;
+        this.usuario.mail = data.mail;
         this.clearVar();
         let toast = this.toastCtrl.create({
           duration: 3000,
@@ -219,10 +219,10 @@ export class AccountPage {
         });
         toast.present();
       }).catch()
-    }else{
+    } else {
       let toast = this.toastCtrl.create({
-        message:'Los còdigos de verificaciòn no coinciden',
-        duration:3000
+        message: 'Los còdigos de verificaciòn no coinciden',
+        duration: 3000
       });
       toast.present();
     }
@@ -248,7 +248,7 @@ export class AccountPage {
     this.codeVerifyMail = null;
   }
 
-  cerrarSesion(){
+  cerrarSesion() {
     window.localStorage.clear();
     this.navCtrl.setRoot('LoginPage');
   }

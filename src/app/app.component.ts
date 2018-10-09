@@ -16,11 +16,10 @@ export class MyApp {
               splashScreen: SplashScreen,
               public locationProvider: GeolocationProvider,
               private auth: AuthUserProvider,
-              private informationProvider : LoadInformationProvider,
-
+              private informationProvider: LoadInformationProvider,
   ) {
     this.auth.trylogin().then(value => {
-      if(value){
+      if (value) {
         this.rootPage = 'HomePage';
         this.informationProvider.init()
       }

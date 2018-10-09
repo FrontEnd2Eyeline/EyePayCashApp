@@ -58,5 +58,24 @@
     "variables": {
       "GEOLOCATION_USAGE_DESCRIPTION": ""
     }
+  },
+  "cordova-plugin-googlemaps": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-plugin-googlemaps"
+    },
+    "is_top_level": true,
+    "variables": {
+      "API_KEY_FOR_ANDROID": "AIzaSyDgS8TF2X0L7LzBjoHBbVZ67-4O_Qt8RH0",
+      "API_KEY_FOR_IOS": "AIzaSyDxFqEolDg8SUcTQ83NPE00WjOe3JYUEEs"
+    }
+  },
+  "cordova-plugin-nativegeocoder": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-plugin-nativegeocoder@^3.1.2"
+    },
+    "is_top_level": true,
+    "variables": {}
   }
 }

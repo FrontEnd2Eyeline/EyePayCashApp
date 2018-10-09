@@ -1,6 +1,6 @@
-import { NgModule } from '@angular/core';
-import { IonicPageModule } from 'ionic-angular';
-import { RegNumberPhonePage } from './reg-number-phone';
+import {NgModule} from '@angular/core';
+import {IonicPageModule} from 'ionic-angular';
+import {RegNumberPhonePage} from './reg-number-phone';
 import {NativeGeocoder} from "@ionic-native/native-geocoder";
 import {Geolocation} from "@ionic-native/geolocation";
 
@@ -16,4 +16,5 @@ import {Geolocation} from "@ionic-native/geolocation";
     Geolocation
   ]
 })
-export class RegNumberPhonePageModule {}
+export class RegNumberPhonePageModule {
+}

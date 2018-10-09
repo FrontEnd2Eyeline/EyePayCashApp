@@ -57,6 +57,7 @@ export class GeolocationProvider {
     }));
 
   }
+
   getBasicInfo() {
     return new Promise(resolve => {
       this.getInformation().then(() => {

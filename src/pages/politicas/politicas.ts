@@ -406,7 +406,8 @@ export class PoliticasPage {
     this.userProvider.setCheck_Terminos(true);
     this.view.dismiss(true);
   }
-  goRegister(){
+
+  goRegister() {
     this.navCtrl.pop();
   }
 

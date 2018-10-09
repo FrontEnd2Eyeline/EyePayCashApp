@@ -1,14 +1,14 @@
 page-login {
-  
-  .logo{
+
+  .logo {
     width: 100%;
     display: unset;
   }
-  .item-md, .item-ios{
+  .item-md, .item-ios {
     background-color: transparent;
   }
 
-  .center{
+  .center {
     margin: auto;
     text-align: center;
   }
@@ -42,57 +42,56 @@ page-login {
     display: inline-grid;
   }
 
-  .marginItems{
+  .marginItems {
     margin-bottom: 10%;
   }
 
   // Textos Style
 
-
   .item-input .label-md, .item-select .label-md, .item-datetime .label-md {
     color: white !important;
-}
+  }
 
-.label-md[stacked] {
-  font-size: 1.6rem !important;
-  text-align: center !important;
-}
+  .label-md[stacked] {
+    font-size: 1.6rem !important;
+    text-align: center !important;
+  }
 
-.inputClass{
-  background: white;
-  border-radius: 5px;
-}
-.list-md .item-block .item-inner{
-border-bottom: 0px solid #dedede !important;
-}
+  .inputClass {
+    background: white;
+    border-radius: 5px;
+  }
+  .list-md .item-block .item-inner {
+    border-bottom: 0px solid #dedede !important;
+  }
 
-.item-md.item-block .item-inner {
-  padding-right: 8px;
-  border-bottom: 0px solid #dedede !important;
-}
-.borderBtns{
-  border-radius: 5px !important;
-}
+  .item-md.item-block .item-inner {
+    padding-right: 8px;
+    border-bottom: 0px solid #dedede !important;
+  }
+  .borderBtns {
+    border-radius: 5px !important;
+  }
 
-.text-input {
-  -moz-appearance: none;
-  -ms-appearance: none;
-  -webkit-appearance: none;
-  appearance: none;
-  border-radius: 0;
-  display: inline-block;
-  text-align: center;
-  -webkit-box-flex: 1;
-  -webkit-flex: 1;
-  -ms-flex: 1;
-  flex: 1;
-  width: 92%;
-  width: calc(100% - 10px);
-  border: 0;
-  background: transparent;
-}
+  .text-input {
+    -moz-appearance: none;
+    -ms-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    border-radius: 0;
+    display: inline-block;
+    text-align: center;
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    width: 92%;
+    width: calc(100% - 10px);
+    border: 0;
+    background: transparent;
+  }
 
-.button-inner {
-  color: white !important;
-}
+  .button-inner {
+    color: white !important;
+  }
 }

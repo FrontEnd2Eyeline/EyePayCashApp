@@ -16,12 +16,13 @@ import {IonicPage, NavParams} from 'ionic-angular';
 export class HistoryResumePage {
 
   public historyInfo: any = null;
-  public country:any = null;
-  public coin:any = null;
-  public comision:any = null;
-  public coinHash:any = null;
+  public country: any = null;
+  public coin: any = null;
+  public comision: any = null;
+  public coinHash: any = null;
+
   constructor(
-              public navParams: NavParams,
+    public navParams: NavParams,
   ) {
     this.getInfo();
   }
@@ -33,8 +34,6 @@ export class HistoryResumePage {
     this.comision = this.historyInfo.transactionCommission;
     this.coinHash = this.historyInfo.coinHash;
   }
-
-
 
 
 }

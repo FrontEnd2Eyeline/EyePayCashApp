@@ -15,26 +15,30 @@
           <ion-item class="item-flag item-md2 item-ios2">
             <img [src]="user_register.flag" class="flagphone banderaWidt">
             <button ion-button (click)="selectcountry()" class="transparente item-md2 item-button2 button-md ">+
-              {{user_register.country_code}}</button>
+              {{user_register.country_code}}
+            </button>
           </ion-item>
         </ion-col>
         <ion-col col-7>
           <ion-item class="stylCel">
-            <ion-input required type="text" name="numerocelular" [(ngModel)]="user_register.value" placeholder="Número movil (celular)"></ion-input>
+            <ion-input required type="text" name="numerocelular" [(ngModel)]="user_register.value"
+                       placeholder="Número movil (celular)"></ion-input>
           </ion-item>
         </ion-col>
       </ion-row>
     </ion-grid>
     <ion-item class="inputClass">
       <ion-input placeholder="Introduce el código" maxlength="6" required style="text-align: center" type="text"
-        [(ngModel)]="code_verify"></ion-input>
+                 [(ngModel)]="code_verify"></ion-input>
     </ion-item>
   </div>
   <div class="center marginBts">
     <button class="buttonPayCash borderBtns" (click)="cancel()" ion-button small>Cancelar</button>
-    <button class="buttonPayCash borderBtns" (click)="sendNumberPhone()" ion-button small *ngIf="response_verify.phone_code == null">Enviar
+    <button class="buttonPayCash borderBtns" (click)="sendNumberPhone()" ion-button small
+            *ngIf="response_verify.phone_code == null">Enviar
     </button>
-    <button class="buttonPayCash borderBtns" (click)="verifyCode()" ion-button small *ngIf="response_verify.phone_code != null">Continuar
+    <button class="buttonPayCash borderBtns" (click)="verifyCode()" ion-button small
+            *ngIf="response_verify.phone_code != null">Continuar
     </button>
   </div>
 

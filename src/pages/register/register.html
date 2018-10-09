@@ -4,7 +4,7 @@
   </div>
   <div class="center">
     <ion-list>
-      <ion-item class="marginlists" >
+      <ion-item class="marginlists">
         <ion-label stacked>Nombres</ion-label>
         <ion-input type="text" required name="userregistronombre" [(ngModel)]="user_register.first_name"></ion-input>
       </ion-item>
@@ -46,11 +46,12 @@
 
   <ion-list>
 
-      <ion-col col-2>
-        <!--<ion-checkbox (ionChange)="aceptarTerminos()"></ion-checkbox>-->
-        <ion-checkbox [(ngModel)]="ischecked"></ion-checkbox>
-      </ion-col>
-      <ion-col col-10><span (click)="politicas()"> Leí y acepto las políticas de uso  y privacidad de la información</span></ion-col>
+    <ion-col col-2>
+      <!--<ion-checkbox (ionChange)="aceptarTerminos()"></ion-checkbox>-->
+      <ion-checkbox [(ngModel)]="ischecked"></ion-checkbox>
+    </ion-col>
+    <ion-col col-10><span
+        (click)="politicas()"> Leí y acepto las políticas de uso  y privacidad de la información</span></ion-col>
 
   </ion-list>
   <div style="margin-top: 6%" class="center">

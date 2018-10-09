@@ -1,6 +1,6 @@
-import { NgModule } from '@angular/core';
-import { IonicPageModule } from 'ionic-angular';
-import { HistoryResumePage } from './history-resume';
+import {NgModule} from '@angular/core';
+import {IonicPageModule} from 'ionic-angular';
+import {HistoryResumePage} from './history-resume';
 
 @NgModule({
   declarations: [
@@ -10,4 +10,5 @@ import { HistoryResumePage } from './history-resume';
     IonicPageModule.forChild(HistoryResumePage),
   ],
 })
-export class HistoryResumePageModule {}
+export class HistoryResumePageModule {
+}

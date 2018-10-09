@@ -1,6 +1,6 @@
-import { NgModule } from '@angular/core';
-import { IonicPageModule } from 'ionic-angular';
-import { ModalTransactionPage } from './modal-transaction';
+import {NgModule} from '@angular/core';
+import {IonicPageModule} from 'ionic-angular';
+import {ModalTransactionPage} from './modal-transaction';
 import {BrMaskerModule} from "brmasker-ionic-3";
 
 @NgModule({
@@ -12,4 +12,5 @@ import {BrMaskerModule} from "brmasker-ionic-3";
     BrMaskerModule,
   ],
 })
-export class ModalTransactionPageModule {}
+export class ModalTransactionPageModule {
+}

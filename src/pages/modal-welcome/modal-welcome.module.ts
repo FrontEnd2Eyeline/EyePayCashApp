@@ -1,6 +1,6 @@
-import { NgModule } from '@angular/core';
-import { IonicPageModule } from 'ionic-angular';
-import { ModalWelcomePage } from './modal-welcome';
+import {NgModule} from '@angular/core';
+import {IonicPageModule} from 'ionic-angular';
+import {ModalWelcomePage} from './modal-welcome';
 
 @NgModule({
   declarations: [
@@ -10,4 +10,5 @@ import { ModalWelcomePage } from './modal-welcome';
     IonicPageModule.forChild(ModalWelcomePage),
   ],
 })
-export class ModalWelcomePageModule {}
+export class ModalWelcomePageModule {
+}

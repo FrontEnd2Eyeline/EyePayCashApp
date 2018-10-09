@@ -11,6 +11,7 @@ export class LoginPage {
 
   public mail = null;
   public password = null;
+
   // imagen = 'assets/backgrounds/Background1.png';
 
   constructor(public navCtrl: NavController,
@@ -35,7 +36,7 @@ export class LoginPage {
           } else {
             cargando.dismiss();
           }
-        }).catch((data)=>{
+        }).catch((data) => {
 
       });
     } else {

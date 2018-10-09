@@ -25,6 +25,8 @@ export class HomePage {
       this.navCtrl.push("AccountPage");
     else if (page == 'history')
       this.navCtrl.push("HistoryPage");
+    else if(page=="maps")
+      this.navCtrl.push("MapPage");
     else
       this.navCtrl.push("TransactionPage");
   }

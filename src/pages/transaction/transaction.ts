@@ -25,13 +25,13 @@ export class TransactionPage {
 
 
   constructor(
-              public navParams: NavParams,
-              private api: Api,
-              private userProvider: AuthUserProvider,
-              public loadingCtrl: LoadingController,
-              public toastCtrl: ToastController,
-              public modalCtrl: ModalController,
-              private informationProvider: LoadInformationProvider) {
+    public navParams: NavParams,
+    private api: Api,
+    private userProvider: AuthUserProvider,
+    public loadingCtrl: LoadingController,
+    public toastCtrl: ToastController,
+    public modalCtrl: ModalController,
+    private informationProvider: LoadInformationProvider) {
     this.currency = this.userProvider.user_Country.currency;
     this.getInfo();
     this.countrySelected();
@@ -44,6 +44,7 @@ export class TransactionPage {
       });
 
   }
+
   countrySelected() {
     this.informationProvider.getCurrencies(this.currency)
       .then((value: any) => {

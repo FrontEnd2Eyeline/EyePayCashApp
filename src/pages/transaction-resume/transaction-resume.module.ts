@@ -1,6 +1,6 @@
-import { NgModule } from '@angular/core';
-import { IonicPageModule } from 'ionic-angular';
-import { TransactionResumePage } from './transaction-resume';
+import {NgModule} from '@angular/core';
+import {IonicPageModule} from 'ionic-angular';
+import {TransactionResumePage} from './transaction-resume';
 
 @NgModule({
   declarations: [
@@ -10,4 +10,5 @@ import { TransactionResumePage } from './transaction-resume';
     IonicPageModule.forChild(TransactionResumePage),
   ],
 })
-export class TransactionResumePageModule {}
+export class TransactionResumePageModule {
+}

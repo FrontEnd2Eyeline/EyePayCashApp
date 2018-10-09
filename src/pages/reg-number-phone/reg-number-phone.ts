@@ -32,7 +32,8 @@ export class RegNumberPhonePage {
     country_id: null,
   };
   public country;
-  imagen='assets/backgrounds/Background2.png';
+  imagen = 'assets/backgrounds/Background2.png';
+
   constructor(public navCtrl: NavController,
               public navParams: NavParams,
               public modal: ModalController,

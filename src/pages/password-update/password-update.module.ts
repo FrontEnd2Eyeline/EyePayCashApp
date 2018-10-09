@@ -1,6 +1,6 @@
-import { NgModule } from '@angular/core';
-import { IonicPageModule } from 'ionic-angular';
-import { PasswordUpdatePage } from './password-update';
+import {NgModule} from '@angular/core';
+import {IonicPageModule} from 'ionic-angular';
+import {PasswordUpdatePage} from './password-update';
 
 @NgModule({
   declarations: [
@@ -10,4 +10,5 @@ import { PasswordUpdatePage } from './password-update';
     IonicPageModule.forChild(PasswordUpdatePage),
   ],
 })
-export class PasswordUpdatePageModule {}
+export class PasswordUpdatePageModule {
+}

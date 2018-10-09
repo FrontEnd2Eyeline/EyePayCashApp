@@ -18,13 +18,13 @@ export class TransactionResumePage {
   private result: any = null;
   private transaction: any = null;
   private coinhas: any = null;
-  private coin:any=null;
-  private country:any = null;
-  private qrlink:any = null;
+  private coin: any = null;
+  private country: any = null;
+  private qrlink: any = null;
 
   constructor(
-              public navParams: NavParams,
-              public loadingCtrl: LoadingController,
+    public navParams: NavParams,
+    public loadingCtrl: LoadingController,
   ) {
     this.getIngfo();
   }

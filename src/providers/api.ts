@@ -5,8 +5,8 @@ import {AuthUserProvider} from "./auth-user/auth-user";
 
 @Injectable()
 export class Api {
-  url: string = 'http://10.160.170.115/eyepaycash/frontend/web/apiapp/';
-  // url: string = 'http://192.168.0.6/eyepaycash/frontend/web/apiapp/';
+  // url: string = 'http://10.160.170.115/eyepaycash/frontend/web/apiapp/';
+  url: string = 'http://192.168.0.6/eyepaycash/frontend/web/apiapp/';
   headers: HttpHeaders;
 
   constructor(public http: HttpClient, public storage: Storage
@@ -29,7 +29,7 @@ export class Api {
       if (params) {
         urlParams = this.jsonToURLEncoded(params);
       }
-      this.http.get(url +'?'+ urlParams,{headers:this.headers}).toPromise()
+      this.http.get(url + '?' + urlParams, {headers: this.headers}).toPromise()
         .then(value => {
           this.storage.set(endpoint, value);
           resolve(value);

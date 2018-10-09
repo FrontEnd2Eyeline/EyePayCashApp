@@ -37,8 +37,8 @@ export class LoadInformationProvider {
           this.countrys = data;
           resolve(this.countrys)
         }).catch();
-      }else
-      resolve(this.countrys)
+      } else
+        resolve(this.countrys)
     });
   }
 
