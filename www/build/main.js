@@ -1,78 +1,14 @@
-webpackJsonp([0],{
+webpackJsonp([13],{
 
 /***/ 121:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SelectCodePage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(7);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_country_country__ = __webpack_require__(122);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ionic2_auto_complete__ = __webpack_require__(226);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-
-/**
- * Generated class for the SelectCodePage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-var SelectCodePage = /** @class */ (function () {
-    function SelectCodePage(navCtrl, navParams, country, view) {
-        this.navCtrl = navCtrl;
-        this.navParams = navParams;
-        this.country = country;
-        this.view = view;
-    }
-    SelectCodePage.prototype.ionViewDidLoad = function () {
-        this.searchbar.getItems();
-    };
-    SelectCodePage.prototype.selectItem = function (ev) {
-        this.view.dismiss({
-            code: ev.callingCodes[0],
-            flag: ev.flag
-        });
-    };
-    __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_9" /* ViewChild */])('search'),
-        __metadata("design:type", __WEBPACK_IMPORTED_MODULE_3_ionic2_auto_complete__["a" /* AutoCompleteComponent */])
-    ], SelectCodePage.prototype, "searchbar", void 0);
-    SelectCodePage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-            selector: 'page-select-code',template:/*ion-inline-start:"/Users/eyeline/Documents/eyepaycashappGitHub/src/pages/select-code/select-code.html"*/'<ion-content padding>\n  <ng-template #withFlags let-attrs="attrs">\n    <img src="{{attrs.data.flag}}" class="flag"/>\n    <span\n        [innerHTML]="\'+\'+attrs.data.callingCodes[0]+\' \'+attrs.data.name"></span>\n  </ng-template>\n  <ion-auto-complete #search item-content [dataProvider]="country"\n                     [options]="{placeholder : \'Search your country\'}"\n                     [template]="withFlags"\n                     [showResultsFirst]="true"\n                     (itemSelected)="selectItem($event)"></ion-auto-complete>\n</ion-content>\n'/*ion-inline-end:"/Users/eyeline/Documents/eyepaycashappGitHub/src/pages/select-code/select-code.html"*/,
-        }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */],
-            __WEBPACK_IMPORTED_MODULE_2__providers_country_country__["a" /* CountryProvider */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* ViewController */]])
-    ], SelectCodePage);
-    return SelectCodePage;
-}());
-
-//# sourceMappingURL=select-code.js.map
-
-/***/ }),
-
-/***/ 122:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CountryProvider; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_add_operator_map__ = __webpack_require__(225);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_add_operator_map__ = __webpack_require__(219);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_rxjs_add_operator_map__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_common_http__ = __webpack_require__(58);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_common_http__ = __webpack_require__(47);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -126,16 +62,16 @@ var CountryProvider = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 134:
+/***/ 133:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return GeolocationProvider; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_common_http__ = __webpack_require__(58);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_geolocation__ = __webpack_require__(135);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__country_country__ = __webpack_require__(122);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_native_geocoder__ = __webpack_require__(137);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_common_http__ = __webpack_require__(47);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_geolocation__ = __webpack_require__(134);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__country_country__ = __webpack_require__(121);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_native_geocoder__ = __webpack_require__(136);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -221,18 +157,15 @@ var GeolocationProvider = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 138:
+/***/ 158:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HomePage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(7);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_api__ = __webpack_require__(23);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_auth_user_auth_user__ = __webpack_require__(28);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__account_account__ = __webpack_require__(224);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__history_history__ = __webpack_require__(218);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__transaction_transaction__ = __webpack_require__(327);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SelectCodePage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(19);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_country_country__ = __webpack_require__(121);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ionic2_auto_complete__ = __webpack_require__(220);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -246,39 +179,130 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
-
-
-
-var HomePage = /** @class */ (function () {
-    function HomePage(navCtrl, api, loadingCtrl, toastCtrl, userProvider) {
+/**
+ * Generated class for the SelectCodePage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
+var SelectCodePage = /** @class */ (function () {
+    function SelectCodePage(navCtrl, navParams, country, view) {
         this.navCtrl = navCtrl;
-        this.api = api;
-        this.loadingCtrl = loadingCtrl;
-        this.toastCtrl = toastCtrl;
-        this.userProvider = userProvider;
+        this.navParams = navParams;
+        this.country = country;
+        this.view = view;
     }
-    HomePage.prototype.goPage = function (page) {
-        if (page == 'account')
-            this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_4__account_account__["a" /* AccountPage */]);
-        else if (page == 'history')
-            this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_5__history_history__["a" /* HistoryPage */]);
-        else
-            this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_6__transaction_transaction__["a" /* TransactionPage */]);
+    SelectCodePage.prototype.ionViewDidLoad = function () {
+        this.searchbar.getItems();
     };
-    HomePage = __decorate([
+    SelectCodePage.prototype.selectItem = function (ev) {
+        this.view.dismiss({
+            code: ev.callingCodes[0],
+            flag: ev.flag
+        });
+    };
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_9" /* ViewChild */])('search'),
+        __metadata("design:type", __WEBPACK_IMPORTED_MODULE_3_ionic2_auto_complete__["a" /* AutoCompleteComponent */])
+    ], SelectCodePage.prototype, "searchbar", void 0);
+    SelectCodePage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-            selector: 'page-home',template:/*ion-inline-start:"/Users/eyeline/Documents/eyepaycashappGitHub/src/pages/home/home.html"*/'<ion-content class="imgBackground vignette">\n    <div class="center">\n        <ion-img class="logo" src="assets/imgs/EPCLogo.png"></ion-img>\n      </div>\n\n  <div class="center">\n    <ion-img name="add" (click)="goPage(\'transaction\')" class="img-loaded2 img" src="assets/icon/TransaccionIco.png"></ion-img>\n  </div>\n\n  <div class="center">\n    <ion-img name="list-box" (click)="goPage(\'history\')" class="img-loaded2 img" src="assets/icon/HistoryIco.png"></ion-img>\n  </div>\n\n  <div class="center">\n    <ion-img name="person" (click)="goPage(\'account\')" class="img-loaded2 img" src="assets/icon/CuentaIco.png"></ion-img>\n  </div>\n\n</ion-content>'/*ion-inline-end:"/Users/eyeline/Documents/eyepaycashappGitHub/src/pages/home/home.html"*/
+            selector: 'page-select-code',template:/*ion-inline-start:"/Users/eyeline/Documents/eyepaycashappGitHub/src/pages/select-code/select-code.html"*/'<ion-content padding>\n  <ng-template #withFlags let-attrs="attrs">\n    <img src="{{attrs.data.flag}}" class="flag"/>\n    <span\n        [innerHTML]="\'+\'+attrs.data.callingCodes[0]+\' \'+attrs.data.name"></span>\n  </ng-template>\n  <ion-auto-complete #search item-content [dataProvider]="country"\n                     [options]="{placeholder : \'Search your country\'}"\n                     [template]="withFlags"\n                     [showResultsFirst]="true"\n                     (itemSelected)="selectItem($event)"></ion-auto-complete>\n</ion-content>\n'/*ion-inline-end:"/Users/eyeline/Documents/eyepaycashappGitHub/src/pages/select-code/select-code.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */],
-            __WEBPACK_IMPORTED_MODULE_2__providers_api__["a" /* Api */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* LoadingController */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* ToastController */],
-            __WEBPACK_IMPORTED_MODULE_3__providers_auth_user_auth_user__["a" /* AuthUserProvider */]])
-    ], HomePage);
-    return HomePage;
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */],
+            __WEBPACK_IMPORTED_MODULE_2__providers_country_country__["a" /* CountryProvider */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* ViewController */]])
+    ], SelectCodePage);
+    return SelectCodePage;
 }());
 
-//# sourceMappingURL=home.js.map
+//# sourceMappingURL=select-code.js.map
+
+/***/ }),
+
+/***/ 159:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LoadInformationProvider; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_common_http__ = __webpack_require__(47);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__auth_user_auth_user__ = __webpack_require__(33);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__api__ = __webpack_require__(32);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+/*
+  Generated class for the LoadInformationProvider provider.
+
+  See https://angular.io/guide/dependency-injection for more info on providers
+  and Angular DI.
+*/
+var LoadInformationProvider = /** @class */ (function () {
+    function LoadInformationProvider(http, auth, api) {
+        this.http = http;
+        this.auth = auth;
+        this.api = api;
+        this.infoCurrencies = [];
+        this.date = new Date().getTime();
+    }
+    LoadInformationProvider.prototype.init = function () {
+        this.getCountries();
+    };
+    LoadInformationProvider.prototype.getCountries = function () {
+        var _this = this;
+        return new Promise(function (resolve) {
+            if (_this.countrys == undefined) {
+                _this.api.get('app/get-countries', _this.auth).then(function (data) {
+                    _this.countrys = data;
+                    resolve(_this.countrys);
+                }).catch();
+            }
+            else
+                resolve(_this.countrys);
+        });
+    };
+    LoadInformationProvider.prototype.getCurrencies = function (currency) {
+        var _this = this;
+        return new Promise(function (resolve) {
+            console.log("indexof", _this.infoCurrencies.indexOf(currency));
+            var dif = new Date().getTime() - _this.date;
+            console.log(dif);
+            if (dif > 300000 || _this.infoCurrencies[currency] == undefined) {
+                _this.date = new Date().getTime();
+                _this.api.get('app/get-prices', _this.auth, {
+                    currency_code: currency,
+                }).then(function (data) {
+                    _this.infoCurrencies[currency] = data;
+                    console.log(_this.infoCurrencies);
+                    resolve(data);
+                });
+            }
+            else
+                resolve(_this.infoCurrencies[currency]);
+        });
+    };
+    LoadInformationProvider = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["B" /* Injectable */])(),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_0__angular_common_http__["a" /* HttpClient */],
+            __WEBPACK_IMPORTED_MODULE_2__auth_user_auth_user__["a" /* AuthUserProvider */],
+            __WEBPACK_IMPORTED_MODULE_3__api__["a" /* Api */]])
+    ], LoadInformationProvider);
+    return LoadInformationProvider;
+}());
+
+//# sourceMappingURL=load-information.js.map
 
 /***/ }),
 
@@ -304,46 +328,62 @@ webpackEmptyAsyncContext.id = 170;
 
 var map = {
 	"../pages/account/account.module": [
-		223
+		694,
+		6
 	],
 	"../pages/history-resume/history-resume.module": [
-		215
+		693,
+		5
 	],
 	"../pages/history/history.module": [
-		217
+		695,
+		2
+	],
+	"../pages/home/home.module": [
+		696,
+		4
 	],
 	"../pages/login/login.module": [
-		319
+		697,
+		12
 	],
 	"../pages/modal-transaction/modal-transaction.module": [
-		332
+		700,
+		0
 	],
 	"../pages/modal-welcome/modal-welcome.module": [
-		330
+		698,
+		11
 	],
 	"../pages/password-update/password-update.module": [
-		331
+		699,
+		10
 	],
 	"../pages/politicas/politicas.module": [
-		341
+		705,
+		9
 	],
 	"../pages/recovery-password/recovery-password.module": [
-		338
+		702,
+		8
 	],
 	"../pages/reg-number-phone/reg-number-phone.module": [
-		335
+		313
 	],
 	"../pages/register/register.module": [
-		337
+		701,
+		7
 	],
 	"../pages/select-code/select-code.module": [
-		336
+		315
 	],
 	"../pages/transaction-resume/transaction-resume.module": [
-		339
+		704,
+		3
 	],
 	"../pages/transaction/transaction.module": [
-		340
+		703,
+		1
 	]
 };
 function webpackAsyncContext(req) {
@@ -362,15 +402,17 @@ module.exports = webpackAsyncContext;
 
 /***/ }),
 
-/***/ 215:
+/***/ 313:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HistoryResumePageModule", function() { return HistoryResumePageModule; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(7);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__history_resume__ = __webpack_require__(216);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RegNumberPhonePageModule", function() { return RegNumberPhonePageModule; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(19);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__reg_number_phone__ = __webpack_require__(670);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_native_geocoder__ = __webpack_require__(136);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_geolocation__ = __webpack_require__(134);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -380,130 +422,42 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var HistoryResumePageModule = /** @class */ (function () {
-    function HistoryResumePageModule() {
+
+
+var RegNumberPhonePageModule = /** @class */ (function () {
+    function RegNumberPhonePageModule() {
     }
-    HistoryResumePageModule = __decorate([
+    RegNumberPhonePageModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["J" /* NgModule */])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_2__history_resume__["a" /* HistoryResumePage */],
+                __WEBPACK_IMPORTED_MODULE_2__reg_number_phone__["a" /* RegNumberPhonePage */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__history_resume__["a" /* HistoryResumePage */]),
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__reg_number_phone__["a" /* RegNumberPhonePage */]),
             ],
+            providers: [
+                __WEBPACK_IMPORTED_MODULE_3__ionic_native_native_geocoder__["a" /* NativeGeocoder */],
+                __WEBPACK_IMPORTED_MODULE_4__ionic_native_geolocation__["a" /* Geolocation */]
+            ]
         })
-    ], HistoryResumePageModule);
-    return HistoryResumePageModule;
+    ], RegNumberPhonePageModule);
+    return RegNumberPhonePageModule;
 }());
 
-//# sourceMappingURL=history-resume.module.js.map
+//# sourceMappingURL=reg-number-phone.module.js.map
 
 /***/ }),
 
-/***/ 216:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HistoryResumePage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(7);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-/**
- * Generated class for the HistoryResumePage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-var HistoryResumePage = /** @class */ (function () {
-    function HistoryResumePage(navCtrl, navParams) {
-        this.navCtrl = navCtrl;
-        this.navParams = navParams;
-        this.historyInfo = null;
-        this.country = null;
-        this.coin = null;
-        this.comision = null;
-        this.getInfo();
-    }
-    HistoryResumePage.prototype.getInfo = function () {
-        this.historyInfo = this.navParams.get('transaction');
-        this.country = this.historyInfo.country;
-        this.coin = this.historyInfo.coin;
-        this.comision = this.historyInfo.transactionCommission;
-        console.log(this.country);
-    };
-    HistoryResumePage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-            selector: 'page-history-resume',template:/*ion-inline-start:"/Users/eyeline/Documents/eyepaycashappGitHub/src/pages/history-resume/history-resume.html"*/'<!--\n  Generated template for the HistoryResumePage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n  <ion-navbar>\n    <ion-title>Detalle de la transacción</ion-title>\n  </ion-navbar>\n</ion-header>\n<ion-content>\n  <ion-card>\n    <ion-card-content>\n      <ion-list>\n        <ion-row>\n          <ion-col col-12>\n            <label stacked>Información del país</label>\n            <p><b>Nombre: </b> {{country?.name}} </p>\n            <p><b>Moneda: </b>{{country?.currency}}</p>\n          </ion-col>\n        </ion-row>\n        <ion-row>\n          <ion-col col-12>\n            <label stacked>Información de {{coin?.full_name}}</label>\n            <p><b>Costo: </b> {{coin?.usd_value}} </p>\n          </ion-col>\n        </ion-row>\n        <ion-row>\n          <ion-col col-12>\n            <label stacked>Información de comisión</label>\n            <p><b>Total en USD: </b> {{comision?.total_in_usd}}</p>\n            <p><b>Total en Cryptomoneda: </b> {{comision?.total_in_crypto}}</p>\n          </ion-col>\n        </ion-row>\n        <ion-row>\n          <ion-col col-12>\n            <label stacked>Información de transacción</label>\n            <p><b>Costo en moneda local: </b> {{historyInfo?.amount_local}}</p>\n            <p><b>Costo en USD: </b> {{historyInfo?.amount_usd}} </p>\n            <p><b>Fecha de la transacción: </b> {{historyInfo?.date_request}} </p>\n            <p><b>Número móvil de destino: </b> {{historyInfo?.phone_user_des}}</p>\n            <p *ngIf="historyInfo?.process_status==0"><b>Estado: PENDIENTE DE PAGO </b></p>\n            <p *ngIf="historyInfo?.process_status==1"><b>Estado: PAGADO Y PENDIENTE POR RETIRAR </b></p>\n            <p *ngIf="historyInfo?.process_status==2"><b>Estado: PAGADO Y RETIRADO </b></p>\n\n          </ion-col>\n        </ion-row>\n\n        <ion-col col-12 *ngIf="historyInfo?.process_status==0">\n          <h2 text-center>La transacción se encuentra pendiente por pagar. </h2>\n          <h2 text-center>Número de referencia de transacción:</h2>\n          <h1 text-center>{{historyInfo?.key_request}}</h1>\n        </ion-col>\n        <ion-col col-12>\n          <h2 text-center>Total de la transacción</h2>\n          <h1 text-center>{{historyInfo?.amount_btc}}</h1>\n        </ion-col>\n      </ion-list>\n    </ion-card-content>\n  </ion-card>\n</ion-content>\n'/*ion-inline-end:"/Users/eyeline/Documents/eyepaycashappGitHub/src/pages/history-resume/history-resume.html"*/,
-        }),
-        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */]) === "function" && _b || Object])
-    ], HistoryResumePage);
-    return HistoryResumePage;
-    var _a, _b;
-}());
-
-// {user_id: 4, country_id: 1, coin_id: 2, company_id: null, phone_user_des: "435345", …}
-// amount_btc: "0.00273469"
-// amount_local: "34.53"
-// amount_usd: "0.01"
-// coin:
-//   date_update: "2018-10-05 11:31:14"
-// full_name: "Ethereum"
-// id: 2
-// is_active: 1
-// short_name: "ETH"
-// usd_value: "223.0600"
-// __proto__: Object
-// coin_id: 2
-// company_id: null
-// country:
-//   country_code: "CO"
-// currency: "COP"
-// id: 1
-// is_active: 1
-// name: "Colombia"
-// phone_code: "57"
-// __proto__: Object
-// country_id: 1
-// date_pay_confirm: null
-// date_request: "2018-10-08 15:36:22"
-// entity_add_data: null
-// key_eyecash: "2716"
-// key_request: "6837898708911006"
-// phone_user_des: "435345"
-// process_status: 0
-// transactionCommission:
-//   commission_ids: "["1","2"]"
-// crypto_value_to_usd: "223.06"
-// id: 58
-// money_local_to_usd: 3039
-// total_in_crypto: "0.00268986"
-// total_in_usd: "0.60"
-// transaction_id: 81
-// __proto__: Object
-// user_id: 4 
-//# sourceMappingURL=history-resume.js.map
-
-/***/ }),
-
-/***/ 217:
+/***/ 315:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HistoryPageModule", function() { return HistoryPageModule; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(7);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__history__ = __webpack_require__(218);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SelectCodePageModule", function() { return SelectCodePageModule; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(19);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__select_code__ = __webpack_require__(158);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ionic2_auto_complete__ = __webpack_require__(220);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -513,417 +467,36 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var HistoryPageModule = /** @class */ (function () {
-    function HistoryPageModule() {
+
+var SelectCodePageModule = /** @class */ (function () {
+    function SelectCodePageModule() {
     }
-    HistoryPageModule = __decorate([
+    SelectCodePageModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["J" /* NgModule */])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_2__history__["a" /* HistoryPage */],
+                __WEBPACK_IMPORTED_MODULE_2__select_code__["a" /* SelectCodePage */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__history__["a" /* HistoryPage */]),
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__select_code__["a" /* SelectCodePage */]),
+                __WEBPACK_IMPORTED_MODULE_3_ionic2_auto_complete__["b" /* AutoCompleteModule */],
             ],
         })
-    ], HistoryPageModule);
-    return HistoryPageModule;
+    ], SelectCodePageModule);
+    return SelectCodePageModule;
 }());
 
-//# sourceMappingURL=history.module.js.map
+//# sourceMappingURL=select-code.module.js.map
 
 /***/ }),
 
-/***/ 218:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HistoryPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(7);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_api__ = __webpack_require__(23);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_auth_user_auth_user__ = __webpack_require__(28);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__history_resume_history_resume__ = __webpack_require__(216);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-
-
-/**
- * Generated class for the HistoryPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-var HistoryPage = /** @class */ (function () {
-    function HistoryPage(navCtrl, navParams, api, userProvider) {
-        this.navCtrl = navCtrl;
-        this.navParams = navParams;
-        this.api = api;
-        this.userProvider = userProvider;
-        this.transactions = null;
-        this.links = null;
-        this.meta = null;
-        this.filtro = {
-            status: 0,
-            page: null,
-            perpage: null
-        };
-        this.getInfo();
-    }
-    HistoryPage.prototype.getInfo = function () {
-        var _this = this;
-        this.api.get('app/transactions', this.userProvider, { 'expand': 'country,coin,transactionCommission', 'status': this.filtro.status, 'page': this.filtro.page, 'per-page': this.filtro.perpage }).then(function (data) {
-            _this.transactions = data.items;
-            _this.links = data.links;
-            _this.meta = data.meta;
-        });
-    };
-    HistoryPage.prototype.goDetalle = function (transaction) {
-        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_4__history_resume_history_resume__["a" /* HistoryResumePage */], { 'transaction': transaction });
-    };
-    HistoryPage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-            selector: 'page-history',template:/*ion-inline-start:"/Users/eyeline/Documents/eyepaycashappGitHub/src/pages/history/history.html"*/'<ion-header>\n\n  <ion-navbar>\n    <ion-title>Historial</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<<<<<<< HEAD\n<ion-content padding>\n  <ion-list>\n    <ion-card *ngFor="let transaction of transactions" (click)="goDetalle(transaction)">\n      <ion-card-content>\n        <ion-row>\n          <ion-col col-6>\n            {{transaction.country.name}}\n          </ion-col>\n          <ion-col col-6>\n            {{transaction.date_request |date:\'MM/dd/yyyy\'}}\n            <!--transaction.date_request |date:\'MM/dd/yyyy h:mma\'}}-->\n          </ion-col>\n          <ion-col col-6>\n            {{transaction.coin.full_name}}\n          </ion-col>\n          <ion-col col-6>\n            {{transaction.amount_local | currency:transaction.country.currency+" " : 2}}\n          </ion-col>\n        </ion-row>\n      </ion-card-content>\n    </ion-card>\n=======\n<ion-content padding >\n  <ion-list class="center bground">\n\n    <button *ngFor="let transaction of transactions" (click)="goDetalle(transaction)">\n      <ion-card>\n        <ion-card-content>\n          <ion-row>\n            <ion-col col-6>\n              <h6>{{transaction.country.name}}</h6>\n            </ion-col>\n            <ion-col col-6>\n              {{transaction.date_request |date:\'MM/dd/yyyy\'}}\n              <!--transaction.date_request |date:\'MM/dd/yyyy h:mma\'}}-->\n            </ion-col>\n            <ion-col col-4>\n              {{transaction.coin.full_name}}\n            </ion-col>\n            <ion-col col-4>\n              {{transaction.amount_local | currency:transaction.country.currency+" " : 2}}\n            </ion-col>\n            <ion-col col-4 >\n              <ion-icon name="add"></ion-icon>\n            </ion-col>\n          </ion-row>\n        </ion-card-content>\n      </ion-card>\n    </button>\n\n>>>>>>> 646ab5d3eb26ff7ba889e486a690cdf7ee16ab36\n  </ion-list>\n</ion-content>'/*ion-inline-end:"/Users/eyeline/Documents/eyepaycashappGitHub/src/pages/history/history.html"*/,
-        }),
-        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__providers_api__["a" /* Api */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__providers_api__["a" /* Api */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_3__providers_auth_user_auth_user__["a" /* AuthUserProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__providers_auth_user_auth_user__["a" /* AuthUserProvider */]) === "function" && _d || Object])
-    ], HistoryPage);
-    return HistoryPage;
-    var _a, _b, _c, _d;
-}());
-
-//# sourceMappingURL=history.js.map
-
-/***/ }),
-
-/***/ 223:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AccountPageModule", function() { return AccountPageModule; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(7);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__account__ = __webpack_require__(224);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-
-
-
-var AccountPageModule = /** @class */ (function () {
-    function AccountPageModule() {
-    }
-    AccountPageModule = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["J" /* NgModule */])({
-            declarations: [
-                __WEBPACK_IMPORTED_MODULE_2__account__["a" /* AccountPage */],
-            ],
-            imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__account__["a" /* AccountPage */]),
-            ],
-        })
-    ], AccountPageModule);
-    return AccountPageModule;
-}());
-
-//# sourceMappingURL=account.module.js.map
-
-/***/ }),
-
-/***/ 224:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AccountPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(7);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_api__ = __webpack_require__(23);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_auth_user_auth_user__ = __webpack_require__(28);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__select_code_select_code__ = __webpack_require__(121);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-
-
-/**
- * Generated class for the AccountPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-var AccountPage = /** @class */ (function () {
-    //===========================================
-    function AccountPage(navCtrl, navParams, api, userProvider, toastCtrl, loadingCtrl, modal) {
-        this.navCtrl = navCtrl;
-        this.navParams = navParams;
-        this.api = api;
-        this.userProvider = userProvider;
-        this.toastCtrl = toastCtrl;
-        this.loadingCtrl = loadingCtrl;
-        this.modal = modal;
-        this.usuario = null;
-        this.country = null;
-        this.verify = null;
-        this.type = 'password';
-        this.showPass = false;
-        //=================================== controlar visibilidad inputs y botones
-        this.isphone = true;
-        this.ismail = false;
-        //==================================== variables para la verificacion
-        this.infoPhone = {
-            flag: null,
-            type: null,
-            value: null,
-            country_code: null
-        };
-        this.response_verify = {
-            id: null,
-            is_mail_verify: null,
-            mail_code: null,
-            phone_code: null,
-            country_id: null,
-        };
-        this.codeVerify = null;
-        this.codeVerifyMail = null;
-        this.getInfo();
-    }
-    AccountPage.prototype.getInfo = function () {
-        this.usuario = this.userProvider.user_Info;
-        this.country = this.userProvider.user_Country;
-        this.verify = this.userProvider.User_Verify;
-    };
-    AccountPage.prototype.showPassword = function () {
-        this.showPass = !this.showPass;
-        if (this.showPass) {
-            this.type = 'text';
-        }
-        else {
-            this.type = 'password';
-        }
-    };
-    AccountPage.prototype.actualizar = function () {
-        var _this = this;
-        var loading = this.loadingCtrl.create({
-            spinner: 'dots',
-        });
-        loading.present();
-        var toast = this.toastCtrl.create({
-            message: 'Informaciòn personal actualizada correctamente',
-            duration: 3000,
-        });
-        if (this.usuario.first_name != null && this.usuario.last_name != null &&
-            this.usuario.first_name != "" && this.usuario.last_name != "") {
-            console.log(this.usuario);
-            this.api.post('account/update-info', this.usuario, this.userProvider).then(function (data) {
-                _this.usuario = data;
-                loading.dismiss();
-                toast.present();
-            }).catch();
-        }
-        else {
-            loading.dismiss();
-            var toast_1 = this.toastCtrl.create({
-                message: 'Todos los campos son obligatorios',
-                duration: 3000,
-            });
-            toast_1.present();
-        }
-    };
-    AccountPage.prototype.changePhone = function () {
-        var _this = this;
-        if (this.infoPhone.country_code != null && this.infoPhone.value != null) {
-            var loading_1 = this.loadingCtrl.create({
-                spinner: 'dots',
-            });
-            var toast_2 = this.toastCtrl.create({
-                message: 'Se ha enviado un código de verificación al nùmero celular.',
-                duration: 3000
-            });
-            loading_1.present();
-            this.infoPhone.type = "phone";
-            this.infoPhone.value = this.infoPhone.country_code + this.infoPhone.value;
-            this.api.post('account/update-contact', this.infoPhone, this.userProvider).then(function (data) {
-                console.log(data);
-                loading_1.dismiss();
-                toast_2.present();
-                _this.response_verify = data;
-            })
-                .catch();
-        }
-        else {
-            var toast = this.toastCtrl.create({
-                message: 'Por favor seleccione el pais e ingrese su nuevo nùmero celular.',
-                duration: 3000,
-            });
-            toast.present();
-        }
-    };
-    AccountPage.prototype.changeMail = function () {
-        var _this = this;
-        if (this.infoPhone.value != null) {
-            var loading_2 = this.loadingCtrl.create({
-                spinner: 'dots',
-            });
-            var toast_3 = this.toastCtrl.create({
-                message: 'Se ha enviado un correo electrònico de verificaciòn a su direcciòn email.',
-                duration: 3000,
-            });
-            loading_2.present();
-            this.infoPhone.type = 'mail';
-            this.api.post('account/update-contact', this.infoPhone, this.userProvider).then(function (data) {
-                loading_2.dismiss();
-                toast_3.present();
-                console.log(data);
-                _this.response_verify = data;
-            }).catch(function (data) {
-                loading_2.dismiss();
-            });
-        }
-        else {
-            var toast = this.toastCtrl.create({
-                message: 'Por favor ingrese una direcciòn email',
-                duration: 3000
-            });
-            toast.present();
-        }
-    };
-    AccountPage.prototype.pedirMail = function () {
-        this.isphone = false;
-        this.ismail = true;
-    };
-    AccountPage.prototype.pedirPhone = function () {
-        this.ismail = false;
-        this.isphone = true;
-    };
-    AccountPage.prototype.selectcountry = function () {
-        var _this = this;
-        var modal = this.modal.create(__WEBPACK_IMPORTED_MODULE_4__select_code_select_code__["a" /* SelectCodePage */]);
-        modal.present();
-        modal.onDidDismiss(function (data) {
-            if (data !== undefined) {
-                _this.infoPhone.country_code = data.code;
-                _this.infoPhone.flag = data.flag;
-            }
-        });
-    };
-    AccountPage.prototype.verifyCode = function () {
-        var _this = this;
-        if (this.response_verify.phone_code === this.codeVerify) {
-            this.api.get('account/confirm-verify', this.userProvider, {
-                id: this.response_verify.id,
-                type: 'phone',
-            }).then(function (data) {
-                _this.clearVar();
-                _this.usuario.phone = data.phone;
-                var toast = _this.toastCtrl.create({
-                    duration: 3000,
-                    message: 'Informaciòn actualizada correctamente',
-                });
-                toast.present();
-            }).catch(function (data) {
-                console.log(data);
-            });
-        }
-        else {
-            var toast = this.toastCtrl.create({
-                message: 'Código incorrecto.',
-                duration: 3000,
-            });
-            toast.present();
-        }
-    };
-    AccountPage.prototype.verifyCodeMail = function () {
-        var _this = this;
-        if (this.response_verify.mail_code === this.codeVerifyMail) {
-            this.api.get('account/confirm-verify', this.userProvider, {
-                id: this.response_verify.id,
-                type: 'mail',
-            }).then(function (data) {
-                console.log(data);
-                _this.usuario.mail = data.mail;
-                _this.clearVar();
-                var toast = _this.toastCtrl.create({
-                    duration: 3000,
-                    message: 'Informaciòn actualizada correctamente',
-                });
-                toast.present();
-            }).catch();
-        }
-        else {
-            var toast = this.toastCtrl.create({
-                message: 'Los còdigos de verificaciòn no coinciden',
-                duration: 3000
-            });
-            toast.present();
-        }
-    };
-    AccountPage.prototype.clearVar = function () {
-        this.isphone = true;
-        this.ismail = false;
-        this.infoPhone = {
-            flag: null,
-            type: null,
-            value: null,
-            country_code: null
-        };
-        this.response_verify = {
-            id: null,
-            is_mail_verify: null,
-            mail_code: null,
-            phone_code: null,
-            country_id: null,
-        };
-        this.codeVerify = null;
-        this.codeVerifyMail = null;
-    };
-    AccountPage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-            selector: 'page-account',template:/*ion-inline-start:"/Users/eyeline/Documents/eyepaycashappGitHub/src/pages/account/account.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>\n        CUENTA\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n<ion-content padding>\n  <ion-card>\n    <ion-card-header>\n      <ion-icon name="person" item-start></ion-icon>\n      Información personal\n    </ion-card-header>\n    <ion-card-content>\n      <ion-list>\n        <ion-item>\n          <ion-label stacked>Nombres</ion-label>\n          <ion-input type="text" required name="userregistronombre" [(ngModel)]="usuario.first_name"></ion-input>\n        </ion-item>\n\n        <ion-item>\n          <ion-label stacked>Apellidos</ion-label>\n          <ion-input type="text" required name="userregistroapellido"\n                     [(ngModel)]="usuario.last_name"></ion-input>\n        </ion-item>\n        <ion-item>\n          <ion-label stacked>Género</ion-label>\n          <ion-select okText="Guardar" cancelText="Cancelar" [(ngModel)]="usuario.gender" name="userregistrogenero">\n            <ion-option value="f">Femenino</ion-option>\n            <ion-option value="m">Masculino</ion-option>\n          </ion-select>\n        </ion-item>\n        <button ion-button block class="buttonPayCash" (click)="actualizar()">Actualizar</button>\n      </ion-list>\n    </ion-card-content>\n  </ion-card>\n  <ion-card>\n    <ion-card-header>\n      <ion-icon name="key" item-start></ion-icon>\n      Información de cuenta\n    </ion-card-header>\n    <ion-card-content>\n      <ion-row>\n        <ion-label stacked>Email</ion-label>\n        {{usuario.mail}}\n      </ion-row>\n      <ion-row>\n        <ion-label stacked>Teléfono</ion-label>\n        {{usuario.phone}}\n      </ion-row>\n    </ion-card-content>\n  </ion-card>\n  <ion-card>\n    <ion-card-header>\n      <ion-icon name="locate" item-start></ion-icon>\n      Información de ubicaciòn\n    </ion-card-header>\n    <ion-card-content>\n      <ion-row>\n        <ion-label stacked>País</ion-label>\n        {{country.name}}\n      </ion-row>\n      <ion-row>\n        <ion-label stacked>Código de teléfono</ion-label>\n        {{country.phone_code}}\n      </ion-row>\n      <ion-row>\n        <ion-label stacked>Código de país</ion-label>\n        {{country.country_code}}\n      </ion-row>\n      <ion-row>\n        <ion-label stacked>Moneda del país</ion-label>\n        {{country.currency}}\n      </ion-row>\n    </ion-card-content>\n  </ion-card>\n\n\n  <ion-card>\n    <ion-card-header>\n      <ion-icon name="lock" item-start></ion-icon>\n      Información de seguridad\n    </ion-card-header>\n    <ion-card-content>\n      <div *ngIf="isphone">\n        <ion-row>\n\n          <label stacked>Seleccione el país e ingrese su nuevo número celular</label>\n          <ion-col col-4>\n            <ion-item class="item-flag">\n              <img [src]="infoPhone.flag" class="flagphone" *ngIf="infoPhone.flag !=null">\n              <button ion-button (click)="selectcountry()">+ {{infoPhone.country_code}}</button>\n            </ion-item>\n          </ion-col>\n          <ion-col col-8>\n              <ion-input required type="text" name="numerocelular" [(ngModel)]="infoPhone.value"\n                         placeholder="Número movil (celular)"></ion-input>\n          </ion-col>\n\n          <ion-col col-12 *ngIf="response_verify.phone_code != null">\n            <label stacked>Por favor ingrese el código de verificación</label>\n            <ion-input name="verifycode" [(ngModel)]="codeVerify"></ion-input>\n            <button class="buttonPayCash" (click)="verifyCode()" ion-button block>Verificar código</button>\n          </ion-col>\n        </ion-row>\n        <button ion-button block class="buttonPayCash" (click)="changePhone()" *ngIf="response_verify.phone_code==null">Actualizar número celular</button>\n        <button ion-button block class="buttonPayCash" (click)="pedirMail()">Cambiar dirección email</button>\n      </div>\n\n\n      <div *ngIf="ismail">\n        <ion-row>\n          <label stacked> Por favor ingrese la nueva dirección email</label>\n          <ion-col col-12 row>\n            <ion-input name="correoelectronico" [(ngModel)]="infoPhone.value" placeholder="Direcciòn email correo electrònico"></ion-input>\n          </ion-col>\n          <ion-col col-12 *ngIf="response_verify.mail_code != null">\n            <label stacked>Por favor ingrese el código de verificación</label>\n            <br>\n            <ion-input name="verifycode" [(ngModel)]="codeVerifyMail"></ion-input>\n            <button class="buttonPayCash" (click)="verifyCodeMail()" ion-button block>Verificar código</button>\n          </ion-col>\n        </ion-row>\n        <button ion-button block class="buttonPayCash" (click)="changeMail()" *ngIf="response_verify.mail_code==null">Actualizar dirección email</button>\n        <button ion-button block class="buttonPayCash" (click)="pedirPhone()">Cambiar número celular</button>\n      </div>\n    </ion-card-content>\n  </ion-card>\n\n</ion-content>\n'/*ion-inline-end:"/Users/eyeline/Documents/eyepaycashappGitHub/src/pages/account/account.html"*/,
-        }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */],
-            __WEBPACK_IMPORTED_MODULE_2__providers_api__["a" /* Api */],
-            __WEBPACK_IMPORTED_MODULE_3__providers_auth_user_auth_user__["a" /* AuthUserProvider */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* ToastController */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* LoadingController */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* ModalController */]])
-    ], AccountPage);
-    return AccountPage;
-}());
-
-//# sourceMappingURL=account.js.map
-
-/***/ }),
-
-/***/ 23:
+/***/ 32:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Api; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common_http__ = __webpack_require__(58);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(221);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common_http__ = __webpack_require__(47);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(217);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1000,14 +573,14 @@ var Api = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 28:
+/***/ 33:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AuthUserProvider; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__api__ = __webpack_require__(23);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__api__ = __webpack_require__(32);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(19);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1081,14 +654,20 @@ var AuthUserProvider = /** @class */ (function () {
         });
     };
     AuthUserProvider.prototype.isLogin = function () {
-        return this.user_Info !== null;
+        return (this.user_Info != null);
     };
     AuthUserProvider.prototype.trylogin = function () {
-        this.user_Info = JSON.parse(window.localStorage.getItem('user'));
-        if (this.user_Info == null)
-            this.user_Info = {
-                user: null,
-            };
+        var _this = this;
+        return new Promise(function (resolve) {
+            _this.user_Info = JSON.parse(window.localStorage.getItem('user'));
+            console.log(_this.user_Info);
+            if (_this.user_Info != null) {
+                _this.setUserCountry(_this.user_Info.country);
+                _this.setUserVerify(_this.user_Info.userVerify);
+                resolve(true);
+            }
+            resolve(false);
+        });
     };
     AuthUserProvider.prototype.accessParam = function () {
         if (this.user_Info != null)
@@ -1131,56 +710,16 @@ var AuthUserProvider = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 319:
+/***/ 357:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LoginPageModule", function() { return LoginPageModule; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(7);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__login__ = __webpack_require__(66);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-
-
-
-var LoginPageModule = /** @class */ (function () {
-    function LoginPageModule() {
-    }
-    LoginPageModule = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["J" /* NgModule */])({
-            declarations: [
-                __WEBPACK_IMPORTED_MODULE_2__login__["a" /* LoginPage */],
-            ],
-            imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__login__["a" /* LoginPage */]),
-            ],
-        })
-    ], LoginPageModule);
-    return LoginPageModule;
-}());
-
-//# sourceMappingURL=login.module.js.map
-
-/***/ }),
-
-/***/ 320:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return RegNumberPhonePage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(7);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__select_code_select_code__ = __webpack_require__(121);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_api__ = __webpack_require__(23);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_geolocation_geolocation__ = __webpack_require__(134);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__register_register__ = __webpack_require__(322);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__login_login__ = __webpack_require__(66);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return RecoveryPasswordPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(19);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_api__ = __webpack_require__(32);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_auth_user_auth_user__ = __webpack_require__(33);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__password_update_password_update__ = __webpack_require__(358);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1195,130 +734,306 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
-
-
 /**
- * Generated class for the RegNumberPhonePage page.
+ * Generated class for the RecoveryPasswordPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
  */
-var RegNumberPhonePage = /** @class */ (function () {
-    function RegNumberPhonePage(navCtrl, navParams, modal, api, toastCtrl, loadingCtrl, locationProvider) {
-        var _this = this;
+var RecoveryPasswordPage = /** @class */ (function () {
+    function RecoveryPasswordPage(navCtrl, navParams, api, toastCtrl, userProvider, loadingCtrl) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
-        this.modal = modal;
         this.api = api;
         this.toastCtrl = toastCtrl;
+        this.userProvider = userProvider;
         this.loadingCtrl = loadingCtrl;
-        this.locationProvider = locationProvider;
-        // hay que pasarle los datos del provier al user en registro.
-        this.user_register = {
-            country_code: '',
-            flag: '',
-            value: '',
-        };
-        this.code_verify = null;
-        this.response_verify = {
-            id: null,
-            is_mail_verify: null,
-            mail_code: null,
-            phone_code: null,
-            country_id: null,
-        };
-        this.imagen = 'assets/backgrounds/Background2.png';
-        this.locationProvider.getBasicInfo().then(function (value) {
-            _this.user_register.country_code = value.country_code;
-            _this.user_register.flag = value.flag;
-            // this.user_register = Object.assign(value, this.user_register);
-        });
+        this.data = null;
+        this.type = 'phone';
+        this.isvisible = true;
+        this.codigo = null;
+        this.iscodigo = false;
     }
-    RegNumberPhonePage.prototype.cancel = function () {
-        this.navCtrl.setRoot(__WEBPACK_IMPORTED_MODULE_6__login_login__["a" /* LoginPage */]);
-    };
-    RegNumberPhonePage.prototype.sendNumberPhone = function () {
+    RecoveryPasswordPage.prototype.sendMessage = function () {
         var _this = this;
-        if (this.user_register.country_code != "" && this.user_register.value != "") {
+        this.type = 'phone';
+        if (this.data != null) {
             var loading_1 = this.loadingCtrl.create({
-                spinner: 'dots',
-            });
-            var toast_1 = this.toastCtrl.create({
-                message: 'Se ha enviado un código de verificación al número celular ingresado.',
-                duration: 3000
+                spinner: 'dots'
             });
             loading_1.present();
-            this.api.post('auth/pre-sign-up', this.user_register).then(function (data) {
+            this.api.post('auth/restar-password', { 'type': this.type, 'data': this.data }).then(function (data) {
                 loading_1.dismiss();
-                toast_1.present();
-                _this.response_verify = data.verify;
-                _this.response_verify.country_id = data.country.id;
-                console.log(_this.response_verify.phone_code);
-            })
-                .catch();
+                if (!_this.iscodigo)
+                    _this.iscodigo = true;
+                else
+                    _this.iscodigo = false;
+                _this.userProvider.userRecovery.codigoVerify = data.password_code_req;
+                _this.userProvider.userRecovery.user_id = data.user_id;
+            }).catch(function (err) {
+                loading_1.dismiss();
+                var toast = _this.toastCtrl.create({
+                    message: 'No se encontraron resultados',
+                    duration: 3000,
+                });
+                toast.present();
+            });
         }
         else {
             var toast = this.toastCtrl.create({
-                message: 'Toda la información es obligatoria',
-                duration: 3000,
+                message: 'Por favor ingrese su nùmero celular',
+                duration: 3000
             });
             toast.present();
         }
     };
-    RegNumberPhonePage.prototype.selectcountry = function () {
+    // 3114276555
+    RecoveryPasswordPage.prototype.sendMail = function () {
         var _this = this;
-        var modal = this.modal.create(__WEBPACK_IMPORTED_MODULE_2__select_code_select_code__["a" /* SelectCodePage */]);
-        modal.present();
-        modal.onDidDismiss(function (data) {
-            if (data !== undefined) {
-                _this.user_register.country_code = data.code;
-                _this.user_register.flag = data.flag;
-            }
-        });
-    };
-    RegNumberPhonePage.prototype.verifyCode = function () {
-        if (this.code_verify == this.response_verify.phone_code) {
-            this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_5__register_register__["a" /* RegisterPage */], { 'response': this.response_verify, 'register': this.user_register });
+        this.type = 'mail';
+        if (this.data != null) {
+            var loading_2 = this.loadingCtrl.create({
+                spinner: 'dots'
+            });
+            loading_2.present();
+            this.api.post('auth/restar-password', { 'type': this.type, 'data': this.data }).then(function (data) {
+                loading_2.dismiss();
+                console.log(data);
+                if (!_this.iscodigo)
+                    _this.iscodigo = true;
+                else
+                    _this.iscodigo = false;
+                _this.userProvider.userRecovery.codigoVerify = data.password_code_req;
+                _this.userProvider.userRecovery.user_id = data.user_id;
+            });
         }
         else {
             var toast = this.toastCtrl.create({
-                message: 'Código incorrecto.',
-                duration: 3000,
+                message: 'Por favor ingrese su direcciòn email',
+                duration: 3000
             });
             toast.present();
         }
     };
-    RegNumberPhonePage = __decorate([
+    RecoveryPasswordPage.prototype.changeVisible = function () {
+        if (this.isvisible)
+            this.isvisible = false;
+        else
+            this.isvisible = true;
+    };
+    RecoveryPasswordPage.prototype.cancelar = function () {
+        this.navCtrl.pop();
+    };
+    RecoveryPasswordPage.prototype.confirmCode = function () {
+        if (this.codigo != null) {
+            if (this.userProvider.userRecovery.codigoVerify == this.codigo) {
+                this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_4__password_update_password_update__["a" /* PasswordUpdatePage */]);
+            }
+            else {
+                var toast = this.toastCtrl.create({
+                    message: 'El còdigo ingresado no coincide!',
+                    duration: 3000
+                });
+                toast.present();
+            }
+        }
+        else {
+            var toast = this.toastCtrl.create({
+                message: 'Por favor ingrese el còdigo de verificaciòn',
+                duration: 3000
+            });
+            toast.present();
+        }
+    };
+    RecoveryPasswordPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-            selector: 'page-reg-number-phone',template:/*ion-inline-start:"/Users/eyeline/Documents/eyepaycashappGitHub/src/pages/reg-number-phone/reg-number-phone.html"*/'<ion-content class="imgBackground vignette">\n  <div style="margin-top:12%" class="center">\n    <ion-img style="margin-bottom: 10%;" class="logo" src="assets/imgs/EPCLogo.png"></ion-img>\n    <div class="center">\n      <ion-label style="color:white" class="center"> Enviaremos un CÓDIGO de verificación a el número<br> que registres\n        a continuación.\n      </ion-label>\n    </div>\n  </div>\n\n  <div class="center divMargin">\n    <ion-grid class="center marGrid">\n      <ion-row>\n        <ion-col col-5>\n          <ion-item class="item-flag item-md2 item-ios2">\n            <img [src]="user_register.flag" class="flagphone banderaWidt">\n            <button ion-button (click)="selectcountry()" class="transparente item-md2 item-button2 button-md ">+\n              {{user_register.country_code}}</button>\n          </ion-item>\n        </ion-col>\n        <ion-col col-7>\n          <ion-item class="stylCel">\n            <ion-input required type="text" name="numerocelular" [(ngModel)]="user_register.value" placeholder="Número movil (celular)"></ion-input>\n          </ion-item>\n        </ion-col>\n      </ion-row>\n    </ion-grid>\n    <ion-item class="inputClass">\n      <ion-input placeholder="Introduce el código" maxlength="6" required style="text-align: center" type="text"\n        [(ngModel)]="code_verify"></ion-input>\n    </ion-item>\n  </div>\n  <div class="center marginBts">\n    <button class="buttonPayCash borderBtns" (click)="cancel()" ion-button small>Cancelar</button>\n    <button class="buttonPayCash borderBtns" (click)="sendNumberPhone()" ion-button small *ngIf="response_verify.phone_code == null">Enviar\n    </button>\n    <button class="buttonPayCash borderBtns" (click)="verifyCode()" ion-button small *ngIf="response_verify.phone_code != null">Continuar\n    </button>\n  </div>\n\n</ion-content>'/*ion-inline-end:"/Users/eyeline/Documents/eyepaycashappGitHub/src/pages/reg-number-phone/reg-number-phone.html"*/,
+            selector: 'page-recovery-password',template:/*ion-inline-start:"/Users/eyeline/Documents/eyepaycashappGitHub/src/pages/recovery-password/recovery-password.html"*/'<ion-content padding class="back vignette">\n  <div style="margin-top:12%" class="center">\n    <ion-img class="logo" src="assets/imgs/EPCLogo.png"></ion-img>\n  </div>\n  <div *ngIf="isvisible">\n    <ion-item>\n      <ion-label stacked>Ingrese número celular</ion-label>\n      <ion-input type="text" [(ngModel)]="data" name="userdata"></ion-input>\n    </ion-item>\n    <ion-item *ngIf="iscodigo">\n      <ion-label stacked>Ingrese código de verificación</ion-label>\n      <ion-input type="text" [(ngModel)]="codigo" name="usercodigo"></ion-input>\n    </ion-item>\n    <ion-row>\n      <ion-col col-12 *ngIf="!iscodigo">\n        <button ion-button (click)="sendMessage()" block class="buttonPayCash">Enviar mensaje</button>\n      </ion-col>\n      <ion-col col-12 *ngIf="iscodigo">\n        <button ion-button (click)="confirmCode()" block class="buttonPayCash">Confirmar código</button>\n      </ion-col>\n    </ion-row>\n    <ion-row class="marginLft">\n      <ion-col col-4>\n        <button ion-button (click)="cancelar()" class="buttonPayCash">Cancelar</button>\n      </ion-col>\n      <ion-col col-6 *ngIf="!iscodigo">\n        <button ion-button (click)="changeVisible()" class="buttonPayCash">Recuperar por email</button>\n      </ion-col>\n    </ion-row>\n  </div>\n\n  <div *ngIf="!isvisible">\n    <ion-item>\n      <ion-label stacked>Ingrese su email</ion-label>\n      <ion-input type="text" [(ngModel)]="data" name="dataname"></ion-input>\n    </ion-item>\n\n\n    <ion-item *ngIf="iscodigo">\n      <ion-label stacked>Ingrese código de verificación</ion-label>\n      <ion-input type="text" [(ngModel)]="codigo" name="usercodigo"></ion-input>\n    </ion-item>\n    <ion-row>\n      <ion-col col-12 *ngIf="!iscodigo">\n        <button ion-button (click)="sendMail()" block class="buttonPayCash">Enviar email</button>\n      </ion-col>\n      <ion-col col-12 *ngIf="iscodigo">\n        <button ion-button (click)="confirmCode()" block class="buttonPayCash">Confirmar código</button>\n      </ion-col>\n    </ion-row>\n    <ion-row class="marginLft">\n      <ion-col col-4>\n        <button ion-button (click)="cancelar()" class="buttonPayCash">Cancelar</button>\n      </ion-col>\n      <ion-col col-6>\n        <button ion-button (click)="changeVisible()" class="buttonPayCash">Recuperar por SMS</button>\n      </ion-col>\n    </ion-row>\n  </div>\n</ion-content>'/*ion-inline-end:"/Users/eyeline/Documents/eyepaycashappGitHub/src/pages/recovery-password/recovery-password.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */],
             __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* ModalController */],
-            __WEBPACK_IMPORTED_MODULE_3__providers_api__["a" /* Api */],
+            __WEBPACK_IMPORTED_MODULE_2__providers_api__["a" /* Api */],
             __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* ToastController */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* LoadingController */],
-            __WEBPACK_IMPORTED_MODULE_4__providers_geolocation_geolocation__["a" /* GeolocationProvider */]])
-    ], RegNumberPhonePage);
-    return RegNumberPhonePage;
+            __WEBPACK_IMPORTED_MODULE_3__providers_auth_user_auth_user__["a" /* AuthUserProvider */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* LoadingController */]])
+    ], RecoveryPasswordPage);
+    return RecoveryPasswordPage;
 }());
 
-//# sourceMappingURL=reg-number-phone.js.map
+//# sourceMappingURL=recovery-password.js.map
 
 /***/ }),
 
-/***/ 322:
+/***/ 358:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PasswordUpdatePage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(19);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_api__ = __webpack_require__(32);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_auth_user_auth_user__ = __webpack_require__(33);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__login_login__ = __webpack_require__(90);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+/**
+ * Generated class for the PasswordUpdatePage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
+var PasswordUpdatePage = /** @class */ (function () {
+    function PasswordUpdatePage(navCtrl, navParams, api, toastCtrl, userProvider, loadingCtrl) {
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+        this.api = api;
+        this.toastCtrl = toastCtrl;
+        this.userProvider = userProvider;
+        this.loadingCtrl = loadingCtrl;
+        this.infoRecovery = {
+            new_password: null,
+            new_password_conf: null,
+            user_id: null,
+        };
+    }
+    PasswordUpdatePage.prototype.recovery = function () {
+        var _this = this;
+        if (this.infoRecovery.new_password != null && this.infoRecovery.new_password_conf != null) {
+            if (this.infoRecovery.new_password_conf == this.infoRecovery.new_password) {
+                if (this.infoRecovery.new_password.length >= 6 && this.infoRecovery.new_password_conf.length >= 6) {
+                    var loading_1 = this.loadingCtrl.create({
+                        spinner: 'dots',
+                    });
+                    loading_1.present();
+                    this.infoRecovery.user_id = this.userProvider.userRecovery.user_id;
+                    this.api.post('auth/update-password', this.infoRecovery).then(function (data) {
+                        loading_1.dismiss();
+                        console.log(data);
+                        var toast = _this.toastCtrl.create({
+                            message: 'Contraseña actualizada correctamente',
+                            duration: 3000,
+                        });
+                        toast.present();
+                        _this.navCtrl.setRoot(__WEBPACK_IMPORTED_MODULE_4__login_login__["a" /* LoginPage */]);
+                    }).catch(function (error) {
+                        loading_1.dismiss();
+                    });
+                }
+                else {
+                    var toast = this.toastCtrl.create({
+                        message: 'La constraseña debe tener mìnimo 6 caracteres'
+                    });
+                    toast.present();
+                }
+            }
+            else {
+                var toast = this.toastCtrl.create({
+                    message: 'Las contraseñas no coinciden',
+                    duration: 3000,
+                });
+                toast.present();
+            }
+        }
+        else {
+            var toast = this.toastCtrl.create({
+                message: 'Los datos son obligatorios',
+                duration: 3000,
+            });
+            toast.present();
+        }
+    };
+    PasswordUpdatePage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+            selector: 'page-password-update',template:/*ion-inline-start:"/Users/eyeline/Documents/eyepaycashappGitHub/src/pages/password-update/password-update.html"*/'<!--\n  Generated template for the PasswordUpdatePage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-content padding class="fondo_gris">\n  <form #formulario (submit)="recovery()">\n    <ion-list>\n      <ion-item>\n        <ion-label stacked>Ingrese la nueva contraseña</ion-label>\n        <ion-input type="password" [(ngModel)]="infoRecovery.new_password" name="recovery_pass"></ion-input>\n      </ion-item>\n      <ion-item>\n        <ion-label stacked>Confirme la nueva contraseña</ion-label>\n        <ion-input type="password" [(ngModel)]="infoRecovery.new_password_conf" name="recovery_pass2"></ion-input>\n      </ion-item>\n      <ion-item>\n        <button ion-button class="buttonPayCash" block>Guardar</button>\n      </ion-item>\n    </ion-list>\n  </form>\n</ion-content>\n'/*ion-inline-end:"/Users/eyeline/Documents/eyepaycashappGitHub/src/pages/password-update/password-update.html"*/,
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */],
+            __WEBPACK_IMPORTED_MODULE_2__providers_api__["a" /* Api */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* ToastController */],
+            __WEBPACK_IMPORTED_MODULE_3__providers_auth_user_auth_user__["a" /* AuthUserProvider */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* LoadingController */]])
+    ], PasswordUpdatePage);
+    return PasswordUpdatePage;
+}());
+
+//# sourceMappingURL=password-update.js.map
+
+/***/ }),
+
+/***/ 359:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ModalWelcomePage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(19);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+/**
+ * Generated class for the ModalWelcomePage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
+var ModalWelcomePage = /** @class */ (function () {
+    function ModalWelcomePage(navCtrl, navParams) {
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+        this.name = null;
+        this.getInfo();
+    }
+    ModalWelcomePage.prototype.getInfo = function () {
+        this.name = this.navParams.get('name');
+    };
+    ModalWelcomePage.prototype.closeModal = function () {
+        this.navCtrl.pop();
+    };
+    ModalWelcomePage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+            selector: 'page-modal-welcome',template:/*ion-inline-start:"/Users/eyeline/Documents/eyepaycashappGitHub/src/pages/modal-welcome/modal-welcome.html"*/'<!--\n  Generated template for the ModalWelcomePage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-content padding class="tamano">\n  <ion-row>\n    <ion-col col-10>\n      <h4>Bienvenido {{name}}</h4>\n    </ion-col>\n    <ion-col col-2>\n      <ion-buttons end>\n        <button ion-button icon-only (click)="closeModal()">\n          <ion-icon item-right name="ios-close-outline"></ion-icon>\n        </button>\n      </ion-buttons>\n    </ion-col>\n  </ion-row>\n\n  <img src="assets/imgs/ok.png">\n</ion-content>\n'/*ion-inline-end:"/Users/eyeline/Documents/eyepaycashappGitHub/src/pages/modal-welcome/modal-welcome.html"*/,
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */]])
+    ], ModalWelcomePage);
+    return ModalWelcomePage;
+}());
+
+//# sourceMappingURL=modal-welcome.js.map
+
+/***/ }),
+
+/***/ 360:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return RegisterPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(7);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_api__ = __webpack_require__(23);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_auth_user_auth_user__ = __webpack_require__(28);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__politicas_politicas__ = __webpack_require__(323);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__login_login__ = __webpack_require__(66);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__modal_welcome_modal_welcome__ = __webpack_require__(324);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(19);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_api__ = __webpack_require__(32);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_auth_user_auth_user__ = __webpack_require__(33);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__politicas_politicas__ = __webpack_require__(361);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__login_login__ = __webpack_require__(90);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__modal_welcome_modal_welcome__ = __webpack_require__(359);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1477,14 +1192,14 @@ var RegisterPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 323:
+/***/ 361:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PoliticasPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(7);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_auth_user_auth_user__ = __webpack_require__(28);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(19);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_auth_user_auth_user__ = __webpack_require__(33);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1836,1011 +1551,13 @@ var PoliticasPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 324:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ModalWelcomePage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(7);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-/**
- * Generated class for the ModalWelcomePage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-var ModalWelcomePage = /** @class */ (function () {
-    function ModalWelcomePage(navCtrl, navParams) {
-        this.navCtrl = navCtrl;
-        this.navParams = navParams;
-        this.name = null;
-        this.getInfo();
-    }
-    ModalWelcomePage.prototype.getInfo = function () {
-        this.name = this.navParams.get('name');
-    };
-    ModalWelcomePage.prototype.closeModal = function () {
-        this.navCtrl.pop();
-    };
-    ModalWelcomePage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-            selector: 'page-modal-welcome',template:/*ion-inline-start:"/Users/eyeline/Documents/eyepaycashappGitHub/src/pages/modal-welcome/modal-welcome.html"*/'<!--\n  Generated template for the ModalWelcomePage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-content padding class="tamano">\n  <ion-row>\n    <ion-col col-10>\n      <h4>Bienvenido {{name}}</h4>\n    </ion-col>\n    <ion-col col-2>\n      <ion-buttons end>\n        <button ion-button icon-only (click)="closeModal()">\n          <ion-icon item-right name="ios-close-outline"></ion-icon>\n        </button>\n      </ion-buttons>\n    </ion-col>\n  </ion-row>\n\n  <img src="assets/imgs/ok.png">\n</ion-content>\n'/*ion-inline-end:"/Users/eyeline/Documents/eyepaycashappGitHub/src/pages/modal-welcome/modal-welcome.html"*/,
-        }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */]])
-    ], ModalWelcomePage);
-    return ModalWelcomePage;
-}());
-
-//# sourceMappingURL=modal-welcome.js.map
-
-/***/ }),
-
-/***/ 325:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return RecoveryPasswordPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(7);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_api__ = __webpack_require__(23);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_auth_user_auth_user__ = __webpack_require__(28);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__password_update_password_update__ = __webpack_require__(326);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-
-
-/**
- * Generated class for the RecoveryPasswordPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-var RecoveryPasswordPage = /** @class */ (function () {
-    function RecoveryPasswordPage(navCtrl, navParams, api, toastCtrl, userProvider, loadingCtrl) {
-        this.navCtrl = navCtrl;
-        this.navParams = navParams;
-        this.api = api;
-        this.toastCtrl = toastCtrl;
-        this.userProvider = userProvider;
-        this.loadingCtrl = loadingCtrl;
-        this.data = null;
-        this.type = 'phone';
-        this.isvisible = true;
-        this.codigo = null;
-        this.iscodigo = false;
-    }
-    RecoveryPasswordPage.prototype.sendMessage = function () {
-        var _this = this;
-        this.type = 'phone';
-        if (this.data != null) {
-            var loading_1 = this.loadingCtrl.create({
-                spinner: 'dots'
-            });
-            loading_1.present();
-            this.api.post('auth/restar-password', { 'type': this.type, 'data': this.data }).then(function (data) {
-                loading_1.dismiss();
-                if (!_this.iscodigo)
-                    _this.iscodigo = true;
-                else
-                    _this.iscodigo = false;
-                _this.userProvider.userRecovery.codigoVerify = data.password_code_req;
-                _this.userProvider.userRecovery.user_id = data.user_id;
-            }).catch(function (err) {
-                loading_1.dismiss();
-                var toast = _this.toastCtrl.create({
-                    message: 'No se encontraron resultados',
-                    duration: 3000,
-                });
-                toast.present();
-            });
-        }
-        else {
-            var toast = this.toastCtrl.create({
-                message: 'Por favor ingrese su nùmero celular',
-                duration: 3000
-            });
-            toast.present();
-        }
-    };
-    // 3114276555
-    RecoveryPasswordPage.prototype.sendMail = function () {
-        var _this = this;
-        this.type = 'mail';
-        if (this.data != null) {
-            var loading_2 = this.loadingCtrl.create({
-                spinner: 'dots'
-            });
-            loading_2.present();
-            this.api.post('auth/restar-password', { 'type': this.type, 'data': this.data }).then(function (data) {
-                loading_2.dismiss();
-                console.log(data);
-                if (!_this.iscodigo)
-                    _this.iscodigo = true;
-                else
-                    _this.iscodigo = false;
-                _this.userProvider.userRecovery.codigoVerify = data.password_code_req;
-                _this.userProvider.userRecovery.user_id = data.user_id;
-            });
-        }
-        else {
-            var toast = this.toastCtrl.create({
-                message: 'Por favor ingrese su direcciòn email',
-                duration: 3000
-            });
-            toast.present();
-        }
-    };
-    RecoveryPasswordPage.prototype.changeVisible = function () {
-        if (this.isvisible)
-            this.isvisible = false;
-        else
-            this.isvisible = true;
-    };
-    RecoveryPasswordPage.prototype.cancelar = function () {
-        this.navCtrl.pop();
-    };
-    RecoveryPasswordPage.prototype.confirmCode = function () {
-        if (this.codigo != null) {
-            if (this.userProvider.userRecovery.codigoVerify == this.codigo) {
-                this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_4__password_update_password_update__["a" /* PasswordUpdatePage */]);
-            }
-            else {
-                var toast = this.toastCtrl.create({
-                    message: 'El còdigo ingresado no coincide!',
-                    duration: 3000
-                });
-                toast.present();
-            }
-        }
-        else {
-            var toast = this.toastCtrl.create({
-                message: 'Por favor ingrese el còdigo de verificaciòn',
-                duration: 3000
-            });
-            toast.present();
-        }
-    };
-    RecoveryPasswordPage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-            selector: 'page-recovery-password',template:/*ion-inline-start:"/Users/eyeline/Documents/eyepaycashappGitHub/src/pages/recovery-password/recovery-password.html"*/'<ion-content padding class="back vignette">\n  <div style="margin-top:12%" class="center">\n    <ion-img class="logo" src="assets/imgs/EPCLogo.png"></ion-img>\n  </div>\n  <div *ngIf="isvisible">\n    <ion-item>\n      <ion-label stacked>Ingrese número celular</ion-label>\n      <ion-input type="text" [(ngModel)]="data" name="userdata"></ion-input>\n    </ion-item>\n    <ion-item *ngIf="iscodigo">\n      <ion-label stacked>Ingrese código de verificación</ion-label>\n      <ion-input type="text" [(ngModel)]="codigo" name="usercodigo"></ion-input>\n    </ion-item>\n    <ion-row>\n      <ion-col col-12 *ngIf="!iscodigo">\n        <button ion-button (click)="sendMessage()" block class="buttonPayCash">Enviar mensaje</button>\n      </ion-col>\n      <ion-col col-12 *ngIf="iscodigo">\n        <button ion-button (click)="confirmCode()" block class="buttonPayCash">Confirmar código</button>\n      </ion-col>\n    </ion-row>\n    <ion-row class="marginLft">\n      <ion-col col-4>\n        <button ion-button (click)="cancelar()" class="buttonPayCash">Cancelar</button>\n      </ion-col>\n      <ion-col col-6 *ngIf="!iscodigo">\n        <button ion-button (click)="changeVisible()" class="buttonPayCash">Recuperar por email</button>\n      </ion-col>\n    </ion-row>\n  </div>\n\n  <div *ngIf="!isvisible">\n    <ion-item>\n      <ion-label stacked>Ingrese su email</ion-label>\n      <ion-input type="text" [(ngModel)]="data" name="dataname"></ion-input>\n    </ion-item>\n\n\n    <ion-item *ngIf="iscodigo">\n      <ion-label stacked>Ingrese código de verificación</ion-label>\n      <ion-input type="text" [(ngModel)]="codigo" name="usercodigo"></ion-input>\n    </ion-item>\n    <ion-row>\n      <ion-col col-12 *ngIf="!iscodigo">\n        <button ion-button (click)="sendMail()" block class="buttonPayCash">Enviar email</button>\n      </ion-col>\n      <ion-col col-12 *ngIf="iscodigo">\n        <button ion-button (click)="confirmCode()" block class="buttonPayCash">Confirmar código</button>\n      </ion-col>\n    </ion-row>\n    <ion-row class="marginLft">\n      <ion-col col-4>\n        <button ion-button (click)="cancelar()" class="buttonPayCash">Cancelar</button>\n      </ion-col>\n      <ion-col col-6>\n        <button ion-button (click)="changeVisible()" class="buttonPayCash">Recuperar por SMS</button>\n      </ion-col>\n    </ion-row>\n  </div>\n</ion-content>'/*ion-inline-end:"/Users/eyeline/Documents/eyepaycashappGitHub/src/pages/recovery-password/recovery-password.html"*/,
-        }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */],
-            __WEBPACK_IMPORTED_MODULE_2__providers_api__["a" /* Api */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* ToastController */],
-            __WEBPACK_IMPORTED_MODULE_3__providers_auth_user_auth_user__["a" /* AuthUserProvider */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* LoadingController */]])
-    ], RecoveryPasswordPage);
-    return RecoveryPasswordPage;
-}());
-
-//# sourceMappingURL=recovery-password.js.map
-
-/***/ }),
-
-/***/ 326:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PasswordUpdatePage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(7);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_api__ = __webpack_require__(23);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_auth_user_auth_user__ = __webpack_require__(28);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__login_login__ = __webpack_require__(66);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-
-
-/**
- * Generated class for the PasswordUpdatePage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-var PasswordUpdatePage = /** @class */ (function () {
-    function PasswordUpdatePage(navCtrl, navParams, api, toastCtrl, userProvider, loadingCtrl) {
-        this.navCtrl = navCtrl;
-        this.navParams = navParams;
-        this.api = api;
-        this.toastCtrl = toastCtrl;
-        this.userProvider = userProvider;
-        this.loadingCtrl = loadingCtrl;
-        this.infoRecovery = {
-            new_password: null,
-            new_password_conf: null,
-            user_id: null,
-        };
-    }
-    PasswordUpdatePage.prototype.recovery = function () {
-        var _this = this;
-        if (this.infoRecovery.new_password != null && this.infoRecovery.new_password_conf != null) {
-            if (this.infoRecovery.new_password_conf == this.infoRecovery.new_password) {
-                if (this.infoRecovery.new_password.length >= 6 && this.infoRecovery.new_password_conf.length >= 6) {
-                    var loading_1 = this.loadingCtrl.create({
-                        spinner: 'dots',
-                    });
-                    loading_1.present();
-                    this.infoRecovery.user_id = this.userProvider.userRecovery.user_id;
-                    this.api.post('auth/update-password', this.infoRecovery).then(function (data) {
-                        loading_1.dismiss();
-                        console.log(data);
-                        var toast = _this.toastCtrl.create({
-                            message: 'Contraseña actualizada correctamente',
-                            duration: 3000,
-                        });
-                        toast.present();
-                        _this.navCtrl.setRoot(__WEBPACK_IMPORTED_MODULE_4__login_login__["a" /* LoginPage */]);
-                    }).catch(function (error) {
-                        loading_1.dismiss();
-                    });
-                }
-                else {
-                    var toast = this.toastCtrl.create({
-                        message: 'La constraseña debe tener mìnimo 6 caracteres'
-                    });
-                    toast.present();
-                }
-            }
-            else {
-                var toast = this.toastCtrl.create({
-                    message: 'Las contraseñas no coinciden',
-                    duration: 3000,
-                });
-                toast.present();
-            }
-        }
-        else {
-            var toast = this.toastCtrl.create({
-                message: 'Los datos son obligatorios',
-                duration: 3000,
-            });
-            toast.present();
-        }
-    };
-    PasswordUpdatePage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-            selector: 'page-password-update',template:/*ion-inline-start:"/Users/eyeline/Documents/eyepaycashappGitHub/src/pages/password-update/password-update.html"*/'<!--\n  Generated template for the PasswordUpdatePage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-content padding class="fondo_gris">\n  <form #formulario (submit)="recovery()">\n    <ion-list>\n      <ion-item>\n        <ion-label stacked>Ingrese la nueva contraseña</ion-label>\n        <ion-input type="password" [(ngModel)]="infoRecovery.new_password" name="recovery_pass"></ion-input>\n      </ion-item>\n      <ion-item>\n        <ion-label stacked>Confirme la nueva contraseña</ion-label>\n        <ion-input type="password" [(ngModel)]="infoRecovery.new_password_conf" name="recovery_pass2"></ion-input>\n      </ion-item>\n      <ion-item>\n        <button ion-button class="buttonPayCash" block>Guardar</button>\n      </ion-item>\n    </ion-list>\n  </form>\n</ion-content>\n'/*ion-inline-end:"/Users/eyeline/Documents/eyepaycashappGitHub/src/pages/password-update/password-update.html"*/,
-        }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */],
-            __WEBPACK_IMPORTED_MODULE_2__providers_api__["a" /* Api */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* ToastController */],
-            __WEBPACK_IMPORTED_MODULE_3__providers_auth_user_auth_user__["a" /* AuthUserProvider */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* LoadingController */]])
-    ], PasswordUpdatePage);
-    return PasswordUpdatePage;
-}());
-
-//# sourceMappingURL=password-update.js.map
-
-/***/ }),
-
-/***/ 327:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TransactionPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(7);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_api__ = __webpack_require__(23);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_auth_user_auth_user__ = __webpack_require__(28);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__modal_transaction_modal_transaction__ = __webpack_require__(328);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-
-
-/**
- * Generated class for the TransactionPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-var TransactionPage = /** @class */ (function () {
-    function TransactionPage(navCtrl, navParams, api, userProvider, loadingCtrl, toastCtrl, modalCtrl) {
-        this.navCtrl = navCtrl;
-        this.navParams = navParams;
-        this.api = api;
-        this.userProvider = userProvider;
-        this.loadingCtrl = loadingCtrl;
-        this.toastCtrl = toastCtrl;
-        this.modalCtrl = modalCtrl;
-        this.countrys = [];
-        this.currency = null;
-        this.infoCountry = null;
-        this.monedas = [];
-        this.getInfo();
-    }
-    TransactionPage.prototype.getInfo = function () {
-        var _this = this;
-        this.currency = this.userProvider.user_Country.currency;
-        this.countrySelected();
-        this.api.get('app/get-countries').then(function (data) {
-            _this.countrys = data;
-        }).catch();
-    };
-    TransactionPage.prototype.countrySelected = function () {
-        var _this = this;
-        this.api.get('app/get-prices', this.userProvider, {
-            currency_code: this.currency,
-        }).then(function (data) {
-            _this.infoCountry = data;
-            console.log(_this.infoCountry);
-            _this.monedas = _this.infoCountry.coins;
-            console.log(_this.monedas);
-        });
-    };
-    TransactionPage.prototype.monedaSelect = function (moneda) {
-        var modalTransaction = this.modalCtrl.create(__WEBPACK_IMPORTED_MODULE_4__modal_transaction_modal_transaction__["a" /* ModalTransactionPage */], {
-            'moneda': moneda,
-            'userCountry': this.userProvider.user_Country,
-        });
-        modalTransaction.present();
-        modalTransaction.onDidDismiss(function (data) {
-        });
-    };
-    TransactionPage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-            selector: 'page-transaction',template:/*ion-inline-start:"/Users/eyeline/Documents/eyepaycashappGitHub/src/pages/transaction/transaction.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>TRANSACCIONES</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n  <ion-label class="txtLbl" stacked>Seleccione país de interés</ion-label>\n  <ion-select [(ngModel)]="currency" (ionChange)="countrySelected()">\n    <ion-option *ngFor="let pais of countrys" value="{{pais.currency}}">{{pais.name}}</ion-option>\n  </ion-select>\n      <label stacked>Precio del dolar en el paìs</label>\n      <ion-item>\n        <h6>1 USD = {{infoCountry?.local_usd_value}} {{currency}}</h6>\n      </ion-item>\n      <label stacked>Información de las monedas</label>\n      <ion-card ion-item *ngFor="let moneda of monedas" (click)="monedaSelect(moneda)">\n        <ion-card-content>\n          <ion-row>\n            <ion-col col-10>\n              <h4>Nombre: {{moneda.full_name}}</h4>\n              <h6>1 {{moneda.full_name}} = {{moneda.usd_value}} USD</h6>\n              <h5 stacked> 1 {{moneda.full_name}} >> {{currency}} </h5>\n              <h5>{{moneda.local_usd_value}}</h5>\n            </ion-col>\n            <ion-col col-2 class="margIcon">\n              <ion-icon name="add"></ion-icon>\n            </ion-col>\n          </ion-row>\n        </ion-card-content>\n      </ion-card>\n</ion-content>'/*ion-inline-end:"/Users/eyeline/Documents/eyepaycashappGitHub/src/pages/transaction/transaction.html"*/,
-        }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */],
-            __WEBPACK_IMPORTED_MODULE_2__providers_api__["a" /* Api */],
-            __WEBPACK_IMPORTED_MODULE_3__providers_auth_user_auth_user__["a" /* AuthUserProvider */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* LoadingController */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* ToastController */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* ModalController */]])
-    ], TransactionPage);
-    return TransactionPage;
-}());
-
-//# sourceMappingURL=transaction.js.map
-
-/***/ }),
-
-/***/ 328:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ModalTransactionPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(7);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_api__ = __webpack_require__(23);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_auth_user_auth_user__ = __webpack_require__(28);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__home_home__ = __webpack_require__(138);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__transaction_resume_transaction_resume__ = __webpack_require__(329);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-
-
-
-/**
- * Generated class for the ModalTransactionPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-var ModalTransactionPage = /** @class */ (function () {
-    function ModalTransactionPage(navParams, viewCtrl, toastCtrl, loadingCtrl, api, userProvider, navCtrl) {
-        this.navParams = navParams;
-        this.viewCtrl = viewCtrl;
-        this.toastCtrl = toastCtrl;
-        this.loadingCtrl = loadingCtrl;
-        this.api = api;
-        this.userProvider = userProvider;
-        this.navCtrl = navCtrl;
-        this.moneda = null;
-        this.userCountry = null;
-        this.transaction = {
-            amount_local: 0,
-            phone_user_des: null,
-            key_user: null,
-            country_id: null,
-            coin_id: null,
-        };
-    }
-    ModalTransactionPage.prototype.ionViewWillLoad = function () {
-        this.userCountry = this.navParams.get('userCountry');
-        this.moneda = this.navParams.get('moneda');
-        this.transaction.country_id = this.userCountry.id;
-        this.transaction.coin_id = this.moneda.id;
-    };
-    ModalTransactionPage.prototype.closeModal = function () {
-        this.viewCtrl.dismiss();
-    };
-    ModalTransactionPage.prototype.doTrasaction = function () {
-        var _this = this;
-        if (this.transaction.amount_local != null && this.transaction.phone_user_des != null && this.transaction.key_user != null && this.transaction.country_id != null && this.transaction.coin_id != null) {
-            if (this.transaction.key_user.length === 4 && this.transaction.phone_user_des > 9) {
-                var loading_1 = this.loadingCtrl.create({
-                    spinner: 'dots',
-                });
-                loading_1.present();
-                var objtoSub = this.transaction;
-                objtoSub.amount_local = this.transaction.amount_local.replace(new RegExp('\\.', 'g'), '');
-                objtoSub.amount_local = this.transaction.amount_local.replace(',', '.');
-                this.api.post('app/transaction', objtoSub, this.userProvider).then(function (data) {
-                    loading_1.dismiss();
-                    var toast = _this.toastCtrl.create({
-                        message: 'Transacciòn solicitada correctamente.',
-                        duration: 3000,
-                    });
-                    _this.closeModal();
-                    _this.navCtrl.setPages([{ page: __WEBPACK_IMPORTED_MODULE_4__home_home__["a" /* HomePage */] }, { page: __WEBPACK_IMPORTED_MODULE_5__transaction_resume_transaction_resume__["a" /* TransactionResumePage */], params: data }]);
-                    toast.present();
-                }).catch(function (data) {
-                    loading_1.dismiss();
-                    console.log(data);
-                });
-            }
-        }
-        else {
-            console.log(this.transaction);
-            var toast = this.toastCtrl.create({
-                message: 'Todos los datos son obligatorios',
-                duration: 3000
-            });
-            toast.present();
-        }
-    };
-    ModalTransactionPage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-            selector: 'page-modal-transaction',template:/*ion-inline-start:"/Users/eyeline/Documents/eyepaycashappGitHub/src/pages/modal-transaction/modal-transaction.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>Transacción</ion-title>\n    <ion-buttons end>\n      <button ion-button (click)="closeModal()">Cerrar</button>\n    </ion-buttons>\n  </ion-navbar>\n</ion-header>\n<ion-content padding>\n  <ion-card>\n    <ion-card-header>\n      {{moneda.full_name}}\n    </ion-card-header>\n    <ion-card-content>\n      <h6>1 {{moneda.full_name}} == {{moneda.local_usd_value | number}} {{userCountry.currency}} </h6>\n      <h6>1 {{moneda.full_name}} == {{moneda.usd_value | number}} USD </h6>\n    </ion-card-content>\n  </ion-card>\n  <ion-card>\n    <ion-card-header>\n      Información de la transación\n    </ion-card-header>\n    <ion-card-content>\n        <label stacked>Ingresar número celular</label>\n        <ion-input name="transaction-celular" [(ngModel)]="transaction.phone_user_des"   [brmasker]="{type:\'num\'}"\n                   type="text"></ion-input>\n        <label stacked>Ingresar clave de seguridad (4 digitos)</label>\n        <ion-input name="transaction-clave" [brmasker]="{len:4}" [(ngModel)]="transaction.key_user" type="number"></ion-input>\n        <label stacked>Ingresar el valor de la transacción</label>\n        <ion-input type="text" name="transaction-valor"\n                   [brmasker]="{money:true,decimal:0,thousand:\',\',type:\'num\'}"\n                   [(ngModel)]="transaction.amount_local">\n\n        </ion-input>\n        <button class="buttonPayCash" ion-button (click)="doTrasaction()">Solicitar transacción</button>\n    </ion-card-content>\n  </ion-card>\n\n</ion-content>\n'/*ion-inline-end:"/Users/eyeline/Documents/eyepaycashappGitHub/src/pages/modal-transaction/modal-transaction.html"*/,
-        }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* ViewController */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* ToastController */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* LoadingController */],
-            __WEBPACK_IMPORTED_MODULE_2__providers_api__["a" /* Api */],
-            __WEBPACK_IMPORTED_MODULE_3__providers_auth_user_auth_user__["a" /* AuthUserProvider */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */]])
-    ], ModalTransactionPage);
-    return ModalTransactionPage;
-}());
-
-//# sourceMappingURL=modal-transaction.js.map
-
-/***/ }),
-
-/***/ 329:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TransactionResumePage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(7);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-/**
- * Generated class for the TransactionResumePage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-var TransactionResumePage = /** @class */ (function () {
-    function TransactionResumePage(navCtrl, navParams, loadingCtrl) {
-        this.navCtrl = navCtrl;
-        this.navParams = navParams;
-        this.loadingCtrl = loadingCtrl;
-        this.result = null;
-        this.transaction = null;
-        this.coinhas = null;
-        this.coin = null;
-        this.country = null;
-        this.getIngfo();
-    }
-    TransactionResumePage.prototype.getIngfo = function () {
-        var parametros = this.navParams.data;
-        this.result = parametros.result;
-        this.transaction = parametros.transaction;
-        this.coinhas = parametros.coinhas;
-        this.coin = parametros.coin;
-        this.country = parametros.country;
-    };
-    TransactionResumePage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-            selector: 'page-transaction-resume',template:/*ion-inline-start:"/Users/eyeline/Documents/eyepaycashappGitHub/src/pages/transaction-resume/transaction-resume.html"*/'<ion-header>\n\n  <ion-navbar>\n    <ion-title>Resumen de la transacción</ion-title>\n  </ion-navbar>\n</ion-header>\n<ion-content padding>\n  <h4>Resumen de la transacción</h4>\n<ion-card>\n  <ion-card-content>\n    <ion-row>\n      <label stacked>Número de celular de destino</label>\n      <h4>{{transaction.phone_user_des}}</h4>\n      <label stacked>Nombre de la ciudad</label>\n      <h4>{{country.name}}</h4>\n      <label stacked>Costo local de la transacción</label>\n      <h4>{{transaction.amount_local}}</h4>\n      <label stacked>Nombre de la criptomoneda</label>\n      <h4>{{coin.full_name}}</h4>\n      <label stacked>Clave de transacción</label>\n      <h4>{{transaction.key_eyecash}}</h4>\n      <label stacked>Total en dolares</label>\n      <h4>{{transaction.amount_usd}}</h4>\n      <label stacked>Total en criptomoneda</label>\n      <h4>{{transaction.amount_btc}}</h4>\n    </ion-row>\n  </ion-card-content>\n</ion-card>\n\n</ion-content>\n'/*ion-inline-end:"/Users/eyeline/Documents/eyepaycashappGitHub/src/pages/transaction-resume/transaction-resume.html"*/,
-        }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* LoadingController */]])
-    ], TransactionResumePage);
-    return TransactionResumePage;
-}());
-
-// "coin": {
-//   "id": 1,
-//     "full_name": "Bitcoin",
-//     "short_name": "BTC",
-//     "usd_value": "6575.4200",
-//     "date_update": "2018-10-05 11:31:14",
-//     "is_active": 1
-// },
-// "transaction": {
-//   "user_id": 4,
-//     "phone_user_des": "320347659",
-//     "country_id": "1",
-//     "amount_local": 200000,
-//     "coin_id": "1",
-//     "key_eyecash": "6555",
-//     "date_request": "2018-10-05 21:42:42",
-//     "key_request": "8448465643098825",
-//     "amount_usd": "65.95",
-//     "amount_btc": "0.01010582"
-// },
-// "coinhash": {
-//   "id": 1,
-//     "coin_id": 1,
-//     "country_id": null,
-//     "eye_hash": "1JZ7D5sDEibvz7gA1qyu3gMtjXtef1B993"
-// },
-// "qrlink": "http://10.160.170.115/eyepaycash/frontend/web/qr/1.png" 
-//# sourceMappingURL=transaction-resume.js.map
-
-/***/ }),
-
-/***/ 330:
+/***/ 362:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ModalWelcomePageModule", function() { return ModalWelcomePageModule; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(7);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__modal_welcome__ = __webpack_require__(324);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-
-
-
-var ModalWelcomePageModule = /** @class */ (function () {
-    function ModalWelcomePageModule() {
-    }
-    ModalWelcomePageModule = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["J" /* NgModule */])({
-            declarations: [
-                __WEBPACK_IMPORTED_MODULE_2__modal_welcome__["a" /* ModalWelcomePage */],
-            ],
-            imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__modal_welcome__["a" /* ModalWelcomePage */]),
-            ],
-        })
-    ], ModalWelcomePageModule);
-    return ModalWelcomePageModule;
-}());
-
-//# sourceMappingURL=modal-welcome.module.js.map
-
-/***/ }),
-
-/***/ 331:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PasswordUpdatePageModule", function() { return PasswordUpdatePageModule; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(7);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__password_update__ = __webpack_require__(326);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-
-
-
-var PasswordUpdatePageModule = /** @class */ (function () {
-    function PasswordUpdatePageModule() {
-    }
-    PasswordUpdatePageModule = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["J" /* NgModule */])({
-            declarations: [
-                __WEBPACK_IMPORTED_MODULE_2__password_update__["a" /* PasswordUpdatePage */],
-            ],
-            imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__password_update__["a" /* PasswordUpdatePage */]),
-            ],
-        })
-    ], PasswordUpdatePageModule);
-    return PasswordUpdatePageModule;
-}());
-
-//# sourceMappingURL=password-update.module.js.map
-
-/***/ }),
-
-/***/ 332:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ModalTransactionPageModule", function() { return ModalTransactionPageModule; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(7);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__modal_transaction__ = __webpack_require__(328);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_brmasker_ionic_3__ = __webpack_require__(694);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-
-
-
-
-var ModalTransactionPageModule = /** @class */ (function () {
-    function ModalTransactionPageModule() {
-    }
-    ModalTransactionPageModule = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["J" /* NgModule */])({
-            declarations: [
-                __WEBPACK_IMPORTED_MODULE_2__modal_transaction__["a" /* ModalTransactionPage */],
-            ],
-            imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__modal_transaction__["a" /* ModalTransactionPage */]),
-                __WEBPACK_IMPORTED_MODULE_3_brmasker_ionic_3__["a" /* BrMaskerModule */],
-            ],
-        })
-    ], ModalTransactionPageModule);
-    return ModalTransactionPageModule;
-}());
-
-//# sourceMappingURL=modal-transaction.module.js.map
-
-/***/ }),
-
-/***/ 335:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RegNumberPhonePageModule", function() { return RegNumberPhonePageModule; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(7);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__reg_number_phone__ = __webpack_require__(320);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_native_geocoder__ = __webpack_require__(137);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_geolocation__ = __webpack_require__(135);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-
-
-
-
-
-var RegNumberPhonePageModule = /** @class */ (function () {
-    function RegNumberPhonePageModule() {
-    }
-    RegNumberPhonePageModule = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["J" /* NgModule */])({
-            declarations: [
-                __WEBPACK_IMPORTED_MODULE_2__reg_number_phone__["a" /* RegNumberPhonePage */],
-            ],
-            imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__reg_number_phone__["a" /* RegNumberPhonePage */]),
-            ],
-            providers: [
-                __WEBPACK_IMPORTED_MODULE_3__ionic_native_native_geocoder__["a" /* NativeGeocoder */],
-                __WEBPACK_IMPORTED_MODULE_4__ionic_native_geolocation__["a" /* Geolocation */]
-            ]
-        })
-    ], RegNumberPhonePageModule);
-    return RegNumberPhonePageModule;
-}());
-
-//# sourceMappingURL=reg-number-phone.module.js.map
-
-/***/ }),
-
-/***/ 336:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SelectCodePageModule", function() { return SelectCodePageModule; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(7);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__select_code__ = __webpack_require__(121);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ionic2_auto_complete__ = __webpack_require__(226);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-
-
-
-
-var SelectCodePageModule = /** @class */ (function () {
-    function SelectCodePageModule() {
-    }
-    SelectCodePageModule = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["J" /* NgModule */])({
-            declarations: [
-                __WEBPACK_IMPORTED_MODULE_2__select_code__["a" /* SelectCodePage */],
-            ],
-            imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__select_code__["a" /* SelectCodePage */]),
-                __WEBPACK_IMPORTED_MODULE_3_ionic2_auto_complete__["b" /* AutoCompleteModule */],
-            ],
-        })
-    ], SelectCodePageModule);
-    return SelectCodePageModule;
-}());
-
-//# sourceMappingURL=select-code.module.js.map
-
-/***/ }),
-
-/***/ 337:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RegisterPageModule", function() { return RegisterPageModule; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(7);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__register__ = __webpack_require__(322);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-
-
-
-var RegisterPageModule = /** @class */ (function () {
-    function RegisterPageModule() {
-    }
-    RegisterPageModule = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["J" /* NgModule */])({
-            declarations: [
-                __WEBPACK_IMPORTED_MODULE_2__register__["a" /* RegisterPage */],
-            ],
-            imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__register__["a" /* RegisterPage */]),
-            ],
-        })
-    ], RegisterPageModule);
-    return RegisterPageModule;
-}());
-
-//# sourceMappingURL=register.module.js.map
-
-/***/ }),
-
-/***/ 338:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RecoveryPasswordPageModule", function() { return RecoveryPasswordPageModule; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(7);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__recovery_password__ = __webpack_require__(325);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-
-
-
-var RecoveryPasswordPageModule = /** @class */ (function () {
-    function RecoveryPasswordPageModule() {
-    }
-    RecoveryPasswordPageModule = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["J" /* NgModule */])({
-            declarations: [
-                __WEBPACK_IMPORTED_MODULE_2__recovery_password__["a" /* RecoveryPasswordPage */],
-            ],
-            imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__recovery_password__["a" /* RecoveryPasswordPage */]),
-            ],
-        })
-    ], RecoveryPasswordPageModule);
-    return RecoveryPasswordPageModule;
-}());
-
-//# sourceMappingURL=recovery-password.module.js.map
-
-/***/ }),
-
-/***/ 339:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TransactionResumePageModule", function() { return TransactionResumePageModule; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(7);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__transaction_resume__ = __webpack_require__(329);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-
-
-
-var TransactionResumePageModule = /** @class */ (function () {
-    function TransactionResumePageModule() {
-    }
-    TransactionResumePageModule = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["J" /* NgModule */])({
-            declarations: [
-                __WEBPACK_IMPORTED_MODULE_2__transaction_resume__["a" /* TransactionResumePage */],
-            ],
-            imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__transaction_resume__["a" /* TransactionResumePage */]),
-            ],
-        })
-    ], TransactionResumePageModule);
-    return TransactionResumePageModule;
-}());
-
-//# sourceMappingURL=transaction-resume.module.js.map
-
-/***/ }),
-
-/***/ 340:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TransactionPageModule", function() { return TransactionPageModule; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(7);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__transaction__ = __webpack_require__(327);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-
-
-
-var TransactionPageModule = /** @class */ (function () {
-    function TransactionPageModule() {
-    }
-    TransactionPageModule = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["J" /* NgModule */])({
-            declarations: [
-                __WEBPACK_IMPORTED_MODULE_2__transaction__["a" /* TransactionPage */],
-            ],
-            imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__transaction__["a" /* TransactionPage */]),
-            ],
-        })
-    ], TransactionPageModule);
-    return TransactionPageModule;
-}());
-
-//# sourceMappingURL=transaction.module.js.map
-
-/***/ }),
-
-/***/ 341:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PoliticasPageModule", function() { return PoliticasPageModule; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(7);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__politicas__ = __webpack_require__(323);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-
-
-
-var PoliticasPageModule = /** @class */ (function () {
-    function PoliticasPageModule() {
-    }
-    PoliticasPageModule = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["J" /* NgModule */])({
-            declarations: [
-                __WEBPACK_IMPORTED_MODULE_2__politicas__["a" /* PoliticasPage */],
-            ],
-            imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__politicas__["a" /* PoliticasPage */]),
-            ],
-        })
-    ], PoliticasPageModule);
-    return PoliticasPageModule;
-}());
-
-//# sourceMappingURL=politicas.module.js.map
-
-/***/ }),
-
-/***/ 383:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(384);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_module__ = __webpack_require__(388);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(363);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_module__ = __webpack_require__(367);
 
 
 Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* platformBrowserDynamic */])().bootstrapModule(__WEBPACK_IMPORTED_MODULE_1__app_module__["a" /* AppModule */]);
@@ -2848,59 +1565,35 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 
 /***/ }),
 
-/***/ 388:
+/***/ 367:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__ = __webpack_require__(45);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(7);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(381);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_status_bar__ = __webpack_require__(382);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__app_component__ = __webpack_require__(714);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__providers_country_country__ = __webpack_require__(122);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_select_code_select_code_module__ = __webpack_require__(336);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__angular_common_http__ = __webpack_require__(58);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__providers_api__ = __webpack_require__(23);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__ionic_storage__ = __webpack_require__(221);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__providers_geolocation_geolocation__ = __webpack_require__(134);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__ionic_native_geolocation__ = __webpack_require__(135);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__ionic_native_native_geocoder__ = __webpack_require__(137);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__providers_auth_user_auth_user__ = __webpack_require__(28);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__pages_reg_number_phone_reg_number_phone_module__ = __webpack_require__(335);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__providers_verification_verification__ = __webpack_require__(715);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__pages_login_login_module__ = __webpack_require__(319);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__pages_account_account_module__ = __webpack_require__(223);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__pages_history_history_module__ = __webpack_require__(217);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__pages_home_home_module__ = __webpack_require__(716);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__pages_modal_transaction_modal_transaction_module__ = __webpack_require__(332);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__pages_modal_welcome_modal_welcome_module__ = __webpack_require__(330);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__pages_password_update_password_update_module__ = __webpack_require__(331);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__pages_politicas_politicas_module__ = __webpack_require__(341);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__pages_recovery_password_recovery_password_module__ = __webpack_require__(338);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__pages_register_register_module__ = __webpack_require__(337);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__pages_transaction_transaction_module__ = __webpack_require__(340);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__pages_transaction_resume_transaction_resume_module__ = __webpack_require__(339);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_29__pages_history_resume_history_resume_module__ = __webpack_require__(215);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(19);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(355);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_status_bar__ = __webpack_require__(356);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__app_component__ = __webpack_require__(691);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__providers_country_country__ = __webpack_require__(121);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_select_code_select_code_module__ = __webpack_require__(315);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__angular_common_http__ = __webpack_require__(47);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__providers_api__ = __webpack_require__(32);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__ionic_storage__ = __webpack_require__(217);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__providers_geolocation_geolocation__ = __webpack_require__(133);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__ionic_native_geolocation__ = __webpack_require__(134);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__ionic_native_native_geocoder__ = __webpack_require__(136);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__providers_auth_user_auth_user__ = __webpack_require__(33);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__pages_reg_number_phone_reg_number_phone_module__ = __webpack_require__(313);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__providers_verification_verification__ = __webpack_require__(692);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__providers_load_information_load_information__ = __webpack_require__(159);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -2933,37 +1626,25 @@ var AppModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["c" /* IonicModule */].forRoot(__WEBPACK_IMPORTED_MODULE_5__app_component__["a" /* MyApp */], {}, {
                     links: [
                         { loadChildren: '../pages/history-resume/history-resume.module#HistoryResumePageModule', name: 'HistoryResumePage', segment: 'history-resume', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/history/history.module#HistoryPageModule', name: 'HistoryPage', segment: 'history', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/account/account.module#AccountPageModule', name: 'AccountPage', segment: 'account', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/history/history.module#HistoryPageModule', name: 'HistoryPage', segment: 'history', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/home/home.module#HomePageModule', name: 'HomePage', segment: 'app', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/login/login.module#LoginPageModule', name: 'LoginPage', segment: 'login', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/modal-welcome/modal-welcome.module#ModalWelcomePageModule', name: 'ModalWelcomePage', segment: 'modal-welcome', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/password-update/password-update.module#PasswordUpdatePageModule', name: 'PasswordUpdatePage', segment: 'password-update', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/modal-transaction/modal-transaction.module#ModalTransactionPageModule', name: 'ModalTransactionPage', segment: 'modal-transaction', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/reg-number-phone/reg-number-phone.module#RegNumberPhonePageModule', name: 'RegNumberPhonePage', segment: 'reg-number-phone', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/select-code/select-code.module#SelectCodePageModule', name: 'SelectCodePage', segment: 'select-code', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/register/register.module#RegisterPageModule', name: 'RegisterPage', segment: 'register', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/select-code/select-code.module#SelectCodePageModule', name: 'SelectCodePage', segment: 'select-code', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/recovery-password/recovery-password.module#RecoveryPasswordPageModule', name: 'RecoveryPasswordPage', segment: 'recovery-password', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/transaction-resume/transaction-resume.module#TransactionResumePageModule', name: 'TransactionResumePage', segment: 'transaction-resume', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/transaction/transaction.module#TransactionPageModule', name: 'TransactionPage', segment: 'transaction', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/transaction-resume/transaction-resume.module#TransactionResumePageModule', name: 'TransactionResumePage', segment: 'transaction-resume', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/politicas/politicas.module#PoliticasPageModule', name: 'PoliticasPage', segment: 'politicas', priority: 'low', defaultHistory: [] }
                     ]
                 }),
                 __WEBPACK_IMPORTED_MODULE_10__ionic_storage__["a" /* IonicStorageModule */].forRoot(),
                 __WEBPACK_IMPORTED_MODULE_7__pages_select_code_select_code_module__["SelectCodePageModule"],
                 __WEBPACK_IMPORTED_MODULE_15__pages_reg_number_phone_reg_number_phone_module__["RegNumberPhonePageModule"],
-                __WEBPACK_IMPORTED_MODULE_18__pages_account_account_module__["AccountPageModule"],
-                __WEBPACK_IMPORTED_MODULE_19__pages_history_history_module__["HistoryPageModule"],
-                __WEBPACK_IMPORTED_MODULE_20__pages_home_home_module__["a" /* HomePageModule */],
-                __WEBPACK_IMPORTED_MODULE_17__pages_login_login_module__["LoginPageModule"],
-                __WEBPACK_IMPORTED_MODULE_21__pages_modal_transaction_modal_transaction_module__["ModalTransactionPageModule"],
-                __WEBPACK_IMPORTED_MODULE_22__pages_modal_welcome_modal_welcome_module__["ModalWelcomePageModule"],
-                __WEBPACK_IMPORTED_MODULE_23__pages_password_update_password_update_module__["PasswordUpdatePageModule"],
-                __WEBPACK_IMPORTED_MODULE_24__pages_politicas_politicas_module__["PoliticasPageModule"],
-                __WEBPACK_IMPORTED_MODULE_25__pages_recovery_password_recovery_password_module__["RecoveryPasswordPageModule"],
-                __WEBPACK_IMPORTED_MODULE_26__pages_register_register_module__["RegisterPageModule"],
-                __WEBPACK_IMPORTED_MODULE_27__pages_transaction_transaction_module__["TransactionPageModule"],
-                __WEBPACK_IMPORTED_MODULE_28__pages_transaction_resume_transaction_resume_module__["TransactionResumePageModule"],
-                __WEBPACK_IMPORTED_MODULE_29__pages_history_resume_history_resume_module__["HistoryResumePageModule"],
             ],
             bootstrap: [__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["a" /* IonicApp */]],
             entryComponents: [
@@ -2980,6 +1661,7 @@ var AppModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_11__providers_geolocation_geolocation__["a" /* GeolocationProvider */],
                 __WEBPACK_IMPORTED_MODULE_14__providers_auth_user_auth_user__["a" /* AuthUserProvider */],
                 __WEBPACK_IMPORTED_MODULE_16__providers_verification_verification__["a" /* VerificationProvider */],
+                __WEBPACK_IMPORTED_MODULE_17__providers_load_information_load_information__["a" /* LoadInformationProvider */],
             ]
         })
     ], AppModule);
@@ -2990,17 +1672,18 @@ var AppModule = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 66:
+/***/ 670:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LoginPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(7);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_auth_user_auth_user__ = __webpack_require__(28);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__reg_number_phone_reg_number_phone__ = __webpack_require__(320);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__recovery_password_recovery_password__ = __webpack_require__(325);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__home_home__ = __webpack_require__(138);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return RegNumberPhonePage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(19);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__select_code_select_code__ = __webpack_require__(158);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_api__ = __webpack_require__(32);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_geolocation_geolocation__ = __webpack_require__(133);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__register_register__ = __webpack_require__(360);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__login_login__ = __webpack_require__(90);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -3016,81 +1699,128 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
-var LoginPage = /** @class */ (function () {
-    // imagen = 'assets/backgrounds/Background1.png';
-    function LoginPage(navCtrl, loadingCtrl, userProvider, toastCtrl, modalCtrl) {
-        this.navCtrl = navCtrl;
-        this.loadingCtrl = loadingCtrl;
-        this.userProvider = userProvider;
-        this.toastCtrl = toastCtrl;
-        this.modalCtrl = modalCtrl;
-        this.mail = null;
-        this.password = null;
-    }
-    LoginPage.prototype.login = function () {
+
+/**
+ * Generated class for the RegNumberPhonePage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
+var RegNumberPhonePage = /** @class */ (function () {
+    function RegNumberPhonePage(navCtrl, navParams, modal, api, toastCtrl, loadingCtrl, locationProvider) {
         var _this = this;
-        var cargando = this.loadingCtrl.create({
-            spinner: 'dots',
-            duration: 3000,
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+        this.modal = modal;
+        this.api = api;
+        this.toastCtrl = toastCtrl;
+        this.loadingCtrl = loadingCtrl;
+        this.locationProvider = locationProvider;
+        this.user_register = {
+            country_code: '',
+            flag: '',
+            value: '',
+        };
+        this.code_verify = null;
+        this.response_verify = {
+            id: null,
+            is_mail_verify: null,
+            mail_code: null,
+            phone_code: null,
+            country_id: null,
+        };
+        this.imagen = 'assets/backgrounds/Background2.png';
+        this.locationProvider.getBasicInfo().then(function (value) {
+            _this.user_register.country_code = value.country_code;
+            _this.user_register.flag = value.flag;
+            // this.user_register = Object.assign(value, this.user_register);
         });
-        cargando.present();
-        if (this.mail != null && this.password != null) {
-            this.userProvider.login(this.mail, this.password)
-                .then(function (data) {
-                if (data.success == 'ok') {
-                    _this.navCtrl.setRoot(__WEBPACK_IMPORTED_MODULE_5__home_home__["a" /* HomePage */]);
-                    cargando.dismiss();
-                }
-                else {
-                    cargando.dismiss();
-                }
-            }).catch(function (data) {
+    }
+    RegNumberPhonePage.prototype.cancel = function () {
+        this.navCtrl.setRoot(__WEBPACK_IMPORTED_MODULE_6__login_login__["a" /* LoginPage */]);
+    };
+    RegNumberPhonePage.prototype.sendNumberPhone = function () {
+        var _this = this;
+        if (this.user_register.country_code != "" && this.user_register.value != "") {
+            var loading_1 = this.loadingCtrl.create({
+                spinner: 'dots',
             });
+            var toast_1 = this.toastCtrl.create({
+                message: 'Se ha enviado un código de verificación al número celular ingresado.',
+                duration: 3000
+            });
+            loading_1.present();
+            this.api.post('auth/pre-sign-up', this.user_register).then(function (data) {
+                loading_1.dismiss();
+                toast_1.present();
+                _this.response_verify = data.verify;
+                _this.response_verify.country_id = data.country.id;
+                console.log(_this.response_verify.phone_code);
+            })
+                .catch();
         }
         else {
-            cargando.dismiss();
             var toast = this.toastCtrl.create({
-                message: 'Todos los datos son requeridos',
+                message: 'Toda la información es obligatoria',
                 duration: 3000,
             });
             toast.present();
         }
     };
-    LoginPage.prototype.recuperarcontrasena = function () {
-        var modal = this.modalCtrl.create(__WEBPACK_IMPORTED_MODULE_4__recovery_password_recovery_password__["a" /* RecoveryPasswordPage */]);
+    RegNumberPhonePage.prototype.selectcountry = function () {
+        var _this = this;
+        var modal = this.modal.create(__WEBPACK_IMPORTED_MODULE_2__select_code_select_code__["a" /* SelectCodePage */]);
         modal.present();
+        modal.onDidDismiss(function (data) {
+            if (data !== undefined) {
+                _this.user_register.country_code = data.code;
+                _this.user_register.flag = data.flag;
+            }
+        });
     };
-    LoginPage.prototype.registro = function () {
-        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_3__reg_number_phone_reg_number_phone__["a" /* RegNumberPhonePage */]);
+    RegNumberPhonePage.prototype.verifyCode = function () {
+        if (this.code_verify == this.response_verify.phone_code) {
+            this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_5__register_register__["a" /* RegisterPage */], { 'response': this.response_verify, 'register': this.user_register });
+        }
+        else {
+            var toast = this.toastCtrl.create({
+                message: 'Código incorrecto.',
+                duration: 3000,
+            });
+            toast.present();
+        }
     };
-    LoginPage = __decorate([
+    RegNumberPhonePage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-            selector: 'page-login',template:/*ion-inline-start:"/Users/eyeline/Documents/eyepaycashappGitHub/src/pages/login/login.html"*/'<ion-content class="imgBackground vignette">\n  <div class="center">\n    <ion-img class="logo" src="assets/imgs/EPCLogo.png"></ion-img>\n  </div>\n  <form #formulario (submit)="login()">\n    <ion-list>\n      <ion-item>\n        <ion-input placeholder="Email" class="inputClass marginItems" type="email" required name="correo" [(ngModel)]="mail"> </ion-input>\n      </ion-item>\n      <ion-item>\n        <ion-input placeholder="Contraseña" class="inputClass marginItems" type="password" [(ngModel)]="password" name="userpass"> </ion-input>\n      </ion-item>\n      <ion-item class="center">\n        <button class="buttonPayCash borderBtns" ion-button small>INGRESAR</button>\n      </ion-item>\n    </ion-list>\n  </form>\n  <ion-item>\n    <ion-col col-6>\n      <button class="textWhite" ion-button (click)="registro()" clear block class="transparente">Registrarme</button>\n    </ion-col>\n    <ion-col col-6>\n      <button ion-button (click)="recuperarcontrasena()" clear block class="transparente">Recuperar contraseña</button>\n    </ion-col>\n  </ion-item>\n</ion-content>'/*ion-inline-end:"/Users/eyeline/Documents/eyepaycashappGitHub/src/pages/login/login.html"*/,
+            selector: 'page-reg-number-phone',template:/*ion-inline-start:"/Users/eyeline/Documents/eyepaycashappGitHub/src/pages/reg-number-phone/reg-number-phone.html"*/'<ion-content class="imgBackground vignette">\n  <div style="margin-top:12%" class="center">\n    <ion-img style="margin-bottom: 10%;" class="logo" src="assets/imgs/EPCLogo.png"></ion-img>\n    <div class="center">\n      <ion-label style="color:white" class="center"> Enviaremos un CÓDIGO de verificación a el número<br> que registres\n        a continuación.\n      </ion-label>\n    </div>\n  </div>\n\n  <div class="center divMargin">\n    <ion-grid class="center marGrid">\n      <ion-row>\n        <ion-col col-5>\n          <ion-item class="item-flag item-md2 item-ios2">\n            <img [src]="user_register.flag" class="flagphone banderaWidt">\n            <button ion-button (click)="selectcountry()" class="transparente item-md2 item-button2 button-md ">+\n              {{user_register.country_code}}</button>\n          </ion-item>\n        </ion-col>\n        <ion-col col-7>\n          <ion-item class="stylCel">\n            <ion-input required type="text" name="numerocelular" [(ngModel)]="user_register.value" placeholder="Número movil (celular)"></ion-input>\n          </ion-item>\n        </ion-col>\n      </ion-row>\n    </ion-grid>\n    <ion-item class="inputClass">\n      <ion-input placeholder="Introduce el código" maxlength="6" required style="text-align: center" type="text"\n        [(ngModel)]="code_verify"></ion-input>\n    </ion-item>\n  </div>\n  <div class="center marginBts">\n    <button class="buttonPayCash borderBtns" (click)="cancel()" ion-button small>Cancelar</button>\n    <button class="buttonPayCash borderBtns" (click)="sendNumberPhone()" ion-button small *ngIf="response_verify.phone_code == null">Enviar\n    </button>\n    <button class="buttonPayCash borderBtns" (click)="verifyCode()" ion-button small *ngIf="response_verify.phone_code != null">Continuar\n    </button>\n  </div>\n\n</ion-content>'/*ion-inline-end:"/Users/eyeline/Documents/eyepaycashappGitHub/src/pages/reg-number-phone/reg-number-phone.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* LoadingController */],
-            __WEBPACK_IMPORTED_MODULE_2__providers_auth_user_auth_user__["a" /* AuthUserProvider */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* ModalController */],
+            __WEBPACK_IMPORTED_MODULE_3__providers_api__["a" /* Api */],
             __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* ToastController */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* ModalController */]])
-    ], LoginPage);
-    return LoginPage;
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* LoadingController */],
+            __WEBPACK_IMPORTED_MODULE_4__providers_geolocation_geolocation__["a" /* GeolocationProvider */]])
+    ], RegNumberPhonePage);
+    return RegNumberPhonePage;
 }());
 
-//# sourceMappingURL=login.js.map
+//# sourceMappingURL=reg-number-phone.js.map
 
 /***/ }),
 
-/***/ 714:
+/***/ 691:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MyApp; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(7);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(382);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(381);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_geolocation_geolocation__ = __webpack_require__(134);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_login_login__ = __webpack_require__(66);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(19);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(356);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(355);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_geolocation_geolocation__ = __webpack_require__(133);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_auth_user_auth_user__ = __webpack_require__(33);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__providers_load_information_load_information__ = __webpack_require__(159);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -3100,6 +1830,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+
 
 
 
@@ -3107,10 +1838,18 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 var MyApp = /** @class */ (function () {
-    function MyApp(platform, statusBar, splashScreen, locationProvider) {
+    function MyApp(platform, statusBar, splashScreen, locationProvider, auth, informationProvider) {
         var _this = this;
         this.locationProvider = locationProvider;
-        this.rootPage = __WEBPACK_IMPORTED_MODULE_5__pages_login_login__["a" /* LoginPage */];
+        this.auth = auth;
+        this.informationProvider = informationProvider;
+        this.rootPage = 'LoginPage';
+        this.auth.trylogin().then(function (value) {
+            if (value) {
+                _this.rootPage = 'HomePage';
+                _this.informationProvider.init();
+            }
+        });
         platform.ready().then(function () {
             statusBar.styleDefault();
             splashScreen.hide();
@@ -3126,7 +1865,9 @@ var MyApp = /** @class */ (function () {
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* Platform */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */],
             __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */],
-            __WEBPACK_IMPORTED_MODULE_4__providers_geolocation_geolocation__["a" /* GeolocationProvider */]])
+            __WEBPACK_IMPORTED_MODULE_4__providers_geolocation_geolocation__["a" /* GeolocationProvider */],
+            __WEBPACK_IMPORTED_MODULE_5__providers_auth_user_auth_user__["a" /* AuthUserProvider */],
+            __WEBPACK_IMPORTED_MODULE_6__providers_load_information_load_information__["a" /* LoadInformationProvider */]])
     ], MyApp);
     return MyApp;
 }());
@@ -3135,15 +1876,15 @@ var MyApp = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 715:
+/***/ 692:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return VerificationProvider; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_common_http__ = __webpack_require__(58);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(7);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__api__ = __webpack_require__(23);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_common_http__ = __webpack_require__(47);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(19);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__api__ = __webpack_require__(32);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -3207,42 +1948,91 @@ var VerificationProvider = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 716:
+/***/ 90:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HomePageModule; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(7);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__home__ = __webpack_require__(138);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LoginPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(19);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_auth_user_auth_user__ = __webpack_require__(33);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__recovery_password_recovery_password__ = __webpack_require__(357);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
 
 
 
-var HomePageModule = /** @class */ (function () {
-    function HomePageModule() {
+
+var LoginPage = /** @class */ (function () {
+    // imagen = 'assets/backgrounds/Background1.png';
+    function LoginPage(navCtrl, loadingCtrl, userProvider, toastCtrl, modalCtrl) {
+        this.navCtrl = navCtrl;
+        this.loadingCtrl = loadingCtrl;
+        this.userProvider = userProvider;
+        this.toastCtrl = toastCtrl;
+        this.modalCtrl = modalCtrl;
+        this.mail = null;
+        this.password = null;
     }
-    HomePageModule = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["J" /* NgModule */])({
-            declarations: [
-                __WEBPACK_IMPORTED_MODULE_2__home__["a" /* HomePage */],
-            ],
-            imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__home__["a" /* HomePage */]),
-            ],
-        })
-    ], HomePageModule);
-    return HomePageModule;
+    LoginPage.prototype.login = function () {
+        var _this = this;
+        var cargando = this.loadingCtrl.create({
+            spinner: 'dots',
+            duration: 3000,
+        });
+        cargando.present();
+        if (this.mail != null && this.password != null) {
+            this.userProvider.login(this.mail, this.password)
+                .then(function (data) {
+                if (data.success == 'ok') {
+                    _this.navCtrl.setRoot("HomePage");
+                    cargando.dismiss();
+                }
+                else {
+                    cargando.dismiss();
+                }
+            }).catch(function (data) {
+            });
+        }
+        else {
+            cargando.dismiss();
+            var toast = this.toastCtrl.create({
+                message: 'Todos los datos son requeridos',
+                duration: 3000,
+            });
+            toast.present();
+        }
+    };
+    LoginPage.prototype.recuperarcontrasena = function () {
+        var modal = this.modalCtrl.create(__WEBPACK_IMPORTED_MODULE_3__recovery_password_recovery_password__["a" /* RecoveryPasswordPage */]);
+        modal.present();
+    };
+    LoginPage.prototype.registro = function () {
+        this.navCtrl.push("RegNumberPhonePage");
+    };
+    LoginPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+            selector: 'page-login',template:/*ion-inline-start:"/Users/eyeline/Documents/eyepaycashappGitHub/src/pages/login/login.html"*/'<ion-content class="imgBackground vignette">\n  <div class="center">\n    <ion-img class="logo" src="assets/imgs/EPCLogo.png"></ion-img>\n  </div>\n  <form #formulario (submit)="login()">\n    <ion-list>\n      <ion-item>\n        <ion-input placeholder="Email" class="inputClass marginItems" type="email" required name="correo" [(ngModel)]="mail"> </ion-input>\n      </ion-item>\n      <ion-item>\n        <ion-input placeholder="Contraseña" class="inputClass marginItems" type="password" [(ngModel)]="password" name="userpass"> </ion-input>\n      </ion-item>\n      <ion-item class="center">\n        <button class="buttonPayCash borderBtns" ion-button small>INGRESAR</button>\n      </ion-item>\n    </ion-list>\n  </form>\n  <ion-item>\n    <ion-col col-6>\n      <button class="textWhite" ion-button (click)="registro()" clear block class="transparente">Registrarme</button>\n    </ion-col>\n    <ion-col col-6>\n      <button ion-button (click)="recuperarcontrasena()" clear block class="transparente">Recuperar contraseña</button>\n    </ion-col>\n  </ion-item>\n</ion-content>'/*ion-inline-end:"/Users/eyeline/Documents/eyepaycashappGitHub/src/pages/login/login.html"*/,
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* LoadingController */],
+            __WEBPACK_IMPORTED_MODULE_2__providers_auth_user_auth_user__["a" /* AuthUserProvider */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* ToastController */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* ModalController */]])
+    ], LoginPage);
+    return LoginPage;
 }());
 
-//# sourceMappingURL=home.module.js.map
+//# sourceMappingURL=login.js.map
 
 /***/ })
 
-},[383]);
+},[362]);
 //# sourceMappingURL=main.js.map

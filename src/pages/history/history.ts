@@ -24,8 +24,8 @@ export class HistoryPage {
 
   public filtro: any = {
     status: 0,
-    page: null,
-    perpage: null
+    page: 1,
+    perpage: 50
   };
 
   constructor(public navCtrl: NavController,
@@ -40,14 +40,23 @@ export class HistoryPage {
   getInfo() {
     this.api.get('app/transactions',
       this.userProvider,
-      {'expand':'country,coin,transactionCommission','status':this.filtro.status,'page':this.filtro.page,'per-page':this.filtro.perpage}).then((data: any) => {
-      this.transactions = data.items;
+      {'expand':'country,coin,transactionCommission,coinHash',
+        'status':this.filtro.status,
+        'page':this.filtro.page,
+        'per-page':this.filtro.perpage}).then((data: any) => {
+        this.transactions = data.items;
       this.links = data.links;
       this.meta = data.meta;
+
+      this.filtro.status =0;
+      this.filtro.page = 1;
+      this.filtro.perpage = 1;
     });
   }
 
   goDetalle(transaction){
+    console.log(transaction);
     this.navCtrl.push(HistoryResumePage,{'transaction':transaction});
   }
+
 }

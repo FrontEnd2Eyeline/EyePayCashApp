@@ -15,31 +15,8 @@ import {Geolocation} from "@ionic-native/geolocation";
 import {NativeGeocoder} from "@ionic-native/native-geocoder";
 import {AuthUserProvider} from '../providers/auth-user/auth-user';
 import {RegNumberPhonePageModule} from "../pages/reg-number-phone/reg-number-phone.module";
-import {LoginPage} from "../pages/login/login";
-import {RecoveryPasswordPage} from "../pages/recovery-password/recovery-password";
-import {PasswordUpdatePage} from "../pages/password-update/password-update";
-import {RegisterPage} from "../pages/register/register";
-import {HomePage} from "../pages/home/home";
-import {AccountPage} from "../pages/account/account";
-import {HistoryPage} from "../pages/history/history";
-import {TransactionPage} from "../pages/transaction/transaction";
-import {ModalWelcomePage} from "../pages/modal-welcome/modal-welcome";
 import { VerificationProvider } from '../providers/verification/verification';
-import {ModalTransactionPage} from "../pages/modal-transaction/modal-transaction";
-import { PoliticasPage } from '../pages/politicas/politicas';
-import {LoginPageModule} from "../pages/login/login.module";
-import {AccountPageModule} from "../pages/account/account.module";
-import {HistoryPageModule} from "../pages/history/history.module";
-import {HomePageModule} from "../pages/home/home.module";
-import {ModalTransactionPageModule} from "../pages/modal-transaction/modal-transaction.module";
-import {ModalWelcomePageModule} from "../pages/modal-welcome/modal-welcome.module";
-import {PasswordUpdatePageModule} from "../pages/password-update/password-update.module";
-import {PoliticasPageModule} from "../pages/politicas/politicas.module";
-import {RecoveryPasswordPageModule} from "../pages/recovery-password/recovery-password.module";
-import {RegisterPageModule} from "../pages/register/register.module";
-import {TransactionPageModule} from "../pages/transaction/transaction.module";
-import {TransactionResumePageModule} from "../pages/transaction-resume/transaction-resume.module";
-import {HistoryResumePageModule} from "../pages/history-resume/history-resume.module";
+import { LoadInformationProvider } from '../providers/load-information/load-information';
 
 @NgModule({
   declarations: [
@@ -52,19 +29,6 @@ import {HistoryResumePageModule} from "../pages/history-resume/history-resume.mo
     IonicStorageModule.forRoot(),
     SelectCodePageModule,
     RegNumberPhonePageModule,
-    AccountPageModule,
-    HistoryPageModule,
-    HomePageModule,
-    LoginPageModule,
-    ModalTransactionPageModule,
-    ModalWelcomePageModule,
-    PasswordUpdatePageModule,
-    PoliticasPageModule,
-    RecoveryPasswordPageModule,
-    RegisterPageModule,
-    TransactionPageModule,
-    TransactionResumePageModule,
-    HistoryResumePageModule,
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -81,6 +45,7 @@ import {HistoryResumePageModule} from "../pages/history-resume/history-resume.mo
     GeolocationProvider,
     AuthUserProvider,
     VerificationProvider,
+    LoadInformationProvider,
   ]
 })
 export class AppModule {

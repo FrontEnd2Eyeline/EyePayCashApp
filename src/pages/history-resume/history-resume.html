@@ -13,49 +13,87 @@
   <ion-card>
     <ion-card-content>
       <ion-list>
+        <label stacked>Información del país</label>
         <ion-row>
-          <ion-col col-12>
-            <label stacked>Información del país</label>
-            <p><b>Nombre: </b> {{country?.name}} </p>
-            <p><b>Moneda: </b>{{country?.currency}}</p>
+          <ion-col col-6 text-left>
+            Nombre:
+          </ion-col>
+          <ion-col col-6 text-right>
+            {{country?.name}}
+          </ion-col>
+          <ion-col col-6 text-left>
+            Moneda:
+          </ion-col>
+          <ion-col col-6 text-right>
+            {{country?.currency}}
           </ion-col>
         </ion-row>
+        <label stacked>Información de {{coin?.full_name}}</label>
         <ion-row>
-          <ion-col col-12>
-            <label stacked>Información de {{coin?.full_name}}</label>
-            <p><b>Costo: </b> {{coin?.usd_value}} </p>
+          <ion-col col-6 text-left>
+            Costo:
+          </ion-col>
+          <ion-col col-6 text-right>
+            USD {{comision.crypto_value_to_usd}}
           </ion-col>
         </ion-row>
+        <label stacked>Información de comisión</label>
         <ion-row>
-          <ion-col col-12>
-            <label stacked>Información de comisión</label>
-            <p><b>Total en USD: </b> {{comision?.total_in_usd}}</p>
-            <p><b>Total en Cryptomoneda: </b> {{comision?.total_in_crypto}}</p>
+          <ion-col col-6 text-left>
+            Total en USD
+          </ion-col>
+          <ion-col col-6 text-right>
+            USD {{comision?.total_in_usd}}
+          </ion-col>
+          <ion-col col-6 text-left>
+            Total en Cryptomoneda
+          </ion-col>
+          <ion-col col-6 text-right>
+            {{coin.short_name}} {{comision?.total_in_crypto}}
           </ion-col>
         </ion-row>
+        <label stacked>Información de transacción</label>
         <ion-row>
-          <ion-col col-12>
-            <label stacked>Información de transacción</label>
-            <p><b>Costo en moneda local: </b> {{historyInfo?.amount_local}}</p>
-            <p><b>Costo en USD: </b> {{historyInfo?.amount_usd}} </p>
-            <p><b>Fecha de la transacción: </b> {{historyInfo?.date_request}} </p>
-            <p><b>Número móvil de destino: </b> {{historyInfo?.phone_user_des}}</p>
+          <ion-col col-6 text-left>Costo en moneda local:</ion-col>
+          <ion-col col-6 text-right>{{historyInfo?.amount_local}}</ion-col>
+
+          <ion-col col-6 text-left>Costo en USD:</ion-col>
+          <ion-col col-6 text-right>{{historyInfo?.amount_usd}}</ion-col>
+
+          <ion-col col-6 text-left>Fecha de la transacción:</ion-col>
+          <ion-col col-6 text-right>{{historyInfo?.date_request}}</ion-col>
+
+          <ion-col col-6 text-left>Número móvil de destino:</ion-col>
+          <ion-col col-6 text-right>{{historyInfo?.phone_user_des}}</ion-col>
+        </ion-row>
+        <label stacked>Estado de la transacción</label>
+        <ion-row>
+          <ion-col col-4 text-left>Estado:</ion-col>
+          <ion-col col-8 text-right>
             <p *ngIf="historyInfo?.process_status==0"><b>Estado: PENDIENTE DE PAGO </b></p>
             <p *ngIf="historyInfo?.process_status==1"><b>Estado: PAGADO Y PENDIENTE POR RETIRAR </b></p>
             <p *ngIf="historyInfo?.process_status==2"><b>Estado: PAGADO Y RETIRADO </b></p>
-
           </ion-col>
         </ion-row>
 
+
         <ion-col col-12 *ngIf="historyInfo?.process_status==0">
           <h2 text-center>La transacción se encuentra pendiente por pagar. </h2>
-          <h2 text-center>Número de referencia de transacción:</h2>
-          <h1 text-center>{{historyInfo?.key_request}}</h1>
+          <h2 text-center>Número de referencia para pagar:</h2>
+          <h1 text-center>{{coinHash?.eye_hash}}</h1>
+          <img src="{{coinHash.qr_url}}">
+        </ion-col>
+        <ion-col col-12 *ngIf="historyInfo?.process_status==1">
+          <h2 text-center>La transacción se encuentra disponible para retirar. </h2>
+          <h2 text-center>Número de referencia para retirar:</h2>
+          <h1 text-center>{{historyInfo.key_request}}</h1>
         </ion-col>
         <ion-col col-12>
           <h2 text-center>Total de la transacción</h2>
           <h1 text-center>{{historyInfo?.amount_btc}}</h1>
         </ion-col>
+
+
       </ion-list>
     </ion-card-content>
   </ion-card>

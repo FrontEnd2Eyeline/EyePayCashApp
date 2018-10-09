@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import {IonicPage, LoadingController, NavController, NavParams, ToastController, ViewController} from 'ionic-angular';
 import {Api} from "../../providers/api";
 import {AuthUserProvider} from "../../providers/auth-user/auth-user";
-import {createNumberMask} from "text-mask-addons/dist/textMaskAddons";
 import {HomePage} from "../home/home";
 import {TransactionResumePage} from "../transaction-resume/transaction-resume";
 

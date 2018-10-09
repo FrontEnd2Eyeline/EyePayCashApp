@@ -25826,6 +25826,10 @@ page-history .item-md {
   transition: background-color 300ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+page-history ion-select {
+  max-width: 100% !important;
+}
+
 page-home ion-img.img-loaded2 img {
   display: initial !important;
   width: 100% !important;

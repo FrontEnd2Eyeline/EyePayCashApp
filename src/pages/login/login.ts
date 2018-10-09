@@ -1,10 +1,9 @@
 import {Component} from '@angular/core';
-import {IonicPage, LoadingController, ModalController, NavController, NavParams, ToastController} from 'ionic-angular';
+import {IonicPage, LoadingController, ModalController, NavController, ToastController} from 'ionic-angular';
 import {AuthUserProvider} from "../../providers/auth-user/auth-user";
 import {RegNumberPhonePage} from "../reg-number-phone/reg-number-phone";
 import {RecoveryPasswordPage} from "../recovery-password/recovery-password";
 import {HomePage} from "../home/home";
-import {ModalWelcomePage} from "../modal-welcome/modal-welcome";
 
 @IonicPage()
 @Component({
@@ -34,7 +33,7 @@ export class LoginPage {
       this.userProvider.login(this.mail, this.password)
         .then((data: any) => {
           if (data.success == 'ok') {
-            this.navCtrl.setRoot(HomePage);
+            this.navCtrl.setRoot("HomePage");
             cargando.dismiss();
           } else {
             cargando.dismiss();
@@ -59,7 +58,7 @@ export class LoginPage {
 
 
   registro() {
-    this.navCtrl.push(RegNumberPhonePage)
+    this.navCtrl.push("RegNumberPhonePage");
   }
 
 }

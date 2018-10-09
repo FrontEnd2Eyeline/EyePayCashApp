@@ -5,10 +5,21 @@
   </ion-navbar>
 
 </ion-header>
-
-
-<<<<<<< HEAD
 <ion-content padding>
+
+  <ion-row>
+    <ion-col col-6>
+      <ion-select [(ngModel)]="filtro.status">
+        <ion-option value="0">Estado pendiente</ion-option>
+        <ion-option value="1">Estado por retirar</ion-option>
+        <ion-option value="2">Estado terminadas</ion-option>
+      </ion-select>
+    </ion-col>
+    <ion-col col-6>
+      <button ion-button (click)="getInfo()">Buscar</button>
+    </ion-col>
+  </ion-row>
+
   <ion-list>
     <ion-card *ngFor="let transaction of transactions" (click)="goDetalle(transaction)">
       <ion-card-content>
@@ -29,35 +40,5 @@
         </ion-row>
       </ion-card-content>
     </ion-card>
-=======
-<ion-content padding >
-  <ion-list class="center bground">
-
-    <button *ngFor="let transaction of transactions" (click)="goDetalle(transaction)">
-      <ion-card>
-        <ion-card-content>
-          <ion-row>
-            <ion-col col-6>
-              <h6>{{transaction.country.name}}</h6>
-            </ion-col>
-            <ion-col col-6>
-              {{transaction.date_request |date:'MM/dd/yyyy'}}
-              <!--transaction.date_request |date:'MM/dd/yyyy h:mma'}}-->
-            </ion-col>
-            <ion-col col-4>
-              {{transaction.coin.full_name}}
-            </ion-col>
-            <ion-col col-4>
-              {{transaction.amount_local | currency:transaction.country.currency+" " : 2}}
-            </ion-col>
-            <ion-col col-4 >
-              <ion-icon name="add"></ion-icon>
-            </ion-col>
-          </ion-row>
-        </ion-card-content>
-      </ion-card>
-    </button>
-
->>>>>>> 646ab5d3eb26ff7ba889e486a690cdf7ee16ab36
   </ion-list>
 </ion-content>

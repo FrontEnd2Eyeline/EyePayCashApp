@@ -4,17 +4,30 @@ import {StatusBar} from '@ionic-native/status-bar';
 import {SplashScreen} from '@ionic-native/splash-screen';
 import {GeolocationProvider} from "../providers/geolocation/geolocation";
 import {LoginPage} from "../pages/login/login";
+import {AuthUserProvider} from "../providers/auth-user/auth-user";
+import {HomePage} from "../pages/home/home";
+import {LoadInformationProvider} from "../providers/load-information/load-information";
 
 @Component({
   templateUrl: 'app.html'
 })
 export class MyApp {
-  rootPage: any = LoginPage;
+  rootPage: string = 'LoginPage';
 
   constructor(platform: Platform, statusBar: StatusBar,
               splashScreen: SplashScreen,
               public locationProvider: GeolocationProvider,
+              private auth: AuthUserProvider,
+              private informationProvider : LoadInformationProvider,
+
   ) {
+    this.auth.trylogin().then(value => {
+      if(value){
+        this.rootPage = 'HomePage';
+        this.informationProvider.init()
+      }
+    });
+
     platform.ready().then(() => {
       statusBar.styleDefault();
       splashScreen.hide();

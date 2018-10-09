@@ -69,16 +69,21 @@ export class AuthUserProvider {
   }
 
   isLogin() {
-    return this.user_Info !== null;
+    return (this.user_Info != null);
   }
 
 
   trylogin() {
-    this.user_Info = JSON.parse(window.localStorage.getItem('user'));
-    if (this.user_Info == null)
-      this.user_Info = {
-        user: null,
-      };
+    return new Promise(resolve => {
+      this.user_Info = JSON.parse(window.localStorage.getItem('user'));
+      console.log(this.user_Info);
+      if (this.user_Info != null){
+        this.setUserCountry(this.user_Info.country);
+        this.setUserVerify(this.user_Info.userVerify);
+        resolve(true)
+      }
+      resolve(false)
+    })
   }
 
   accessParam() {
@@ -95,6 +100,7 @@ export class AuthUserProvider {
   setUserCountry(Country: any) {
     this.user_Country = Country;
   }
+
   setUserVerify(Verify: any) {
     this.User_Verify = Verify;
   }

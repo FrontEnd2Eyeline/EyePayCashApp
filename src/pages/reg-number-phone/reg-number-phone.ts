@@ -4,7 +4,6 @@ import {SelectCodePage} from "../select-code/select-code";
 import {Api} from "../../providers/api";
 import {GeolocationProvider} from "../../providers/geolocation/geolocation";
 import {RegisterPage} from "../register/register";
-import {HomePage} from "../home/home";
 import {LoginPage} from "../login/login";
 
 /**
@@ -21,7 +20,6 @@ import {LoginPage} from "../login/login";
 })
 export class RegNumberPhonePage {
 
-  // hay que pasarle los datos del provier al user en registro.
   public user_register: any = {
     country_code: '',
     flag: '',
