@@ -1,25 +1,27 @@
-<ion-content class="imgBackground vignette">
-  <div class="center">
-    <ion-img class="logo" src="assets/imgs/EPCLogo.png"></ion-img>
-  </div>
-
-  <div class="center">
-    <ion-img name="add" (click)="goPage('transaction')" class="img-loaded2 img"
-             src="assets/icon/TransaccionIco.png"></ion-img>
-  </div>
-
-  <div class="center">
-    <ion-img name="list-box" (click)="goPage('history')" class="img-loaded2 img"
-             src="assets/icon/HistoryIco.png"></ion-img>
-  </div>
-  <div class="center">
-    <ion-img name="maps" (click)="goPage('maps')" class="img-loaded2 img"
-             src="assets/icon/CuentaIco.png"></ion-img>
-  </div>
-
-  <div class="center">
-    <ion-img name="person" (click)="goPage('account')" class="img-loaded2 img"
-             src="assets/icon/CuentaIco.png"></ion-img>
-  </div>
-
+<ion-content class="imgBackground">
+  <ion-list>
+    <ion-row>
+      <ion-col col-12 text-center>
+        <img src="assets/imgs/EPCLogo.png" alt="" class="logo">
+      </ion-col>
+      <ion-col col-12 text-center>
+        <ion-img name="add" (click)="goPage('transaction')" class="img-loaded2 img"
+                 src="assets/icon/TransaccionIco.png"></ion-img>
+      </ion-col>
+      <ion-col col-12 text-center>
+        <ion-img name="list-box" (click)="goPage('history')" class="img-loaded2 img"
+                 src="assets/icon/HistoryIco.png"></ion-img>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col col-12 text-center>
+        <ion-img name="maps" (click)="goPage('maps')" class="img-loaded2 img"
+                 src="assets/icon/mapa.png"></ion-img>
+      </ion-col>
+      <ion-col col-12 text-center>
+        <ion-img name="person" (click)="goPage('account')" class="img-loaded2 img"
+                 src="assets/icon/CuentaIco.png"></ion-img>
+      </ion-col>
+    </ion-row>
+  </ion-list>
 </ion-content>

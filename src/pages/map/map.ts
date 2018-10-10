@@ -21,6 +21,7 @@ import {mapStyle} from "../../app/mapStyle";
 export class MapPage {
 
   map: GoogleMap;
+  markers: any[] = [];
 
   constructor(
     public navCtrl: NavController,
@@ -61,7 +62,7 @@ export class MapPage {
       });
     this.map.on(GoogleMapsEvent.CAMERA_MOVE_END).subscribe(value => {
       let mapStop = value[0];
-      if (mapStop.zoom >= 10) {
+      if (mapStop.zoom >= 5) {
         this.loadPoints(mapStop.target.lat, mapStop.target.lng);
       }
     })
@@ -73,13 +74,19 @@ export class MapPage {
       lng: lng,
       rad: 20 //20 km a la redonda
     }).then((value: any[]) => {
-      value.forEach((i, item: any) => {
-        this.map.addMarker({
-          title: item.company_name + " \n " + item.address,
-          icon: 'blue',
-          animation: 'DROP',
-          position: new LatLng(item.lat, item.lng)
-        });
+      console.log(value);
+      value.forEach((item: any) => {
+        if (this.markers.indexOf(item.id) < 0)
+          this.map.addMarker({
+            title: item.company_name + " \n " + item.address,
+            icon: 'blue',
+            animation: 'DROP',
+            position: new LatLng(item.lat, item.lng)
+          }).catch((erro) => {
+            console.log(erro)
+          })
+            .then(value1 => console.log(value1));
+        this.markers.push(item.id);
       })
     })
   }
