@@ -1,1 +1,96 @@
-webpackJsonp([12],{657:function(l,n,u){"use strict";function a(l){return e._22(0,[(l()(),e.Z(0,0,null,null,85,"ion-content",[["class","imgBackground vignette"]],[[2,"statusbar-padding",null],[2,"has-refresher",null]],null,null,h.b,h.a)),e.Y(1,4374528,null,0,C.a,[f.a,v.a,Y.a,e.j,e.z,y.a,P.a,e.u,[2,k.a],[2,Z.a]],null,null),(l()(),e._20(-1,1,["\n  "])),(l()(),e.Z(3,0,null,1,4,"div",[["class","center"]],null,null,null,null,null)),(l()(),e._20(-1,null,["\n    "])),(l()(),e.Z(5,0,null,null,1,"ion-img",[["class","logo"],["src","assets/imgs/EPCLogo.png"]],null,null,null,j.b,j.a)),e.Y(6,1228800,null,0,z.a,[e.j,e.z,v.a,[2,C.a],Y.a],{src:[0,"src"]},null),(l()(),e._20(-1,null,["\n  "])),(l()(),e._20(-1,1,["\n  "])),(l()(),e.Z(9,0,[["formulario",1]],1,51,"form",[["novalidate",""]],[[2,"ng-untouched",null],[2,"ng-touched",null],[2,"ng-pristine",null],[2,"ng-dirty",null],[2,"ng-valid",null],[2,"ng-invalid",null],[2,"ng-pending",null]],[[null,"submit"],[null,"reset"]],function(l,n,u){var a=!0,s=l.component;if("submit"===n){a=!1!==e._11(l,11).onSubmit(u)&&a}if("reset"===n){a=!1!==e._11(l,11).onReset()&&a}if("submit"===n){a=!1!==s.login()&&a}return a},null,null)),e.Y(10,16384,null,0,w.q,[],null,null),e.Y(11,4210688,null,0,w.l,[[8,null],[8,null]],null,null),e._16(2048,null,w.b,null,[w.l]),e.Y(13,16384,null,0,w.k,[w.b],null,null),(l()(),e._20(-1,null,["\n    "])),(l()(),e.Z(15,0,null,null,44,"ion-list",[],null,null,null,null,null)),e.Y(16,16384,null,0,R.a,[f.a,e.j,e.z,v.a,M.l,Y.a],null,null),(l()(),e._20(-1,null,["\n      "])),(l()(),e.Z(18,0,null,null,14,"ion-item",[["class","item item-block"]],null,null,null,q.b,q.a)),e.Y(19,1097728,null,3,L.a,[I.a,f.a,e.j,e.z,[2,E.a]],null,null),e._18(335544320,1,{contentLabel:0}),e._18(603979776,2,{_buttons:1}),e._18(603979776,3,{_icons:1}),e.Y(23,16384,null,0,T.a,[],null,null),(l()(),e._20(-1,2,["\n        "])),(l()(),e.Z(25,0,null,3,6,"ion-input",[["class","inputClass marginItems"],["name","correo"],["placeholder","Email"],["required",""],["type","email"]],[[1,"required",0],[2,"ng-untouched",null],[2,"ng-touched",null],[2,"ng-pristine",null],[2,"ng-dirty",null],[2,"ng-valid",null],[2,"ng-invalid",null],[2,"ng-pending",null]],[[null,"ngModelChange"]],function(l,n,u){var a=!0;if("ngModelChange"===n){a=!1!==(l.component.mail=u)&&a}return a},V.b,V.a)),e.Y(26,16384,null,0,w.o,[],{required:[0,"required"]},null),e._16(1024,null,w.g,function(l){return[l]},[w.o]),e.Y(28,671744,null,0,w.m,[[2,w.b],[2,w.g],[8,null],[8,null]],{name:[0,"name"],model:[1,"model"]},{update:"ngModelChange"}),e._16(2048,null,w.i,null,[w.m]),e.Y(30,16384,null,0,w.j,[w.i],null,null),e.Y(31,5423104,null,0,D.a,[f.a,v.a,I.a,y.a,e.j,e.z,[2,C.a],[2,L.a],[2,w.i],Y.a],{type:[0,"type"],placeholder:[1,"placeholder"]},null),(l()(),e._20(-1,2,["\n      "])),(l()(),e._20(-1,null,["\n      "])),(l()(),e.Z(34,0,null,null,12,"ion-item",[["class","item item-block"]],null,null,null,q.b,q.a)),e.Y(35,1097728,null,3,L.a,[I.a,f.a,e.j,e.z,[2,E.a]],null,null),e._18(335544320,4,{contentLabel:0}),e._18(603979776,5,{_buttons:1}),e._18(603979776,6,{_icons:1}),e.Y(39,16384,null,0,T.a,[],null,null),(l()(),e._20(-1,2,["\n        "])),(l()(),e.Z(41,0,null,3,4,"ion-input",[["class","inputClass marginItems"],["name","userpass"],["placeholder","Contraseña"],["type","password"]],[[2,"ng-untouched",null],[2,"ng-touched",null],[2,"ng-pristine",null],[2,"ng-dirty",null],[2,"ng-valid",null],[2,"ng-invalid",null],[2,"ng-pending",null]],[[null,"ngModelChange"]],function(l,n,u){var a=!0;if("ngModelChange"===n){a=!1!==(l.component.password=u)&&a}return a},V.b,V.a)),e.Y(42,671744,null,0,w.m,[[2,w.b],[8,null],[8,null],[8,null]],{name:[0,"name"],model:[1,"model"]},{update:"ngModelChange"}),e._16(2048,null,w.i,null,[w.m]),e.Y(44,16384,null,0,w.j,[w.i],null,null),e.Y(45,5423104,null,0,D.a,[f.a,v.a,I.a,y.a,e.j,e.z,[2,C.a],[2,L.a],[2,w.i],Y.a],{type:[0,"type"],placeholder:[1,"placeholder"]},null),(l()(),e._20(-1,2,["\n      "])),(l()(),e._20(-1,null,["\n      "])),(l()(),e.Z(48,0,null,null,10,"ion-item",[["class","center item item-block"]],null,null,null,q.b,q.a)),e.Y(49,1097728,null,3,L.a,[I.a,f.a,e.j,e.z,[2,E.a]],null,null),e._18(335544320,7,{contentLabel:0}),e._18(603979776,8,{_buttons:1}),e._18(603979776,9,{_icons:1}),e.Y(53,16384,null,0,T.a,[],null,null),(l()(),e._20(-1,2,["\n        "])),(l()(),e.Z(55,0,null,2,2,"button",[["class","buttonPayCash borderBtns"],["ion-button",""],["small",""]],null,null,null,N.b,N.a)),e.Y(56,1097728,[[8,4]],0,S.a,[[8,""],f.a,e.j,e.z],{small:[0,"small"]},null),(l()(),e._20(-1,0,["INGRESAR"])),(l()(),e._20(-1,2,["\n      "])),(l()(),e._20(-1,null,["\n    "])),(l()(),e._20(-1,null,["\n  "])),(l()(),e._20(-1,1,["\n  "])),(l()(),e.Z(62,0,null,1,22,"ion-item",[["class","item item-block"]],null,null,null,q.b,q.a)),e.Y(63,1097728,null,3,L.a,[I.a,f.a,e.j,e.z,[2,E.a]],null,null),e._18(335544320,10,{contentLabel:0}),e._18(603979776,11,{_buttons:1}),e._18(603979776,12,{_icons:1}),e.Y(67,16384,null,0,T.a,[],null,null),(l()(),e._20(-1,2,["\n    "])),(l()(),e.Z(69,0,null,2,6,"ion-col",[["class","col"],["col-6",""]],null,null,null,null,null)),e.Y(70,16384,null,0,U.a,[],null,null),(l()(),e._20(-1,null,["\n      "])),(l()(),e.Z(72,0,null,null,2,"button",[["block",""],["class","transparente"],["clear",""],["ion-button",""]],null,[[null,"click"]],function(l,n,u){var a=!0;if("click"===n){a=!1!==l.component.registro()&&a}return a},N.b,N.a)),e.Y(73,1097728,null,0,S.a,[[8,""],f.a,e.j,e.z],{clear:[0,"clear"],block:[1,"block"]},null),(l()(),e._20(-1,0,["Registrarme"])),(l()(),e._20(-1,null,["\n    "])),(l()(),e._20(-1,2,["\n    "])),(l()(),e.Z(77,0,null,2,6,"ion-col",[["class","col"],["col-6",""]],null,null,null,null,null)),e.Y(78,16384,null,0,U.a,[],null,null),(l()(),e._20(-1,null,["\n      "])),(l()(),e.Z(80,0,null,null,2,"button",[["block",""],["class","transparente"],["clear",""],["ion-button",""]],null,[[null,"click"]],function(l,n,u){var a=!0;if("click"===n){a=!1!==l.component.recuperarcontrasena()&&a}return a},N.b,N.a)),e.Y(81,1097728,null,0,S.a,[[8,""],f.a,e.j,e.z],{clear:[0,"clear"],block:[1,"block"]},null),(l()(),e._20(-1,0,["Recuperar contraseña"])),(l()(),e._20(-1,null,["\n    "])),(l()(),e._20(-1,2,["\n  "])),(l()(),e._20(-1,1,["\n"]))],function(l,n){var u=n.component;l(n,6,0,"assets/imgs/EPCLogo.png");l(n,26,0,"");l(n,28,0,"correo",u.mail);l(n,31,0,"email","Email");l(n,42,0,"userpass",u.password);l(n,45,0,"password","Contraseña");l(n,56,0,"");l(n,73,0,"","");l(n,81,0,"","")},function(l,n){l(n,0,0,e._11(n,1).statusbarPadding,e._11(n,1)._hasRefresher);l(n,9,0,e._11(n,13).ngClassUntouched,e._11(n,13).ngClassTouched,e._11(n,13).ngClassPristine,e._11(n,13).ngClassDirty,e._11(n,13).ngClassValid,e._11(n,13).ngClassInvalid,e._11(n,13).ngClassPending);l(n,25,0,e._11(n,26).required?"":null,e._11(n,30).ngClassUntouched,e._11(n,30).ngClassTouched,e._11(n,30).ngClassPristine,e._11(n,30).ngClassDirty,e._11(n,30).ngClassValid,e._11(n,30).ngClassInvalid,e._11(n,30).ngClassPending);l(n,41,0,e._11(n,44).ngClassUntouched,e._11(n,44).ngClassTouched,e._11(n,44).ngClassPristine,e._11(n,44).ngClassDirty,e._11(n,44).ngClassValid,e._11(n,44).ngClassInvalid,e._11(n,44).ngClassPending)})}Object.defineProperty(n,"__esModule",{value:!0});var e=u(1),s=(u(2),u(33),u(59)),t=function(){function l(l,n,u,a,e){this.navCtrl=l,this.loadingCtrl=n,this.userProvider=u,this.toastCtrl=a,this.modalCtrl=e,this.mail=null,this.password=null}return l.prototype.login=function(){var l=this,n=this.loadingCtrl.create({spinner:"dots",duration:3e3});if(n.present(),null!=this.mail&&null!=this.password)this.userProvider.login(this.mail,this.password).then(function(u){"ok"==u.success?(l.navCtrl.setRoot("HomePage"),n.dismiss()):n.dismiss()}).catch(function(l){});else{n.dismiss();this.toastCtrl.create({message:"Todos los datos son requeridos",duration:3e3}).present()}},l.prototype.recuperarcontrasena=function(){this.modalCtrl.create("RecoveryPasswordPage").present()},l.prototype.registro=function(){this.navCtrl.push("RegNumberPhonePage")},l}(),i=function(){return function(){}}(),o=u(180),r=u(181),c=u(182),g=u(183),_=u(184),d=u(185),m=u(186),p=u(187),b=u(188),h=u(190),C=u(25),f=u(3),v=u(6),Y=u(10),y=u(12),P=u(34),k=u(7),Z=u(30),j=u(361),z=u(88),w=u(17),R=u(85),M=u(13),q=u(195),L=u(22),I=u(20),E=u(54),T=u(86),V=u(196),D=u(60),N=u(37),S=u(28),U=u(125),B=u(83),A=u(84),F=u(89),G=e.X({encapsulation:2,styles:[],data:{}}),H=e.V("page-login",t,function(l){return e._22(0,[(l()(),e.Z(0,0,null,null,1,"page-login",[],null,null,null,a,G)),e.Y(1,49152,null,0,t,[Z.a,B.a,s.a,A.a,F.a],null,null)],null,null)},{},{},[]),J=u(19),O=u(124),W=u(52);u.d(n,"LoginPageModuleNgFactory",function(){return X});var X=e.W(i,[],function(l){return e._7([e._8(512,e.i,e.S,[[8,[o.a,r.a,c.a,g.a,_.a,d.a,m.a,p.a,b.a,H]],[3,e.i],e.s]),e._8(4608,J.n,J.m,[e.r,[2,J.w]]),e._8(4608,w.r,w.r,[]),e._8(4608,w.d,w.d,[]),e._8(512,J.b,J.b,[]),e._8(512,w.p,w.p,[]),e._8(512,w.e,w.e,[]),e._8(512,w.n,w.n,[]),e._8(512,O.a,O.a,[]),e._8(512,O.b,O.b,[]),e._8(512,i,i,[]),e._8(256,W.a,t,[])])})}});
+webpackJsonp([12],{
+
+/***/ 688:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HistoryResumePageModule", function() { return HistoryResumePageModule; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(29);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__history_resume__ = __webpack_require__(705);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+
+
+var HistoryResumePageModule = /** @class */ (function () {
+    function HistoryResumePageModule() {
+    }
+    HistoryResumePageModule = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["J" /* NgModule */])({
+            declarations: [
+                __WEBPACK_IMPORTED_MODULE_2__history_resume__["a" /* HistoryResumePage */],
+            ],
+            imports: [
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__history_resume__["a" /* HistoryResumePage */]),
+            ],
+        })
+    ], HistoryResumePageModule);
+    return HistoryResumePageModule;
+}());
+
+//# sourceMappingURL=history-resume.module.js.map
+
+/***/ }),
+
+/***/ 705:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HistoryResumePage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(29);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+/**
+ * Generated class for the HistoryResumePage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
+var HistoryResumePage = /** @class */ (function () {
+    function HistoryResumePage(navParams) {
+        this.navParams = navParams;
+        this.historyInfo = null;
+        this.country = null;
+        this.coin = null;
+        this.comision = null;
+        this.coinHash = null;
+        this.getInfo();
+    }
+    HistoryResumePage.prototype.getInfo = function () {
+        this.historyInfo = this.navParams.get('transaction');
+        this.country = this.historyInfo.country;
+        this.coin = this.historyInfo.coin;
+        this.comision = this.historyInfo.transactionCommission;
+        this.coinHash = this.historyInfo.coinHash;
+    };
+    HistoryResumePage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+            selector: 'page-history-resume',template:/*ion-inline-start:"/Users/eyeline/Documents/GitHub/eyepaycashapp/src/pages/history-resume/history-resume.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>Detalle de la transacción</ion-title>\n  </ion-navbar>\n</ion-header>\n<ion-content>\n  <ion-card>\n    <ion-card-content>\n      <ion-list>\n        <label stacked>Información del país</label>\n        <ion-row>\n          <ion-col col-6 text-left>\n            Nombre:\n          </ion-col>\n          <ion-col col-6 text-right>\n            {{country?.name}}\n          </ion-col>\n          <ion-col col-6 text-left>\n            Moneda:\n          </ion-col>\n          <ion-col col-6 text-right>\n            {{country?.currency}}\n          </ion-col>\n        </ion-row>\n        <label stacked>Información de {{coin?.full_name}}</label>\n        <ion-row>\n          <ion-col col-6 text-left>\n            Costo:\n          </ion-col>\n          <ion-col col-6 text-right>\n            USD {{comision.crypto_value_to_usd}}\n          </ion-col>\n        </ion-row>\n        <label stacked>Información de comisión</label>\n        <ion-row>\n          <ion-col col-6 text-left>\n            Total en USD\n          </ion-col>\n          <ion-col col-6 text-right>\n            USD {{comision?.total_in_usd}}\n          </ion-col>\n          <ion-col col-6 text-left>\n            Total en Cryptomoneda\n          </ion-col>\n          <ion-col col-6 text-right>\n            {{coin.short_name}} {{comision?.total_in_crypto}}\n          </ion-col>\n        </ion-row>\n        <label stacked>Inf. de transacción</label>\n        <ion-row>\n          <ion-col col-6 text-left>Costo en moneda local:</ion-col>\n          <ion-col col-6 text-right>{{historyInfo?.amount_local}}</ion-col>\n\n          <ion-col col-6 text-left>Costo en USD:</ion-col>\n          <ion-col col-6 text-right>{{historyInfo?.amount_usd}}</ion-col>\n\n          <ion-col col-6 text-left>Fecha de la transacción:</ion-col>\n          <ion-col col-6 text-right>{{historyInfo?.date_request}}</ion-col>\n\n          <ion-col col-6 text-left>Número móvil de destino:</ion-col>\n          <ion-col col-6 text-right>{{historyInfo?.phone_user_des}}</ion-col>\n        </ion-row>\n        <label stacked>Estado de la transacción</label>\n        <ion-row>\n          <ion-col col-4 text-left>Estado:</ion-col>\n          <ion-col col-8 text-right>\n            <p *ngIf="historyInfo?.process_status==0"><b>Estado: PENDIENTE DE PAGO </b></p>\n            <p *ngIf="historyInfo?.process_status==1"><b>Estado: PAGADO Y PENDIENTE POR RETIRAR </b></p>\n            <p *ngIf="historyInfo?.process_status==2"><b>Estado: PAGADO Y RETIRADO </b></p>\n          </ion-col>\n        </ion-row>\n\n\n        <ion-col col-12 *ngIf="historyInfo?.process_status==0">\n          <h2 text-center>La transacción se encuentra pendiente por pagar. </h2>\n          <h2 text-center>Número de referencia para pagar:</h2>\n          <h1 text-center>{{coinHash?.eye_hash}}</h1>\n          <img src="{{coinHash.qr_url}}">\n        </ion-col>\n        <ion-col col-12 *ngIf="historyInfo?.process_status==1">\n          <h2 text-center>La transacción se encuentra disponible para retirar. </h2>\n          <h2 text-center>Número de referencia para retirar:</h2>\n          <h1 text-center>{{historyInfo.key_request}}</h1>\n        </ion-col>\n        <ion-col col-12>\n          <h2 text-center>Total de la transacción</h2>\n          <h1 text-center>{{historyInfo?.amount_btc}}</h1>\n        </ion-col>\n\n\n      </ion-list>\n    </ion-card-content>\n  </ion-card>\n</ion-content>\n'/*ion-inline-end:"/Users/eyeline/Documents/GitHub/eyepaycashapp/src/pages/history-resume/history-resume.html"*/,
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */]])
+    ], HistoryResumePage);
+    return HistoryResumePage;
+}());
+
+//# sourceMappingURL=history-resume.js.map
+
+/***/ })
+
+});
+//# sourceMappingURL=12.js.map

@@ -1,1 +1,132 @@
-webpackJsonp([3],{666:function(l,n,u){"use strict";function a(l){return t._22(0,[(l()(),t.Z(0,0,null,null,10,"ion-header",[],null,null,null,null,null)),t.Y(1,16384,null,0,Y.a,[g.a,t.j,t.z,[2,f.a]],null,null),(l()(),t._20(-1,null,["\n\n  "])),(l()(),t.Z(3,0,null,null,6,"ion-navbar",[["class","toolbar"]],[[8,"hidden",0],[2,"statusbar-padding",null]],null,null,m.b,m.a)),t.Y(4,49152,null,0,k.a,[p.a,[2,f.a],[2,j.a],g.a,t.j,t.z],null,null),(l()(),t._20(-1,3,["\n    "])),(l()(),t.Z(6,0,null,3,2,"ion-title",[],null,null,null,C.b,C.a)),t.Y(7,49152,null,0,w.a,[g.a,t.j,t.z,[2,x.a],[2,k.a]],null,null),(l()(),t._20(-1,0,["Resumen de la transacción"])),(l()(),t._20(-1,3,["\n  "])),(l()(),t._20(-1,null,["\n"])),(l()(),t._20(-1,null,["\n"])),(l()(),t.Z(12,0,null,null,124,"ion-content",[["padding",""]],[[2,"statusbar-padding",null],[2,"has-refresher",null]],null,null,v.b,v.a)),t.Y(13,4374528,null,0,q.a,[g.a,y.a,z.a,t.j,t.z,p.a,P.a,t.u,[2,f.a],[2,j.a]],null,null),(l()(),t._20(-1,1,["\n  "])),(l()(),t.Z(15,0,null,1,1,"h4",[],null,null,null,null,null)),(l()(),t._20(-1,null,["Resumen de la transacción"])),(l()(),t._20(-1,1,["\n  "])),(l()(),t.Z(18,0,null,1,117,"ion-card",[],null,null,null,null,null)),t.Y(19,16384,null,0,A.a,[g.a,t.j,t.z],null,null),(l()(),t._20(-1,null,["\n    "])),(l()(),t.Z(21,0,null,null,113,"ion-card-content",[],null,null,null,null,null)),t.Y(22,16384,null,0,R.a,[g.a,t.j,t.z],null,null),(l()(),t._20(-1,null,["\n      "])),(l()(),t.Z(24,0,null,null,109,"ion-list",[],null,null,null,null,null)),t.Y(25,16384,null,0,I.a,[g.a,t.j,t.z,y.a,N.l,z.a],null,null),(l()(),t._20(-1,null,["\n        "])),(l()(),t.Z(27,0,null,null,1,"label",[["stacked",""]],null,null,null,null,null)),(l()(),t._20(-1,null,["Información de la transacción:"])),(l()(),t._20(-1,null,["\n        "])),(l()(),t.Z(30,0,null,null,10,"ion-row",[["class","row"]],null,null,null,null,null)),t.Y(31,16384,null,0,T.a,[],null,null),(l()(),t._20(-1,null,["\n          "])),(l()(),t.Z(33,0,null,null,2,"ion-col",[["class","col"],["col-6",""],["text-left",""]],null,null,null,null,null)),t.Y(34,16384,null,0,X.a,[],null,null),(l()(),t._20(-1,null,["Nº Celular destino"])),(l()(),t._20(-1,null,["\n          "])),(l()(),t.Z(37,0,null,null,2,"ion-col",[["class","col"],["col-6",""],["text-right",""]],null,null,null,null,null)),t.Y(38,16384,null,0,X.a,[],null,null),(l()(),t._20(39,null,["\n            ","\n          "])),(l()(),t._20(-1,null,["\n        "])),(l()(),t._20(-1,null,["\n        "])),(l()(),t.Z(42,0,null,null,10,"ion-row",[["class","row"]],null,null,null,null,null)),t.Y(43,16384,null,0,T.a,[],null,null),(l()(),t._20(-1,null,["\n          "])),(l()(),t.Z(45,0,null,null,2,"ion-col",[["class","col"],["col-6",""],["text-left",""]],null,null,null,null,null)),t.Y(46,16384,null,0,X.a,[],null,null),(l()(),t._20(-1,null,["Nombre Criptomoneda"])),(l()(),t._20(-1,null,["\n          "])),(l()(),t.Z(49,0,null,null,2,"ion-col",[["class","col"],["col-6",""],["text-right",""]],null,null,null,null,null)),t.Y(50,16384,null,0,X.a,[],null,null),(l()(),t._20(51,null,[" ",""])),(l()(),t._20(-1,null,["\n        "])),(l()(),t._20(-1,null,["\n        "])),(l()(),t.Z(54,0,null,null,10,"ion-row",[["class","row"]],null,null,null,null,null)),t.Y(55,16384,null,0,T.a,[],null,null),(l()(),t._20(-1,null,["\n          "])),(l()(),t.Z(57,0,null,null,2,"ion-col",[["class","col"],["col-6",""],["text-left",""]],null,null,null,null,null)),t.Y(58,16384,null,0,X.a,[],null,null),(l()(),t._20(-1,null,["Fecha transacción"])),(l()(),t._20(-1,null,["\n          "])),(l()(),t.Z(61,0,null,null,2,"ion-col",[["class","col"],["col-6",""],["text-right",""]],null,null,null,null,null)),t.Y(62,16384,null,0,X.a,[],null,null),(l()(),t._20(63,null,["",""])),(l()(),t._20(-1,null,["\n        "])),(l()(),t._20(-1,null,["\n        "])),(l()(),t.Z(66,0,null,null,10,"ion-row",[["class","row"]],null,null,null,null,null)),t.Y(67,16384,null,0,T.a,[],null,null),(l()(),t._20(-1,null,["\n          "])),(l()(),t.Z(69,0,null,null,2,"ion-col",[["class","col"],["col-6",""],["text-left",""]],null,null,null,null,null)),t.Y(70,16384,null,0,X.a,[],null,null),(l()(),t._20(-1,null,["Costo moneda local"])),(l()(),t._20(-1,null,["\n          "])),(l()(),t.Z(73,0,null,null,2,"ion-col",[["class","col"],["col-6",""],["text-right",""]],null,null,null,null,null)),t.Y(74,16384,null,0,X.a,[],null,null),(l()(),t._20(75,null,[" ",""])),(l()(),t._20(-1,null,["\n        "])),(l()(),t._20(-1,null,["\n        "])),(l()(),t.Z(78,0,null,null,10,"ion-row",[["class","row"]],null,null,null,null,null)),t.Y(79,16384,null,0,T.a,[],null,null),(l()(),t._20(-1,null,["\n          "])),(l()(),t.Z(81,0,null,null,2,"ion-col",[["class","col"],["col-6",""],["text-left",""]],null,null,null,null,null)),t.Y(82,16384,null,0,X.a,[],null,null),(l()(),t._20(-1,null,["Costo en USD"])),(l()(),t._20(-1,null,["\n          "])),(l()(),t.Z(85,0,null,null,2,"ion-col",[["class","col"],["col-6",""],["text-right",""]],null,null,null,null,null)),t.Y(86,16384,null,0,X.a,[],null,null),(l()(),t._20(87,null,[" ",""])),(l()(),t._20(-1,null,["\n        "])),(l()(),t._20(-1,null,["\n        "])),(l()(),t.Z(90,0,null,null,10,"ion-row",[["class","row"]],null,null,null,null,null)),t.Y(91,16384,null,0,T.a,[],null,null),(l()(),t._20(-1,null,["\n          "])),(l()(),t.Z(93,0,null,null,2,"ion-col",[["class","col"],["col-6",""],["text-left",""]],null,null,null,null,null)),t.Y(94,16384,null,0,X.a,[],null,null),(l()(),t._20(-1,null,["Costo en criptomoneda"])),(l()(),t._20(-1,null,["\n          "])),(l()(),t.Z(97,0,null,null,2,"ion-col",[["class","col"],["col-6",""],["text-right",""]],null,null,null,null,null)),t.Y(98,16384,null,0,X.a,[],null,null),(l()(),t._20(99,null,[" ",""])),(l()(),t._20(-1,null,["\n        "])),(l()(),t._20(-1,null,["\n        "])),(l()(),t.Z(102,0,null,null,10,"ion-row",[["class","row"]],null,null,null,null,null)),t.Y(103,16384,null,0,T.a,[],null,null),(l()(),t._20(-1,null,["\n          "])),(l()(),t.Z(105,0,null,null,2,"ion-col",[["class","col"],["col-6",""],["text-left",""]],null,null,null,null,null)),t.Y(106,16384,null,0,X.a,[],null,null),(l()(),t._20(-1,null,["Costo comisión"])),(l()(),t._20(-1,null,["\n          "])),(l()(),t.Z(109,0,null,null,2,"ion-col",[["class","col"],["col-6",""],["text-right",""]],null,null,null,null,null)),t.Y(110,16384,null,0,X.a,[],null,null),(l()(),t._20(111,null,[" ",""])),(l()(),t._20(-1,null,["\n        "])),(l()(),t._20(-1,null,["\n        "])),(l()(),t.Z(114,0,null,null,12,"ion-row",[["class","row"],["text-center",""]],null,null,null,null,null)),t.Y(115,16384,null,0,T.a,[],null,null),(l()(),t._20(-1,null,["\n          "])),(l()(),t.Z(117,0,null,null,8,"ion-col",[["class","col"],["col-12",""]],null,null,null,null,null)),t.Y(118,16384,null,0,X.a,[],null,null),(l()(),t._20(-1,null,["\n            "])),(l()(),t.Z(120,0,null,null,1,"h2",[],null,null,null,null,null)),(l()(),t._20(121,null,["Dirección "," "])),(l()(),t._20(-1,null,["\n            "])),(l()(),t.Z(123,0,null,null,1,"h2",[],null,null,null,null,null)),(l()(),t._20(124,null,["",""])),(l()(),t._20(-1,null,["\n          "])),(l()(),t._20(-1,null,["\n        "])),(l()(),t._20(-1,null,["\n        "])),(l()(),t.Z(128,0,null,null,4,"ion-row",[["class","row"],["text-center",""]],null,null,null,null,null)),t.Y(129,16384,null,0,T.a,[],null,null),(l()(),t._20(-1,null,["\n          "])),(l()(),t.Z(131,0,null,null,0,"img",[],[[8,"src",4]],null,null,null,null)),(l()(),t._20(-1,null,["\n        "])),(l()(),t._20(-1,null,["\n      "])),(l()(),t._20(-1,null,["\n    "])),(l()(),t._20(-1,null,["\n  "])),(l()(),t._20(-1,1,["\n\n"]))],null,function(l,n){var u=n.component;l(n,3,0,t._11(n,4)._hidden,t._11(n,4)._sbPadding);l(n,12,0,t._11(n,13).statusbarPadding,t._11(n,13)._hasRefresher);l(n,39,0,null==u.transaction?null:u.transaction.phone_user_des);l(n,51,0,u.coin.full_name);l(n,63,0,null==u.transaction?null:u.transaction.date_request);l(n,75,0,u.result.money_local_to_usd);l(n,87,0,null==u.transaction?null:u.transaction.amount_usd);l(n,99,0,null==u.transaction?null:u.transaction.amount_btc);l(n,111,0,u.result.commission.CRYPTO);l(n,121,0,u.coin.full_name);l(n,124,0,u.coinhas.eye_hash);l(n,131,0,t._2(1,"",u.qrlink,""))})}Object.defineProperty(n,"__esModule",{value:!0});var t=u(1),o=(u(2),u(33),function(){function l(l,n){this.navParams=l,this.loadingCtrl=n,this.result=null,this.transaction=null,this.coinhas=null,this.coin=null,this.country=null,this.qrlink=null,this.getIngfo()}return l.prototype.getIngfo=function(){var l=this.navParams.data;this.result=l.result,this.transaction=l.transaction,this.coinhas=l.coinhash,this.coin=l.coin,this.country=l.country,this.qrlink=l.qrlink},l}()),s=function(){return function(){}}(),c=u(180),i=u(181),e=u(182),r=u(183),_=u(184),b=u(185),d=u(186),h=u(187),Z=u(188),Y=u(192),g=u(3),f=u(7),m=u(669),k=u(58),p=u(12),j=u(30),C=u(670),w=u(189),x=u(82),v=u(190),q=u(25),y=u(6),z=u(10),P=u(34),A=u(193),R=u(194),I=u(85),N=u(13),T=u(126),X=u(125),B=u(15),D=u(83),F=t.X({encapsulation:2,styles:[],data:{}}),M=t.V("page-transaction-resume",o,function(l){return t._22(0,[(l()(),t.Z(0,0,null,null,1,"page-transaction-resume",[],null,null,null,a,F)),t.Y(1,49152,null,0,o,[B.a,D.a],null,null)],null,null)},{},{},[]),O=u(19),S=u(17),J=u(124),U=u(52);u.d(n,"TransactionResumePageModuleNgFactory",function(){return V});var V=t.W(s,[],function(l){return t._7([t._8(512,t.i,t.S,[[8,[c.a,i.a,e.a,r.a,_.a,b.a,d.a,h.a,Z.a,M]],[3,t.i],t.s]),t._8(4608,O.n,O.m,[t.r,[2,O.w]]),t._8(4608,S.r,S.r,[]),t._8(4608,S.d,S.d,[]),t._8(512,O.b,O.b,[]),t._8(512,S.p,S.p,[]),t._8(512,S.e,S.e,[]),t._8(512,S.n,S.n,[]),t._8(512,J.a,J.a,[]),t._8(512,J.b,J.b,[]),t._8(512,s,s,[]),t._8(256,U.a,o,[])])})},669:function(l,n,u){"use strict";function a(l){return t._22(0,[(l()(),t.Z(0,0,null,null,1,"div",[["class","toolbar-background"]],null,null,null,null,null)),t.Y(1,278528,null,0,o.j,[t.p,t.q,t.j,t.A],{klass:[0,"klass"],ngClass:[1,"ngClass"]},null),(l()(),t.Z(2,0,null,null,8,"button",[["class","back-button"],["ion-button","bar-button"]],[[8,"hidden",0]],[[null,"click"]],function(l,n,u){var a=!0;if("click"===n){a=!1!==l.component.backButtonClick(u)&&a}return a},s.b,s.a)),t.Y(3,278528,null,0,o.j,[t.p,t.q,t.j,t.A],{klass:[0,"klass"],ngClass:[1,"ngClass"]},null),t.Y(4,1097728,null,0,c.a,[[8,"bar-button"],i.a,t.j,t.z],null,null),(l()(),t.Z(5,0,null,0,2,"ion-icon",[["class","back-button-icon"],["role","img"]],[[2,"hide",null]],null,null,null,null)),t.Y(6,278528,null,0,o.j,[t.p,t.q,t.j,t.A],{klass:[0,"klass"],ngClass:[1,"ngClass"]},null),t.Y(7,147456,null,0,e.a,[i.a,t.j,t.z],{name:[0,"name"]},null),(l()(),t.Z(8,0,null,0,2,"span",[["class","back-button-text"]],null,null,null,null,null)),t.Y(9,278528,null,0,o.j,[t.p,t.q,t.j,t.A],{klass:[0,"klass"],ngClass:[1,"ngClass"]},null),(l()(),t._20(10,null,["",""])),t._10(null,0),t._10(null,1),t._10(null,2),(l()(),t.Z(14,0,null,null,2,"div",[["class","toolbar-content"]],null,null,null,null,null)),t.Y(15,278528,null,0,o.j,[t.p,t.q,t.j,t.A],{klass:[0,"klass"],ngClass:[1,"ngClass"]},null),t._10(null,3)],function(l,n){var u=n.component;l(n,1,0,"toolbar-background","toolbar-background-"+u._mode);l(n,3,0,"back-button","back-button-"+u._mode);l(n,6,0,"back-button-icon","back-button-icon-"+u._mode);l(n,7,0,u._bbIcon);l(n,9,0,"back-button-text","back-button-text-"+u._mode);l(n,15,0,"toolbar-content","toolbar-content-"+u._mode)},function(l,n){var u=n.component;l(n,2,0,u._hideBb);l(n,5,0,t._11(n,7)._hidden);l(n,10,0,u._backText)})}u.d(n,"a",function(){return r}),n.b=a;var t=u(1),o=u(19),s=u(37),c=u(28),i=u(3),e=u(53),r=(u(7),u(30),t.X({encapsulation:2,styles:[],data:{}}))},670:function(l,n,u){"use strict";function a(l){return t._22(2,[(l()(),t.Z(0,0,null,null,2,"div",[["class","toolbar-title"]],null,null,null,null,null)),t.Y(1,278528,null,0,o.j,[t.p,t.q,t.j,t.A],{klass:[0,"klass"],ngClass:[1,"ngClass"]},null),t._10(null,0)],function(l,n){l(n,1,0,"toolbar-title","toolbar-title-"+n.component._mode)},null)}u.d(n,"a",function(){return s}),n.b=a;var t=u(1),o=u(19),s=(u(3),t.X({encapsulation:2,styles:[],data:{}}))}});
+webpackJsonp([3],{
+
+/***/ 701:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TransactionPageModule", function() { return TransactionPageModule; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(29);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__transaction__ = __webpack_require__(721);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+
+
+var TransactionPageModule = /** @class */ (function () {
+    function TransactionPageModule() {
+    }
+    TransactionPageModule = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["J" /* NgModule */])({
+            declarations: [
+                __WEBPACK_IMPORTED_MODULE_2__transaction__["a" /* TransactionPage */],
+            ],
+            imports: [
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__transaction__["a" /* TransactionPage */]),
+            ],
+        })
+    ], TransactionPageModule);
+    return TransactionPageModule;
+}());
+
+//# sourceMappingURL=transaction.module.js.map
+
+/***/ }),
+
+/***/ 721:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TransactionPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(29);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_api__ = __webpack_require__(46);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_auth_user_auth_user__ = __webpack_require__(89);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_load_information_load_information__ = __webpack_require__(158);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+/**
+ * Generated class for the TransactionPage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
+var TransactionPage = /** @class */ (function () {
+    function TransactionPage(navParams, api, userProvider, loadingCtrl, toastCtrl, modalCtrl, informationProvider) {
+        this.navParams = navParams;
+        this.api = api;
+        this.userProvider = userProvider;
+        this.loadingCtrl = loadingCtrl;
+        this.toastCtrl = toastCtrl;
+        this.modalCtrl = modalCtrl;
+        this.informationProvider = informationProvider;
+        this.countrys = [];
+        this.currency = null;
+        this.infoCountry = null;
+        this.monedas = [];
+        this.currency = this.userProvider.user_Country.currency;
+        this.getInfo();
+        this.countrySelected();
+    }
+    TransactionPage.prototype.getInfo = function () {
+        var _this = this;
+        this.informationProvider.getCountries()
+            .then(function (value) {
+            _this.countrys = value;
+        });
+    };
+    TransactionPage.prototype.countrySelected = function () {
+        var _this = this;
+        this.informationProvider.getCurrencies(this.currency)
+            .then(function (value) {
+            _this.infoCountry = value;
+            _this.monedas = value.coins;
+        });
+    };
+    TransactionPage.prototype.monedaSelect = function (moneda) {
+        var modalTransaction = this.modalCtrl.create('ModalTransactionPage', {
+            'moneda': moneda,
+            'userCountry': this.userProvider.user_Country,
+        });
+        modalTransaction.present();
+        modalTransaction.onDidDismiss(function (data) {
+        });
+    };
+    TransactionPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+            selector: 'page-transaction',template:/*ion-inline-start:"/Users/eyeline/Documents/GitHub/eyepaycashapp/src/pages/transaction/transaction.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>TRANSACCIONES</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n  <ion-label class="txtLbl" stacked>Seleccione país de interés</ion-label>\n  <ion-select [(ngModel)]="currency" (ionChange)="countrySelected()">\n    <ion-option *ngFor="let pais of countrys" value="{{pais.currency}}">{{pais.name}}</ion-option>\n  </ion-select>\n  <label stacked>Precio del dolar en el paìs</label>\n  <ion-col col-12>\n    <h6>1 USD = {{infoCountry?.local_usd_value}} {{currency}}</h6>\n  </ion-col>\n  <ion-item>\n    <h6 class="txtboldblack">1 USD = {{infoCountry?.local_usd_value}} {{currency}}</h6>\n  </ion-item>\n  <label stacked>Información de las monedas</label>\n  <ion-card ion-item *ngFor="let moneda of monedas" (click)="monedaSelect(moneda)">\n    <ion-card-content>\n      <ion-row>\n        <ion-col col-10>\n          <h4>Nombre: {{moneda.full_name}}</h4>\n          <h6>1 {{moneda.full_name}} = {{moneda.usd_value}} USD</h6>\n          <h5 stacked> 1 {{moneda.full_name}} = {{moneda.local_usd_value}} {{currency}} </h5>\n        </ion-col>\n        <ion-col col-2 class="margIcon">\n          <ion-icon name="add"></ion-icon>\n        </ion-col>\n      </ion-row>\n    </ion-card-content>\n  </ion-card>\n</ion-content>'/*ion-inline-end:"/Users/eyeline/Documents/GitHub/eyepaycashapp/src/pages/transaction/transaction.html"*/,
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */],
+            __WEBPACK_IMPORTED_MODULE_2__providers_api__["a" /* Api */],
+            __WEBPACK_IMPORTED_MODULE_3__providers_auth_user_auth_user__["a" /* AuthUserProvider */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* LoadingController */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* ToastController */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* ModalController */],
+            __WEBPACK_IMPORTED_MODULE_4__providers_load_information_load_information__["a" /* LoadInformationProvider */]])
+    ], TransactionPage);
+    return TransactionPage;
+}());
+
+//# sourceMappingURL=transaction.js.map
+
+/***/ })
+
+});
+//# sourceMappingURL=3.js.map
