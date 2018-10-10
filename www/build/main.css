@@ -25729,6 +25729,7 @@ ion-auto-complete ul li:hover {
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#9569fc', endColorstr='#5974fb', GradientType=1);
   color: white;
   font-weight: bold;
+  border-radius: 8px;
 }
 
 .alert-md .alert-wrapper {
@@ -26111,6 +26112,11 @@ page-modal-transaction .margIcon {
   margin-top: 10%;
 }
 
+page-modal-transaction .margBott {
+  margin-bottom: 10%;
+  margin-top: 2%;
+}
+
 page-modal-transaction .label-md[stacked] {
   font-size: 1.8rem !important;
 }
@@ -26121,6 +26127,12 @@ page-modal-transaction .toolbar-background {
 
 page-modal-transaction .toolbar-title-md {
   color: white;
+}
+
+page-modal-transaction ion-input, page-modal-transaction ion-textarea {
+  background: white !important;
+  border-radius: 10px !important;
+  color: black;
 }
 
 page-modal-transaction .bar-button-default-md, page-modal-transaction .bar-button-clear-md-default, page-modal-transaction .bar-button-md-default {

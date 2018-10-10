@@ -13,6 +13,11 @@ page-modal-transaction {
     margin-top: 10%;
   }
 
+  .margBott {
+    margin-bottom: 10%;
+    margin-top: 2%;
+  }
+
   .label-md[stacked] {
     font-size: 1.8rem !important;
   }
@@ -23,7 +28,11 @@ page-modal-transaction {
   .toolbar-title-md {
     color: white;
   }
-
+  ion-input, ion-textarea {
+    background: white !important;
+    border-radius: 10px !important;
+    color: black;
+}
   .bar-button-default-md, .bar-button-clear-md-default, .bar-button-md-default {
     color: white;
     background-color: transparent;
