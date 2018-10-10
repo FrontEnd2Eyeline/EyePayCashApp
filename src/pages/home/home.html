@@ -1,27 +1,25 @@
 <ion-content class="imgBackground">
-  <ion-list>
-    <ion-row>
-      <ion-col col-12 text-center>
+  <div class="mrgDiv">
+  <ion-list class="center divMargin">
+      <ion-col class="animated bounceInDown" col-12 >
         <img src="assets/imgs/EPCLogo.png" alt="" class="logo">
       </ion-col>
-      <ion-col col-12 text-center>
-        <ion-img name="add" (click)="goPage('transaction')" class="img-loaded2 img"
-                 src="assets/icon/TransaccionIco.png"></ion-img>
+      <ion-row class="divLogos">
+        <ion-col class="animated bounceInLeft" col-6 text-center>
+          <ion-img name="add" (click)="goPage('transaction')" class="img-loaded2 img" src="assets/icon/TransaccionIco.png"></ion-img>
+        </ion-col>
+        <ion-col class="animated bounceInRight" col-6 text-center>
+          <ion-img name="list-box" (click)="goPage('history')" class="img-loaded2 img" src="assets/icon/HistoryIco.png"></ion-img>
+        </ion-col>
+      </ion-row>
+    <ion-row class="divMargin">
+      <ion-col class="animated bounceInLeft" col-6 text-center>
+        <ion-img name="maps" (click)="goPage('maps')" class="img-loaded2 img" src="assets/icon/mapa.png"></ion-img>
       </ion-col>
-      <ion-col col-12 text-center>
-        <ion-img name="list-box" (click)="goPage('history')" class="img-loaded2 img"
-                 src="assets/icon/HistoryIco.png"></ion-img>
-      </ion-col>
-    </ion-row>
-    <ion-row>
-      <ion-col col-12 text-center>
-        <ion-img name="maps" (click)="goPage('maps')" class="img-loaded2 img"
-                 src="assets/icon/mapa.png"></ion-img>
-      </ion-col>
-      <ion-col col-12 text-center>
-        <ion-img name="person" (click)="goPage('account')" class="img-loaded2 img"
-                 src="assets/icon/CuentaIco.png"></ion-img>
+      <ion-col class="animated bounceInRight" col-6 text-center>
+        <ion-img name="person" (click)="goPage('account')" class="img-loaded2 img" src="assets/icon/CuentaIco.png"></ion-img>
       </ion-col>
     </ion-row>
   </ion-list>
+</div>
 </ion-content>
