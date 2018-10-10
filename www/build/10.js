@@ -1,6 +1,10 @@
 webpackJsonp([10],{
 
+<<<<<<< HEAD
 /***/ 691:
+=======
+/***/ 690:
+>>>>>>> 617e80f1d3adcfaa2ff36bb5724e106744f94486
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -8,7 +12,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HomePageModule", function() { return HomePageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(29);
+<<<<<<< HEAD
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__home__ = __webpack_require__(708);
+=======
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__home__ = __webpack_require__(707);
+>>>>>>> 617e80f1d3adcfaa2ff36bb5724e106744f94486
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -38,7 +46,11 @@ var HomePageModule = /** @class */ (function () {
 
 /***/ }),
 
+<<<<<<< HEAD
 /***/ 708:
+=======
+/***/ 707:
+>>>>>>> 617e80f1d3adcfaa2ff36bb5724e106744f94486
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -74,7 +86,11 @@ var HomePage = /** @class */ (function () {
     };
     HomePage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+<<<<<<< HEAD
             selector: 'page-home',template:/*ion-inline-start:"/Users/eyeline/Documents/eyepaycashappGitHub/src/pages/home/home.html"*/'<ion-content class="imgBackground">\n  <ion-list>\n    <ion-row>\n      <ion-col col-12 text-center>\n        <img src="assets/imgs/EPCLogo.png" alt="" class="logo">\n      </ion-col>\n      <ion-col col-12 text-center>\n        <ion-img name="add" (click)="goPage(\'transaction\')" class="img-loaded2 img"\n                 src="assets/icon/TransaccionIco.png"></ion-img>\n      </ion-col>\n      <ion-col col-12 text-center>\n        <ion-img name="list-box" (click)="goPage(\'history\')" class="img-loaded2 img"\n                 src="assets/icon/HistoryIco.png"></ion-img>\n      </ion-col>\n    </ion-row>\n    <ion-row>\n      <ion-col col-12 text-center>\n        <ion-img name="maps" (click)="goPage(\'maps\')" class="img-loaded2 img"\n                 src="assets/icon/mapa.png"></ion-img>\n      </ion-col>\n      <ion-col col-12 text-center>\n        <ion-img name="person" (click)="goPage(\'account\')" class="img-loaded2 img"\n                 src="assets/icon/CuentaIco.png"></ion-img>\n      </ion-col>\n    </ion-row>\n  </ion-list>\n</ion-content>'/*ion-inline-end:"/Users/eyeline/Documents/eyepaycashappGitHub/src/pages/home/home.html"*/
+=======
+            selector: 'page-home',template:/*ion-inline-start:"/Users/eyeline/Documents/GitHub/eyepaycashapp/src/pages/home/home.html"*/'<ion-content class="imgBackground">\n  <ion-list>\n    <ion-row>\n      <ion-col col-12 text-center>\n        <img src="assets/imgs/EPCLogo.png" alt="" class="logo">\n      </ion-col>\n      <ion-col col-12 text-center>\n        <ion-img name="add" (click)="goPage(\'transaction\')" class="img-loaded2 img"\n                 src="assets/icon/TransaccionIco.png"></ion-img>\n      </ion-col>\n      <ion-col col-12 text-center>\n        <ion-img name="list-box" (click)="goPage(\'history\')" class="img-loaded2 img"\n                 src="assets/icon/HistoryIco.png"></ion-img>\n      </ion-col>\n    </ion-row>\n    <ion-row>\n      <ion-col col-12 text-center>\n        <ion-img name="maps" (click)="goPage(\'maps\')" class="img-loaded2 img"\n                 src="assets/icon/mapa.png"></ion-img>\n      </ion-col>\n      <ion-col col-12 text-center>\n        <ion-img name="person" (click)="goPage(\'account\')" class="img-loaded2 img"\n                 src="assets/icon/CuentaIco.png"></ion-img>\n      </ion-col>\n    </ion-row>\n  </ion-list>\n</ion-content>'/*ion-inline-end:"/Users/eyeline/Documents/GitHub/eyepaycashapp/src/pages/home/home.html"*/
+>>>>>>> 617e80f1d3adcfaa2ff36bb5724e106744f94486
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */],
             __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* LoadingController */],

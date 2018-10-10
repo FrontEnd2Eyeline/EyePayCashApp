@@ -25729,6 +25729,7 @@ ion-auto-complete ul li:hover {
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#9569fc', endColorstr='#5974fb', GradientType=1);
   color: white;
   font-weight: bold;
+  border-radius: 8px;
 }
 
 .alert-md .alert-wrapper {
@@ -25855,7 +25856,11 @@ page-history-resume [col-4] {
 }
 
 page-history-resume [col-6] {
-  text-align: right !important;
+  text-align: right;
+}
+
+page-history-resume [col-6] {
+  text-align: left !important;
 }
 
 page-history-resume h6:first-child {
@@ -25880,6 +25885,12 @@ page-history-resume .card-md {
 
 page-history-resume .toolbar-background {
   background: #063996 !important;
+}
+
+page-history-resume label, page-history-resume input, page-history-resume select, page-history-resume textarea {
+  font-weight: bold;
+  font-family: inherit;
+  line-height: normal;
 }
 
 page-history-resume .toolbar-title-md {
@@ -25910,6 +25921,10 @@ page-history-resume .item-md {
   box-shadow: none;
   -webkit-transition: background-color 300ms cubic-bezier(0.4, 0, 0.2, 1);
   transition: background-color 300ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+page-history-resume h2 {
+  font-weight: bold;
 }
 
 page-home ion-img.img-loaded2 img {
@@ -26097,6 +26112,11 @@ page-modal-transaction .margIcon {
   margin-top: 10%;
 }
 
+page-modal-transaction .margBott {
+  margin-bottom: 10%;
+  margin-top: 2%;
+}
+
 page-modal-transaction .label-md[stacked] {
   font-size: 1.8rem !important;
 }
@@ -26107,6 +26127,12 @@ page-modal-transaction .toolbar-background {
 
 page-modal-transaction .toolbar-title-md {
   color: white;
+}
+
+page-modal-transaction ion-input, page-modal-transaction ion-textarea {
+  background: white !important;
+  border-radius: 10px !important;
+  color: black;
 }
 
 page-modal-transaction .bar-button-default-md, page-modal-transaction .bar-button-clear-md-default, page-modal-transaction .bar-button-md-default {

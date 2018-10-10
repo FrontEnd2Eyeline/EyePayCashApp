@@ -56,9 +56,20 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
+<<<<<<< HEAD
 var TransactionResumePage = /** @class */ (function () {
     function TransactionResumePage(navCtrl, navParams, loadingCtrl) {
         this.navCtrl = navCtrl;
+=======
+/**
+ * Generated class for the TransactionResumePage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
+var TransactionResumePage = /** @class */ (function () {
+    function TransactionResumePage(navParams, loadingCtrl) {
+>>>>>>> 617e80f1d3adcfaa2ff36bb5724e106744f94486
         this.navParams = navParams;
         this.loadingCtrl = loadingCtrl;
         this.result = null;
@@ -70,6 +81,7 @@ var TransactionResumePage = /** @class */ (function () {
         this.getIngfo();
     }
     TransactionResumePage.prototype.getIngfo = function () {
+<<<<<<< HEAD
         // Toda el response de la transacción
         var parametros = this.navParams.data;
         this.result = parametros.result;
@@ -88,6 +100,21 @@ var TransactionResumePage = /** @class */ (function () {
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */],
             __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */],
+=======
+        var parametros = this.navParams.data;
+        this.result = parametros.result;
+        this.transaction = parametros.transaction;
+        this.coinhas = parametros.coinhash;
+        this.coin = parametros.coin;
+        this.country = parametros.country;
+        this.qrlink = parametros.qrlink;
+    };
+    TransactionResumePage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+            selector: 'page-transaction-resume',template:/*ion-inline-start:"/Users/eyeline/Documents/GitHub/eyepaycashapp/src/pages/transaction-resume/transaction-resume.html"*/'<ion-header>\n\n  <ion-navbar>\n    <ion-title>Resumen de la transacción</ion-title>\n  </ion-navbar>\n</ion-header>\n<ion-content padding>\n  <h4>Resumen de la transacción</h4>\n  <ion-card>\n    <ion-card-content>\n      <ion-list>\n        <label stacked>Información de la transacción:</label>\n        <ion-row>\n          <ion-col col-6 text-left>Nº Celular destino</ion-col>\n          <ion-col col-6 text-right>\n            {{transaction?.phone_user_des}}\n          </ion-col>\n        </ion-row>\n        <ion-row>\n          <ion-col col-6 text-left>Nombre Criptomoneda</ion-col>\n          <ion-col col-6 text-right> {{coin.full_name}}</ion-col>\n        </ion-row>\n        <ion-row>\n          <ion-col col-6 text-left>Fecha transacción</ion-col>\n          <ion-col col-6 text-right>{{transaction?.date_request}}</ion-col>\n        </ion-row>\n        <ion-row>\n          <ion-col col-6 text-left>Costo moneda local</ion-col>\n          <ion-col col-6 text-right> {{result.money_local_to_usd}}</ion-col>\n        </ion-row>\n        <ion-row>\n          <ion-col col-6 text-left>Costo en USD</ion-col>\n          <ion-col col-6 text-right> {{transaction?.amount_usd}}</ion-col>\n        </ion-row>\n        <ion-row>\n          <ion-col col-6 text-left>Costo en criptomoneda</ion-col>\n          <ion-col col-6 text-right> {{transaction?.amount_btc}}</ion-col>\n        </ion-row>\n        <ion-row>\n          <ion-col col-6 text-left>Costo comisión</ion-col>\n          <ion-col col-6 text-right> {{result.commission.CRYPTO}}</ion-col>\n        </ion-row>\n        <ion-row text-center>\n          <ion-col col-12>\n            <h2>Dirección {{coin.full_name}} </h2>\n            <h2>{{coinhas.eye_hash}}</h2>\n          </ion-col>\n        </ion-row>\n        <ion-row text-center>\n          <img src="{{qrlink}}">\n        </ion-row>\n      </ion-list>\n    </ion-card-content>\n  </ion-card>\n\n</ion-content>'/*ion-inline-end:"/Users/eyeline/Documents/GitHub/eyepaycashapp/src/pages/transaction-resume/transaction-resume.html"*/,
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */],
+>>>>>>> 617e80f1d3adcfaa2ff36bb5724e106744f94486
             __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* LoadingController */]])
     ], TransactionResumePage);
     return TransactionResumePage;
