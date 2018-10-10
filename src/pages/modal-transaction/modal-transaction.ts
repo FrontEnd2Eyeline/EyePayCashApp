@@ -60,24 +60,32 @@ export class ModalTransactionPage {
           spinner: 'dots',
         });
         loading.present();
-        let objtoSub = this.transaction;
-        if (objtoSub.amount_local.indexOf(',')) {
-          objtoSub.amount_local = this.transaction.amount_local.replace(new RegExp('\\.', 'g'), '');
-          objtoSub.amount_local = this.transaction.amount_local.replace(',', '.');
-        }
-        this.api.post('app/transaction', objtoSub, this.userProvider).then((data: any) => {
-          loading.dismiss();
-          let toast = this.toastCtrl.create({
-            message: 'Su transacción ha solicitada correctamente.',
-            duration: 3000,
-          });
-          this.closeModal();
-          this.navCtrl.setPages([{page: 'HomePage'}, {page: 'TransactionResumePage', params: data}]);
-          toast.present();
-        }).catch(data => {
-          console.log(data)
-        });
-
+          let objtoSub = this.transaction;
+          let amount = objtoSub.amount_local+"";
+          let index = amount.indexOf(',');
+          console.log(index);
+          if(index>0){
+            objtoSub.amount_local = this.transaction.amount_local.replace(new RegExp('\\.', 'g'), '');
+            objtoSub.amount_local = this.transaction.amount_local.replace(',', '.');
+            this.api.post('app/transaction', objtoSub, this.userProvider).then((data: any) => {
+              loading.dismiss();
+              let toast = this.toastCtrl.create({
+                message: 'Su transacción ha solicitada correctamente.',
+                duration: 3000,
+              });
+              this.closeModal();
+              this.navCtrl.setPages([{page: 'HomePage'}, {page: 'TransactionResumePage', params: data}]);
+              toast.present();
+            }).catch(data => {
+              console.log(data)
+            });
+          }else{
+            let toast = this.toastCtrl.create({
+              message: 'Por favor ingrese un valor mayor a cero.',
+              duration: 3000,
+            });
+            toast.present();
+          }
         loading.dismiss();
       }
     } else {

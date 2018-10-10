@@ -29,7 +29,7 @@
                  type="number"></ion-input>
       <label stacked>Ingresar el valor de la transacción</label>
       <ion-input class="margBott" type="text" name="transaction-valor"
-                 [brmasker]="{money:true,decimal:0,thousand:',',type:'num'}"
+                 [brmasker]="{money:true,decimal:0,thousand:'.',type:'num'}"
                  [(ngModel)]="transaction.amount_local">
 
       </ion-input>

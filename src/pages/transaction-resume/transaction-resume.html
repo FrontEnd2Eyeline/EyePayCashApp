@@ -8,23 +8,54 @@
 
   <ion-card>
     <ion-card-header>
-      <ion-icon name="checkmark-circle"></ion-icon>
-      <label>A continuación</label>
+      <ion-icon name="list"></ion-icon>
+      <label> A continuación</label>
     </ion-card-header>
     <ion-card-content>
       <ul>
-        <li>Transacción solicitada</li>
-        <li>1- Realizar pago (Dirección o Código QR) </li>
+        <li>Transacción solicitada
+          <ion-icon name="checkmark-circle" end></ion-icon>
+        </li>
+        <li>1- Realizar pago (Dirección o Código QR)</li>
         <li>2- Realizar el retiro del efectivo</li>
-        <button ion-button outline block (click)="goMaps()"> Ver mapa</button>
+        <button class="buttonPayCash" ion-button outline block (click)="goMaps()"> Ver mapa</button>
       </ul>
     </ion-card-content>
   </ion-card>
 
   <ion-card>
     <ion-card-header>
+      <ion-icon name="cash"></ion-icon>
+      <label stacked> Información de pago:</label>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-row>
+        <ion-col col-6 text-left>Total criptomoneda</ion-col>
+        <ion-col col-6 text-right> {{ result.commission.CRYPTO }}</ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-6 text-left>Total USD</ion-col>
+        <ion-col col-6 text-right> {{transaction.amount_btc}}</ion-col>
+      </ion-row>
+      <ion-row text-center>
+        <ion-col col-12>
+          Dirección de pago {{coin.full_name}}: <br>
+          <h2>{{coinhas.eye_hash}}</h2>
+        </ion-col>
+      </ion-row>
+      <ion-row text-center>
+        <ion-col col-12>
+          Código QR de pago:
+          <img src="{{qrlink}}">
+        </ion-col>
+      </ion-row>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>
       <ion-icon name="card"></ion-icon>
-      <label stacked>Información detallada:</label>
+      <label stacked> Información transacción:</label>
     </ion-card-header>
     <ion-card-content>
       <ion-list>
@@ -49,26 +80,6 @@
         <ion-row>
           <ion-col col-6 text-left>Costo en USD</ion-col>
           <ion-col col-6 text-right> {{transaction.amount_usd}}</ion-col>
-        </ion-row>
-        <ion-row>
-          <ion-col col-6 text-left>Costo en criptomoneda</ion-col>
-          <ion-col col-6 text-right> {{transaction.amount_btc }}</ion-col>
-        </ion-row>
-        <ion-row>
-          <ion-col col-6 text-left>Costo comisión</ion-col>
-          <ion-col col-6 text-right> {{result.commission.CRYPTO}}</ion-col>
-        </ion-row>
-        <ion-row text-center>
-          <ion-col col-12>
-             Dirección de pago {{coin.full_name}}: <br>
-            <h2>{{coinhas.eye_hash}}</h2>
-          </ion-col>
-        </ion-row>
-        <ion-row text-center>
-          <ion-col col-12>
-            Código QR:
-            <img src="{{qrlink}}">
-          </ion-col>
         </ion-row>
       </ion-list>
     </ion-card-content>
