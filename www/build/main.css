@@ -26816,6 +26816,11 @@ page-transaction-resume .select-md .select-icon .select-icon-inner {
   color: white;
 }
 
+page-transaction-resume .button-outline-md {
+  border-width: 0px !important;
+  color: white !important;
+}
+
 page-transaction-resume .select-md {
   padding: 13px 8px 13px 16px;
   background: #063996;
