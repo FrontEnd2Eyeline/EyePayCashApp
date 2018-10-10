@@ -49,14 +49,16 @@ export class TransactionPage {
     this.informationProvider.getCurrencies(this.currency)
       .then((value: any) => {
         this.infoCountry = value;
-        this.monedas = value.coins
+        this.monedas = value.coins;
       })
   }
 
   monedaSelect(moneda) {
     let modalTransaction = this.modalCtrl.create('ModalTransactionPage', {
       'moneda': moneda,
-      'userCountry': this.userProvider.user_Country,
+      'infoCountry': this.infoCountry,
+      'currency':this.currency,
+       'pais_id':this.informationProvider.getCountriesID(this.currency)
     });
     modalTransaction.present();
     modalTransaction.onDidDismiss((data: any) => {

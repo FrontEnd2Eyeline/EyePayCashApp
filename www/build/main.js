@@ -1,1 +1,1121 @@
-webpackJsonp([16],{128:function(n,e,l){"use strict";l.d(e,"a",function(){return t});l(2),l(33);var t=function(){function n(n,e,l,t){this.navCtrl=n,this.navParams=e,this.country=l,this.view=t}return n.prototype.ionViewDidLoad=function(){this.searchbar.getItems()},n.prototype.selectItem=function(n){this.view.dismiss({code:n.callingCodes[0],flag:n.flag})},n}()},129:function(n,e,l){"use strict";l.d(e,"a",function(){return o});l(2),l(33);var t=l(128),o=function(){function n(n,e,l,t,o,a,r){var u=this;this.navCtrl=n,this.navParams=e,this.modal=l,this.api=t,this.toastCtrl=o,this.loadingCtrl=a,this.locationProvider=r,this.user_register={country_code:"",flag:"",value:""},this.code_verify=null,this.response_verify={id:null,is_mail_verify:null,mail_code:null,phone_code:null,country_id:null},this.imagen="assets/backgrounds/Background2.png",this.locationProvider.getBasicInfo().then(function(n){u.user_register.country_code=n.country_code,u.user_register.flag=n.flag})}return n.prototype.cancel=function(){this.navCtrl.setRoot("LoginPage")},n.prototype.sendNumberPhone=function(){var n=this;if(""!=this.user_register.country_code&&""!=this.user_register.value){var e=this.loadingCtrl.create({spinner:"dots"}),l=this.toastCtrl.create({message:"Se ha enviado un código de verificación al número celular ingresado.",duration:3e3});e.present(),this.api.post("auth/pre-sign-up",this.user_register).then(function(t){e.dismiss(),l.present(),n.response_verify=t.verify,n.response_verify.country_id=t.country.id,console.log(n.response_verify.phone_code)}).catch()}else{this.toastCtrl.create({message:"Toda la información es obligatoria",duration:3e3}).present()}},n.prototype.selectcountry=function(){var n=this,e=this.modal.create(t.a);e.present(),e.onDidDismiss(function(e){void 0!==e&&(n.user_register.country_code=e.code,n.user_register.flag=e.flag)})},n.prototype.verifyCode=function(){if(this.code_verify==this.response_verify.phone_code)this.navCtrl.push("RegisterPage",{response:this.response_verify,register:this.user_register});else{this.toastCtrl.create({message:"Código incorrecto.",duration:3e3}).present()}},n}()},201:function(n,e,l){"use strict";l.d(e,"a",function(){return t});l(2),l(33),l(91),l(87);var t=function(){return function(){}}()},202:function(n,e,l){"use strict";l.d(e,"a",function(){return t});l(2),l(33);var t=function(){return function(){}}()},213:function(n,e){function l(n){return Promise.resolve().then(function(){throw new Error("Cannot find module '"+n+"'.")})}l.keys=function(){return[]},l.resolve=l,n.exports=l,l.id=213},241:function(n,e,l){function t(n){var e=o[n];return e?l.e(e[1]).then(function(){return l(e[0])}):Promise.reject(new Error("Cannot find module '"+n+"'."))}var o={"../pages/account/account.module.ngfactory":[653,2],"../pages/history-resume/history-resume.module.ngfactory":[654,5],"../pages/history/history.module.ngfactory":[655,1],"../pages/home/home.module.ngfactory":[656,13],"../pages/login/login.module.ngfactory":[657,12],"../pages/map/map.module.ngfactory":[658,6],"../pages/modal-transaction/modal-transaction.module.ngfactory":[659,4],"../pages/modal-welcome/modal-welcome.module.ngfactory":[660,8],"../pages/password-update/password-update.module.ngfactory":[661,11],"../pages/politicas/politicas.module.ngfactory":[668,10],"../pages/recovery-password/recovery-password.module.ngfactory":[662,9],"../pages/reg-number-phone/reg-number-phone.module.ngfactory":[663,15],"../pages/register/register.module.ngfactory":[664,7],"../pages/select-code/select-code.module.ngfactory":[665,14],"../pages/transaction-resume/transaction-resume.module.ngfactory":[666,3],"../pages/transaction/transaction.module.ngfactory":[667,0]};t.keys=function(){return Object.keys(o)},t.id=241,n.exports=t},362:function(n,e,l){"use strict";function t(n){return r._22(0,[(n()(),r.Z(0,0,null,null,2,"button",[["class","buttonPayCash borderBtns"],["ion-button",""],["small",""]],null,[[null,"click"]],function(n,e,l){var t=!0;if("click"===e){t=!1!==n.component.sendNumberPhone()&&t}return t},u.b,u.a)),r.Y(1,1097728,null,0,i.a,[[8,""],s.a,r.j,r.z],{small:[0,"small"]},null),(n()(),r._20(-1,0,["Enviar\n    "]))],function(n,e){n(e,1,0,"")},null)}function o(n){return r._22(0,[(n()(),r.Z(0,0,null,null,2,"button",[["class","buttonPayCash borderBtns"],["ion-button",""],["small",""]],null,[[null,"click"]],function(n,e,l){var t=!0;if("click"===e){t=!1!==n.component.verifyCode()&&t}return t},u.b,u.a)),r.Y(1,1097728,null,0,i.a,[[8,""],s.a,r.j,r.z],{small:[0,"small"]},null),(n()(),r._20(-1,0,["Continuar\n    "]))],function(n,e){n(e,1,0,"")},null)}function a(n){return r._22(0,[(n()(),r.Z(0,0,null,null,96,"ion-content",[["class","imgBackground vignette"]],[[2,"statusbar-padding",null],[2,"has-refresher",null]],null,null,c.b,c.a)),r.Y(1,4374528,null,0,d.a,[s.a,g.a,f.a,r.j,r.z,p.a,_.a,r.u,[2,m.a],[2,h.a]],null,null),(n()(),r._20(-1,1,["\n  "])),(n()(),r.Z(3,0,null,1,13,"div",[["class","center"],["style","margin-top:12%"]],null,null,null,null,null)),(n()(),r._20(-1,null,["\n    "])),(n()(),r.Z(5,0,null,null,1,"ion-img",[["class","logo"],["src","assets/imgs/EPCLogo.png"],["style","margin-bottom: 10%;"]],null,null,null,y.b,y.a)),r.Y(6,1228800,null,0,v.a,[r.j,r.z,g.a,[2,d.a],f.a],{src:[0,"src"]},null),(n()(),r._20(-1,null,["\n    "])),(n()(),r.Z(8,0,null,null,7,"div",[["class","center"]],null,null,null,null,null)),(n()(),r._20(-1,null,["\n      "])),(n()(),r.Z(10,0,null,null,4,"ion-label",[["class","center"],["style","color:white"]],null,null,null,null,null)),r.Y(11,16384,null,0,b.a,[s.a,r.j,r.z,[8,null],[8,null],[8,null],[8,null]],null,null),(n()(),r._20(-1,null,[" Enviaremos un CÓDIGO de verificación a el número"])),(n()(),r.Z(13,0,null,null,0,"br",[],null,null,null,null,null)),(n()(),r._20(-1,null,[" que registres\n        a continuación.\n      "])),(n()(),r._20(-1,null,["\n    "])),(n()(),r._20(-1,null,["\n  "])),(n()(),r._20(-1,1,["\n\n  "])),(n()(),r.Z(18,0,null,1,64,"div",[["class","center divMargin"]],null,null,null,null,null)),(n()(),r._20(-1,null,["\n    "])),(n()(),r.Z(20,0,null,null,44,"ion-grid",[["class","center marGrid grid"]],null,null,null,null,null)),r.Y(21,16384,null,0,C.a,[],null,null),(n()(),r._20(-1,null,["\n      "])),(n()(),r.Z(23,0,null,null,40,"ion-row",[["class","row"]],null,null,null,null,null)),r.Y(24,16384,null,0,P.a,[],null,null),(n()(),r._20(-1,null,["\n        "])),(n()(),r.Z(26,0,null,null,16,"ion-col",[["class","col"],["col-5",""]],null,null,null,null,null)),r.Y(27,16384,null,0,w.a,[],null,null),(n()(),r._20(-1,null,["\n          "])),(n()(),r.Z(29,0,null,null,12,"ion-item",[["class","item-flag item-md2 item-ios2 item item-block"]],null,null,null,I.b,I.a)),r.Y(30,1097728,null,3,k.a,[Y.a,s.a,r.j,r.z,[2,M.a]],null,null),r._18(335544320,1,{contentLabel:0}),r._18(603979776,2,{_buttons:1}),r._18(603979776,3,{_icons:1}),r.Y(34,16384,null,0,N.a,[],null,null),(n()(),r._20(-1,2,["\n            "])),(n()(),r.Z(36,0,null,2,0,"img",[["class","flagphone banderaWidt"]],[[8,"src",4]],null,null,null,null)),(n()(),r._20(-1,2,["\n            "])),(n()(),r.Z(38,0,null,2,2,"button",[["class","transparente item-md2 item-button2 button-md "],["ion-button",""]],null,[[null,"click"]],function(n,e,l){var t=!0;if("click"===e){t=!1!==n.component.selectcountry()&&t}return t},u.b,u.a)),r.Y(39,1097728,[[2,4]],0,i.a,[[8,""],s.a,r.j,r.z],null,null),(n()(),r._20(40,0,["+\n              ","\n            "])),(n()(),r._20(-1,2,["\n          "])),(n()(),r._20(-1,null,["\n        "])),(n()(),r._20(-1,null,["\n        "])),(n()(),r.Z(44,0,null,null,18,"ion-col",[["class","col"],["col-7",""]],null,null,null,null,null)),r.Y(45,16384,null,0,w.a,[],null,null),(n()(),r._20(-1,null,["\n          "])),(n()(),r.Z(47,0,null,null,14,"ion-item",[["class","stylCel item item-block"]],null,null,null,I.b,I.a)),r.Y(48,1097728,null,3,k.a,[Y.a,s.a,r.j,r.z,[2,M.a]],null,null),r._18(335544320,4,{contentLabel:0}),r._18(603979776,5,{_buttons:1}),r._18(603979776,6,{_icons:1}),r.Y(52,16384,null,0,N.a,[],null,null),(n()(),r._20(-1,2,["\n            "])),(n()(),r.Z(54,0,null,3,6,"ion-input",[["name","numerocelular"],["placeholder","Número movil (celular)"],["required",""],["type","text"]],[[1,"required",0],[2,"ng-untouched",null],[2,"ng-touched",null],[2,"ng-pristine",null],[2,"ng-dirty",null],[2,"ng-valid",null],[2,"ng-invalid",null],[2,"ng-pending",null]],[[null,"ngModelChange"]],function(n,e,l){var t=!0;if("ngModelChange"===e){t=!1!==(n.component.user_register.value=l)&&t}return t},Z.b,Z.a)),r.Y(55,16384,null,0,j.o,[],{required:[0,"required"]},null),r._16(1024,null,j.g,function(n){return[n]},[j.o]),r.Y(57,671744,null,0,j.m,[[8,null],[2,j.g],[8,null],[8,null]],{name:[0,"name"],model:[1,"model"]},{update:"ngModelChange"}),r._16(2048,null,j.i,null,[j.m]),r.Y(59,16384,null,0,j.j,[j.i],null,null),r.Y(60,5423104,null,0,R.a,[s.a,g.a,Y.a,p.a,r.j,r.z,[2,d.a],[2,k.a],[2,j.i],f.a],{type:[0,"type"],placeholder:[1,"placeholder"]},null),(n()(),r._20(-1,2,["\n          "])),(n()(),r._20(-1,null,["\n        "])),(n()(),r._20(-1,null,["\n      "])),(n()(),r._20(-1,null,["\n    "])),(n()(),r._20(-1,null,["\n    "])),(n()(),r.Z(66,0,null,null,15,"ion-item",[["class","inputClass item item-block"]],null,null,null,I.b,I.a)),r.Y(67,1097728,null,3,k.a,[Y.a,s.a,r.j,r.z,[2,M.a]],null,null),r._18(335544320,7,{contentLabel:0}),r._18(603979776,8,{_buttons:1}),r._18(603979776,9,{_icons:1}),r.Y(71,16384,null,0,N.a,[],null,null),(n()(),r._20(-1,2,["\n      "])),(n()(),r.Z(73,0,null,3,7,"ion-input",[["maxlength","6"],["placeholder","Introduce el código"],["required",""],["style","text-align: center"],["type","text"]],[[1,"required",0],[1,"maxlength",0],[2,"ng-untouched",null],[2,"ng-touched",null],[2,"ng-pristine",null],[2,"ng-dirty",null],[2,"ng-valid",null],[2,"ng-invalid",null],[2,"ng-pending",null]],[[null,"ngModelChange"]],function(n,e,l){var t=!0;if("ngModelChange"===e){t=!1!==(n.component.code_verify=l)&&t}return t},Z.b,Z.a)),r.Y(74,16384,null,0,j.o,[],{required:[0,"required"]},null),r.Y(75,540672,null,0,j.f,[],{maxlength:[0,"maxlength"]},null),r._16(1024,null,j.g,function(n,e){return[n,e]},[j.o,j.f]),r.Y(77,671744,null,0,j.m,[[8,null],[2,j.g],[8,null],[8,null]],{model:[0,"model"]},{update:"ngModelChange"}),r._16(2048,null,j.i,null,[j.m]),r.Y(79,16384,null,0,j.j,[j.i],null,null),r.Y(80,5423104,null,0,R.a,[s.a,g.a,Y.a,p.a,r.j,r.z,[2,d.a],[2,k.a],[2,j.i],f.a],{type:[0,"type"],placeholder:[1,"placeholder"]},null),(n()(),r._20(-1,2,["\n    "])),(n()(),r._20(-1,null,["\n  "])),(n()(),r._20(-1,1,["\n  "])),(n()(),r.Z(84,0,null,1,11,"div",[["class","center marginBts"]],null,null,null,null,null)),(n()(),r._20(-1,null,["\n    "])),(n()(),r.Z(86,0,null,null,2,"button",[["class","buttonPayCash borderBtns"],["ion-button",""],["small",""]],null,[[null,"click"]],function(n,e,l){var t=!0;if("click"===e){t=!1!==n.component.cancel()&&t}return t},u.b,u.a)),r.Y(87,1097728,null,0,i.a,[[8,""],s.a,r.j,r.z],{small:[0,"small"]},null),(n()(),r._20(-1,0,["Cancelar"])),(n()(),r._20(-1,null,["\n    "])),(n()(),r.U(16777216,null,null,1,null,t)),r.Y(91,16384,null,0,H.l,[r.I,r.F],{ngIf:[0,"ngIf"]},null),(n()(),r._20(-1,null,["\n    "])),(n()(),r.U(16777216,null,null,1,null,o)),r.Y(94,16384,null,0,H.l,[r.I,r.F],{ngIf:[0,"ngIf"]},null),(n()(),r._20(-1,null,["\n  "])),(n()(),r._20(-1,1,["\n\n"]))],function(n,e){var l=e.component;n(e,6,0,"assets/imgs/EPCLogo.png");n(e,55,0,"");n(e,57,0,"numerocelular",l.user_register.value);n(e,60,0,"text","Número movil (celular)");n(e,74,0,"");n(e,75,0,"6");n(e,77,0,l.code_verify);n(e,80,0,"text","Introduce el código");n(e,87,0,"");n(e,91,0,null==l.response_verify.phone_code);n(e,94,0,null!=l.response_verify.phone_code)},function(n,e){var l=e.component;n(e,0,0,r._11(e,1).statusbarPadding,r._11(e,1)._hasRefresher);n(e,36,0,l.user_register.flag);n(e,40,0,l.user_register.country_code);n(e,54,0,r._11(e,55).required?"":null,r._11(e,59).ngClassUntouched,r._11(e,59).ngClassTouched,r._11(e,59).ngClassPristine,r._11(e,59).ngClassDirty,r._11(e,59).ngClassValid,r._11(e,59).ngClassInvalid,r._11(e,59).ngClassPending);n(e,73,0,r._11(e,74).required?"":null,r._11(e,75).maxlength?r._11(e,75).maxlength:null,r._11(e,79).ngClassUntouched,r._11(e,79).ngClassTouched,r._11(e,79).ngClassPristine,r._11(e,79).ngClassDirty,r._11(e,79).ngClassValid,r._11(e,79).ngClassInvalid,r._11(e,79).ngClassPending)})}l.d(e,"a",function(){return q});var r=l(1),u=l(37),i=l(28),s=l(3),c=l(190),d=l(25),g=l(6),f=l(10),p=l(12),_=l(34),m=l(7),h=l(30),y=l(361),v=l(88),b=l(55),C=l(141),P=l(126),w=l(125),I=l(195),k=l(22),Y=l(20),M=l(54),N=l(86),Z=l(196),j=l(17),R=l(60),H=l(19),F=l(129),T=l(15),U=l(89),x=l(46),L=l(84),z=l(83),S=l(57),V=r.X({encapsulation:2,styles:[],data:{}}),q=r.V("page-reg-number-phone",F.a,function(n){return r._22(0,[(n()(),r.Z(0,0,null,null,1,"page-reg-number-phone",[],null,null,null,a,V)),r.Y(1,49152,null,0,F.a,[h.a,T.a,U.a,x.a,L.a,z.a,S.a],null,null)],null,null)},{},{},[])},363:function(n,e,l){"use strict";function t(n){return a._22(0,[(n()(),a._20(-1,null,["\n    "])),(n()(),a.Z(1,0,null,null,0,"img",[["class","flag"]],[[8,"src",4]],null,null,null,null)),(n()(),a._20(-1,null,["\n    "])),(n()(),a.Z(3,0,null,null,0,"span",[],[[8,"innerHTML",1]],null,null,null,null)),(n()(),a._20(-1,null,["\n  "]))],null,function(n,e){n(e,1,0,a._2(1,"",e.context.attrs.data.flag,""));n(e,3,0,"+"+e.context.attrs.data.callingCodes[0]+" "+e.context.attrs.data.name)})}function o(n){return a._22(0,[a._18(402653184,1,{searchbar:0}),(n()(),a.Z(1,0,null,null,9,"ion-content",[["padding",""]],[[2,"statusbar-padding",null],[2,"has-refresher",null]],null,null,r.b,r.a)),a.Y(2,4374528,null,0,u.a,[i.a,s.a,c.a,a.j,a.z,d.a,g.a,a.u,[2,f.a],[2,p.a]],null,null),(n()(),a._20(-1,1,["\n  "])),(n()(),a.U(0,[["withFlags",2]],1,0,null,t)),(n()(),a._20(-1,1,["\n  "])),(n()(),a.Z(6,0,null,1,3,"ion-auto-complete",[["item-content",""]],null,[[null,"itemSelected"],["document","click"]],function(n,e,l){var t=!0,o=n.component;if("document:click"===e){t=!1!==a._11(n,8).documentClickHandler(l)&&t}if("itemSelected"===e){t=!1!==o.selectItem(l)&&t}return t},_.b,_.a)),a._16(5120,null,m.h,function(n){return[n]},[h.a]),a.Y(8,8437760,[[1,4],["search",4]],0,h.a,[],{dataProvider:[0,"dataProvider"],options:[1,"options"],showResultsFirst:[2,"showResultsFirst"],template:[3,"template"]},{itemSelected:"itemSelected"}),a._14(9,{placeholder:0}),(n()(),a._20(-1,1,["\n"])),(n()(),a._20(-1,null,["\n"]))],function(n,e){n(e,8,0,e.component.country,n(e,9,0,"Search your country"),!0,a._11(e,4))},function(n,e){n(e,1,0,a._11(e,2).statusbarPadding,a._11(e,2)._hasRefresher)})}l.d(e,"a",function(){return P});var a=l(1),r=l(190),u=l(25),i=l(3),s=l(6),c=l(10),d=l(12),g=l(34),f=l(7),p=l(30),_=l(651),m=l(17),h=l(61),y=l(128),v=l(15),b=l(72),C=a.X({encapsulation:2,styles:[],data:{}}),P=a.V("page-select-code",y.a,function(n){return a._22(0,[(n()(),a.Z(0,0,null,null,1,"page-select-code",[],null,null,null,o,C)),a.Y(1,49152,null,0,y.a,[p.a,v.a,b.a,f.a],null,null)],null,null)},{},{},[])},364:function(n,e,l){"use strict";function t(n){return a._22(0,[(n()(),a.Z(0,0,null,null,2,"ion-nav",[],null,null,null,U.b,U.a)),a._16(6144,null,x.a,null,[L.a]),a.Y(2,4374528,null,0,L.a,[[2,z.a],[2,S.a],V.a,q.a,B.a,a.j,a.u,a.z,a.i,D.l,E.a,[2,O.a],A.a,a.k],{root:[0,"root"]},null),(n()(),a._20(-1,null,["\n"]))],function(n,e){n(e,2,0,e.component.rootPage)},null)}Object.defineProperty(e,"__esModule",{value:!0});var o=l(47),a=l(1),r=(l(2),l(33),l(122)),u=l(123),i=l(57),s=l(59),c=l(90),d=function(){function n(n,e,l,t,o,a){var r=this;this.locationProvider=t,this.auth=o,this.informationProvider=a,this.rootPage="LoginPage",this.auth.trylogin().then(function(n){n&&(r.rootPage="HomePage",r.informationProvider.init())}),n.ready().then(function(){e.styleDefault(),l.hide(),n.is("cordova")&&r.getLocation()})}return n.prototype.getLocation=function(){},n}(),g=l(72),f=l(202),p=l(51),_=l(46),m=l(150),h=l(87),y=l(91),v=l(201),b=function(){function n(n,e,l,t){this.http=n,this.toastCtrl=e,this.loadingCtrl=l,this.api=t,this.response_verify={id:null,is_mail_verify:null,mail_code:null,phone_code:null,country_id:null},this.infoPhone={country_code:"",flag:"",value:""}}return n.prototype.sendNumberPhone=function(){var n=this;this.api.post("auth/pre-sign-up",this.infoPhone).then(function(e){return n.response_verify=e.verify,n.response_verify.country_id=e.country.id,console.log(n.response_verify.phone_code),n.response_verify}).catch(function(n){console.log(n)})},n}(),C=l(197),P=function(){return function(){}}(),w=l(66),I=l(180),k=l(181),Y=l(182),M=l(183),N=l(184),Z=l(185),j=l(186),R=l(187),H=l(188),F=l(363),T=l(362),U=l(652),x=l(50),L=l(71),z=l(7),S=l(30),V=l(12),q=l(3),B=l(6),D=l(13),E=l(43),O=l(26),A=l(10),X=a.X({encapsulation:2,styles:[],data:{}}),G=a.V("ng-component",d,function(n){return a._22(0,[(n()(),a.Z(0,0,null,null,1,"ng-component",[],null,null,null,t,X)),a.Y(1,49152,null,0,d,[B.a,u.a,r.a,i.a,s.a,c.a],null,null)],null,null)},{},{},[]),W=l(19),J=l(164),K=l(17),Q=l(136),$=l(138),nn=l(163),en=l(20),ln=l(45),tn=l(34),on=l(83),an=l(124),rn=l(68),un=l(52),sn=l(89),cn=l(102),dn=l(170),gn=l(166),fn=l(84),pn=l(360),_n=l(165),mn=l(41),hn=l(146),yn=l(167),vn=l(61),bn=l(129),Cn=a.W(P,[w.b],function(n){return a._7([a._8(512,a.i,a.S,[[8,[I.a,k.a,Y.a,M.a,N.a,Z.a,j.a,R.a,H.a,F.a,T.a,G]],[3,a.i],a.s]),a._8(5120,a.r,a._17,[[3,a.r]]),a._8(4608,W.n,W.m,[a.r,[2,W.w]]),a._8(5120,a.b,a._1,[]),a._8(5120,a.p,a._9,[]),a._8(5120,a.q,a._12,[]),a._8(4608,o.c,o.q,[W.d]),a._8(6144,a.D,null,[o.c]),a._8(4608,o.f,J.a,[]),a._8(5120,o.d,function(n,e,l,t,a){return[new o.k(n,e),new o.o(l),new o.n(t,a)]},[W.d,a.u,W.d,W.d,o.f]),a._8(4608,o.e,o.e,[o.d,a.u]),a._8(135680,o.m,o.m,[W.d]),a._8(4608,o.l,o.l,[o.e,o.m]),a._8(6144,a.B,null,[o.l]),a._8(6144,o.p,null,[o.m]),a._8(4608,a.G,a.G,[a.u]),a._8(4608,o.h,o.h,[W.d]),a._8(4608,o.i,o.i,[W.d]),a._8(4608,p.i,p.o,[W.d,a.w,p.m]),a._8(4608,p.p,p.p,[p.i,p.n]),a._8(5120,p.a,function(n){return[n]},[p.p]),a._8(4608,p.l,p.l,[]),a._8(6144,p.j,null,[p.l]),a._8(4608,p.h,p.h,[p.j]),a._8(6144,p.b,null,[p.h]),a._8(4608,p.f,p.k,[p.b,a.o]),a._8(4608,p.c,p.c,[p.f]),a._8(4608,K.r,K.r,[]),a._8(4608,K.d,K.d,[]),a._8(4608,y.a,y.a,[]),a._8(4608,h.a,h.a,[]),a._8(4608,Q.a,Q.a,[V.a,q.a]),a._8(4608,$.a,$.a,[V.a,q.a]),a._8(4608,nn.a,nn.a,[]),a._8(4608,en.a,en.a,[]),a._8(4608,ln.a,ln.a,[B.a]),a._8(4608,tn.a,tn.a,[q.a,B.a,a.u,A.a]),a._8(4608,on.a,on.a,[V.a,q.a]),a._8(5120,W.i,an.c,[W.u,[2,W.a],q.a]),a._8(4608,W.h,W.h,[W.i]),a._8(5120,rn.b,rn.d,[V.a,rn.a]),a._8(5120,O.a,O.b,[V.a,rn.b,W.h,un.b,a.i]),a._8(4608,sn.a,sn.a,[V.a,q.a,O.a]),a._8(4608,cn.a,cn.a,[V.a,q.a]),a._8(4608,dn.a,dn.a,[V.a,q.a,O.a]),a._8(4608,gn.a,gn.a,[q.a,B.a,A.a,V.a,D.l]),a._8(4608,fn.a,fn.a,[V.a,q.a]),a._8(4608,E.a,E.a,[B.a,q.a]),a._8(5120,m.b,m.d,[m.c]),a._8(4608,u.a,u.a,[]),a._8(4608,r.a,r.a,[]),a._8(4608,g.a,g.a,[p.c]),a._8(4608,_.a,_.a,[p.c,m.b]),a._8(4608,i.a,i.a,[p.c,h.a,y.a,g.a]),a._8(4608,s.a,s.a,[_.a,fn.a]),a._8(4608,b,b,[p.c,fn.a,on.a,_.a]),a._8(4608,c.a,c.a,[p.c,s.a,_.a]),a._8(4608,C.b,C.b,[]),a._8(512,W.b,W.b,[]),a._8(512,a.k,pn.a,[]),a._8(256,q.b,{},[]),a._8(1024,_n.a,_n.b,[]),a._8(1024,B.a,B.b,[o.b,_n.a,a.u]),a._8(1024,q.a,q.c,[q.b,B.a]),a._8(512,A.a,A.a,[B.a]),a._8(512,mn.a,mn.a,[]),a._8(512,V.a,V.a,[q.a,B.a,[2,mn.a]]),a._8(512,D.l,D.l,[V.a]),a._8(256,rn.a,{links:[{loadChildren:"../pages/account/account.module.ngfactory#AccountPageModuleNgFactory",name:"AccountPage",segment:"account",priority:"low",defaultHistory:[]},{loadChildren:"../pages/history-resume/history-resume.module.ngfactory#HistoryResumePageModuleNgFactory",name:"HistoryResumePage",segment:"history-resume",priority:"low",defaultHistory:[]},{loadChildren:"../pages/history/history.module.ngfactory#HistoryPageModuleNgFactory",name:"HistoryPage",segment:"history",priority:"low",defaultHistory:[]},{loadChildren:"../pages/home/home.module.ngfactory#HomePageModuleNgFactory",name:"HomePage",segment:"app",priority:"low",defaultHistory:[]},{loadChildren:"../pages/login/login.module.ngfactory#LoginPageModuleNgFactory",name:"LoginPage",segment:"login",priority:"low",defaultHistory:[]},{loadChildren:"../pages/map/map.module.ngfactory#MapPageModuleNgFactory",name:"MapPage",segment:"map",priority:"low",defaultHistory:[]},{loadChildren:"../pages/modal-transaction/modal-transaction.module.ngfactory#ModalTransactionPageModuleNgFactory",name:"ModalTransactionPage",segment:"modal-transaction",priority:"low",defaultHistory:[]},{loadChildren:"../pages/modal-welcome/modal-welcome.module.ngfactory#ModalWelcomePageModuleNgFactory",name:"ModalWelcomePage",segment:"modal-welcome",priority:"low",defaultHistory:[]},{loadChildren:"../pages/password-update/password-update.module.ngfactory#PasswordUpdatePageModuleNgFactory",name:"PasswordUpdatePage",segment:"password-update",priority:"low",defaultHistory:[]},{loadChildren:"../pages/recovery-password/recovery-password.module.ngfactory#RecoveryPasswordPageModuleNgFactory",name:"RecoveryPasswordPage",segment:"recovery-password",priority:"low",defaultHistory:[]},{loadChildren:"../pages/reg-number-phone/reg-number-phone.module.ngfactory#RegNumberPhonePageModuleNgFactory",name:"RegNumberPhonePage",segment:"reg-number-phone",priority:"low",defaultHistory:[]},{loadChildren:"../pages/register/register.module.ngfactory#RegisterPageModuleNgFactory",name:"RegisterPage",segment:"register",priority:"low",defaultHistory:[]},{loadChildren:"../pages/select-code/select-code.module.ngfactory#SelectCodePageModuleNgFactory",name:"SelectCodePage",segment:"select-code",priority:"low",defaultHistory:[]},{loadChildren:"../pages/transaction-resume/transaction-resume.module.ngfactory#TransactionResumePageModuleNgFactory",name:"TransactionResumePage",segment:"transaction-resume",priority:"low",defaultHistory:[]},{loadChildren:"../pages/transaction/transaction.module.ngfactory#TransactionPageModuleNgFactory",name:"TransactionPage",segment:"transaction",priority:"low",defaultHistory:[]},{loadChildren:"../pages/politicas/politicas.module.ngfactory#PoliticasPageModuleNgFactory",name:"PoliticasPage",segment:"politicas",priority:"low",defaultHistory:[]}]},[]),a._8(512,a.h,a.h,[]),a._8(512,hn.a,hn.a,[a.h]),a._8(1024,un.b,un.c,[hn.a,a.o]),a._8(1024,a.c,function(n,e,l,t,a,r,u,i,s,c,d,g,f){return[o.s(n),yn.a(e),nn.b(l,t),gn.b(a,r,u,i,s),un.d(c,d,g,f)]},[[2,a.t],q.a,B.a,A.a,q.a,B.a,A.a,V.a,D.l,q.a,rn.a,un.b,a.u]),a._8(512,a.d,a.d,[[2,a.c]]),a._8(131584,a.f,a.f,[a.u,a.T,a.o,a.k,a.i,a.d]),a._8(512,a.e,a.e,[a.f]),a._8(512,o.a,o.a,[[3,o.a]]),a._8(512,p.e,p.e,[]),a._8(512,p.d,p.d,[]),a._8(512,K.p,K.p,[]),a._8(512,K.e,K.e,[]),a._8(512,K.n,K.n,[]),a._8(512,an.a,an.a,[]),a._8(512,m.a,m.a,[]),a._8(512,an.b,an.b,[]),a._8(512,vn.b,vn.b,[]),a._8(512,f.a,f.a,[]),a._8(512,v.a,v.a,[]),a._8(512,P,P,[]),a._8(256,p.m,"XSRF-TOKEN",[]),a._8(256,p.n,"X-XSRF-TOKEN",[]),a._8(256,un.a,bn.a,[]),a._8(256,w.a,d,[]),a._8(256,W.a,"/",[]),a._8(256,m.c,null,[])])});Object(a.M)(),Object(o.j)().bootstrapModuleFactory(Cn)},46:function(n,e,l){"use strict";l.d(e,"a",function(){return o});l(2);var t=l(51),o=function(){function n(n,e){this.http=n,this.storage=e,this.url="http://192.168.0.6/eyepaycash/frontend/web/apiapp/",this.headers=new t.g({"Content-Type":"application/x-www-form-urlencoded"})}return n.prototype.get=function(n,e,l){var o=this;return null!=e&&(this.headers=new t.g({"Content-Type":"application/x-www-form-urlencoded",Authorization:"Bearer "+e.accessParam()})),new Promise(function(e,t){var a=o.url+n,r="";l&&(r=o.jsonToURLEncoded(l)),o.http.get(a+"?"+r,{headers:o.headers}).toPromise().then(function(l){o.storage.set(n,l),e(l)}).catch(function(l){o.storage.get(n).then(function(n){e(n)}).catch(function(n){t("Lo sentimos. No hemos podido mostrar información. Comunícate con nuestro equipo de soporte")})})})},n.prototype.post=function(n,e,l){var o=this.url+n;return null!=l&&(this.headers=new t.g({"Content-Type":"application/x-www-form-urlencoded",Authorization:"Bearer "+l.accessParam()})),this.http.post(o,this.jsonToURLEncoded(e),{headers:this.headers}).toPromise()},n.prototype.jsonToURLEncoded=function(n){return Object.keys(n).map(function(e){return encodeURIComponent(e)+"="+encodeURIComponent(n[e])}).join("&")},n}()},57:function(n,e,l){"use strict";l.d(e,"a",function(){return t});l(2),l(87),l(72),l(91);var t=function(){function n(n,e,l,t){this.http=n,this.geoCtrl=e,this.geocode=l,this.countryProvider=t,this.basicInformacion={country_code:null,flag:null},this.fullInformation=null,this.load=!1,this.getInformation(),this.getBasicInfo()}return n.prototype.getInformation=function(){var n=this;return new Promise(function(e,l){n.load?e(!0):n.geoCtrl.getCurrentPosition({enableHighAccuracy:!1,timeout:1e4}).then(function(l){n.geocode.reverseGeocode(l.coords.latitude,l.coords.longitude).then(function(l){if(n.countryProvider.getResults(l[0].countryName).length){var t=n.countryProvider.getResults(l[0].countryName)[0];n.fullInformation=t,n.basicInformacion.country_code=t.callingCodes[0],n.basicInformacion.flag=t.flag,n.load=!0,e(!0)}}).catch(function(n){return console.log("reversegeocode",n)})}).catch(function(n){return console.log("getcurrentposition",n)})})},n.prototype.getBasicInfo=function(){var n=this;return new Promise(function(e){n.getInformation().then(function(){e(n.basicInformacion)})})},n}()},59:function(n,e,l){"use strict";l.d(e,"a",function(){return t});l(2),l(46),l(33);var t=function(){function n(n,e){this.api=n,this.toastCtrl=e,this.user_Info={first_name:null,last_name:null,phone:null,access_token:null,is_active:null,gender:null,mail:null},this.user_Country={id:null,name:null,is_active:null,phone_code:null,country_code:null,currency:null},this.User_Verify={id:null,phone_code:null,is_phone_verify:null,mail_code:null,is_mail_verify:null,phone:null,mail:null,user_id:null},this.userRecovery={user_id:null,codigoVerify:null},this.check_terminos=!1,this.trylogin()}return n.prototype.login=function(n,e){var l=this;return new Promise(function(t,o){l.api.post("auth/login?expand=country,userVerify",{mail:n,password:e}).then(function(n){if("ok"==n.success)l.setUser(n.user),l.setUserCountry(n.user.country),l.setUserVerify(n.user.userVerify),t(n);else{l.toastCtrl.create({message:"Usuario o contraseña incorrectos",duration:3e3}).present()}}).catch(function(n){return o(n)})})},n.prototype.isLogin=function(){return null!=this.user_Info},n.prototype.trylogin=function(){var n=this;return new Promise(function(e){n.user_Info=JSON.parse(window.localStorage.getItem("user")),console.log(n.user_Info),null!=n.user_Info&&(n.setUserCountry(n.user_Info.country),n.setUserVerify(n.user_Info.userVerify),e(!0)),e(!1)})},n.prototype.accessParam=function(){return null!=this.user_Info?this.user_Info.access_token:null},n.prototype.setUser=function(n){this.user_Info=n,window.localStorage.setItem("user",JSON.stringify(this.user_Info))},n.prototype.setUserCountry=function(n){this.user_Country=n},n.prototype.setUserVerify=function(n){this.User_Verify=n},n.prototype.setUserRecovery=function(n){this.userRecovery=n},n.prototype.setTokenNotification=function(n){this.tokenAppId=n},n.prototype.registerTokenForUser=function(n){this.api.post("auth/tokenapp",{token:this.tokenAppId,id:n}).then().catch()},n.prototype.setCheck_Terminos=function(n){this.check_terminos=n,console.log(this.check_terminos)},n}()},72:function(n,e,l){"use strict";l.d(e,"a",function(){return o});l(2);var t=l(245),o=(l.n(t),function(){function n(n){this.http=n,this.labelAttribute="name",this.countries=[],this.init()}return n.prototype.init=function(){var n=this;console.log("Loading countries"),this.http.get("https://restcountries.eu/rest/v2/all/").toPromise().then(function(e){n.countries=e})},n.prototype.getResults=function(n){return""==n?this.countries:this.countries.filter(function(e){return e.name.toLowerCase().startsWith(n.toLowerCase())})},n}())},90:function(n,e,l){"use strict";l.d(e,"a",function(){return t});l(2),l(59),l(46);var t=function(){function n(n,e,l){this.http=n,this.auth=e,this.api=l,this.infoCurrencies=[],this.date=(new Date).getTime()}return n.prototype.init=function(){this.getCountries()},n.prototype.getCountries=function(){var n=this;return new Promise(function(e){void 0==n.countrys?n.api.get("app/get-countries",n.auth).then(function(l){n.countrys=l,e(n.countrys)}).catch():e(n.countrys)})},n.prototype.getCurrencies=function(n){var e=this;return new Promise(function(l){console.log("indexof",e.infoCurrencies.indexOf(n));var t=(new Date).getTime()-e.date;console.log(t),t>3e5||void 0==e.infoCurrencies[n]?(e.date=(new Date).getTime(),e.api.get("app/get-prices",e.auth,{currency_code:n}).then(function(t){e.infoCurrencies[n]=t,console.log(e.infoCurrencies),l(t)})):l(e.infoCurrencies[n])})},n}()}},[364]);
+webpackJsonp([14],{
+
+/***/ 121:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CountryProvider; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_add_operator_map__ = __webpack_require__(218);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_rxjs_add_operator_map__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_common_http__ = __webpack_require__(45);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+/*
+  Generated class for the CountryProvider provider.
+
+  See https://angular.io/guide/dependency-injection for more info on providers
+  and Angular DI.
+*/
+var CountryProvider = /** @class */ (function () {
+    function CountryProvider(http) {
+        this.http = http;
+        this.labelAttribute = "name";
+        this.countries = [];
+        this.init();
+    }
+    CountryProvider.prototype.init = function () {
+        var _this = this;
+        console.log("Loading countries");
+        this.http.get("https://restcountries.eu/rest/v2/all/").toPromise()
+            .then(function (result) {
+            _this.countries = result;
+        });
+    };
+    CountryProvider.prototype.getResults = function (keyword) {
+        if (keyword == '') {
+            return this.countries;
+        }
+        else {
+            return this.countries
+                .filter(function (item) { return item.name.toLowerCase().startsWith(keyword.toLowerCase()); });
+        }
+    };
+    CountryProvider = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["B" /* Injectable */])(),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2__angular_common_http__["a" /* HttpClient */]])
+    ], CountryProvider);
+    return CountryProvider;
+}());
+
+//# sourceMappingURL=country.js.map
+
+/***/ }),
+
+/***/ 134:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return GeolocationProvider; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_common_http__ = __webpack_require__(45);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_geolocation__ = __webpack_require__(90);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__country_country__ = __webpack_require__(121);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_native_geocoder__ = __webpack_require__(135);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+/*
+  Generated class for the GeolocationProvider provider.
+
+  See https://angular.io/guide/dependency-injection for more info on providers
+  and Angular DI.
+*/
+var GeolocationProvider = /** @class */ (function () {
+    function GeolocationProvider(http, geoCtrl, geocode, countryProvider) {
+        this.http = http;
+        this.geoCtrl = geoCtrl;
+        this.geocode = geocode;
+        this.countryProvider = countryProvider;
+        this.basicInformacion = {
+            country_code: null,
+            flag: null,
+        };
+        this.fullInformation = null;
+        this.load = false;
+        this.getInformation();
+        this.getBasicInfo();
+    }
+    GeolocationProvider.prototype.getInformation = function () {
+        var _this = this;
+        return new Promise((function (resolve, reject) {
+            if (!_this.load) {
+                _this.geoCtrl.getCurrentPosition({
+                    enableHighAccuracy: false,
+                    timeout: 10000,
+                })
+                    .then((function (value) {
+                    _this.geocode.reverseGeocode(value.coords.latitude, value.coords.longitude)
+                        .then(function (data) {
+                        var countries = _this.countryProvider.getResults(data[0].countryName);
+                        if (countries.length) {
+                            var countryS = _this.countryProvider.getResults(data[0].countryName)[0];
+                            _this.fullInformation = countryS;
+                            _this.basicInformacion.country_code = countryS.callingCodes[0];
+                            _this.basicInformacion.flag = countryS.flag;
+                            _this.load = true;
+                            resolve(true);
+                        }
+                    }).catch(function (err) { return console.log("reversegeocode", err); });
+                }))
+                    .catch(function (err) { return console.log("getcurrentposition", err); });
+            }
+            else
+                resolve(true);
+        }));
+    };
+    GeolocationProvider.prototype.getBasicInfo = function () {
+        var _this = this;
+        return new Promise(function (resolve) {
+            _this.getInformation().then(function () {
+                resolve(_this.basicInformacion);
+            });
+        });
+    };
+    GeolocationProvider = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["B" /* Injectable */])(),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_0__angular_common_http__["a" /* HttpClient */],
+            __WEBPACK_IMPORTED_MODULE_2__ionic_native_geolocation__["a" /* Geolocation */],
+            __WEBPACK_IMPORTED_MODULE_4__ionic_native_native_geocoder__["a" /* NativeGeocoder */],
+            __WEBPACK_IMPORTED_MODULE_3__country_country__["a" /* CountryProvider */]])
+    ], GeolocationProvider);
+    return GeolocationProvider;
+}());
+
+//# sourceMappingURL=geolocation.js.map
+
+/***/ }),
+
+/***/ 157:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SelectCodePage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(29);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_country_country__ = __webpack_require__(121);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ionic2_auto_complete__ = __webpack_require__(219);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+/**
+ * Generated class for the SelectCodePage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
+var SelectCodePage = /** @class */ (function () {
+    function SelectCodePage(navCtrl, navParams, country, view) {
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+        this.country = country;
+        this.view = view;
+    }
+    SelectCodePage.prototype.ionViewDidLoad = function () {
+        this.searchbar.getItems();
+    };
+    SelectCodePage.prototype.selectItem = function (ev) {
+        this.view.dismiss({
+            code: ev.callingCodes[0],
+            flag: ev.flag
+        });
+    };
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_9" /* ViewChild */])('search'),
+        __metadata("design:type", __WEBPACK_IMPORTED_MODULE_3_ionic2_auto_complete__["a" /* AutoCompleteComponent */])
+    ], SelectCodePage.prototype, "searchbar", void 0);
+    SelectCodePage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+            selector: 'page-select-code',template:/*ion-inline-start:"/Users/eyeline/Documents/eyepaycashappGitHub/src/pages/select-code/select-code.html"*/'<ion-content padding>\n  <ng-template #withFlags let-attrs="attrs">\n    <img src="{{attrs.data.flag}}" class="flag"/>\n    <span\n        [innerHTML]="\'+\'+attrs.data.callingCodes[0]+\' \'+attrs.data.name"></span>\n  </ng-template>\n  <ion-auto-complete #search item-content [dataProvider]="country"\n                     [options]="{placeholder : \'Search your country\'}"\n                     [template]="withFlags"\n                     [showResultsFirst]="true"\n                     (itemSelected)="selectItem($event)"></ion-auto-complete>\n</ion-content>\n'/*ion-inline-end:"/Users/eyeline/Documents/eyepaycashappGitHub/src/pages/select-code/select-code.html"*/,
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */],
+            __WEBPACK_IMPORTED_MODULE_2__providers_country_country__["a" /* CountryProvider */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* ViewController */]])
+    ], SelectCodePage);
+    return SelectCodePage;
+}());
+
+//# sourceMappingURL=select-code.js.map
+
+/***/ }),
+
+/***/ 158:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LoadInformationProvider; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_common_http__ = __webpack_require__(45);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__auth_user_auth_user__ = __webpack_require__(89);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__api__ = __webpack_require__(46);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+/*
+  Generated class for the LoadInformationProvider provider.
+
+  See https://angular.io/guide/dependency-injection for more info on providers
+  and Angular DI.
+*/
+var LoadInformationProvider = /** @class */ (function () {
+    function LoadInformationProvider(http, auth, api) {
+        this.http = http;
+        this.auth = auth;
+        this.api = api;
+        this.infoCurrencies = [];
+        this.date = new Date().getTime();
+    }
+    LoadInformationProvider.prototype.init = function () {
+        this.getCountries();
+    };
+    LoadInformationProvider.prototype.getCountries = function () {
+        var _this = this;
+        return new Promise(function (resolve) {
+            if (_this.countrys == undefined) {
+                _this.api.get('app/get-countries', _this.auth).then(function (data) {
+                    _this.countrys = data;
+                    resolve(_this.countrys);
+                }).catch();
+            }
+            else
+                resolve(_this.countrys);
+        });
+    };
+    LoadInformationProvider.prototype.getCurrencies = function (currency) {
+        var _this = this;
+        return new Promise(function (resolve) {
+            var dif = new Date().getTime() - _this.date;
+            if (dif > 300000 || _this.infoCurrencies[currency] == undefined) {
+                _this.date = new Date().getTime();
+                _this.api.get('app/get-prices', _this.auth, {
+                    currency_code: currency,
+                }).then(function (data) {
+                    _this.infoCurrencies[currency] = data;
+                    resolve(data);
+                });
+            }
+            else
+                resolve(_this.infoCurrencies[currency]);
+        });
+    };
+    LoadInformationProvider.prototype.getCountriesID = function (currency) {
+        var id = null;
+        this.countrys.forEach(function (data) {
+            if (data.currency == currency) {
+                id = data.id;
+            }
+        });
+        return id;
+    };
+    LoadInformationProvider = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["B" /* Injectable */])(),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_0__angular_common_http__["a" /* HttpClient */],
+            __WEBPACK_IMPORTED_MODULE_2__auth_user_auth_user__["a" /* AuthUserProvider */],
+            __WEBPACK_IMPORTED_MODULE_3__api__["a" /* Api */]])
+    ], LoadInformationProvider);
+    return LoadInformationProvider;
+}());
+
+//# sourceMappingURL=load-information.js.map
+
+/***/ }),
+
+/***/ 169:
+/***/ (function(module, exports) {
+
+function webpackEmptyAsyncContext(req) {
+	// Here Promise.resolve().then() is used instead of new Promise() to prevent
+	// uncatched exception popping up in devtools
+	return Promise.resolve().then(function() {
+		throw new Error("Cannot find module '" + req + "'.");
+	});
+}
+webpackEmptyAsyncContext.keys = function() { return []; };
+webpackEmptyAsyncContext.resolve = webpackEmptyAsyncContext;
+module.exports = webpackEmptyAsyncContext;
+webpackEmptyAsyncContext.id = 169;
+
+/***/ }),
+
+/***/ 213:
+/***/ (function(module, exports, __webpack_require__) {
+
+var map = {
+	"../pages/account/account.module": [
+		688,
+		13
+	],
+	"../pages/history-resume/history-resume.module": [
+		689,
+		12
+	],
+	"../pages/history/history.module": [
+		690,
+		11
+	],
+	"../pages/home/home.module": [
+		691,
+		10
+	],
+	"../pages/login/login.module": [
+		692,
+		9
+	],
+	"../pages/map/map.module": [
+		693,
+		2
+	],
+	"../pages/modal-transaction/modal-transaction.module": [
+		694,
+		0
+	],
+	"../pages/modal-welcome/modal-welcome.module": [
+		695,
+		8
+	],
+	"../pages/password-update/password-update.module": [
+		696,
+		7
+	],
+	"../pages/politicas/politicas.module": [
+		701,
+		6
+	],
+	"../pages/recovery-password/recovery-password.module": [
+		697,
+		5
+	],
+	"../pages/reg-number-phone/reg-number-phone.module": [
+		314
+	],
+	"../pages/register/register.module": [
+		698,
+		1
+	],
+	"../pages/select-code/select-code.module": [
+		315
+	],
+	"../pages/transaction-resume/transaction-resume.module": [
+		699,
+		4
+	],
+	"../pages/transaction/transaction.module": [
+		700,
+		3
+	]
+};
+function webpackAsyncContext(req) {
+	var ids = map[req];
+	if(!ids)
+		return Promise.reject(new Error("Cannot find module '" + req + "'."));
+	return Promise.all(ids.slice(1).map(__webpack_require__.e)).then(function() {
+		return __webpack_require__(ids[0]);
+	});
+};
+webpackAsyncContext.keys = function webpackAsyncContextKeys() {
+	return Object.keys(map);
+};
+webpackAsyncContext.id = 213;
+module.exports = webpackAsyncContext;
+
+/***/ }),
+
+/***/ 314:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RegNumberPhonePageModule", function() { return RegNumberPhonePageModule; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(29);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__reg_number_phone__ = __webpack_require__(668);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_native_geocoder__ = __webpack_require__(135);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_geolocation__ = __webpack_require__(90);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+
+
+
+
+var RegNumberPhonePageModule = /** @class */ (function () {
+    function RegNumberPhonePageModule() {
+    }
+    RegNumberPhonePageModule = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["J" /* NgModule */])({
+            declarations: [
+                __WEBPACK_IMPORTED_MODULE_2__reg_number_phone__["a" /* RegNumberPhonePage */],
+            ],
+            imports: [
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__reg_number_phone__["a" /* RegNumberPhonePage */]),
+            ],
+            providers: [
+                __WEBPACK_IMPORTED_MODULE_3__ionic_native_native_geocoder__["a" /* NativeGeocoder */],
+                __WEBPACK_IMPORTED_MODULE_4__ionic_native_geolocation__["a" /* Geolocation */]
+            ]
+        })
+    ], RegNumberPhonePageModule);
+    return RegNumberPhonePageModule;
+}());
+
+//# sourceMappingURL=reg-number-phone.module.js.map
+
+/***/ }),
+
+/***/ 315:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SelectCodePageModule", function() { return SelectCodePageModule; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(29);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__select_code__ = __webpack_require__(157);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ionic2_auto_complete__ = __webpack_require__(219);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+
+
+
+var SelectCodePageModule = /** @class */ (function () {
+    function SelectCodePageModule() {
+    }
+    SelectCodePageModule = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["J" /* NgModule */])({
+            declarations: [
+                __WEBPACK_IMPORTED_MODULE_2__select_code__["a" /* SelectCodePage */],
+            ],
+            imports: [
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__select_code__["a" /* SelectCodePage */]),
+                __WEBPACK_IMPORTED_MODULE_3_ionic2_auto_complete__["b" /* AutoCompleteModule */],
+            ],
+        })
+    ], SelectCodePageModule);
+    return SelectCodePageModule;
+}());
+
+//# sourceMappingURL=select-code.module.js.map
+
+/***/ }),
+
+/***/ 358:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(359);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_module__ = __webpack_require__(363);
+
+
+Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* platformBrowserDynamic */])().bootstrapModule(__WEBPACK_IMPORTED_MODULE_1__app_module__["a" /* AppModule */]);
+//# sourceMappingURL=main.js.map
+
+/***/ }),
+
+/***/ 363:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__ = __webpack_require__(43);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(29);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(355);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_status_bar__ = __webpack_require__(356);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__app_component__ = __webpack_require__(686);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__providers_country_country__ = __webpack_require__(121);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_select_code_select_code_module__ = __webpack_require__(315);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__angular_common_http__ = __webpack_require__(45);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__providers_api__ = __webpack_require__(46);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__ionic_storage__ = __webpack_require__(216);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__providers_geolocation_geolocation__ = __webpack_require__(134);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__ionic_native_geolocation__ = __webpack_require__(90);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__ionic_native_native_geocoder__ = __webpack_require__(135);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__providers_auth_user_auth_user__ = __webpack_require__(89);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__pages_reg_number_phone_reg_number_phone_module__ = __webpack_require__(314);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__providers_verification_verification__ = __webpack_require__(687);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__providers_load_information_load_information__ = __webpack_require__(158);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__ionic_native_google_maps__ = __webpack_require__(357);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+var AppModule = /** @class */ (function () {
+    function AppModule() {
+    }
+    AppModule = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["J" /* NgModule */])({
+            declarations: [
+                __WEBPACK_IMPORTED_MODULE_5__app_component__["a" /* MyApp */],
+            ],
+            imports: [
+                __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
+                __WEBPACK_IMPORTED_MODULE_8__angular_common_http__["b" /* HttpClientModule */],
+                __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["c" /* IonicModule */].forRoot(__WEBPACK_IMPORTED_MODULE_5__app_component__["a" /* MyApp */], {}, {
+                    links: [
+                        { loadChildren: '../pages/account/account.module#AccountPageModule', name: 'AccountPage', segment: 'account', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/history-resume/history-resume.module#HistoryResumePageModule', name: 'HistoryResumePage', segment: 'history-resume', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/history/history.module#HistoryPageModule', name: 'HistoryPage', segment: 'history', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/home/home.module#HomePageModule', name: 'HomePage', segment: 'app', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/login/login.module#LoginPageModule', name: 'LoginPage', segment: 'login', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/map/map.module#MapPageModule', name: 'MapPage', segment: 'map', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/modal-transaction/modal-transaction.module#ModalTransactionPageModule', name: 'ModalTransactionPage', segment: 'modal-transaction', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/modal-welcome/modal-welcome.module#ModalWelcomePageModule', name: 'ModalWelcomePage', segment: 'modal-welcome', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/password-update/password-update.module#PasswordUpdatePageModule', name: 'PasswordUpdatePage', segment: 'password-update', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/recovery-password/recovery-password.module#RecoveryPasswordPageModule', name: 'RecoveryPasswordPage', segment: 'recovery-password', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/reg-number-phone/reg-number-phone.module#RegNumberPhonePageModule', name: 'RegNumberPhonePage', segment: 'reg-number-phone', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/register/register.module#RegisterPageModule', name: 'RegisterPage', segment: 'register', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/select-code/select-code.module#SelectCodePageModule', name: 'SelectCodePage', segment: 'select-code', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/transaction-resume/transaction-resume.module#TransactionResumePageModule', name: 'TransactionResumePage', segment: 'transaction-resume', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/transaction/transaction.module#TransactionPageModule', name: 'TransactionPage', segment: 'transaction', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/politicas/politicas.module#PoliticasPageModule', name: 'PoliticasPage', segment: 'politicas', priority: 'low', defaultHistory: [] }
+                    ]
+                }),
+                __WEBPACK_IMPORTED_MODULE_10__ionic_storage__["a" /* IonicStorageModule */].forRoot(),
+                __WEBPACK_IMPORTED_MODULE_7__pages_select_code_select_code_module__["SelectCodePageModule"],
+                __WEBPACK_IMPORTED_MODULE_15__pages_reg_number_phone_reg_number_phone_module__["RegNumberPhonePageModule"],
+            ],
+            bootstrap: [__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["a" /* IonicApp */]],
+            entryComponents: [
+                __WEBPACK_IMPORTED_MODULE_5__app_component__["a" /* MyApp */],
+            ],
+            providers: [
+                __WEBPACK_IMPORTED_MODULE_4__ionic_native_status_bar__["a" /* StatusBar */],
+                __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */],
+                __WEBPACK_IMPORTED_MODULE_6__providers_country_country__["a" /* CountryProvider */],
+                __WEBPACK_IMPORTED_MODULE_9__providers_api__["a" /* Api */],
+                __WEBPACK_IMPORTED_MODULE_12__ionic_native_geolocation__["a" /* Geolocation */],
+                __WEBPACK_IMPORTED_MODULE_13__ionic_native_native_geocoder__["a" /* NativeGeocoder */],
+                { provide: __WEBPACK_IMPORTED_MODULE_1__angular_core__["v" /* ErrorHandler */], useClass: __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["b" /* IonicErrorHandler */], },
+                __WEBPACK_IMPORTED_MODULE_11__providers_geolocation_geolocation__["a" /* GeolocationProvider */],
+                __WEBPACK_IMPORTED_MODULE_14__providers_auth_user_auth_user__["a" /* AuthUserProvider */],
+                __WEBPACK_IMPORTED_MODULE_16__providers_verification_verification__["a" /* VerificationProvider */],
+                __WEBPACK_IMPORTED_MODULE_17__providers_load_information_load_information__["a" /* LoadInformationProvider */],
+                __WEBPACK_IMPORTED_MODULE_18__ionic_native_google_maps__["b" /* GoogleMaps */],
+            ]
+        })
+    ], AppModule);
+    return AppModule;
+}());
+
+//# sourceMappingURL=app.module.js.map
+
+/***/ }),
+
+/***/ 46:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Api; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common_http__ = __webpack_require__(45);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(216);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+var Api = /** @class */ (function () {
+    function Api(http, storage) {
+        this.http = http;
+        this.storage = storage;
+        this.url = 'http://10.160.170.114/eyepaycash/frontend/web/apiapp/';
+        this.headers = new __WEBPACK_IMPORTED_MODULE_1__angular_common_http__["c" /* HttpHeaders */]({
+            'Content-Type': 'application/x-www-form-urlencoded',
+        });
+    }
+    Api.prototype.get = function (endpoint, user, params) {
+        var _this = this;
+        if (user != null) {
+            this.headers = new __WEBPACK_IMPORTED_MODULE_1__angular_common_http__["c" /* HttpHeaders */]({
+                'Content-Type': 'application/x-www-form-urlencoded',
+                'Authorization': 'Bearer ' + user.accessParam()
+            });
+        }
+        return new Promise(function (resolve, reject) {
+            var url = _this.url + endpoint;
+            var urlParams = '';
+            if (params) {
+                urlParams = _this.jsonToURLEncoded(params);
+            }
+            _this.http.get(url + '?' + urlParams, { headers: _this.headers }).toPromise()
+                .then(function (value) {
+                _this.storage.set(endpoint, value);
+                resolve(value);
+            }).catch(function (err) {
+                _this.storage.get(endpoint).then(function (value) {
+                    resolve(value);
+                }).catch(function (err) {
+                    reject("Lo sentimos. No hemos podido mostrar información. Comunícate con nuestro equipo de soporte");
+                });
+            });
+        });
+    };
+    Api.prototype.post = function (endpoint, body, user) {
+        var url = this.url + endpoint;
+        if (user != null) {
+            this.headers = new __WEBPACK_IMPORTED_MODULE_1__angular_common_http__["c" /* HttpHeaders */]({
+                'Content-Type': 'application/x-www-form-urlencoded',
+                'Authorization': 'Bearer ' + user.accessParam()
+            });
+        }
+        return this.http.post(url, this.jsonToURLEncoded(body), {
+            headers: this.headers
+        }).toPromise();
+    };
+    Api.prototype.jsonToURLEncoded = function (jsonString) {
+        return Object.keys(jsonString).map(function (key) {
+            return encodeURIComponent(key) + '=' + encodeURIComponent(jsonString[key]);
+        }).join('&');
+    };
+    Api = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["B" /* Injectable */])(),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_common_http__["a" /* HttpClient */], __WEBPACK_IMPORTED_MODULE_2__ionic_storage__["b" /* Storage */]])
+    ], Api);
+    return Api;
+}());
+
+//# sourceMappingURL=api.js.map
+
+/***/ }),
+
+/***/ 668:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return RegNumberPhonePage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(29);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__select_code_select_code__ = __webpack_require__(157);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_api__ = __webpack_require__(46);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_geolocation_geolocation__ = __webpack_require__(134);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+/**
+ * Generated class for the RegNumberPhonePage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
+var RegNumberPhonePage = /** @class */ (function () {
+    function RegNumberPhonePage(navCtrl, navParams, modal, api, toastCtrl, loadingCtrl, locationProvider) {
+        var _this = this;
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+        this.modal = modal;
+        this.api = api;
+        this.toastCtrl = toastCtrl;
+        this.loadingCtrl = loadingCtrl;
+        this.locationProvider = locationProvider;
+        this.user_register = {
+            country_code: '',
+            flag: '',
+            value: '',
+        };
+        this.code_verify = null;
+        this.response_verify = {
+            id: null,
+            is_mail_verify: null,
+            mail_code: null,
+            phone_code: null,
+            country_id: null,
+        };
+        this.imagen = 'assets/backgrounds/Background2.png';
+        this.locationProvider.getBasicInfo().then(function (value) {
+            _this.user_register.country_code = value.country_code;
+            _this.user_register.flag = value.flag;
+            // this.user_register = Object.assign(value, this.user_register);
+        });
+    }
+    RegNumberPhonePage.prototype.cancel = function () {
+        this.navCtrl.setRoot('LoginPage');
+    };
+    RegNumberPhonePage.prototype.sendNumberPhone = function () {
+        var _this = this;
+        if (this.user_register.country_code != "" && this.user_register.value != "") {
+            var loading_1 = this.loadingCtrl.create({
+                spinner: 'dots',
+            });
+            var toast_1 = this.toastCtrl.create({
+                message: 'Se ha enviado un código de verificación al número celular ingresado.',
+                duration: 3000
+            });
+            loading_1.present();
+            this.api.post('auth/pre-sign-up', this.user_register).then(function (data) {
+                loading_1.dismiss();
+                toast_1.present();
+                _this.response_verify = data.verify;
+                _this.response_verify.country_id = data.country.id;
+                console.log(_this.response_verify.phone_code);
+            })
+                .catch();
+        }
+        else {
+            var toast = this.toastCtrl.create({
+                message: 'Toda la información es obligatoria',
+                duration: 3000,
+            });
+            toast.present();
+        }
+    };
+    RegNumberPhonePage.prototype.selectcountry = function () {
+        var _this = this;
+        var modal = this.modal.create(__WEBPACK_IMPORTED_MODULE_2__select_code_select_code__["a" /* SelectCodePage */]);
+        modal.present();
+        modal.onDidDismiss(function (data) {
+            if (data !== undefined) {
+                _this.user_register.country_code = data.code;
+                _this.user_register.flag = data.flag;
+            }
+        });
+    };
+    RegNumberPhonePage.prototype.verifyCode = function () {
+        if (this.code_verify == this.response_verify.phone_code) {
+            this.navCtrl.push('RegisterPage', { 'response': this.response_verify, 'register': this.user_register });
+        }
+        else {
+            var toast = this.toastCtrl.create({
+                message: 'Código incorrecto.',
+                duration: 3000,
+            });
+            toast.present();
+        }
+    };
+    RegNumberPhonePage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+            selector: 'page-reg-number-phone',template:/*ion-inline-start:"/Users/eyeline/Documents/eyepaycashappGitHub/src/pages/reg-number-phone/reg-number-phone.html"*/'<ion-content class="imgBackground vignette">\n  <div style="margin-top:12%" class="center">\n    <ion-img style="margin-bottom: 10%;" class="logo" src="assets/imgs/EPCLogo.png"></ion-img>\n    <div class="center">\n      <ion-label style="color:white" class="center"> Enviaremos un CÓDIGO de verificación a el número<br> que registres\n        a continuación.\n      </ion-label>\n    </div>\n  </div>\n\n  <div class="center divMargin">\n    <ion-grid class="center marGrid">\n      <ion-row>\n        <ion-col col-5>\n          <ion-item class="item-flag item-md2 item-ios2">\n            <img [src]="user_register.flag" class="flagphone banderaWidt">\n            <button ion-button (click)="selectcountry()" class="transparente item-md2 item-button2 button-md ">+\n              {{user_register.country_code}}\n            </button>\n          </ion-item>\n        </ion-col>\n        <ion-col col-7>\n          <ion-item class="stylCel">\n            <ion-input required type="text" name="numerocelular" [(ngModel)]="user_register.value"\n                       placeholder="Número movil (celular)"></ion-input>\n          </ion-item>\n        </ion-col>\n      </ion-row>\n    </ion-grid>\n    <ion-item class="inputClass">\n      <ion-input placeholder="Introduce el código" maxlength="6" required style="text-align: center" type="text"\n                 [(ngModel)]="code_verify"></ion-input>\n    </ion-item>\n  </div>\n  <div class="center marginBts">\n    <button class="buttonPayCash borderBtns" (click)="cancel()" ion-button small>Cancelar</button>\n    <button class="buttonPayCash borderBtns" (click)="sendNumberPhone()" ion-button small\n            *ngIf="response_verify.phone_code == null">Enviar\n    </button>\n    <button class="buttonPayCash borderBtns" (click)="verifyCode()" ion-button small\n            *ngIf="response_verify.phone_code != null">Continuar\n    </button>\n  </div>\n\n</ion-content>'/*ion-inline-end:"/Users/eyeline/Documents/eyepaycashappGitHub/src/pages/reg-number-phone/reg-number-phone.html"*/,
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* ModalController */],
+            __WEBPACK_IMPORTED_MODULE_3__providers_api__["a" /* Api */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* ToastController */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* LoadingController */],
+            __WEBPACK_IMPORTED_MODULE_4__providers_geolocation_geolocation__["a" /* GeolocationProvider */]])
+    ], RegNumberPhonePage);
+    return RegNumberPhonePage;
+}());
+
+//# sourceMappingURL=reg-number-phone.js.map
+
+/***/ }),
+
+/***/ 686:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MyApp; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(29);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(356);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(355);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_geolocation_geolocation__ = __webpack_require__(134);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_auth_user_auth_user__ = __webpack_require__(89);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__providers_load_information_load_information__ = __webpack_require__(158);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+
+
+var MyApp = /** @class */ (function () {
+    function MyApp(platform, statusBar, splashScreen, locationProvider, auth, informationProvider) {
+        var _this = this;
+        this.locationProvider = locationProvider;
+        this.auth = auth;
+        this.informationProvider = informationProvider;
+        this.rootPage = 'LoginPage';
+        this.auth.trylogin().then(function (value) {
+            if (value) {
+                _this.rootPage = 'HomePage';
+                _this.informationProvider.init();
+            }
+        });
+        platform.ready().then(function () {
+            statusBar.styleDefault();
+            splashScreen.hide();
+            if (platform.is('cordova'))
+                _this.getLocation();
+        });
+    }
+    MyApp.prototype.getLocation = function () {
+        this.locationProvider.basicInformacion;
+    };
+    MyApp = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({template:/*ion-inline-start:"/Users/eyeline/Documents/eyepaycashappGitHub/src/app/app.html"*/'<ion-nav [root]="rootPage"></ion-nav>\n'/*ion-inline-end:"/Users/eyeline/Documents/eyepaycashappGitHub/src/app/app.html"*/
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* Platform */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */],
+            __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */],
+            __WEBPACK_IMPORTED_MODULE_4__providers_geolocation_geolocation__["a" /* GeolocationProvider */],
+            __WEBPACK_IMPORTED_MODULE_5__providers_auth_user_auth_user__["a" /* AuthUserProvider */],
+            __WEBPACK_IMPORTED_MODULE_6__providers_load_information_load_information__["a" /* LoadInformationProvider */]])
+    ], MyApp);
+    return MyApp;
+}());
+
+//# sourceMappingURL=app.component.js.map
+
+/***/ }),
+
+/***/ 687:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return VerificationProvider; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_common_http__ = __webpack_require__(45);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(29);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__api__ = __webpack_require__(46);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+/*
+  Generated class for the VerificationProvider provider.
+
+  See https://angular.io/guide/dependency-injection for more info on providers
+  and Angular DI.
+*/
+var VerificationProvider = /** @class */ (function () {
+    function VerificationProvider(http, toastCtrl, loadingCtrl, api) {
+        this.http = http;
+        this.toastCtrl = toastCtrl;
+        this.loadingCtrl = loadingCtrl;
+        this.api = api;
+        this.response_verify = {
+            id: null,
+            is_mail_verify: null,
+            mail_code: null,
+            phone_code: null,
+            country_id: null,
+        };
+        this.infoPhone = {
+            country_code: '',
+            flag: '',
+            value: '',
+        };
+    }
+    VerificationProvider.prototype.sendNumberPhone = function () {
+        var _this = this;
+        this.api.post('auth/pre-sign-up', this.infoPhone).then(function (data) {
+            _this.response_verify = data.verify;
+            _this.response_verify.country_id = data.country.id;
+            console.log(_this.response_verify.phone_code);
+            return _this.response_verify;
+        }).catch(function (data) {
+            console.log(data);
+        });
+    };
+    VerificationProvider = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["B" /* Injectable */])(),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_0__angular_common_http__["a" /* HttpClient */],
+            __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["j" /* ToastController */],
+            __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["e" /* LoadingController */],
+            __WEBPACK_IMPORTED_MODULE_3__api__["a" /* Api */]])
+    ], VerificationProvider);
+    return VerificationProvider;
+}());
+
+//# sourceMappingURL=verification.js.map
+
+/***/ }),
+
+/***/ 89:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AuthUserProvider; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__api__ = __webpack_require__(46);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(29);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+var AuthUserProvider = /** @class */ (function () {
+    function AuthUserProvider(api, toastCtrl) {
+        this.api = api;
+        this.toastCtrl = toastCtrl;
+        this.user_Info = {
+            first_name: null,
+            last_name: null,
+            phone: null,
+            access_token: null,
+            is_active: null,
+            gender: null,
+            mail: null,
+        };
+        this.user_Country = {
+            id: null,
+            name: null,
+            is_active: null,
+            phone_code: null,
+            country_code: null,
+            currency: null
+        };
+        this.User_Verify = {
+            id: null,
+            phone_code: null,
+            is_phone_verify: null,
+            mail_code: null,
+            is_mail_verify: null,
+            phone: null,
+            mail: null,
+            user_id: null
+        };
+        this.userRecovery = {
+            user_id: null,
+            codigoVerify: null,
+        };
+        this.check_terminos = false;
+        this.trylogin();
+    }
+    AuthUserProvider.prototype.login = function (usuario, password) {
+        var _this = this;
+        return new Promise(function (resolve, reject) {
+            _this.api.post('auth/login?expand=country,userVerify', { mail: usuario, password: password })
+                .then(function (data) {
+                if (data.success == 'ok') {
+                    _this.setUser(data.user);
+                    _this.setUserCountry(data.user.country);
+                    _this.setUserVerify(data.user.userVerify);
+                    resolve(data);
+                }
+                else {
+                    var toast = _this.toastCtrl.create({
+                        message: 'Usuario o contraseña incorrectos',
+                        duration: 3000,
+                    });
+                    toast.present();
+                }
+            })
+                .catch(function (err) { return reject(err); });
+        });
+    };
+    AuthUserProvider.prototype.isLogin = function () {
+        return (this.user_Info != null);
+    };
+    AuthUserProvider.prototype.trylogin = function () {
+        var _this = this;
+        return new Promise(function (resolve) {
+            _this.user_Info = JSON.parse(window.localStorage.getItem('user'));
+            console.log(_this.user_Info);
+            if (_this.user_Info != null) {
+                _this.setUserCountry(_this.user_Info.country);
+                _this.setUserVerify(_this.user_Info.userVerify);
+                resolve(true);
+            }
+            resolve(false);
+        });
+    };
+    AuthUserProvider.prototype.accessParam = function () {
+        if (this.user_Info != null)
+            return this.user_Info.access_token;
+        return null;
+    };
+    AuthUserProvider.prototype.setUser = function (Usuario) {
+        this.user_Info = Usuario;
+        window.localStorage.setItem('user', JSON.stringify(this.user_Info));
+    };
+    AuthUserProvider.prototype.setUserCountry = function (Country) {
+        this.user_Country = Country;
+    };
+    AuthUserProvider.prototype.setUserVerify = function (Verify) {
+        this.User_Verify = Verify;
+    };
+    AuthUserProvider.prototype.setUserRecovery = function (data) {
+        this.userRecovery = data;
+    };
+    AuthUserProvider.prototype.setTokenNotification = function (tokenId) {
+        this.tokenAppId = tokenId;
+    };
+    AuthUserProvider.prototype.registerTokenForUser = function (user_id) {
+        this.api.post('auth/tokenapp', { 'token': this.tokenAppId, 'id': user_id })
+            .then().catch();
+    };
+    AuthUserProvider.prototype.setCheck_Terminos = function (check) {
+        this.check_terminos = check;
+        console.log(this.check_terminos);
+    };
+    AuthUserProvider = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["B" /* Injectable */])(),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__api__["a" /* Api */],
+            __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["j" /* ToastController */]])
+    ], AuthUserProvider);
+    return AuthUserProvider;
+}());
+
+//# sourceMappingURL=auth-user.js.map
+
+/***/ })
+
+},[358]);
+//# sourceMappingURL=main.js.map

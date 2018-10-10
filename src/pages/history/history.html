@@ -8,10 +8,11 @@
 <ion-content padding>
   <ion-row>
     <ion-col col-12>
+      <ion-label>Filtro de transacciones por estado:</ion-label>
       <ion-select [(ngModel)]="filtro.status" (ionChange)="getInfo()">
-        <ion-option value="0">Estado pendiente</ion-option>
-        <ion-option value="1">Estado por retirar</ion-option>
-        <ion-option value="2">Estado terminadas</ion-option>
+        <ion-option value="0">Pendiente de pago</ion-option>
+        <ion-option value="1">Pagado y pendiente por retirar</ion-option>
+        <ion-option value="2">Pagado y retirado</ion-option>
       </ion-select>
     </ion-col>
   </ion-row>

@@ -44,16 +44,13 @@ export class LoadInformationProvider {
 
   getCurrencies(currency) {
     return new Promise(resolve => {
-      console.log("indexof", this.infoCurrencies.indexOf(currency));
       let dif = new Date().getTime() - this.date;
-      console.log(dif);
       if (dif > 300000 || this.infoCurrencies[currency] == undefined) {
         this.date = new Date().getTime();
         this.api.get('app/get-prices', this.auth, {
           currency_code: currency,
         }).then((data: any) => {
           this.infoCurrencies[currency] = data;
-          console.log(this.infoCurrencies);
           resolve(data)
         })
       } else
@@ -61,4 +58,13 @@ export class LoadInformationProvider {
     })
   }
 
+  getCountriesID(currency: any) {
+    let id = null;
+    this.countrys.forEach(data => {
+      if (data.currency == currency){
+        id = data.id;
+      }
+    });
+    return id;
+  }
 }

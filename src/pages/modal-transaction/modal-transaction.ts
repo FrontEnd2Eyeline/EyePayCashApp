@@ -19,7 +19,7 @@ export class ModalTransactionPage {
 
   public moneda: any = null;
   public userCountry: any = null;
-
+  public currency: any = null;
 
   private transaction: any = {
     amount_local: 0, // monto de dinero a transferir
@@ -42,9 +42,10 @@ export class ModalTransactionPage {
   }
 
   ionViewWillLoad() {
-    this.userCountry = this.navParams.get('userCountry');
+    this.userCountry = this.navParams.get('infoCountry');
     this.moneda = this.navParams.get('moneda');
-    this.transaction.country_id = this.userCountry.id;
+    this.currency = this.navParams.get('currency');
+    this.transaction.country_id = this.navParams.get('pais_id');
     this.transaction.coin_id = this.moneda.id;
   }
 
@@ -60,24 +61,26 @@ export class ModalTransactionPage {
         });
         loading.present();
         let objtoSub = this.transaction;
-        objtoSub.amount_local = this.transaction.amount_local.replace(new RegExp('\\.', 'g'), '');
-        objtoSub.amount_local = this.transaction.amount_local.replace(',', '.');
+        if (objtoSub.amount_local.indexOf(',')) {
+          objtoSub.amount_local = this.transaction.amount_local.replace(new RegExp('\\.', 'g'), '');
+          objtoSub.amount_local = this.transaction.amount_local.replace(',', '.');
+        }
         this.api.post('app/transaction', objtoSub, this.userProvider).then((data: any) => {
           loading.dismiss();
           let toast = this.toastCtrl.create({
-            message: 'Transacciòn solicitada correctamente.',
+            message: 'Su transacción ha solicitada correctamente.',
             duration: 3000,
           });
           this.closeModal();
-          this.navCtrl.setPages([{page: 'HomePage'}, {page: 'TransactionResumePage', params: data}],);
+          this.navCtrl.setPages([{page: 'HomePage'}, {page: 'TransactionResumePage', params: data}]);
           toast.present();
         }).catch(data => {
-          loading.dismiss();
           console.log(data)
         });
+
+        loading.dismiss();
       }
     } else {
-      console.log(this.transaction);
       let toast = this.toastCtrl.create({
         message: 'Todos los datos son obligatorios',
         duration: 3000

@@ -1,1 +1,118 @@
-webpackJsonp([11],{661:function(n,l,a){"use strict";function u(n){return e._22(0,[(n()(),e._20(-1,null,["\n"])),(n()(),e.Z(1,0,null,null,61,"ion-content",[["class","fondo_gris"],["padding",""]],[[2,"statusbar-padding",null],[2,"has-refresher",null]],null,null,m.b,m.a)),e.Y(2,4374528,null,0,b.a,[C.a,y.a,w.a,e.j,e.z,Y.a,R.a,e.u,[2,P.a],[2,j.a]],null,null),(n()(),e._20(-1,1,["\n  "])),(n()(),e.Z(4,0,[["formulario",1]],1,57,"form",[["novalidate",""]],[[2,"ng-untouched",null],[2,"ng-touched",null],[2,"ng-pristine",null],[2,"ng-dirty",null],[2,"ng-valid",null],[2,"ng-invalid",null],[2,"ng-pending",null]],[[null,"submit"],[null,"reset"]],function(n,l,a){var u=!0,s=n.component;if("submit"===l){u=!1!==e._11(n,6).onSubmit(a)&&u}if("reset"===l){u=!1!==e._11(n,6).onReset()&&u}if("submit"===l){u=!1!==s.recovery()&&u}return u},null,null)),e.Y(5,16384,null,0,Z.q,[],null,null),e.Y(6,4210688,null,0,Z.l,[[8,null],[8,null]],null,null),e._16(2048,null,Z.b,null,[Z.l]),e.Y(8,16384,null,0,Z.k,[Z.b],null,null),(n()(),e._20(-1,null,["\n    "])),(n()(),e.Z(10,0,null,null,50,"ion-list",[],null,null,null,null,null)),e.Y(11,16384,null,0,z.a,[C.a,e.j,e.z,y.a,k.l,w.a],null,null),(n()(),e._20(-1,null,["\n      "])),(n()(),e.Z(13,0,null,null,16,"ion-item",[["class","item item-block"]],null,null,null,M.b,M.a)),e.Y(14,1097728,null,3,L.a,[I.a,C.a,e.j,e.z,[2,U.a]],null,null),e._18(335544320,1,{contentLabel:0}),e._18(603979776,2,{_buttons:1}),e._18(603979776,3,{_icons:1}),e.Y(18,16384,null,0,V.a,[],null,null),(n()(),e._20(-1,2,["\n        "])),(n()(),e.Z(20,0,null,1,2,"ion-label",[["stacked",""]],null,null,null,null,null)),e.Y(21,16384,[[1,4]],0,D.a,[C.a,e.j,e.z,[8,null],[8,""],[8,null],[8,null]],null,null),(n()(),e._20(-1,null,["Ingrese la nueva contraseña"])),(n()(),e._20(-1,2,["\n        "])),(n()(),e.Z(24,0,null,3,4,"ion-input",[["name","recovery_pass"],["type","password"]],[[2,"ng-untouched",null],[2,"ng-touched",null],[2,"ng-pristine",null],[2,"ng-dirty",null],[2,"ng-valid",null],[2,"ng-invalid",null],[2,"ng-pending",null]],[[null,"ngModelChange"]],function(n,l,a){var u=!0;if("ngModelChange"===l){u=!1!==(n.component.infoRecovery.new_password=a)&&u}return u},T.b,T.a)),e.Y(25,671744,null,0,Z.m,[[2,Z.b],[8,null],[8,null],[8,null]],{name:[0,"name"],model:[1,"model"]},{update:"ngModelChange"}),e._16(2048,null,Z.i,null,[Z.m]),e.Y(27,16384,null,0,Z.j,[Z.i],null,null),e.Y(28,5423104,null,0,S.a,[C.a,y.a,I.a,Y.a,e.j,e.z,[2,b.a],[2,L.a],[2,Z.i],w.a],{type:[0,"type"]},null),(n()(),e._20(-1,2,["\n      "])),(n()(),e._20(-1,null,["\n      "])),(n()(),e.Z(31,0,null,null,16,"ion-item",[["class","item item-block"]],null,null,null,M.b,M.a)),e.Y(32,1097728,null,3,L.a,[I.a,C.a,e.j,e.z,[2,U.a]],null,null),e._18(335544320,4,{contentLabel:0}),e._18(603979776,5,{_buttons:1}),e._18(603979776,6,{_icons:1}),e.Y(36,16384,null,0,V.a,[],null,null),(n()(),e._20(-1,2,["\n        "])),(n()(),e.Z(38,0,null,1,2,"ion-label",[["stacked",""]],null,null,null,null,null)),e.Y(39,16384,[[4,4]],0,D.a,[C.a,e.j,e.z,[8,null],[8,""],[8,null],[8,null]],null,null),(n()(),e._20(-1,null,["Confirme la nueva contraseña"])),(n()(),e._20(-1,2,["\n        "])),(n()(),e.Z(42,0,null,3,4,"ion-input",[["name","recovery_pass2"],["type","password"]],[[2,"ng-untouched",null],[2,"ng-touched",null],[2,"ng-pristine",null],[2,"ng-dirty",null],[2,"ng-valid",null],[2,"ng-invalid",null],[2,"ng-pending",null]],[[null,"ngModelChange"]],function(n,l,a){var u=!0;if("ngModelChange"===l){u=!1!==(n.component.infoRecovery.new_password_conf=a)&&u}return u},T.b,T.a)),e.Y(43,671744,null,0,Z.m,[[2,Z.b],[8,null],[8,null],[8,null]],{name:[0,"name"],model:[1,"model"]},{update:"ngModelChange"}),e._16(2048,null,Z.i,null,[Z.m]),e.Y(45,16384,null,0,Z.j,[Z.i],null,null),e.Y(46,5423104,null,0,S.a,[C.a,y.a,I.a,Y.a,e.j,e.z,[2,b.a],[2,L.a],[2,Z.i],w.a],{type:[0,"type"]},null),(n()(),e._20(-1,2,["\n      "])),(n()(),e._20(-1,null,["\n      "])),(n()(),e.Z(49,0,null,null,10,"ion-item",[["class","item item-block"]],null,null,null,M.b,M.a)),e.Y(50,1097728,null,3,L.a,[I.a,C.a,e.j,e.z,[2,U.a]],null,null),e._18(335544320,7,{contentLabel:0}),e._18(603979776,8,{_buttons:1}),e._18(603979776,9,{_icons:1}),e.Y(54,16384,null,0,V.a,[],null,null),(n()(),e._20(-1,2,["\n        "])),(n()(),e.Z(56,0,null,2,2,"button",[["block",""],["class","buttonPayCash"],["ion-button",""]],null,null,null,q.b,q.a)),e.Y(57,1097728,[[8,4]],0,F.a,[[8,""],C.a,e.j,e.z],{block:[0,"block"]},null),(n()(),e._20(-1,0,["Guardar"])),(n()(),e._20(-1,2,["\n      "])),(n()(),e._20(-1,null,["\n    "])),(n()(),e._20(-1,null,["\n  "])),(n()(),e._20(-1,1,["\n"])),(n()(),e._20(-1,null,["\n"]))],function(n,l){var a=l.component;n(l,25,0,"recovery_pass",a.infoRecovery.new_password);n(l,28,0,"password");n(l,43,0,"recovery_pass2",a.infoRecovery.new_password_conf);n(l,46,0,"password");n(l,57,0,"")},function(n,l){n(l,1,0,e._11(l,2).statusbarPadding,e._11(l,2)._hasRefresher);n(l,4,0,e._11(l,8).ngClassUntouched,e._11(l,8).ngClassTouched,e._11(l,8).ngClassPristine,e._11(l,8).ngClassDirty,e._11(l,8).ngClassValid,e._11(l,8).ngClassInvalid,e._11(l,8).ngClassPending);n(l,24,0,e._11(l,27).ngClassUntouched,e._11(l,27).ngClassTouched,e._11(l,27).ngClassPristine,e._11(l,27).ngClassDirty,e._11(l,27).ngClassValid,e._11(l,27).ngClassInvalid,e._11(l,27).ngClassPending);n(l,42,0,e._11(l,45).ngClassUntouched,e._11(l,45).ngClassTouched,e._11(l,45).ngClassPristine,e._11(l,45).ngClassDirty,e._11(l,45).ngClassValid,e._11(l,45).ngClassInvalid,e._11(l,45).ngClassPending)})}Object.defineProperty(l,"__esModule",{value:!0});var e=a(1),s=(a(2),a(33),a(46)),t=a(59),o=function(){function n(n,l,a,u,e,s){this.navCtrl=n,this.navParams=l,this.api=a,this.toastCtrl=u,this.userProvider=e,this.loadingCtrl=s,this.infoRecovery={new_password:null,new_password_conf:null,user_id:null}}return n.prototype.recovery=function(){var n=this;if(null!=this.infoRecovery.new_password&&null!=this.infoRecovery.new_password_conf)if(this.infoRecovery.new_password_conf==this.infoRecovery.new_password)if(this.infoRecovery.new_password.length>=6&&this.infoRecovery.new_password_conf.length>=6){var l=this.loadingCtrl.create({spinner:"dots"});l.present(),this.infoRecovery.user_id=this.userProvider.userRecovery.user_id,this.api.post("auth/update-password",this.infoRecovery).then(function(a){l.dismiss(),console.log(a);n.toastCtrl.create({message:"Contraseña actualizada correctamente",duration:3e3}).present(),n.navCtrl.setRoot("LoginPage")}).catch(function(n){l.dismiss()})}else{this.toastCtrl.create({message:"La constraseña debe tener mìnimo 6 caracteres"}).present()}else{this.toastCtrl.create({message:"Las contraseñas no coinciden",duration:3e3}).present()}else{this.toastCtrl.create({message:"Los datos son obligatorios",duration:3e3}).present()}},n}(),i=function(){return function(){}}(),r=a(180),_=a(181),d=a(182),c=a(183),g=a(184),p=a(185),f=a(186),h=a(187),v=a(188),m=a(190),b=a(25),C=a(3),y=a(6),w=a(10),Y=a(12),R=a(34),P=a(7),j=a(30),Z=a(17),z=a(85),k=a(13),M=a(195),L=a(22),I=a(20),U=a(54),V=a(86),D=a(55),T=a(196),S=a(60),q=a(37),F=a(28),G=a(15),J=a(84),N=a(83),O=e.X({encapsulation:2,styles:[],data:{}}),W=e.V("page-password-update",o,function(n){return e._22(0,[(n()(),e.Z(0,0,null,null,1,"page-password-update",[],null,null,null,u,O)),e.Y(1,49152,null,0,o,[j.a,G.a,s.a,J.a,t.a,N.a],null,null)],null,null)},{},{},[]),X=a(19),x=a(124),A=a(52);a.d(l,"PasswordUpdatePageModuleNgFactory",function(){return B});var B=e.W(i,[],function(n){return e._7([e._8(512,e.i,e.S,[[8,[r.a,_.a,d.a,c.a,g.a,p.a,f.a,h.a,v.a,W]],[3,e.i],e.s]),e._8(4608,X.n,X.m,[e.r,[2,X.w]]),e._8(4608,Z.r,Z.r,[]),e._8(4608,Z.d,Z.d,[]),e._8(512,X.b,X.b,[]),e._8(512,Z.p,Z.p,[]),e._8(512,Z.e,Z.e,[]),e._8(512,Z.n,Z.n,[]),e._8(512,x.a,x.a,[]),e._8(512,x.b,x.b,[]),e._8(512,i,i,[]),e._8(256,A.a,o,[])])})}});
+webpackJsonp([11],{
+
+/***/ 690:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HistoryPageModule", function() { return HistoryPageModule; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(29);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__history__ = __webpack_require__(707);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+
+
+var HistoryPageModule = /** @class */ (function () {
+    function HistoryPageModule() {
+    }
+    HistoryPageModule = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["J" /* NgModule */])({
+            declarations: [
+                __WEBPACK_IMPORTED_MODULE_2__history__["a" /* HistoryPage */],
+            ],
+            imports: [
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__history__["a" /* HistoryPage */]),
+            ],
+        })
+    ], HistoryPageModule);
+    return HistoryPageModule;
+}());
+
+//# sourceMappingURL=history.module.js.map
+
+/***/ }),
+
+/***/ 707:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HistoryPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(29);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_api__ = __webpack_require__(46);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_auth_user_auth_user__ = __webpack_require__(89);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+/**
+ * Generated class for the HistoryPage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
+var HistoryPage = /** @class */ (function () {
+    function HistoryPage(navCtrl, navParams, api, userProvider) {
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+        this.api = api;
+        this.userProvider = userProvider;
+        this.transactions = null;
+        this.links = null;
+        this.meta = null;
+        this.filtro = {
+            status: 0,
+            page: 1,
+            perpage: 50
+        };
+        this.getInfo();
+    }
+    HistoryPage.prototype.getInfo = function () {
+        var _this = this;
+        this.api.get('app/transactions', this.userProvider, {
+            'expand': 'country,coin,transactionCommission,coinHash',
+            'status': this.filtro.status,
+            'page': this.filtro.page,
+            'per-page': this.filtro.perpage
+        }).then(function (data) {
+            _this.transactions = data.items;
+            _this.links = data.links;
+            _this.meta = data.meta;
+        });
+    };
+    HistoryPage.prototype.goDetalle = function (transaction) {
+        this.navCtrl.push('HistoryResumePage', { 'transaction': transaction });
+    };
+    HistoryPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+            selector: 'page-history',template:/*ion-inline-start:"/Users/eyeline/Documents/eyepaycashappGitHub/src/pages/history/history.html"*/'<ion-header>\n\n  <ion-navbar>\n    <ion-title>Historial</ion-title>\n  </ion-navbar>\n\n</ion-header>\n<ion-content padding>\n  <ion-row>\n    <ion-col col-12>\n      <ion-label>Filtro de transacciones por estado:</ion-label>\n      <ion-select [(ngModel)]="filtro.status" (ionChange)="getInfo()">\n        <ion-option value="0">Pendiente de pago</ion-option>\n        <ion-option value="1">Pagado y pendiente por retirar</ion-option>\n        <ion-option value="2">Pagado y retirado</ion-option>\n      </ion-select>\n    </ion-col>\n  </ion-row>\n  <ion-list>\n    <ion-card *ngFor="let transaction of transactions" (click)="goDetalle(transaction)" class="center bground">\n      <ion-card-content>\n        <ion-row>\n          <ion-col col-6>\n            <h6>{{transaction.country.name}}</h6>\n          </ion-col>\n          <ion-col col-6>\n            {{transaction.date_request |date:\'MM/dd/yyyy\'}}\n            <!--transaction.date_request |date:\'MM/dd/yyyy h:mma\'}}-->\n          </ion-col>\n          <ion-col col-4>\n            {{transaction.coin.full_name}}\n          </ion-col>\n          <ion-col col-4>\n            {{transaction.amount_local | currency:transaction.country.currency+" " : 2}}\n          </ion-col>\n          <ion-col col-4>\n            <ion-icon name="add"></ion-icon>\n          </ion-col>\n        </ion-row>\n      </ion-card-content>\n    </ion-card>\n  </ion-list>\n</ion-content>'/*ion-inline-end:"/Users/eyeline/Documents/eyepaycashappGitHub/src/pages/history/history.html"*/,
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */],
+            __WEBPACK_IMPORTED_MODULE_2__providers_api__["a" /* Api */],
+            __WEBPACK_IMPORTED_MODULE_3__providers_auth_user_auth_user__["a" /* AuthUserProvider */]])
+    ], HistoryPage);
+    return HistoryPage;
+}());
+
+//# sourceMappingURL=history.js.map
+
+/***/ })
+
+});
+//# sourceMappingURL=11.js.map

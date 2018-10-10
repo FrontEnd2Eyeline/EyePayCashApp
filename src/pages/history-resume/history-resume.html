@@ -28,7 +28,7 @@
             Costo:
           </ion-col>
           <ion-col col-6 text-right>
-            USD {{comision.crypto_value_to_usd}}
+            USD {{comision.crypto_value_to_usd | currency}}
           </ion-col>
         </ion-row>
         <label stacked>Información de comisión</label>
@@ -37,22 +37,22 @@
             Total en USD
           </ion-col>
           <ion-col col-6 text-right>
-            USD {{comision?.total_in_usd}}
+            USD {{comision?.total_in_usd | currency}}
           </ion-col>
           <ion-col col-6 text-left>
             Total en Cryptomoneda
           </ion-col>
           <ion-col col-6 text-right>
-            {{coin.short_name}} {{comision?.total_in_crypto}}
+            {{coin.short_name}} {{comision?.total_in_crypto | currency}}
           </ion-col>
         </ion-row>
         <label stacked>Información de transacción</label>
         <ion-row>
           <ion-col col-6 text-left>Costo en moneda local:</ion-col>
-          <ion-col col-6 text-right>{{historyInfo?.amount_local}}</ion-col>
+          <ion-col col-6 text-right>{{historyInfo?.amount_local | currency}}</ion-col>
 
           <ion-col col-6 text-left>Costo en USD:</ion-col>
-          <ion-col col-6 text-right>{{historyInfo?.amount_usd}}</ion-col>
+          <ion-col col-6 text-right>{{historyInfo?.amount_usd | currency}}</ion-col>
 
           <ion-col col-6 text-left>Fecha de la transacción:</ion-col>
           <ion-col col-6 text-right>{{historyInfo?.date_request}}</ion-col>

@@ -131,7 +131,6 @@ export class RegisterPage {
       this.navCtrl.setRoot('LoginPage')
     });
     modalWelcome.onDidDismiss(data => {
-      console.log('close');
     });
     modalWelcome.present();
     this.userProvider.setUser(null);

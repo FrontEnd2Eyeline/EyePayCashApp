@@ -94,7 +94,6 @@ export class MapPage {
   getPosition(): void {
     this.map.getMyLocation()
       .then(response => {
-        console.log(response);
         this.map.moveCamera({
           target: response.latLng,
           zoom: 14,
