@@ -1,14 +1,14 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      CUENTA
+      Información de cuenta
     </ion-title>
   </ion-navbar>
 </ion-header>
 <ion-content padding>
   <ion-row>
     <ion-col col-12>
-      <button ion-button (click)="cerrarSesion()" block class="buttonPayCash">CERRAR SESIÓN</button>
+      <button ion-button (click)="cerrarSesion()" block class="buttonPayCash">Cerrar sesión</button>
     </ion-col>
   </ion-row>
   <ion-card>
@@ -30,18 +30,19 @@
         </ion-item>
         <ion-item>
           <ion-label stacked>Género</ion-label>
-          <ion-select okText="Guardar" cancelText="Cancelar" [(ngModel)]="usuario.gender" name="userregistrogenero">
+          <ion-select okText="Guardar" cancelText="Cancelar" [(ngModel)]="usuario.gender" name="userregistrogenero" interface="popover">
             <ion-option value="f">Femenino</ion-option>
             <ion-option value="m">Masculino</ion-option>
           </ion-select>
         </ion-item>
-        <button ion-button block class="buttonPayCash" (click)="actualizar()">Actualizar</button>
+        <button ion-button block class="buttonPayCash" (click)="actualizar()">Actualizar información</button>
       </ion-list>
     </ion-card-content>
   </ion-card>
+
   <ion-card>
     <ion-card-header>
-      <ion-icon name="key" item-start></ion-icon>
+      <ion-icon name="call" item-start></ion-icon>
       Información de cuenta
     </ion-card-header>
     <ion-card-content>
@@ -53,12 +54,17 @@
         <ion-label stacked>Teléfono</ion-label>
         {{usuario.phone}}
       </ion-row>
+      <ion-row>
+        <button ion-button class="buttonPayCash" *ngIf="usuario.userVerify.is_phone_verify ==0" (click)="reenviarConfirm('phone')">Reenviar confirmación móvil</button>
+        <button ion-button class="buttonPayCash" *ngIf="usuario.userVerify.is_mail_verify ==0" (click)="reenviarConfirm('mail')">Reenviar confirmación email</button>
+      </ion-row>
     </ion-card-content>
   </ion-card>
+
   <ion-card>
     <ion-card-header>
       <ion-icon name="locate" item-start></ion-icon>
-      Información de ubicaciòn
+      Información de ubicación
     </ion-card-header>
     <ion-card-content>
       <ion-row>
@@ -80,61 +86,5 @@
     </ion-card-content>
   </ion-card>
 
-
-  <ion-card>
-    <ion-card-header>
-      <ion-icon name="lock" item-start></ion-icon>
-      Información de seguridad
-    </ion-card-header>
-    <ion-card-content>
-      <div *ngIf="isphone">
-        <ion-row>
-
-          <label stacked>Seleccione el país e ingrese su nuevo número celular</label>
-          <ion-col col-4>
-            <ion-item class="item-flag">
-              <img [src]="infoPhone.flag" class="flagphone" *ngIf="infoPhone.flag !=null">
-              <button ion-button (click)="selectcountry()">+ {{infoPhone.country_code}}</button>
-            </ion-item>
-          </ion-col>
-          <ion-col col-8>
-            <ion-input required type="text" name="numerocelular" [(ngModel)]="infoPhone.value"
-                       placeholder="Número movil (celular)"></ion-input>
-          </ion-col>
-
-          <ion-col col-12 *ngIf="response_verify.phone_code != null">
-            <label stacked>Por favor ingrese el código de verificación</label>
-            <ion-input name="verifycode" [(ngModel)]="codeVerify"></ion-input>
-            <button class="buttonPayCash" (click)="verifyCode()" ion-button block>Verificar código</button>
-          </ion-col>
-        </ion-row>
-        <button ion-button block class="buttonPayCash" (click)="changePhone()" *ngIf="response_verify.phone_code==null">
-          Actualizar número celular
-        </button>
-        <button ion-button block class="buttonPayCash" (click)="pedirMail()">Cambiar dirección email</button>
-      </div>
-
-
-      <div *ngIf="ismail">
-        <ion-row>
-          <label stacked> Por favor ingrese la nueva dirección email</label>
-          <ion-col col-12 row>
-            <ion-input name="correoelectronico" [(ngModel)]="infoPhone.value"
-                       placeholder="Direcciòn email correo electrònico"></ion-input>
-          </ion-col>
-          <ion-col col-12 *ngIf="response_verify.mail_code != null">
-            <label stacked>Por favor ingrese el código de verificación</label>
-            <br>
-            <ion-input name="verifycode" [(ngModel)]="codeVerifyMail"></ion-input>
-            <button class="buttonPayCash" (click)="verifyCodeMail()" ion-button block>Verificar código</button>
-          </ion-col>
-        </ion-row>
-        <button ion-button block class="buttonPayCash" (click)="changeMail()" *ngIf="response_verify.mail_code==null">
-          Actualizar dirección email
-        </button>
-        <button ion-button block class="buttonPayCash" (click)="pedirPhone()">Cambiar número celular</button>
-      </div>
-    </ion-card-content>
-  </ion-card>
 
 </ion-content>

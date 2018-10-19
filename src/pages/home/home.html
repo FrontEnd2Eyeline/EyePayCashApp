@@ -1,25 +1,40 @@
-<ion-content class="imgBackground">
-  <div class="mrgDiv">
-  <ion-list class="center divMargin">
-      <ion-col class="animated bounceInDown" col-12 >
-        <img src="assets/imgs/EPCLogo.png" alt="" class="logo">
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+
+
+
+
+</ion-content>
+<ion-footer>
+  <ion-toolbar>
+    <ion-row>
+      <ion-col col-3>
+        <button ion-button full (click)="goPage('transaction')">
+          <ion-icon name="card"></ion-icon>
+        </button>
       </ion-col>
-      <ion-row class="divLogos">
-        <ion-col class="animated bounceInLeft" col-6 text-center>
-          <ion-img name="add" (click)="goPage('transaction')" class="img-loaded2 img" src="assets/icon/TransaccionIco.png"></ion-img>
-        </ion-col>
-        <ion-col class="animated bounceInRight" col-6 text-center>
-          <ion-img name="list-box" (click)="goPage('history')" class="img-loaded2 img" src="assets/icon/HistoryIco.png"></ion-img>
-        </ion-col>
-      </ion-row>
-    <ion-row class="divMargin">
-      <ion-col class="animated bounceInLeft" col-6 text-center>
-        <ion-img name="maps" (click)="goPage('maps')" class="img-loaded2 img" src="assets/icon/mapa.png"></ion-img>
+      <ion-col col-3>
+        <button ion-button full (click)="goPage('history')">
+          <ion-badge item-end>{{count}}</ion-badge>
+          <ion-icon name="list-box"></ion-icon>
+        </button>
       </ion-col>
-      <ion-col class="animated bounceInRight" col-6 text-center>
-        <ion-img name="person" (click)="goPage('account')" class="img-loaded2 img" src="assets/icon/CuentaIco.png"></ion-img>
+      <ion-col col-3>
+        <button ion-button full (click)="goPage('maps')">
+          <ion-icon name="planet"></ion-icon>
+        </button>
+      </ion-col>
+      <ion-col col-3>
+        <button ion-button full (click)="goPage('account')">
+          <ion-icon name="person"></ion-icon>
+        </button>
       </ion-col>
     </ion-row>
-  </ion-list>
-</div>
-</ion-content>
+  </ion-toolbar>
+</ion-footer>

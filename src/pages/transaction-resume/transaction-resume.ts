@@ -1,5 +1,6 @@
 import {Component} from '@angular/core';
 import {IonicPage, LoadingController, NavController, NavParams} from 'ionic-angular';
+import {Clipboard} from "@ionic-native/clipboard";
 
 
 
@@ -21,6 +22,7 @@ export class TransactionResumePage {
     public navCtrl: NavController,
     public navParams: NavParams,
     public loadingCtrl: LoadingController,
+    private clipboard: Clipboard
   ) {
     this.getIngfo();
   }
@@ -28,7 +30,6 @@ export class TransactionResumePage {
   getIngfo() {
     // Toda el response de la transacción
     let parametros = this.navParams.data;
-
     this.result = parametros.result;
     this.coin = parametros.coin;
     this.country = parametros.country;
@@ -38,7 +39,14 @@ export class TransactionResumePage {
   }
 
   goMaps(){
-    this.navCtrl.push('MapPage');
+    this.navCtrl.push("MapPage");
+    // this.navCtrl.setPages([
+    //   {page: 'HomePage'},
+    //   {page: 'MapPage'},
+    // ]);
+  }
+  copiarToken(){
+    this.clipboard.copy(this.coinhas.eye_hash)
   }
 
 }

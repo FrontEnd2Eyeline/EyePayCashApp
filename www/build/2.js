@@ -1,6 +1,6 @@
 webpackJsonp([2],{
 
-/***/ 693:
+/***/ 702:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -8,15 +8,17 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MapPageModule", function() { return MapPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(29);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__map__ = __webpack_require__(710);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__map__ = __webpack_require__(719);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_geolocation__ = __webpack_require__(90);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_google_maps__ = __webpack_require__(357);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_google_maps__ = __webpack_require__(361);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_map_map__ = __webpack_require__(362);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
 
 
 
@@ -31,11 +33,12 @@ var MapPageModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_2__map__["a" /* MapPage */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__map__["a" /* MapPage */]),
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__map__["a" /* MapPage */]),
             ],
             providers: [
                 __WEBPACK_IMPORTED_MODULE_3__ionic_native_geolocation__["a" /* Geolocation */],
-                __WEBPACK_IMPORTED_MODULE_4__ionic_native_google_maps__["a" /* Geocoder */]
+                __WEBPACK_IMPORTED_MODULE_4__ionic_native_google_maps__["a" /* Geocoder */],
+                __WEBPACK_IMPORTED_MODULE_5__providers_map_map__["a" /* MapProvider */]
             ]
         })
     ], MapPageModule);
@@ -46,18 +49,19 @@ var MapPageModule = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 710:
+/***/ 719:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MapPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(29);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_google_maps__ = __webpack_require__(357);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_google_maps__ = __webpack_require__(361);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_geolocation__ = __webpack_require__(90);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_api__ = __webpack_require__(46);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_api__ = __webpack_require__(47);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_auth_user_auth_user__ = __webpack_require__(89);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__app_mapStyle__ = __webpack_require__(711);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__app_mapStyle__ = __webpack_require__(720);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__providers_map_map__ = __webpack_require__(362);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -74,6 +78,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 /**
  * Generated class for the MapPage page.
  *
@@ -81,29 +86,29 @@ var __metadata = (this && this.__metadata) || function (k, v) {
  * Ionic pages and navigation.
  */
 var MapPage = /** @class */ (function () {
-    function MapPage(navCtrl, navParams, geolocation, api, user) {
+    function MapPage(navCtrl, navParams, geolocation, api, user, mapProvider, loadCtl) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
         this.geolocation = geolocation;
         this.api = api;
         this.user = user;
-        this.markers = [];
-        this.loadMap();
+        this.mapProvider = mapProvider;
+        this.loadCtl = loadCtl;
+        this.idsLoaded = [];
     }
     MapPage.prototype.ionViewDidLoad = function () {
+        this.loading = this.loadCtl.create({
+            spinner: 'dots'
+        });
+        this.loading.present();
+        console.log(this.mapProvider.camera, this.mapProvider.userPosition, this.mapProvider.markers);
+        this.loadMap();
+        this.loadMarkers();
     };
     MapPage.prototype.loadMap = function () {
         var _this = this;
         var mapOptions = {
-            camera: {
-                target: {
-                    lat: 1.178720,
-                    lng: -77.313249
-                },
-                zoom: 5,
-                tilt: 0,
-                bearing: 0
-            },
+            camera: this.mapProvider.camera,
             styles: __WEBPACK_IMPORTED_MODULE_6__app_mapStyle__["a" /* mapStyle */]
         };
         this.map = __WEBPACK_IMPORTED_MODULE_2__ionic_native_google_maps__["b" /* GoogleMaps */].create('map', mapOptions);
@@ -113,14 +118,36 @@ var MapPage = /** @class */ (function () {
             _this.getPosition();
         })
             .catch(function (error) {
-            console.log(error);
         });
         this.map.on(__WEBPACK_IMPORTED_MODULE_2__ionic_native_google_maps__["c" /* GoogleMapsEvent */].CAMERA_MOVE_END).subscribe(function (value) {
             var mapStop = value[0];
-            if (mapStop.zoom >= 5) {
+            _this.mapProvider.setCamera({
+                target: {
+                    lat: mapStop.target.lat,
+                    lng: mapStop.target.lng
+                },
+                zoom: mapStop.zoom,
+                tilt: 0,
+                bearing: 0
+            });
+            if (mapStop.zoom >= 10) {
                 _this.loadPoints(mapStop.target.lat, mapStop.target.lng);
             }
         });
+    };
+    MapPage.prototype.loadMarkers = function () {
+        var _this = this;
+        this.mapProvider.markers.forEach((function (value) {
+            if (_this.idsLoaded.indexOf(value.id) == -1) {
+                _this.map.addMarker({
+                    title: value.company_name + " " + value.address,
+                    icon: 'blue',
+                    animation: 'DROP',
+                    position: new __WEBPACK_IMPORTED_MODULE_2__ionic_native_google_maps__["d" /* LatLng */](value.lat, value.lng)
+                }).then().catch();
+                _this.idsLoaded.push(value.id);
+            }
+        }));
     };
     MapPage.prototype.loadPoints = function (lat, lng) {
         var _this = this;
@@ -129,57 +156,57 @@ var MapPage = /** @class */ (function () {
             lng: lng,
             rad: 20 //20 km a la redonda
         }).then(function (value) {
-            console.log(value);
-            value.forEach(function (item) {
-                if (_this.markers.indexOf(item.id) < 0)
-                    _this.map.addMarker({
-                        title: item.company_name + " \n " + item.address,
-                        icon: 'blue',
-                        animation: 'DROP',
-                        position: new __WEBPACK_IMPORTED_MODULE_2__ionic_native_google_maps__["d" /* LatLng */](item.lat, item.lng)
-                    }).catch(function (erro) {
-                        console.log(erro);
-                    })
-                        .then(function (value1) { return console.log(value1); });
-                _this.markers.push(item.id);
-            });
+            _this.mapProvider.setMarkers(value);
+            _this.loadMarkers();
         });
     };
     MapPage.prototype.getPosition = function () {
         var _this = this;
-        this.map.getMyLocation()
-            .then(function (response) {
-            _this.map.moveCamera({
-                target: response.latLng,
-                zoom: 14,
-                bearing: 0,
-                tilt: 0,
-                duration: 1000,
+        if (this.mapProvider.userPosition == null) {
+            this.map.getMyLocation()
+                .then(function (response) {
+                _this.map.moveCamera({
+                    target: response.latLng,
+                    zoom: 14,
+                    bearing: 0,
+                    tilt: 0,
+                    duration: 1000,
+                }).then(function () {
+                    _this.loading.dismiss();
+                });
+                _this.mapProvider.userPosition = response.latLng;
+                _this.map.addMarker({
+                    title: 'Mi ubicación.',
+                    icon: 'red',
+                    animation: 'DROP',
+                    position: response.latLng
+                });
+            })
+                .catch(function (error) {
+                console.log(error);
             });
-            _this.map.addMarker({
-                title: 'My Position',
+        }
+        else {
+            this.map.addMarker({
+                title: 'Mi ubicación.',
                 icon: 'red',
                 animation: 'DROP',
-                position: response.latLng
+                position: this.mapProvider.userPosition
             });
-        })
-            .catch(function (error) {
-            console.log(error);
-        });
+            this.loading.dismiss();
+        }
     };
     MapPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-<<<<<<< HEAD
-            selector: 'page-map',template:/*ion-inline-start:"/Users/eyeline/Documents/eyepaycashappGitHub/src/pages/map/map.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>Mapa</ion-title>\n  </ion-navbar>\n</ion-header>\n<ion-content>\n  <div id="map"></div>\n</ion-content>\n'/*ion-inline-end:"/Users/eyeline/Documents/eyepaycashappGitHub/src/pages/map/map.html"*/,
-=======
-            selector: 'page-map',template:/*ion-inline-start:"/Users/eyeline/Documents/GitHub/eyepaycashapp/src/pages/map/map.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>Mapa</ion-title>\n  </ion-navbar>\n</ion-header>\n<ion-content>\n  <div id="map"></div>\n</ion-content>\n'/*ion-inline-end:"/Users/eyeline/Documents/GitHub/eyepaycashapp/src/pages/map/map.html"*/,
->>>>>>> 87109805ca44ef49582f92846201bf3f3197e8a8
+            selector: 'page-map',template:/*ion-inline-start:"/Users/eyeline/Documents/eyepaycashappGitHub/src/pages/map/map.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>Lugares para retirar dinero</ion-title>\n  </ion-navbar>\n</ion-header>\n<ion-content>\n  <div id="map"></div>\n</ion-content>\n'/*ion-inline-end:"/Users/eyeline/Documents/eyepaycashappGitHub/src/pages/map/map.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */],
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */],
             __WEBPACK_IMPORTED_MODULE_3__ionic_native_geolocation__["a" /* Geolocation */],
             __WEBPACK_IMPORTED_MODULE_4__providers_api__["a" /* Api */],
-            __WEBPACK_IMPORTED_MODULE_5__providers_auth_user_auth_user__["a" /* AuthUserProvider */]])
+            __WEBPACK_IMPORTED_MODULE_5__providers_auth_user_auth_user__["a" /* AuthUserProvider */],
+            __WEBPACK_IMPORTED_MODULE_7__providers_map_map__["a" /* MapProvider */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* LoadingController */]])
     ], MapPage);
     return MapPage;
 }());
@@ -188,7 +215,7 @@ var MapPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 711:
+/***/ 720:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";

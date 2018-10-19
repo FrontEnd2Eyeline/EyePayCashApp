@@ -1,14 +1,14 @@
 webpackJsonp([8],{
 
-/***/ 696:
+/***/ 705:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ModalWelcomePageModule", function() { return ModalWelcomePageModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PasswordUpdatePageModule", function() { return PasswordUpdatePageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(29);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__modal_welcome__ = __webpack_require__(702);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__password_update__ = __webpack_require__(723);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -18,33 +18,35 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var ModalWelcomePageModule = /** @class */ (function () {
-    function ModalWelcomePageModule() {
+var PasswordUpdatePageModule = /** @class */ (function () {
+    function PasswordUpdatePageModule() {
     }
-    ModalWelcomePageModule = __decorate([
+    PasswordUpdatePageModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["J" /* NgModule */])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_2__modal_welcome__["a" /* ModalWelcomePage */],
+                __WEBPACK_IMPORTED_MODULE_2__password_update__["a" /* PasswordUpdatePage */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__modal_welcome__["a" /* ModalWelcomePage */]),
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__password_update__["a" /* PasswordUpdatePage */]),
             ],
         })
-    ], ModalWelcomePageModule);
-    return ModalWelcomePageModule;
+    ], PasswordUpdatePageModule);
+    return PasswordUpdatePageModule;
 }());
 
-//# sourceMappingURL=modal-welcome.module.js.map
+//# sourceMappingURL=password-update.module.js.map
 
 /***/ }),
 
-/***/ 702:
+/***/ 723:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ModalWelcomePage; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PasswordUpdatePage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(29);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_api__ = __webpack_require__(47);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_auth_user_auth_user__ = __webpack_require__(89);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -56,40 +58,104 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
+
+
 /**
- * Generated class for the ModalWelcomePage page.
+ * Generated class for the PasswordUpdatePage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
  */
-var ModalWelcomePage = /** @class */ (function () {
-    function ModalWelcomePage(navCtrl, navParams) {
+var PasswordUpdatePage = /** @class */ (function () {
+    function PasswordUpdatePage(navCtrl, navParams, api, toastCtrl, userProvider, loadingCtrl) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
-        this.name = null;
-        this.getInfo();
+        this.api = api;
+        this.toastCtrl = toastCtrl;
+        this.userProvider = userProvider;
+        this.loadingCtrl = loadingCtrl;
+        this.infoRecovery = {
+            new_password: null,
+            new_password_conf: null,
+            reset_id: null,
+        };
+        this.infoRecovery.reset_id = navParams.get('reset_id');
     }
-    ModalWelcomePage.prototype.getInfo = function () {
-        this.name = this.navParams.get('name');
+    PasswordUpdatePage.prototype.recovery = function () {
+        var _this = this;
+        if (this.infoRecovery.new_password != null && this.infoRecovery.new_password_conf != null) {
+            if (this.infoRecovery.new_password_conf == this.infoRecovery.new_password) {
+                if (this.infoRecovery.new_password.length >= 6 && this.infoRecovery.new_password_conf.length >= 6) {
+                    var loading_1 = this.loadingCtrl.create({
+                        spinner: 'dots',
+                    });
+                    loading_1.present();
+                    this.api.post('auth/update-password', this.infoRecovery).then(function (data) {
+                        loading_1.dismiss();
+                        var toast = _this.toastCtrl.create({
+                            message: 'Contraseña actualizada correctamente.',
+                            showCloseButton: true,
+                            closeButtonText: 'cerrar',
+                            position: 'middle',
+                        });
+                        toast.present();
+                        _this.navCtrl.setRoot('LoginPage');
+                    }).catch(function (error) {
+                        var mensaje = '';
+                        loading_1.dismiss();
+                        error.error.forEach(function (data) {
+                            mensaje += data.message + "\n";
+                        });
+                        var toast = _this.toastCtrl.create({
+                            message: mensaje,
+                            closeButtonText: 'cerrar',
+                            showCloseButton: true,
+                        });
+                        toast.present();
+                    });
+                }
+                else {
+                    var toast = this.toastCtrl.create({
+                        message: 'La constraseña debe tener mínimo 6 caracteres.'
+                    });
+                    toast.present();
+                }
+            }
+            else {
+                var toast = this.toastCtrl.create({
+                    message: 'Las contraseñas no coinciden.',
+                    showCloseButton: true,
+                    closeButtonText: 'cerrar',
+                    position: 'middle',
+                });
+                toast.present();
+            }
+        }
+        else {
+            var toast = this.toastCtrl.create({
+                message: 'Los datos son obligatorios.',
+                showCloseButton: true,
+                closeButtonText: 'cerrar',
+                position: 'middle',
+            });
+            toast.present();
+        }
     };
-    ModalWelcomePage.prototype.closeModal = function () {
-        this.navCtrl.pop();
-    };
-    ModalWelcomePage = __decorate([
+    PasswordUpdatePage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-<<<<<<< HEAD
-            selector: 'page-modal-welcome',template:/*ion-inline-start:"/Users/eyeline/Documents/eyepaycashappGitHub/src/pages/modal-welcome/modal-welcome.html"*/'<!--\n  Generated template for the ModalWelcomePage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-content padding class="tamano">\n  <ion-row>\n    <ion-col col-10>\n      <h4>Bienvenido {{name}}</h4>\n    </ion-col>\n    <ion-col col-2>\n      <ion-buttons end>\n        <button ion-button icon-only (click)="closeModal()">\n          <ion-icon item-right name="ios-close-outline"></ion-icon>\n        </button>\n      </ion-buttons>\n    </ion-col>\n  </ion-row>\n\n  <img src="assets/imgs/ok.png">\n</ion-content>\n'/*ion-inline-end:"/Users/eyeline/Documents/eyepaycashappGitHub/src/pages/modal-welcome/modal-welcome.html"*/,
-=======
-            selector: 'page-modal-welcome',template:/*ion-inline-start:"/Users/eyeline/Documents/GitHub/eyepaycashapp/src/pages/modal-welcome/modal-welcome.html"*/'<!--\n  Generated template for the ModalWelcomePage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-content padding class="tamano">\n  <ion-row>\n    <ion-col col-10>\n      <h4>Bienvenido {{name}}</h4>\n    </ion-col>\n    <ion-col col-2>\n      <ion-buttons end>\n        <button ion-button icon-only (click)="closeModal()">\n          <ion-icon item-right name="ios-close-outline"></ion-icon>\n        </button>\n      </ion-buttons>\n    </ion-col>\n  </ion-row>\n\n  <img src="assets/imgs/ok.png">\n</ion-content>\n'/*ion-inline-end:"/Users/eyeline/Documents/GitHub/eyepaycashapp/src/pages/modal-welcome/modal-welcome.html"*/,
->>>>>>> 87109805ca44ef49582f92846201bf3f3197e8a8
+            selector: 'page-password-update',template:/*ion-inline-start:"/Users/eyeline/Documents/eyepaycashappGitHub/src/pages/password-update/password-update.html"*/'<!--\n  Generated template for the PasswordUpdatePage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-content padding class="fondo_gris">\n  <form #formulario (submit)="recovery()">\n    <ion-list>\n      <ion-item>\n        <ion-label stacked>Ingrese la nueva contraseña</ion-label>\n        <ion-input type="password" [(ngModel)]="infoRecovery.new_password" name="recovery_pass"></ion-input>\n      </ion-item>\n      <ion-item>\n        <ion-label stacked>Confirme la nueva contraseña</ion-label>\n        <ion-input type="password" [(ngModel)]="infoRecovery.new_password_conf" name="recovery_pass2"></ion-input>\n      </ion-item>\n      <ion-item>\n        <button ion-button class="buttonPayCash" block>Guardar</button>\n      </ion-item>\n    </ion-list>\n  </form>\n</ion-content>\n'/*ion-inline-end:"/Users/eyeline/Documents/eyepaycashappGitHub/src/pages/password-update/password-update.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */]])
-    ], ModalWelcomePage);
-    return ModalWelcomePage;
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */],
+            __WEBPACK_IMPORTED_MODULE_2__providers_api__["a" /* Api */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* ToastController */],
+            __WEBPACK_IMPORTED_MODULE_3__providers_auth_user_auth_user__["a" /* AuthUserProvider */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* LoadingController */]])
+    ], PasswordUpdatePage);
+    return PasswordUpdatePage;
 }());
 
-//# sourceMappingURL=modal-welcome.js.map
+//# sourceMappingURL=password-update.js.map
 
 /***/ })
 

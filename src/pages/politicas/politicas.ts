@@ -32,7 +32,7 @@ export class PoliticasPage {
     });
 
     toast.onDidDismiss(() => {
-      console.log('Dismissed toast');
+
     });
 
     toast.present();
@@ -47,7 +47,7 @@ export class PoliticasPage {
     });
 
     toast.onDidDismiss(() => {
-      console.log('Dismissed toast');
+
     });
 
     toast.present();
@@ -63,7 +63,7 @@ export class PoliticasPage {
     });
 
     toast.onDidDismiss(() => {
-      console.log('Dismissed toast');
+
     });
 
     toast.present();
@@ -79,7 +79,7 @@ export class PoliticasPage {
     });
 
     toast.onDidDismiss(() => {
-      console.log('Dismissed toast');
+
     });
 
     toast.present();
@@ -94,7 +94,7 @@ export class PoliticasPage {
     });
 
     toast.onDidDismiss(() => {
-      console.log('Dismissed toast');
+
     });
 
     toast.present();
@@ -109,7 +109,7 @@ export class PoliticasPage {
     });
 
     toast.onDidDismiss(() => {
-      console.log('Dismissed toast');
+
     });
 
     toast.present();
@@ -124,7 +124,7 @@ export class PoliticasPage {
     });
 
     toast.onDidDismiss(() => {
-      console.log('Dismissed toast');
+
     });
 
     toast.present();
@@ -141,7 +141,7 @@ export class PoliticasPage {
     });
 
     toast.onDidDismiss(() => {
-      console.log('Dismissed toast');
+
     });
 
     toast.present();
@@ -156,7 +156,7 @@ export class PoliticasPage {
     });
 
     toast.onDidDismiss(() => {
-      console.log('Dismissed toast');
+
     });
 
     toast.present();
@@ -171,7 +171,7 @@ export class PoliticasPage {
     });
 
     toast.onDidDismiss(() => {
-      console.log('Dismissed toast');
+
     });
 
     toast.present();
@@ -186,7 +186,7 @@ export class PoliticasPage {
     });
 
     toast.onDidDismiss(() => {
-      console.log('Dismissed toast');
+
     });
 
     toast.present();
@@ -201,7 +201,7 @@ export class PoliticasPage {
     });
 
     toast.onDidDismiss(() => {
-      console.log('Dismissed toast');
+
     });
 
     toast.present();
@@ -216,7 +216,7 @@ export class PoliticasPage {
     });
 
     toast.onDidDismiss(() => {
-      console.log('Dismissed toast');
+
     });
 
     toast.present();
@@ -231,7 +231,7 @@ export class PoliticasPage {
     });
 
     toast.onDidDismiss(() => {
-      console.log('Dismissed toast');
+
     });
 
     toast.present();
@@ -246,7 +246,7 @@ export class PoliticasPage {
     });
 
     toast.onDidDismiss(() => {
-      console.log('Dismissed toast');
+
     });
 
     toast.present();
@@ -261,7 +261,7 @@ export class PoliticasPage {
     });
 
     toast.onDidDismiss(() => {
-      console.log('Dismissed toast');
+
     });
 
     toast.present();
@@ -276,7 +276,7 @@ export class PoliticasPage {
     });
 
     toast.onDidDismiss(() => {
-      console.log('Dismissed toast');
+
     });
 
     toast.present();
@@ -291,7 +291,7 @@ export class PoliticasPage {
     });
 
     toast.onDidDismiss(() => {
-      console.log('Dismissed toast');
+
     });
 
     toast.present();
@@ -306,7 +306,7 @@ export class PoliticasPage {
     });
 
     toast.onDidDismiss(() => {
-      console.log('Dismissed toast');
+
     });
 
     toast.present();
@@ -321,7 +321,7 @@ export class PoliticasPage {
     });
 
     toast.onDidDismiss(() => {
-      console.log('Dismissed toast');
+
     });
 
     toast.present();
@@ -336,7 +336,7 @@ export class PoliticasPage {
     });
 
     toast.onDidDismiss(() => {
-      console.log('Dismissed toast');
+
     });
 
     toast.present();
@@ -351,7 +351,7 @@ export class PoliticasPage {
     });
 
     toast.onDidDismiss(() => {
-      console.log('Dismissed toast');
+
     });
 
     toast.present();
@@ -366,7 +366,7 @@ export class PoliticasPage {
     });
 
     toast.onDidDismiss(() => {
-      console.log('Dismissed toast');
+
     });
 
     toast.present();
@@ -381,7 +381,7 @@ export class PoliticasPage {
     });
 
     toast.onDidDismiss(() => {
-      console.log('Dismissed toast');
+
     });
 
     toast.present();
@@ -396,7 +396,7 @@ export class PoliticasPage {
     });
 
     toast.onDidDismiss(() => {
-      console.log('Dismissed toast');
+
     });
 
     toast.present();

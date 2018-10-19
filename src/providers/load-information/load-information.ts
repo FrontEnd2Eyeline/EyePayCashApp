@@ -59,12 +59,18 @@ export class LoadInformationProvider {
   }
 
   getCountriesID(currency: any) {
-    let id = null;
+    let value = {
+      id:null,
+      phone_code:null,
+      currency_code: null
+    };
     this.countrys.forEach(data => {
       if (data.currency == currency){
-        id = data.id;
+        value.id = data.id;
+        value.phone_code = data.phone_code;
+        value.currency_code = data.currency
       }
     });
-    return id;
+    return value;
   }
 }

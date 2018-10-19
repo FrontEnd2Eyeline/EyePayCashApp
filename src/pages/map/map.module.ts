@@ -3,6 +3,7 @@ import {IonicPageModule} from 'ionic-angular';
 import {MapPage} from './map';
 import {Geolocation} from "@ionic-native/geolocation";
 import {Geocoder} from "@ionic-native/google-maps";
+import {MapProvider} from "../../providers/map/map";
 
 @NgModule({
   declarations: [
@@ -13,7 +14,8 @@ import {Geocoder} from "@ionic-native/google-maps";
   ],
   providers: [
     Geolocation,
-    Geocoder
+    Geocoder,
+    MapProvider
   ]
 })
 export class MapPageModule {

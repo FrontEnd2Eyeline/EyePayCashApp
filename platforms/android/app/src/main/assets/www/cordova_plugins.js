@@ -290,6 +290,14 @@ module.exports = [
     "clobbers": [
       "nativegeocoder"
     ]
+  },
+  {
+    "id": "cordova-clipboard.Clipboard",
+    "file": "plugins/cordova-clipboard/www/clipboard.js",
+    "pluginId": "cordova-clipboard",
+    "clobbers": [
+      "cordova.plugins.clipboard"
+    ]
   }
 ];
 module.exports.metadata = 
@@ -303,7 +311,8 @@ module.exports.metadata =
   "cordova-plugin-splashscreen": "5.0.2",
   "cordova-plugin-statusbar": "2.4.2",
   "cordova-plugin-whitelist": "1.3.3",
-  "cordova-plugin-nativegeocoder": "3.1.2"
+  "cordova-plugin-nativegeocoder": "3.1.2",
+  "cordova-clipboard": "1.2.1"
 };
 // BOTTOM OF METADATA
 });

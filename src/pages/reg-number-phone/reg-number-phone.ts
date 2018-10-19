@@ -60,7 +60,9 @@ export class RegNumberPhonePage {
       });
       let toast = this.toastCtrl.create({
         message: 'Se ha enviado un código de verificación al número celular ingresado.',
-        duration: 3000
+        showCloseButton:true,
+        closeButtonText:'cerrar',
+        position:'middle',
       });
       loading.present();
       this.api.post('auth/pre-sign-up', this.user_register).then(
@@ -71,19 +73,32 @@ export class RegNumberPhonePage {
           this.response_verify.country_id = data.country.id;
           console.log(this.response_verify.phone_code);
         }
-      )
-        .catch();
+      ).catch(error=>{
+        let mensaje = "";
+        loading.dismiss();
+        error.error.forEach(data=>{
+          mensaje+=data.message+"\n";
+        });
+        let toast = this.toastCtrl.create({
+          message:mensaje,
+          showCloseButton: true,
+          closeButtonText: "cerrar",
+        });
+        toast.present();
+      });
     } else {
       let toast = this.toastCtrl.create({
         message: 'Toda la información es obligatoria',
-        duration: 3000,
+        showCloseButton:true,
+        closeButtonText:'cerrar',
+        position:'middle',
       });
       toast.present();
     }
   }
 
   selectcountry() {
-    let modal = this.modal.create(SelectCodePage);
+    let modal = this.modal.create("SelectCodePage");
     modal.present();
     modal.onDidDismiss(data => {
       if (data !== undefined) {
@@ -99,7 +114,9 @@ export class RegNumberPhonePage {
     } else {
       let toast = this.toastCtrl.create({
         message: 'Código incorrecto.',
-        duration: 3000,
+        showCloseButton:true,
+        closeButtonText:'cerrar',
+        position:'middle',
       });
       toast.present();
     }

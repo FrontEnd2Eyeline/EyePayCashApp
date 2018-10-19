@@ -18,6 +18,12 @@ import {RegNumberPhonePageModule} from "../pages/reg-number-phone/reg-number-pho
 import {VerificationProvider} from '../providers/verification/verification';
 import {LoadInformationProvider} from '../providers/load-information/load-information';
 import {GoogleMaps} from "@ionic-native/google-maps";
+import { ValidationProvider } from '../providers/validation/validation';
+import { FormatterDateProvider } from '../providers/formatter-date/formatter-date';
+import {Clipboard} from "@ionic-native/clipboard";
+import { MapProvider } from '../providers/map/map';
+import {CurrencyPipe} from "@angular/common";
+
 
 @NgModule({
   declarations: [
@@ -48,6 +54,11 @@ import {GoogleMaps} from "@ionic-native/google-maps";
     VerificationProvider,
     LoadInformationProvider,
     GoogleMaps,
+    ValidationProvider,
+    FormatterDateProvider,
+    Clipboard,
+    MapProvider,
+    CurrencyPipe
   ]
 })
 export class AppModule {

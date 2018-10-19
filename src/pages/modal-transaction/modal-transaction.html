@@ -1,9 +1,6 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>Transacción</ion-title>
-    <ion-buttons end>
-      <button ion-button (click)="closeModal()">Cerrar</button>
-    </ion-buttons>
+    <ion-title>Solicitar transacción</ion-title>
   </ion-navbar>
 </ion-header>
 <ion-content padding>
@@ -12,28 +9,31 @@
       {{moneda.full_name}}
     </ion-card-header>
     <ion-card-content>
-      <h6 *ngIf="currency != 'USD'">1 {{moneda.full_name}} ==  {{userCountry.local_usd_value| currency}} USD </h6>
-      <h6>1 {{moneda.full_name}} == {{moneda.usd_value | currency}} USD </h6>
+      <h6>1 {{moneda.full_name}} ={{moneda?.usd_value | currency}} USD </h6>
+      <h6 *ngIf="currency != 'USD'">1 {{moneda?.full_name}} = {{moneda?.local_usd_value| currency}} {{country.currency_}} </h6>
     </ion-card-content>
   </ion-card>
   <ion-card>
     <ion-card-header>
-      Información de la transación
+      Información de la transacción
     </ion-card-header>
     <ion-card-content>
-      <label stacked>Ingresar número celular</label>
-      <ion-input class="margBott" name="transaction-celular" [(ngModel)]="transaction.phone_user_des" [brmasker]="{type:'num'}"
-                 type="text"></ion-input>
-      <label stacked>Ingresar clave de seguridad (4 digitos)</label>
+      <label stacked>Ingresar número celular de destino</label>
+      <ion-row>
+        <ion-col col-3><h2 style="margin-top: 40%!important;">(+{{transaction.code_phone}})</h2></ion-col>
+        <ion-col col-9>
+          <ion-input type="number" class="margBott" name="transaction-celular" [(ngModel)]="transaction.phone_user_des" [brmasker]="{len:12}"></ion-input>
+        </ion-col>
+      </ion-row>
+      <label stacked>Ingresar una clave de seguridad</label>
       <ion-input class="margBott" name="transaction-clave" [brmasker]="{len:4}" [(ngModel)]="transaction.key_user"
                  type="number"></ion-input>
-      <label stacked>Ingresar el valor de la transacción</label>
-      <ion-input class="margBott" type="text" name="transaction-valor"
-                 [brmasker]="{money:true,decimal:0,thousand:'.',type:'num'}"
+      <label stacked>Ingresar valor de transacción en {{currency}}</label>
+      <ion-input class="margBott" name="transaction-valor" type="number" value=""
                  [(ngModel)]="transaction.amount_local">
 
       </ion-input>
-      <button class="buttonPayCash" ion-button (click)="doTrasaction()" block>Solicitar transacción</button>
+      <button class="buttonPayCash" ion-button (click)="confirmTrasaction()" block>Solicitar transacción</button>
     </ion-card-content>
   </ion-card>
 

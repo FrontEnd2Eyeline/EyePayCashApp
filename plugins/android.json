@@ -37,6 +37,9 @@
     },
     "cordova-plugin-nativegeocoder": {
       "PACKAGE_NAME": "io.ionic.starter"
+    },
+    "cordova-clipboard": {
+      "PACKAGE_NAME": "com.eyepaycash.app"
     }
   },
   "dependent_plugins": {}

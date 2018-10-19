@@ -20,7 +20,7 @@ export class PasswordUpdatePage {
   public infoRecovery: any = {
     new_password: null,
     new_password_conf: null,
-    user_id: null,
+    reset_id: null,
   };
 
   constructor(public navCtrl: NavController,
@@ -30,6 +30,7 @@ export class PasswordUpdatePage {
               private userProvider: AuthUserProvider,
               public loadingCtrl: LoadingController,
   ) {
+    this.infoRecovery.reset_id = navParams.get('reset_id');
   }
 
   recovery() {
@@ -40,36 +41,51 @@ export class PasswordUpdatePage {
             spinner: 'dots',
           });
           loading.present();
-          this.infoRecovery.user_id = this.userProvider.userRecovery.user_id;
           this.api.post('auth/update-password', this.infoRecovery).then((data) => {
+
             loading.dismiss();
-            console.log(data);
             let toast = this.toastCtrl.create({
-              message: 'Contraseña actualizada correctamente',
-              duration: 3000,
+              message: 'Contraseña actualizada correctamente.',
+              showCloseButton: true,
+              closeButtonText: 'cerrar',
+              position: 'middle',
             });
             toast.present();
             this.navCtrl.setRoot('LoginPage');
           }).catch((error) => {
+            let mensaje = '';
             loading.dismiss();
+            error.error.forEach(data => {
+              mensaje += data.message + "\n";
+            });
+            let toast = this.toastCtrl.create({
+              message: mensaje,
+              closeButtonText: 'cerrar',
+              showCloseButton: true,
+            });
+            toast.present();
           });
         } else {
           let toast = this.toastCtrl.create({
-            message: 'La constraseña debe tener mìnimo 6 caracteres'
+            message: 'La constraseña debe tener mínimo 6 caracteres.'
           });
           toast.present();
         }
       } else {
         let toast = this.toastCtrl.create({
-          message: 'Las contraseñas no coinciden',
-          duration: 3000,
+          message: 'Las contraseñas no coinciden.',
+          showCloseButton: true,
+          closeButtonText: 'cerrar',
+          position: 'middle',
         });
         toast.present();
       }
     } else {
       let toast = this.toastCtrl.create({
-        message: 'Los datos son obligatorios',
-        duration: 3000,
+        message: 'Los datos son obligatorios.',
+        showCloseButton: true,
+        closeButtonText: 'cerrar',
+        position: 'middle',
       });
       toast.present();
     }

@@ -22,11 +22,11 @@ export class CountryProvider {
   }
 
   init() {
-    console.log("Loading countries");
-    this.http.get("https://restcountries.eu/rest/v2/all/").toPromise()
-      .then((result: any[]) => {
-        this.countries = result;
-      })
+    if (!this.countries.length)
+      this.http.get("assets/countries.json").toPromise()
+        .then((result: any[]) => {
+          this.countries = result;
+        })
   }
 
   getResults(keyword: string) {

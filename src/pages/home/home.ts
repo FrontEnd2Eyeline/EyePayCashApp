@@ -1,5 +1,7 @@
 import {Component} from '@angular/core';
 import {IonicPage, LoadingController, NavController, ToastController} from "ionic-angular";
+import {Api} from "../../providers/api";
+import {AuthUserProvider} from "../../providers/auth-user/auth-user";
 
 @IonicPage({
   name: "HomePage",
@@ -12,12 +14,27 @@ import {IonicPage, LoadingController, NavController, ToastController} from "ioni
 })
 export class HomePage {
 
+  public count = 0;
+  public result = [];
 
   constructor(public navCtrl: NavController,
               public loadingCtrl: LoadingController,
               public toastCtrl: ToastController,
+              private api: Api,
+              private userProvider:AuthUserProvider,
   ) {
 
+  }
+  ionViewWillEnter(){
+    this.getInfo();
+  }
+  getInfo(){
+    this.api.get('app/transactions',
+      this.userProvider,{ 'status': 0 }).then((data:any)=>{
+        this.count = data.items.length;
+    }).catch(error=>{
+      console.log(error);
+    });
   }
 
   goPage(page) {

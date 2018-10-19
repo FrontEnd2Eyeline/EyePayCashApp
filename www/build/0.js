@@ -1,15 +1,16 @@
 webpackJsonp([0],{
 
-/***/ 694:
+/***/ 707:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ModalTransactionPageModule", function() { return ModalTransactionPageModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RegisterPageModule", function() { return RegisterPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(29);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__modal_transaction__ = __webpack_require__(712);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_brmasker_ionic_3__ = __webpack_require__(713);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__register__ = __webpack_require__(725);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_brmasker_ionic_3__ = __webpack_require__(358);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__components_components_module__ = __webpack_require__(712);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -20,526 +21,26 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var ModalTransactionPageModule = /** @class */ (function () {
-    function ModalTransactionPageModule() {
+
+var RegisterPageModule = /** @class */ (function () {
+    function RegisterPageModule() {
     }
-    ModalTransactionPageModule = __decorate([
+    RegisterPageModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["J" /* NgModule */])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_2__modal_transaction__["a" /* ModalTransactionPage */],
+                __WEBPACK_IMPORTED_MODULE_2__register__["a" /* RegisterPage */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__modal_transaction__["a" /* ModalTransactionPage */]),
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__register__["a" /* RegisterPage */]),
                 __WEBPACK_IMPORTED_MODULE_3_brmasker_ionic_3__["a" /* BrMaskerModule */],
+                __WEBPACK_IMPORTED_MODULE_4__components_components_module__["a" /* ComponentsModule */],
             ],
         })
-    ], ModalTransactionPageModule);
-    return ModalTransactionPageModule;
+    ], RegisterPageModule);
+    return RegisterPageModule;
 }());
 
-//# sourceMappingURL=modal-transaction.module.js.map
-
-/***/ }),
-
-/***/ 703:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* unused harmony export BrMaskModel */
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return BrMaskerIonic3; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_forms__ = __webpack_require__(22);
-
-
-var BrMaskModel = (function () {
-    function BrMaskModel() {
-        this.type = 'alfa';
-        this.decimal = 2;
-        this.decimalCaracter = ",";
-        this.userCaracters = false;
-        this.numberAndTousand = false;
-    }
-    return BrMaskModel;
-}());
-
-var BrMaskerIonic3 = (function () {
-    function BrMaskerIonic3(_renderer, _elementRef) {
-        this._renderer = _renderer;
-        this._elementRef = _elementRef;
-        this.brmasker = new BrMaskModel();
-    }
-    BrMaskerIonic3.prototype.inputKeyup = function (event) {
-        var value = this.returnValue(event.target.value);
-        this.writeValue(value);
-        event.target.value = value;
-    };
-    BrMaskerIonic3.prototype.inputOnblur = function (event) {
-        var value = this.returnValue(event.value);
-        this.writeValue(value);
-        event.value = value;
-    };
-    BrMaskerIonic3.prototype.inputFocus = function (event) {
-        var value = this.returnValue(event.value);
-        this.writeValue(value);
-        event.value = value;
-    };
-    BrMaskerIonic3.prototype.ngOnInit = function () {
-        if (!this.brmasker.type) {
-            this.brmasker.type = 'all';
-        }
-        if (!this.brmasker.decimal) {
-            this.brmasker.decimal = 2;
-        }
-        if (!this.brmasker.decimalCaracter) {
-            this.brmasker.decimalCaracter = ',';
-        }
-    };
-    BrMaskerIonic3.prototype.writeValue = function (fn) {
-        this._renderer.setElementProperty(this._elementRef.nativeElement, 'value', fn);
-    };
-    BrMaskerIonic3.prototype.registerOnChange = function (fn) {
-        return;
-    };
-    BrMaskerIonic3.prototype.registerOnTouched = function (fn) {
-        return;
-    };
-    BrMaskerIonic3.prototype.setDisabledState = function (isDisabled) {
-        if (isDisabled) {
-            this._renderer.setElementAttribute(this._elementRef.nativeElement, 'disabled', 'true');
-        }
-        else {
-            this._renderer.setElementAttribute(this._elementRef.nativeElement, 'disabled', 'false');
-        }
-    };
-    BrMaskerIonic3.prototype.writeCreateValue = function (value, config) {
-        if (config === void 0) { config = new BrMaskModel(); }
-        if (value && config.phone) {
-            return value.replace(/^(?:(?:\+|00)?(55)\s?)?(?:\(?([1-9][0-9])\)?\s?)?(?:((?:9\d|[2-9])\d{3})\-?(\d{4}))$/gi, '$1 ($2) $3-$4');
-        }
-        if (value && config.money) {
-            return this.writeValueMoney(value, config);
-        }
-        if (value && config.person) {
-            return this.writeValuePerson(value);
-        }
-        if (value && config.percent) {
-            return this.writeValuePercent(value);
-        }
-        if (value && config.mask) {
-            this.brmasker.mask = config.mask;
-            if (config.len) {
-                this.brmasker.len = config.len;
-            }
-            return this.onInput(value);
-        }
-        return value;
-    };
-    BrMaskerIonic3.prototype.writeValuePercent = function (value) {
-        value.replace(/\D/gi, '');
-        value.replace(/%/gi, '');
-        return value.replace(/([0-9]{0})$/gi, '%$1');
-    };
-    BrMaskerIonic3.prototype.writeValuePerson = function (value) {
-        if (value.length <= 11) {
-            return value.replace(/(\d{3})(\d{3})(\d{3})(\d{2})/gi, '\$1.\$2.\$3\-\$4');
-        }
-        else {
-            return value.replace(/(\d{2})(\d{3})(\d{3})(\d{4})(\d{2})/gi, '\$1.\$2.\$3\/\$4\-\$5');
-        }
-    };
-    BrMaskerIonic3.prototype.writeValueMoney = function (value, config) {
-        if (config === void 0) { config = new BrMaskModel(); }
-        return this.moneyMask(value, config);
-    };
-    BrMaskerIonic3.prototype.returnValue = function (value) {
-        if (!this.brmasker.mask) {
-            this.brmasker.mask = '';
-        }
-        if (value) {
-            var v = value;
-            if (this.brmasker.type == 'alfa') {
-                v = v.replace(/\d/gi, '');
-            }
-            if (this.brmasker.type == 'num') {
-                v = v.replace(/\D/gi, '');
-            }
-            if (this.brmasker.money) {
-                return this.moneyMask(this.onInput(v), this.brmasker);
-            }
-            if (this.brmasker.phone) {
-                return this.phoneMask(v);
-            }
-            if (this.brmasker.person) {
-                return this.peapollMask(v);
-            }
-            if (this.brmasker.percent) {
-                return this.percentMask(v);
-            }
-            if (this.brmasker.numberAndTousand) {
-                return this.thousand(v);
-            }
-            if (this.brmasker.userCaracters) {
-                return this.usingSpecialCharacters(v, this.brmasker.mask, this.brmasker.len);
-            }
-            return this.onInput(v);
-        }
-        else {
-            return '';
-        }
-    };
-    BrMaskerIonic3.prototype.percentMask = function (v) {
-        var tmp = v;
-        tmp = tmp.replace(/\D/gi, '');
-        tmp = tmp.replace(/%/gi, '');
-        tmp = tmp.replace(/([0-9]{0})$/gi, '%$1');
-        return tmp;
-    };
-    BrMaskerIonic3.prototype.phoneMask = function (v) {
-        var n = v;
-        if (n.length > 14) {
-            this.brmasker.len = 15;
-            this.brmasker.mask = '(99) 99999-9999';
-            n = n.replace(/\D/gi, '');
-            n = n.replace(/(\d{2})(\d)/gi, '$1 $2');
-            n = n.replace(/(\d{5})(\d)/gi, '$1-$2');
-            n = n.replace(/(\d{4})(\d)/gi, '$1$2');
-        }
-        else {
-            this.brmasker.len = 14;
-            this.brmasker.mask = '(99) 9999-9999';
-            n = n.replace(/\D/gi, '');
-            n = n.replace(/(\d{2})(\d)/gi, '$1 $2');
-            n = n.replace(/(\d{4})(\d)/gi, '$1-$2');
-            n = n.replace(/(\d{4})(\d)/gi, '$1$2');
-        }
-        return this.onInput(n);
-    };
-    BrMaskerIonic3.prototype.peapollMask = function (v) {
-        var n = v;
-        if (n.length > 14) {
-            this.brmasker.len = 18;
-            this.brmasker.mask = '99.999.999/9999-99';
-            n = n.replace(/\D/gi, '');
-            n = n.replace(/(\d{2})(\d)/gi, '$1.$2');
-            n = n.replace(/(\d{3})(\d)/gi, '$1.$2');
-            n = n.replace(/(\d{3})(\d)/gi, '$1/$2');
-            n = n.replace(/(\d{4})(\d{1,4})$/gi, '$1-$2');
-            n = n.replace(/(\d{2})(\d{1,2})$/gi, '$1$2');
-        }
-        else {
-            this.brmasker.len = 14;
-            this.brmasker.mask = '999.999.999-99';
-            n = n.replace(/\D/gi, '');
-            n = n.replace(/(\d{3})(\d)/gi, '$1.$2');
-            n = n.replace(/(\d{3})(\d)/gi, '$1.$2');
-            n = n.replace(/(\d{3})(\d{1,2})$/gi, '$1-$2');
-        }
-        return this.onInput(n);
-    };
-    BrMaskerIonic3.prototype.moneyMask = function (value, config) {
-        var decimal = config.decimal || this.brmasker.decimal;
-        value = value
-            .replace(/\D/gi, '')
-            .replace(new RegExp("([0-9]{" + decimal + "})$", "g"), config.decimalCaracter + '$1');
-        if (value.length === decimal + 1) {
-            return "0" + value; // leading 0 so we're not left with something weird like ",50"
-        }
-        else if (value.length > decimal + 2 && value.charAt(0) === '0') {
-            return value.substr(1); // remove leading 0 when we don't need it anymore
-        }
-        if (config.thousand && value.length > (Number(4) + Number(config.decimal))) {
-            value = value.replace(new RegExp("([0-9]{3})" + config.decimalCaracter + "([0-9]{" + config.decimal + "}$)", "g"), config.thousand + "$1" + config.decimalCaracter + "$2");
-        }
-        if (config.thousand && value.length > (Number(8) + Number(config.decimal))) {
-            value = value.replace(new RegExp("([0-9]{3})" + config.thousand + "([0-9]{3})" + config.decimalCaracter + "([0-9]{" + config.decimal + "}$)", "g"), config.thousand + "$1" + config.thousand + "$2" + config.decimalCaracter + "$3");
-        }
-        return value;
-    };
-    BrMaskerIonic3.prototype.onInput = function (value) {
-        var ret = this.formatField(value, this.brmasker.mask, this.brmasker.len);
-        return ret;
-        // if (ret) {
-        //   this.element.nativeElement.value = ret;
-        // }
-    };
-    BrMaskerIonic3.prototype.thousand = function (value) {
-        var val = value.replace(/\D/gi, '');
-        var reverse = val.toString().split('').reverse().join('');
-        var thousands = reverse.match(/\d{1,3}/g);
-        if (thousands) {
-            return thousands.join("" + (this.brmasker.thousand || '.')).split('').reverse().join('');
-        }
-        return val;
-    };
-    BrMaskerIonic3.prototype.usingSpecialCharacters = function (campo, Mascara, tamanho) {
-        if (!tamanho) {
-            tamanho = 99999999999;
-        }
-        var boleanoMascara;
-        var exp = /\-|\.|\,| /gi;
-        var campoSoNumeros = campo.toString().replace(exp, '');
-        var posicaoCampo = 0;
-        var NovoValorCampo = '';
-        var TamanhoMascara = campoSoNumeros.length;
-        for (var i = 0; i < TamanhoMascara; i++) {
-            if (i < tamanho) {
-                boleanoMascara = ((Mascara.charAt(i) === '-') || (Mascara.charAt(i) === '.') || (Mascara.charAt(i) === ','));
-                if (boleanoMascara) {
-                    NovoValorCampo += Mascara.charAt(i);
-                    TamanhoMascara++;
-                }
-                else {
-                    NovoValorCampo += campoSoNumeros.charAt(posicaoCampo);
-                    posicaoCampo++;
-                }
-            }
-        }
-        return NovoValorCampo;
-    };
-    BrMaskerIonic3.prototype.formatField = function (campo, Mascara, tamanho) {
-        if (!tamanho) {
-            tamanho = 99999999999;
-        }
-        var boleanoMascara;
-        var exp = /\-|\.|\/|\(|\)|\,|\*|\+|\@|\#|\$|\&|\%|\:| /gi;
-        var campoSoNumeros = campo.toString().replace(exp, '');
-        var posicaoCampo = 0;
-        var NovoValorCampo = '';
-        var TamanhoMascara = campoSoNumeros.length;
-        for (var i = 0; i < TamanhoMascara; i++) {
-            if (i < tamanho) {
-                boleanoMascara = ((Mascara.charAt(i) === '-') || (Mascara.charAt(i) === '.') || (Mascara.charAt(i) === '/'));
-                boleanoMascara = boleanoMascara || ((Mascara.charAt(i) === '(') || (Mascara.charAt(i) === ')') || (Mascara.charAt(i) === ' '));
-                boleanoMascara = boleanoMascara || ((Mascara.charAt(i) === ',') || (Mascara.charAt(i) === '*') || (Mascara.charAt(i) === '+'));
-                boleanoMascara = boleanoMascara || ((Mascara.charAt(i) === '@') || (Mascara.charAt(i) === '#') || (Mascara.charAt(i) === ':'));
-                boleanoMascara = boleanoMascara || ((Mascara.charAt(i) === '$') || (Mascara.charAt(i) === '&') || (Mascara.charAt(i) === '%'));
-                if (boleanoMascara) {
-                    NovoValorCampo += Mascara.charAt(i);
-                    TamanhoMascara++;
-                }
-                else {
-                    NovoValorCampo += campoSoNumeros.charAt(posicaoCampo);
-                    posicaoCampo++;
-                }
-            }
-        }
-        return NovoValorCampo;
-    };
-    return BrMaskerIonic3;
-}());
-
-BrMaskerIonic3.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["t" /* Directive */], args: [{
-                selector: '[brmasker]',
-                providers: [
-                    {
-                        provide: __WEBPACK_IMPORTED_MODULE_1__angular_forms__["b" /* NG_VALUE_ACCESSOR */],
-                        useExisting: BrMaskerIonic3,
-                        multi: true
-                    }
-                ]
-            },] },
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["B" /* Injectable */] },
-];
-/** @nocollapse */
-BrMaskerIonic3.ctorParameters = function () { return [
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["W" /* Renderer */], },
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["u" /* ElementRef */], },
-]; };
-BrMaskerIonic3.propDecorators = {
-    'brmasker': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["E" /* Input */] },],
-    'inputKeyup': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["z" /* HostListener */], args: ['keyup', ['$event'],] },],
-    'inputOnblur': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["z" /* HostListener */], args: ['ionBlur', ['$event'],] },],
-    'inputFocus': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["z" /* HostListener */], args: ['ionFocus', ['$event'],] },],
-};
-//# sourceMappingURL=brmasker-ionic-3.js.map
-
-/***/ }),
-
-/***/ 704:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* unused harmony export BrMaskServicesModel */
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return BrMaskerIonicServices3; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-
-var BrMaskServicesModel = (function () {
-    function BrMaskServicesModel() {
-        this.type = 'alfa';
-        this.decimal = 2;
-        this.decimalCaracter = ",";
-        this.userCaracters = false;
-        this.numberAndTousand = false;
-    }
-    return BrMaskServicesModel;
-}());
-
-var BrMaskerIonicServices3 = (function () {
-    function BrMaskerIonicServices3() {
-        this.brmasker = new BrMaskServicesModel();
-    }
-    BrMaskerIonicServices3.prototype.ngOnInit = function () {
-        if (!this.brmasker.type) {
-            this.brmasker.type = 'all';
-        }
-        if (!this.brmasker.decimal) {
-            this.brmasker.decimal = 2;
-        }
-        if (!this.brmasker.decimalCaracter) {
-            this.brmasker.decimalCaracter = ',';
-        }
-    };
-    BrMaskerIonicServices3.prototype.writeCreateValue = function (value, config) {
-        if (config === void 0) { config = new BrMaskServicesModel(); }
-        if (value && config.phone) {
-            return value.replace(/^(?:(?:\+|00)?(55)\s?)?(?:\(?([1-9][0-9])\)?\s?)?(?:((?:9\d|[2-9])\d{3})\-?(\d{4}))$/gi, '$1 ($2) $3-$4');
-        }
-        if (value && config.money) {
-            return this.writeValueMoney(value, config);
-        }
-        if (value && config.person) {
-            return this.writeValuePerson(value);
-        }
-        if (value && config.percent) {
-            return this.writeValuePercent(value);
-        }
-        if (value && config.numberAndTousand) {
-            return this.writeValueNumberAndThousand(value);
-        }
-        if (value && config.userCaracters) {
-            return this.writeValueusingSpecialCharacters(value);
-        }
-        if (value && config.mask) {
-            this.brmasker.mask = config.mask;
-            if (config.len) {
-                this.brmasker.len = config.len;
-            }
-            return this.onInput(value);
-        }
-        return value;
-    };
-    BrMaskerIonicServices3.prototype.writeValuePercent = function (value) {
-        value.replace(/\D/gi, '');
-        value.replace(/%/gi, '');
-        return value.replace(/([0-9]{0})$/gi, '%$1');
-    };
-    BrMaskerIonicServices3.prototype.writeValuePerson = function (value) {
-        if (value.length <= 11) {
-            return value.replace(/(\d{3})(\d{3})(\d{3})(\d{2})/gi, '\$1.\$2.\$3\-\$4');
-        }
-        else {
-            return value.replace(/(\d{2})(\d{3})(\d{3})(\d{4})(\d{2})/gi, '\$1.\$2.\$3\/\$4\-\$5');
-        }
-    };
-    BrMaskerIonicServices3.prototype.writeValueMoney = function (value, config) {
-        if (config === void 0) { config = new BrMaskServicesModel(); }
-        return this.moneyMask(value, config);
-    };
-    BrMaskerIonicServices3.prototype.writeValueNumberAndThousand = function (value, config) {
-        if (config === void 0) { config = new BrMaskServicesModel(); }
-        return this.thousand(value);
-    };
-    BrMaskerIonicServices3.prototype.writeValueusingSpecialCharacters = function (value, config) {
-        if (config === void 0) { config = new BrMaskServicesModel(); }
-        return this.usingSpecialCharacters(value, config.mask, config.len);
-    };
-    BrMaskerIonicServices3.prototype.moneyMask = function (value, config) {
-        var decimal = config.decimal || this.brmasker.decimal;
-        value = value
-            .replace(/\D/gi, '')
-            .replace(new RegExp("([0-9]{" + decimal + "})$", "g"), config.decimalCaracter + '$1');
-        if (value.length === decimal + 1) {
-            return "0" + value; // leading 0 so we're not left with something weird like ",50"
-        }
-        else if (value.length > decimal + 2 && value.charAt(0) === '0') {
-            return value.substr(1); // remove leading 0 when we don't need it anymore
-        }
-        if (config.thousand && value.length > (Number(4) + Number(config.decimal))) {
-            value = value.replace(new RegExp("([0-9]{3})" + config.decimalCaracter + "([0-9]{" + config.decimal + "}$)", "g"), config.thousand + "$1" + config.decimalCaracter + "$2");
-        }
-        if (config.thousand && value.length > (Number(8) + Number(config.decimal))) {
-            value = value.replace(new RegExp("([0-9]{3})" + config.thousand + "([0-9]{3})" + config.decimalCaracter + "([0-9]{" + config.decimal + "}$)", "g"), config.thousand + "$1" + config.thousand + "$2" + config.decimalCaracter + "$3");
-        }
-        return value;
-    };
-    BrMaskerIonicServices3.prototype.onInput = function (value) {
-        var ret = this.formatField(value, this.brmasker.mask, this.brmasker.len);
-        return ret;
-    };
-    BrMaskerIonicServices3.prototype.thousand = function (value) {
-        var val = value.replace(/\D/gi, '');
-        var reverse = val.toString().split('').reverse().join('');
-        var thousands = reverse.match(/\d{1,3}/g);
-        val = thousands.join("" + (this.brmasker.thousand || '.')).split('').reverse().join('');
-        return val;
-    };
-    BrMaskerIonicServices3.prototype.usingSpecialCharacters = function (campo, Mascara, tamanho) {
-        if (!tamanho) {
-            tamanho = 99999999999;
-        }
-        var boleanoMascara;
-        var exp = /\-|\.|\,| /gi;
-        var campoSoNumeros = campo.toString().replace(exp, '');
-        var posicaoCampo = 0;
-        var NovoValorCampo = '';
-        var TamanhoMascara = campoSoNumeros.length;
-        for (var i = 0; i < TamanhoMascara; i++) {
-            if (i < tamanho) {
-                boleanoMascara = ((Mascara.charAt(i) === '-') || (Mascara.charAt(i) === '.') || (Mascara.charAt(i) === ','));
-                if (boleanoMascara) {
-                    NovoValorCampo += Mascara.charAt(i);
-                    TamanhoMascara++;
-                }
-                else {
-                    NovoValorCampo += campoSoNumeros.charAt(posicaoCampo);
-                    posicaoCampo++;
-                }
-            }
-        }
-        return NovoValorCampo;
-    };
-    BrMaskerIonicServices3.prototype.formatField = function (campo, Mascara, tamanho) {
-        if (!tamanho) {
-            tamanho = 99999999999;
-        }
-        var boleanoMascara;
-        var exp = /\-|\.|\/|\(|\)|\,|\*|\+|\@|\#|\$|\&|\%|\:| /gi;
-        var campoSoNumeros = campo.toString().replace(exp, '');
-        var posicaoCampo = 0;
-        var NovoValorCampo = '';
-        var TamanhoMascara = campoSoNumeros.length;
-        for (var i = 0; i < TamanhoMascara; i++) {
-            if (i < tamanho) {
-                boleanoMascara = ((Mascara.charAt(i) === '-') || (Mascara.charAt(i) === '.') || (Mascara.charAt(i) === '/'));
-                boleanoMascara = boleanoMascara || ((Mascara.charAt(i) === '(') || (Mascara.charAt(i) === ')') || (Mascara.charAt(i) === ' '));
-                boleanoMascara = boleanoMascara || ((Mascara.charAt(i) === ',') || (Mascara.charAt(i) === '*') || (Mascara.charAt(i) === '+'));
-                boleanoMascara = boleanoMascara || ((Mascara.charAt(i) === '@') || (Mascara.charAt(i) === '#') || (Mascara.charAt(i) === ':'));
-                boleanoMascara = boleanoMascara || ((Mascara.charAt(i) === '$') || (Mascara.charAt(i) === '&') || (Mascara.charAt(i) === '%'));
-                if (boleanoMascara) {
-                    NovoValorCampo += Mascara.charAt(i);
-                    TamanhoMascara++;
-                }
-                else {
-                    NovoValorCampo += campoSoNumeros.charAt(posicaoCampo);
-                    posicaoCampo++;
-                }
-            }
-        }
-        return NovoValorCampo;
-    };
-    return BrMaskerIonicServices3;
-}());
-
-BrMaskerIonicServices3.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["t" /* Directive */], args: [{
-                selector: '[brmasker]',
-            },] },
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["B" /* Injectable */] },
-];
-/** @nocollapse */
-BrMaskerIonicServices3.ctorParameters = function () { return []; };
-//# sourceMappingURL=brmasker-ionic-services.js.map
+//# sourceMappingURL=register.module.js.map
 
 /***/ }),
 
@@ -547,11 +48,109 @@ BrMaskerIonicServices3.ctorParameters = function () { return []; };
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ModalTransactionPage; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ComponentsModule; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__msg_error_msg_error__ = __webpack_require__(713);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_common__ = __webpack_require__(32);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+
+
+var ComponentsModule = /** @class */ (function () {
+    function ComponentsModule() {
+    }
+    ComponentsModule = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["J" /* NgModule */])({
+            declarations: [__WEBPACK_IMPORTED_MODULE_1__msg_error_msg_error__["a" /* MsgErrorComponent */]],
+            imports: [__WEBPACK_IMPORTED_MODULE_2__angular_common__["b" /* CommonModule */]],
+            exports: [__WEBPACK_IMPORTED_MODULE_1__msg_error_msg_error__["a" /* MsgErrorComponent */]]
+        })
+    ], ComponentsModule);
+    return ComponentsModule;
+}());
+
+//# sourceMappingURL=components.module.js.map
+
+/***/ }),
+
+/***/ 713:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MsgErrorComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_forms__ = __webpack_require__(21);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_validation_validation__ = __webpack_require__(360);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+/**
+ * Generated class for the MsgErrorComponent component.
+ *
+ * See https://angular.io/api/core/Component for more info on Angular
+ * Components.
+ */
+var MsgErrorComponent = /** @class */ (function () {
+    function MsgErrorComponent() {
+    }
+    Object.defineProperty(MsgErrorComponent.prototype, "errorMessage", {
+        get: function () {
+            for (var propertyName in this.control.errors) {
+                if (this.control.errors.hasOwnProperty(propertyName) && this.control.touched) {
+                    return __WEBPACK_IMPORTED_MODULE_2__providers_validation_validation__["a" /* ValidationProvider */].getValidatorErrorMessage(propertyName, this.control.errors[propertyName], this.name);
+                }
+            }
+            return false;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["E" /* Input */])(),
+        __metadata("design:type", __WEBPACK_IMPORTED_MODULE_1__angular_forms__["b" /* FormControl */])
+    ], MsgErrorComponent.prototype, "control", void 0);
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["E" /* Input */])(),
+        __metadata("design:type", String)
+    ], MsgErrorComponent.prototype, "name", void 0);
+    MsgErrorComponent = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+            selector: 'msg-error',
+            template: '<div><span *ngIf="errorMessage !== false">{{errorMessage}}</span></div>'
+        }),
+        __metadata("design:paramtypes", [])
+    ], MsgErrorComponent);
+    return MsgErrorComponent;
+}());
+
+//# sourceMappingURL=msg-error.js.map
+
+/***/ }),
+
+/***/ 725:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return RegisterPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(29);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_api__ = __webpack_require__(46);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_api__ = __webpack_require__(47);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_auth_user_auth_user__ = __webpack_require__(89);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_forms__ = __webpack_require__(21);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -565,180 +164,199 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
-/**
- * Generated class for the ModalTransactionPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-var ModalTransactionPage = /** @class */ (function () {
-    function ModalTransactionPage(navParams, viewCtrl, toastCtrl, loadingCtrl, api, userProvider, navCtrl) {
+
+var RegisterPage = /** @class */ (function () {
+    function RegisterPage(navCtrl, navParams, toastCtl, api, userProvider, loadingCtrl, modalCtrl) {
+        this.navCtrl = navCtrl;
         this.navParams = navParams;
-        this.viewCtrl = viewCtrl;
-        this.toastCtrl = toastCtrl;
-        this.loadingCtrl = loadingCtrl;
+        this.toastCtl = toastCtl;
         this.api = api;
         this.userProvider = userProvider;
-        this.navCtrl = navCtrl;
-        this.moneda = null;
-        this.userCountry = null;
-        this.currency = null;
-        this.transaction = {
-            amount_local: 0,
-            phone_user_des: null,
-            key_user: null,
+        this.loadingCtrl = loadingCtrl;
+        this.modalCtrl = modalCtrl;
+        this.responseParams = null;
+        this.registerParams = null;
+        this.user_register = {
+            //datos obtenidos por el params
+            phone: null,
             country_id: null,
-            coin_id: null,
+            user_verify_id: null,
+            confirm_verify: null,
         };
+        this.type = 'password';
+        this.showPass = false;
+        this.type2 = 'password';
+        this.showPass2 = false;
+        this.imagen = 'assets/backgrounds/Background3.png';
+        this.ischecked = this.userProvider.check_terminos;
+        this.formGroup = new __WEBPACK_IMPORTED_MODULE_4__angular_forms__["c" /* FormGroup */]({
+            first_name: new __WEBPACK_IMPORTED_MODULE_4__angular_forms__["b" /* FormControl */]('', [
+                __WEBPACK_IMPORTED_MODULE_4__angular_forms__["h" /* Validators */].required,
+                __WEBPACK_IMPORTED_MODULE_4__angular_forms__["h" /* Validators */].minLength(3)
+            ]),
+            last_name: new __WEBPACK_IMPORTED_MODULE_4__angular_forms__["b" /* FormControl */]('', [
+                __WEBPACK_IMPORTED_MODULE_4__angular_forms__["h" /* Validators */].required,
+                __WEBPACK_IMPORTED_MODULE_4__angular_forms__["h" /* Validators */].minLength(5)
+            ]),
+            gender: new __WEBPACK_IMPORTED_MODULE_4__angular_forms__["b" /* FormControl */]('', [
+                __WEBPACK_IMPORTED_MODULE_4__angular_forms__["h" /* Validators */].required
+            ]),
+            mail: new __WEBPACK_IMPORTED_MODULE_4__angular_forms__["b" /* FormControl */]('', [
+                __WEBPACK_IMPORTED_MODULE_4__angular_forms__["h" /* Validators */].required, __WEBPACK_IMPORTED_MODULE_4__angular_forms__["h" /* Validators */].minLength(5),
+                __WEBPACK_IMPORTED_MODULE_4__angular_forms__["h" /* Validators */].email
+            ]),
+            password: new __WEBPACK_IMPORTED_MODULE_4__angular_forms__["b" /* FormControl */]('', [
+                __WEBPACK_IMPORTED_MODULE_4__angular_forms__["h" /* Validators */].required,
+                __WEBPACK_IMPORTED_MODULE_4__angular_forms__["h" /* Validators */].minLength(6),
+                __WEBPACK_IMPORTED_MODULE_4__angular_forms__["h" /* Validators */].pattern("^(?=.{8,32}$)(?=.[A-Z])(?=.[a-z])(?=.[0-9]).")
+            ]),
+            password_conf: new __WEBPACK_IMPORTED_MODULE_4__angular_forms__["b" /* FormControl */]('', [
+                __WEBPACK_IMPORTED_MODULE_4__angular_forms__["h" /* Validators */].required,
+                __WEBPACK_IMPORTED_MODULE_4__angular_forms__["h" /* Validators */].minLength(6),
+                __WEBPACK_IMPORTED_MODULE_4__angular_forms__["h" /* Validators */].pattern("^(?=.{8,32}$)(?=.[A-Z])(?=.[a-z])(?=.[0-9]).")
+            ]),
+            mail_conf: new __WEBPACK_IMPORTED_MODULE_4__angular_forms__["b" /* FormControl */]('', [
+                __WEBPACK_IMPORTED_MODULE_4__angular_forms__["h" /* Validators */].required,
+                __WEBPACK_IMPORTED_MODULE_4__angular_forms__["h" /* Validators */].email
+            ]),
+            phone: new __WEBPACK_IMPORTED_MODULE_4__angular_forms__["b" /* FormControl */](),
+            country_id: new __WEBPACK_IMPORTED_MODULE_4__angular_forms__["b" /* FormControl */](),
+            user_verify_id: new __WEBPACK_IMPORTED_MODULE_4__angular_forms__["b" /* FormControl */](),
+            confirm_verify: new __WEBPACK_IMPORTED_MODULE_4__angular_forms__["b" /* FormControl */]()
+        });
+        this.getInfo();
+        this.ischecked = this.userProvider.check_terminos;
     }
-    ModalTransactionPage.prototype.ionViewWillLoad = function () {
-        this.userCountry = this.navParams.get('infoCountry');
-        this.moneda = this.navParams.get('moneda');
-        this.currency = this.navParams.get('currency');
-        this.transaction.country_id = this.navParams.get('pais_id');
-        this.transaction.coin_id = this.moneda.id;
+    RegisterPage.prototype.getInfo = function () {
+        this.responseParams = this.navParams.get('response');
+        this.registerParams = this.navParams.get('register');
     };
-    ModalTransactionPage.prototype.closeModal = function () {
-        this.viewCtrl.dismiss();
+    RegisterPage.prototype.showPassword = function () {
+        this.showPass = !this.showPass;
+        if (this.showPass) {
+            this.type = 'text';
+        }
+        else {
+            this.type = 'password';
+        }
     };
-    ModalTransactionPage.prototype.doTrasaction = function () {
+    RegisterPage.prototype.showPassword2 = function () {
+        this.showPass2 = !this.showPass2;
+        if (this.showPass2) {
+            this.type2 = 'text';
+        }
+        else {
+            this.type2 = 'password';
+        }
+    };
+    RegisterPage.prototype.cancel = function () {
+        this.navCtrl.pop();
+    };
+    RegisterPage.prototype.register = function () {
         var _this = this;
-        if (this.transaction.amount_local != null && this.transaction.phone_user_des != null && this.transaction.key_user != null && this.transaction.country_id != null && this.transaction.coin_id != null) {
-            if (this.transaction.key_user.length === 4 && this.transaction.phone_user_des > 9) {
+        if (this.formGroup.valid) {
+            this.formGroup.get('phone').setValue(this.registerParams.value);
+            this.formGroup.get('country_id').setValue(this.responseParams.country_id);
+            this.formGroup.get('user_verify_id').setValue(this.responseParams.id);
+            this.formGroup.get('confirm_verify').setValue("phone");
+            if ((this.formGroup.value.mail == this.formGroup.value.mail_conf) && (this.formGroup.value.password == this.formGroup.value.password_conf)) {
                 var loading_1 = this.loadingCtrl.create({
                     spinner: 'dots',
                 });
-                loading_1.present();
-                var objtoSub = this.transaction;
-                var amount = objtoSub.amount_local + "";
-                var index = amount.indexOf(',');
-                console.log(index);
-                if (index > 0) {
-                    objtoSub.amount_local = this.transaction.amount_local.replace(new RegExp('\\.', 'g'), '');
-                    objtoSub.amount_local = this.transaction.amount_local.replace(',', '.');
-                    this.api.post('app/transaction', objtoSub, this.userProvider).then(function (data) {
+                if (this.userProvider.check_terminos) {
+                    loading_1.present();
+                    this.user_register.phone = this.registerParams.value;
+                    this.user_register.country_id = this.responseParams.country_id;
+                    this.user_register.user_verify_id = this.responseParams.id;
+                    this.user_register.confirm_verify = 'phone';
+                    this.api.post('auth/sign-up', this.formGroup.value).then(function (data) {
+                        _this.userProvider.setUser(data);
+                        _this.verifyConfirm();
                         loading_1.dismiss();
-                        var toast = _this.toastCtrl.create({
-                            message: 'Su transacción ha solicitada correctamente.',
-                            duration: 3000,
+                        _this.presentWelcomeModal();
+                    }).catch(function (error) {
+                        var mensaje = "";
+                        error.error.forEach(function (data) {
+                            mensaje += data.message + "\n";
                         });
-                        _this.closeModal();
-                        _this.navCtrl.setPages([{ page: 'HomePage' }, { page: 'TransactionResumePage', params: data }]);
+                        var toast = _this.toastCtl.create({
+                            message: mensaje,
+                            showCloseButton: true,
+                            closeButtonText: "cerrar"
+                        });
                         toast.present();
-                    }).catch(function (data) {
-                        console.log(data);
+                        loading_1.dismiss();
                     });
                 }
                 else {
-                    var toast = this.toastCtrl.create({
-                        message: 'Por favor ingrese un valor mayor a cero.',
-                        duration: 3000,
+                    var toast = this.toastCtl.create({
+                        message: 'Por favor lea y acepte las políticas de uso y tratamiento de datos.',
+                        showCloseButton: true,
+                        closeButtonText: 'cerrar',
+                        position: 'middle',
                     });
                     toast.present();
                 }
-                loading_1.dismiss();
+            }
+            else {
+                // this.formGroup.setErrors(this.formGroup.errors)
             }
         }
-        else {
-            var toast = this.toastCtrl.create({
-                message: 'Todos los datos son obligatorios',
-                duration: 3000
+    };
+    RegisterPage.prototype.verifyConfirm = function () {
+        var _this = this;
+        this.api.get('account/confirm-verify', this.userProvider, {
+            id: this.responseParams.id,
+            type: 'phone'
+        }).then(function (data) {
+        }).catch(function (error) {
+            var mensaje = "";
+            error.error.forEach(function (data) {
+                mensaje += data.message + "\n";
+            });
+            var toast = _this.toastCtl.create({
+                message: mensaje,
+                showCloseButton: true,
+                closeButtonText: 'cerrar',
             });
             toast.present();
-        }
+        });
     };
-    ModalTransactionPage = __decorate([
+    RegisterPage.prototype.politicas = function () {
+        var _this = this;
+        var poli = this.modalCtrl.create('PoliticasPage');
+        poli.present();
+        poli.onDidDismiss((function (data) {
+            _this.ischecked = true;
+        }));
+    };
+    RegisterPage.prototype.presentWelcomeModal = function () {
+        var _this = this;
+        var modalWelcome = this.modalCtrl.create('ModalWelcomePage', { name: this.userProvider.user_Info.first_name + " " + this.userProvider.user_Info.last_name });
+        modalWelcome.onWillDismiss(function () {
+            _this.navCtrl.setRoot('LoginPage');
+        });
+        modalWelcome.onDidDismiss(function (data) {
+        });
+        modalWelcome.present();
+        this.userProvider.setUser(null);
+    };
+    RegisterPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-<<<<<<< HEAD
-            selector: 'page-modal-transaction',template:/*ion-inline-start:"/Users/eyeline/Documents/eyepaycashappGitHub/src/pages/modal-transaction/modal-transaction.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>Transacción</ion-title>\n    <ion-buttons end>\n      <button ion-button (click)="closeModal()">Cerrar</button>\n    </ion-buttons>\n  </ion-navbar>\n</ion-header>\n<ion-content padding>\n  <ion-card>\n    <ion-card-header>\n      {{moneda.full_name}}\n    </ion-card-header>\n    <ion-card-content>\n      <h6 *ngIf="currency != \'USD\'">1 {{moneda.full_name}} ==  {{userCountry.local_usd_value| currency}} USD </h6>\n      <h6>1 {{moneda.full_name}} == {{moneda.usd_value | currency}} USD </h6>\n    </ion-card-content>\n  </ion-card>\n  <ion-card>\n    <ion-card-header>\n      Información de la transación\n    </ion-card-header>\n    <ion-card-content>\n      <label stacked>Ingresar número celular</label>\n      <ion-input class="margBott" name="transaction-celular" [(ngModel)]="transaction.phone_user_des" [brmasker]="{type:\'num\'}"\n                 type="text"></ion-input>\n      <label stacked>Ingresar clave de seguridad (4 digitos)</label>\n      <ion-input class="margBott" name="transaction-clave" [brmasker]="{len:4}" [(ngModel)]="transaction.key_user"\n                 type="number"></ion-input>\n      <label stacked>Ingresar el valor de la transacción</label>\n      <ion-input class="margBott" type="text" name="transaction-valor"\n                 [brmasker]="{money:true,decimal:0,thousand:\'.\',type:\'num\'}"\n                 [(ngModel)]="transaction.amount_local">\n\n      </ion-input>\n      <button class="buttonPayCash" ion-button (click)="doTrasaction()" block>Solicitar transacción</button>\n    </ion-card-content>\n  </ion-card>\n\n</ion-content>\n'/*ion-inline-end:"/Users/eyeline/Documents/eyepaycashappGitHub/src/pages/modal-transaction/modal-transaction.html"*/,
-=======
-            selector: 'page-modal-transaction',template:/*ion-inline-start:"/Users/eyeline/Documents/GitHub/eyepaycashapp/src/pages/modal-transaction/modal-transaction.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>Transacción</ion-title>\n    <ion-buttons end>\n      <button ion-button (click)="closeModal()">Cerrar</button>\n    </ion-buttons>\n  </ion-navbar>\n</ion-header>\n<ion-content padding>\n  <ion-card>\n    <ion-card-header>\n      {{moneda.full_name}}\n    </ion-card-header>\n    <ion-card-content>\n      <h6 *ngIf="currency != \'USD\'">1 {{moneda.full_name}} ==  {{userCountry.local_usd_value| currency}} USD </h6>\n      <h6>1 {{moneda.full_name}} == {{moneda.usd_value | currency}} USD </h6>\n    </ion-card-content>\n  </ion-card>\n  <ion-card>\n    <ion-card-header>\n      Información de la transación\n    </ion-card-header>\n    <ion-card-content>\n      <label stacked>Ingresar número celular</label>\n      <ion-input class="margBott" name="transaction-celular" [(ngModel)]="transaction.phone_user_des" [brmasker]="{type:\'num\'}"\n                 type="text"></ion-input>\n      <label stacked>Ingresar clave de seguridad (4 digitos)</label>\n      <ion-input class="margBott" name="transaction-clave" [brmasker]="{len:4}" [(ngModel)]="transaction.key_user"\n                 type="number"></ion-input>\n      <label stacked>Ingresar el valor de la transacción</label>\n      <ion-input class="margBott" type="text" name="transaction-valor"\n                 [brmasker]="{money:true,decimal:0,thousand:\',\',type:\'num\'}"\n                 [(ngModel)]="transaction.amount_local">\n\n      </ion-input>\n      <button class="buttonPayCash" ion-button (click)="doTrasaction()" block>Solicitar transacción</button>\n    </ion-card-content>\n  </ion-card>\n\n</ion-content>\n'/*ion-inline-end:"/Users/eyeline/Documents/GitHub/eyepaycashapp/src/pages/modal-transaction/modal-transaction.html"*/,
->>>>>>> 87109805ca44ef49582f92846201bf3f3197e8a8
+            selector: 'page-register',template:/*ion-inline-start:"/Users/eyeline/Documents/eyepaycashappGitHub/src/pages/register/register.html"*/'<ion-content class="imgBackground vignette">\n  <div style="margin-top:12%" class="center">\n    <ion-img class="logo" src="assets/imgs/EPCLogo.png"></ion-img>\n  </div>\n  <div class="center">\n    <form [formGroup]="formGroup" (ngSubmit)="register()">\n      <ion-list>\n        <ion-item class="marginlists">\n          <ion-label stacked>Nombres</ion-label>\n          <ion-input type="text" required name="userregistronombre" formControlName="first_name"\n                     [brmasker]="{len:20}"></ion-input>\n          <div>\n            <msg-error [control]="formGroup.controls.first_name"></msg-error>\n          </div>\n        </ion-item>\n\n        <ion-item class="marginlists">\n          <ion-label stacked>Apellidos</ion-label>\n          <ion-input type="text" required name="userregistroapellido" formControlName="last_name" [brmasker]="{len:20}"></ion-input>\n          <div>\n            <msg-error [control]="formGroup.controls.last_name"></msg-error>\n          </div>\n        </ion-item>\n\n        <ion-item class="marginlists">\n          <ion-label stacked>Género</ion-label>\n          <ion-select okText="Guardar" cancelText="Cancelar" formControlName="gender" name="userregistrogenero" interface="popover">\n            <ion-option value="f">Femenino</ion-option>\n            <ion-option value="m">Masculino</ion-option>\n          </ion-select>\n          <div>\n            <msg-error [control]="formGroup.controls.gender"></msg-error>\n          </div>\n        </ion-item>\n\n        <ion-item class="marginlists">\n          <ion-label stacked>Email</ion-label>\n          <ion-input type="email" required name="userregistroemail" formControlName="mail"></ion-input>\n          <div>\n            <msg-error [control]="formGroup.controls.mail"></msg-error>\n          </div>\n        </ion-item>\n        <ion-item class="marginlists">\n          <ion-label stacked>Confirmar email</ion-label>\n          <ion-input type="email" required name="confirmacionmail" formControlName="mail_conf"></ion-input>\n          <div>\n            <msg-error [control]="formGroup.controls.mail_conf"></msg-error>\n          </div>\n        </ion-item>\n\n        <ion-item class="marginlists">\n          <ion-label stacked>Contraseña</ion-label>\n          <ion-input type="{{type}}" name="contrasema"\n                     formControlName="password" [brmasker]="{len:10}"></ion-input>\n          <button *ngIf="!showPass" ion-button clear color="dark" type="button" required item-right\n                  (click)="showPassword()">\n            <ion-icon name="ios-eye-off-outline"></ion-icon>\n          </button>\n          <button *ngIf="showPass" ion-button clear color="dark" type="button" item-right (click)="showPassword()">\n            <ion-icon name="ios-eye-outline"></ion-icon>\n          </button>\n          <div>\n            <msg-error [control]="formGroup.controls.password"></msg-error>\n          </div>\n        </ion-item>\n\n        <ion-item class="marginlists">\n          <ion-label stacked>Confirmar contraseña</ion-label>\n          <ion-input type="{{type2}}" name="confirmcontrasena"\n                     formControlName="password_conf" [brmasker]="{len:10}"></ion-input>\n          <button *ngIf="!showPass2" ion-button clear color="dark" type="button" required item-right\n                  (click)="showPassword2()">\n            <ion-icon name="ios-eye-off-outline"></ion-icon>\n          </button>\n          <button *ngIf="showPass2" ion-button clear color="dark" type="button" item-right (click)="showPassword2()">\n            <ion-icon name="ios-eye-outline"></ion-icon>\n          </button>\n          <div>\n            <msg-error [control]="formGroup.controls.password_conf"></msg-error>\n          </div>\n        </ion-item>\n        <ion-item no-lines *ngIf="formGroup.invalid">\n          <msg-error [control]="formGroup.controls.mail" name="Email"></msg-error>\n          <msg-error [control]="formGroup.controls.password" name="Contraseña"></msg-error>\n          <msg-error [control]="formGroup.controls.first_name" name="Nombres"></msg-error>\n          <msg-error [control]="formGroup.controls.last_name" name="Apellidos"></msg-error>\n\n        </ion-item>\n        <button style="border-radius: 0%" class="buttonPayCash" ion-button small>Registrarse\n        </button>\n      </ion-list>\n    </form>\n\n  </div>\n\n  <ion-list>\n    <ion-col col-2>\n      <ion-checkbox [(ngModel)]="ischecked"></ion-checkbox>\n    </ion-col>\n    <ion-col col-10><span\n        (click)="politicas()"> Leí y acepto las políticas de uso  y privacidad de la información</span></ion-col>\n  </ion-list>\n  <div style="margin-top: 6%" class="center">\n    <button style="border-radius: 0%" class="buttonPayCash" (click)="cancel()" ion-button small>Cancelar</button>\n\n  </div>\n\n</ion-content>'/*ion-inline-end:"/Users/eyeline/Documents/eyepaycashappGitHub/src/pages/register/register.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* ViewController */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* ToastController */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* LoadingController */],
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* ToastController */],
             __WEBPACK_IMPORTED_MODULE_2__providers_api__["a" /* Api */],
             __WEBPACK_IMPORTED_MODULE_3__providers_auth_user_auth_user__["a" /* AuthUserProvider */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */]])
-    ], ModalTransactionPage);
-    return ModalTransactionPage;
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* LoadingController */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* ModalController */]])
+    ], RegisterPage);
+    return RegisterPage;
 }());
 
-//# sourceMappingURL=modal-transaction.js.map
-
-/***/ }),
-
-/***/ 713:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__app_module__ = __webpack_require__(714);
-/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__app_module__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__directives__ = __webpack_require__(715);
-/* unused harmony namespace reexport */
-
-
-//# sourceMappingURL=index.js.map
-
-/***/ }),
-
-/***/ 714:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return BrMaskerModule; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_common__ = __webpack_require__(42);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__directives_brmasker_ionic_3__ = __webpack_require__(703);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__directives_brmasker_ionic_services__ = __webpack_require__(704);
-
-
-
-
-var BrMaskerModule = (function () {
-    function BrMaskerModule() {
-    }
-    return BrMaskerModule;
-}());
-
-BrMaskerModule.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["J" /* NgModule */], args: [{
-                declarations: [
-                    __WEBPACK_IMPORTED_MODULE_2__directives_brmasker_ionic_3__["a" /* BrMaskerIonic3 */],
-                    __WEBPACK_IMPORTED_MODULE_3__directives_brmasker_ionic_services__["a" /* BrMaskerIonicServices3 */]
-                ],
-                exports: [
-                    __WEBPACK_IMPORTED_MODULE_2__directives_brmasker_ionic_3__["a" /* BrMaskerIonic3 */],
-                    __WEBPACK_IMPORTED_MODULE_3__directives_brmasker_ionic_services__["a" /* BrMaskerIonicServices3 */]
-                ],
-                imports: [
-                    __WEBPACK_IMPORTED_MODULE_0__angular_common__["b" /* CommonModule */]
-                ],
-                schemas: [
-                    __WEBPACK_IMPORTED_MODULE_1__angular_core__["i" /* CUSTOM_ELEMENTS_SCHEMA */]
-                ],
-                providers: [__WEBPACK_IMPORTED_MODULE_3__directives_brmasker_ionic_services__["a" /* BrMaskerIonicServices3 */]]
-            },] },
-];
-/** @nocollapse */
-BrMaskerModule.ctorParameters = function () { return []; };
-//# sourceMappingURL=app.module.js.map
-
-/***/ }),
-
-/***/ 715:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__brmasker_ionic_3__ = __webpack_require__(703);
-/* unused harmony namespace reexport */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__brmasker_ionic_services__ = __webpack_require__(704);
-/* unused harmony namespace reexport */
-
-
-//# sourceMappingURL=index.js.map
+//# sourceMappingURL=register.js.map
 
 /***/ })
 

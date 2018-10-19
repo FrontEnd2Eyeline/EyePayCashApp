@@ -3,61 +3,106 @@
     <ion-img class="logo" src="assets/imgs/EPCLogo.png"></ion-img>
   </div>
   <div class="center">
-    <ion-list>
-      <ion-item class="marginlists">
-        <ion-label stacked>Nombres</ion-label>
-        <ion-input type="text" required name="userregistronombre" [(ngModel)]="user_register.first_name"></ion-input>
-      </ion-item>
+    <form [formGroup]="formGroup" (ngSubmit)="register()">
+      <ion-list>
+        <ion-item class="marginlists">
+          <ion-label stacked>Nombres</ion-label>
+          <ion-input type="text" required name="userregistronombre" formControlName="first_name"
+                     [brmasker]="{len:20}"></ion-input>
+          <div>
+            <msg-error [control]="formGroup.controls.first_name"></msg-error>
+          </div>
+        </ion-item>
 
-      <ion-item class="marginlists">
-        <ion-label stacked>Apellidos</ion-label>
-        <ion-input type="text" required name="userregistroapellido"
-                   [(ngModel)]="user_register.last_name"></ion-input>
-      </ion-item>
+        <ion-item class="marginlists">
+          <ion-label stacked>Apellidos</ion-label>
+          <ion-input type="text" required name="userregistroapellido" formControlName="last_name" [brmasker]="{len:20}"></ion-input>
+          <div>
+            <msg-error [control]="formGroup.controls.last_name"></msg-error>
+          </div>
+        </ion-item>
 
-      <ion-item class="marginlists">
-        <ion-label stacked>Género</ion-label>
-        <ion-select okText="Guardar" cancelText="Cancelar" [(ngModel)]="user_register.gender" name="userregistrogenero">
-          <ion-option value="f">Femenino</ion-option>
-          <ion-option value="m">Masculino</ion-option>
-        </ion-select>
-      </ion-item>
+        <ion-item class="marginlists">
+          <ion-label stacked>Género</ion-label>
+          <ion-select okText="Guardar" cancelText="Cancelar" formControlName="gender" name="userregistrogenero" interface="popover">
+            <ion-option value="f">Femenino</ion-option>
+            <ion-option value="m">Masculino</ion-option>
+          </ion-select>
+          <div>
+            <msg-error [control]="formGroup.controls.gender"></msg-error>
+          </div>
+        </ion-item>
 
-      <ion-item class="marginlists">
-        <ion-label stacked>Email</ion-label>
-        <ion-input type="email" required name="userregistroemail"
-                   [(ngModel)]="user_register.mail"></ion-input>
-      </ion-item>
+        <ion-item class="marginlists">
+          <ion-label stacked>Email</ion-label>
+          <ion-input type="email" required name="userregistroemail" formControlName="mail"></ion-input>
+          <div>
+            <msg-error [control]="formGroup.controls.mail"></msg-error>
+          </div>
+        </ion-item>
+        <ion-item class="marginlists">
+          <ion-label stacked>Confirmar email</ion-label>
+          <ion-input type="email" required name="confirmacionmail" formControlName="mail_conf"></ion-input>
+          <div>
+            <msg-error [control]="formGroup.controls.mail_conf"></msg-error>
+          </div>
+        </ion-item>
 
-      <ion-item class="marginlists">
-        <ion-label stacked>Contraseña</ion-label>
-        <ion-input type="{{type}}" name="userregistrocontrasena"
-                   required [(ngModel)]="user_register.password"></ion-input>
-        <button *ngIf="!showPass" ion-button clear color="dark" type="button" item-right (click)="showPassword()">
-          <ion-icon name="ios-eye-off-outline"></ion-icon>
+        <ion-item class="marginlists">
+          <ion-label stacked>Contraseña</ion-label>
+          <ion-input type="{{type}}" name="contrasema"
+                     formControlName="password" [brmasker]="{len:10}"></ion-input>
+          <button *ngIf="!showPass" ion-button clear color="dark" type="button" required item-right
+                  (click)="showPassword()">
+            <ion-icon name="ios-eye-off-outline"></ion-icon>
+          </button>
+          <button *ngIf="showPass" ion-button clear color="dark" type="button" item-right (click)="showPassword()">
+            <ion-icon name="ios-eye-outline"></ion-icon>
+          </button>
+          <div>
+            <msg-error [control]="formGroup.controls.password"></msg-error>
+          </div>
+        </ion-item>
+
+        <ion-item class="marginlists">
+          <ion-label stacked>Confirmar contraseña</ion-label>
+          <ion-input type="{{type2}}" name="confirmcontrasena"
+                     formControlName="password_conf" [brmasker]="{len:10}"></ion-input>
+          <button *ngIf="!showPass2" ion-button clear color="dark" type="button" required item-right
+                  (click)="showPassword2()">
+            <ion-icon name="ios-eye-off-outline"></ion-icon>
+          </button>
+          <button *ngIf="showPass2" ion-button clear color="dark" type="button" item-right (click)="showPassword2()">
+            <ion-icon name="ios-eye-outline"></ion-icon>
+          </button>
+          <div>
+            <msg-error [control]="formGroup.controls.password_conf"></msg-error>
+          </div>
+        </ion-item>
+        <ion-item no-lines *ngIf="formGroup.invalid">
+          <msg-error [control]="formGroup.controls.mail" name="Email"></msg-error>
+          <msg-error [control]="formGroup.controls.password" name="Contraseña"></msg-error>
+          <msg-error [control]="formGroup.controls.first_name" name="Nombres"></msg-error>
+          <msg-error [control]="formGroup.controls.last_name" name="Apellidos"></msg-error>
+
+        </ion-item>
+        <button style="border-radius: 0%" class="buttonPayCash" ion-button small>Registrarse
         </button>
-        <button *ngIf="showPass" ion-button clear color="dark" type="button" item-right (click)="showPassword()">
-          <ion-icon name="ios-eye-outline"></ion-icon>
-        </button>
-      </ion-item>
+      </ion-list>
+    </form>
 
-    </ion-list>
   </div>
 
   <ion-list>
-
     <ion-col col-2>
-      <!--<ion-checkbox (ionChange)="aceptarTerminos()"></ion-checkbox>-->
       <ion-checkbox [(ngModel)]="ischecked"></ion-checkbox>
     </ion-col>
     <ion-col col-10><span
         (click)="politicas()"> Leí y acepto las políticas de uso  y privacidad de la información</span></ion-col>
-
   </ion-list>
   <div style="margin-top: 6%" class="center">
     <button style="border-radius: 0%" class="buttonPayCash" (click)="cancel()" ion-button small>Cancelar</button>
-    <button style="border-radius: 0%" class="buttonPayCash" (click)="register()" ion-button small>Registrarse
-    </button>
+
   </div>
 
 </ion-content>

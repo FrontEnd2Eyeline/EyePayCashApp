@@ -1,5 +1,7 @@
 import {Component} from '@angular/core';
-import {IonicPage, NavParams} from 'ionic-angular';
+import {IonicPage, NavController, NavParams} from 'ionic-angular';
+import {FormatterDateProvider} from "../../providers/formatter-date/formatter-date";
+import {Clipboard} from "@ionic-native/clipboard";
 
 /**
  * Generated class for the HistoryResumePage page.
@@ -23,6 +25,9 @@ export class HistoryResumePage {
 
   constructor(
     public navParams: NavParams,
+    public navCtrl: NavController,
+    public dateLocal: FormatterDateProvider,
+    private clipboard: Clipboard
   ) {
     this.getInfo();
   }
@@ -34,6 +39,11 @@ export class HistoryResumePage {
     this.comision = this.historyInfo.transactionCommission;
     this.coinHash = this.historyInfo.coinHash;
   }
+  goMaps(){
+    this.navCtrl.push("MapPage")
+  }
 
-
+  copiarToken(){
+    this.clipboard.copy(this.coinHash.eye_hash);
+  }
 }

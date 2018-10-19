@@ -76,7 +76,6 @@ export class AuthUserProvider {
   trylogin() {
     return new Promise(resolve => {
       this.user_Info = JSON.parse(window.localStorage.getItem('user'));
-      console.log(this.user_Info);
       if (this.user_Info != null) {
         this.setUserCountry(this.user_Info.country);
         this.setUserVerify(this.user_Info.userVerify);
@@ -120,7 +119,6 @@ export class AuthUserProvider {
 
   setCheck_Terminos(check) {
     this.check_terminos = check;
-    console.log(this.check_terminos);
   }
 
 }

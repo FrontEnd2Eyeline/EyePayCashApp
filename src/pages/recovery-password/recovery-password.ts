@@ -16,12 +16,15 @@ import {AuthUserProvider} from "../../providers/auth-user/auth-user";
   templateUrl: 'recovery-password.html',
 })
 export class RecoveryPasswordPage {
+  public isvisible = true;
 
   public data = null;
   public type = 'phone';
-  public isvisible = true;
   public codigo = null;
+
   public iscodigo = false;
+
+  private reset: any;
 
   constructor(public navCtrl: NavController,
               public navParams: NavParams,
@@ -31,8 +34,8 @@ export class RecoveryPasswordPage {
               public loadingCtrl: LoadingController) {
   }
 
-  sendMessage() {
-    this.type = 'phone';
+  sendMessage(type) {
+    this.type = type;
     if (this.data != null) {
       let loading = this.loadingCtrl.create({
         spinner: 'dots'
@@ -41,63 +44,37 @@ export class RecoveryPasswordPage {
       this.api.post('auth/restar-password', {'type': this.type, 'data': this.data}).then(
         (data) => {
           loading.dismiss();
-          if (!this.iscodigo)
-            this.iscodigo = true;
-          else
-            this.iscodigo = false;
-          this.userProvider.userRecovery.codigoVerify = data.password_code_req;
-          this.userProvider.userRecovery.user_id = data.user_id;
+          this.iscodigo = true;
+          this.reset = data;
         }
-      ).catch(err => {
+      ).catch(error => {
         loading.dismiss();
+        let mensaje = "";
+        error.error.forEach(data => {
+          mensaje += data.message + "\n";
+        });
         let toast = this.toastCtrl.create({
-          message: 'No se encontraron resultados',
-          duration: 3000,
+          message: mensaje,
+          showCloseButton: true,
+          closeButtonText: 'cerrar',
+          position: 'middle',
         });
         toast.present();
       });
     } else {
       let toast = this.toastCtrl.create({
-        message: 'Por favor ingrese su nùmero celular',
-        duration: 3000
-      });
-      toast.present();
-    }
-  }
-
-// 3114276555
-  sendMail() {
-    this.type = 'mail';
-    if (this.data != null) {
-      let loading = this.loadingCtrl.create({
-        spinner: 'dots'
-      });
-      loading.present();
-      this.api.post('auth/restar-password', {'type': this.type, 'data': this.data}).then((data: any) => {
-        loading.dismiss();
-        console.log(data);
-        if (!this.iscodigo)
-          this.iscodigo = true;
-        else
-          this.iscodigo = false;
-        this.userProvider.userRecovery.codigoVerify = data.password_code_req;
-        this.userProvider.userRecovery.user_id = data.user_id;
-
-      });
-    } else {
-      let toast = this.toastCtrl.create({
-        message: 'Por favor ingrese su direcciòn email',
-        duration: 3000
-      });
+          message: 'Por favor ingrese su número celular.',
+          showCloseButton: true,
+          closeButtonText: 'cerrar',
+          position: 'middle',
+        })
+      ;
       toast.present();
     }
   }
 
   changeVisible() {
-    if (this.isvisible)
-      this.isvisible = false;
-    else
-      this.isvisible = true;
+    this.isvisible = !this.isvisible
   }
 
   cancelar() {
@@ -106,20 +83,26 @@ export class RecoveryPasswordPage {
 
   confirmCode() {
     if (this.codigo != null) {
-      if (this.userProvider.userRecovery.codigoVerify == this.codigo) {
-        this.navCtrl.push('PasswordUpdatePage');
+      if (this.reset.password_code_req == this.codigo) {
+        this.navCtrl.push('PasswordUpdatePage', {'reset_id': this.reset.id});
       } else {
         let toast = this.toastCtrl.create({
-          message: 'El còdigo ingresado no coincide!',
-          duration: 3000
-        });
+            message: 'El código ingresado no coincide.',
+            showCloseButton: true,
+            closeButtonText: 'cerrar',
+            position: 'middle',
+          })
+        ;
         toast.present();
       }
     } else {
       let toast = this.toastCtrl.create({
-        message: 'Por favor ingrese el còdigo de verificaciòn',
-        duration: 3000
-      });
+          message: 'Por favor ingrese el código de verificación',
+          showCloseButton: true,
+          closeButtonText: 'cerrar',
+          position: 'middle',
+        })
+      ;
       toast.present();
     }
   }

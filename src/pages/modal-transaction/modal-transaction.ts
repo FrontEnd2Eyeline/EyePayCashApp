@@ -1,7 +1,16 @@
 import {Component} from '@angular/core';
-import {IonicPage, LoadingController, NavController, NavParams, ToastController, ViewController} from 'ionic-angular';
+import {
+  AlertController,
+  IonicPage,
+  LoadingController,
+  NavController,
+  NavParams,
+  ToastController,
+  ViewController
+} from 'ionic-angular';
 import {Api} from "../../providers/api";
 import {AuthUserProvider} from "../../providers/auth-user/auth-user";
+import {CurrencyPipe} from "@angular/common";
 
 /**
  * Generated class for the ModalTransactionPage page.
@@ -20,13 +29,15 @@ export class ModalTransactionPage {
   public moneda: any = null;
   public userCountry: any = null;
   public currency: any = null;
+  public country: any;
 
   private transaction: any = {
-    amount_local: 0, // monto de dinero a transferir
+    amount_local: null, // monto de dinero a transferir
     phone_user_des: null, // numero de telefono de la persona a la que se va a transferir
     key_user: null,  // clave manual de la transacciòn 4 digitos
     country_id: null,  // id del pais
     coin_id: null,     // id de la moneda
+    code_phone: null,   // Codigo del celular en el pais
   };
 
 
@@ -38,6 +49,8 @@ export class ModalTransactionPage {
     private api: Api,
     private userProvider: AuthUserProvider,
     public navCtrl: NavController,
+    public alertCtrl: AlertController,
+    private pipe: CurrencyPipe
   ) {
   }
 
@@ -46,7 +59,9 @@ export class ModalTransactionPage {
     this.moneda = this.navParams.get('moneda');
     this.currency = this.navParams.get('currency');
     this.transaction.country_id = this.navParams.get('pais_id');
+    this.transaction.code_phone = this.navParams.get('code_phohe');
     this.transaction.coin_id = this.moneda.id;
+    this.country = this.navParams.get('country');
   }
 
   closeModal() {
@@ -54,47 +69,99 @@ export class ModalTransactionPage {
   }
 
   doTrasaction() {
+
+
+    let loading = this.loadingCtrl.create({
+      spinner: 'dots',
+    });
+    loading.present();
+    // let objtoSub = this.transaction;
+    // let amount = objtoSub.amount_local + "";
+    // let index = amount.indexOf(',');
+    // if (index > 0) {
+    // objtoSub.amount_local = this.transaction.amount_local.replace(new RegExp('\\.', 'g'), '');
+    //   objtoSub.amount_local = this.transaction.amount_local.replace(',', '.');
+    this.api.post('app/transaction', this.transaction, this.userProvider).then((data: any) => {
+      let toast = this.toastCtrl.create({
+        message: 'Transacción solicitada correctamente.',
+        showCloseButton: true,
+        closeButtonText: 'cerrar',
+        position: 'middle',
+      });
+      this.closeModal();
+      this.navCtrl.setPages([{page: 'HomePage'}, {page: 'TransactionResumePage', params: data}]);
+      loading.dismiss();
+      toast.present();
+    }).catch(error => {
+      loading.dismiss();
+      let mensaje = "";
+      error.error.forEach(data => {
+        mensaje += data.message + "\n";
+      });
+      let toast = this.toastCtrl.create({
+        message: mensaje,
+        showCloseButton: true,
+        closeButtonText: 'cerrar',
+      });
+      toast.present();
+    });
+    // } else {
+    //   loading.dismiss();
+    //   let toast = this.toastCtrl.create({
+    //     message: 'Por favor ingrese un valor mayor a cero.',
+    //     showCloseButton: true,
+    //     closeButtonText: 'cerrar',
+    //     position: 'middle',
+    //   });
+    //   toast.present();
+    // }
+
+
+  }
+
+  confirmTrasaction() {
     if (this.transaction.amount_local != null && this.transaction.phone_user_des != null && this.transaction.key_user != null && this.transaction.country_id != null && this.transaction.coin_id != null) {
-      if (this.transaction.key_user.length === 4 && this.transaction.phone_user_des > 9) {
-        let loading = this.loadingCtrl.create({
-          spinner: 'dots',
+      if (this.transaction.key_user.length == 4 && this.transaction.phone_user_des > 9 && this.transaction.amount_local>0) {
+        let alerta = this.alertCtrl.create({
+          title: 'Confirmar transacción',
+          message: 'Destino: ' + this.transaction.phone_user_des + ' <br>  Monto:' +
+            this.getCurrency(this.transaction.amount_local) + " " + this.country.currency_code,
+          buttons: [
+            {
+              text: 'Cancelar',
+              role: 'cancel',
+            },
+            {
+              text: 'Solicitar',
+              handler: () => {
+                this.doTrasaction();
+              }
+            }
+          ]
         });
-        loading.present();
-          let objtoSub = this.transaction;
-          let amount = objtoSub.amount_local+"";
-          let index = amount.indexOf(',');
-          console.log(index);
-          if(index>0){
-            objtoSub.amount_local = this.transaction.amount_local.replace(new RegExp('\\.', 'g'), '');
-            objtoSub.amount_local = this.transaction.amount_local.replace(',', '.');
-            this.api.post('app/transaction', objtoSub, this.userProvider).then((data: any) => {
-              loading.dismiss();
-              let toast = this.toastCtrl.create({
-                message: 'Su transacción ha solicitada correctamente.',
-                duration: 3000,
-              });
-              this.closeModal();
-              this.navCtrl.setPages([{page: 'HomePage'}, {page: 'TransactionResumePage', params: data}]);
-              toast.present();
-            }).catch(data => {
-              console.log(data)
-            });
-          }else{
-            let toast = this.toastCtrl.create({
-              message: 'Por favor ingrese un valor mayor a cero.',
-              duration: 3000,
-            });
-            toast.present();
-          }
-        loading.dismiss();
+        alerta.present();
+      } else {
+        let toast = this.toastCtrl.create({
+          message: 'Número telefónico más de 9 digitos. Monto mayor a cero. Clave 4 dígitos',
+          showCloseButton: true,
+          closeButtonText: 'cerrar',
+          position: 'middle',
+        });
+        toast.present();
       }
     } else {
       let toast = this.toastCtrl.create({
-        message: 'Todos los datos son obligatorios',
-        duration: 3000
+        message: 'Todos los datos son obligatorios.',
+        showCloseButton: true,
+        closeButtonText: 'cerrar',
+        position: 'middle',
       });
       toast.present();
     }
+  }
+
+  getCurrency(amount: number) {
+    return this.pipe.transform(amount, '$ ', true, '1.0-0');
   }
 
 }

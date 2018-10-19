@@ -1,22 +1,14 @@
 webpackJsonp([11],{
 
-<<<<<<< HEAD
-/***/ 690:
-=======
-/***/ 689:
->>>>>>> 87109805ca44ef49582f92846201bf3f3197e8a8
+/***/ 700:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HistoryPageModule", function() { return HistoryPageModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HomePageModule", function() { return HomePageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(29);
-<<<<<<< HEAD
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__history__ = __webpack_require__(707);
-=======
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__history__ = __webpack_require__(706);
->>>>>>> 87109805ca44ef49582f92846201bf3f3197e8a8
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__home__ = __webpack_require__(717);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -26,38 +18,34 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var HistoryPageModule = /** @class */ (function () {
-    function HistoryPageModule() {
+var HomePageModule = /** @class */ (function () {
+    function HomePageModule() {
     }
-    HistoryPageModule = __decorate([
+    HomePageModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["J" /* NgModule */])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_2__history__["a" /* HistoryPage */],
+                __WEBPACK_IMPORTED_MODULE_2__home__["a" /* HomePage */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__history__["a" /* HistoryPage */]),
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__home__["a" /* HomePage */]),
             ],
         })
-    ], HistoryPageModule);
-    return HistoryPageModule;
+    ], HomePageModule);
+    return HomePageModule;
 }());
 
-//# sourceMappingURL=history.module.js.map
+//# sourceMappingURL=home.module.js.map
 
 /***/ }),
 
-<<<<<<< HEAD
-/***/ 707:
-=======
-/***/ 706:
->>>>>>> 87109805ca44ef49582f92846201bf3f3197e8a8
+/***/ 717:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HistoryPage; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HomePage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(29);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_api__ = __webpack_require__(46);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_api__ = __webpack_require__(47);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_auth_user_auth_user__ = __webpack_require__(89);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -72,61 +60,51 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
-/**
- * Generated class for the HistoryPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-var HistoryPage = /** @class */ (function () {
-    function HistoryPage(navCtrl, navParams, api, userProvider) {
+var HomePage = /** @class */ (function () {
+    function HomePage(navCtrl, loadingCtrl, toastCtrl, api, userProvider) {
         this.navCtrl = navCtrl;
-        this.navParams = navParams;
+        this.loadingCtrl = loadingCtrl;
+        this.toastCtrl = toastCtrl;
         this.api = api;
         this.userProvider = userProvider;
-        this.transactions = null;
-        this.links = null;
-        this.meta = null;
-        this.filtro = {
-            status: 0,
-            page: 1,
-            perpage: 50
-        };
-        this.getInfo();
+        this.count = 0;
+        this.result = [];
     }
-    HistoryPage.prototype.getInfo = function () {
+    HomePage.prototype.ionViewWillEnter = function () {
+        this.getInfo();
+    };
+    HomePage.prototype.getInfo = function () {
         var _this = this;
-        this.api.get('app/transactions', this.userProvider, {
-            'expand': 'country,coin,transactionCommission,coinHash',
-            'status': this.filtro.status,
-            'page': this.filtro.page,
-            'per-page': this.filtro.perpage
-        }).then(function (data) {
-            _this.transactions = data.items;
-            _this.links = data.links;
-            _this.meta = data.meta;
+        this.api.get('app/transactions', this.userProvider, { 'status': 0 }).then(function (data) {
+            _this.count = data.items.length;
+        }).catch(function (error) {
+            console.log(error);
         });
     };
-    HistoryPage.prototype.goDetalle = function (transaction) {
-        this.navCtrl.push('HistoryResumePage', { 'transaction': transaction });
+    HomePage.prototype.goPage = function (page) {
+        if (page == 'account')
+            this.navCtrl.push("AccountPage");
+        else if (page == 'history')
+            this.navCtrl.push("HistoryPage");
+        else if (page == "maps")
+            this.navCtrl.push("MapPage");
+        else
+            this.navCtrl.push("TransactionPage");
     };
-    HistoryPage = __decorate([
+    HomePage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-<<<<<<< HEAD
-            selector: 'page-history',template:/*ion-inline-start:"/Users/eyeline/Documents/eyepaycashappGitHub/src/pages/history/history.html"*/'<ion-header>\n\n  <ion-navbar>\n    <ion-title>Historial</ion-title>\n  </ion-navbar>\n\n</ion-header>\n<ion-content padding>\n  <ion-row>\n    <ion-col col-12>\n      <ion-label>Filtro de transacciones por estado:</ion-label>\n      <ion-select [(ngModel)]="filtro.status" (ionChange)="getInfo()">\n        <ion-option value="0">Pendiente de pago</ion-option>\n        <ion-option value="1">Pagado y pendiente por retirar</ion-option>\n        <ion-option value="2">Pagado y retirado</ion-option>\n      </ion-select>\n    </ion-col>\n  </ion-row>\n  <ion-list>\n    <ion-card *ngFor="let transaction of transactions" (click)="goDetalle(transaction)" class="center bground">\n      <ion-card-content>\n        <ion-row>\n          <ion-col col-6>\n            <h6>{{transaction.country.name}}</h6>\n          </ion-col>\n          <ion-col col-6>\n            {{transaction.date_request |date:\'MM/dd/yyyy\'}}\n            <!--transaction.date_request |date:\'MM/dd/yyyy h:mma\'}}-->\n          </ion-col>\n          <ion-col col-4>\n            {{transaction.coin.full_name}}\n          </ion-col>\n          <ion-col col-4>\n            {{transaction.amount_local | currency:transaction.country.currency+" " : 2}}\n          </ion-col>\n          <ion-col col-4>\n            <ion-icon name="add"></ion-icon>\n          </ion-col>\n        </ion-row>\n      </ion-card-content>\n    </ion-card>\n  </ion-list>\n</ion-content>'/*ion-inline-end:"/Users/eyeline/Documents/eyepaycashappGitHub/src/pages/history/history.html"*/,
-=======
-            selector: 'page-history',template:/*ion-inline-start:"/Users/eyeline/Documents/GitHub/eyepaycashapp/src/pages/history/history.html"*/'<ion-header>\n\n  <ion-navbar>\n    <ion-title>Historial</ion-title>\n  </ion-navbar>\n\n</ion-header>\n<ion-content padding>\n  <ion-row>\n    <ion-col col-12>\n      <ion-label>Filtro de transacciones por estado:</ion-label>\n      <ion-select [(ngModel)]="filtro.status" (ionChange)="getInfo()">\n        <ion-option value="0">Pendiente de pago</ion-option>\n        <ion-option value="1">Pagado y pendiente por retirar</ion-option>\n        <ion-option value="2">Pagado y retirado</ion-option>\n      </ion-select>\n    </ion-col>\n  </ion-row>\n  <ion-list>\n    <ion-card *ngFor="let transaction of transactions" (click)="goDetalle(transaction)" class="center bground">\n      <ion-card-content>\n        <ion-row>\n          <ion-col col-6>\n            <h6>{{transaction.country.name}}</h6>\n          </ion-col>\n          <ion-col col-6>\n            {{transaction.date_request |date:\'MM/dd/yyyy\'}}\n            <!--transaction.date_request |date:\'MM/dd/yyyy h:mma\'}}-->\n          </ion-col>\n          <ion-col col-4>\n            {{transaction.coin.full_name}}\n          </ion-col>\n          <ion-col col-4>\n            {{transaction.amount_local | currency:transaction.country.currency+" " : 2}}\n          </ion-col>\n          <ion-col col-4>\n            <ion-icon name="add"></ion-icon>\n          </ion-col>\n        </ion-row>\n      </ion-card-content>\n    </ion-card>\n  </ion-list>\n</ion-content>'/*ion-inline-end:"/Users/eyeline/Documents/GitHub/eyepaycashapp/src/pages/history/history.html"*/,
->>>>>>> 87109805ca44ef49582f92846201bf3f3197e8a8
+            selector: 'page-home',template:/*ion-inline-start:"/Users/eyeline/Documents/eyepaycashappGitHub/src/pages/home/home.html"*/'<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n  </ion-navbar>\n</ion-header>\n<ion-content>\n\n\n\n\n</ion-content>\n<ion-footer>\n  <ion-toolbar>\n    <ion-row>\n      <ion-col col-3>\n        <button ion-button full (click)="goPage(\'transaction\')">\n          <ion-icon name="card"></ion-icon>\n        </button>\n      </ion-col>\n      <ion-col col-3>\n        <button ion-button full (click)="goPage(\'history\')">\n          <ion-badge item-end>{{count}}</ion-badge>\n          <ion-icon name="list-box"></ion-icon>\n        </button>\n      </ion-col>\n      <ion-col col-3>\n        <button ion-button full (click)="goPage(\'maps\')">\n          <ion-icon name="planet"></ion-icon>\n        </button>\n      </ion-col>\n      <ion-col col-3>\n        <button ion-button full (click)="goPage(\'account\')">\n          <ion-icon name="person"></ion-icon>\n        </button>\n      </ion-col>\n    </ion-row>\n  </ion-toolbar>\n</ion-footer>'/*ion-inline-end:"/Users/eyeline/Documents/eyepaycashappGitHub/src/pages/home/home.html"*/
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */],
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* LoadingController */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* ToastController */],
             __WEBPACK_IMPORTED_MODULE_2__providers_api__["a" /* Api */],
             __WEBPACK_IMPORTED_MODULE_3__providers_auth_user_auth_user__["a" /* AuthUserProvider */]])
-    ], HistoryPage);
-    return HistoryPage;
+    ], HomePage);
+    return HomePage;
 }());
 
-//# sourceMappingURL=history.js.map
+//# sourceMappingURL=home.js.map
 
 /***/ })
 

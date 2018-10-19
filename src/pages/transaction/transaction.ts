@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {IonicPage, LoadingController, ModalController, NavParams, ToastController} from 'ionic-angular';
+import {IonicPage, LoadingController, ModalController, NavController, NavParams, ToastController} from 'ionic-angular';
 import {Api} from "../../providers/api";
 import {AuthUserProvider} from "../../providers/auth-user/auth-user";
 import {LoadInformationProvider} from "../../providers/load-information/load-information";
@@ -28,10 +28,10 @@ export class TransactionPage {
     public navParams: NavParams,
     private api: Api,
     private userProvider: AuthUserProvider,
-    public loadingCtrl: LoadingController,
     public toastCtrl: ToastController,
     public modalCtrl: ModalController,
-    private informationProvider: LoadInformationProvider) {
+    private informationProvider: LoadInformationProvider,
+    public navCtrl: NavController) {
     this.currency = this.userProvider.user_Country.currency;
     this.getInfo();
     this.countrySelected();
@@ -41,7 +41,19 @@ export class TransactionPage {
     this.informationProvider.getCountries()
       .then(value => {
         this.countrys = value;
-      });
+      }).catch(error=>{
+        let mensaje = "";
+        error.error.forEach(data=>{
+          mensaje+=data.message+"\n";
+        });
+        let toast = this.toastCtrl.create({
+          message:mensaje,
+          closeButtonText:'cerrar',
+          showCloseButton:true,
+          position:'middle'
+        });
+        toast.present();
+    });
 
   }
 
@@ -50,19 +62,30 @@ export class TransactionPage {
       .then((value: any) => {
         this.infoCountry = value;
         this.monedas = value.coins;
-      })
+      }).catch(error=>{
+      let mensaje = "";
+      error.error.forEach(data=>{
+        mensaje+=data.message+"\n";
+      });
+      let toast = this.toastCtrl.create({
+        message:mensaje,
+        closeButtonText:'cerrar',
+        showCloseButton:true,
+        position:'middle'
+      });
+      toast.present();
+    });
   }
 
   monedaSelect(moneda) {
-    let modalTransaction = this.modalCtrl.create('ModalTransactionPage', {
+    let info = this.informationProvider.getCountriesID(this.currency);
+    let modalTransaction = this.navCtrl.push('ModalTransactionPage', {
       'moneda': moneda,
       'infoCountry': this.infoCountry,
       'currency':this.currency,
-       'pais_id':this.informationProvider.getCountriesID(this.currency)
-    });
-    modalTransaction.present();
-    modalTransaction.onDidDismiss((data: any) => {
-
+       'pais_id':info.id,
+       'code_phohe':info.phone_code,
+      country: info
     });
   }
 
