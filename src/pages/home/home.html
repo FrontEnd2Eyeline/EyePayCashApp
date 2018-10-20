@@ -1,39 +1,43 @@
-<ion-header>
-  <ion-navbar>
-    <button ion-button menuToggle>
-      <ion-icon name="menu"></ion-icon>
-    </button>
-  </ion-navbar>
-</ion-header>
-<ion-content>
+<ion-content class="BackGR">
 
+  <ion-row>
+    <ion-col>
+      <ion-img class="marginMenu textLeft" menuToggle width="25" height="25" src="assets/icon/settings.png"></ion-img>
+    </ion-col>
+    <!-- <ion-col>
+      <ion-img class="marginMenu textRight backTransparent" width="80%" height="45px" src="assets/imgs/EPCLogo.png"></ion-img>
+    </ion-col> -->
 
-
-
+  </ion-row>
+  <ion-row>
+    <ion-col class="center mrg40Top">
+      <img class="imgLogoAmin floating" src="assets/imgs/Animacion2.png">
+      <img class="imgLogo" src="assets/imgs/Animacion1.png">
+    </ion-col>
+  </ion-row>
+  <!-- <ion-item class="center">
+    <button class="btnRadius" ion-button small>PRUEBA YA EYEPAYCASH</button>
+  </ion-item> -->
 </ion-content>
 <ion-footer>
   <ion-toolbar>
     <ion-row>
-      <ion-col col-3>
-        <button ion-button full (click)="goPage('transaction')">
-          <ion-icon name="card"></ion-icon>
-        </button>
+      <ion-col class="center" col-3>
+        <img (click)="goPage('transaction')" width="25" height="25" src="assets/icon/1.png">
+        <p>Transacciones</p>
       </ion-col>
-      <ion-col col-3>
-        <button ion-button full (click)="goPage('history')">
-          <ion-badge item-end>{{count}}</ion-badge>
-          <ion-icon name="list-box"></ion-icon>
-        </button>
+      <ion-col class="center" col-3>
+        <!-- <ion-badge item-end>{{count}}</ion-badge> -->
+        <img (click)="goPage('history')" width="25" height="25" src="assets/icon/2.png">
+        <p>Historial</p>
       </ion-col>
-      <ion-col col-3>
-        <button ion-button full (click)="goPage('maps')">
-          <ion-icon name="planet"></ion-icon>
-        </button>
+      <ion-col class="center" col-3>
+        <img (click)="goPage('maps')" width="25" height="25" src="assets/icon/3.png">
+        <p>Mapa</p>
       </ion-col>
-      <ion-col col-3>
-        <button ion-button full (click)="goPage('account')">
-          <ion-icon name="person"></ion-icon>
-        </button>
+      <ion-col class="center" col-3>
+        <img (click)="goPage('account')" width="25" height="25" src="assets/icon/4.png">
+        <P>Cuenta</P>
       </ion-col>
     </ion-row>
   </ion-toolbar>
