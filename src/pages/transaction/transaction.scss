@@ -32,10 +32,12 @@ page-transaction {
   color: white;
 }
 
+
+
 .card-md + ion-card {
   margin-top: 0;
   border-color: transparent;
-    background: rgba(149,105,252,1);
+  background: rgba(149,105,252,1);
   background: -moz-linear-gradient(left, rgba(149,105,252,1) 0%, rgba(89,116,252,1) 100%);
   background: -webkit-gradient(left top, right top, color-stop(0%, rgba(149,105,252,1)), color-stop(100%, rgba(89,116,252,1)));
   background: -webkit-linear-gradient(left, rgba(149,105,252,1) 0%, rgba(89,116,252,1) 100%);
@@ -45,7 +47,7 @@ page-transaction {
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#9569fc', endColorstr='#5974fc', GradientType=1 );
   color: white;
   border-radius: 14px;
-  margin-bottom: 1%;
+  margin-bottom: 1.5%;
 }
 
 h4{
