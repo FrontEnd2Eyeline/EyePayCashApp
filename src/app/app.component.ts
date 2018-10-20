@@ -11,6 +11,7 @@ import {HistoryPage} from "../pages/history/history";
 import {MapPage} from "../pages/map/map";
 import {AccountPage} from "../pages/account/account";
 import {SecurityPage} from "../pages/security/security";
+import {LoginPage} from "../pages/login/login";
 
 @Component({
   templateUrl: 'app.html'
@@ -22,7 +23,8 @@ export class MyApp {
   // rootPage: string = 'RegisterPage';
   pages: Array<{ title: string, component: any }>;
 
-  constructor(platform: Platform, statusBar: StatusBar,
+  constructor(platform: Platform,
+              statusBar: StatusBar,
               splashScreen: SplashScreen,
               public locationProvider: GeolocationProvider,
               private auth: AuthUserProvider,
@@ -42,12 +44,12 @@ export class MyApp {
         this.getLocation();
     });
     this.pages = [
-      {title: 'Home', component: "HomePage"},
-      {title: 'Transaction', component: "TransactionPage"},
-      {title: 'History', component: "HistoryPage"},
-      {title: 'Maps', component: "MapPage"},
-      {title: 'Account', component: "AccountPage"},
-      {title: 'Security', component: "SecurityPage"},
+      {title: 'Inicio', component: "HomePage"},
+      {title: 'Transacción', component: "TransactionPage"},
+      {title: 'Historial', component: "HistoryPage"},
+      {title: 'Mapa', component: "MapPage"},
+      {title: 'Mi cuenta', component: "AccountPage"},
+      {title: 'Seguridad', component: "SecurityPage"},
     ];
   }
 
@@ -57,6 +59,11 @@ export class MyApp {
 
   openPage(page) {
     this.nav.setPages([{page: "HomePage"}, {page: page.component}]);
+  }
+
+  cerrarSesion(){
+    window.localStorage.clear();
+    this.nav.setRoot("LoginPage");
   }
 
 

@@ -1,9 +1,15 @@
 import {Component} from '@angular/core';
-import {IonicPage, LoadingController, ModalController, NavController, NavParams, ToastController} from 'ionic-angular';
+import {
+  AlertController,
+  IonicPage,
+  LoadingController,
+  ModalController,
+  NavController,
+  NavParams,
+  ToastController
+} from 'ionic-angular';
 import {Api} from "../../providers/api";
 import {AuthUserProvider} from "../../providers/auth-user/auth-user";
-import {SelectCodePage} from "../select-code/select-code";
-import {GeolocationProvider} from "../../providers/geolocation/geolocation";
 
 /**
  * Generated class for the AccountPage page.
@@ -21,23 +27,26 @@ export class AccountPage {
 
   private usuario: any = null;
   private country: any = null;
-  private verify: any = null;
   public type = 'password';
   public showPass = false;
   public type2 = 'password';
   public showPass2 = false;
 
+//=========================  CONTROL DE VALIDACIÓN DEL USUARIO
+  private view_Verify_Phone = false;
+  private view_Verify_Mail = false;
+
+  private view_Btn_phone = false;
+  private view_Btn_mail = false;
+
+  private code_Verify_Phone = null;
+  private code_Verify_Mail = null;
+
+  private responseVerify: any = null;
+//=========================== CONTROL DE INPUTS
+  public control_label :string = "label";
 
 
-  //=================================== controlar visibilidad inputs y botones
-  public isphone = true;
-  public ismail = false;
-  //==================================== variables para la verificacion
-
-
-
-
-//===========================================
 
   constructor(public navCtrl: NavController,
               public navParams: NavParams,
@@ -46,81 +55,92 @@ export class AccountPage {
               public toastCtrl: ToastController,
               public loadingCtrl: LoadingController,
               public modal: ModalController,
-              private locationProvider: GeolocationProvider,
+              public alertCtrl: AlertController,
   ) {
     this.getInfo();
   }
 
 
-
   private getInfo() {
     this.usuario = this.userProvider.user_Info;
     this.country = this.userProvider.user_Country;
-    this.verify = this.userProvider.User_Verify;
+    this.controlBtns();
   }
-
 
 
   actualizar() {
-    let loading = this.loadingCtrl.create({
-      spinner: 'dots',
+
+    const confirm = this.alertCtrl.create({
+      message: '¿Desea actualizar la información?',
+      buttons: [
+        {
+          text: 'Cancelar',
+          role: 'cancel',
+        },
+        {
+          text: 'Actualizar',
+          handler: () => {
+            let loading = this.loadingCtrl.create({
+              spinner: 'dots',
+            });
+            loading.present();
+            if (this.usuario.first_name != null && this.usuario.last_name != null &&
+              this.usuario.first_name != "" && this.usuario.last_name != "") {
+              if (this.usuario.first_name.length > 2 && this.usuario.last_name.length > 2) {
+                this.api.post('account/update-info', this.usuario, this.userProvider)
+                  .then((data: any) => {
+                    let toast = this.toastCtrl.create({
+                      message: 'Información personal actualizada correctamente.',
+                      showCloseButton: true,
+                      closeButtonText: 'cerrar',
+                      position: 'middle',
+                    });
+                    this.usuario = data;
+                    loading.dismiss();
+                    toast.present();
+                  }).catch(error => {
+                  // let mensaje = 'Por favor corrija lo siguiente \n';
+                  let mensaje = '';
+                  error.error.forEach(data => {
+                    mensaje += data.field + ": " + data.message + "\n";
+                  });
+                  let toast = this.toastCtrl.create({
+                    message: mensaje,
+                    showCloseButton: true,
+                    closeButtonText: 'cerrar',
+                    position: 'middle'
+                  });
+                  loading.dismiss();
+                  toast.present();
+                });
+              } else {
+                loading.dismiss();
+                let toast = this.toastCtrl.create({
+                  message: 'Nombre y apellido deben contener más de 2 caracteres.',
+                  showCloseButton: true,
+                  closeButtonText: 'cerrar',
+                  position: 'middle',
+                });
+                toast.present();
+              }
+            } else {
+              let toast = this.toastCtrl.create({
+                message: 'Todos los campos son obligatorios.',
+                showCloseButton: true,
+                closeButtonText: 'cerrar',
+                position: 'middle',
+              });
+              loading.dismiss();
+              toast.present();
+            }
+          }
+        }
+      ]
     });
-    loading.present();
-    if (this.usuario.first_name != null && this.usuario.last_name != null &&
-      this.usuario.first_name != "" && this.usuario.last_name != "") {
-      if (this.usuario.first_name.length > 2 && this.usuario.last_name.length > 2) {
-        this.api.post('account/update-info', this.usuario, this.userProvider).then((data: any) => {
-          let toast = this.toastCtrl.create({
-            message: 'Información personal actualizada correctamente.',
-            showCloseButton: true,
-            closeButtonText: 'cerrar',
-            position: 'middle',
-          });
-          this.usuario = data;
-          loading.dismiss();
-          toast.present();
-        }).catch(error => {
-          // let mensaje = 'Por favor corrija lo siguiente \n';
-          let mensaje = '';
-          error.error.forEach(data => {
-            mensaje += data.field + ": " + data.message + "\n";
-          });
-          let toast = this.toastCtrl.create({
-            message: mensaje,
-            showCloseButton: true,
-            closeButtonText: 'cerrar',
-            position: 'middle'
-          });
-          loading.dismiss();
-          toast.present();
-        });
-      } else {
-        loading.dismiss();
-        let toast = this.toastCtrl.create({
-          message: 'Nombre y apellido deben contener más de 2 caracteres.',
-          showCloseButton: true,
-          closeButtonText: 'cerrar',
-          position: 'middle',
-        });
-        toast.present();
-      }
-    } else {
-      let toast = this.toastCtrl.create({
-        message: 'Todos los campos son obligatorios.',
-        showCloseButton: true,
-        closeButtonText: 'cerrar',
-        position: 'middle',
-      });
-      loading.dismiss();
-      toast.present();
-    }
-
-  }
+    confirm.present();
 
 
-  clearVar() {
-    this.isphone = true;
-    this.ismail = false;
+
   }
 
   cerrarSesion() {
@@ -128,13 +148,89 @@ export class AccountPage {
     this.navCtrl.setRoot('LoginPage');
   }
 
+  reenviarConfirm(tipo) {
+    this.code_Verify_Phone = null;
+    this.code_Verify_Mail = null;
+    this.responseVerify = null;
+    if (tipo == 'phone') {
+      this.view_Verify_Phone = true;
+      this.view_Verify_Mail = false;
+      this.view_Btn_mail = false;
 
-
-  reenviarConfirm(tipo){
-    this.api.get("account/re-send-verify",this.userProvider,{type:tipo}).then((data:any)=>{
-        console.log(data);
+    } else {
+      this.view_Verify_Phone = false;
+      this.view_Btn_phone = false;
+      this.view_Verify_Mail = true;
+    }
+    this.api.get("account/re-send-verify", this.userProvider, {type: tipo}).then((data: any) => {
+      this.responseVerify = data;
     }).catch()
   }
 
+  validateCode(tipo) {
+    let guardar = false;
+    if (tipo == 'mail') {
+      if (this.code_Verify_Mail == this.responseVerify.mail_code) {
+        guardar = true;
+      } else {
+        guardar = false;
+        let toast = this.toastCtrl.create({
+          message: 'Códigos no coinciden',
+          position: 'middle',
+          showCloseButton: true,
+          closeButtonText: 'Cerrar'
+        });
+        toast.present();
+      }
+    } else {
+      if (this.code_Verify_Phone == this.responseVerify.phone_code) {
+        guardar = true;
+      } else {
+        guardar = false;
+        let toast = this.toastCtrl.create({
+          message: 'Códigos no coinciden',
+          position: 'middle',
+          showCloseButton: true,
+          closeButtonText: 'Cerrar'
+        });
+        toast.present();
+      }
+    }
+    this.code_Verify_Mail = null;
+    this.code_Verify_Phone = null;
+    if (guardar)
+      this.api.get("account/confirm-verify", this.userProvider, {"type": tipo, id: this.responseVerify.id})
+        .then((data: any) => {
+          if (data.success == "ok") {
+            if (tipo == 'mail')
+              this.userProvider.User_Verify.is_mail_verify = 1;
+            else
+              this.userProvider.User_Verify.is_phone_verify = 1;
+          }
+          this.responseVerify = null;
+          this.view_Verify_Mail = false;
+          this.view_Verify_Phone = false;
+          this.controlBtns();
+        })
+  }
+
+  cancelValidation() {
+    this.responseVerify = null;
+    this.view_Verify_Mail = false;
+    this.view_Verify_Mail = false;
+    this.code_Verify_Phone = null;
+    this.code_Verify_Mail = null;
+  }
+
+  controlBtns() {
+    if (this.userProvider.User_Verify.is_mail_verify == 0)
+      this.view_Btn_mail = true;
+    else
+      this.view_Btn_mail = false;
+    if (this.userProvider.User_Verify.is_phone_verify == 0)
+      this.view_Btn_phone = true;
+    else
+      this.view_Btn_phone = false;
+  }
 
 }

@@ -1,12 +1,107 @@
 webpackJsonp([15],{
 
+/***/ 122:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return GeolocationProvider; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_common_http__ = __webpack_require__(43);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_geolocation__ = __webpack_require__(90);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__country_country__ = __webpack_require__(123);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_native_geocoder__ = __webpack_require__(124);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+/*
+  Generated class for the GeolocationProvider provider.
+
+  See https://angular.io/guide/dependency-injection for more info on providers
+  and Angular DI.
+*/
+var GeolocationProvider = /** @class */ (function () {
+    function GeolocationProvider(http, geoCtrl, geocode, countryProvider) {
+        this.http = http;
+        this.geoCtrl = geoCtrl;
+        this.geocode = geocode;
+        this.countryProvider = countryProvider;
+        this.basicInformacion = {
+            country_code: null,
+            flag: null,
+        };
+        this.fullInformation = null;
+        this.load = false;
+        this.getInformation();
+        this.getBasicInfo();
+    }
+    GeolocationProvider.prototype.getInformation = function () {
+        var _this = this;
+        return new Promise((function (resolve, reject) {
+            if (!_this.load) {
+                _this.geoCtrl.getCurrentPosition({
+                    enableHighAccuracy: false,
+                    timeout: 10000,
+                })
+                    .then((function (value) {
+                    _this.geocode.reverseGeocode(value.coords.latitude, value.coords.longitude)
+                        .then(function (data) {
+                        var countries = _this.countryProvider.getResults(data[0].countryName);
+                        if (countries.length) {
+                            var countryS = _this.countryProvider.getResults(data[0].countryName)[0];
+                            _this.fullInformation = countryS;
+                            _this.basicInformacion.country_code = countryS.callingCodes[0];
+                            _this.basicInformacion.flag = countryS.flag;
+                            _this.load = true;
+                            resolve(true);
+                        }
+                    }).catch(function (err) { return console.log("reversegeocode", err); });
+                }))
+                    .catch(function (err) { return console.log("getcurrentposition", err); });
+            }
+            else
+                resolve(true);
+        }));
+    };
+    GeolocationProvider.prototype.getBasicInfo = function () {
+        var _this = this;
+        return new Promise(function (resolve) {
+            _this.getInformation().then(function () {
+                resolve(_this.basicInformacion);
+            });
+        });
+    };
+    GeolocationProvider = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["B" /* Injectable */])(),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_0__angular_common_http__["a" /* HttpClient */],
+            __WEBPACK_IMPORTED_MODULE_2__ionic_native_geolocation__["a" /* Geolocation */],
+            __WEBPACK_IMPORTED_MODULE_4__ionic_native_native_geocoder__["a" /* NativeGeocoder */],
+            __WEBPACK_IMPORTED_MODULE_3__country_country__["a" /* CountryProvider */]])
+    ], GeolocationProvider);
+    return GeolocationProvider;
+}());
+
+//# sourceMappingURL=geolocation.js.map
+
+/***/ }),
+
 /***/ 123:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CountryProvider; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_add_operator_map__ = __webpack_require__(220);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_add_operator_map__ = __webpack_require__(224);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_rxjs_add_operator_map__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_common_http__ = __webpack_require__(43);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -225,7 +320,7 @@ var map = {
 		6
 	],
 	"../pages/reg-number-phone/reg-number-phone.module": [
-		224
+		223
 	],
 	"../pages/register/register.module": [
 		708,
@@ -263,7 +358,7 @@ module.exports = webpackAsyncContext;
 
 /***/ }),
 
-/***/ 224:
+/***/ 223:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -379,10 +474,14 @@ var ValidationProvider = /** @class */ (function () {
     function ValidationProvider() {
     }
     ValidationProvider.getValidatorErrorMessage = function (validatorName, validatorValue, name) {
+        console.log(validatorValue);
+        console.log(validatorName);
         var config = {
             'required': name + " is Required",
             'minlength': "The " + name + " minimum length " + validatorValue.requiredLength,
-            'pattern': "The " + name + " character and number",
+            'pattern': "The " + name,
+            // 'pattern': `The ${name} character and number`,
+            'email': "The " + name + " no es v\u00E1lido",
         };
         return config[validatorName];
     };
@@ -530,11 +629,11 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__angular_common_http__ = __webpack_require__(43);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__providers_api__ = __webpack_require__(47);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__ionic_storage__ = __webpack_require__(215);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__providers_geolocation_geolocation__ = __webpack_require__(91);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__providers_geolocation_geolocation__ = __webpack_require__(122);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__ionic_native_geolocation__ = __webpack_require__(90);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__ionic_native_native_geocoder__ = __webpack_require__(124);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__providers_auth_user_auth_user__ = __webpack_require__(89);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__pages_reg_number_phone_reg_number_phone_module__ = __webpack_require__(224);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__pages_reg_number_phone_reg_number_phone_module__ = __webpack_require__(223);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__providers_verification_verification__ = __webpack_require__(696);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__providers_load_information_load_information__ = __webpack_require__(157);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__ionic_native_google_maps__ = __webpack_require__(361);
@@ -649,7 +748,8 @@ var AppModule = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(29);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_api__ = __webpack_require__(47);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_geolocation_geolocation__ = __webpack_require__(91);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_geolocation_geolocation__ = __webpack_require__(122);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_ionic_angular_util_util__ = __webpack_require__(3);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -659,6 +759,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+
 
 
 
@@ -704,7 +805,7 @@ var RegNumberPhonePage = /** @class */ (function () {
     };
     RegNumberPhonePage.prototype.sendNumberPhone = function () {
         var _this = this;
-        if (this.user_register.country_code != "" && this.user_register.value != "") {
+        if ((this.user_register.country_code != "") && (this.user_register.country_code != null) && (this.user_register.value != "")) {
             var loading_1 = this.loadingCtrl.create({
                 spinner: 'dots',
             });
@@ -715,18 +816,23 @@ var RegNumberPhonePage = /** @class */ (function () {
                 position: 'middle',
             });
             loading_1.present();
-            this.api.post('auth/pre-sign-up', this.user_register).then(function (data) {
+            console.log('user register ', this.user_register);
+            this.api.post('auth/pre-sign-up', { 'value': this.user_register.value, 'type': 'phone', 'country_code': this.user_register.country_code }).then(function (data) {
                 loading_1.dismiss();
                 toast_1.present();
+                console.log('la data ', data);
                 _this.response_verify = data.verify;
                 _this.response_verify.country_id = data.country.id;
-                console.log(_this.response_verify.phone_code);
+                console.log('El response ', _this.response_verify.phone_code);
             }).catch(function (error) {
                 var mensaje = "";
                 loading_1.dismiss();
-                error.error.forEach(function (data) {
-                    mensaje += data.message + "\n";
-                });
+                if (Object(__WEBPACK_IMPORTED_MODULE_4_ionic_angular_util_util__["e" /* isArray */])(error.error))
+                    error.error.forEach(function (data) {
+                        mensaje += data.message + "\n";
+                    });
+                else
+                    console.log('el error ', error);
                 var toast = _this.toastCtrl.create({
                     message: mensaje,
                     showCloseButton: true,
@@ -948,7 +1054,7 @@ var Api = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(29);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(357);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(356);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_geolocation_geolocation__ = __webpack_require__(91);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_geolocation_geolocation__ = __webpack_require__(122);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_auth_user_auth_user__ = __webpack_require__(89);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__providers_load_information_load_information__ = __webpack_require__(157);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -987,12 +1093,12 @@ var MyApp = /** @class */ (function () {
                 _this.getLocation();
         });
         this.pages = [
-            { title: 'Home', component: "HomePage" },
-            { title: 'Transaction', component: "TransactionPage" },
-            { title: 'History', component: "HistoryPage" },
-            { title: 'Maps', component: "MapPage" },
-            { title: 'Account', component: "AccountPage" },
-            { title: 'Security', component: "SecurityPage" },
+            { title: 'Inicio', component: "HomePage" },
+            { title: 'Transacción', component: "TransactionPage" },
+            { title: 'Historial', component: "HistoryPage" },
+            { title: 'Mapa', component: "MapPage" },
+            { title: 'Mi cuenta', component: "AccountPage" },
+            { title: 'Seguridad', component: "SecurityPage" },
         ];
     }
     MyApp.prototype.getLocation = function () {
@@ -1001,14 +1107,23 @@ var MyApp = /** @class */ (function () {
     MyApp.prototype.openPage = function (page) {
         this.nav.setPages([{ page: "HomePage" }, { page: page.component }]);
     };
+    MyApp.prototype.cerrarSesion = function () {
+        window.localStorage.clear();
+        this.nav.setRoot("LoginPage");
+    };
     __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_9" /* ViewChild */])(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* Nav */]),
         __metadata("design:type", __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* Nav */])
     ], MyApp.prototype, "nav", void 0);
     MyApp = __decorate([
+<<<<<<< HEAD
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({template:/*ion-inline-start:"/Users/eyeline/Documents/eyepaycashappGitHub/src/app/app.html"*/'<ion-menu [content]="content">\n  <ion-header>\n    <ion-toolbar>\n      <ion-title>Menu</ion-title>\n    </ion-toolbar>\n  </ion-header>\n\n  <ion-content style="background-color: #f5f5f5">\n    <img src="assets/imgs/EPCLogo.png" alt="">\n    <ion-list>\n      <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">\n        {{p.title}}\n      </button>\n      <button ion-item (click)="cerrarSesion()">Cerrar sesión</button>\n    </ion-list>\n  </ion-content>\n\n</ion-menu>\n<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>\n<!--<ion-nav [root]="rootPage"></ion-nav>-->\n'/*ion-inline-end:"/Users/eyeline/Documents/eyepaycashappGitHub/src/app/app.html"*/
+=======
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({template:/*ion-inline-start:"/Users/eyeline/Documents/GitHub/eyepaycashapp/src/app/app.html"*/'<ion-menu [content]="content">\n  <ion-header>\n    <ion-toolbar>\n      <ion-title>Menu</ion-title>\n    </ion-toolbar>\n  </ion-header>\n\n  <ion-content style="background-color: #f5f5f5">\n    <img src="assets/imgs/EPCLogo.png" alt="">\n    <ion-list>\n      <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">\n        {{p.title}}\n      </button>\n    </ion-list>\n  </ion-content>\n\n</ion-menu>\n<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>\n<!--<ion-nav [root]="rootPage"></ion-nav>-->\n'/*ion-inline-end:"/Users/eyeline/Documents/GitHub/eyepaycashapp/src/app/app.html"*/
+>>>>>>> 5efbfb4d94adbcf5e328e988192ca032d7d01ed0
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* Platform */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */],
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* Platform */],
+            __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */],
             __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */],
             __WEBPACK_IMPORTED_MODULE_4__providers_geolocation_geolocation__["a" /* GeolocationProvider */],
             __WEBPACK_IMPORTED_MODULE_5__providers_auth_user_auth_user__["a" /* AuthUserProvider */],
@@ -1225,101 +1340,6 @@ var AuthUserProvider = /** @class */ (function () {
 }());
 
 //# sourceMappingURL=auth-user.js.map
-
-/***/ }),
-
-/***/ 91:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return GeolocationProvider; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_common_http__ = __webpack_require__(43);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_geolocation__ = __webpack_require__(90);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__country_country__ = __webpack_require__(123);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_native_geocoder__ = __webpack_require__(124);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-
-
-/*
-  Generated class for the GeolocationProvider provider.
-
-  See https://angular.io/guide/dependency-injection for more info on providers
-  and Angular DI.
-*/
-var GeolocationProvider = /** @class */ (function () {
-    function GeolocationProvider(http, geoCtrl, geocode, countryProvider) {
-        this.http = http;
-        this.geoCtrl = geoCtrl;
-        this.geocode = geocode;
-        this.countryProvider = countryProvider;
-        this.basicInformacion = {
-            country_code: null,
-            flag: null,
-        };
-        this.fullInformation = null;
-        this.load = false;
-        this.getInformation();
-        this.getBasicInfo();
-    }
-    GeolocationProvider.prototype.getInformation = function () {
-        var _this = this;
-        return new Promise((function (resolve, reject) {
-            if (!_this.load) {
-                _this.geoCtrl.getCurrentPosition({
-                    enableHighAccuracy: false,
-                    timeout: 10000,
-                })
-                    .then((function (value) {
-                    _this.geocode.reverseGeocode(value.coords.latitude, value.coords.longitude)
-                        .then(function (data) {
-                        var countries = _this.countryProvider.getResults(data[0].countryName);
-                        if (countries.length) {
-                            var countryS = _this.countryProvider.getResults(data[0].countryName)[0];
-                            _this.fullInformation = countryS;
-                            _this.basicInformacion.country_code = countryS.callingCodes[0];
-                            _this.basicInformacion.flag = countryS.flag;
-                            _this.load = true;
-                            resolve(true);
-                        }
-                    }).catch(function (err) { return console.log("reversegeocode", err); });
-                }))
-                    .catch(function (err) { return console.log("getcurrentposition", err); });
-            }
-            else
-                resolve(true);
-        }));
-    };
-    GeolocationProvider.prototype.getBasicInfo = function () {
-        var _this = this;
-        return new Promise(function (resolve) {
-            _this.getInformation().then(function () {
-                resolve(_this.basicInformacion);
-            });
-        });
-    };
-    GeolocationProvider = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["B" /* Injectable */])(),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_0__angular_common_http__["a" /* HttpClient */],
-            __WEBPACK_IMPORTED_MODULE_2__ionic_native_geolocation__["a" /* Geolocation */],
-            __WEBPACK_IMPORTED_MODULE_4__ionic_native_native_geocoder__["a" /* NativeGeocoder */],
-            __WEBPACK_IMPORTED_MODULE_3__country_country__["a" /* CountryProvider */]])
-    ], GeolocationProvider);
-    return GeolocationProvider;
-}());
-
-//# sourceMappingURL=geolocation.js.map
 
 /***/ })
 
