@@ -198,7 +198,7 @@ var MapPage = /** @class */ (function () {
     };
     MapPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-            selector: 'page-map',template:/*ion-inline-start:"/Users/eyeline/Documents/eyepaycashappGitHub/src/pages/map/map.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>Lugares para retirar dinero</ion-title>\n  </ion-navbar>\n</ion-header>\n<ion-content>\n  <div id="map"></div>\n</ion-content>\n'/*ion-inline-end:"/Users/eyeline/Documents/eyepaycashappGitHub/src/pages/map/map.html"*/,
+            selector: 'page-map',template:/*ion-inline-start:"/Users/eyeline/Documents/GitHub/eyepaycashapp/src/pages/map/map.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>Lugares para retirar dinero</ion-title>\n  </ion-navbar>\n</ion-header>\n<ion-content>\n  <div id="map"></div>\n</ion-content>\n'/*ion-inline-end:"/Users/eyeline/Documents/GitHub/eyepaycashapp/src/pages/map/map.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */],
             __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */],

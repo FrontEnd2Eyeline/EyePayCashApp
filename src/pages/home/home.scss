@@ -14,6 +14,96 @@ page-home {
     z-index: 10;
   }
 
-
+.marginMenu{
+  margin-left: 2%;
+  margin-top: 2%;
 }
+
+.textLeft{
+  text-align: left;
+}
+
+.textRight{
+  text-align: right;
+}
+
+.backTransparent{
+  background: transparent;
+}
+
+.BackGR {
+  background-image: url('../assets/icon/B1.png'); 
+  background-position: center top;
+  background-size: 100%; 
+  background-repeat: no-repeat;
+}
+
+.center {
+  display: block;
+  text-align: center;
+  margin: auto;
+}
+
+.footer-md::before, .tabs-md[tabsPlacement="bottom"] > .tabbar::before {
+  top: -2px;
+  bottom: auto;
+  background-position: left 0 top 0;
+  height: 1px;
+  background: rgba(149,105,252,1);
+  background: -moz-linear-gradient(left, rgba(149,105,252,1) 0%, rgba(6,56,150,1) 100%);
+  background: -webkit-gradient(left top, right top, color-stop(0%, rgba(149,105,252,1)), color-stop(100%, rgba(6,56,150,1)));
+  background: -webkit-linear-gradient(left, rgba(149,105,252,1) 0%, rgba(6,56,150,1) 100%);
+  background: -o-linear-gradient(left, rgba(149,105,252,1) 0%, rgba(6,56,150,1) 100%);
+  background: -ms-linear-gradient(left, rgba(149,105,252,1) 0%, rgba(6,56,150,1) 100%);
+  background: linear-gradient(to right, rgba(149,105,252,1) 0%, rgba(6,56,150,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#9569fc', endColorstr='#063896', GradientType=1 );
+}
+
+button{
+  background: rgba(149,105,252,1);
+background: -moz-linear-gradient(left, rgba(149,105,252,1) 0%, rgba(89,116,252,1) 100%);
+background: -webkit-gradient(left top, right top, color-stop(0%, rgba(149,105,252,1)), color-stop(100%, rgba(89,116,252,1)));
+background: -webkit-linear-gradient(left, rgba(149,105,252,1) 0%, rgba(89,116,252,1) 100%);
+background: -o-linear-gradient(left, rgba(149,105,252,1) 0%, rgba(89,116,252,1) 100%);
+background: -ms-linear-gradient(left, rgba(149,105,252,1) 0%, rgba(89,116,252,1) 100%);
+background: linear-gradient(to right, rgba(149,105,252,1) 0%, rgba(89,116,252,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#9569fc', endColorstr='#5974fc', GradientType=1 );
+}
+
+.button-small-md {
+  height: 3.1em;
+  font-size: 1.3rem;
+  padding: 0 0.9em;
+}
+
+.btnRadius{
+  border-radius: 14px;
+}
+
+.item-md.item-block .item-inner {
+  padding-right: 8px;
+  border-bottom: 0px solid #dedede !important;
+}
+
+p{
+  font-size: 10px;
+  text-align: center;
+}
+
+.imgLogoAmin{
+  width: 10%;
+  position: absolute;
+  margin-left: 26%;
+  margin-top: 5%;
+}
+
+.imgLogo{
+  width: 50%;
+}
+
+.mrg40Top{
+  margin-top: 40%;
+}
+}
+
 

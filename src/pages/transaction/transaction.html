@@ -9,12 +9,12 @@
   <ion-select [(ngModel)]="currency" (ionChange)="countrySelected()" interface="popover">
     <ion-option *ngFor="let pais of countrys" value="{{pais.currency}}">{{pais.name}}</ion-option>
   </ion-select>
-  <label stacked *ngIf="currency != 'USD'">Precio del dolar en el paìs</label>
-  <ion-item *ngIf="currency != 'USD'">
+  <label stacked *ngIf="currency != 'USD'">Precio del dolar en el país</label>
+  <ion-item style="margin-bottom: 2%; margin-top: 2%" *ngIf="currency != 'USD'">
     <h6 class="txtboldblack">1 USD = {{infoCountry?.local_usd_value | currency}} {{currency}}</h6>
   </ion-item>
   <label stacked>Información de las monedas</label>
-  <ion-card ion-item *ngFor="let moneda of monedas" (click)="monedaSelect(moneda)">
+  <ion-card style="margin-top: 2%" ion-item *ngFor="let moneda of monedas" (click)="monedaSelect(moneda)">
     <ion-card-content>
       <ion-row>
         <ion-col col-10>
