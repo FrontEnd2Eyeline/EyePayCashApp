@@ -5,7 +5,7 @@
 </ion-header>
 
 <ion-content padding>
-  <ion-label class="txtLbl" stacked>Seleccione país de destino</ion-label>
+  <ion-label stacked>Seleccione país de destino</ion-label>
   <ion-select [(ngModel)]="currency" (ionChange)="countrySelected()" interface="popover">
     <ion-option *ngFor="let pais of countrys" value="{{pais.currency}}">{{pais.name}}</ion-option>
   </ion-select>
@@ -22,8 +22,8 @@
           <h6 *ngIf="currency != 'USD'">1 {{moneda.full_name}} = {{moneda.usd_value | currency }} USD</h6>
           <h5 stacked> 1 {{moneda.full_name}} = {{moneda.local_usd_value | currency }} {{currency}} </h5>
         </ion-col>
-        <ion-col col-2 class="margIcon">
-          <ion-icon name="add"></ion-icon>
+        <ion-col col-2>
+          <ion-icon name="ios-arrow-forward" large></ion-icon>
         </ion-col>
       </ion-row>
     </ion-card-content>

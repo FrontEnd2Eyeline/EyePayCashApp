@@ -30,7 +30,6 @@ export class RegisterPage {
   ischecked = this.userProvider.check_terminos;
 
 
-
   formGroup = new FormGroup({
     first_name: new FormControl('', [
       Validators.required,
@@ -49,12 +48,14 @@ export class RegisterPage {
     password: new FormControl('', [
       Validators.required,
       Validators.minLength(6),
-      Validators.pattern("^(?=.{8,32}$)(?=.[A-Z])(?=.[a-z])(?=.[0-9]).")
+      Validators.pattern("^(?=.*[A-Za-z])(?=.*\\d)[A-Za-z\\d]{8,}$")
+      // Validators.pattern("^(?=.{8,32}$)(?=.[A-Z])(?=.[a-z])(?=.[0-9]).")
     ]),
     password_conf: new FormControl('', [
       Validators.required,
       Validators.minLength(6),
-      Validators.pattern("^(?=.{8,32}$)(?=.[A-Z])(?=.[a-z])(?=.[0-9]).")
+      Validators.pattern("^(?=.*[A-Za-z])(?=.*\\d)[A-Za-z\\d]{8,}$")
+      // Validators.pattern("^(?=.{8,32}$)(?=.[A-Z])(?=.[a-z])(?=.[0-9]).")
     ]),
     mail_conf: new FormControl('', [
       Validators.required,
@@ -77,6 +78,7 @@ export class RegisterPage {
     this.getInfo();
     this.ischecked = this.userProvider.check_terminos;
   }
+
   getInfo() {
     this.responseParams = this.navParams.get('response');
     this.registerParams = this.navParams.get('register');

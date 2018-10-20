@@ -10,7 +10,7 @@
     </ion-card-header>
     <ion-card-content>
       <h6>1 {{moneda.full_name}} ={{moneda?.usd_value | currency}} USD </h6>
-      <h6 *ngIf="currency != 'USD'">1 {{moneda?.full_name}} = {{moneda?.local_usd_value| currency}} {{country.currency_}} </h6>
+      <h6 *ngIf="currency != 'USD'">1 {{moneda?.full_name}} = {{moneda?.local_usd_value| currency}} {{currency}} </h6>
     </ion-card-content>
   </ion-card>
   <ion-card>

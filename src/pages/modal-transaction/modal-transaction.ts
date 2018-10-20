@@ -58,6 +58,7 @@ export class ModalTransactionPage {
     this.userCountry = this.navParams.get('infoCountry');
     this.moneda = this.navParams.get('moneda');
     this.currency = this.navParams.get('currency');
+    console.log(this.currency);
     this.transaction.country_id = this.navParams.get('pais_id');
     this.transaction.code_phone = this.navParams.get('code_phohe');
     this.transaction.coin_id = this.moneda.id;
@@ -121,28 +122,38 @@ export class ModalTransactionPage {
 
   confirmTrasaction() {
     if (this.transaction.amount_local != null && this.transaction.phone_user_des != null && this.transaction.key_user != null && this.transaction.country_id != null && this.transaction.coin_id != null) {
-      if (this.transaction.key_user.length == 4 && this.transaction.phone_user_des > 9 && this.transaction.amount_local>0) {
-        let alerta = this.alertCtrl.create({
-          title: 'Confirmar transacción',
-          message: 'Destino: ' + this.transaction.phone_user_des + ' <br>  Monto:' +
-            this.getCurrency(this.transaction.amount_local) + " " + this.country.currency_code,
-          buttons: [
-            {
-              text: 'Cancelar',
-              role: 'cancel',
-            },
-            {
-              text: 'Solicitar',
-              handler: () => {
-                this.doTrasaction();
+      if (this.transaction.phone_user_des > 8) {
+        if(this.transaction.amount_local > 0){
+          let alerta = this.alertCtrl.create({
+            title: 'Confirmar transacción',
+            message: 'Destino: ' + this.transaction.phone_user_des + ' <br> Clave:' +this.transaction.key_user+'<br>'+
+              'Monto:' + this.getCurrency(this.transaction.amount_local) + " " + this.country.currency_code,
+            buttons: [
+              {
+                text: 'Cancelar',
+                role: 'cancel',
+              },
+              {
+                text: 'Solicitar',
+                handler: () => {
+                  this.doTrasaction();
+                }
               }
-            }
-          ]
-        });
-        alerta.present();
+            ]
+          });
+          alerta.present();
+        }else{
+          let toast = this.toastCtrl.create({
+            message: 'El monto de la transacción debe ser mayor a cero.',
+            showCloseButton: true,
+            closeButtonText: 'cerrar',
+            position: 'middle',
+          });
+          toast.present();
+        }
       } else {
         let toast = this.toastCtrl.create({
-          message: 'Número telefónico más de 9 digitos. Monto mayor a cero. Clave 4 dígitos',
+          message: 'Número telefónico más de 9 digitos.',
           showCloseButton: true,
           closeButtonText: 'cerrar',
           position: 'middle',

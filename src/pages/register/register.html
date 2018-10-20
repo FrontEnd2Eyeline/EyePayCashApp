@@ -9,17 +9,11 @@
           <ion-label stacked>Nombres</ion-label>
           <ion-input type="text" required name="userregistronombre" formControlName="first_name"
                      [brmasker]="{len:20}"></ion-input>
-          <div>
-            <msg-error [control]="formGroup.controls.first_name"></msg-error>
-          </div>
         </ion-item>
 
         <ion-item class="marginlists">
           <ion-label stacked>Apellidos</ion-label>
           <ion-input type="text" required name="userregistroapellido" formControlName="last_name" [brmasker]="{len:20}"></ion-input>
-          <div>
-            <msg-error [control]="formGroup.controls.last_name"></msg-error>
-          </div>
         </ion-item>
 
         <ion-item class="marginlists">
@@ -28,57 +22,50 @@
             <ion-option value="f">Femenino</ion-option>
             <ion-option value="m">Masculino</ion-option>
           </ion-select>
-          <div>
-            <msg-error [control]="formGroup.controls.gender"></msg-error>
-          </div>
         </ion-item>
 
         <ion-item class="marginlists">
           <ion-label stacked>Email</ion-label>
           <ion-input type="email" required name="userregistroemail" formControlName="mail"></ion-input>
-          <div>
-            <msg-error [control]="formGroup.controls.mail"></msg-error>
-          </div>
         </ion-item>
         <ion-item class="marginlists">
           <ion-label stacked>Confirmar email</ion-label>
           <ion-input type="email" required name="confirmacionmail" formControlName="mail_conf"></ion-input>
-          <div>
-            <msg-error [control]="formGroup.controls.mail_conf"></msg-error>
-          </div>
         </ion-item>
 
-        <ion-item class="marginlists">
+
+
+        <ion-item>
           <ion-label stacked>Contraseña</ion-label>
-          <ion-input type="{{type}}" name="contrasema"
-                     formControlName="password" [brmasker]="{len:10}"></ion-input>
-          <button *ngIf="!showPass" ion-button clear color="dark" type="button" required item-right
-                  (click)="showPassword()">
-            <ion-icon name="ios-eye-off-outline"></ion-icon>
-          </button>
-          <button *ngIf="showPass" ion-button clear color="dark" type="button" item-right (click)="showPassword()">
-            <ion-icon name="ios-eye-outline"></ion-icon>
-          </button>
-          <div>
-            <msg-error [control]="formGroup.controls.password"></msg-error>
-          </div>
+          <ion-input type="{{type}}" name="contrasena"
+                     formControlName="password">
+          </ion-input>
+          <!--<button *ngIf="!showPass" ion-button clear color="dark" type="button" required item-right-->
+                  <!--(click)="showPassword()">-->
+            <!--<ion-icon name="ios-eye-off-outline"></ion-icon>-->
+          <!--</button>-->
+          <!--<button *ngIf="showPass" ion-button clear color="dark" type="button" item-right (click)="showPassword()">-->
+            <!--<ion-icon name="ios-eye-outline"></ion-icon>-->
+          <!--</button>-->
         </ion-item>
 
         <ion-item class="marginlists">
           <ion-label stacked>Confirmar contraseña</ion-label>
-          <ion-input type="{{type2}}" name="confirmcontrasena"
-                     formControlName="password_conf" [brmasker]="{len:10}"></ion-input>
-          <button *ngIf="!showPass2" ion-button clear color="dark" type="button" required item-right
-                  (click)="showPassword2()">
-            <ion-icon name="ios-eye-off-outline"></ion-icon>
-          </button>
-          <button *ngIf="showPass2" ion-button clear color="dark" type="button" item-right (click)="showPassword2()">
-            <ion-icon name="ios-eye-outline"></ion-icon>
-          </button>
-          <div>
-            <msg-error [control]="formGroup.controls.password_conf"></msg-error>
-          </div>
+          <ion-input type="{{type2}}" name="confirmacontrasena"
+                     formControlName="password_conf">
+          </ion-input>
+          <!--<button *ngIf="!showPass2" ion-button clear color="dark" type="button" required item-right-->
+                  <!--(click)="showPassword2()">-->
+            <!--<ion-icon name="ios-eye-off-outline"></ion-icon>-->
+          <!--</button>-->
+          <!--<button *ngIf="showPass2" ion-button clear color="dark" type="button" item-right (click)="showPassword2()">-->
+            <!--<ion-icon name="ios-eye-outline"></ion-icon>-->
+          <!--</button>-->
         </ion-item>
+
+
+
+
         <ion-item no-lines *ngIf="formGroup.invalid">
           <msg-error [control]="formGroup.controls.mail" name="Email"></msg-error>
           <msg-error [control]="formGroup.controls.password" name="Contraseña"></msg-error>

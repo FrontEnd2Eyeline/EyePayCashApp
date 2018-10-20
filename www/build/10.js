@@ -98,6 +98,7 @@ var ModalTransactionPage = /** @class */ (function () {
         this.userCountry = this.navParams.get('infoCountry');
         this.moneda = this.navParams.get('moneda');
         this.currency = this.navParams.get('currency');
+        console.log(this.currency);
         this.transaction.country_id = this.navParams.get('pais_id');
         this.transaction.code_phone = this.navParams.get('code_phohe');
         this.transaction.coin_id = this.moneda.id;
@@ -156,29 +157,40 @@ var ModalTransactionPage = /** @class */ (function () {
     ModalTransactionPage.prototype.confirmTrasaction = function () {
         var _this = this;
         if (this.transaction.amount_local != null && this.transaction.phone_user_des != null && this.transaction.key_user != null && this.transaction.country_id != null && this.transaction.coin_id != null) {
-            if (this.transaction.key_user.length == 4 && this.transaction.phone_user_des > 9 && this.transaction.amount_local > 0) {
-                var alerta = this.alertCtrl.create({
-                    title: 'Confirmar transacción',
-                    message: 'Destino: ' + this.transaction.phone_user_des + ' <br>  Monto:' +
-                        this.getCurrency(this.transaction.amount_local) + " " + this.country.currency_code,
-                    buttons: [
-                        {
-                            text: 'Cancelar',
-                            role: 'cancel',
-                        },
-                        {
-                            text: 'Solicitar',
-                            handler: function () {
-                                _this.doTrasaction();
+            if (this.transaction.phone_user_des > 8) {
+                if (this.transaction.amount_local > 0) {
+                    var alerta = this.alertCtrl.create({
+                        title: 'Confirmar transacción',
+                        message: 'Destino: ' + this.transaction.phone_user_des + ' <br> Clave:' + this.transaction.key_user + '<br>' +
+                            'Monto:' + this.getCurrency(this.transaction.amount_local) + " " + this.country.currency_code,
+                        buttons: [
+                            {
+                                text: 'Cancelar',
+                                role: 'cancel',
+                            },
+                            {
+                                text: 'Solicitar',
+                                handler: function () {
+                                    _this.doTrasaction();
+                                }
                             }
-                        }
-                    ]
-                });
-                alerta.present();
+                        ]
+                    });
+                    alerta.present();
+                }
+                else {
+                    var toast = this.toastCtrl.create({
+                        message: 'El monto de la transacción debe ser mayor a cero.',
+                        showCloseButton: true,
+                        closeButtonText: 'cerrar',
+                        position: 'middle',
+                    });
+                    toast.present();
+                }
             }
             else {
                 var toast = this.toastCtrl.create({
-                    message: 'Número telefónico más de 9 digitos. Monto mayor a cero. Clave 4 dígitos',
+                    message: 'Número telefónico más de 9 digitos.',
                     showCloseButton: true,
                     closeButtonText: 'cerrar',
                     position: 'middle',
@@ -201,7 +213,7 @@ var ModalTransactionPage = /** @class */ (function () {
     };
     ModalTransactionPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-            selector: 'page-modal-transaction',template:/*ion-inline-start:"/Users/eyeline/Documents/eyepaycashappGitHub/src/pages/modal-transaction/modal-transaction.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>Solicitar transacción</ion-title>\n  </ion-navbar>\n</ion-header>\n<ion-content padding>\n  <ion-card>\n    <ion-card-header>\n      {{moneda.full_name}}\n    </ion-card-header>\n    <ion-card-content>\n      <h6>1 {{moneda.full_name}} ={{moneda?.usd_value | currency}} USD </h6>\n      <h6 *ngIf="currency != \'USD\'">1 {{moneda?.full_name}} = {{moneda?.local_usd_value| currency}} {{country.currency_}} </h6>\n    </ion-card-content>\n  </ion-card>\n  <ion-card>\n    <ion-card-header>\n      Información de la transacción\n    </ion-card-header>\n    <ion-card-content>\n      <label stacked>Ingresar número celular de destino</label>\n      <ion-row>\n        <ion-col col-3><h2 style="margin-top: 40%!important;">(+{{transaction.code_phone}})</h2></ion-col>\n        <ion-col col-9>\n          <ion-input type="number" class="margBott" name="transaction-celular" [(ngModel)]="transaction.phone_user_des" [brmasker]="{len:12}"></ion-input>\n        </ion-col>\n      </ion-row>\n      <label stacked>Ingresar una clave de seguridad</label>\n      <ion-input class="margBott" name="transaction-clave" [brmasker]="{len:4}" [(ngModel)]="transaction.key_user"\n                 type="number"></ion-input>\n      <label stacked>Ingresar valor de transacción en {{currency}}</label>\n      <ion-input class="margBott" name="transaction-valor" type="number" value=""\n                 [(ngModel)]="transaction.amount_local">\n\n      </ion-input>\n      <button class="buttonPayCash" ion-button (click)="confirmTrasaction()" block>Solicitar transacción</button>\n    </ion-card-content>\n  </ion-card>\n\n</ion-content>\n'/*ion-inline-end:"/Users/eyeline/Documents/eyepaycashappGitHub/src/pages/modal-transaction/modal-transaction.html"*/,
+            selector: 'page-modal-transaction',template:/*ion-inline-start:"/Users/eyeline/Documents/eyepaycashappGitHub/src/pages/modal-transaction/modal-transaction.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>Solicitar transacción</ion-title>\n  </ion-navbar>\n</ion-header>\n<ion-content padding>\n  <ion-card>\n    <ion-card-header>\n      {{moneda.full_name}}\n    </ion-card-header>\n    <ion-card-content>\n      <h6>1 {{moneda.full_name}} ={{moneda?.usd_value | currency}} USD </h6>\n      <h6 *ngIf="currency != \'USD\'">1 {{moneda?.full_name}} = {{moneda?.local_usd_value| currency}} {{currency}} </h6>\n    </ion-card-content>\n  </ion-card>\n  <ion-card>\n    <ion-card-header>\n      Información de la transacción\n    </ion-card-header>\n    <ion-card-content>\n      <label stacked>Ingresar número celular de destino</label>\n      <ion-row>\n        <ion-col col-3><h2 style="margin-top: 40%!important;">(+{{transaction.code_phone}})</h2></ion-col>\n        <ion-col col-9>\n          <ion-input type="number" class="margBott" name="transaction-celular" [(ngModel)]="transaction.phone_user_des" [brmasker]="{len:12}"></ion-input>\n        </ion-col>\n      </ion-row>\n      <label stacked>Ingresar una clave de seguridad</label>\n      <ion-input class="margBott" name="transaction-clave" [brmasker]="{len:4}" [(ngModel)]="transaction.key_user"\n                 type="number"></ion-input>\n      <label stacked>Ingresar valor de transacción en {{currency}}</label>\n      <ion-input class="margBott" name="transaction-valor" type="number" value=""\n                 [(ngModel)]="transaction.amount_local">\n\n      </ion-input>\n      <button class="buttonPayCash" ion-button (click)="confirmTrasaction()" block>Solicitar transacción</button>\n    </ion-card-content>\n  </ion-card>\n\n</ion-content>\n'/*ion-inline-end:"/Users/eyeline/Documents/eyepaycashappGitHub/src/pages/modal-transaction/modal-transaction.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */],
             __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* ViewController */],

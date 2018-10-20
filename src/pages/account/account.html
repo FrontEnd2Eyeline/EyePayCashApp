@@ -30,12 +30,13 @@
         </ion-item>
         <ion-item>
           <ion-label stacked>Género</ion-label>
-          <ion-select okText="Guardar" cancelText="Cancelar" [(ngModel)]="usuario.gender" name="userregistrogenero" interface="popover">
+          <ion-select okText="Guardar" cancelText="Cancelar" [(ngModel)]="usuario.gender" name="userregistrogenero"
+                      interface="popover">
             <ion-option value="f">Femenino</ion-option>
             <ion-option value="m">Masculino</ion-option>
           </ion-select>
         </ion-item>
-        <button ion-button block class="buttonPayCash" (click)="actualizar()">Actualizar información</button>
+        <button ion-button block class="buttonPayCash" (click)="actualizar()">Editar información</button>
       </ion-list>
     </ion-card-content>
   </ion-card>
@@ -54,10 +55,42 @@
         <ion-label stacked>Teléfono</ion-label>
         {{usuario.phone}}
       </ion-row>
-      <ion-row>
-        <button ion-button class="buttonPayCash" *ngIf="usuario.userVerify.is_phone_verify ==0" (click)="reenviarConfirm('phone')">Reenviar confirmación móvil</button>
-        <button ion-button class="buttonPayCash" *ngIf="usuario.userVerify.is_mail_verify ==0" (click)="reenviarConfirm('mail')">Reenviar confirmación email</button>
+
+
+      <ion-row *ngIf="view_Verify_Mail">
+        <ion-col col-12>
+          <ion-input type="text" [(ngModel)]="code_Verify_Mail"></ion-input>
+        </ion-col>
+        <ion-col col-12>
+          <button ion-button (click)="validateCode('mail')">Confirmar código email</button>
+          <button ion-button block (click)="cancelvalidation()">Cancelar</button>
+        </ion-col>
       </ion-row>
+
+
+      <ion-row *ngIf="view_Verify_Phone">
+        <ion-col col-12>
+          <ion-input type="text" [(ngModel)]="code_Verify_Phone"></ion-input>
+        </ion-col>
+        <ion-col col-12>
+          <button ion-button block (click)="validateCode('phone')">Confirmar código telefono</button>
+          <button ion-button block (click)="cancelvalidation()">Cancelar</button>
+        </ion-col>
+      </ion-row>
+
+
+      <ion-row>
+        <button ion-button block class="buttonPayCash"
+                *ngIf=" (view_Btn_phone) && (view_Verify_Phone == false)"
+                (click)="reenviarConfirm('phone')">Reenviar confirmación móvil
+        </button>
+
+        <button ion-button block class="buttonPayCash"
+                *ngIf=" (view_Btn_mail) && view_Verify_Mail == false"
+                (click)="reenviarConfirm('mail')">Reenviar confirmación email
+        </button>
+      </ion-row>
+
     </ion-card-content>
   </ion-card>
 

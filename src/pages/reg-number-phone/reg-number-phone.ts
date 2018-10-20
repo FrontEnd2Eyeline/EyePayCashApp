@@ -3,6 +3,7 @@ import {IonicPage, LoadingController, ModalController, NavController, NavParams,
 import {SelectCodePage} from "../select-code/select-code";
 import {Api} from "../../providers/api";
 import {GeolocationProvider} from "../../providers/geolocation/geolocation";
+import {isArray} from "ionic-angular/util/util";
 
 /**
  * Generated class for the RegNumberPhonePage page.
@@ -54,33 +55,40 @@ export class RegNumberPhonePage {
   }
 
   sendNumberPhone() {
-    if (this.user_register.country_code != "" && this.user_register.value != "") {
+    if ( (this.user_register.country_code != "") && (this.user_register.country_code != null)  && (this.user_register.value != "")) {
       let loading = this.loadingCtrl.create({
         spinner: 'dots',
       });
       let toast = this.toastCtrl.create({
         message: 'Se ha enviado un código de verificación al número celular ingresado.',
-        showCloseButton:true,
-        closeButtonText:'cerrar',
-        position:'middle',
+        showCloseButton: true,
+        closeButtonText: 'cerrar',
+        position: 'middle',
       });
       loading.present();
-      this.api.post('auth/pre-sign-up', this.user_register).then(
+
+      console.log('user register ',this.user_register);
+
+      this.api.post('auth/pre-sign-up', {'value': this.user_register.value, 'type': 'phone','country_code':this.user_register.country_code}).then(
         (data: any) => {
           loading.dismiss();
           toast.present();
+          console.log('la data ',data);
           this.response_verify = data.verify;
           this.response_verify.country_id = data.country.id;
-          console.log(this.response_verify.phone_code);
+          console.log('El response ',this.response_verify.phone_code);
         }
-      ).catch(error=>{
+      ).catch(error => {
         let mensaje = "";
         loading.dismiss();
-        error.error.forEach(data=>{
-          mensaje+=data.message+"\n";
-        });
+        if (isArray(error.error))
+          error.error.forEach(data => {
+            mensaje += data.message + "\n";
+          });
+        else
+         console.log('el error ',error);
         let toast = this.toastCtrl.create({
-          message:mensaje,
+          message: mensaje,
           showCloseButton: true,
           closeButtonText: "cerrar",
         });
@@ -89,9 +97,9 @@ export class RegNumberPhonePage {
     } else {
       let toast = this.toastCtrl.create({
         message: 'Toda la información es obligatoria',
-        showCloseButton:true,
-        closeButtonText:'cerrar',
-        position:'middle',
+        showCloseButton: true,
+        closeButtonText: 'cerrar',
+        position: 'middle',
       });
       toast.present();
     }
@@ -114,9 +122,9 @@ export class RegNumberPhonePage {
     } else {
       let toast = this.toastCtrl.create({
         message: 'Código incorrecto.',
-        showCloseButton:true,
-        closeButtonText:'cerrar',
-        position:'middle',
+        showCloseButton: true,
+        closeButtonText: 'cerrar',
+        position: 'middle',
       });
       toast.present();
     }

@@ -31,16 +31,23 @@ export class TransactionPage {
     public toastCtrl: ToastController,
     public modalCtrl: ModalController,
     private informationProvider: LoadInformationProvider,
-    public navCtrl: NavController) {
+    public navCtrl: NavController,
+    public loadingCtrl: LoadingController) {
     this.currency = this.userProvider.user_Country.currency;
     this.getInfo();
     this.countrySelected();
   }
 
   getInfo() {
+
+    let loading=  this.loadingCtrl.create({
+      spinner:'dots',
+    });
+    loading.present();
     this.informationProvider.getCountries()
       .then(value => {
         this.countrys = value;
+        loading.dismiss();
       }).catch(error=>{
         let mensaje = "";
         error.error.forEach(data=>{
@@ -52,6 +59,7 @@ export class TransactionPage {
           showCloseButton:true,
           position:'middle'
         });
+        loading.dismiss();
         toast.present();
     });
 
