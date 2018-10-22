@@ -19,8 +19,8 @@ import {LoginPage} from "../pages/login/login";
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: string = 'LoginPage';
-  // rootPage: string = 'RegisterPage';
+  // rootPage: string = 'LoginPage';
+  rootPage: string = 'RegisterPage';
   pages: Array<{ title: string, component: any }>;
 
   constructor(platform: Platform,

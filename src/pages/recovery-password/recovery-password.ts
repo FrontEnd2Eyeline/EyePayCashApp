@@ -46,6 +46,14 @@ export class RecoveryPasswordPage {
           loading.dismiss();
           this.iscodigo = true;
           this.reset = data;
+          this.data = null;
+          let toast = this.toastCtrl.create({
+            message: "Se ha enviado un código de verificación.",
+            showCloseButton: true,
+            closeButtonText: 'cerrar',
+            position: 'middle',
+          });
+          toast.present();
         }
       ).catch(error => {
         loading.dismiss();
@@ -62,8 +70,11 @@ export class RecoveryPasswordPage {
         toast.present();
       });
     } else {
+      let mensaje = "número celular";
+      if(type != "phone")
+        mensaje = "dirección email";
       let toast = this.toastCtrl.create({
-          message: 'Por favor ingrese su número celular.',
+          message: 'Por favor ingrese su '+mensaje,
           showCloseButton: true,
           closeButtonText: 'cerrar',
           position: 'middle',
@@ -74,7 +85,8 @@ export class RecoveryPasswordPage {
   }
 
   changeVisible() {
-    this.isvisible = !this.isvisible
+    this.isvisible = !this.isvisible;
+    this.data = null;
   }
 
   cancelar() {

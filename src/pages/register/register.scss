@@ -16,4 +16,20 @@ page-register {
     box-shadow: 0 0 200px rgba(0, 0, 0, 0.336) inset;
   }
 
+  //====================  BEGIND ESTAS CLASES SON PARA EL BOTÓN DE VER LA CONTRASEÑA
+  .btn_show {
+    position: absolute;
+    min-width: 50px;
+    right: 0;
+    top: 41%;
+  }
+
+  .btn_show2 {
+    position: absolute;
+    min-width: 50px;
+    right: 0;
+    top: 42%;
+  }
+  //================   END DE LA CLASE PARA VER LA CONTRASEÑA
+
 }

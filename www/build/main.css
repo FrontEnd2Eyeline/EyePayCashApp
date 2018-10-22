@@ -29695,6 +29695,34 @@ page-register .vignette {
   box-shadow: 0 0 200px rgba(0, 0, 0, 0.336) inset;
 }
 
+page-register .btn_show {
+  position: absolute;
+  min-width: 50px;
+  right: 0;
+  top: 41%;
+}
+
+page-register .btn_show2 {
+  position: absolute;
+  min-width: 50px;
+  right: 0;
+  top: 42%;
+}
+
+page-security .btn_show {
+  position: absolute;
+  min-width: 50px;
+  right: 0;
+  top: 41%;
+}
+
+page-security .btn_show2 {
+  position: absolute;
+  min-width: 50px;
+  right: 0;
+  top: 42%;
+}
+
 page-select-code .flag {
   width: 25px;
   height: 15px;

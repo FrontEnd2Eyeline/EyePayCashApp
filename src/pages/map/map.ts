@@ -1,11 +1,12 @@
 import {Component} from '@angular/core';
-import {IonicPage, LoadingController, NavController, NavParams} from 'ionic-angular';
+import {IonicPage, LoadingController, NavController, NavParams, ToastController} from 'ionic-angular';
 import {GoogleMap, GoogleMapOptions, GoogleMaps, GoogleMapsEvent, LatLng} from "@ionic-native/google-maps";
 import {Geolocation} from "@ionic-native/geolocation";
 import {Api} from "../../providers/api";
 import {AuthUserProvider} from "../../providers/auth-user/auth-user";
 import {mapStyle} from "../../app/mapStyle";
 import {MapProvider} from "../../providers/map/map";
+import {HomePage} from "../home/home";
 
 /**
  * Generated class for the MapPage page.
@@ -33,7 +34,8 @@ export class MapPage {
     protected api: Api,
     protected user: AuthUserProvider,
     public mapProvider: MapProvider,
-    public loadCtl: LoadingController) {
+    public loadCtl: LoadingController,
+    public toastCtrl: ToastController) {
     this.idsLoaded = [];
   }
 
@@ -42,7 +44,6 @@ export class MapPage {
       spinner: 'dots'
     });
     this.loading.present();
-    console.log(this.mapProvider.camera,this.mapProvider.userPosition,this.mapProvider.markers);
     this.loadMap();
     this.loadMarkers();
   }
@@ -88,7 +89,8 @@ export class MapPage {
           icon: 'blue',
           animation: 'DROP',
           position: new LatLng(value.lat, value.lng)
-        }).then().catch();
+        }).then().catch(data=>{
+        });
         this.idsLoaded.push(value.id)
       }
     }))
@@ -128,7 +130,15 @@ export class MapPage {
 
         })
         .catch(error => {
-          console.log(error);
+          this.loading.dismiss();
+          this.navCtrl.setRoot("HomePage");
+          let toast = this.toastCtrl.create({
+            message:'Por favor permita el acceso a su ubicación',
+            position:'middle',
+            showCloseButton: true,
+            closeButtonText: 'Cerrar'
+          });
+          toast.present();
         });
     } else {
       this.map.addMarker({

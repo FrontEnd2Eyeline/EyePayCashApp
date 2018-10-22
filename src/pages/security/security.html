@@ -98,10 +98,10 @@
         <ion-label stacked>Contraseña nueva</ion-label>
         <ion-input type="{{type}}" name="usernueva"
                    required [(ngModel)]="password.new_password"></ion-input>
-        <button *ngIf="!showPass" ion-button clear color="dark" type="button" item-right (click)="showPassword()">
+        <button *ngIf="!showPass" class="btn_show" ion-button clear color="dark" type="button" item-right (click)="showPassword()">
           <ion-icon name="ios-eye-off-outline"></ion-icon>
         </button>
-        <button *ngIf="showPass" ion-button clear color="dark" type="button" item-right (click)="showPassword()">
+        <button *ngIf="showPass" class="btn_show" ion-button clear color="dark" type="button" item-right (click)="showPassword()">
           <ion-icon name="ios-eye-outline"></ion-icon>
         </button>
 
@@ -110,10 +110,10 @@
         <ion-label stacked>Confirmación de contraseña</ion-label>
         <ion-input type="{{type2}}" name="userconfirmacion"
                    required [(ngModel)]="password.new_password_conf"></ion-input>
-        <button *ngIf="!showPass2" ion-button clear color="dark" type="button" item-right (click)="showPassword2()">
+        <button *ngIf="!showPass2" class="btn_show2" ion-button clear color="dark" type="button" item-right (click)="showPassword2()">
           <ion-icon name="ios-eye-off-outline"></ion-icon>
         </button>
-        <button *ngIf="showPass2" ion-button clear color="dark" type="button" item-right (click)="showPassword2()">
+        <button *ngIf="showPass2" class="btn_show2" ion-button clear color="dark" type="button" item-right (click)="showPassword2()">
           <ion-icon name="ios-eye-outline"></ion-icon>
         </button>
       </ion-item>
