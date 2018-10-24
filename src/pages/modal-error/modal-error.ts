@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ViewController } from 'ionic-angular';
 
 /**
  * Generated class for the ModalErrorPage page.
@@ -15,7 +15,10 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class ModalErrorPage {
 public obj : any = {field:null, message:null};
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(
+	  public navCtrl: NavController,
+	  public navParams: NavParams,
+	  public viewControll: ViewController) {
   }
 
   ionViewDidLoad() {
@@ -24,7 +27,7 @@ public obj : any = {field:null, message:null};
   }
 
   closeModal() {
-    this.navCtrl.pop();
+	  this.viewControll.dismiss();
   }
 
 }

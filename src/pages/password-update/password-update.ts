@@ -2,6 +2,7 @@ import {Component} from '@angular/core';
 import {IonicPage, LoadingController, NavController, NavParams, ToastController} from 'ionic-angular';
 import {Api} from "../../providers/api";
 import {AuthUserProvider} from "../../providers/auth-user/auth-user";
+import { ModalErrorProvider } from '../../providers/modal-error/modal-error';
 
 /**
  * Generated class for the PasswordUpdatePage page.
@@ -28,7 +29,8 @@ export class PasswordUpdatePage {
               private api: Api,
               public toastCtrl: ToastController,
               private userProvider: AuthUserProvider,
-              public loadingCtrl: LoadingController,
+			  public loadingCtrl: LoadingController,
+			  public errorProvider: ModalErrorProvider
   ) {
     this.infoRecovery.reset_id = navParams.get('reset_id');
   }
@@ -43,51 +45,30 @@ export class PasswordUpdatePage {
           loading.present();
           this.api.post('auth/update-password', this.infoRecovery).then((data) => {
 
-            loading.dismiss();
-            let toast = this.toastCtrl.create({
-              message: 'Contraseña actualizada correctamente.',
-              showCloseButton: true,
-              closeButtonText: 'cerrar',
-              position: 'middle',
-            });
-            toast.present();
+			loading.dismiss();
+			this.errorProvider.obj.message = 'Contraseña actualizada correctamente';
+			this.errorProvider.presentModal();
             this.navCtrl.setRoot('LoginPage');
           }).catch((error) => {
             let mensaje = '';
             loading.dismiss();
             error.error.forEach(data => {
               mensaje += data.message + "\n";
-            });
-            let toast = this.toastCtrl.create({
-              message: mensaje,
-              closeButtonText: 'cerrar',
-              showCloseButton: true,
-            });
-            toast.present();
+			});
+			this.errorProvider.obj.message = mensaje;
+			this.errorProvider.presentModal();
           });
         } else {
-          let toast = this.toastCtrl.create({
-            message: 'La constraseña debe tener mínimo 6 caracteres.'
-          });
-          toast.present();
+			this.errorProvider.obj.message = 'La contraseña debe tener mínimo 6 caracteres';
+			this.errorProvider.presentModal();
         }
       } else {
-        let toast = this.toastCtrl.create({
-          message: 'Las contraseñas no coinciden.',
-          showCloseButton: true,
-          closeButtonText: 'cerrar',
-          position: 'middle',
-        });
-        toast.present();
+		this.errorProvider.obj.message = 'Las contraseñas no cinciden';
+		this.errorProvider.presentModal();
       }
     } else {
-      let toast = this.toastCtrl.create({
-        message: 'Los datos son obligatorios.',
-        showCloseButton: true,
-        closeButtonText: 'cerrar',
-        position: 'middle',
-      });
-      toast.present();
+		this.errorProvider.obj.message = 'Los datos son obligatorios';
+		this.errorProvider.presentModal();
     }
   }
 

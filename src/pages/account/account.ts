@@ -10,6 +10,7 @@ import {
 } from 'ionic-angular';
 import {Api} from "../../providers/api";
 import {AuthUserProvider} from "../../providers/auth-user/auth-user";
+import { ModalErrorProvider } from '../../providers/modal-error/modal-error';
 
 /**
  * Generated class for the AccountPage page.
@@ -55,7 +56,8 @@ export class AccountPage {
               public toastCtrl: ToastController,
               public loadingCtrl: LoadingController,
               public modal: ModalController,
-              public alertCtrl: AlertController,
+			  public alertCtrl: AlertController,
+			  public errorProvider: ModalErrorProvider,
   ) {
     this.getInfo();
   }
@@ -89,49 +91,33 @@ export class AccountPage {
               if (this.usuario.first_name.length > 2 && this.usuario.last_name.length > 2) {
                 this.api.post('account/update-info', this.usuario, this.userProvider)
                   .then((data: any) => {
-                    let toast = this.toastCtrl.create({
-                      message: 'Información personal actualizada correctamente.',
-                      showCloseButton: true,
-                      closeButtonText: 'cerrar',
-                      position: 'middle',
-                    });
+					  this.errorProvider.obj.message = 'Información personal acrtualizada correctamente';
+					  this.errorProvider.presentModal();
+
                     this.usuario = data;
-                    loading.dismiss();
-                    toast.present();
+                     loading.dismiss();
                   }).catch(error => {
                   // let mensaje = 'Por favor corrija lo siguiente \n';
                   let mensaje = '';
                   error.error.forEach(data => {
                     mensaje += data.field + ": " + data.message + "\n";
-                  });
-                  let toast = this.toastCtrl.create({
-                    message: mensaje,
-                    showCloseButton: true,
-                    closeButtonText: 'cerrar',
-                    position: 'middle'
-                  });
+				  });
+				  this.errorProvider.obj.message = mensaje;
+				  this.errorProvider.presentModal();
+
                   loading.dismiss();
-                  toast.present();
                 });
               } else {
-                loading.dismiss();
-                let toast = this.toastCtrl.create({
-                  message: 'Nombre y apellido deben contener más de 2 caracteres.',
-                  showCloseButton: true,
-                  closeButtonText: 'cerrar',
-                  position: 'middle',
-                });
-                toast.present();
+				loading.dismiss();
+				this.errorProvider.obj.message = 'Nombre y apellido deben contener más de 2 caracteres';
+				this.errorProvider.presentModal();
+
               }
             } else {
-              let toast = this.toastCtrl.create({
-                message: 'Todos los campos son obligatorios.',
-                showCloseButton: true,
-                closeButtonText: 'cerrar',
-                position: 'middle',
-              });
-              loading.dismiss();
-              toast.present();
+				this.errorProvider.obj.message = 'Todos los campos son obligatorios';
+				this.errorProvider.presentModal();
+
+               loading.dismiss();
             }
           }
         }
@@ -173,27 +159,19 @@ export class AccountPage {
       if (this.code_Verify_Mail == this.responseVerify.mail_code) {
         guardar = true;
       } else {
-        guardar = false;
-        let toast = this.toastCtrl.create({
-          message: 'Códigos no coinciden',
-          position: 'middle',
-          showCloseButton: true,
-          closeButtonText: 'Cerrar'
-        });
-        toast.present();
+		guardar = false;
+		this.errorProvider.obj.message = 'El código no coincide';
+		this.errorProvider.presentModal();
+
       }
     } else {
       if (this.code_Verify_Phone == this.responseVerify.phone_code) {
         guardar = true;
       } else {
-        guardar = false;
-        let toast = this.toastCtrl.create({
-          message: 'Códigos no coinciden',
-          position: 'middle',
-          showCloseButton: true,
-          closeButtonText: 'Cerrar'
-        });
-        toast.present();
+		guardar = false;
+		this.errorProvider.obj.message = 'El código no coincide';
+		this.errorProvider.presentModal();
+
       }
     }
     this.code_Verify_Mail = null;

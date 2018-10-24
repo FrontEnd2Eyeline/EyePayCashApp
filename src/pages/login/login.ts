@@ -50,7 +50,7 @@ export class LoginPage {
 			let cargando = this.loadingCtrl.create({
 				spinner: 'dots',
 			});
-			
+
 			this.userProvider.login(this.formGroup.value.mail, this.formGroup.value.password)
 				.then((data: any) => {
 					cargando.present();
@@ -66,7 +66,7 @@ export class LoginPage {
 					error.error.forEach(data => {
 						mensaje += data.message + "\n";
 					});
-					this.errorProvider.obj.message = mensaje; 
+					this.errorProvider.obj.message = mensaje;
 					this.errorProvider.presentModal();
 				});
 		}

@@ -14,11 +14,12 @@ export class ModalErrorProvider {
 public obj: any = {field:null, message:null};
   constructor(public http: HttpClient,
 			  public modalCtrl: ModalController) {
+			
+		
     
   }
 
-  ionViewWillEnter(){
-  }
+ 
  
 
   presentModal(){

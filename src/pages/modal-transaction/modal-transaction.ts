@@ -157,35 +157,14 @@ export class ModalTransactionPage {
 				} else {
 					this.errorProvider.obj.message = 'El monto de la transacción debe ser mayor a cero';
 					this.errorProvider.presentModal();
-					//   let toast = this.toastCtrl.create({
-					//     message: 'El monto de la transacción debe ser mayor a cero.',
-					//     showCloseButton: true,
-					//     closeButtonText: 'cerrar',
-					//     position: 'middle',
-					//   });
-					//   toast.present();
 				}
 			} else {
 				this.errorProvider.obj.message = 'Número telefónico debe tener más de 9 dígitos';
 				this.errorProvider.presentModal();
-				// let toast = this.toastCtrl.create({
-				//   message: 'Número telefónico más de 9 digitos.',
-				//   showCloseButton: true,
-				//   closeButtonText: 'cerrar',
-				//   position: 'middle',
-				// });
-				// toast.present();
 			}
 		} else {
 			this.errorProvider.obj.message = 'Todos los datos son obligatorios';
 			this.errorProvider.presentModal();
-			//   let toast = this.toastCtrl.create({
-			//     message: 'Todos los datos son obligatorios.',
-			//     showCloseButton: true,
-			//     closeButtonText: 'cerrar',
-			//     position: 'middle',
-			//   });
-			//   toast.present();
 		}
 	}
 
