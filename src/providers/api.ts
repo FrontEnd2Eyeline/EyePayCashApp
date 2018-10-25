@@ -6,7 +6,7 @@ import {AuthUserProvider} from "./auth-user/auth-user";
 @Injectable()
 export class Api {
   url: string = 'http://globalone2onemarketing.com/frontend/web/apiapp/';
-  // url: string = 'http://192.168.0.6/eyepaycash/frontend/web/apiapp/';
+  // url: string = 'http://10.160.170.114/eyepaycash/frontend/web/apiapp/';
   // url: string = 'http://35557b72.ngrok.io/eyepaycash/frontend/web/apiapp/';
   headers: HttpHeaders;
 

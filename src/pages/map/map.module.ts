@@ -4,6 +4,7 @@ import {MapPage} from './map';
 import {Geolocation} from "@ionic-native/geolocation";
 import {Geocoder} from "@ionic-native/google-maps";
 import {MapProvider} from "../../providers/map/map";
+import {TranslateModule} from "@ngx-translate/core";
 
 @NgModule({
   declarations: [
@@ -11,6 +12,7 @@ import {MapProvider} from "../../providers/map/map";
   ],
   imports: [
     IonicPageModule.forChild(MapPage),
+    TranslateModule
   ],
   providers: [
     Geolocation,

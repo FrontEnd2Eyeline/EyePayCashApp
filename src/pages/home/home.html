@@ -2,7 +2,7 @@
 
   <ion-row>
     <ion-col>
-      <ion-img class="marginMenu textLeft" menuToggle width="25" height="25" src="assets/icon/settings.png"></ion-img>
+      <ion-img class="marginMenu textLeft" menuToggle width="25" height="25" src="assets/icon/Settings.png"></ion-img>
     </ion-col>
     <!-- <ion-col>
       <ion-img class="marginMenu textRight backTransparent" width="80%" height="45px" src="assets/imgs/EPCLogo.png"></ion-img>
@@ -15,29 +15,29 @@
       <img class="imgLogo" src="assets/imgs/Animacion1.png">
     </ion-col>
   </ion-row>
-  <!-- <ion-item class="center">
-    <button class="btnRadius" ion-button small>PRUEBA YA EYEPAYCASH</button>
-  </ion-item> -->
+  <ion-item class="center">
+    <button ion-button block outline (click)="goPage('contact')">{{'PRUEBA_EYEPAYCASH'|translate}}</button>
+  </ion-item>
 </ion-content>
 <ion-footer>
   <ion-toolbar>
     <ion-row>
       <ion-col class="center" col-3>
         <img (click)="goPage('transaction')" width="25" height="25" src="assets/icon/1.png">
-        <p>Transacciones</p>
+        <p>{{'TRANSACCION'|translate}}</p>
       </ion-col>
       <ion-col class="center" col-3>
         <!-- <ion-badge item-end>{{count}}</ion-badge> -->
         <img (click)="goPage('history')" width="25" height="25" src="assets/icon/2.png">
-        <p>Historial</p>
+        <p>{{'HISTORIAL'|translate}}</p>
       </ion-col>
       <ion-col class="center" col-3>
         <img (click)="goPage('maps')" width="25" height="25" src="assets/icon/3.png">
-        <p>Mapa</p>
+        <p>{{'MAPA'|translate}}</p>
       </ion-col>
       <ion-col class="center" col-3>
         <img (click)="goPage('account')" width="25" height="25" src="assets/icon/4.png">
-        <P>Cuenta</P>
+        <p>{{'CUENTA'|translate}}</p>
       </ion-col>
     </ion-row>
   </ion-toolbar>

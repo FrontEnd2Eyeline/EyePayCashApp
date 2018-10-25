@@ -63,9 +63,6 @@
           </button>
         </ion-item>
 
-
-
-
         <ion-item no-lines *ngIf="formGroup.invalid">
           <msg-error [control]="formGroup.controls.mail" name="Email"></msg-error>
           <msg-error [control]="formGroup.controls.password" name="Contraseña"></msg-error>
@@ -73,7 +70,7 @@
           <msg-error [control]="formGroup.controls.last_name" name="Apellidos"></msg-error>
 
         </ion-item>
-        <button style="border-radius: 0%" class="buttonPayCash" ion-button small>Registrarse
+        <button class="buttonPayCash" ion-button small>Registrarse
         </button>
       </ion-list>
     </form>
@@ -88,7 +85,7 @@
         (click)="politicas()"> Leí y acepto las políticas de uso  y privacidad de la información</span></ion-col>
   </ion-list>
   <div style="margin-top: 6%" class="center">
-    <button style="border-radius: 0%" class="buttonPayCash" (click)="cancel()" ion-button small>Cancelar</button>
+    <button class="buttonPayCash" (click)="cancel()" ion-button small>Cancelar</button>
 
   </div>
 

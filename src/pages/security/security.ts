@@ -66,7 +66,6 @@ export class SecurityPage {
     this.updateInfo = "celular";
   }
 
-
   selectcountry() {
     let modal = this.modal.create('SelectCodePage');
     modal.present();
@@ -272,6 +271,7 @@ export class SecurityPage {
       this.type2 = 'password';
     }
   }
+
   actualizarPass() {
     let loading = this.loadingCtrl.create({
       spinner: 'dots'

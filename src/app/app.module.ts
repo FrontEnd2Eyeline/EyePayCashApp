@@ -7,7 +7,7 @@ import {StatusBar} from '@ionic-native/status-bar';
 import {MyApp} from './app.component';
 import {CountryProvider} from "../providers/country/country";
 import {SelectCodePageModule} from "../pages/select-code/select-code.module";
-import {HttpClientModule} from "@angular/common/http";
+import {HttpClient, HttpClientModule} from "@angular/common/http";
 import {Api} from "../providers/api";
 import {IonicStorageModule} from "@ionic/storage";
 import {GeolocationProvider} from '../providers/geolocation/geolocation';
@@ -23,6 +23,15 @@ import { FormatterDateProvider } from '../providers/formatter-date/formatter-dat
 import {Clipboard} from "@ionic-native/clipboard";
 import { MapProvider } from '../providers/map/map';
 import {CurrencyPipe} from "@angular/common";
+import {Contacts} from "@ionic-native/contacts";
+import {TranslateHttpLoader} from "@ngx-translate/http-loader";
+import {TranslateLoader, TranslateModule} from "@ngx-translate/core";
+import { LenguageProvider } from '../providers/lenguage/lenguage';
+
+
+export function createTranslateLoader(http: HttpClient) {
+  return new TranslateHttpLoader(http, './assets/i18n/', '.json');
+}
 
 
 @NgModule({
@@ -36,6 +45,13 @@ import {CurrencyPipe} from "@angular/common";
     IonicStorageModule.forRoot(),
     SelectCodePageModule,
     RegNumberPhonePageModule,
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: (createTranslateLoader),
+        deps: [HttpClient]
+      }
+    })
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -58,7 +74,9 @@ import {CurrencyPipe} from "@angular/common";
     FormatterDateProvider,
     Clipboard,
     MapProvider,
-    CurrencyPipe
+    CurrencyPipe,
+    Contacts,
+    LenguageProvider
   ]
 })
 export class AppModule {

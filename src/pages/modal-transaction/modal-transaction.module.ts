@@ -3,6 +3,7 @@ import {IonicPageModule} from 'ionic-angular';
 import {ModalTransactionPage} from './modal-transaction';
 import {BrMaskerModule} from "brmasker-ionic-3";
 import {CurrencyPipe} from "@angular/common";
+import {TranslateModule} from "@ngx-translate/core";
 
 @NgModule({
   declarations: [
@@ -10,6 +11,7 @@ import {CurrencyPipe} from "@angular/common";
   ],
   imports: [
     IonicPageModule.forChild(ModalTransactionPage),
+    TranslateModule,
     BrMaskerModule,
   ],
 })

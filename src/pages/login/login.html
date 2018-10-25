@@ -21,16 +21,16 @@
         <msg-error [control]="formGroup.controls.password" name="Contraseña"></msg-error>
       </ion-item>
       <ion-item class="center">
-        <button class="buttonPayCash borderBtns" ion-button small>INGRESAR</button>
+        <button class="buttonPayCash borderBtns" ion-button small>{{'INICIAR_SESION'|translate}}</button>
       </ion-item>
     </ion-list>
   </form>
   <ion-item>
     <ion-col col-6>
-      <button class="textWhite" ion-button (click)="registro()" clear block class="transparente">Registrarme</button>
+      <button class="textWhite" ion-button (click)="registro()" clear block class="transparente">{{'REGISTRARME'|translate}}</button>
     </ion-col>
     <ion-col col-6>
-      <button ion-button (click)="recuperarcontrasena()" clear block class="transparente">Recuperar contraseña</button>
+      <button ion-button (click)="recuperarcontrasena()" clear block class="transparente">{{'RECUPERAR_CONTRASENA'|translate}}</button>
     </ion-col>
   </ion-item>
 </ion-content>

@@ -14,13 +14,11 @@ export class ValidationProvider {
   }
 
   public static getValidatorErrorMessage(validatorName: string, validatorValue?: any, name?: string) {
-    console.log(validatorValue);
-    console.log(validatorName);
     let config = {
       'required': `${name} is Required`,
       'minlength': `The ${name} minimum length ${validatorValue.requiredLength}`,
-      'pattern': `The ${name}`,
-      // 'pattern': `The ${name} character and number`,
+      // 'pattern': `The ${name}`,
+      'pattern': `The ${name} character and number`,
       'email': `The ${name} no es válido`,
     };
     return config[validatorName];

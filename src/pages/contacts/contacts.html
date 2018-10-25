@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Listado de contactos
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list>
+    <ion-item *ngFor="let contacto of listaContactos">
+      <!--<ion-avatar item-start>-->
+        <!--<img [src]="contacto.photos[0].value ">-->
+      <!--</ion-avatar>-->
+      <h2>{{contacto.displayName | uppercase }}</h2>
+      <p>{{contacto.phoneNumbers[0].value}}</p>
+    </ion-item>
+  </ion-list>
+</ion-content>

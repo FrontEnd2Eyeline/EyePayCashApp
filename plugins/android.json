@@ -40,6 +40,9 @@
     },
     "cordova-clipboard": {
       "PACKAGE_NAME": "com.eyepaycash.app"
+    },
+    "cordova-plugin-contacts": {
+      "PACKAGE_NAME": "com.eyepaycash.app"
     }
   },
   "dependent_plugins": {}
