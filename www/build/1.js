@@ -1,10 +1,6 @@
 webpackJsonp([1],{
 
-<<<<<<< HEAD
-/***/ 717:
-=======
-/***/ 715:
->>>>>>> 20c3dc4197dea109fe7ff7ba0ace49e6ef5ad4a4
+/***/ 716:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -12,11 +8,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LoginPageModule", function() { return LoginPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(26);
-<<<<<<< HEAD
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__login__ = __webpack_require__(737);
-=======
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__login__ = __webpack_require__(735);
->>>>>>> 20c3dc4197dea109fe7ff7ba0ace49e6ef5ad4a4
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__login__ = __webpack_require__(736);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_components_module__ = __webpack_require__(730);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ngx_translate_core__ = __webpack_require__(91);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -149,11 +141,7 @@ var MsgErrorComponent = /** @class */ (function () {
 
 /***/ }),
 
-<<<<<<< HEAD
-/***/ 737:
-=======
-/***/ 735:
->>>>>>> 20c3dc4197dea109fe7ff7ba0ace49e6ef5ad4a4
+/***/ 736:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -248,7 +236,7 @@ var LoginPage = /** @class */ (function () {
     ], LoginPage.prototype, "displayError", void 0);
     LoginPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-            selector: 'page-login',template:/*ion-inline-start:"/Users/eyeline/Documents/GitHub/eyepaycashapp/src/pages/login/login.html"*/'<ion-content class="imgBackground vignette">\n  <div class="center">\n    <ion-img class="logo" src="assets/imgs/EPCLogo.png"></ion-img>\n  </div>\n  <!--<form #formulario >-->\n  <form [formGroup]="formGroup" (ngSubmit)="login()">\n    <ion-list>\n      <ion-item>\n        <ion-input placeholder="Email" class="inputClass marginItems" formControlName="mail" name="correo">\n        </ion-input>\n        <div>\n          <msg-error [control]="formGroup.controls.mail"></msg-error>\n        </div>\n      </ion-item>\n      <ion-item>\n        <ion-input placeholder="Contraseña" class="inputClass marginItems" type="password"\n                   name="contrasena" formControlName="password"></ion-input>\n      </ion-item>\n      <ion-item no-lines *ngIf="formGroup.invalid">\n        <msg-error [control]="formGroup.controls.mail" name="Email"></msg-error>\n        <msg-error [control]="formGroup.controls.password" name="Contraseña"></msg-error>\n      </ion-item>\n      <ion-item class="center">\n        <button class="buttonPayCash borderBtns" ion-button small>{{\'INICIAR_SESION\'|translate}}</button>\n      </ion-item>\n    </ion-list>\n  </form>\n  <ion-item>\n    <ion-col col-6>\n      <button class="textWhite" ion-button (click)="registro()" clear block class="transparente">{{\'REGISTRARME\'|translate}}</button>\n    </ion-col>\n    <ion-col col-6>\n      <button ion-button (click)="recuperarcontrasena()" clear block class="transparente">{{\'RECUPERAR_CONTRASENA\'|translate}}</button>\n    </ion-col>\n  </ion-item>\n</ion-content>'/*ion-inline-end:"/Users/eyeline/Documents/GitHub/eyepaycashapp/src/pages/login/login.html"*/,
+            selector: 'page-login',template:/*ion-inline-start:"/Users/eyeline/Documents/eyepaycashappGitHub/src/pages/login/login.html"*/'<ion-content class="imgBackground vignette">\n  <div class="center">\n    <ion-img class="logo" src="assets/imgs/EPCLogo.png"></ion-img>\n  </div>\n  <!--<form #formulario >-->\n  <form [formGroup]="formGroup" (ngSubmit)="login()">\n    <ion-list>\n      <ion-item>\n        <ion-input placeholder="Email" class="inputClass marginItems" formControlName="mail" name="correo">\n        </ion-input>\n        <div>\n          <msg-error [control]="formGroup.controls.mail"></msg-error>\n        </div>\n      </ion-item>\n      <ion-item>\n        <ion-input placeholder="Contraseña" class="inputClass marginItems" type="password"\n                   name="contrasena" formControlName="password"></ion-input>\n      </ion-item>\n      <ion-item no-lines *ngIf="formGroup.invalid">\n        <msg-error [control]="formGroup.controls.mail" name="Email"></msg-error>\n        <msg-error [control]="formGroup.controls.password" name="Contraseña"></msg-error>\n      </ion-item>\n      <ion-item class="center">\n        <button class="buttonPayCash borderBtns" ion-button small>{{\'INICIAR_SESION\'|translate}}</button>\n      </ion-item>\n    </ion-list>\n  </form>\n  <ion-item style="margin-top: -10%;">\n    <ion-col col-6>\n      <button class="textWhite" ion-button (click)="registro()" clear block class="transparente">{{\'REGISTRARME\'|translate}}</button>\n    </ion-col>\n    <ion-col col-6>\n      <button ion-button (click)="recuperarcontrasena()" clear block class="transparente">{{\'RECUPERAR_CONTRASENA\'|translate}}</button>\n    </ion-col>\n  </ion-item>\n</ion-content>'/*ion-inline-end:"/Users/eyeline/Documents/eyepaycashappGitHub/src/pages/login/login.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */],
             __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* LoadingController */],

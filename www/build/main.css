@@ -29531,10 +29531,6 @@ page-login .logo {
   display: inline-grid;
 }
 
-page-login .marginItems {
-  margin-bottom: 10%;
-}
-
 page-login .item-input .label-md, page-login .item-select .label-md, page-login .item-datetime .label-md {
   color: white !important;
 }
@@ -29623,6 +29619,10 @@ page-modal-error .gradient {
   background: linear-gradient(to right, #9569fc 0%, #5974fb 100%);
 }
 
+page-modal-error .scroll-content {
+  background-color: transparent;
+}
+
 page-modal-error .footer-button {
   left: 0;
   bottom: 0;
@@ -29661,6 +29661,10 @@ page-modal-error .img_background {
   background-position: center top;
   background-size: 80%;
   background-repeat: no-repeat;
+}
+
+page-modal-error .content-md {
+  background-color: transparent;
 }
 
 page-modal-transaction ion-select {
