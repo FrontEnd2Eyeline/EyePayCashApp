@@ -91,12 +91,18 @@ p{
 }
 
 .imgLogoAmin{
-  width: 10%;
+  width: 30%;
   position: absolute;
-  margin-left: 26%;
-  margin-top: 5%;
+  margin-left: -12%;
+  margin-top: 3%;
 }
 
+.icoAnim2{
+  width: 30%;
+    position: absolute;
+    margin-left: -38%;
+    margin-top: 46%;
+}
 .imgLogo{
   width: 50%;
 }
@@ -104,6 +110,108 @@ p{
 .mrg40Top{
   margin-top: 40%;
 }
+
+.item-ios.item-block .item-inner {
+  padding-right: 8px;
+  padding-right: 8px;
+  border-bottom: 0px solid #c8c7cc !important;
 }
 
+.item-ios .item-button {
+  padding: 0 0.5em;
+  height: 24px;
+  font-size: 1.3rem;
+  height: 34px;
+}
+
+.marg5{
+  margin-top: 10%;
+}
+
+// animates
+
+
+.animated {
+  -webkit-animation-duration: 2s;
+  animation-duration: 2s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+.animated2 {
+  -webkit-animation-duration: 5s;
+  animation-duration: 5s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+.animated.infinite {
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+}
+
+
+@keyframes bounceOutRight {
+  20% {
+    opacity: 1;
+    -webkit-transform: translate3d(-20px, 0, 0);
+    transform: translate3d(-20px, 0, 0);
+  }
+
+  to {
+    opacity: 0;
+    -webkit-transform: translate3d(2000px, 0, 0);
+    transform: translate3d(2000px, 0, 0);
+  }
+}
+
+.bounceOutRight {
+  -webkit-animation-name: bounceOutRight;
+  animation-name: bounceOutRight;
+}
+
+
+@keyframes bounceInLeft {
+  from,
+  60%,
+  75%,
+  90%,
+  to {
+    -webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
+
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(-3000px, 0, 0);
+    transform: translate3d(-3000px, 0, 0);
+  }
+
+  60% {
+    opacity: 1;
+    -webkit-transform: translate3d(25px, 0, 0);
+    transform: translate3d(25px, 0, 0);
+  }
+
+  75% {
+    -webkit-transform: translate3d(-10px, 0, 0);
+    transform: translate3d(-10px, 0, 0);
+  }
+
+  90% {
+    -webkit-transform: translate3d(5px, 0, 0);
+    transform: translate3d(5px, 0, 0);
+  }
+
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.bounceInLeft {
+  -webkit-animation-name: bounceInLeft;
+  animation-name: bounceInLeft;
+}
+}
 

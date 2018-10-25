@@ -338,7 +338,7 @@ var map = {
 		17
 	],
 	"../pages/contacts/contacts.module": [
-		713,
+		716,
 		16
 	],
 	"../pages/history-resume/history-resume.module": [
@@ -346,19 +346,19 @@ var map = {
 		15
 	],
 	"../pages/history/history.module": [
-		715,
+		713,
 		14
 	],
 	"../pages/home/home.module": [
-		716,
+		725,
 		13
 	],
 	"../pages/language/language.module": [
-		717,
+		715,
 		12
 	],
 	"../pages/login/login.module": [
-		718,
+		717,
 		1
 	],
 	"../pages/map/map.module": [
@@ -366,49 +366,49 @@ var map = {
 		2
 	],
 	"../pages/modal-error/modal-error.module": [
-		720,
+		718,
 		11
 	],
 	"../pages/modal-transaction/modal-transaction.module": [
-		721,
+		720,
 		10
 	],
 	"../pages/modal-welcome/modal-welcome.module": [
-		722,
+		721,
 		9
 	],
 	"../pages/password-update/password-update.module": [
-		723,
+		722,
 		8
 	],
 	"../pages/politicas/politicas.module": [
-		729,
+		724,
 		7
 	],
 	"../pages/recovery-password/recovery-password.module": [
-		724,
+		723,
 		6
 	],
 	"../pages/reg-number-phone/reg-number-phone.module": [
 		249
 	],
 	"../pages/register/register.module": [
-		725,
+		726,
 		0
 	],
 	"../pages/security/security.module": [
-		728,
+		727,
 		5
 	],
 	"../pages/select-code/select-code.module": [
 		250
 	],
 	"../pages/transaction-resume/transaction-resume.module": [
-		726,
+		728,
 		4
 	],
 	"../pages/transaction/transaction.module": [
-		727,
+		729,
 		3
 	]
 };
@@ -630,7 +630,7 @@ var MapProvider = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 383:
+/***/ 382:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -710,11 +710,11 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__providers_load_information_load_information__ = __webpack_require__(167);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__ionic_native_google_maps__ = __webpack_require__(380);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__providers_validation_validation__ = __webpack_require__(379);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__providers_formatter_date_formatter_date__ = __webpack_require__(383);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__providers_formatter_date_formatter_date__ = __webpack_require__(382);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__ionic_native_clipboard__ = __webpack_require__(378);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__providers_map_map__ = __webpack_require__(381);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__angular_common__ = __webpack_require__(33);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__ionic_native_contacts__ = __webpack_require__(382);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__ionic_native_contacts__ = __webpack_require__(383);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__ngx_translate_http_loader__ = __webpack_require__(710);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__ngx_translate_core__ = __webpack_require__(91);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__providers_lenguage_lenguage__ = __webpack_require__(166);
@@ -771,25 +771,25 @@ var AppModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["d" /* IonicModule */].forRoot(__WEBPACK_IMPORTED_MODULE_5__app_component__["a" /* MyApp */], {}, {
                     links: [
                         { loadChildren: '../pages/account/account.module#AccountPageModule', name: 'AccountPage', segment: 'account', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/contacts/contacts.module#ContactsPageModule', name: 'ContactsPage', segment: 'contacts', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/history-resume/history-resume.module#HistoryResumePageModule', name: 'HistoryResumePage', segment: 'history-resume', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/history/history.module#HistoryPageModule', name: 'HistoryPage', segment: 'history', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/home/home.module#HomePageModule', name: 'HomePage', segment: 'app', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/history-resume/history-resume.module#HistoryResumePageModule', name: 'HistoryResumePage', segment: 'history-resume', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/language/language.module#LanguagePageModule', name: 'LanguagePage', segment: 'language', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/contacts/contacts.module#ContactsPageModule', name: 'ContactsPage', segment: 'contacts', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/login/login.module#LoginPageModule', name: 'LoginPage', segment: 'login', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/map/map.module#MapPageModule', name: 'MapPage', segment: 'map', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/modal-error/modal-error.module#ModalErrorPageModule', name: 'ModalErrorPage', segment: 'modal-error', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/map/map.module#MapPageModule', name: 'MapPage', segment: 'map', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/modal-transaction/modal-transaction.module#ModalTransactionPageModule', name: 'ModalTransactionPage', segment: 'modal-transaction', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/modal-welcome/modal-welcome.module#ModalWelcomePageModule', name: 'ModalWelcomePage', segment: 'modal-welcome', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/password-update/password-update.module#PasswordUpdatePageModule', name: 'PasswordUpdatePage', segment: 'password-update', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/recovery-password/recovery-password.module#RecoveryPasswordPageModule', name: 'RecoveryPasswordPage', segment: 'recovery-password', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/register/register.module#RegisterPageModule', name: 'RegisterPage', segment: 'register', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/politicas/politicas.module#PoliticasPageModule', name: 'PoliticasPage', segment: 'politicas', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/home/home.module#HomePageModule', name: 'HomePage', segment: 'app', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/reg-number-phone/reg-number-phone.module#RegNumberPhonePageModule', name: 'RegNumberPhonePage', segment: 'reg-number-phone', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/register/register.module#RegisterPageModule', name: 'RegisterPage', segment: 'register', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/security/security.module#SecurityPageModule', name: 'SecurityPage', segment: 'security', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/select-code/select-code.module#SelectCodePageModule', name: 'SelectCodePage', segment: 'select-code', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/transaction-resume/transaction-resume.module#TransactionResumePageModule', name: 'TransactionResumePage', segment: 'transaction-resume', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/transaction/transaction.module#TransactionPageModule', name: 'TransactionPage', segment: 'transaction', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/security/security.module#SecurityPageModule', name: 'SecurityPage', segment: 'security', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/politicas/politicas.module#PoliticasPageModule', name: 'PoliticasPage', segment: 'politicas', priority: 'low', defaultHistory: [] }
+                        { loadChildren: '../pages/transaction/transaction.module#TransactionPageModule', name: 'TransactionPage', segment: 'transaction', priority: 'low', defaultHistory: [] }
                     ]
                 }),
                 __WEBPACK_IMPORTED_MODULE_10__ionic_storage__["a" /* IonicStorageModule */].forRoot(),
@@ -971,7 +971,7 @@ var RegNumberPhonePage = /** @class */ (function () {
     };
     RegNumberPhonePage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-            selector: 'page-reg-number-phone',template:/*ion-inline-start:"/Users/eyeline/Documents/eyepaycashappGitHub/src/pages/reg-number-phone/reg-number-phone.html"*/'<ion-content class="imgBackground vignette">\n  <div style="margin-top:12%" class="center">\n    <ion-img style="margin-bottom: 10%;" class="logo" src="assets/imgs/EPCLogo.png"></ion-img>\n    <div class="center">\n      <ion-label style="color:white" class="center"> Enviaremos un CÓDIGO de verificación al número<br> que registres\n        a continuación.\n      </ion-label>\n    </div>\n  </div>\n\n  <div class="center divMargin">\n    <ion-grid class="center marGrid">\n      <ion-row>\n        <ion-col col-5>\n          <ion-item class="item-flag item-md2 item-ios2">\n            <img [src]="user_register.flag" class="flagphone banderaWidt">\n            <button ion-button (click)="selectcountry()" class="transparente item-md2 item-button2 button-md ">+\n              {{user_register.country_code}}\n            </button>\n          </ion-item>\n        </ion-col>\n        <ion-col col-7>\n          <ion-item class="stylCel">\n            <ion-input required type="number" name="numerocelular" [(ngModel)]="user_register.value" placeholder="Número movil (celular)" [brmasker]="{len:12}"></ion-input>\n          </ion-item>\n        </ion-col>\n      </ion-row>\n    </ion-grid>\n    <ion-item class="inputClass" *ngIf="response_verify.mail_code != null || response_verify.phone_code != null">\n      <ion-input placeholder="Introduce el código" maxlength="6" required style="text-align: center" type="number" [(ngModel)]="code_verify" [brmasker]="{len:6}"></ion-input>\n    </ion-item>\n  </div>\n  <div class="center marginBts">\n    <button class="buttonPayCash borderBtns" (click)="cancel()" ion-button small>Cancelar</button>\n    <button class="buttonPayCash borderBtns" (click)="sendNumberPhone()" ion-button small\n            *ngIf="response_verify.phone_code == null">Confirmar número móvil\n    </button>\n    <button class="buttonPayCash borderBtns" (click)="verifyCode()" ion-button small\n            *ngIf="response_verify.phone_code != null">Continuar\n    </button>\n  </div>\n\n</ion-content>'/*ion-inline-end:"/Users/eyeline/Documents/eyepaycashappGitHub/src/pages/reg-number-phone/reg-number-phone.html"*/,
+            selector: 'page-reg-number-phone',template:/*ion-inline-start:"/Users/eyeline/Documents/GitHub/eyepaycashapp/src/pages/reg-number-phone/reg-number-phone.html"*/'<ion-content class="imgBackground vignette">\n  <div style="margin-top:12%" class="center">\n    <ion-img style="margin-bottom: 10%;" class="logo" src="assets/imgs/EPCLogo.png"></ion-img>\n    <div class="center">\n      <ion-label style="color:white" class="center"> Enviaremos un CÓDIGO de verificación al número<br> que registres\n        a continuación.\n      </ion-label>\n    </div>\n  </div>\n\n  <div class="center divMargin">\n    <ion-grid class="center marGrid">\n      <ion-row>\n        <ion-col col-5>\n          <ion-item class="item-flag item-md2 item-ios2">\n            <img [src]="user_register.flag" class="flagphone banderaWidt">\n            <button ion-button (click)="selectcountry()" class="transparente item-md2 item-button2 button-md ">+\n              {{user_register.country_code}}\n            </button>\n          </ion-item>\n        </ion-col>\n        <ion-col col-7>\n          <ion-item class="stylCel">\n            <ion-input required type="number" name="numerocelular" [(ngModel)]="user_register.value" placeholder="Número movil (celular)" [brmasker]="{len:12}"></ion-input>\n          </ion-item>\n        </ion-col>\n      </ion-row>\n    </ion-grid>\n    <ion-item class="inputClass" *ngIf="response_verify.mail_code != null || response_verify.phone_code != null">\n      <ion-input placeholder="Introduce el código" maxlength="6" required style="text-align: center" type="number" [(ngModel)]="code_verify" [brmasker]="{len:6}"></ion-input>\n    </ion-item>\n  </div>\n  <div class="center marginBts">\n    <button class="buttonPayCash borderBtns" (click)="cancel()" ion-button small>Cancelar</button>\n    <button class="buttonPayCash borderBtns" (click)="sendNumberPhone()" ion-button small\n            *ngIf="response_verify.phone_code == null">Confirmar número móvil\n    </button>\n    <button class="buttonPayCash borderBtns" (click)="verifyCode()" ion-button small\n            *ngIf="response_verify.phone_code != null">Continuar\n    </button>\n  </div>\n\n</ion-content>'/*ion-inline-end:"/Users/eyeline/Documents/GitHub/eyepaycashapp/src/pages/reg-number-phone/reg-number-phone.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */],
             __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */],
@@ -1039,7 +1039,7 @@ var SelectCodePage = /** @class */ (function () {
     ], SelectCodePage.prototype, "searchbar", void 0);
     SelectCodePage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-            selector: 'page-select-code',template:/*ion-inline-start:"/Users/eyeline/Documents/eyepaycashappGitHub/src/pages/select-code/select-code.html"*/'<ion-content padding>\n  <ng-template #withFlags let-attrs="attrs">\n    <img src="{{attrs.data.flag}}" class="flag"/>\n    <span\n        [innerHTML]="\'+\'+attrs.data.callingCodes[0]+\' \'+attrs.data.name"></span>\n  </ng-template>\n  <ion-auto-complete #search item-content [dataProvider]="country"\n                     [options]="{placeholder : \'Search your country\'}"\n                     [template]="withFlags"\n                     [showResultsFirst]="true"\n                     (itemSelected)="selectItem($event)"></ion-auto-complete>\n</ion-content>\n'/*ion-inline-end:"/Users/eyeline/Documents/eyepaycashappGitHub/src/pages/select-code/select-code.html"*/,
+            selector: 'page-select-code',template:/*ion-inline-start:"/Users/eyeline/Documents/GitHub/eyepaycashapp/src/pages/select-code/select-code.html"*/'<ion-content padding>\n  <ng-template #withFlags let-attrs="attrs">\n    <img src="{{attrs.data.flag}}" class="flag"/>\n    <span\n        [innerHTML]="\'+\'+attrs.data.callingCodes[0]+\' \'+attrs.data.name"></span>\n  </ng-template>\n  <ion-auto-complete #search item-content [dataProvider]="country"\n                     [options]="{placeholder : \'Search your country\'}"\n                     [template]="withFlags"\n                     [showResultsFirst]="true"\n                     (itemSelected)="selectItem($event)"></ion-auto-complete>\n</ion-content>\n'/*ion-inline-end:"/Users/eyeline/Documents/GitHub/eyepaycashapp/src/pages/select-code/select-code.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */],
             __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */],
@@ -1227,7 +1227,7 @@ var MyApp = /** @class */ (function () {
         __metadata("design:type", __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* Nav */])
     ], MyApp.prototype, "nav", void 0);
     MyApp = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({template:/*ion-inline-start:"/Users/eyeline/Documents/eyepaycashappGitHub/src/app/app.html"*/'<ion-menu [content]="content">\n  <ion-header>\n    <ion-toolbar>\n      <ion-title>Menu</ion-title>\n    </ion-toolbar>\n  </ion-header>\n\n  <ion-content style="background-color: #f5f5f5">\n    <img src="assets/imgs/EPCLogo.png" alt="">\n    <ion-list>\n      <!--<button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">-->\n        <!--{{\'p.title\'|translate}}-->\n      <!--</button>-->\n      <button ion-item (click)="openPage(\'HomePage\')">{{\'INICIO\'|translate}}</button>\n      <button ion-item (click)="openPage(\'TransactionPage\')">{{\'TRANSACCION\'|translate}}</button>\n      <button ion-item (click)="openPage(\'HistoryPage\')">{{\'HISTORIAL\'|translate}}</button>\n      <button ion-item (click)="openPage(\'MapPage\')">{{\'MAPA\'|translate}}</button>\n      <button ion-item (click)="openPage(\'AccountPage\')">{{\'MI_CUENTA\'|translate}}</button>\n      <button ion-item (click)="openPage(\'SecurityPage\')">{{\'SEGURIDAD\'|translate}}</button>\n      <button ion-item (click)="cerrarSesion()">{{\'CERRAR_SESION\'|translate}}</button>\n    </ion-list>\n    <ion-list style="text-align: center">\n      <img src="assets/imgs/colombia.png" alt="" (click)="seleccionar(\'es\')" style="max-width: 100px">\n      <img src="assets/imgs/usa.png" alt="" (click)="seleccionar(\'en\')" style="max-width: 100px">\n    </ion-list>\n  </ion-content>\n\n</ion-menu>\n<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>\n<!--<ion-nav [root]="rootPage"></ion-nav>-->\n'/*ion-inline-end:"/Users/eyeline/Documents/eyepaycashappGitHub/src/app/app.html"*/
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({template:/*ion-inline-start:"/Users/eyeline/Documents/GitHub/eyepaycashapp/src/app/app.html"*/'<ion-menu [content]="content">\n  <ion-header>\n    <ion-toolbar>\n      <ion-title>Menu</ion-title>\n    </ion-toolbar>\n  </ion-header>\n\n  <ion-content style="background-color: #f5f5f5">\n    <img src="assets/imgs/EPCLogo.png" alt="">\n    <ion-list>\n      <!--<button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">-->\n        <!--{{\'p.title\'|translate}}-->\n      <!--</button>-->\n      <button ion-item (click)="openPage(\'HomePage\')">{{\'INICIO\'|translate}}</button>\n      <button ion-item (click)="openPage(\'TransactionPage\')">{{\'TRANSACCION\'|translate}}</button>\n      <button ion-item (click)="openPage(\'HistoryPage\')">{{\'HISTORIAL\'|translate}}</button>\n      <button ion-item (click)="openPage(\'MapPage\')">{{\'MAPA\'|translate}}</button>\n      <button ion-item (click)="openPage(\'AccountPage\')">{{\'MI_CUENTA\'|translate}}</button>\n      <button ion-item (click)="openPage(\'SecurityPage\')">{{\'SEGURIDAD\'|translate}}</button>\n      <button ion-item (click)="cerrarSesion()">{{\'CERRAR_SESION\'|translate}}</button>\n    </ion-list>\n    <ion-list style="text-align: center">\n      <img src="assets/imgs/colombia.png" alt="" (click)="seleccionar(\'es\')" style="max-width: 100px">\n      <img src="assets/imgs/usa.png" alt="" (click)="seleccionar(\'en\')" style="max-width: 100px">\n    </ion-list>\n  </ion-content>\n\n</ion-menu>\n<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>\n<!--<ion-nav [root]="rootPage"></ion-nav>-->\n'/*ion-inline-end:"/Users/eyeline/Documents/GitHub/eyepaycashapp/src/app/app.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* Platform */],
             __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */],
