@@ -45,16 +45,16 @@
             </ion-col>
             <ion-col col-8>
               <ion-input required type="number" name="numerocelular" [(ngModel)]="infoPhone.value"
-                         placeholder="Número movil (celular)" [brmasker]="{len:14}"></ion-input>
+                         placeholder="Número móvil (celular)" [brmasker]="{len:14}"></ion-input>
             </ion-col>
-            <ion-col col-12 *ngIf="response_verify.phone_code != null">
-              <label stacked>Por favor ingrese el código de verificación</label>
+            <ion-col col-12 *ngIf="codigoSend.phone_code != null && infoPhone.value != ''">
+              <label stacked>Ingrese el código de verificación (SMS)</label>
               <ion-input name="verifycode" [(ngModel)]="codeVerify" type="number" [brmasker]="{len:6}"></ion-input>
               <button class="buttonPayCash" (click)="verifyCode()" ion-button block>Verificar código</button>
             </ion-col>
           </ion-row>
           <button ion-button block class="buttonPayCash" (click)="changePhone()"
-                  *ngIf="response_verify.phone_code==null">
+                  *ngIf=" codigoSend.phone_code == null ">
             Enviar código de verificación
           </button>
         </ion-list>
@@ -64,16 +64,16 @@
             <label stacked> Por favor ingrese la nueva dirección email</label>
             <ion-col col-12 row>
               <ion-input name="correoelectronico" [(ngModel)]="valueMail.value"
-                         placeholder="Direcciòn email correo electrònico" type="mail"></ion-input>
+                         placeholder="Dirección email correo electrónico" type="mail"></ion-input>
             </ion-col>
-            <ion-col col-12 *ngIf="response_verify.mail_code != null">
-              <label stacked>Por favor ingrese el código de verificación</label>
+            <ion-col col-12 *ngIf="codigoSend.mail_code != null && valueMail.value != null">
+              <label stacked>Ingrese el código de verificación (E-mail)</label>
               <br>
               <ion-input name="verifycode" [(ngModel)]="codeVerifyMail" [brmasker]="{len:6}" type="number"></ion-input>
               <button class="buttonPayCash" (click)="verifyCodeMail()" ion-button block>Verificar código</button>
             </ion-col>
           </ion-row>
-          <button ion-button block class="buttonPayCash" (click)="changeMail()" *ngIf="response_verify.mail_code==null">
+          <button ion-button block class="buttonPayCash" (click)="changeMail()" *ngIf="codigoSend.mail_code==null">
             Actualizar dirección email
           </button>
         </ion-list>

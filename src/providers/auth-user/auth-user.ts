@@ -1,6 +1,7 @@
 import {Injectable} from '@angular/core';
 import {Api} from "../api";
 import {ToastController} from "ionic-angular";
+import { ModalErrorProvider } from '../modal-error/modal-error';
 
 @Injectable()
 export class AuthUserProvider {
@@ -42,7 +43,8 @@ export class AuthUserProvider {
   public check_terminos = false;
 
   constructor(protected api: Api,
-              public toastCtrl: ToastController
+			  public toastCtrl: ToastController,
+			  public errorProvider: ModalErrorProvider
   ) {
     this.trylogin();
   }
@@ -57,11 +59,9 @@ export class AuthUserProvider {
             this.setUserVerify(data.user.userVerify);
             resolve(data);
           } else {
-            let toast = this.toastCtrl.create({
-              message: 'Usuario o contraseña incorrectos',
-              duration: 3000,
-            });
-            toast.present();
+			this.errorProvider.obj.message = 'Usuario o contraseña incorrectos';
+			this.errorProvider.presentModal();
+
           }
         })
         .catch(err => reject(err))
