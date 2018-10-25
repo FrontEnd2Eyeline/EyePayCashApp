@@ -1,6 +1,10 @@
 webpackJsonp([10],{
 
-/***/ 721:
+<<<<<<< HEAD
+/***/ 720:
+=======
+/***/ 722:
+>>>>>>> 20c3dc4197dea109fe7ff7ba0ace49e6ef5ad4a4
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -8,7 +12,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ModalTransactionPageModule", function() { return ModalTransactionPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(26);
+<<<<<<< HEAD
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__modal_transaction__ = __webpack_require__(741);
+=======
+<<<<<<< HEAD
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__modal_transaction__ = __webpack_require__(741);
+=======
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__modal_transaction__ = __webpack_require__(743);
+>>>>>>> 20c3dc4197dea109fe7ff7ba0ace49e6ef5ad4a4
+>>>>>>> parent of d19dc66... Vers 1.1.1
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_brmasker_ionic_3__ = __webpack_require__(377);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ngx_translate_core__ = __webpack_require__(91);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -44,7 +56,15 @@ var ModalTransactionPageModule = /** @class */ (function () {
 
 /***/ }),
 
+<<<<<<< HEAD
 /***/ 741:
+=======
+<<<<<<< HEAD
+/***/ 741:
+=======
+/***/ 743:
+>>>>>>> 20c3dc4197dea109fe7ff7ba0ace49e6ef5ad4a4
+>>>>>>> parent of d19dc66... Vers 1.1.1
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
