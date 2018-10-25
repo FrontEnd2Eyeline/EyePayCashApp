@@ -29127,6 +29127,14 @@ ion-input, ion-textarea {
   border: 1px black solid;
 }
 
+.gradient {
+  background: #9569fc;
+  background: -webkit-gradient(left top, right top, color-stop(0%, #9569fc), color-stop(100%, #063896));
+  background: -webkit-gradient(linear, left top, right top, from(#9569fc), to(#063896));
+  background: linear-gradient(to right, #9569fc 0%, #063896 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#9569fc', endColorstr='#063896', GradientType=1 );
+}
+
 page-account .BackGR3 {
   background-image: url("../assets/icon/B3.png");
   background-position: center top;
@@ -29376,7 +29384,7 @@ page-home .imgLogoAmin {
 page-home .icoAnim2 {
   width: 30%;
   position: absolute;
-  margin-left: -38%;
+  margin-left: -36%;
   margin-top: 46%;
 }
 
@@ -29410,6 +29418,8 @@ page-home .animated {
   animation-duration: 2s;
   -webkit-animation-fill-mode: both;
   animation-fill-mode: both;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
 }
 
 page-home .animated2 {
@@ -29417,6 +29427,8 @@ page-home .animated2 {
   animation-duration: 5s;
   -webkit-animation-fill-mode: both;
   animation-fill-mode: both;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
 }
 
 page-home .animated.infinite {
@@ -29486,6 +29498,28 @@ page-language .img_background {
   background-repeat: no-repeat;
 }
 
+page-language .center {
+  text-align: center;
+  margin: auto;
+}
+
+page-language .mrgTop {
+  margin-top: 60%;
+}
+
+page-language .item-ios.item-block .item-inner, page-language .item-md.item-block .item-inner {
+  padding-right: 8px;
+  padding-right: 8px;
+  border-bottom: 0px solid #c8c7cc !important;
+}
+
+page-language .item-ios .item-button, page-language .item-md .item-button {
+  width: 50%;
+  padding: 0 0.5em;
+  height: 40px;
+  font-size: 1.3rem;
+}
+
 page-login .logo {
   width: 100%;
   display: unset;
@@ -29529,6 +29563,10 @@ page-login .logo {
   height: 80px;
   margin-top: 20%;
   display: inline-grid;
+}
+
+page-login .marginItems {
+  margin-bottom: 10%;
 }
 
 page-login .item-input .label-md, page-login .item-select .label-md, page-login .item-datetime .label-md {
@@ -29619,10 +29657,6 @@ page-modal-error .gradient {
   background: linear-gradient(to right, #9569fc 0%, #5974fb 100%);
 }
 
-page-modal-error .scroll-content {
-  background-color: transparent;
-}
-
 page-modal-error .footer-button {
   left: 0;
   bottom: 0;
@@ -29661,10 +29695,6 @@ page-modal-error .img_background {
   background-position: center top;
   background-size: 80%;
   background-repeat: no-repeat;
-}
-
-page-modal-error .content-md {
-  background-color: transparent;
 }
 
 page-modal-transaction ion-select {

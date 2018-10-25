@@ -1,7 +1,7 @@
 {
   "INICIAR_SESION":"Iniciar sesión",
-  "REGISTRARME":"Registrate",
-  "RECUPERAR_CONTRASENA":"Recuperar contraseña",
+  "REGISTRARME":"¿No tienes cuenta? Registrate.",
+  "RECUPERAR_CONTRASENA":"¿Problemas de acceso? Recuperar contraseña",
   "PRUEBA_EYEPAYCASH": "Prueba EYEPAYCASH",
   "TRANSACCION":"Transacción",
   "HISTORIAL":"Historial",

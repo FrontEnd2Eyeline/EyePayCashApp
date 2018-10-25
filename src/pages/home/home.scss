@@ -100,8 +100,9 @@ p{
 .icoAnim2{
   width: 30%;
     position: absolute;
-    margin-left: -38%;
+    margin-left: -36%;
     margin-top: 46%;
+
 }
 .imgLogo{
   width: 50%;
@@ -136,6 +137,8 @@ p{
   animation-duration: 2s;
   -webkit-animation-fill-mode: both;
   animation-fill-mode: both;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
 }
 
 .animated2 {
@@ -143,6 +146,8 @@ p{
   animation-duration: 5s;
   -webkit-animation-fill-mode: both;
   animation-fill-mode: both;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
 }
 
 .animated.infinite {

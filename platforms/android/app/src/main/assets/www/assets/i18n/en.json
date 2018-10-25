@@ -1,7 +1,7 @@
 {
   "INICIAR_SESION":"Login",
-  "REGISTRARME":"Sign up",
-  "RECUPERAR_CONTRASENA":"Recovery password",
+  "REGISTRARME":"You do not have an account? Sign up",
+  "RECUPERAR_CONTRASENA":"Access problems? Recovery password",
   "PRUEBA_EYEPAYCASH": "Try  EYEPAYCASH",
   "TRANSACCION":"Transaction",
   "HISTORIAL":"History",
