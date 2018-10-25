@@ -18,15 +18,16 @@ import {RegNumberPhonePageModule} from "../pages/reg-number-phone/reg-number-pho
 import {VerificationProvider} from '../providers/verification/verification';
 import {LoadInformationProvider} from '../providers/load-information/load-information';
 import {GoogleMaps} from "@ionic-native/google-maps";
-import { ValidationProvider } from '../providers/validation/validation';
-import { FormatterDateProvider } from '../providers/formatter-date/formatter-date';
+import {ValidationProvider} from '../providers/validation/validation';
+import {FormatterDateProvider} from '../providers/formatter-date/formatter-date';
 import {Clipboard} from "@ionic-native/clipboard";
-import { MapProvider } from '../providers/map/map';
+import {MapProvider} from '../providers/map/map';
 import {CurrencyPipe} from "@angular/common";
 import {Contacts} from "@ionic-native/contacts";
 import {TranslateHttpLoader} from "@ngx-translate/http-loader";
 import {TranslateLoader, TranslateModule} from "@ngx-translate/core";
-import { LenguageProvider } from '../providers/lenguage/lenguage';
+import {LenguageProvider} from '../providers/lenguage/lenguage';
+import {ModalErrorProvider} from "../providers/modal-error/modal-error";
 
 
 export function createTranslateLoader(http: HttpClient) {
@@ -76,7 +77,8 @@ export function createTranslateLoader(http: HttpClient) {
     MapProvider,
     CurrencyPipe,
     Contacts,
-    LenguageProvider
+    LenguageProvider,
+    ModalErrorProvider,
   ]
 })
 export class AppModule {

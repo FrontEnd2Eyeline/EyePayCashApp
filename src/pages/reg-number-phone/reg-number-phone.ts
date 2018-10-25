@@ -1,10 +1,10 @@
-import { Component } from '@angular/core';
-import { IonicPage, LoadingController, ModalController, NavController, NavParams, ToastController } from 'ionic-angular';
-import { SelectCodePage } from "../select-code/select-code";
-import { Api } from "../../providers/api";
-import { GeolocationProvider } from "../../providers/geolocation/geolocation";
-import { isArray } from "ionic-angular/util/util";
-import { ModalErrorProvider } from '../../providers/modal-error/modal-error';
+import {Component} from '@angular/core';
+import {IonicPage, LoadingController, ModalController, NavController, NavParams, ToastController} from 'ionic-angular';
+import {SelectCodePage} from "../select-code/select-code";
+import {Api} from "../../providers/api";
+import {GeolocationProvider} from "../../providers/geolocation/geolocation";
+import {isArray} from "ionic-angular/util/util";
+import {ModalErrorProvider} from '../../providers/modal-error/modal-error';
 
 /**
  * Generated class for the RegNumberPhonePage page.

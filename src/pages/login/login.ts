@@ -1,8 +1,8 @@
-import { Component, Input } from '@angular/core';
-import { IonicPage, LoadingController, ModalController, NavController, ToastController, ViewController } from 'ionic-angular';
-import { AuthUserProvider } from "../../providers/auth-user/auth-user";
-import { FormBuilder, FormControl, FormGroup, Validators } from "@angular/forms";
-import { ModalErrorProvider } from '../../providers/modal-error/modal-error';
+import {Component, Input} from '@angular/core';
+import {IonicPage, LoadingController, ModalController, NavController, ToastController} from 'ionic-angular';
+import {AuthUserProvider} from "../../providers/auth-user/auth-user";
+import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
+import {ModalErrorProvider} from '../../providers/modal-error/modal-error';
 
 @IonicPage()
 @Component({

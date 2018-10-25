@@ -1,6 +1,6 @@
 import {Component} from '@angular/core';
 import {IonicPage, NavController, NavParams} from 'ionic-angular';
-import {Contact, Contacts} from "@ionic-native/contacts";
+import {Contacts} from "@ionic-native/contacts";
 
 /**
  * Generated class for the ContactsPage page.

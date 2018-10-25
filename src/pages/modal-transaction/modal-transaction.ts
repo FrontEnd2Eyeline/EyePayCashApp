@@ -1,17 +1,17 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 import {
-	AlertController,
-	IonicPage,
-	LoadingController,
-	NavController,
-	NavParams,
-	ToastController,
-	ViewController
+  AlertController,
+  IonicPage,
+  LoadingController,
+  NavController,
+  NavParams,
+  ToastController,
+  ViewController
 } from 'ionic-angular';
-import { Api } from "../../providers/api";
-import { AuthUserProvider } from "../../providers/auth-user/auth-user";
-import { CurrencyPipe } from "@angular/common";
-import { ModalErrorProvider } from '../../providers/modal-error/modal-error';
+import {Api} from "../../providers/api";
+import {AuthUserProvider} from "../../providers/auth-user/auth-user";
+import {CurrencyPipe} from "@angular/common";
+import {ModalErrorProvider} from '../../providers/modal-error/modal-error';
 
 /**
  * Generated class for the ModalTransactionPage page.
@@ -32,18 +32,14 @@ export class ModalTransactionPage {
 	public currency: any = null;
 	public country: any;
 
-
-
-
-
-	private transaction: any = {
-		amount_local: null, // monto de dinero a transferir
-		phone_user_des: null, // numero de telefono de la persona a la que se va a transferir
-		key_user: null,  // clave manual de la transacciòn 4 digitos
-		country_id: null,  // id del pais
-		coin_id: null,     // id de la moneda
-		code_phone: null,   // Codigo del celular en el pais
-	};
+  private transaction: any = {
+    amount_local: null, // monto de dinero a transferir
+    phone_user_des: null, // numero de telefono de la persona a la que se va a transferir
+    key_user: null,  // clave manual de la transacciòn 4 digitos
+    country_id: null,  // id del pais
+    coin_id: null,     // id de la moneda
+    code_phone: null,   // Codigo del celular en el pais
+  };
 
 
 	constructor(
@@ -87,46 +83,29 @@ export class ModalTransactionPage {
 		// if (index > 0) {
 		// objtoSub.amount_local = this.transaction.amount_local.replace(new RegExp('\\.', 'g'), '');
 		//   objtoSub.amount_local = this.transaction.amount_local.replace(',', '.');
-		this.api.post('app/transaction', this.transaction, this.userProvider).then((data: any) => {
-			let toast = this.toastCtrl.create({
-				message: 'Transacción solicitada correctamente.',
-				showCloseButton: true,
-				closeButtonText: 'cerrar',
-				position: 'middle',
-			});
-			this.closeModal();
-			this.navCtrl.setPages([{ page: 'HomePage' }, { page: 'TransactionResumePage', params: data }]);
-			loading.dismiss();
-			toast.present();
-		}).catch(error => {
-			loading.dismiss();
-			let mensaje = "";
-			error.error.forEach(data => {
-				mensaje += data.message + "\n";
-			});
-			let toast = this.toastCtrl.create({
-				message: mensaje,
-				showCloseButton: true,
-				closeButtonText: 'cerrar',
-			});
-			toast.present();
-		});
-		// } else {
-		//   loading.dismiss();
-		//   let toast = this.toastCtrl.create({
-		//     message: 'Por favor ingrese un valor mayor a cero.',
-		//     showCloseButton: true,
-		//     closeButtonText: 'cerrar',
-		//     position: 'middle',
-		//   });
-		//   toast.present();
-		// }
-
-
+		if(this.userProvider.accessParam() != null){
+      this.api.post('app/transaction', this.transaction, this.userProvider).then((data: any) => {
+        this.closeModal();
+        this.errorProvider.obj.message = 'Transacción solicitada correctamente';
+        this.errorProvider.presentModal();
+        this.navCtrl.setPages([{ page: 'HomePage' }, { page: 'TransactionResumePage', params: data }]);
+        loading.dismiss();
+      }).catch(error => {
+        loading.dismiss();
+        let mensaje = "";
+        error.error.forEach(data => {
+          mensaje += data.message + "\n";
+        });
+        this.errorProvider.obj.message = mensaje;
+        this.errorProvider.presentModal();
+      });
+		}else{
+      this.errorProvider.obj.message = 'No se pudo realizar la solicitud. Por favor intentelo de nuevo.';
+      this.errorProvider.presentModal();
+		}
 	}
 
 	confirmTrasaction() {
-		console.log('Key user', this.transaction.key_user)
 		if (
 			this.transaction.amount_local != null &&
 			this.transaction.phone_user_des != null &&

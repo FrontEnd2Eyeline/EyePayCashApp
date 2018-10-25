@@ -1,9 +1,9 @@
-import { Component } from '@angular/core';
-import { IonicPage, LoadingController, ModalController, NavController, NavParams, ToastController } from 'ionic-angular';
-import { Api } from "../../providers/api";
-import { AuthUserProvider } from "../../providers/auth-user/auth-user";
-import { LoadInformationProvider } from "../../providers/load-information/load-information";
-import { ModalErrorProvider } from '../../providers/modal-error/modal-error';
+import {Component} from '@angular/core';
+import {IonicPage, LoadingController, ModalController, NavController, NavParams, ToastController} from 'ionic-angular';
+import {Api} from "../../providers/api";
+import {AuthUserProvider} from "../../providers/auth-user/auth-user";
+import {LoadInformationProvider} from "../../providers/load-information/load-information";
+import {ModalErrorProvider} from '../../providers/modal-error/modal-error';
 
 /**
  * Generated class for the TransactionPage page.

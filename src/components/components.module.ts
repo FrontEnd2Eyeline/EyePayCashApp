@@ -1,6 +1,7 @@
-import { NgModule } from '@angular/core';
-import { MsgErrorComponent } from './msg-error/msg-error';
+import {NgModule} from '@angular/core';
+import {MsgErrorComponent} from './msg-error/msg-error';
 import {CommonModule} from "@angular/common";
+
 @NgModule({
 	declarations: [MsgErrorComponent],
 	imports: [CommonModule],

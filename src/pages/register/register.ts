@@ -1,11 +1,11 @@
-import { Component } from '@angular/core';
-import { IonicPage, LoadingController, ModalController, NavController, NavParams, ToastController } from 'ionic-angular';
-import { Api } from "../../providers/api";
-import { AuthUserProvider } from "../../providers/auth-user/auth-user";
-import { PoliticasPage } from "../politicas/politicas";
-import { ModalWelcomePage } from "../modal-welcome/modal-welcome";
-import { FormControl, FormGroup, Validators } from "@angular/forms";
-import { ModalErrorProvider } from '../../providers/modal-error/modal-error';
+import {Component} from '@angular/core';
+import {IonicPage, LoadingController, ModalController, NavController, NavParams, ToastController} from 'ionic-angular';
+import {Api} from "../../providers/api";
+import {AuthUserProvider} from "../../providers/auth-user/auth-user";
+import {PoliticasPage} from "../politicas/politicas";
+import {ModalWelcomePage} from "../modal-welcome/modal-welcome";
+import {FormControl, FormGroup, Validators} from "@angular/forms";
+import {ModalErrorProvider} from '../../providers/modal-error/modal-error';
 
 @IonicPage()
 @Component({

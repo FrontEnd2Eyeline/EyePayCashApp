@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
 import {Api} from "../api";
 import {ToastController} from "ionic-angular";
-import { ModalErrorProvider } from '../modal-error/modal-error';
+import {ModalErrorProvider} from '../modal-error/modal-error';
 
 @Injectable()
 export class AuthUserProvider {

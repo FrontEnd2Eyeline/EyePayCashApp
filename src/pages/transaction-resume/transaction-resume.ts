@@ -3,7 +3,6 @@ import {IonicPage, LoadingController, NavController, NavParams} from 'ionic-angu
 import {Clipboard} from "@ionic-native/clipboard";
 
 
-
 @IonicPage()
 @Component({
   selector: 'page-transaction-resume',

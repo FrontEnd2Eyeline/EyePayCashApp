@@ -1,9 +1,8 @@
-import { Component } from '@angular/core';
-import { IonicPage, LoadingController, NavController, NavParams, ToastController } from 'ionic-angular';
-import { Api } from "../../providers/api";
-import { AuthUserProvider } from "../../providers/auth-user/auth-user";
-import { getLocaleDateFormat } from "@angular/common";
-import { ModalErrorProvider } from '../../providers/modal-error/modal-error';
+import {Component} from '@angular/core';
+import {IonicPage, LoadingController, NavController, NavParams, ToastController} from 'ionic-angular';
+import {Api} from "../../providers/api";
+import {AuthUserProvider} from "../../providers/auth-user/auth-user";
+import {ModalErrorProvider} from '../../providers/modal-error/modal-error';
 
 /**
  * Generated class for the HistoryPage page.

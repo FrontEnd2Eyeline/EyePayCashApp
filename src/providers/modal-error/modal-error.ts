@@ -1,7 +1,6 @@
-import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
-import { ModalController, NavParams } from 'ionic-angular';
-import { Api } from '../api';
+import {HttpClient} from '@angular/common/http';
+import {Injectable} from '@angular/core';
+import {ModalController} from 'ionic-angular';
 
 /*
   Generated class for the ModalErrorProvider provider.
