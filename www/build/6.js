@@ -1,7 +1,11 @@
 webpackJsonp([6],{
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 /***/ 722:
+=======
+/***/ 723:
+>>>>>>> parent of d19dc66... Vers 1.1.1
 =======
 /***/ 723:
 >>>>>>> parent of d19dc66... Vers 1.1.1
@@ -13,7 +17,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(26);
 <<<<<<< HEAD
+<<<<<<< HEAD
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__recovery_password__ = __webpack_require__(742);
+=======
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__recovery_password__ = __webpack_require__(744);
+>>>>>>> parent of d19dc66... Vers 1.1.1
 =======
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__recovery_password__ = __webpack_require__(744);
 >>>>>>> parent of d19dc66... Vers 1.1.1
@@ -50,7 +58,11 @@ var RecoveryPasswordPageModule = /** @class */ (function () {
 /***/ }),
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 /***/ 742:
+=======
+/***/ 744:
+>>>>>>> parent of d19dc66... Vers 1.1.1
 =======
 /***/ 744:
 >>>>>>> parent of d19dc66... Vers 1.1.1

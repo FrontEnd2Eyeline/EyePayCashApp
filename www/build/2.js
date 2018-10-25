@@ -1,7 +1,11 @@
 webpackJsonp([2],{
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 /***/ 724:
+=======
+/***/ 717:
+>>>>>>> parent of d19dc66... Vers 1.1.1
 =======
 /***/ 717:
 >>>>>>> parent of d19dc66... Vers 1.1.1
@@ -13,7 +17,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(26);
 <<<<<<< HEAD
+<<<<<<< HEAD
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__map__ = __webpack_require__(744);
+=======
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__map__ = __webpack_require__(737);
+>>>>>>> parent of d19dc66... Vers 1.1.1
 =======
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__map__ = __webpack_require__(737);
 >>>>>>> parent of d19dc66... Vers 1.1.1
@@ -61,7 +69,11 @@ var MapPageModule = /** @class */ (function () {
 /***/ }),
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 /***/ 744:
+=======
+/***/ 737:
+>>>>>>> parent of d19dc66... Vers 1.1.1
 =======
 /***/ 737:
 >>>>>>> parent of d19dc66... Vers 1.1.1
@@ -76,7 +88,11 @@ var MapPageModule = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_api__ = __webpack_require__(48);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_auth_user_auth_user__ = __webpack_require__(92);
 <<<<<<< HEAD
+<<<<<<< HEAD
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__app_mapStyle__ = __webpack_require__(745);
+=======
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__app_mapStyle__ = __webpack_require__(738);
+>>>>>>> parent of d19dc66... Vers 1.1.1
 =======
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__app_mapStyle__ = __webpack_require__(738);
 >>>>>>> parent of d19dc66... Vers 1.1.1
@@ -244,7 +260,11 @@ var MapPage = /** @class */ (function () {
 /***/ }),
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 /***/ 745:
+=======
+/***/ 738:
+>>>>>>> parent of d19dc66... Vers 1.1.1
 =======
 /***/ 738:
 >>>>>>> parent of d19dc66... Vers 1.1.1

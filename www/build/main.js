@@ -339,6 +339,7 @@ var map = {
 	],
 	"../pages/contacts/contacts.module": [
 <<<<<<< HEAD
+<<<<<<< HEAD
 		713,
 		16
 	],
@@ -352,6 +353,22 @@ var map = {
 	],
 	"../pages/home/home.module": [
 		715,
+=======
+		716,
+		16
+	],
+	"../pages/history-resume/history-resume.module": [
+		716,
+		15
+	],
+	"../pages/history/history.module": [
+<<<<<<< HEAD
+		713,
+		14
+	],
+	"../pages/home/home.module": [
+		725,
+>>>>>>> parent of d19dc66... Vers 1.1.1
 =======
 		716,
 		16
@@ -390,11 +407,20 @@ var map = {
 	],
 	"../pages/login/login.module": [
 <<<<<<< HEAD
+<<<<<<< HEAD
 		716,
 		1
 	],
 	"../pages/map/map.module": [
 		724,
+=======
+		715,
+>>>>>>> 20c3dc4197dea109fe7ff7ba0ace49e6ef5ad4a4
+		1
+	],
+	"../pages/map/map.module": [
+		717,
+>>>>>>> parent of d19dc66... Vers 1.1.1
 =======
 		715,
 >>>>>>> 20c3dc4197dea109fe7ff7ba0ace49e6ef5ad4a4
@@ -416,7 +442,10 @@ var map = {
 	],
 	"../pages/modal-welcome/modal-welcome.module": [
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> parent of d19dc66... Vers 1.1.1
 		721,
 		9
 	],
@@ -427,13 +456,21 @@ var map = {
 		10
 	],
 	"../pages/modal-welcome/modal-welcome.module": [
+<<<<<<< HEAD
+>>>>>>> parent of d19dc66... Vers 1.1.1
+=======
 >>>>>>> parent of d19dc66... Vers 1.1.1
 		720,
 		9
 	],
 	"../pages/password-update/password-update.module": [
 <<<<<<< HEAD
+<<<<<<< HEAD
 		719,
+=======
+		721,
+>>>>>>> 20c3dc4197dea109fe7ff7ba0ace49e6ef5ad4a4
+>>>>>>> parent of d19dc66... Vers 1.1.1
 =======
 		721,
 >>>>>>> 20c3dc4197dea109fe7ff7ba0ace49e6ef5ad4a4
@@ -446,7 +483,11 @@ var map = {
 	],
 	"../pages/recovery-password/recovery-password.module": [
 <<<<<<< HEAD
+<<<<<<< HEAD
 		722,
+=======
+		723,
+>>>>>>> parent of d19dc66... Vers 1.1.1
 =======
 		723,
 >>>>>>> parent of d19dc66... Vers 1.1.1
@@ -457,13 +498,19 @@ var map = {
 	],
 	"../pages/register/register.module": [
 <<<<<<< HEAD
+<<<<<<< HEAD
 		725,
 =======
 <<<<<<< HEAD
+=======
+>>>>>>> parent of d19dc66... Vers 1.1.1
 		726,
 =======
 		724,
 >>>>>>> 20c3dc4197dea109fe7ff7ba0ace49e6ef5ad4a4
+<<<<<<< HEAD
+>>>>>>> parent of d19dc66... Vers 1.1.1
+=======
 >>>>>>> parent of d19dc66... Vers 1.1.1
 		0
 	],
@@ -476,6 +523,7 @@ var map = {
 	],
 	"../pages/transaction-resume/transaction-resume.module": [
 <<<<<<< HEAD
+<<<<<<< HEAD
 		726,
 		4
 	],
@@ -483,6 +531,8 @@ var map = {
 		727,
 =======
 <<<<<<< HEAD
+=======
+>>>>>>> parent of d19dc66... Vers 1.1.1
 		728,
 		4
 	],
@@ -495,6 +545,9 @@ var map = {
 	"../pages/transaction/transaction.module": [
 		726,
 >>>>>>> 20c3dc4197dea109fe7ff7ba0ace49e6ef5ad4a4
+<<<<<<< HEAD
+>>>>>>> parent of d19dc66... Vers 1.1.1
+=======
 >>>>>>> parent of d19dc66... Vers 1.1.1
 		3
 	]
@@ -797,11 +850,14 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__providers_load_information_load_information__ = __webpack_require__(166);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__ionic_native_google_maps__ = __webpack_require__(380);
 <<<<<<< HEAD
+<<<<<<< HEAD
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__providers_validation_validation__ = __webpack_require__(378);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__providers_formatter_date_formatter_date__ = __webpack_require__(383);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__ionic_native_clipboard__ = __webpack_require__(379);
 =======
 <<<<<<< HEAD
+=======
+>>>>>>> parent of d19dc66... Vers 1.1.1
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__providers_validation_validation__ = __webpack_require__(379);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__providers_formatter_date_formatter_date__ = __webpack_require__(382);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__ionic_native_clipboard__ = __webpack_require__(378);
@@ -810,6 +866,9 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__providers_formatter_date_formatter_date__ = __webpack_require__(383);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__ionic_native_clipboard__ = __webpack_require__(379);
 >>>>>>> 20c3dc4197dea109fe7ff7ba0ace49e6ef5ad4a4
+<<<<<<< HEAD
+>>>>>>> parent of d19dc66... Vers 1.1.1
+=======
 >>>>>>> parent of d19dc66... Vers 1.1.1
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__providers_map_map__ = __webpack_require__(381);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__angular_common__ = __webpack_require__(33);
@@ -871,6 +930,7 @@ var AppModule = /** @class */ (function () {
                     links: [
                         { loadChildren: '../pages/account/account.module#AccountPageModule', name: 'AccountPage', segment: 'account', priority: 'low', defaultHistory: [] },
 <<<<<<< HEAD
+<<<<<<< HEAD
                         { loadChildren: '../pages/contacts/contacts.module#ContactsPageModule', name: 'ContactsPage', segment: 'contacts', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/history/history.module#HistoryPageModule', name: 'HistoryPage', segment: 'history', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/home/home.module#HomePageModule', name: 'HomePage', segment: 'app', priority: 'low', defaultHistory: [] },
@@ -882,6 +942,9 @@ var AppModule = /** @class */ (function () {
 =======
 <<<<<<< HEAD
                         { loadChildren: '../pages/history/history.module#HistoryPageModule', name: 'HistoryPage', segment: 'history', priority: 'low', defaultHistory: [] },
+=======
+                        { loadChildren: '../pages/history/history.module#HistoryPageModule', name: 'HistoryPage', segment: 'history', priority: 'low', defaultHistory: [] },
+>>>>>>> parent of d19dc66... Vers 1.1.1
                         { loadChildren: '../pages/history-resume/history-resume.module#HistoryResumePageModule', name: 'HistoryResumePage', segment: 'history-resume', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/language/language.module#LanguagePageModule', name: 'LanguagePage', segment: 'language', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/contacts/contacts.module#ContactsPageModule', name: 'ContactsPage', segment: 'contacts', priority: 'low', defaultHistory: [] },
@@ -900,6 +963,9 @@ var AppModule = /** @class */ (function () {
 >>>>>>> 20c3dc4197dea109fe7ff7ba0ace49e6ef5ad4a4
                         { loadChildren: '../pages/modal-welcome/modal-welcome.module#ModalWelcomePageModule', name: 'ModalWelcomePage', segment: 'modal-welcome', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/password-update/password-update.module#PasswordUpdatePageModule', name: 'PasswordUpdatePage', segment: 'password-update', priority: 'low', defaultHistory: [] },
+<<<<<<< HEAD
+>>>>>>> parent of d19dc66... Vers 1.1.1
+=======
 >>>>>>> parent of d19dc66... Vers 1.1.1
                         { loadChildren: '../pages/modal-transaction/modal-transaction.module#ModalTransactionPageModule', name: 'ModalTransactionPage', segment: 'modal-transaction', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/recovery-password/recovery-password.module#RecoveryPasswordPageModule', name: 'RecoveryPasswordPage', segment: 'recovery-password', priority: 'low', defaultHistory: [] },
@@ -911,12 +977,15 @@ var AppModule = /** @class */ (function () {
                         { loadChildren: '../pages/map/map.module#MapPageModule', name: 'MapPage', segment: 'map', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/register/register.module#RegisterPageModule', name: 'RegisterPage', segment: 'register', priority: 'low', defaultHistory: [] },
 <<<<<<< HEAD
+<<<<<<< HEAD
                         { loadChildren: '../pages/select-code/select-code.module#SelectCodePageModule', name: 'SelectCodePage', segment: 'select-code', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/transaction-resume/transaction-resume.module#TransactionResumePageModule', name: 'TransactionResumePage', segment: 'transaction-resume', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/transaction/transaction.module#TransactionPageModule', name: 'TransactionPage', segment: 'transaction', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/security/security.module#SecurityPageModule', name: 'SecurityPage', segment: 'security', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/politicas/politicas.module#PoliticasPageModule', name: 'PoliticasPage', segment: 'politicas', priority: 'low', defaultHistory: [] }
 =======
+=======
+>>>>>>> parent of d19dc66... Vers 1.1.1
                         { loadChildren: '../pages/security/security.module#SecurityPageModule', name: 'SecurityPage', segment: 'security', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/select-code/select-code.module#SelectCodePageModule', name: 'SelectCodePage', segment: 'select-code', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/transaction-resume/transaction-resume.module#TransactionResumePageModule', name: 'TransactionResumePage', segment: 'transaction-resume', priority: 'low', defaultHistory: [] },
@@ -931,6 +1000,9 @@ var AppModule = /** @class */ (function () {
                         { loadChildren: '../pages/security/security.module#SecurityPageModule', name: 'SecurityPage', segment: 'security', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/politicas/politicas.module#PoliticasPageModule', name: 'PoliticasPage', segment: 'politicas', priority: 'low', defaultHistory: [] }
 >>>>>>> 20c3dc4197dea109fe7ff7ba0ace49e6ef5ad4a4
+<<<<<<< HEAD
+>>>>>>> parent of d19dc66... Vers 1.1.1
+=======
 >>>>>>> parent of d19dc66... Vers 1.1.1
                     ]
                 }),
@@ -1370,7 +1442,11 @@ var MyApp = /** @class */ (function () {
     ], MyApp.prototype, "nav", void 0);
     MyApp = __decorate([
 <<<<<<< HEAD
+<<<<<<< HEAD
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({template:/*ion-inline-start:"/Users/eyeline/Documents/eyepaycashappGitHub/src/app/app.html"*/'<ion-menu [content]="content">\n  <ion-header>\n    <ion-toolbar>\n      <ion-title>Menu</ion-title>\n    </ion-toolbar>\n  </ion-header>\n\n  <ion-content style="background-color: #f5f5f5">\n    <img src="assets/imgs/EPCLogo.png" alt="">\n    <ion-list>\n      <!--<button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">-->\n        <!--{{\'p.title\'|translate}}-->\n      <!--</button>-->\n      <button ion-item (click)="openPage(\'HomePage\')">{{\'INICIO\'|translate}}</button>\n      <button ion-item (click)="openPage(\'TransactionPage\')">{{\'TRANSACCION\'|translate}}</button>\n      <button ion-item (click)="openPage(\'HistoryPage\')">{{\'HISTORIAL\'|translate}}</button>\n      <button ion-item (click)="openPage(\'MapPage\')">{{\'MAPA\'|translate}}</button>\n      <button ion-item (click)="openPage(\'AccountPage\')">{{\'MI_CUENTA\'|translate}}</button>\n      <button ion-item (click)="openPage(\'SecurityPage\')">{{\'SEGURIDAD\'|translate}}</button>\n      <button ion-item (click)="cerrarSesion()">{{\'CERRAR_SESION\'|translate}}</button>\n    </ion-list>\n    <ion-list style="text-align: center">\n      <img src="assets/imgs/colombia.png" alt="" (click)="seleccionar(\'es\')" style="max-width: 100px">\n      <img src="assets/imgs/usa.png" alt="" (click)="seleccionar(\'en\')" style="max-width: 100px">\n    </ion-list>\n  </ion-content>\n\n</ion-menu>\n<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>\n<!--<ion-nav [root]="rootPage"></ion-nav>-->\n'/*ion-inline-end:"/Users/eyeline/Documents/eyepaycashappGitHub/src/app/app.html"*/
+=======
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({template:/*ion-inline-start:"/Users/eyeline/Documents/GitHub/eyepaycashapp/src/app/app.html"*/'<ion-menu [content]="content">\n  <ion-header>\n    <ion-toolbar>\n      <ion-title>Menu</ion-title>\n    </ion-toolbar>\n  </ion-header>\n\n  <ion-content style="background-color: #f5f5f5">\n    <img src="assets/imgs/EPCLogo.png" alt="">\n    <ion-list>\n      <!--<button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">-->\n        <!--{{\'p.title\'|translate}}-->\n      <!--</button>-->\n      <button ion-item (click)="openPage(\'HomePage\')">{{\'INICIO\'|translate}}</button>\n      <button ion-item (click)="openPage(\'TransactionPage\')">{{\'TRANSACCION\'|translate}}</button>\n      <button ion-item (click)="openPage(\'HistoryPage\')">{{\'HISTORIAL\'|translate}}</button>\n      <button ion-item (click)="openPage(\'MapPage\')">{{\'MAPA\'|translate}}</button>\n      <button ion-item (click)="openPage(\'AccountPage\')">{{\'MI_CUENTA\'|translate}}</button>\n      <button ion-item (click)="openPage(\'SecurityPage\')">{{\'SEGURIDAD\'|translate}}</button>\n      <button ion-item (click)="cerrarSesion()">{{\'CERRAR_SESION\'|translate}}</button>\n    </ion-list>\n    <ion-list style="text-align: center">\n      <img src="assets/imgs/colombia.png" alt="" (click)="seleccionar(\'es\')" style="max-width: 100px">\n      <img src="assets/imgs/usa.png" alt="" (click)="seleccionar(\'en\')" style="max-width: 100px">\n    </ion-list>\n  </ion-content>\n\n</ion-menu>\n<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>\n<!--<ion-nav [root]="rootPage"></ion-nav>-->\n'/*ion-inline-end:"/Users/eyeline/Documents/GitHub/eyepaycashapp/src/app/app.html"*/
+>>>>>>> parent of d19dc66... Vers 1.1.1
 =======
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({template:/*ion-inline-start:"/Users/eyeline/Documents/GitHub/eyepaycashapp/src/app/app.html"*/'<ion-menu [content]="content">\n  <ion-header>\n    <ion-toolbar>\n      <ion-title>Menu</ion-title>\n    </ion-toolbar>\n  </ion-header>\n\n  <ion-content style="background-color: #f5f5f5">\n    <img src="assets/imgs/EPCLogo.png" alt="">\n    <ion-list>\n      <!--<button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">-->\n        <!--{{\'p.title\'|translate}}-->\n      <!--</button>-->\n      <button ion-item (click)="openPage(\'HomePage\')">{{\'INICIO\'|translate}}</button>\n      <button ion-item (click)="openPage(\'TransactionPage\')">{{\'TRANSACCION\'|translate}}</button>\n      <button ion-item (click)="openPage(\'HistoryPage\')">{{\'HISTORIAL\'|translate}}</button>\n      <button ion-item (click)="openPage(\'MapPage\')">{{\'MAPA\'|translate}}</button>\n      <button ion-item (click)="openPage(\'AccountPage\')">{{\'MI_CUENTA\'|translate}}</button>\n      <button ion-item (click)="openPage(\'SecurityPage\')">{{\'SEGURIDAD\'|translate}}</button>\n      <button ion-item (click)="cerrarSesion()">{{\'CERRAR_SESION\'|translate}}</button>\n    </ion-list>\n    <ion-list style="text-align: center">\n      <img src="assets/imgs/colombia.png" alt="" (click)="seleccionar(\'es\')" style="max-width: 100px">\n      <img src="assets/imgs/usa.png" alt="" (click)="seleccionar(\'en\')" style="max-width: 100px">\n    </ion-list>\n  </ion-content>\n\n</ion-menu>\n<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>\n<!--<ion-nav [root]="rootPage"></ion-nav>-->\n'/*ion-inline-end:"/Users/eyeline/Documents/GitHub/eyepaycashapp/src/app/app.html"*/
 >>>>>>> parent of d19dc66... Vers 1.1.1

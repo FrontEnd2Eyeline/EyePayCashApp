@@ -1,13 +1,19 @@
 webpackJsonp([8],{
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 /***/ 719:
 =======
 <<<<<<< HEAD
+=======
+>>>>>>> parent of d19dc66... Vers 1.1.1
 /***/ 722:
 =======
 /***/ 721:
 >>>>>>> 20c3dc4197dea109fe7ff7ba0ace49e6ef5ad4a4
+<<<<<<< HEAD
+>>>>>>> parent of d19dc66... Vers 1.1.1
+=======
 >>>>>>> parent of d19dc66... Vers 1.1.1
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -17,13 +23,19 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(26);
 <<<<<<< HEAD
+<<<<<<< HEAD
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__password_update__ = __webpack_require__(739);
 =======
 <<<<<<< HEAD
+=======
+>>>>>>> parent of d19dc66... Vers 1.1.1
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__password_update__ = __webpack_require__(743);
 =======
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__password_update__ = __webpack_require__(742);
 >>>>>>> 20c3dc4197dea109fe7ff7ba0ace49e6ef5ad4a4
+<<<<<<< HEAD
+>>>>>>> parent of d19dc66... Vers 1.1.1
+=======
 >>>>>>> parent of d19dc66... Vers 1.1.1
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ngx_translate_core__ = __webpack_require__(91);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -58,13 +70,19 @@ var PasswordUpdatePageModule = /** @class */ (function () {
 /***/ }),
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 /***/ 739:
 =======
 <<<<<<< HEAD
+=======
+>>>>>>> parent of d19dc66... Vers 1.1.1
 /***/ 743:
 =======
 /***/ 742:
 >>>>>>> 20c3dc4197dea109fe7ff7ba0ace49e6ef5ad4a4
+<<<<<<< HEAD
+>>>>>>> parent of d19dc66... Vers 1.1.1
+=======
 >>>>>>> parent of d19dc66... Vers 1.1.1
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 

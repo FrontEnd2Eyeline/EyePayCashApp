@@ -16,7 +16,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__modal_transaction__ = __webpack_require__(741);
 =======
 <<<<<<< HEAD
+<<<<<<< HEAD
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__modal_transaction__ = __webpack_require__(741);
+=======
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__modal_transaction__ = __webpack_require__(743);
+>>>>>>> 20c3dc4197dea109fe7ff7ba0ace49e6ef5ad4a4
+>>>>>>> parent of d19dc66... Vers 1.1.1
 =======
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__modal_transaction__ = __webpack_require__(743);
 >>>>>>> 20c3dc4197dea109fe7ff7ba0ace49e6ef5ad4a4
@@ -60,7 +65,12 @@ var ModalTransactionPageModule = /** @class */ (function () {
 /***/ 741:
 =======
 <<<<<<< HEAD
+<<<<<<< HEAD
 /***/ 741:
+=======
+/***/ 743:
+>>>>>>> 20c3dc4197dea109fe7ff7ba0ace49e6ef5ad4a4
+>>>>>>> parent of d19dc66... Vers 1.1.1
 =======
 /***/ 743:
 >>>>>>> 20c3dc4197dea109fe7ff7ba0ace49e6ef5ad4a4
