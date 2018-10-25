@@ -1,17 +1,17 @@
 
-//.buttonPayCash {
-//  background: rgba(149, 105, 252, 1);
-//  background: -moz-linear-gradient(left, rgba(149, 105, 252, 1) 0%, rgba(89, 116, 251, 1) 100%);
-//  background: -webkit-gradient(left top, right top, color-stop(0%, rgba(149, 105, 252, 1)), color-stop(100%, rgba(89, 116, 251, 1)));
-//  background: -webkit-linear-gradient(left, rgba(149, 105, 252, 1) 0%, rgba(89, 116, 251, 1) 100%);
-//  background: -o-linear-gradient(left, rgba(149, 105, 252, 1) 0%, rgba(89, 116, 251, 1) 100%);
-//  background: -ms-linear-gradient(left, rgba(149, 105, 252, 1) 0%, rgba(89, 116, 251, 1) 100%);
-//  background: linear-gradient(to right, rgba(149, 105, 252, 1) 0%, rgba(89, 116, 251, 1) 100%);
-//  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#9569fc', endColorstr='#5974fb', GradientType=1);
-//  color: white;
-//  font-weight: bold;
-//  border-radius: 8px;
-//}
+.buttonPayCash {
+  background: rgba(149, 105, 252, 1);
+  background: -moz-linear-gradient(left, rgba(149, 105, 252, 1) 0%, rgba(89, 116, 251, 1) 100%);
+  background: -webkit-gradient(left top, right top, color-stop(0%, rgba(149, 105, 252, 1)), color-stop(100%, rgba(89, 116, 251, 1)));
+  background: -webkit-linear-gradient(left, rgba(149, 105, 252, 1) 0%, rgba(89, 116, 251, 1) 100%);
+  background: -o-linear-gradient(left, rgba(149, 105, 252, 1) 0%, rgba(89, 116, 251, 1) 100%);
+  background: -ms-linear-gradient(left, rgba(149, 105, 252, 1) 0%, rgba(89, 116, 251, 1) 100%);
+  background: linear-gradient(to right, rgba(149, 105, 252, 1) 0%, rgba(89, 116, 251, 1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#9569fc', endColorstr='#5974fb', GradientType=1);
+  color: white;
+  font-weight: bold;
+  border-radius: 8px;
+}
 //
 //.alert-md .alert-wrapper {
 //  border-radius: 15px;
@@ -40,8 +40,6 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#9569fc', end
   content: "\f377";
 }
 .bar-button-default-md, .bar-button-clear-md-default, .bar-button-md-default {
-
-
   color: rgba(149,105,252,1);
   color: -moz-linear-gradient(left, rgba(149,105,252,1) 0%, rgba(6,56,150,1) 100%);
   color: -webkit-gradient(left top, right top, color-stop(0%, rgba(149,105,252,1)), color-stop(100%, rgba(6,56,150,1)));
@@ -84,9 +82,4 @@ ion-popover ion-backdrop {
 ion-input, ion-textarea{
   border: 1px black solid;
 }
-//================= PARA EL FOOTER
-
-
-
-// navbar
 

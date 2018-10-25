@@ -5,14 +5,16 @@ page-modal-error {
 	width: 80% !important;
 	height: 50% !important;
 	border-radius: 25px !important;
-	background: rgba(0, 0, 0, 0.5);
 
 	ion-content{
 		text-align: center
 	}
 
+	.scroll-content{
+		background: linear-gradient(to right, rgba(149, 105, 252, 1) 0%, rgba(89, 116, 251, 1) 100%);
+	}
 	.center-obj{
-		margin-top: 50%;
+		//margin-top: 50%;
 	}
 
 	.footer-button{
@@ -46,6 +48,13 @@ page-modal-error {
 	.button-md.activated{
 		color:blue;
 		background: white;
+	}
+
+	.img_background {
+		background-image: url('../assets/backgrounds/fondo_modal.png');
+		background-position: center top;
+		background-size: 80%;
+		background-repeat: no-repeat;
 	}
 
 }

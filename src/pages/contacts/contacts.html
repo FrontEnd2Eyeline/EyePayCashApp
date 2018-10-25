@@ -9,9 +9,9 @@
 <ion-content padding>
   <ion-list>
     <ion-item *ngFor="let contacto of listaContactos">
-      <!--<ion-avatar item-start>-->
-        <!--<img [src]="contacto.photos[0].value ">-->
-      <!--</ion-avatar>-->
+      <ion-avatar item-start>
+        <img src="assets/imgs/contacto.png">
+      </ion-avatar>
       <h2>{{contacto.displayName | uppercase }}</h2>
       <p>{{contacto.phoneNumbers[0].value}}</p>
     </ion-item>

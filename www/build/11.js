@@ -78,7 +78,7 @@ var ModalErrorPage = /** @class */ (function () {
     };
     ModalErrorPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-            selector: 'page-modal-error',template:/*ion-inline-start:"/Users/eyeline/Documents/eyepaycashappGitHub/src/pages/modal-error/modal-error.html"*/'<!--\n  Generated template for the ModalErrorPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n\n\n\n<ion-content padding>\n	<div class="center-obj">{{obj.message}}</div>\n\n		<div class="footer-button">\n				<button ion-button (click)="closeModal()">Aceptar</button>\n		</div>\n	\n</ion-content>\n'/*ion-inline-end:"/Users/eyeline/Documents/eyepaycashappGitHub/src/pages/modal-error/modal-error.html"*/,
+            selector: 'page-modal-error',template:/*ion-inline-start:"/Users/eyeline/Documents/eyepaycashappGitHub/src/pages/modal-error/modal-error.html"*/'<!--\n  Generated template for the ModalErrorPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n\n\n\n<ion-content class="img_background">\n	<img src="assets/imgs/error.png" alt="">\n	<div class="center-obj" style="color: white">{{obj.message}}</div>\n		<div class="footer-button">\n				<button ion-button (click)="closeModal()" class="buttonPayCash">Aceptar</button>\n		</div>\n	\n</ion-content>\n'/*ion-inline-end:"/Users/eyeline/Documents/eyepaycashappGitHub/src/pages/modal-error/modal-error.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */],
             __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */],

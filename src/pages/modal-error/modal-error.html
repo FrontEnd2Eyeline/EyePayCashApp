@@ -7,11 +7,11 @@
 
 
 
-<ion-content padding>
-	<div class="center-obj">{{obj.message}}</div>
-
+<ion-content class="img_background">
+	<img src="assets/imgs/error.png" alt="">
+	<div class="center-obj" style="color: white">{{obj.message}}</div>
 		<div class="footer-button">
-				<button ion-button (click)="closeModal()">Aceptar</button>
+				<button ion-button (click)="closeModal()" class="buttonPayCash">Aceptar</button>
 		</div>
 	
 </ion-content>

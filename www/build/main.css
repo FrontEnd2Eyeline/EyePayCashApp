@@ -29052,6 +29052,17 @@ ion-auto-complete ul li:hover {
   background: #f1f1f1;
 }
 
+.buttonPayCash {
+  background: #9569fc;
+  background: -webkit-gradient(left top, right top, color-stop(0%, #9569fc), color-stop(100%, #5974fb));
+  background: -webkit-gradient(linear, left top, right top, from(#9569fc), to(#5974fb));
+  background: linear-gradient(to right, #9569fc 0%, #5974fb 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#9569fc', endColorstr='#5974fb', GradientType=1);
+  color: white;
+  font-weight: bold;
+  border-radius: 8px;
+}
+
 .bar-buttons-md {
   background: transparent !important;
 }
@@ -29502,15 +29513,15 @@ page-modal-error {
   width: 80% !important;
   height: 50% !important;
   border-radius: 25px !important;
-  background: rgba(0, 0, 0, 0.5);
 }
 
 page-modal-error ion-content {
   text-align: center;
 }
 
-page-modal-error .center-obj {
-  margin-top: 50%;
+page-modal-error .scroll-content {
+  background: -webkit-gradient(linear, left top, right top, from(#9569fc), to(#5974fb));
+  background: linear-gradient(to right, #9569fc 0%, #5974fb 100%);
 }
 
 page-modal-error .footer-button {
@@ -29544,6 +29555,13 @@ page-modal-error .button-md {
 page-modal-error .button-md.activated {
   color: blue;
   background: white;
+}
+
+page-modal-error .img_background {
+  background-image: url("../assets/backgrounds/fondo_modal.png");
+  background-position: center top;
+  background-size: 80%;
+  background-repeat: no-repeat;
 }
 
 page-modal-transaction ion-select {
