@@ -29519,7 +29519,7 @@ page-modal-error ion-content {
   text-align: center;
 }
 
-page-modal-error .scroll-content {
+page-modal-error .gradient {
   background: -webkit-gradient(linear, left top, right top, from(#9569fc), to(#5974fb));
   background: linear-gradient(to right, #9569fc 0%, #5974fb 100%);
 }
