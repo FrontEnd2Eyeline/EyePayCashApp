@@ -38,6 +38,10 @@ export class SecurityPage {
 		phone_code: null,
 		country_id: null,
 	};
+	public codigoSend: any = {
+		phone_code : null,
+		mail_code: null,
+	};
 
 	public codeVerify = null;
 	public codeVerifyMail = null;
@@ -80,6 +84,10 @@ export class SecurityPage {
 		});
 	}
 
+	codePhone(){
+		
+	}
+
 	verifyCode() {
 		if (this.response_verify.phone_code === this.codeVerify) {
 			let loading = this.loadingCtrl.create({
@@ -90,16 +98,10 @@ export class SecurityPage {
 				type: 'phone',
 			}).then((data: any) => {
 				this.errorProvider.obj.message = 'Información actualizada correctamente';
-				// let toast = this.toastCtrl.create({
-				//   message: 'Información actualizada correctamente.',
-				//   showCloseButton: true,
-				//   closeButtonText: 'cerrar',
-				// //   position: 'middle',
-				// });
+
 				this.usuario.phone = data.phone;
 				loading.dismiss();
 				this.errorProvider.presentModal();
-				// toast.present();
 				this.userProvider.user_Info.phone = this.infoPhone.value;
 				this.userProvider.setUser(this.userProvider.user_Info);
 				this.usuario = this.userProvider.user_Info;
@@ -112,23 +114,12 @@ export class SecurityPage {
 				loading.dismiss();
 				this.errorProvider.obj.message = mensaje;
 				this.errorProvider.presentModal();
-				// let toast = this.toastCtrl.create({
-				//   message: mensaje,
-				//   showCloseButton: true,
-				//   closeButtonText: 'cerrar',
-				// });
-				// toast.present();
+
 			});
 		} else {
 			this.errorProvider.obj.message = 'Código incorrecto';
 			this.errorProvider.presentModal();
-			//   let toast = this.toastCtrl.create({
-			//     message: 'Código incorrecto.',
-			//     showCloseButton: true,
-			//     closeButtonText: 'cerrar',
-			//     position: 'middle',
-			//   });
-			//   toast.present();
+
 		}
 	}
 
@@ -144,16 +135,13 @@ export class SecurityPage {
 				(data: any) => {
 					this.errorProvider.obj.message = 'Se ha enviado un código de verificación al número celular.';
 
-					//   let toast = this.toastCtrl.create({
-					//     message: 'Se ha enviado un código de verificación al número celular.',
-					//     showCloseButton: true,
-					//     closeButtonText: 'cerrar',
-					//     position: 'middle',
-					//   });
+
 					loading.dismiss();
 					this.errorProvider.presentModal();
-					//   toast.present();
 					this.response_verify = data;
+					this.codigoSend.phone_code = this.response_verify.phone_code;
+					this.codigoSend.mail_code = null;
+					console.log('email', this.codigoSend.mail_code)
 				}
 			).catch(error => {
 				let mensaje = '';
@@ -163,23 +151,12 @@ export class SecurityPage {
 				loading.dismiss();
 				this.errorProvider.obj.message = mensaje;
 				this.errorProvider.presentModal();
-				// let toast = this.toastCtrl.create({
-				//   message: mensaje,
-				//   showCloseButton: true,
-				//   closeButtonText: 'cerrar',
-				// });
-				// toast.present();
+
 			});
 		} else {
 			this.errorProvider.obj.message = 'Por favor seleccione el país e ingrese su nuemo número celular';
 			this.errorProvider.presentModal();
-			//   let toast = this.toastCtrl.create({
-			//     message: 'Por favor seleccione el país e ingrese su nuevo número celular.',
-			//     closeButtonText: 'cerrar',
-			//     showCloseButton: true,
-			//     position: 'middle',
-			//   });
-			//   toast.present();
+
 		}
 	}
 
@@ -194,12 +171,7 @@ export class SecurityPage {
 				type: 'mail',
 			}).then((data: any) => {
 				this.errorProvider.obj.message = 'Informacion actualizada correctamente';
-				// let toast = this.toastCtrl.create({
-				//   showCloseButton: true,
-				//   closeButtonText: 'cerrar',
-				//   position: 'middle',
-				//   message: 'Información actualizada correctamente.',
-				// });
+
 				loading.dismiss();
 				console.log(data);
 				this.usuario.mail = data.mail;
@@ -211,72 +183,52 @@ export class SecurityPage {
 				error.error.forEach(data => {
 					mensaje += data.message + "\n";
 				});
-				let toast = this.toastCtrl.create({
-					message: mensaje,
-					showCloseButton: true,
-					closeButtonText: 'cerrar',
-				});
+				this.errorProvider.obj.message = mensaje;
 				loading.dismiss();
-				toast.present();
+				this.errorProvider.presentModal();
 			});
 		} else {
 			this.errorProvider.obj.message = 'Los códigos de verificación no coinciden';
 			this.errorProvider.presentModal();
-			//   let toast = this.toastCtrl.create({
-			//     message: 'Los códigos de verificación no coinciden.',
-			//     showCloseButton: true,
-			//     closeButtonText: 'cerrar',
-			//     position: 'middle',
-			//   });
-			//   toast.present();
+
 		}
 	}
 
 	changeMail() {
-		if (this.valueMail != null) {
+		if (this.valueMail.value != null && this.valueMail.value != '') {
 			let loading = this.loadingCtrl.create({
 				spinner: 'dots',
 			});
+			console.log('mail', this.valueMail);
+
+			console.log('phone', this.infoPhone.value);
 			this.errorProvider.obj.message = 'Se ha enviado un correo electrónico de verificacioón a su direccioón e-mail';
-			//   let toast = this.toastCtrl.create({
-			//     message: 'Se ha enviado un correo electrónico de verificación a su dirección email.',
-			//     showCloseButton: true,
-			//     closeButtonText: 'cerrar',
-			//     position: 'middle',
-			//   });
+			this.infoPhone.value = null;
 			loading.present();
 			this.valueMail.type = 'mail';
+			
 			this.api.post('account/update-contact', this.valueMail, this.userProvider).then((data: any) => {
 				loading.dismiss();
 				this.errorProvider.presentModal();
-				// toast.present();
 				console.log(data);
 				this.response_verify = data;
+				this.codigoSend.phone_code = null;
+				this.codigoSend.mail_code = this.response_verify.mail_code;
+			console.log('code phone', this.codigoSend.phone_code)
 			}).catch(error => {
 				let mensaje = '';
 				error.error.forEach(data => {
 					mensaje += data.message + "\n";
 				});
 				this.errorProvider.obj.message = mensaje;
-				// let toast = this.toastCtrl.create({
-				//   message: mensaje,
-				//   showCloseButton: true,
-				//   closeButtonText: 'cerrar',
-				// });
+
 				loading.dismiss();
 				this.errorProvider.presentModal();
-				// toast.present();
 			});
 		} else {
 			this.errorProvider.obj.message = 'Por favor ingrese una direccioón e-mail';
 			this.errorProvider.presentModal();
-			//   let toast = this.toastCtrl.create({
-			//     message: 'Por favor ingrese una dirección email.',
-			//     position: 'middle',
-			//     showCloseButton: true,
-			//     closeButtonText: 'cerrar',
-			//   });
-			//   toast.present();
+	
 		}
 	}
 
