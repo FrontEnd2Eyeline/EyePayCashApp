@@ -3,6 +3,7 @@ import {IonicPage, LoadingController, NavController, NavParams, ToastController}
 import {Api} from "../../providers/api";
 import {AuthUserProvider} from "../../providers/auth-user/auth-user";
 import {ModalErrorProvider} from '../../providers/modal-error/modal-error';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 /**
  * Generated class for the RecoveryPasswordPage page.
@@ -22,10 +23,17 @@ export class RecoveryPasswordPage {
 	public data = null;
 	public type = 'phone';
 	public codigo = null;
-
 	public iscodigo = false;
-
+	public iscodigo2 = false;
 	private reset: any;
+
+	formGroup = new FormGroup({
+		data: new FormControl('', [
+			Validators.required,
+			Validators.pattern('^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$'),
+			Validators.maxLength(70),
+		]),
+	});
 
 	constructor(public navCtrl: NavController,
 		public navParams: NavParams,
@@ -39,26 +47,25 @@ export class RecoveryPasswordPage {
 
 	sendMessage(type) {
 		this.type = type;
-		if (this.data != null) {
+		if (this.formGroup.value.data != null) {
 			let loading = this.loadingCtrl.create({
 				spinner: 'dots'
 			});
 			loading.present();
-			this.api.post('auth/restar-password', { 'type': this.type, 'data': this.data }).then(
+			// this.api.post('auth/restar-password', { 'type': this.type, 'data': this.data }).then(
+				this.api.post('auth/restar-password', {'type': this.type, 'data': this.formGroup.value.data}).then(
 				(data) => {
 					loading.dismiss();
+					if(type!="phone"){
 					this.iscodigo = true;
+				}else{
+					this.iscodigo2 = true;
+				}
 					this.reset = data;
 					this.data = null;
 					this.errorProvider.obj.message = 'Se ha enviado un código de verificación';
 					this.errorProvider.presentModal();
-					//   let toast = this.toastCtrl.create({
-					//     message: "Se ha enviado un código de verificación.",
-					//     showCloseButton: true,
-					//     closeButtonText: 'cerrar',
-					//     position: 'middle',
-					//   });
-					//   toast.present();
+
 				}
 			).catch(error => {
 				loading.dismiss();
@@ -68,28 +75,11 @@ export class RecoveryPasswordPage {
 				});
 				this.errorProvider.obj.message = mensaje;
 				this.errorProvider.presentModal();
-				// let toast = this.toastCtrl.create({
-				//   message: mensaje,
-				//   showCloseButton: true,
-				//   closeButtonText: 'cerrar',
-				//   position: 'middle',
-				// });
-				// toast.present();
+
 			});
 		} else {
-			let mensaje = "número celular";
-			if (type != "phone")
-				mensaje = "dirección email";
-			this.errorProvider.obj.message = 'Por favor ingrese su ' + mensaje;
-			this.errorProvider.presentModal();
-			//   let toast = this.toastCtrl.create({
-			//       message: 'Por favor ingrese su '+mensaje,
-			//       showCloseButton: true,
-			//       closeButtonText: 'cerrar',
-			//       position: 'middle',
-			//     })
-			//   ;
-			//   toast.present();
+
+
 		}
 	}
 

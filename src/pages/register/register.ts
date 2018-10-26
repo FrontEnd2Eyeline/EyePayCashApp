@@ -78,12 +78,7 @@ export class RegisterPage {
 		confirm_verify: new FormControl()
 	});
 
-	validation_messages = {
-		'first_name':[
-			{type: 'required', message: 'Nombre es requerido'},
-			{type: 'minLength', message: 'Mayor a 3 letras'},
-		]
-	}
+
 
 	constructor(public navCtrl: NavController,
 		public navParams: NavParams,
