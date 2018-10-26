@@ -1,6 +1,6 @@
 webpackJsonp([5],{
 
-/***/ 726:
+/***/ 728:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -8,7 +8,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SecurityPageModule", function() { return SecurityPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(26);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__security__ = __webpack_require__(747);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__security__ = __webpack_require__(749);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_brmasker_ionic_3__ = __webpack_require__(377);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ngx_translate_core__ = __webpack_require__(91);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -44,7 +44,7 @@ var SecurityPageModule = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 747:
+/***/ 749:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -138,7 +138,8 @@ var SecurityPage = /** @class */ (function () {
         var _this = this;
         if (this.response_verify.phone_code === this.codeVerify) {
             var loading_1 = this.loadingCtrl.create({
-                spinner: 'dots',
+                spinner: 'hide',
+                content: "<img src='assets/imgs/buho.png'>",
             });
             this.api.get('account/confirm-verify', this.userProvider, {
                 id: this.response_verify.id,
@@ -180,7 +181,8 @@ var SecurityPage = /** @class */ (function () {
         var _this = this;
         if (this.infoPhone.country_code != null && this.infoPhone.value != null) {
             var loading_2 = this.loadingCtrl.create({
-                spinner: 'dots',
+                spinner: 'hide',
+                content: "<img src='assets/imgs/buho.png'>",
             });
             loading_2.present();
             this.infoPhone.type = "phone";
@@ -212,7 +214,8 @@ var SecurityPage = /** @class */ (function () {
         var _this = this;
         if (this.response_verify.mail_code === this.codeVerifyMail) {
             var loading_3 = this.loadingCtrl.create({
-                spinner: 'dots',
+                spinner: 'hide',
+                content: "<img src='assets/imgs/buho.png'>",
             });
             loading_3.present();
             this.api.get('account/confirm-verify', this.userProvider, {
@@ -245,7 +248,8 @@ var SecurityPage = /** @class */ (function () {
         var _this = this;
         if (this.valueMail.value != null && this.valueMail.value != '') {
             var loading_4 = this.loadingCtrl.create({
-                spinner: 'dots',
+                spinner: 'hide',
+                content: "<img src='assets/imgs/buho.png'>",
             });
             console.log('mail', this.valueMail);
             console.log('phone', this.infoPhone.value);
@@ -288,7 +292,8 @@ var SecurityPage = /** @class */ (function () {
     SecurityPage.prototype.actualizarPass = function () {
         var _this = this;
         var loading = this.loadingCtrl.create({
-            spinner: 'dots'
+            spinner: 'hide',
+            content: "<img src='assets/imgs/buho.png'>",
         });
         loading.present();
         this.api.post('account/update-password', this.password, this.userProvider).then(function (data) {
@@ -329,7 +334,7 @@ var SecurityPage = /** @class */ (function () {
     };
     SecurityPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-            selector: 'page-security',template:/*ion-inline-start:"/Users/eyeline/Documents/GitHub/eyepaycashapp/src/pages/security/security.html"*/'<!--\n  Generated template for the SecurityPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>Seguridad</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n\n\n  <ion-card>\n    <ion-card-header>\n      <ion-icon name="lock" item-start></ion-icon>\n      Información de seguridad\n    </ion-card-header>\n    <ion-card-content>\n      <div padding>\n        <ion-segment [(ngModel)]="updateInfo">\n          <ion-segment-button value="celular">\n            Número celular\n          </ion-segment-button>\n          <ion-segment-button value="correo">\n            Dirección email\n          </ion-segment-button>\n        </ion-segment>\n      </div>\n\n      <div [ngSwitch]="updateInfo">\n        <ion-list *ngSwitchCase="\'celular\'">\n          <ion-row>\n            <label stacked>Seleccione el país e ingrese su nuevo número celular</label>\n            <ion-col col-4>\n              <ion-item class="item-flag">\n                <img [src]="infoPhone.flag" class="flagphone" *ngIf="infoPhone.flag !=null">\n                <button ion-button (click)="selectcountry()">+ {{infoPhone.country_code}}</button>\n              </ion-item>\n            </ion-col>\n            <ion-col col-8>\n              <ion-input required type="number" name="numerocelular" [(ngModel)]="infoPhone.value"\n                         placeholder="Número móvil (celular)" [brmasker]="{len:14}"></ion-input>\n            </ion-col>\n            <ion-col col-12 *ngIf="codigoSend.phone_code != null && infoPhone.value != \'\'">\n              <label stacked>Ingrese el código de verificación (SMS)</label>\n              <ion-input name="verifycode" [(ngModel)]="codeVerify" type="number" [brmasker]="{len:6}"></ion-input>\n              <button class="buttonPayCash" (click)="verifyCode()" ion-button block>Verificar código</button>\n            </ion-col>\n          </ion-row>\n          <button ion-button block class="buttonPayCash" (click)="changePhone()"\n                  *ngIf=" codigoSend.phone_code == null ">\n            Enviar código de verificación\n          </button>\n        </ion-list>\n\n        <ion-list *ngSwitchCase="\'correo\'">\n          <ion-row>\n            <label stacked> Por favor ingrese la nueva dirección email</label>\n            <ion-col col-12 row>\n              <ion-input name="correoelectronico" [(ngModel)]="valueMail.value"\n                         placeholder="Dirección email correo electrónico" type="mail"></ion-input>\n            </ion-col>\n            <ion-col col-12 *ngIf="codigoSend.mail_code != null && valueMail.value != null">\n              <label stacked>Ingrese el código de verificación (E-mail)</label>\n              <br>\n              <ion-input name="verifycode" [(ngModel)]="codeVerifyMail" [brmasker]="{len:6}" type="number"></ion-input>\n              <button class="buttonPayCash" (click)="verifyCodeMail()" ion-button block>Verificar código</button>\n            </ion-col>\n          </ion-row>\n          <button ion-button block class="buttonPayCash" (click)="changeMail()" *ngIf="codigoSend.mail_code==null">\n            Actualizar dirección email\n          </button>\n        </ion-list>\n      </div>\n    </ion-card-content>\n  </ion-card>\n\n  <ion-card>\n    <ion-card-header>\n      <ion-icon name="key" item-start></ion-icon>\n      Actualizar contraseña\n    </ion-card-header>\n    <ion-card-content>\n      <ion-item>\n\n        <ion-label stacked>Contraseña actual</ion-label>\n        <ion-input type="password" name="useractual"\n                   required [(ngModel)]="password.old_password"></ion-input>\n      </ion-item>\n      <ion-item>\n\n        <ion-label stacked>Contraseña nueva</ion-label>\n        <ion-input type="{{type}}" name="usernueva"\n                   required [(ngModel)]="password.new_password"></ion-input>\n        <button *ngIf="!showPass" class="btn_show" ion-button clear color="dark" type="button" item-right (click)="showPassword()">\n          <ion-icon name="ios-eye-off-outline"></ion-icon>\n        </button>\n        <button *ngIf="showPass" class="btn_show" ion-button clear color="dark" type="button" item-right (click)="showPassword()">\n          <ion-icon name="ios-eye-outline"></ion-icon>\n        </button>\n\n      </ion-item>\n      <ion-item>\n        <ion-label stacked>Confirmación de contraseña</ion-label>\n        <ion-input type="{{type2}}" name="userconfirmacion"\n                   required [(ngModel)]="password.new_password_conf"></ion-input>\n        <button *ngIf="!showPass2" class="btn_show2" ion-button clear color="dark" type="button" item-right (click)="showPassword2()">\n          <ion-icon name="ios-eye-off-outline"></ion-icon>\n        </button>\n        <button *ngIf="showPass2" class="btn_show2" ion-button clear color="dark" type="button" item-right (click)="showPassword2()">\n          <ion-icon name="ios-eye-outline"></ion-icon>\n        </button>\n      </ion-item>\n      <button ion-button block class="buttonPayCash" (click)="actualizarPass()">Confirmar y actualizar</button>\n    </ion-card-content>\n  </ion-card>\n\n\n</ion-content>\n'/*ion-inline-end:"/Users/eyeline/Documents/GitHub/eyepaycashapp/src/pages/security/security.html"*/,
+            selector: 'page-security',template:/*ion-inline-start:"/Users/eyeline/Documents/eyepaycashappGitHub/src/pages/security/security.html"*/'<!--\n  Generated template for the SecurityPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>Seguridad</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n\n\n  <ion-card>\n    <ion-card-header>\n      <ion-icon name="lock" item-start></ion-icon>\n      Información de seguridad\n    </ion-card-header>\n    <ion-card-content>\n      <div padding>\n        <ion-segment [(ngModel)]="updateInfo">\n          <ion-segment-button value="celular">\n            Número celular\n          </ion-segment-button>\n          <ion-segment-button value="correo">\n            Dirección email\n          </ion-segment-button>\n        </ion-segment>\n      </div>\n\n      <div [ngSwitch]="updateInfo">\n        <ion-list *ngSwitchCase="\'celular\'">\n          <ion-row>\n            <label stacked>Seleccione el país e ingrese su nuevo número celular</label>\n            <ion-col col-4>\n              <ion-item class="item-flag">\n                <img [src]="infoPhone.flag" class="flagphone" *ngIf="infoPhone.flag !=null">\n                <button ion-button (click)="selectcountry()">+ {{infoPhone.country_code}}</button>\n              </ion-item>\n            </ion-col>\n            <ion-col col-8>\n              <ion-input required type="number" name="numerocelular" [(ngModel)]="infoPhone.value"\n                         placeholder="Número móvil (celular)" [brmasker]="{len:14}"></ion-input>\n            </ion-col>\n            <ion-col col-12 *ngIf="codigoSend.phone_code != null && infoPhone.value != \'\'">\n              <label stacked>Ingrese el código de verificación (SMS)</label>\n              <ion-input name="verifycode" [(ngModel)]="codeVerify" type="number" [brmasker]="{len:6}"></ion-input>\n              <button class="buttonPayCash" (click)="verifyCode()" ion-button block>Verificar código</button>\n            </ion-col>\n          </ion-row>\n          <button ion-button block class="buttonPayCash" (click)="changePhone()"\n                  *ngIf=" codigoSend.phone_code == null ">\n            Enviar código de verificación\n          </button>\n        </ion-list>\n\n        <ion-list *ngSwitchCase="\'correo\'">\n          <ion-row>\n            <label stacked> Por favor ingrese la nueva dirección email</label>\n            <ion-col col-12 row>\n              <ion-input name="correoelectronico" [(ngModel)]="valueMail.value"\n                         placeholder="Dirección email correo electrónico" type="mail"></ion-input>\n            </ion-col>\n            <ion-col col-12 *ngIf="codigoSend.mail_code != null && valueMail.value != null">\n              <label stacked>Ingrese el código de verificación (E-mail)</label>\n              <br>\n              <ion-input name="verifycode" [(ngModel)]="codeVerifyMail" [brmasker]="{len:6}" type="number"></ion-input>\n              <button class="buttonPayCash" (click)="verifyCodeMail()" ion-button block>Verificar código</button>\n            </ion-col>\n          </ion-row>\n          <button ion-button block class="buttonPayCash" (click)="changeMail()" *ngIf="codigoSend.mail_code==null">\n            Actualizar dirección email\n          </button>\n        </ion-list>\n      </div>\n    </ion-card-content>\n  </ion-card>\n\n  <ion-card>\n    <ion-card-header>\n      <ion-icon name="key" item-start></ion-icon>\n      Actualizar contraseña\n    </ion-card-header>\n    <ion-card-content>\n      <ion-item>\n\n        <ion-label stacked>Contraseña actual</ion-label>\n        <ion-input type="password" name="useractual"\n                   required [(ngModel)]="password.old_password"></ion-input>\n      </ion-item>\n      <ion-item>\n\n        <ion-label stacked>Contraseña nueva</ion-label>\n        <ion-input type="{{type}}" name="usernueva"\n                   required [(ngModel)]="password.new_password"></ion-input>\n        <button *ngIf="!showPass" class="btn_show" ion-button clear color="dark" type="button" item-right (click)="showPassword()">\n          <ion-icon name="ios-eye-off-outline"></ion-icon>\n        </button>\n        <button *ngIf="showPass" class="btn_show" ion-button clear color="dark" type="button" item-right (click)="showPassword()">\n          <ion-icon name="ios-eye-outline"></ion-icon>\n        </button>\n\n      </ion-item>\n      <ion-item>\n        <ion-label stacked>Confirmación de contraseña</ion-label>\n        <ion-input type="{{type2}}" name="userconfirmacion"\n                   required [(ngModel)]="password.new_password_conf"></ion-input>\n        <button *ngIf="!showPass2" class="btn_show2" ion-button clear color="dark" type="button" item-right (click)="showPassword2()">\n          <ion-icon name="ios-eye-off-outline"></ion-icon>\n        </button>\n        <button *ngIf="showPass2" class="btn_show2" ion-button clear color="dark" type="button" item-right (click)="showPassword2()">\n          <ion-icon name="ios-eye-outline"></ion-icon>\n        </button>\n      </ion-item>\n      <button ion-button block class="buttonPayCash" (click)="actualizarPass()">Confirmar y actualizar</button>\n    </ion-card-content>\n  </ion-card>\n\n\n</ion-content>\n'/*ion-inline-end:"/Users/eyeline/Documents/eyepaycashappGitHub/src/pages/security/security.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */],
             __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */],

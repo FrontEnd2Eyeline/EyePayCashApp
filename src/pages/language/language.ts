@@ -1,7 +1,6 @@
 import {Component} from '@angular/core';
 import {IonicPage, NavController, NavParams} from 'ionic-angular';
 import {LenguageProvider} from "../../providers/lenguage/lenguage";
-import {LoginPage} from "../login/login";
 
 /**
  * Generated class for the LanguagePage page.

@@ -41,7 +41,8 @@ export class RecoveryPasswordPage {
 		this.type = type;
 		if (this.data != null) {
 			let loading = this.loadingCtrl.create({
-				spinner: 'dots'
+        spinner: 'hide',
+        content: "<img src='assets/imgs/buho.png'>",
 			});
 			loading.present();
 			this.api.post('auth/restar-password', { 'type': this.type, 'data': this.data }).then(
@@ -52,13 +53,6 @@ export class RecoveryPasswordPage {
 					this.data = null;
 					this.errorProvider.obj.message = 'Se ha enviado un código de verificación';
 					this.errorProvider.presentModal();
-					//   let toast = this.toastCtrl.create({
-					//     message: "Se ha enviado un código de verificación.",
-					//     showCloseButton: true,
-					//     closeButtonText: 'cerrar',
-					//     position: 'middle',
-					//   });
-					//   toast.present();
 				}
 			).catch(error => {
 				loading.dismiss();
@@ -68,13 +62,6 @@ export class RecoveryPasswordPage {
 				});
 				this.errorProvider.obj.message = mensaje;
 				this.errorProvider.presentModal();
-				// let toast = this.toastCtrl.create({
-				//   message: mensaje,
-				//   showCloseButton: true,
-				//   closeButtonText: 'cerrar',
-				//   position: 'middle',
-				// });
-				// toast.present();
 			});
 		} else {
 			let mensaje = "número celular";
@@ -82,14 +69,6 @@ export class RecoveryPasswordPage {
 				mensaje = "dirección email";
 			this.errorProvider.obj.message = 'Por favor ingrese su ' + mensaje;
 			this.errorProvider.presentModal();
-			//   let toast = this.toastCtrl.create({
-			//       message: 'Por favor ingrese su '+mensaje,
-			//       showCloseButton: true,
-			//       closeButtonText: 'cerrar',
-			//       position: 'middle',
-			//     })
-			//   ;
-			//   toast.present();
 		}
 	}
 

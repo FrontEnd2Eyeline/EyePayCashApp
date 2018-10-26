@@ -83,7 +83,8 @@ export class AccountPage {
           text: 'Actualizar',
           handler: () => {
             let loading = this.loadingCtrl.create({
-              spinner: 'dots',
+              spinner: 'hide',
+              content: "<img src='assets/imgs/buho.png'>",
             });
             loading.present();
             if (this.usuario.first_name != null && this.usuario.last_name != null &&

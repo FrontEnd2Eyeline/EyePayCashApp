@@ -86,7 +86,8 @@ export class SecurityPage {
   verifyCode() {
     if (this.response_verify.phone_code === this.codeVerify) {
       let loading = this.loadingCtrl.create({
-        spinner: 'dots',
+        spinner: 'hide',
+        content: "<img src='assets/imgs/buho.png'>",
       });
       this.api.get('account/confirm-verify', this.userProvider, {
         id: this.response_verify.id,
@@ -130,7 +131,8 @@ export class SecurityPage {
   changePhone() {
     if (this.infoPhone.country_code != null && this.infoPhone.value != null) {
       let loading = this.loadingCtrl.create({
-        spinner: 'dots',
+        spinner: 'hide',
+        content: "<img src='assets/imgs/buho.png'>",
       });
       loading.present();
       this.infoPhone.type = "phone";
@@ -165,7 +167,8 @@ export class SecurityPage {
   verifyCodeMail() {
     if (this.response_verify.mail_code === this.codeVerifyMail) {
       let loading = this.loadingCtrl.create({
-        spinner: 'dots',
+        spinner: 'hide',
+        content: "<img src='assets/imgs/buho.png'>",
       });
       loading.present();
       this.api.get('account/confirm-verify', this.userProvider, {
@@ -199,7 +202,8 @@ export class SecurityPage {
   changeMail() {
     if (this.valueMail.value != null && this.valueMail.value != '') {
       let loading = this.loadingCtrl.create({
-        spinner: 'dots',
+        spinner: 'hide',
+        content: "<img src='assets/imgs/buho.png'>",
       });
       console.log('mail', this.valueMail);
 
@@ -246,7 +250,8 @@ export class SecurityPage {
 
   actualizarPass() {
     let loading = this.loadingCtrl.create({
-      spinner: 'dots'
+      spinner: 'hide',
+      content: "<img src='assets/imgs/buho.png'>",
     });
     loading.present();
     this.api.post('account/update-password', this.password, this.userProvider).then((data: any) => {

@@ -1,6 +1,5 @@
 import {Component} from '@angular/core';
 import {IonicPage, LoadingController, ModalController, NavController, NavParams, ToastController} from 'ionic-angular';
-import {SelectCodePage} from "../select-code/select-code";
 import {Api} from "../../providers/api";
 import {GeolocationProvider} from "../../providers/geolocation/geolocation";
 import {isArray} from "ionic-angular/util/util";
@@ -60,7 +59,8 @@ export class RegNumberPhonePage {
 	sendNumberPhone() {
 		if ((this.user_register.country_code != "") && (this.user_register.country_code != null) && (this.user_register.value != "")) {
 			let loading = this.loadingCtrl.create({
-				spinner: 'dots',
+        spinner: 'hide',
+        content: "<img src='assets/imgs/buho.png'>",
 			});
 			this.errorProvider.obj.message = 'Se ha enviado un código de verificación al número celular ingresado';
 			loading.present();
@@ -110,13 +110,6 @@ export class RegNumberPhonePage {
 		} else {
 			this.errorProvider.obj.message = 'Código incorrecto';
 			this.errorProvider.presentModal();
-			// let toast = this.toastCtrl.create({
-			// 	message: 'Código incorrecto.',
-			// 	showCloseButton: true,
-			// 	closeButtonText: 'cerrar',
-			// 	position: 'middle',
-			// });
-			// toast.present();
 		}
 	}
 }

@@ -2,7 +2,6 @@ import {Component} from '@angular/core';
 import {IonicPage, LoadingController, NavController, ToastController} from "ionic-angular";
 import {Api} from "../../providers/api";
 import {AuthUserProvider} from "../../providers/auth-user/auth-user";
-import {ContactsPage} from "../contacts/contacts";
 
 @IonicPage({
 	name: "HomePage",

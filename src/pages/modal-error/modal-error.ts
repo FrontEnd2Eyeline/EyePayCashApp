@@ -23,7 +23,6 @@ public obj : any = {field:null, message:null};
 
   ionViewDidLoad() {
 	 this.obj = this.navParams.get('Error');
-    console.log(this.obj);
   }
 
   closeModal() {

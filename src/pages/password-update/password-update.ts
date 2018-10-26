@@ -40,7 +40,8 @@ export class PasswordUpdatePage {
       if (this.infoRecovery.new_password_conf == this.infoRecovery.new_password) {
         if (this.infoRecovery.new_password.length >= 6 && this.infoRecovery.new_password_conf.length >= 6) {
           let loading = this.loadingCtrl.create({
-            spinner: 'dots',
+            spinner: 'hide',
+            content: "<img src='assets/imgs/buho.png'>",
           });
           loading.present();
           this.api.post('auth/update-password', this.infoRecovery).then((data) => {

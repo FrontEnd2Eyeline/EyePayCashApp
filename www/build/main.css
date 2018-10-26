@@ -29075,7 +29075,7 @@ ion-auto-complete ul li:hover {
   color: -o-linear-gradient(left, #9569fc 0%, #063896 100%);
   color: -ms-linear-gradient(left, #9569fc 0%, #063896 100%);
   color: linear-gradient(to right, #9569fc 0%, #063896 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#9569fc', endColorstr='#063896', GradientType=1 );
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#9569fc', endColorstr='#063896', GradientType=1);
   background-color: transparent;
   content: "\f377";
 }
@@ -29088,7 +29088,7 @@ ion-auto-complete ul li:hover {
   color: -o-linear-gradient(left, #9569fc 0%, #063896 100%);
   color: -ms-linear-gradient(left, #9569fc 0%, #063896 100%);
   color: linear-gradient(to right, #9569fc 0%, #063896 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#9569fc', endColorstr='#063896', GradientType=1 );
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#9569fc', endColorstr='#063896', GradientType=1);
   background-color: transparent;
 }
 
@@ -29132,7 +29132,15 @@ ion-input, ion-textarea {
   background: -webkit-gradient(left top, right top, color-stop(0%, #9569fc), color-stop(100%, #063896));
   background: -webkit-gradient(linear, left top, right top, from(#9569fc), to(#063896));
   background: linear-gradient(to right, #9569fc 0%, #063896 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#9569fc', endColorstr='#063896', GradientType=1 );
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#9569fc', endColorstr='#063896', GradientType=1);
+}
+
+.loading-content {
+  text-align: center;
+}
+
+.loading-content > img {
+  max-width: 40%;
 }
 
 page-account .BackGR3 {
