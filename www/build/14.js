@@ -1,10 +1,6 @@
 webpackJsonp([14],{
 
-<<<<<<< HEAD
-/***/ 713:
-=======
-/***/ 714:
->>>>>>> 20c3dc4197dea109fe7ff7ba0ace49e6ef5ad4a4
+/***/ 715:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -12,11 +8,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HistoryPageModule", function() { return HistoryPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(26);
-<<<<<<< HEAD
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__history__ = __webpack_require__(733);
-=======
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__history__ = __webpack_require__(734);
->>>>>>> 20c3dc4197dea109fe7ff7ba0ace49e6ef5ad4a4
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__history__ = __webpack_require__(735);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ngx_translate_core__ = __webpack_require__(91);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -49,11 +41,7 @@ var HistoryPageModule = /** @class */ (function () {
 
 /***/ }),
 
-<<<<<<< HEAD
-/***/ 733:
-=======
-/***/ 734:
->>>>>>> 20c3dc4197dea109fe7ff7ba0ace49e6ef5ad4a4
+/***/ 735:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -105,7 +93,8 @@ var HistoryPage = /** @class */ (function () {
     HistoryPage.prototype.getInfo = function () {
         var _this = this;
         var loading = this.loadingCtrl.create({
-            spinner: 'dots',
+            spinner: 'hide',
+            content: "<img src='assets/imgs/buho.png'>",
         });
         loading.present();
         this.api.get('app/transactions', this.userProvider, {
@@ -139,7 +128,7 @@ var HistoryPage = /** @class */ (function () {
     };
     HistoryPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-            selector: 'page-history',template:/*ion-inline-start:"/Users/eyeline/Documents/GitHub/eyepaycashapp/src/pages/history/history.html"*/'<ion-header>\n\n  <ion-navbar>\n    <ion-title>Historial de transacciones</ion-title>\n  </ion-navbar>\n\n</ion-header>\n<ion-content padding>\n  <ion-row>\n    <ion-col col-12>\n      <ion-label>Filtro de transacciones por estado:</ion-label>\n      <ion-select [(ngModel)]="filtro.status" (ionChange)="getInfo()" interface="popover">\n        <ion-option value="0">Pendiente de pago</ion-option>\n        <ion-option value="1">Pagado y pendiente por retirar</ion-option>\n        <ion-option value="2">Pagado y retirado</ion-option>\n      </ion-select>\n    </ion-col>\n  </ion-row>\n  <ion-list>\n    <ion-card *ngFor="let transaction of transactions" (click)="goDetalle(transaction)" class="center bground">\n      <ion-card-content>\n        <ion-row>\n          <ion-col col-6>\n            <h6>{{transaction.country.name}}</h6>\n          </ion-col>\n          <ion-col col-6>\n            {{getDateLocale(transaction.date_request) |date:\'MM/dd/yyyy\'}}\n            <!--transaction.date_request |date:\'MM/dd/yyyy h:mma\'}}-->\n          </ion-col>\n          <ion-col col-4>\n            {{transaction.coin.full_name}}\n          </ion-col>\n          <ion-col col-4>\n            {{transaction.amount_local | currency:transaction.country.currency+" " : 2}}\n          </ion-col>\n          <ion-col col-4>\n            <ion-icon name="add"></ion-icon>\n          </ion-col>\n        </ion-row>\n      </ion-card-content>\n    </ion-card>\n  </ion-list>\n</ion-content>'/*ion-inline-end:"/Users/eyeline/Documents/GitHub/eyepaycashapp/src/pages/history/history.html"*/,
+            selector: 'page-history',template:/*ion-inline-start:"/Users/eyeline/Documents/eyepaycashappGitHub/src/pages/history/history.html"*/'<ion-header>\n\n  <ion-navbar>\n    <ion-title>Historial de transacciones</ion-title>\n  </ion-navbar>\n\n</ion-header>\n<ion-content padding>\n  <ion-row>\n    <ion-col col-12>\n      <ion-label>Filtro de transacciones por estado:</ion-label>\n      <ion-select [(ngModel)]="filtro.status" (ionChange)="getInfo()" interface="popover">\n        <ion-option value="0">Pendiente de pago</ion-option>\n        <ion-option value="1">Pagado y pendiente por retirar</ion-option>\n        <ion-option value="2">Pagado y retirado</ion-option>\n      </ion-select>\n    </ion-col>\n  </ion-row>\n  <ion-list>\n    <ion-card *ngFor="let transaction of transactions" (click)="goDetalle(transaction)" class="center bground">\n      <ion-card-content>\n        <ion-row>\n          <ion-col col-6>\n            <h6>{{transaction.country.name}}</h6>\n          </ion-col>\n          <ion-col col-6>\n            {{getDateLocale(transaction.date_request) |date:\'MM/dd/yyyy\'}}\n            <!--transaction.date_request |date:\'MM/dd/yyyy h:mma\'}}-->\n          </ion-col>\n          <ion-col col-4>\n            {{transaction.coin.full_name}}\n          </ion-col>\n          <ion-col col-4>\n            {{transaction.amount_local | currency:transaction.country.currency+" " : 2}}\n          </ion-col>\n          <ion-col col-4>\n            <ion-icon name="add"></ion-icon>\n          </ion-col>\n        </ion-row>\n      </ion-card-content>\n    </ion-card>\n  </ion-list>\n</ion-content>'/*ion-inline-end:"/Users/eyeline/Documents/eyepaycashappGitHub/src/pages/history/history.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */],
             __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */],

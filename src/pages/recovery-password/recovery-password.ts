@@ -49,7 +49,8 @@ export class RecoveryPasswordPage {
 		this.type = type;
 		if (this.formGroup.value.data != null) {
 			let loading = this.loadingCtrl.create({
-				spinner: 'dots'
+        spinner: 'hide',
+        content: "<img src='assets/imgs/buho.png'>",
 			});
 			loading.present();
 			// this.api.post('auth/restar-password', { 'type': this.type, 'data': this.data }).then(
@@ -65,7 +66,10 @@ export class RecoveryPasswordPage {
 					this.data = null;
 					this.errorProvider.obj.message = 'Se ha enviado un código de verificación';
 					this.errorProvider.presentModal();
+<<<<<<< HEAD
 
+=======
+>>>>>>> 324e2b1d8cc7cf29269e8aba4390fa377686c607
 				}
 			).catch(error => {
 				loading.dismiss();
@@ -75,11 +79,21 @@ export class RecoveryPasswordPage {
 				});
 				this.errorProvider.obj.message = mensaje;
 				this.errorProvider.presentModal();
+<<<<<<< HEAD
 
 			});
 		} else {
 
 
+=======
+			});
+		} else {
+			let mensaje = "número celular";
+			if (type != "phone")
+				mensaje = "dirección email";
+			this.errorProvider.obj.message = 'Por favor ingrese su ' + mensaje;
+			this.errorProvider.presentModal();
+>>>>>>> 324e2b1d8cc7cf29269e8aba4390fa377686c607
 		}
 	}
 

@@ -48,7 +48,8 @@ export class LoginPage {
 	login() {
 		if (this.formGroup.valid) {
 			let cargando = this.loadingCtrl.create({
-				spinner: 'dots',
+        spinner: 'hide',
+        content: "<img src='assets/imgs/buho.png'>",
 			});
 
 			this.userProvider.login(this.formGroup.value.mail, this.formGroup.value.password)

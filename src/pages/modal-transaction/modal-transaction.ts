@@ -74,7 +74,8 @@ export class ModalTransactionPage {
 	doTrasaction() {
 
 		let loading = this.loadingCtrl.create({
-			spinner: 'dots',
+      spinner: 'hide',
+      content: "<img src='assets/imgs/buho.png'>",
 		});
 		loading.present();
 		// let objtoSub = this.transaction;

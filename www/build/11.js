@@ -1,6 +1,6 @@
 webpackJsonp([11],{
 
-/***/ 718:
+/***/ 720:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -8,11 +8,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ModalErrorPageModule", function() { return ModalErrorPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(26);
-<<<<<<< HEAD
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__modal_error__ = __webpack_require__(738);
-=======
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__modal_error__ = __webpack_require__(739);
->>>>>>> 20c3dc4197dea109fe7ff7ba0ace49e6ef5ad4a4
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__modal_error__ = __webpack_require__(741);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -42,11 +38,7 @@ var ModalErrorPageModule = /** @class */ (function () {
 
 /***/ }),
 
-<<<<<<< HEAD
-/***/ 738:
-=======
-/***/ 739:
->>>>>>> 20c3dc4197dea109fe7ff7ba0ace49e6ef5ad4a4
+/***/ 741:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -79,18 +71,13 @@ var ModalErrorPage = /** @class */ (function () {
     }
     ModalErrorPage.prototype.ionViewDidLoad = function () {
         this.obj = this.navParams.get('Error');
-        console.log(this.obj);
     };
     ModalErrorPage.prototype.closeModal = function () {
         this.viewControll.dismiss();
     };
     ModalErrorPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-<<<<<<< HEAD
-            selector: 'page-modal-error',template:/*ion-inline-start:"/Users/eyeline/Documents/GitHub/eyepaycashapp/src/pages/modal-error/modal-error.html"*/'<!--\n  Generated template for the ModalErrorPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n\n\n\n<ion-content class="img_background">\n	<img src="assets/imgs/error.png" alt="">\n	<div class="center-obj" style="color: white">{{obj.message}}</div>\n		<div class="footer-button">\n				<button ion-button (click)="closeModal()" class="buttonPayCash">Aceptar</button>\n		</div>\n	\n</ion-content>\n'/*ion-inline-end:"/Users/eyeline/Documents/GitHub/eyepaycashapp/src/pages/modal-error/modal-error.html"*/,
-=======
-            selector: 'page-modal-error',template:/*ion-inline-start:"/Users/eyeline/Documents/eyepaycashappGitHub/src/pages/modal-error/modal-error.html"*/'<!--\n  Generated template for the ModalErrorPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n\n\n\n<ion-content class="">\n	<div class="gradient" style="\n	 color: white;\n    border-radius: 20px;\n    margin-top: 24%;\n    min-height: 180px;">\n    <img src="assets/imgs/error.png" style="max-width: 100px">\n    <p style="margin-top: 5%">{{obj.message}}</p>\n  </div>\n		<div class="footer-button">\n				<button ion-button (click)="closeModal()" class="buttonPayCash" style="color: white">Aceptar</button>\n		</div>\n	\n</ion-content>\n'/*ion-inline-end:"/Users/eyeline/Documents/eyepaycashappGitHub/src/pages/modal-error/modal-error.html"*/,
->>>>>>> 20c3dc4197dea109fe7ff7ba0ace49e6ef5ad4a4
+            selector: 'page-modal-error',template:/*ion-inline-start:"/Users/eyeline/Documents/eyepaycashappGitHub/src/pages/modal-error/modal-error.html"*/'<ion-content style="background: transparent">\n	<div class="gradient" style="\n	 color: white;\n    border-radius: 20px;\n    margin-top: 24%;\n    min-height: 180px;">\n    <img src="assets/imgs/error.png" style="max-width: 100px">\n    <p style="margin-top: 5%">{{obj.message}}</p>\n  </div>\n		<div class="footer-button">\n				<button ion-button (click)="closeModal()" class="buttonPayCash" style="color: white">Aceptar</button>\n		</div>\n	\n</ion-content>\n'/*ion-inline-end:"/Users/eyeline/Documents/eyepaycashappGitHub/src/pages/modal-error/modal-error.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */],
             __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */],

@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {IonicPage, NavController, NavParams} from 'ionic-angular';
+import {IonicPage, LoadingController, NavController, NavParams} from 'ionic-angular';
 import {Contacts} from "@ionic-native/contacts";
 
 /**
@@ -21,11 +21,17 @@ export class ContactsPage {
 
   constructor(public navCtrl: NavController,
               public navParams: NavParams,
-              public contacts: Contacts) {
+              public contacts: Contacts,
+              public loadingCtrl : LoadingController) {
     this.cargarListaContactos();
   }
 
   cargarListaContactos() {
+    let loading = this.loadingCtrl.create({
+      spinner: 'hide',
+      content: "<img src='assets/imgs/buho.png'>",
+    });
+    loading.present();
     this.contacts.find(["*"])
       .then(data => {
         let datosMostar: any[] = [];
@@ -36,10 +42,12 @@ export class ContactsPage {
               phoneNumbers: item.phoneNumbers
             })
           }
+          loading.dismiss();
         });
         this.listaContactos = datosMostar;
       }, error => {
-        console.log({error: error})
+        console.log({error: error});
+        loading.dismiss();
       })
   }
 

@@ -42,7 +42,8 @@ export class HistoryPage {
 
 	getInfo() {
 		let loading = this.loadingCtrl.create({
-			spinner: 'dots',
+      spinner: 'hide',
+      content: "<img src='assets/imgs/buho.png'>",
 		});
 		loading.present();
 		this.api.get('app/transactions',

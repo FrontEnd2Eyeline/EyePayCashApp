@@ -6,4 +6,26 @@ page-language {
     background-repeat: no-repeat;
   }
 
+  .center{
+    text-align: center;
+    margin: auto;
+  }
+
+  .mrgTop{
+    margin-top: 60%
+  }
+  .item-ios.item-block .item-inner, .item-md.item-block .item-inner {
+    padding-right: 8px;
+    padding-right: 8px;
+    border-bottom: 0px solid #c8c7cc !important;
+}
+
+
+.item-ios .item-button, .item-md .item-button  {
+  width: 50%;
+  padding: 0 0.5em;
+  height: 40px;
+  font-size: 1.3rem;
+}
+
 }

@@ -1,12 +1,11 @@
 import {Component} from '@angular/core';
-import {IonicPage, LoadingController, NavController, NavParams, ToastController} from 'ionic-angular';
+import {IonicPage, LoadingController, NavController, NavParams} from 'ionic-angular';
 import {GoogleMap, GoogleMapOptions, GoogleMaps, GoogleMapsEvent, LatLng} from "@ionic-native/google-maps";
 import {Geolocation} from "@ionic-native/geolocation";
 import {Api} from "../../providers/api";
 import {AuthUserProvider} from "../../providers/auth-user/auth-user";
 import {mapStyle} from "../../app/mapStyle";
 import {MapProvider} from "../../providers/map/map";
-import {HomePage} from "../home/home";
 import {ModalErrorProvider} from '../../providers/modal-error/modal-error';
 
 /**
@@ -36,14 +35,14 @@ export class MapPage {
 		protected user: AuthUserProvider,
 		public mapProvider: MapProvider,
 		public loadCtl: LoadingController,
-		public toastCtrl: ToastController,
 		public errorProvider: ModalErrorProvider) {
 		this.idsLoaded = [];
 	}
 
 	ionViewDidLoad() {
 		this.loading = this.loadCtl.create({
-			spinner: 'dots'
+      spinner: 'hide',
+      content: "<img src='assets/imgs/buho.png'>",
 		});
 		this.loading.present();
 		this.loadMap();
