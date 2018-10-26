@@ -36,7 +36,6 @@ export class PasswordUpdatePage {
 		reset_id: new FormControl(),
 	});
 
-<<<<<<< HEAD
 	constructor(public navCtrl: NavController,
 		public navParams: NavParams,
 		private api: Api,
@@ -48,18 +47,6 @@ export class PasswordUpdatePage {
 		 this.infoRecovery.reset_id = navParams.get('reset_id');
 		this.formGroup.get('reset_id').setValue(this.infoRecovery.reset_id);
 	}
-=======
-  recovery() {
-    if (this.infoRecovery.new_password != null && this.infoRecovery.new_password_conf != null) {
-      if (this.infoRecovery.new_password_conf == this.infoRecovery.new_password) {
-        if (this.infoRecovery.new_password.length >= 6 && this.infoRecovery.new_password_conf.length >= 6) {
-          let loading = this.loadingCtrl.create({
-            spinner: 'hide',
-            content: "<img src='assets/imgs/buho.png'>",
-          });
-          loading.present();
-          this.api.post('auth/update-password', this.infoRecovery).then((data) => {
->>>>>>> 324e2b1d8cc7cf29269e8aba4390fa377686c607
 
 	recovery() {
 		if (this.formGroup.valid) {
