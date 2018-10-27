@@ -68,7 +68,6 @@ export class RegNumberPhonePage {
 				(data: any) => {
 					if (data.country != null){
 					this.errorProvider.presentModal();
-					console.log('la data ', data);
 					this.response_verify = data.verify;
 					this.response_verify.country_id = data.country.id;
 				}else{

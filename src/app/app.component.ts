@@ -64,6 +64,7 @@ export class MyApp {
 
   cerrarSesion() {
     window.localStorage.clear();
+    this.menuCtrl.toggle();
     this.nav.setRoot("LoginPage");
   }
 

@@ -1,9 +1,9 @@
 import {Component} from '@angular/core';
-import {IonicPage, LoadingController, ModalController, NavController, NavParams, ToastController} from 'ionic-angular';
+import {IonicPage, LoadingController, ModalController, NavController, NavParams} from 'ionic-angular';
 import {Api} from "../../providers/api";
 import {AuthUserProvider} from "../../providers/auth-user/auth-user";
 import {ModalErrorProvider} from '../../providers/modal-error/modal-error';
-import { isArray } from 'util';
+import {isArray} from "ionic-angular/util/util";
 
 /**
  * Generated class for the SecurityPage page.
@@ -64,7 +64,6 @@ export class SecurityPage {
               public loadingCtrl: LoadingController,
               private api: Api,
               private userProvider: AuthUserProvider,
-              public toastCtrl: ToastController,
               public errorProvider: ModalErrorProvider,
   ) {
   }
@@ -84,6 +83,7 @@ export class SecurityPage {
     });
   }
 
+//  VERIFICAR POR SMS
   verifyCode() {
     if (this.response_verify.phone_code === this.codeVerify) {
       let loading = this.loadingCtrl.create({
@@ -94,27 +94,27 @@ export class SecurityPage {
         id: this.response_verify.id,
         type: 'phone',
       }).then((data: any) => {
-        this.errorProvider.obj.message = 'Información actualizada correctamente';
-
-        this.usuario.phone = data.phone;
         loading.dismiss();
+        this.errorProvider.obj.message = 'Información actualizada correctamente';
+        this.usuario.phone = data.phone;
         this.errorProvider.presentModal();
         this.userProvider.user_Info.phone = this.infoPhone.value;
         this.userProvider.setUser(this.userProvider.user_Info);
         this.usuario = this.userProvider.user_Info;
         this.clearVar();
       }).catch((error) => {
-		let mensaje = '';
-		if(isArray(error.error)){
-        error.error.forEach(data => {
-		  mensaje += data.message;
-
-		});}else
-		mensaje = error.error;
-        loading.dismiss();
-        this.errorProvider.obj.message = mensaje;
-        this.errorProvider.presentModal();
-
+        let mensaje = '';
+        if (isArray(error.error)) {
+          error.error.forEach(data => {
+            mensaje += data.message;
+          });
+        }
+        else {
+          mensaje = error.error;
+          loading.dismiss();
+          this.errorProvider.obj.message = mensaje;
+          this.errorProvider.presentModal();
+        }
       });
     } else {
       this.errorProvider.obj.message = 'Código incorrecto';
@@ -143,8 +143,8 @@ export class SecurityPage {
       this.infoPhone.value = this.infoPhone.country_code + this.infoPhone.value;
       this.api.post('account/update-contact', this.infoPhone, this.userProvider).then(
         (data: any) => {
-          this.errorProvider.obj.message = 'Se ha enviado un código de verificación al número celular.';
           loading.dismiss();
+          this.errorProvider.obj.message = 'Se ha enviado un código de verificación al número celular.';
           this.errorProvider.presentModal();
           this.response_verify = data;
           this.codigoSend.phone_code = this.response_verify.phone_code;
@@ -152,11 +152,11 @@ export class SecurityPage {
           console.log('email', this.codigoSend.mail_code)
         }
       ).catch(error => {
+        loading.dismiss();
         let mensaje = '';
         error.error.forEach(data => {
           mensaje += data.message + "\n";
         });
-        loading.dismiss();
         this.errorProvider.obj.message = mensaje;
         this.errorProvider.presentModal();
 
@@ -170,33 +170,28 @@ export class SecurityPage {
 
   verifyCodeMail() {
     if (this.response_verify.mail_code === this.codeVerifyMail) {
-      let loading = this.loadingCtrl.create({
-        spinner: 'hide',
-        content: "<img src='assets/imgs/buho.png'>",
-      });
-      loading.present();
       this.api.get('account/confirm-verify', this.userProvider, {
         id: this.response_verify.id,
-		type: 'mail',
-		mail:  this.valueMail.value
+        type: 'mail',
+        mail: this.valueMail.value
       }).then((data: any) => {
-		this.errorProvider.obj.message = 'Informacion actualizada correctamente';
-		//loading.dismiss(); tener en cuenta, no ceirra loading
-        console.log('datos enviados',data);
+        this.errorProvider.obj.message = 'Informacion actualizada correctamente';
+        this.errorProvider.presentModal();
         this.usuario.mail = data.mail;
         this.clearVar();
-        this.errorProvider.presentModal();
-        // toast.present();
       }).catch(error => {
-		let mensaje = '';
-		if(isArray(error.error))
-        error.error.forEach(data => {
-          mensaje += data.message + "\n";
-		});else
-		mensaje = error.error;
-        this.errorProvider.obj.message = mensaje;
-        loading.dismiss();
-        this.errorProvider.presentModal();
+        let mensaje = '';
+        if (isArray(error.error)) {
+          error.error.forEach(data => {
+            mensaje += data.message + "\n";
+          });
+        }
+        else {
+          mensaje = error.error;
+          this.errorProvider.obj.message = mensaje;
+          this.errorProvider.presentModal();
+        }
+
       });
     } else {
       this.errorProvider.obj.message = 'Los códigos de verificación no coinciden';
@@ -211,36 +206,33 @@ export class SecurityPage {
         spinner: 'hide',
         content: "<img src='assets/imgs/buho.png'>",
       });
-
-      this.errorProvider.obj.message = 'Se ha enviado un correo electrónico de verificacioón a su direccioón e-mail';
       this.infoPhone.value = null;
       loading.present();
       this.valueMail.type = 'mail';
-	  console.log('mail', this.valueMail)
-      this.api.post('account/update-contact', this.valueMail, this.userProvider).then((data: any) => {
+      this.api.post('account/update-contact', this.valueMail, this.userProvider)
+        .then((data: any) => {
         loading.dismiss();
+        this.errorProvider.obj.message = 'Se ha enviado un correo electrónico de verificacioón a su direccioón e-mail';
         this.errorProvider.presentModal();
-        console.log(data);
         this.response_verify = data;
         this.codigoSend.phone_code = null;
         this.codigoSend.mail_code = this.response_verify.mail_code;
-        console.log('code phone', this.codigoSend.phone_code)
       }).catch(error => {
-		let mensaje = '';
-		if(isArray(error.error))
-        error.error.forEach(data => {
-          mensaje += data.message + "\n";
-		});else
-		mensaje = error.error;
-        this.errorProvider.obj.message = mensaje;
-
+        let mensaje = '';
+        if (isArray(error.error)){
+          error.error.forEach(data => {
+            mensaje += data.message + "\n";
+          });
+        } else{
+          mensaje = error.error;
+          this.errorProvider.obj.message = mensaje;
+        }
         loading.dismiss();
         this.errorProvider.presentModal();
       });
     } else {
       this.errorProvider.obj.message = 'Por favor ingrese una direccioón e-mail';
       this.errorProvider.presentModal();
-
     }
   }
 
@@ -261,8 +253,8 @@ export class SecurityPage {
     });
     loading.present();
     this.api.post('account/update-password', this.password, this.userProvider).then((data: any) => {
-      this.errorProvider.obj.message = 'Información actualizada correctamente';
       loading.dismiss();
+      this.errorProvider.obj.message = 'Información actualizada correctamente';
       this.errorProvider.presentModal();
       this.password.new_password = null;
       this.password.new_password_conf = null;
@@ -271,9 +263,13 @@ export class SecurityPage {
     }).catch(error => {
       loading.dismiss();
       let mensaje = "";
-      error.error.forEach(data => {
-        mensaje += data.message + "\n";
-      });
+      if(isArray(error.error)){
+        error.error.forEach(data => {
+          mensaje += data.message + "\n";
+        });
+      }else{
+        mensaje = error.error;
+      }
       this.errorProvider.obj.message = mensaje;
       this.errorProvider.presentModal();
     });
