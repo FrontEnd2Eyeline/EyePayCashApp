@@ -18,8 +18,6 @@ public obj: any = {field:null, message:null};
     
   }
 
- 
- 
 
   presentModal(){
 	let modalPresent = this.modalCtrl.create('ModalErrorPage', {

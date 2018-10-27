@@ -3,6 +3,7 @@ import {IonicPage, LoadingController, ModalController, NavController, NavParams,
 import {Api} from "../../providers/api";
 import {AuthUserProvider} from "../../providers/auth-user/auth-user";
 import {ModalErrorProvider} from '../../providers/modal-error/modal-error';
+import { isArray } from 'util';
 
 /**
  * Generated class for the SecurityPage page.
@@ -103,10 +104,13 @@ export class SecurityPage {
         this.usuario = this.userProvider.user_Info;
         this.clearVar();
       }).catch((error) => {
-        let mensaje = '';
+		let mensaje = '';
+		if(isArray(error.error)){
         error.error.forEach(data => {
-          mensaje += data.message;
-        });
+		  mensaje += data.message;
+
+		});}else
+		mensaje = error.error;
         loading.dismiss();
         this.errorProvider.obj.message = mensaje;
         this.errorProvider.presentModal();
@@ -173,21 +177,23 @@ export class SecurityPage {
       loading.present();
       this.api.get('account/confirm-verify', this.userProvider, {
         id: this.response_verify.id,
-        type: 'mail',
+		type: 'mail',
+		mail:  this.valueMail.value
       }).then((data: any) => {
-        this.errorProvider.obj.message = 'Informacion actualizada correctamente';
-
-        loading.dismiss();
-        console.log(data);
+		this.errorProvider.obj.message = 'Informacion actualizada correctamente';
+		//loading.dismiss(); tener en cuenta, no ceirra loading
+        console.log('datos enviados',data);
         this.usuario.mail = data.mail;
         this.clearVar();
         this.errorProvider.presentModal();
         // toast.present();
       }).catch(error => {
-        let mensaje = '';
+		let mensaje = '';
+		if(isArray(error.error))
         error.error.forEach(data => {
           mensaje += data.message + "\n";
-        });
+		});else
+		mensaje = error.error;
         this.errorProvider.obj.message = mensaje;
         loading.dismiss();
         this.errorProvider.presentModal();
@@ -205,14 +211,12 @@ export class SecurityPage {
         spinner: 'hide',
         content: "<img src='assets/imgs/buho.png'>",
       });
-      console.log('mail', this.valueMail);
 
-      console.log('phone', this.infoPhone.value);
       this.errorProvider.obj.message = 'Se ha enviado un correo electrónico de verificacioón a su direccioón e-mail';
       this.infoPhone.value = null;
       loading.present();
       this.valueMail.type = 'mail';
-
+	  console.log('mail', this.valueMail)
       this.api.post('account/update-contact', this.valueMail, this.userProvider).then((data: any) => {
         loading.dismiss();
         this.errorProvider.presentModal();
@@ -222,10 +226,12 @@ export class SecurityPage {
         this.codigoSend.mail_code = this.response_verify.mail_code;
         console.log('code phone', this.codigoSend.phone_code)
       }).catch(error => {
-        let mensaje = '';
+		let mensaje = '';
+		if(isArray(error.error))
         error.error.forEach(data => {
           mensaje += data.message + "\n";
-        });
+		});else
+		mensaje = error.error;
         this.errorProvider.obj.message = mensaje;
 
         loading.dismiss();
