@@ -55,7 +55,6 @@ export class PasswordUpdatePage {
 			});
 
 			cargando.present();
-			console.log('forgrup', this.formGroup.value);
 			this.api.post('auth/update-password', this.formGroup.value).then ((data)=>{
 				cargando.dismiss();
 				this.errorProvider.obj.message = 'Contraseña actualizada correctamente';

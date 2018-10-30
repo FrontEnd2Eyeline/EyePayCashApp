@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {IonicPage, NavController, NavParams} from 'ionic-angular';
+import {IonicPage, MenuController, NavController, NavParams} from 'ionic-angular';
 import {LenguageProvider} from "../../providers/lenguage/lenguage";
 
 /**
@@ -19,8 +19,13 @@ export class LanguagePage {
   constructor(public navCtrl: NavController,
               public navParams: NavParams,
               public languageProvider: LenguageProvider,
+              private menuCtrl : MenuController
   ) {
   }
+
+  // ionViewWillEnter() {
+  //   this.menuCtrl.enable(false);
+  // }
 
 
   seleccionar(idioma) {

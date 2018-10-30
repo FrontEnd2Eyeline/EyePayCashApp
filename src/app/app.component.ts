@@ -6,6 +6,7 @@ import {GeolocationProvider} from "../providers/geolocation/geolocation";
 import {AuthUserProvider} from "../providers/auth-user/auth-user";
 import {LoadInformationProvider} from "../providers/load-information/load-information";
 import {LenguageProvider} from "../providers/lenguage/lenguage";
+import {Storage} from "@ionic/storage";
 
 @Component({
   templateUrl: 'app.html'
@@ -13,8 +14,6 @@ import {LenguageProvider} from "../providers/lenguage/lenguage";
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
   rootPage: string = 'LoginPage';
-  pages: Array<{ title: string, component: any }>;
-
   constructor(platform: Platform,
               statusBar: StatusBar,
               splashScreen: SplashScreen,
@@ -22,7 +21,8 @@ export class MyApp {
               private auth: AuthUserProvider,
               private informationProvider: LoadInformationProvider,
               public langProvider: LenguageProvider,
-              public menuCtrl: MenuController
+              public menuCtrl: MenuController,
+              private storage: Storage,
   ) {
     if (!this.langProvider.verifyIsLanguage())
       this.rootPage = 'LanguagePage';
@@ -30,26 +30,16 @@ export class MyApp {
       this.langProvider.setLenguage();
       this.rootPage = 'LoginPage';
     }
-    this.auth.trylogin().then(value => {
-      if (value) {
+    if(auth.trylogin()) {
         this.langProvider.setLenguage();
         this.rootPage = 'HomePage';
         this.informationProvider.init()
-      }
-    });
+    }
     platform.ready().then(() => {
       statusBar.styleDefault();
       if (platform.is('cordova'))
         this.getLocation();
     });
-    this.pages = [
-      {title: 'Inicio', component: "HomePage"},
-      {title: 'Transacción', component: "TransactionPage"},
-      {title: 'Historial', component: "HistoryPage"},
-      {title: 'Mapa', component: "MapPage"},
-      {title: 'Mi cuenta', component: "AccountPage"},
-      {title: 'Seguridad', component: "SecurityPage"},
-    ];
   }
 
   getLocation() {
@@ -64,6 +54,8 @@ export class MyApp {
 
   cerrarSesion() {
     window.localStorage.clear();
+    this.storage.remove('user')
+    this.storage.clear();
     this.menuCtrl.toggle();
     this.nav.setRoot("LoginPage");
   }
