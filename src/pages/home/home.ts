@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {IonicPage, LoadingController, NavController, ToastController} from "ionic-angular";
+import {IonicPage, LoadingController, MenuController, NavController, ToastController} from "ionic-angular";
 import {Api} from "../../providers/api";
 import {AuthUserProvider} from "../../providers/auth-user/auth-user";
 
@@ -22,10 +22,12 @@ export class HomePage {
               public toastCtrl: ToastController,
               private api: Api,
               private userProvider:AuthUserProvider,
+              public menuCtrl : MenuController,
   ) {
 
   }
   ionViewWillEnter(){
+    this.menuCtrl.enable(true);
     this.getInfo();
   }
   getInfo(){
@@ -33,7 +35,6 @@ export class HomePage {
       this.userProvider,{ 'status': 0 }).then((data:any)=>{
         this.count = data.items.length;
     }).catch(error=>{
-      console.log(error);
     });
   }
 

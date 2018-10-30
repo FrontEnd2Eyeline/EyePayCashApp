@@ -47,14 +47,16 @@ export class RecoveryPasswordPage {
 
 	sendMessage(type) {
 		this.type = type;
-		if (this.formGroup.value.data != null) {
+		if ( (this.formGroup.value.data != "") || (this.data != "")) {
 			let loading = this.loadingCtrl.create({
         spinner: 'hide',
         content: "<img src='assets/imgs/buho.png'>",
 			});
 			loading.present();
+			if(this.type!='phone')
+			  this.data = this.formGroup.value.data;
 			// this.api.post('auth/restar-password', { 'type': this.type, 'data': this.data }).then(
-				this.api.post('auth/restar-password', {'type': this.type, 'data': this.formGroup.value.data}).then(
+				this.api.post('auth/restar-password', {'type': this.type, 'data': this.data}).then(
 				(data) => {
 					loading.dismiss();
 					if(type!="phone"){

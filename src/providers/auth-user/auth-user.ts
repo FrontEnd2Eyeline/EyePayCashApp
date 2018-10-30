@@ -2,6 +2,8 @@ import {Injectable} from '@angular/core';
 import {Api} from "../api";
 import {ToastController} from "ionic-angular";
 import {ModalErrorProvider} from '../modal-error/modal-error';
+import {Storage} from "@ionic/storage";
+
 
 @Injectable()
 export class AuthUserProvider {
@@ -44,7 +46,8 @@ export class AuthUserProvider {
 
   constructor(protected api: Api,
 			  public toastCtrl: ToastController,
-			  public errorProvider: ModalErrorProvider
+			  public errorProvider: ModalErrorProvider,
+        protected storage : Storage
   ) {
     this.trylogin();
   }
@@ -74,15 +77,17 @@ export class AuthUserProvider {
 
 
   trylogin() {
-    return new Promise(resolve => {
-      this.user_Info = JSON.parse(window.localStorage.getItem('user'));
-      if (this.user_Info != null) {
-        this.setUserCountry(this.user_Info.country);
-        this.setUserVerify(this.user_Info.userVerify);
-        resolve(true)
-      }
-      resolve(false)
-    })
+      // this.user_Info = JSON.parse(window.localStorage.getItem('user'));
+      this.storage.get('user').then((data)=>{
+        this.user_Info = JSON.parse(data);
+        if (this.user_Info != null) {
+          this.setUserCountry(this.user_Info.country);
+          this.setUserVerify(this.user_Info.userVerify);
+          }
+          return true;
+      }).catch((error)=>{
+        console.log(error)
+      });
   }
 
   accessParam() {
@@ -93,7 +98,8 @@ export class AuthUserProvider {
 
   setUser(Usuario: any) {
     this.user_Info = Usuario;
-    window.localStorage.setItem('user', JSON.stringify(this.user_Info));
+    this.storage.set('user', JSON.stringify(this.user_Info));
+    // window.localStorage.setItem('user', JSON.stringify(this.user_Info));
   }
 
   setUserCountry(Country: any) {
