@@ -30,11 +30,11 @@ export class MyApp {
       this.langProvider.setLenguage();
       this.rootPage = 'LoginPage';
     }
-    if(auth.trylogin()) {
-        this.langProvider.setLenguage();
-        this.rootPage = 'HomePage';
-        this.informationProvider.init()
-    }
+    // if(auth.trylogin()) {
+    //     this.langProvider.setLenguage();
+    //     this.rootPage = 'HomePage';
+    //     this.informationProvider.init()
+    // }
     platform.ready().then(() => {
       statusBar.styleDefault();
       if (platform.is('cordova'))
