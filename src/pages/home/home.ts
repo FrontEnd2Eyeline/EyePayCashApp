@@ -38,8 +38,8 @@ export class HomePage {
   }
 
   goPage(page) {
-    if (page == 'account')
-      this.navCtrl.push("AccountPage");
+    if (page == 'profile')
+      this.navCtrl.push("ProfilePage");
     else if (page == 'history')
       this.navCtrl.push("HistoryPage");
     else if(page=="maps")

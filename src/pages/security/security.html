@@ -58,25 +58,30 @@
             Enviar código de verificación
           </button>
         </ion-list>
-
+<form [formGroup]="formGroup">
         <ion-list *ngSwitchCase="'correo'">
           <ion-row>
             <label stacked> Por favor ingrese la nueva dirección email</label>
             <ion-col col-12 row>
-              <ion-input name="correoelectronico" [(ngModel)]="valueMail.value"
-                         placeholder="Dirección email correo electrónico" type="mail"></ion-input>
-            </ion-col>
-            <ion-col col-12 *ngIf="codigoSend.mail_code != null && valueMail.value != null">
+              <ion-input name="correoelectronico" 
+                         placeholder="Dirección email correo electrónico" formControlName="value" type="mail" ></ion-input>
+			</ion-col>
+			<ion-item no-lines *ngIf="formGroup.invalid">
+					<msg-error [control]="formGroup.controls.value" name="update-email"></msg-error>
+				</ion-item>
+            <ion-col col-12 *ngIf="codigoSend.mail_code != null && valueMail.value == null">
               <label stacked>Ingrese el código de verificación (E-mail)</label>
               <br>
               <ion-input name="verifycode" [(ngModel)]="codeVerifyMail" [brmasker]="{len:6}" type="number"></ion-input>
-              <button class="buttonPayCash" (click)="verifyCodeMail()" ion-button block>Verificar código</button>
+			  <button class="buttonPayCash" (click)="verifyCodeMail()" ion-button block>Verificar código</button>
+
             </ion-col>
           </ion-row>
           <button ion-button block class="buttonPayCash" (click)="changeMail()" *ngIf="codigoSend.mail_code==null">
             Actualizar dirección email
           </button>
-        </ion-list>
+		</ion-list>
+	</form>
       </div>
     </ion-card-content>
   </ion-card>
