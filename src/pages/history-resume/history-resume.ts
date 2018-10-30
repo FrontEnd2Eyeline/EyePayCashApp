@@ -40,7 +40,8 @@ export class HistoryResumePage {
     this.coinHash = this.historyInfo.coinHash;
   }
   goMaps(){
-    this.navCtrl.push("MapPage")
+	// this.navCtrl.push("MapPage")
+	this.navCtrl.setPages([{page:"HomePage"},{page:"MapPage"}])
   }
 
   copiarToken(){
