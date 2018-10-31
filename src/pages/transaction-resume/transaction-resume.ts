@@ -38,11 +38,11 @@ export class TransactionResumePage {
   }
 
   goMaps(){
-    this.navCtrl.push("MapPage");
-    // this.navCtrl.setPages([
-    //   {page: 'HomePage'},
-    //   {page: 'MapPage'},
-    // ]);
+    // this.navCtrl.push("MapPage");
+    this.navCtrl.setPages([
+      {page: 'HomePage'},
+      {page: 'MapPage'},
+     ]);
   }
   copiarToken(){
     this.clipboard.copy(this.coinhas.eye_hash)

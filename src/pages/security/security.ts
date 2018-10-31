@@ -158,7 +158,6 @@ export class SecurityPage {
 					this.response_verify = data;
 					this.codigoSend.phone_code = this.response_verify.phone_code;
 					this.codigoSend.mail_code = null;
-					console.log('email', this.codigoSend.mail_code)
 				}
 			).catch(error => {
 				loading.dismiss();
