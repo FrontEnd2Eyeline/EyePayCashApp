@@ -97,7 +97,7 @@
       <div class="centerIcoText" *ngIf="( (transactions!= null)  && (transactions.length)<=0)">
         <img class="imgLogoWidth" src="assets/newIcons/25.png">
       </div>
-      <div class="centerIcoText">
+      <div class="centerIcoText" *ngIf="( (transactions!= null)  && (transactions.length)<=0)">
         <h1>Auuchh !</h1>
         <p>No tiene transacciones recibidas aún.</p>
       </div>

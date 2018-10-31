@@ -4,6 +4,8 @@ import {Storage} from "@ionic/storage";
 import {AuthUserProvider} from "./auth-user/auth-user";
 import {ModalErrorProvider} from "./modal-error/modal-error";
 import {isArray} from "ionic-angular/util/util";
+import {App, NavController} from "ionic-angular";
+import {LoginPage} from "../pages/login/login";
 
 @Injectable()
 export class Api {
@@ -12,7 +14,10 @@ export class Api {
   // url: string = 'http://35557b72.ngrok.io/eyepaycash/frontend/web/apiapp/';
   headers: HttpHeaders;
 
-  constructor(public http: HttpClient, public storage: Storage, public errorProvider: ModalErrorProvider
+  constructor(public http: HttpClient,
+              public storage: Storage,
+              public errorProvider: ModalErrorProvider,
+              public app: App
   ) {
     this.headers = new HttpHeaders({
       'Content-Type': 'application/x-www-form-urlencoded',
@@ -36,7 +41,6 @@ export class Api {
         .then(value => {
           resolve(value);
         }).catch(error => {
-          console.log(error);
         let mensaje = "";
         if (isArray(error.error)) {
           let next = true;
@@ -44,6 +48,7 @@ export class Api {
             mensaje += data.message;
           });
         } else if(error.error.name == "Unauthorized"){
+          this.goHome();
           mensaje = "EL USUARIO SE ENCUENTA INACTIVO";
         }else {
           mensaje = error.error.message;
@@ -65,14 +70,15 @@ export class Api {
     return this.http.post(url, this.jsonToURLEncoded(body), {
       headers: this.headers
     }).toPromise().catch((error)=>{
-      console.log(error);
       let mensaje = "";
       if (isArray(error.error)) {
         error.error.forEach( (data:any) => {
           mensaje += data.message;
         });
       } else if(error.error.name == "Unauthorized"){
+        this.goHome();
         mensaje = "EL USUARIO SE ENCUENTA INACTIVO";
+
       }else {
         mensaje = error.error.message;
       }
@@ -86,4 +92,9 @@ export class Api {
       return encodeURIComponent(key) + '=' + encodeURIComponent(jsonString[key]);
     }).join('&');
   }
+  goHome(): void {
+    let nav = this.app.getActiveNavs();
+    nav[0].setRoot("LoginPage");
+  }
+
 }
