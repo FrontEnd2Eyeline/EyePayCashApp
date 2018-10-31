@@ -1,31 +1,35 @@
-<ion-content class="BackgroundPpal">
-  <ion-row>
-    <ion-col>
-      <img class="imgLogoWidth marginlogo" src="assets/imgs/EPCLogo.png">
-    </ion-col>
-  </ion-row>
-  <ion-row>
-    <ion-col>
-      <h6> Saldo por pagar :</h6>
-    </ion-col>
-  </ion-row>
-  <ion-row class="styleSegment">
-    <ion-col>
-      <div padding>
-        <ion-segment class="backSegment marg4Top center " [(ngModel)]="filtro.status" (ionChange)="getInfo()">
-          <ion-segment-button value="0">
-            Todas
-          </ion-segment-button>
-          <ion-segment-button value="1">
-            Enviadas
-          </ion-segment-button>
-          <ion-segment-button value="2">
-            Recibidas
-          </ion-segment-button>
-        </ion-segment>
-      </div>
-    </ion-col>
-  </ion-row>
+<ion-header>
+  <div class="BackgroundPpal">
+    <ion-row>
+      <ion-col>
+        <img class="imgLogoWidth marginlogo" src="assets/imgs/EPCLogo.png">
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <h6> Saldo por pagar :</h6>
+      </ion-col>
+    </ion-row>
+    <ion-row class="styleSegment">
+      <ion-col>
+        <div padding>
+          <ion-segment class="backSegment marg4Top center " [(ngModel)]="filtro.status" (ionChange)="getInfo()">
+            <ion-segment-button value="0">
+              Todas
+            </ion-segment-button>
+            <ion-segment-button value="1">
+              Enviadas
+            </ion-segment-button>
+            <ion-segment-button value="2">
+              Recibidas
+            </ion-segment-button>
+          </ion-segment>
+        </div>
+      </ion-col>
+    </ion-row>
+  </div>
+</ion-header>
+  <ion-content >
   <div padding [ngSwitch]="filtro.status">
     <ion-list *ngSwitchCase="'0'">
       <div class="centerIcoText">
