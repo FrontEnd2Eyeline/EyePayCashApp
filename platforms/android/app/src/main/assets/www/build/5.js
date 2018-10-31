@@ -1,1 +1,278 @@
-webpackJsonp([5],{681:function(l,n,u){"use strict";function a(l){return e._22(0,[(l()(),e.Z(0,0,null,null,39,"ion-card",[["class","center bground"]],null,[[null,"click"]],function(l,n,u){var a=!0;if("click"===n){a=!1!==l.component.goDetalle(l.context.$implicit)&&a}return a},null,null)),e.Y(1,16384,null,0,Y.a,[C.a,e.j,e.z],null,null),(l()(),e._20(-1,null,["\n      "])),(l()(),e.Z(3,0,null,null,35,"ion-card-content",[],null,null,null,null,null)),e.Y(4,16384,null,0,Z.a,[C.a,e.j,e.z],null,null),(l()(),e._20(-1,null,["\n        "])),(l()(),e.Z(6,0,null,null,31,"ion-row",[["class","row"]],null,null,null,null,null)),e.Y(7,16384,null,0,y.a,[],null,null),(l()(),e._20(-1,null,["\n          "])),(l()(),e.Z(9,0,null,null,5,"ion-col",[["class","col"],["col-6",""]],null,null,null,null,null)),e.Y(10,16384,null,0,j.a,[],null,null),(l()(),e._20(-1,null,["\n            "])),(l()(),e.Z(12,0,null,null,1,"h6",[],null,null,null,null,null)),(l()(),e._20(13,null,["",""])),(l()(),e._20(-1,null,["\n          "])),(l()(),e._20(-1,null,["\n          "])),(l()(),e.Z(16,0,null,null,4,"ion-col",[["class","col"],["col-6",""]],null,null,null,null,null)),e.Y(17,16384,null,0,j.a,[],null,null),(l()(),e._20(18,null,["\n            ","\n            "])),e._15(19,2),(l()(),e._20(-1,null,["\n          "])),(l()(),e._20(-1,null,["\n          "])),(l()(),e.Z(22,0,null,null,2,"ion-col",[["class","col"],["col-4",""]],null,null,null,null,null)),e.Y(23,16384,null,0,j.a,[],null,null),(l()(),e._20(24,null,["\n            ","\n          "])),(l()(),e._20(-1,null,["\n          "])),(l()(),e.Z(26,0,null,null,3,"ion-col",[["class","col"],["col-4",""]],null,null,null,null,null)),e.Y(27,16384,null,0,j.a,[],null,null),(l()(),e._20(28,null,["\n            ","\n          "])),e._15(29,3),(l()(),e._20(-1,null,["\n          "])),(l()(),e.Z(31,0,null,null,5,"ion-col",[["class","col"],["col-4",""]],null,null,null,null,null)),e.Y(32,16384,null,0,j.a,[],null,null),(l()(),e._20(-1,null,["\n            "])),(l()(),e.Z(34,0,null,null,1,"ion-icon",[["name","add"],["role","img"]],[[2,"hide",null]],null,null,null,null)),e.Y(35,147456,null,0,x.a,[C.a,e.j,e.z],{name:[0,"name"]},null),(l()(),e._20(-1,null,["\n          "])),(l()(),e._20(-1,null,["\n        "])),(l()(),e._20(-1,null,["\n      "])),(l()(),e._20(-1,null,["\n    "]))],function(l,n){l(n,35,0,"add")},function(l,n){var u=n.component;l(n,13,0,n.context.$implicit.country.name);l(n,18,0,e._21(n,18,0,l(n,19,0,e._11(n.parent,0),u.getDateLocale(n.context.$implicit.date_request),"MM/dd/yyyy")));l(n,24,0,n.context.$implicit.coin.full_name);l(n,28,0,e._21(n,28,0,l(n,29,0,e._11(n.parent,1),n.context.$implicit.amount_local,n.context.$implicit.country.currency+" ",2)));l(n,34,0,e._11(n,35)._hidden)})}function t(l){return e._22(0,[e._13(0,P.e,[e.r]),e._13(0,P.c,[e.r]),(l()(),e.Z(2,0,null,null,10,"ion-header",[],null,null,null,null,null)),e.Y(3,16384,null,0,z.a,[C.a,e.j,e.z,[2,I.a]],null,null),(l()(),e._20(-1,null,["\n\n  "])),(l()(),e.Z(5,0,null,null,6,"ion-navbar",[["class","toolbar"]],[[8,"hidden",0],[2,"statusbar-padding",null]],null,null,D.b,D.a)),e.Y(6,49152,null,0,q.a,[M.a,[2,I.a],[2,F.a],C.a,e.j,e.z],null,null),(l()(),e._20(-1,3,["\n    "])),(l()(),e.Z(8,0,null,3,2,"ion-title",[],null,null,null,w.b,w.a)),e.Y(9,49152,null,0,U.a,[C.a,e.j,e.z,[2,$.a],[2,q.a]],null,null),(l()(),e._20(-1,0,["Historial de transacciones"])),(l()(),e._20(-1,3,["\n  "])),(l()(),e._20(-1,null,["\n\n"])),(l()(),e._20(-1,null,["\n"])),(l()(),e.Z(14,0,null,null,42,"ion-content",[["padding",""]],[[2,"statusbar-padding",null],[2,"has-refresher",null]],null,null,A.b,A.a)),e.Y(15,4374528,null,0,T.a,[C.a,H.a,O.a,e.j,e.z,M.a,X.a,e.u,[2,I.a],[2,F.a]],null,null),(l()(),e._20(-1,1,["\n  "])),(l()(),e.Z(17,0,null,1,31,"ion-row",[["class","row"]],null,null,null,null,null)),e.Y(18,16384,null,0,y.a,[],null,null),(l()(),e._20(-1,null,["\n    "])),(l()(),e.Z(20,0,null,null,27,"ion-col",[["class","col"],["col-12",""]],null,null,null,null,null)),e.Y(21,16384,null,0,j.a,[],null,null),(l()(),e._20(-1,null,["\n      "])),(l()(),e.Z(23,0,null,null,2,"ion-label",[],null,null,null,null,null)),e.Y(24,16384,null,0,B.a,[C.a,e.j,e.z,[8,null],[8,null],[8,null],[8,null]],null,null),(l()(),e._20(-1,null,["Filtro de transacciones por estado:"])),(l()(),e._20(-1,null,["\n      "])),(l()(),e.Z(27,0,null,null,19,"ion-select",[["interface","popover"]],[[2,"select-disabled",null],[2,"ng-untouched",null],[2,"ng-touched",null],[2,"ng-pristine",null],[2,"ng-dirty",null],[2,"ng-valid",null],[2,"ng-invalid",null],[2,"ng-pending",null]],[[null,"ngModelChange"],[null,"ionChange"],[null,"click"],[null,"keyup.space"]],function(l,n,u){var a=!0,t=l.component;if("click"===n){a=!1!==e._11(l,28)._click(u)&&a}if("keyup.space"===n){a=!1!==e._11(l,28)._keyup()&&a}if("ngModelChange"===n){a=!1!==(t.filtro.status=u)&&a}if("ionChange"===n){a=!1!==t.getInfo()&&a}return a},L.b,L.a)),e.Y(28,1228800,null,1,R.a,[M.a,V.a,C.a,e.j,e.z,[2,E.a],J.a],{interface:[0,"interface"]},{ionChange:"ionChange"}),e._18(603979776,1,{options:1}),e._16(1024,null,N.l,function(l){return[l]},[R.a]),e.Y(31,671744,null,0,N.p,[[8,null],[8,null],[8,null],[2,N.l]],{model:[0,"model"]},{update:"ngModelChange"}),e._16(2048,null,N.m,null,[N.p]),e.Y(33,16384,null,0,N.n,[N.m],null,null),(l()(),e._20(-1,null,["\n        "])),(l()(),e.Z(35,0,null,null,2,"ion-option",[["value","0"]],null,null,null,null,null)),e.Y(36,16384,[[1,4]],0,S.a,[e.j],{value:[0,"value"]},null),(l()(),e._20(-1,null,["Pendiente de pago"])),(l()(),e._20(-1,null,["\n        "])),(l()(),e.Z(39,0,null,null,2,"ion-option",[["value","1"]],null,null,null,null,null)),e.Y(40,16384,[[1,4]],0,S.a,[e.j],{value:[0,"value"]},null),(l()(),e._20(-1,null,["Pagado y pendiente por retirar"])),(l()(),e._20(-1,null,["\n        "])),(l()(),e.Z(43,0,null,null,2,"ion-option",[["value","2"]],null,null,null,null,null)),e.Y(44,16384,[[1,4]],0,S.a,[e.j],{value:[0,"value"]},null),(l()(),e._20(-1,null,["Pagado y retirado"])),(l()(),e._20(-1,null,["\n      "])),(l()(),e._20(-1,null,["\n    "])),(l()(),e._20(-1,null,["\n  "])),(l()(),e._20(-1,1,["\n  "])),(l()(),e.Z(50,0,null,1,5,"ion-list",[],null,null,null,null,null)),e.Y(51,16384,null,0,W.a,[C.a,e.j,e.z,H.a,G.l,O.a],null,null),(l()(),e._20(-1,null,["\n    "])),(l()(),e.U(16777216,null,null,1,null,a)),e.Y(54,802816,null,0,P.k,[e.I,e.F,e.p],{ngForOf:[0,"ngForOf"]},null),(l()(),e._20(-1,null,["\n  "])),(l()(),e._20(-1,1,["\n"]))],function(l,n){var u=n.component;l(n,28,0,"popover");l(n,31,0,u.filtro.status);l(n,36,0,"0");l(n,40,0,"1");l(n,44,0,"2");l(n,54,0,u.transactions)},function(l,n){l(n,5,0,e._11(n,6)._hidden,e._11(n,6)._sbPadding);l(n,14,0,e._11(n,15).statusbarPadding,e._11(n,15)._hasRefresher);l(n,27,0,e._11(n,28)._disabled,e._11(n,33).ngClassUntouched,e._11(n,33).ngClassTouched,e._11(n,33).ngClassPristine,e._11(n,33).ngClassDirty,e._11(n,33).ngClassValid,e._11(n,33).ngClassInvalid,e._11(n,33).ngClassPending)})}Object.defineProperty(n,"__esModule",{value:!0});var e=u(0),o=(u(1),u(33),u(50)),i=u(62),s=u(63),c=function(){function l(l,n,u,a,t,e,o){this.navCtrl=l,this.navParams=n,this.api=u,this.userProvider=a,this.loadingCtrl=t,this.toastCtrl=e,this.errorProvider=o,this.transactions=null,this.links=null,this.meta=null,this.filtro={status:0,page:1,perpage:50},this.getInfo()}return l.prototype.getInfo=function(){var l=this,n=this.loadingCtrl.create({spinner:"hide",content:"<img src='assets/imgs/buho.png'>"});n.present(),this.api.get("app/transactions",this.userProvider,{expand:"country,coin,transactionCommission,coinHash",status:this.filtro.status,page:this.filtro.page,"per-page":this.filtro.perpage}).then(function(u){n.dismiss(),l.transactions=u.items,l.links=u.links,l.meta=u.meta}).catch(function(u){n.dismiss();var a="";u.error.forEach(function(l){a+=l.message+"\n"}),l.errorProvider.obj.message=a,l.errorProvider.presentModal()})},l.prototype.goDetalle=function(l){this.navCtrl.push("HistoryResumePage",{transaction:l})},l.prototype.getDateLocale=function(l){var n=new Date(Date.parse(l));return n.setUTCDate(0),n.setUTCDate(n.getDate()),n},l}(),r=u(87),_=function(){return function(){}}(),d=u(198),p=u(199),g=u(200),b=u(201),f=u(202),h=u(203),m=u(204),v=u(205),k=u(206),Y=u(208),C=u(3),Z=u(209),y=u(90),j=u(89),x=u(58),P=u(15),z=u(141),I=u(7),D=u(697),q=u(49),M=u(11),F=u(30),w=u(387),U=u(91),$=u(51),A=u(139),T=u(23),H=u(6),O=u(10),X=u(31),B=u(59),L=u(700),R=u(207),V=u(20),E=u(21),J=u(27),N=u(17),S=u(142),W=u(65),G=u(12),K=u(16),Q=u(88),ll=u(92),nl=e.X({encapsulation:2,styles:[],data:{}}),ul=e.V("page-history",c,function(l){return e._22(0,[(l()(),e.Z(0,0,null,null,1,"page-history",[],null,null,null,t,nl)),e.Y(1,49152,null,0,c,[F.a,K.a,o.a,i.a,Q.a,ll.a,s.a],null,null)],null,null)},{},{},[]),al=u(138),tl=u(57);u.d(n,"HistoryPageModuleNgFactory",function(){return el});var el=e.W(_,[],function(l){return e._7([e._8(512,e.i,e.S,[[8,[d.a,p.a,g.a,b.a,f.a,h.a,m.a,v.a,k.a,ul]],[3,e.i],e.s]),e._8(4608,P.n,P.m,[e.r,[2,P.x]]),e._8(4608,N.v,N.v,[]),e._8(4608,N.d,N.d,[]),e._8(512,P.b,P.b,[]),e._8(512,N.t,N.t,[]),e._8(512,N.i,N.i,[]),e._8(512,N.q,N.q,[]),e._8(512,al.a,al.a,[]),e._8(512,al.b,al.b,[]),e._8(512,r.a,r.a,[]),e._8(512,_,_,[]),e._8(256,tl.a,c,[])])})},697:function(l,n,u){"use strict";function a(l){return t._22(0,[(l()(),t.Z(0,0,null,null,1,"div",[["class","toolbar-background"]],null,null,null,null,null)),t.Y(1,278528,null,0,e.j,[t.p,t.q,t.j,t.A],{klass:[0,"klass"],ngClass:[1,"ngClass"]},null),(l()(),t.Z(2,0,null,null,8,"button",[["class","back-button"],["ion-button","bar-button"]],[[8,"hidden",0]],[[null,"click"]],function(l,n,u){var a=!0;if("click"===n){a=!1!==l.component.backButtonClick(u)&&a}return a},o.b,o.a)),t.Y(3,278528,null,0,e.j,[t.p,t.q,t.j,t.A],{klass:[0,"klass"],ngClass:[1,"ngClass"]},null),t.Y(4,1097728,null,0,i.a,[[8,"bar-button"],s.a,t.j,t.z],null,null),(l()(),t.Z(5,0,null,0,2,"ion-icon",[["class","back-button-icon"],["role","img"]],[[2,"hide",null]],null,null,null,null)),t.Y(6,278528,null,0,e.j,[t.p,t.q,t.j,t.A],{klass:[0,"klass"],ngClass:[1,"ngClass"]},null),t.Y(7,147456,null,0,c.a,[s.a,t.j,t.z],{name:[0,"name"]},null),(l()(),t.Z(8,0,null,0,2,"span",[["class","back-button-text"]],null,null,null,null,null)),t.Y(9,278528,null,0,e.j,[t.p,t.q,t.j,t.A],{klass:[0,"klass"],ngClass:[1,"ngClass"]},null),(l()(),t._20(10,null,["",""])),t._10(null,0),t._10(null,1),t._10(null,2),(l()(),t.Z(14,0,null,null,2,"div",[["class","toolbar-content"]],null,null,null,null,null)),t.Y(15,278528,null,0,e.j,[t.p,t.q,t.j,t.A],{klass:[0,"klass"],ngClass:[1,"ngClass"]},null),t._10(null,3)],function(l,n){var u=n.component;l(n,1,0,"toolbar-background","toolbar-background-"+u._mode);l(n,3,0,"back-button","back-button-"+u._mode);l(n,6,0,"back-button-icon","back-button-icon-"+u._mode);l(n,7,0,u._bbIcon);l(n,9,0,"back-button-text","back-button-text-"+u._mode);l(n,15,0,"toolbar-content","toolbar-content-"+u._mode)},function(l,n){var u=n.component;l(n,2,0,u._hideBb);l(n,5,0,t._11(n,7)._hidden);l(n,10,0,u._backText)})}u.d(n,"a",function(){return r}),n.b=a;var t=u(0),e=u(15),o=u(38),i=u(26),s=u(3),c=u(58),r=(u(7),u(30),t.X({encapsulation:2,styles:[],data:{}}))},700:function(l,n,u){"use strict";function a(l){return o._22(0,[(l()(),o.Z(0,0,null,null,1,"div",[["class","select-placeholder select-text"]],null,null,null,null,null)),(l()(),o._20(1,null,["",""]))],null,function(l,n){l(n,1,0,n.component.placeholder)})}function t(l){return o._22(0,[(l()(),o.Z(0,0,null,null,1,"div",[["class","select-text"]],null,null,null,null,null)),(l()(),o._20(1,null,["",""]))],null,function(l,n){var u=n.component;l(n,1,0,u.selectedText||u._text)})}function e(l){return o._22(0,[(l()(),o.U(16777216,null,null,1,null,a)),o.Y(1,16384,null,0,i.l,[o.I,o.F],{ngIf:[0,"ngIf"]},null),(l()(),o.U(16777216,null,null,1,null,t)),o.Y(3,16384,null,0,i.l,[o.I,o.F],{ngIf:[0,"ngIf"]},null),(l()(),o.Z(4,0,null,null,1,"div",[["class","select-icon"]],null,null,null,null,null)),(l()(),o.Z(5,0,null,null,0,"div",[["class","select-icon-inner"]],null,null,null,null,null)),(l()(),o.Z(6,0,null,null,1,"button",[["aria-haspopup","true"],["class","item-cover"],["ion-button","item-cover"],["type","button"]],[[8,"id",0],[1,"aria-labelledby",0],[1,"aria-disabled",0]],null,null,s.b,s.a)),o.Y(7,1097728,null,0,c.a,[[8,"item-cover"],r.a,o.j,o.z],null,null)],function(l,n){var u=n.component;l(n,1,0,!u._text);l(n,3,0,u._text)},function(l,n){var u=n.component;l(n,6,0,u.id,u._labelId,u._disabled)})}u.d(n,"a",function(){return _}),n.b=e;var o=u(0),i=u(15),s=u(38),c=u(26),r=u(3),_=(u(20),u(27),o.X({encapsulation:2,styles:[],data:{}}))}});
+webpackJsonp([5],{
+
+/***/ 718:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MapPageModule", function() { return MapPageModule; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(26);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__map__ = __webpack_require__(740);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_geolocation__ = __webpack_require__(95);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_google_maps__ = __webpack_require__(379);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_map_map__ = __webpack_require__(380);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__ngx_translate_core__ = __webpack_require__(93);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+
+
+
+
+
+
+var MapPageModule = /** @class */ (function () {
+    function MapPageModule() {
+    }
+    MapPageModule = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["J" /* NgModule */])({
+            declarations: [
+                __WEBPACK_IMPORTED_MODULE_2__map__["a" /* MapPage */],
+            ],
+            imports: [
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__map__["a" /* MapPage */]),
+                __WEBPACK_IMPORTED_MODULE_6__ngx_translate_core__["b" /* TranslateModule */]
+            ],
+            providers: [
+                __WEBPACK_IMPORTED_MODULE_3__ionic_native_geolocation__["a" /* Geolocation */],
+                __WEBPACK_IMPORTED_MODULE_4__ionic_native_google_maps__["a" /* Geocoder */],
+                __WEBPACK_IMPORTED_MODULE_5__providers_map_map__["a" /* MapProvider */]
+            ]
+        })
+    ], MapPageModule);
+    return MapPageModule;
+}());
+
+//# sourceMappingURL=map.module.js.map
+
+/***/ }),
+
+/***/ 740:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MapPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(26);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_google_maps__ = __webpack_require__(379);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_geolocation__ = __webpack_require__(95);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_api__ = __webpack_require__(48);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_auth_user_auth_user__ = __webpack_require__(94);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__app_mapStyle__ = __webpack_require__(741);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__providers_map_map__ = __webpack_require__(380);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__providers_modal_error_modal_error__ = __webpack_require__(67);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+
+
+
+
+/**
+ * Generated class for the MapPage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
+var MapPage = /** @class */ (function () {
+    function MapPage(navCtrl, navParams, geolocation, api, user, mapProvider, loadCtl, errorProvider) {
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+        this.geolocation = geolocation;
+        this.api = api;
+        this.user = user;
+        this.mapProvider = mapProvider;
+        this.loadCtl = loadCtl;
+        this.errorProvider = errorProvider;
+        this.idsLoaded = [];
+    }
+    MapPage.prototype.ionViewDidLoad = function () {
+        this.loading = this.loadCtl.create({
+            spinner: 'hide',
+            content: "<img src='assets/imgs/buho.png'>",
+        });
+        this.loading.present();
+        this.loadMap();
+        this.loadMarkers();
+    };
+    MapPage.prototype.loadMap = function () {
+        var _this = this;
+        var mapOptions = {
+            camera: this.mapProvider.camera,
+            styles: __WEBPACK_IMPORTED_MODULE_6__app_mapStyle__["a" /* mapStyle */]
+        };
+        this.map = __WEBPACK_IMPORTED_MODULE_2__ionic_native_google_maps__["b" /* GoogleMaps */].create('map', mapOptions);
+        // Wait the MAP_READY before using any methods.
+        this.map.one(__WEBPACK_IMPORTED_MODULE_2__ionic_native_google_maps__["c" /* GoogleMapsEvent */].MAP_READY)
+            .then(function () {
+            _this.getPosition();
+        })
+            .catch(function (error) {
+        });
+        this.map.on(__WEBPACK_IMPORTED_MODULE_2__ionic_native_google_maps__["c" /* GoogleMapsEvent */].CAMERA_MOVE_END).subscribe(function (value) {
+            var mapStop = value[0];
+            _this.mapProvider.setCamera({
+                target: {
+                    lat: mapStop.target.lat,
+                    lng: mapStop.target.lng
+                },
+                zoom: mapStop.zoom,
+                tilt: 0,
+                bearing: 0
+            });
+            if (mapStop.zoom >= 10) {
+                _this.loadPoints(mapStop.target.lat, mapStop.target.lng);
+            }
+        });
+    };
+    MapPage.prototype.loadMarkers = function () {
+        var _this = this;
+        this.mapProvider.markers.forEach((function (value) {
+            if (_this.idsLoaded.indexOf(value.id) == -1) {
+                _this.map.addMarker({
+                    title: value.company_name + " " + value.address,
+                    icon: 'blue',
+                    animation: 'DROP',
+                    position: new __WEBPACK_IMPORTED_MODULE_2__ionic_native_google_maps__["d" /* LatLng */](value.lat, value.lng)
+                }).then().catch(function (data) {
+                });
+                _this.idsLoaded.push(value.id);
+            }
+        }));
+    };
+    MapPage.prototype.loadPoints = function (lat, lng) {
+        var _this = this;
+        this.api.get('app/find-map', this.user, {
+            lat: lat,
+            lng: lng,
+            rad: 20 //20 km a la redonda
+        }).then(function (value) {
+            _this.mapProvider.setMarkers(value);
+            _this.loadMarkers();
+        });
+    };
+    MapPage.prototype.getPosition = function () {
+        var _this = this;
+        if (this.mapProvider.userPosition == null) {
+            this.map.getMyLocation()
+                .then(function (response) {
+                _this.map.moveCamera({
+                    target: response.latLng,
+                    zoom: 14,
+                    bearing: 0,
+                    tilt: 0,
+                    duration: 1000,
+                }).then(function () {
+                    _this.loading.dismiss();
+                });
+                _this.mapProvider.userPosition = response.latLng;
+                _this.map.addMarker({
+                    title: 'Mi ubicación.',
+                    icon: 'red',
+                    animation: 'DROP',
+                    position: response.latLng
+                });
+            })
+                .catch(function (error) {
+                _this.loading.dismiss();
+                _this.navCtrl.setRoot("HomePage");
+                _this.errorProvider.obj.message = 'Por favor, permita el acceso a su ubicación';
+                _this.errorProvider.presentModal();
+            });
+        }
+        else {
+            this.map.addMarker({
+                title: 'Mi ubicación.',
+                icon: 'red',
+                animation: 'DROP',
+                position: this.mapProvider.userPosition
+            });
+            this.loading.dismiss();
+        }
+    };
+    MapPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+            selector: 'page-map',template:/*ion-inline-start:"/Users/eyeline/Documents/GitHub/eyepaycashapp/src/pages/map/map.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>Lugares para retirar dinero</ion-title>\n  </ion-navbar>\n</ion-header>\n<ion-content>\n  <div id="map"></div>\n</ion-content>\n'/*ion-inline-end:"/Users/eyeline/Documents/GitHub/eyepaycashapp/src/pages/map/map.html"*/,
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */],
+            __WEBPACK_IMPORTED_MODULE_3__ionic_native_geolocation__["a" /* Geolocation */],
+            __WEBPACK_IMPORTED_MODULE_4__providers_api__["a" /* Api */],
+            __WEBPACK_IMPORTED_MODULE_5__providers_auth_user_auth_user__["a" /* AuthUserProvider */],
+            __WEBPACK_IMPORTED_MODULE_7__providers_map_map__["a" /* MapProvider */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* LoadingController */],
+            __WEBPACK_IMPORTED_MODULE_8__providers_modal_error_modal_error__["a" /* ModalErrorProvider */]])
+    ], MapPage);
+    return MapPage;
+}());
+
+//# sourceMappingURL=map.js.map
+
+/***/ }),
+
+/***/ 741:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return mapStyle; });
+var mapStyle = [{
+        "featureType": "water",
+        "stylers": [{ "saturation": 43 }, { "lightness": -11 }, { "hue": "#0088ff" }]
+    }, {
+        "featureType": "road",
+        "elementType": "geometry.fill",
+        "stylers": [{ "hue": "#ff0000" }, { "saturation": -100 }, { "lightness": 99 }]
+    }, {
+        "featureType": "road",
+        "elementType": "geometry.stroke",
+        "stylers": [{ "color": "#808080" }, { "lightness": 54 }]
+    }, {
+        "featureType": "landscape.man_made",
+        "elementType": "geometry.fill",
+        "stylers": [{ "color": "#ece2d9" }]
+    }, {
+        "featureType": "poi.park",
+        "elementType": "geometry.fill",
+        "stylers": [{ "color": "#ccdca1" }]
+    }, {
+        "featureType": "road",
+        "elementType": "labels.text.fill",
+        "stylers": [{ "color": "#767676" }]
+    }, {
+        "featureType": "road",
+        "elementType": "labels.text.stroke",
+        "stylers": [{ "color": "#ffffff" }]
+    }, { "featureType": "poi", "stylers": [{ "visibility": "off" }] }, {
+        "featureType": "landscape.natural",
+        "elementType": "geometry.fill",
+        "stylers": [{ "visibility": "on" }, { "color": "#b8cb93" }]
+    }, { "featureType": "poi.park", "stylers": [{ "visibility": "on" }] }, {
+        "featureType": "poi.sports_complex",
+        "stylers": [{ "visibility": "on" }]
+    }, { "featureType": "poi.medical", "stylers": [{ "visibility": "on" }] }, {
+        "featureType": "poi.business",
+        "stylers": [{ "visibility": "simplified" }]
+    }
+];
+//# sourceMappingURL=mapStyle.js.map
+
+/***/ })
+
+});
+//# sourceMappingURL=5.js.map

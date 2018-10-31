@@ -1,1 +1,355 @@
-webpackJsonp([1],{688:function(l,n,u){"use strict";function t(l){return f._22(0,[(l()(),f.Z(0,0,null,null,16,"ion-item",[["class","item item-block"]],null,null,null,F.b,F.a)),f.Y(1,1097728,null,3,x.a,[L.a,V.a,f.j,f.z,[2,q.a]],null,null),f._18(335544320,4,{contentLabel:0}),f._18(603979776,5,{_buttons:1}),f._18(603979776,6,{_icons:1}),f.Y(5,16384,null,0,E.a,[],null,null),(l()(),f._20(-1,2,["\n\t\t\t"])),(l()(),f.Z(7,0,null,1,2,"ion-label",[["stacked",""]],null,null,null,null,null)),f.Y(8,16384,[[4,4]],0,G.a,[V.a,f.j,f.z,[8,null],[8,""],[8,null],[8,null]],null,null),(l()(),f._20(-1,null,["Ingrese código de verificación"])),(l()(),f._20(-1,2,["\n\t\t\t"])),(l()(),f.Z(11,0,null,3,4,"ion-input",[["name","usercodigo"],["type","text"]],[[2,"ng-untouched",null],[2,"ng-touched",null],[2,"ng-pristine",null],[2,"ng-dirty",null],[2,"ng-valid",null],[2,"ng-invalid",null],[2,"ng-pending",null]],[[null,"ngModelChange"]],function(l,n,u){var t=!0;if("ngModelChange"===n){t=!1!==(l.component.codigo=u)&&t}return t},A.b,A.a)),f.Y(12,671744,null,0,h.p,[[8,null],[8,null],[8,null],[8,null]],{name:[0,"name"],model:[1,"model"]},{update:"ngModelChange"}),f._16(2048,null,h.m,null,[h.p]),f.Y(14,16384,null,0,h.n,[h.m],null,null),f.Y(15,5423104,null,0,D.a,[V.a,R.a,L.a,S.a,f.j,f.z,[2,T.a],[2,x.a],[2,h.m],O.a],{type:[0,"type"]},null),(l()(),f._20(-1,2,["\n\t\t"]))],function(l,n){l(n,12,0,"usercodigo",n.component.codigo);l(n,15,0,"text")},function(l,n){l(n,11,0,f._11(n,14).ngClassUntouched,f._11(n,14).ngClassTouched,f._11(n,14).ngClassPristine,f._11(n,14).ngClassDirty,f._11(n,14).ngClassValid,f._11(n,14).ngClassInvalid,f._11(n,14).ngClassPending)})}function a(l){return f._22(0,[(l()(),f.Z(0,0,null,null,6,"ion-col",[["class","col"],["col-12",""]],null,null,null,null,null)),f.Y(1,16384,null,0,N.a,[],null,null),(l()(),f._20(-1,null,["\n\t\t\t\t"])),(l()(),f.Z(3,0,null,null,2,"button",[["block",""],["class","buttonPayCash"],["ion-button",""]],null,[[null,"click"]],function(l,n,u){var t=!0;if("click"===n){t=!1!==l.component.sendMessage("phone")&&t}return t},X.b,X.a)),f.Y(4,1097728,null,0,J.a,[[8,""],V.a,f.j,f.z],{block:[0,"block"]},null),(l()(),f._20(-1,0,["Enviar mensaje"])),(l()(),f._20(-1,null,["\n\t\t\t"]))],function(l,n){l(n,4,0,"")},null)}function o(l){return f._22(0,[(l()(),f.Z(0,0,null,null,6,"ion-col",[["class","col"],["col-12",""]],null,null,null,null,null)),f.Y(1,16384,null,0,N.a,[],null,null),(l()(),f._20(-1,null,["\n\t\t\t\t"])),(l()(),f.Z(3,0,null,null,2,"button",[["block",""],["class","buttonPayCash"],["ion-button",""]],null,[[null,"click"]],function(l,n,u){var t=!0;if("click"===n){t=!1!==l.component.confirmCode()&&t}return t},X.b,X.a)),f.Y(4,1097728,null,0,J.a,[[8,""],V.a,f.j,f.z],{block:[0,"block"]},null),(l()(),f._20(-1,0,["Confirmar código"])),(l()(),f._20(-1,null,["\n\t\t\t"]))],function(l,n){l(n,4,0,"")},null)}function e(l){return f._22(0,[(l()(),f.Z(0,0,null,null,6,"ion-col",[["class","col"],["col-6",""]],null,null,null,null,null)),f.Y(1,16384,null,0,N.a,[],null,null),(l()(),f._20(-1,null,["\n\t\t\t\t"])),(l()(),f.Z(3,0,null,null,2,"button",[["class","buttonPayCash"],["ion-button",""]],null,[[null,"click"]],function(l,n,u){var t=!0;if("click"===n){t=!1!==l.component.changeVisible()&&t}return t},X.b,X.a)),f.Y(4,1097728,null,0,J.a,[[8,""],V.a,f.j,f.z],null,null),(l()(),f._20(-1,0,["Recuperar por email"])),(l()(),f._20(-1,null,["\n\t\t\t"]))],null,null)}function i(l){return f._22(0,[(l()(),f.Z(0,0,null,null,47,"div",[],null,null,null,null,null)),(l()(),f._20(-1,null,["\n\t\t"])),(l()(),f.Z(2,0,null,null,16,"ion-item",[["class","item item-block"]],null,null,null,F.b,F.a)),f.Y(3,1097728,null,3,x.a,[L.a,V.a,f.j,f.z,[2,q.a]],null,null),f._18(335544320,1,{contentLabel:0}),f._18(603979776,2,{_buttons:1}),f._18(603979776,3,{_icons:1}),f.Y(7,16384,null,0,E.a,[],null,null),(l()(),f._20(-1,2,["\n\t\t\t"])),(l()(),f.Z(9,0,null,1,2,"ion-label",[["stacked",""]],null,null,null,null,null)),f.Y(10,16384,[[1,4]],0,G.a,[V.a,f.j,f.z,[8,null],[8,""],[8,null],[8,null]],null,null),(l()(),f._20(-1,null,["Ingrese número celular"])),(l()(),f._20(-1,2,["\n\t\t\t"])),(l()(),f.Z(13,0,null,3,4,"ion-input",[["name","userdata"],["type","text"]],[[2,"ng-untouched",null],[2,"ng-touched",null],[2,"ng-pristine",null],[2,"ng-dirty",null],[2,"ng-valid",null],[2,"ng-invalid",null],[2,"ng-pending",null]],[[null,"ngModelChange"]],function(l,n,u){var t=!0;if("ngModelChange"===n){t=!1!==(l.component.data=u)&&t}return t},A.b,A.a)),f.Y(14,671744,null,0,h.p,[[8,null],[8,null],[8,null],[8,null]],{name:[0,"name"],model:[1,"model"]},{update:"ngModelChange"}),f._16(2048,null,h.m,null,[h.p]),f.Y(16,16384,null,0,h.n,[h.m],null,null),f.Y(17,5423104,null,0,D.a,[V.a,R.a,L.a,S.a,f.j,f.z,[2,T.a],[2,x.a],[2,h.m],O.a],{type:[0,"type"]},null),(l()(),f._20(-1,2,["\n\t\t"])),(l()(),f._20(-1,null,["\n\t\t"])),(l()(),f.U(16777216,null,null,1,null,t)),f.Y(21,16384,null,0,W.l,[f.I,f.F],{ngIf:[0,"ngIf"]},null),(l()(),f._20(-1,null,["\n\t\t"])),(l()(),f.Z(23,0,null,null,8,"ion-row",[["class","divMargin row"]],null,null,null,null,null)),f.Y(24,16384,null,0,$.a,[],null,null),(l()(),f._20(-1,null,["\n\t\t\t"])),(l()(),f.U(16777216,null,null,1,null,a)),f.Y(27,16384,null,0,W.l,[f.I,f.F],{ngIf:[0,"ngIf"]},null),(l()(),f._20(-1,null,["\n\t\t\t"])),(l()(),f.U(16777216,null,null,1,null,o)),f.Y(30,16384,null,0,W.l,[f.I,f.F],{ngIf:[0,"ngIf"]},null),(l()(),f._20(-1,null,["\n\t\t"])),(l()(),f._20(-1,null,["\n\t\t"])),(l()(),f.Z(33,0,null,null,13,"ion-row",[["class","marginLft divMargin20 row"]],null,null,null,null,null)),f.Y(34,16384,null,0,$.a,[],null,null),(l()(),f._20(-1,null,["\n\t\t\t"])),(l()(),f.Z(36,0,null,null,6,"ion-col",[["class","col"],["col-4",""]],null,null,null,null,null)),f.Y(37,16384,null,0,N.a,[],null,null),(l()(),f._20(-1,null,["\n\t\t\t\t"])),(l()(),f.Z(39,0,null,null,2,"button",[["class","buttonPayCash"],["ion-button",""]],null,[[null,"click"]],function(l,n,u){var t=!0;if("click"===n){t=!1!==l.component.cancelar()&&t}return t},X.b,X.a)),f.Y(40,1097728,null,0,J.a,[[8,""],V.a,f.j,f.z],null,null),(l()(),f._20(-1,0,["Cancelar"])),(l()(),f._20(-1,null,["\n\t\t\t"])),(l()(),f._20(-1,null,["\n\t\t\t"])),(l()(),f.U(16777216,null,null,1,null,e)),f.Y(45,16384,null,0,W.l,[f.I,f.F],{ngIf:[0,"ngIf"]},null),(l()(),f._20(-1,null,["\n\t\t"])),(l()(),f._20(-1,null,["\n\t"]))],function(l,n){var u=n.component;l(n,14,0,"userdata",u.data);l(n,17,0,"text");l(n,21,0,u.iscodigo2);l(n,27,0,!u.iscodigo2);l(n,30,0,u.iscodigo2);l(n,45,0,!u.iscodigo2)},function(l,n){l(n,13,0,f._11(n,16).ngClassUntouched,f._11(n,16).ngClassTouched,f._11(n,16).ngClassPristine,f._11(n,16).ngClassDirty,f._11(n,16).ngClassValid,f._11(n,16).ngClassInvalid,f._11(n,16).ngClassPending)})}function r(l){return f._22(0,[(l()(),f.Z(0,0,null,null,9,"ion-item",[["class","item item-block"],["no-lines",""]],null,null,null,F.b,F.a)),f.Y(1,1097728,null,3,x.a,[L.a,V.a,f.j,f.z,[2,q.a]],null,null),f._18(335544320,10,{contentLabel:0}),f._18(603979776,11,{_buttons:1}),f._18(603979776,12,{_icons:1}),f.Y(5,16384,null,0,E.a,[],null,null),(l()(),f._20(-1,2,["\n\t\t\t\t"])),(l()(),f.Z(7,0,null,2,1,"msg-error",[],null,null,null,B.b,B.a)),f.Y(8,49152,null,0,H.a,[],{control:[0,"control"]},null),(l()(),f._20(-1,2,["\n\t\t"]))],function(l,n){l(n,8,0,n.component.formGroup.controls.data)},null)}function s(l){return f._22(0,[(l()(),f.Z(0,0,null,null,16,"ion-item",[["class","item item-block"]],null,null,null,F.b,F.a)),f.Y(1,1097728,null,3,x.a,[L.a,V.a,f.j,f.z,[2,q.a]],null,null),f._18(335544320,13,{contentLabel:0}),f._18(603979776,14,{_buttons:1}),f._18(603979776,15,{_icons:1}),f.Y(5,16384,null,0,E.a,[],null,null),(l()(),f._20(-1,2,["\n\t\t\t"])),(l()(),f.Z(7,0,null,1,2,"ion-label",[["stacked",""]],null,null,null,null,null)),f.Y(8,16384,[[13,4]],0,G.a,[V.a,f.j,f.z,[8,null],[8,""],[8,null],[8,null]],null,null),(l()(),f._20(-1,null,["Ingrese código de verificación"])),(l()(),f._20(-1,2,["\n\t\t\t"])),(l()(),f.Z(11,0,null,3,4,"ion-input",[["name","usercodigo"],["type","text"]],[[2,"ng-untouched",null],[2,"ng-touched",null],[2,"ng-pristine",null],[2,"ng-dirty",null],[2,"ng-valid",null],[2,"ng-invalid",null],[2,"ng-pending",null]],[[null,"ngModelChange"]],function(l,n,u){var t=!0;if("ngModelChange"===n){t=!1!==(l.component.codigo=u)&&t}return t},A.b,A.a)),f.Y(12,671744,null,0,h.p,[[8,null],[8,null],[8,null],[8,null]],{name:[0,"name"],model:[1,"model"]},{update:"ngModelChange"}),f._16(2048,null,h.m,null,[h.p]),f.Y(14,16384,null,0,h.n,[h.m],null,null),f.Y(15,5423104,null,0,D.a,[V.a,R.a,L.a,S.a,f.j,f.z,[2,T.a],[2,x.a],[2,h.m],O.a],{type:[0,"type"]},null),(l()(),f._20(-1,2,["\n\t\t"]))],function(l,n){l(n,12,0,"usercodigo",n.component.codigo);l(n,15,0,"text")},function(l,n){l(n,11,0,f._11(n,14).ngClassUntouched,f._11(n,14).ngClassTouched,f._11(n,14).ngClassPristine,f._11(n,14).ngClassDirty,f._11(n,14).ngClassValid,f._11(n,14).ngClassInvalid,f._11(n,14).ngClassPending)})}function c(l){return f._22(0,[(l()(),f.Z(0,0,null,null,6,"ion-col",[["class","col"],["col-12",""]],null,null,null,null,null)),f.Y(1,16384,null,0,N.a,[],null,null),(l()(),f._20(-1,null,["\n\t\t\t\t"])),(l()(),f.Z(3,0,null,null,2,"button",[["block",""],["class","buttonPayCash"],["ion-button",""]],null,[[null,"click"]],function(l,n,u){var t=!0;if("click"===n){t=!1!==l.component.sendMessage("mail")&&t}return t},X.b,X.a)),f.Y(4,1097728,null,0,J.a,[[8,""],V.a,f.j,f.z],{block:[0,"block"]},null),(l()(),f._20(-1,0,["Enviar email"])),(l()(),f._20(-1,null,["\n\t\t\t"]))],function(l,n){l(n,4,0,"")},null)}function g(l){return f._22(0,[(l()(),f.Z(0,0,null,null,6,"ion-col",[["class","col"],["col-12",""]],null,null,null,null,null)),f.Y(1,16384,null,0,N.a,[],null,null),(l()(),f._20(-1,null,["\n\t\t\t\t"])),(l()(),f.Z(3,0,null,null,2,"button",[["block",""],["class","buttonPayCash"],["ion-button",""]],null,[[null,"click"]],function(l,n,u){var t=!0;if("click"===n){t=!1!==l.component.confirmCode()&&t}return t},X.b,X.a)),f.Y(4,1097728,null,0,J.a,[[8,""],V.a,f.j,f.z],{block:[0,"block"]},null),(l()(),f._20(-1,0,["Confirmar código"])),(l()(),f._20(-1,null,["\n\t\t\t"]))],function(l,n){l(n,4,0,"")},null)}function d(l){return f._22(0,[(l()(),f.Z(0,0,null,null,63,"div",[],null,null,null,null,null)),(l()(),f._20(-1,null,["\n\t\t\t"])),(l()(),f.Z(2,0,null,null,27,"div",[],[[2,"ng-untouched",null],[2,"ng-touched",null],[2,"ng-pristine",null],[2,"ng-dirty",null],[2,"ng-valid",null],[2,"ng-invalid",null],[2,"ng-pending",null]],[[null,"submit"],[null,"reset"]],function(l,n,u){var t=!0;if("submit"===n){t=!1!==f._11(l,3).onSubmit(u)&&t}if("reset"===n){t=!1!==f._11(l,3).onReset()&&t}return t},null,null)),f.Y(3,540672,null,0,h.h,[[8,null],[8,null]],{form:[0,"form"]},null),f._16(2048,null,h.b,null,[h.h]),f.Y(5,16384,null,0,h.o,[h.b],null,null),(l()(),f._20(-1,null,["\n\t\t"])),(l()(),f.Z(7,0,null,null,18,"ion-item",[["class","item item-block"]],null,null,null,F.b,F.a)),f.Y(8,1097728,null,3,x.a,[L.a,V.a,f.j,f.z,[2,q.a]],null,null),f._18(335544320,7,{contentLabel:0}),f._18(603979776,8,{_buttons:1}),f._18(603979776,9,{_icons:1}),f.Y(12,16384,null,0,E.a,[],null,null),(l()(),f._20(-1,2,["\n\t\t\t"])),(l()(),f.Z(14,0,null,1,2,"ion-label",[["stacked",""]],null,null,null,null,null)),f.Y(15,16384,[[7,4]],0,G.a,[V.a,f.j,f.z,[8,null],[8,""],[8,null],[8,null]],null,null),(l()(),f._20(-1,null,["Ingrese su email"])),(l()(),f._20(-1,2,["\n\t\t\t"])),(l()(),f.Z(18,0,null,3,6,"ion-input",[["formControlName","data"],["name","dataname"],["required",""],["type","text"]],[[1,"required",0],[2,"ng-untouched",null],[2,"ng-touched",null],[2,"ng-pristine",null],[2,"ng-dirty",null],[2,"ng-valid",null],[2,"ng-invalid",null],[2,"ng-pending",null]],null,null,A.b,A.a)),f.Y(19,16384,null,0,h.r,[],{required:[0,"required"]},null),f._16(1024,null,h.k,function(l){return[l]},[h.r]),f.Y(21,671744,null,0,h.f,[[3,h.b],[2,h.k],[8,null],[8,null]],{name:[0,"name"]},null),f._16(2048,null,h.m,null,[h.f]),f.Y(23,16384,null,0,h.n,[h.m],null,null),f.Y(24,5423104,null,0,D.a,[V.a,R.a,L.a,S.a,f.j,f.z,[2,T.a],[2,x.a],[2,h.m],O.a],{type:[0,"type"]},null),(l()(),f._20(-1,2,["\t\t\n\t\t"])),(l()(),f._20(-1,null,["\n\t\t"])),(l()(),f.U(16777216,null,null,1,null,r)),f.Y(28,16384,null,0,W.l,[f.I,f.F],{ngIf:[0,"ngIf"]},null),(l()(),f._20(-1,null,["\n\t"])),(l()(),f._20(-1,null,["\n\t\t"])),(l()(),f.U(16777216,null,null,1,null,s)),f.Y(32,16384,null,0,W.l,[f.I,f.F],{ngIf:[0,"ngIf"]},null),(l()(),f._20(-1,null,["\n\t\t"])),(l()(),f.Z(34,0,null,null,8,"ion-row",[["class","divMargin row"]],null,null,null,null,null)),f.Y(35,16384,null,0,$.a,[],null,null),(l()(),f._20(-1,null,["\n\t\t\t"])),(l()(),f.U(16777216,null,null,1,null,c)),f.Y(38,16384,null,0,W.l,[f.I,f.F],{ngIf:[0,"ngIf"]},null),(l()(),f._20(-1,null,["\n\t\t\t"])),(l()(),f.U(16777216,null,null,1,null,g)),f.Y(41,16384,null,0,W.l,[f.I,f.F],{ngIf:[0,"ngIf"]},null),(l()(),f._20(-1,null,["\n\t\t"])),(l()(),f._20(-1,null,["\n\t\t"])),(l()(),f.Z(44,0,null,null,18,"ion-row",[["class","marginLft divMargin row"]],null,null,null,null,null)),f.Y(45,16384,null,0,$.a,[],null,null),(l()(),f._20(-1,null,["\n\t\t\t"])),(l()(),f.Z(47,0,null,null,6,"ion-col",[["class","col"],["col-4",""]],null,null,null,null,null)),f.Y(48,16384,null,0,N.a,[],null,null),(l()(),f._20(-1,null,["\n\t\t\t\t"])),(l()(),f.Z(50,0,null,null,2,"button",[["class","buttonPayCash"],["ion-button",""]],null,[[null,"click"]],function(l,n,u){var t=!0;if("click"===n){t=!1!==l.component.cancelar()&&t}return t},X.b,X.a)),f.Y(51,1097728,null,0,J.a,[[8,""],V.a,f.j,f.z],null,null),(l()(),f._20(-1,0,["Cancelar"])),(l()(),f._20(-1,null,["\n\t\t\t"])),(l()(),f._20(-1,null,["\n\t\t\t"])),(l()(),f.Z(55,0,null,null,6,"ion-col",[["class","col"],["col-6",""]],null,null,null,null,null)),f.Y(56,16384,null,0,N.a,[],null,null),(l()(),f._20(-1,null,["\n\t\t\t\t"])),(l()(),f.Z(58,0,null,null,2,"button",[["class","buttonPayCash"],["ion-button",""]],null,[[null,"click"]],function(l,n,u){var t=!0;if("click"===n){t=!1!==l.component.changeVisible()&&t}return t},X.b,X.a)),f.Y(59,1097728,null,0,J.a,[[8,""],V.a,f.j,f.z],null,null),(l()(),f._20(-1,0,["Recuperar por SMS"])),(l()(),f._20(-1,null,["\n\t\t\t"])),(l()(),f._20(-1,null,["\n\t\t"])),(l()(),f._20(-1,null,["\n\t"]))],function(l,n){var u=n.component;l(n,3,0,u.formGroup);l(n,19,0,"");l(n,21,0,"data");l(n,24,0,"text");l(n,28,0,u.formGroup.invalid);l(n,32,0,u.iscodigo);l(n,38,0,!u.iscodigo);l(n,41,0,u.iscodigo)},function(l,n){l(n,2,0,f._11(n,5).ngClassUntouched,f._11(n,5).ngClassTouched,f._11(n,5).ngClassPristine,f._11(n,5).ngClassDirty,f._11(n,5).ngClassValid,f._11(n,5).ngClassInvalid,f._11(n,5).ngClassPending);l(n,18,0,f._11(n,19).required?"":null,f._11(n,23).ngClassUntouched,f._11(n,23).ngClassTouched,f._11(n,23).ngClassPristine,f._11(n,23).ngClassDirty,f._11(n,23).ngClassValid,f._11(n,23).ngClassInvalid,f._11(n,23).ngClassPending)})}function _(l){return f._22(0,[(l()(),f.Z(0,0,null,null,14,"ion-content",[["class","back vignette"],["padding",""]],[[2,"statusbar-padding",null],[2,"has-refresher",null]],null,null,K.b,K.a)),f.Y(1,4374528,null,0,T.a,[V.a,R.a,O.a,f.j,f.z,S.a,Q.a,f.u,[2,ll.a],[2,nl.a]],null,null),(l()(),f._20(-1,1,["\n\t"])),(l()(),f.Z(3,0,null,1,4,"div",[["class","center"],["style","margin-top:12%"]],null,null,null,null,null)),(l()(),f._20(-1,null,["\n\t\t"])),(l()(),f.Z(5,0,null,null,1,"ion-img",[["class","logo"],["src","assets/imgs/EPCLogo.png"]],null,null,null,ul.b,ul.a)),f.Y(6,1228800,null,0,tl.a,[f.j,f.z,R.a,[2,T.a],O.a],{src:[0,"src"]},null),(l()(),f._20(-1,null,["\n\t"])),(l()(),f._20(-1,1,["\n\n\t"])),(l()(),f.U(16777216,null,1,1,null,i)),f.Y(10,16384,null,0,W.l,[f.I,f.F],{ngIf:[0,"ngIf"]},null),(l()(),f._20(-1,1,["\n\n\t"])),(l()(),f.U(16777216,null,1,1,null,d)),f.Y(13,16384,null,0,W.l,[f.I,f.F],{ngIf:[0,"ngIf"]},null),(l()(),f._20(-1,1,["\n"]))],function(l,n){var u=n.component;l(n,6,0,"assets/imgs/EPCLogo.png");l(n,10,0,u.isvisible);l(n,13,0,!u.isvisible)},function(l,n){l(n,0,0,f._11(n,1).statusbarPadding,f._11(n,1)._hasRefresher)})}Object.defineProperty(n,"__esModule",{value:!0});var f=u(0),p=(u(1),u(33),u(50)),m=u(62),b=u(63),h=u(17),v=function(){function l(l,n,u,t,a,o,e){this.navCtrl=l,this.navParams=n,this.api=u,this.toastCtrl=t,this.userProvider=a,this.loadingCtrl=o,this.errorProvider=e,this.isvisible=!0,this.data=null,this.type="phone",this.codigo=null,this.iscodigo=!1,this.iscodigo2=!1,this.formGroup=new h.g({data:new h.e("",[h.s.required,h.s.pattern("^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$"),h.s.maxLength(70)])})}return l.prototype.sendMessage=function(l){var n=this;if(this.type=l,null!=this.formGroup.value.data){var u=this.loadingCtrl.create({spinner:"hide",content:"<img src='assets/imgs/buho.png'>"});u.present(),this.api.post("auth/restar-password",{type:this.type,data:this.formGroup.value.data}).then(function(t){u.dismiss(),"phone"!=l?n.iscodigo=!0:n.iscodigo2=!0,n.reset=t,n.data=null,n.errorProvider.obj.message="Se ha enviado un código de verificación",n.errorProvider.presentModal()}).catch(function(l){u.dismiss();var t="";l.error.forEach(function(l){t+=l.message+"\n"}),n.errorProvider.obj.message=t,n.errorProvider.presentModal()})}else{var t="número celular";"phone"!=l&&(t="dirección email"),this.errorProvider.obj.message="Por favor ingrese su "+t,this.errorProvider.presentModal()}},l.prototype.changeVisible=function(){this.isvisible=!this.isvisible,this.data=null},l.prototype.cancelar=function(){this.navCtrl.pop()},l.prototype.confirmCode=function(){null!=this.codigo?this.reset.password_code_req==this.codigo?this.navCtrl.push("PasswordUpdatePage",{reset_id:this.reset.id}):(this.errorProvider.obj.message="El código ingresado no coincide",this.errorProvider.presentModal()):(this.errorProvider.obj.message="Por favor ingrese el código de verificación",this.errorProvider.presentModal())},l}(),C=u(87),Y=u(699),y=function(){return function(){}}(),Z=u(198),P=u(199),I=u(200),k=u(201),j=u(202),z=u(203),M=u(204),w=u(205),U=u(206),F=u(140),x=u(21),L=u(20),V=u(3),q=u(52),E=u(64),G=u(59),A=u(210),D=u(66),R=u(6),S=u(11),T=u(23),O=u(10),N=u(89),X=u(38),J=u(26),W=u(15),$=u(90),B=u(701),H=u(698),K=u(139),Q=u(31),ll=u(7),nl=u(30),ul=u(388),tl=u(94),al=u(16),ol=u(92),el=u(88),il=f.X({encapsulation:2,styles:[],data:{}}),rl=f.V("page-recovery-password",v,function(l){return f._22(0,[(l()(),f.Z(0,0,null,null,1,"page-recovery-password",[],null,null,null,_,il)),f.Y(1,49152,null,0,v,[nl.a,al.a,p.a,ol.a,m.a,el.a,b.a],null,null)],null,null)},{},{},[]),sl=u(138),cl=u(57);u.d(n,"RecoveryPasswordPageModuleNgFactory",function(){return gl});var gl=f.W(y,[],function(l){return f._7([f._8(512,f.i,f.S,[[8,[Z.a,P.a,I.a,k.a,j.a,z.a,M.a,w.a,U.a,rl]],[3,f.i],f.s]),f._8(4608,W.n,W.m,[f.r,[2,W.x]]),f._8(4608,h.v,h.v,[]),f._8(4608,h.d,h.d,[]),f._8(512,W.b,W.b,[]),f._8(512,h.t,h.t,[]),f._8(512,h.i,h.i,[]),f._8(512,h.q,h.q,[]),f._8(512,sl.a,sl.a,[]),f._8(512,sl.b,sl.b,[]),f._8(512,C.a,C.a,[]),f._8(512,Y.a,Y.a,[]),f._8(512,y,y,[]),f._8(256,cl.a,v,[])])})},698:function(l,n,u){"use strict";u.d(n,"a",function(){return a});u(1);var t=u(214),a=function(){function l(){}return Object.defineProperty(l.prototype,"errorMessage",{get:function(){for(var l in this.control.errors)if(this.control.errors.hasOwnProperty(l)&&this.control.touched)return t.a.getValidatorErrorMessage(l,this.control.errors[l],this.name);return!1},enumerable:!0,configurable:!0}),l}()},699:function(l,n,u){"use strict";u.d(n,"a",function(){return t});u(1),u(698);var t=function(){return function(){}}()},701:function(l,n,u){"use strict";function t(l){return o._22(0,[(l()(),o.Z(0,0,null,null,1,"span",[],null,null,null,null,null)),(l()(),o._20(1,null,["",""]))],null,function(l,n){l(n,1,0,n.component.errorMessage)})}function a(l){return o._22(0,[(l()(),o.Z(0,0,null,null,2,"div",[],null,null,null,null,null)),(l()(),o.U(16777216,null,null,1,null,t)),o.Y(2,16384,null,0,e.l,[o.I,o.F],{ngIf:[0,"ngIf"]},null)],function(l,n){l(n,2,0,!1!==n.component.errorMessage)},null)}u.d(n,"a",function(){return i}),n.b=a;var o=u(0),e=u(15),i=o.X({encapsulation:2,styles:[],data:{}})}});
+webpackJsonp([1],{
+
+/***/ 727:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RegisterPageModule", function() { return RegisterPageModule; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(26);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__register__ = __webpack_require__(750);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_brmasker_ionic_3__ = __webpack_require__(378);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__components_components_module__ = __webpack_require__(733);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ngx_translate_core__ = __webpack_require__(93);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+
+
+
+
+
+var RegisterPageModule = /** @class */ (function () {
+    function RegisterPageModule() {
+    }
+    RegisterPageModule = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["J" /* NgModule */])({
+            declarations: [
+                __WEBPACK_IMPORTED_MODULE_2__register__["a" /* RegisterPage */],
+            ],
+            imports: [
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__register__["a" /* RegisterPage */]),
+                __WEBPACK_IMPORTED_MODULE_5__ngx_translate_core__["b" /* TranslateModule */],
+                __WEBPACK_IMPORTED_MODULE_3_brmasker_ionic_3__["a" /* BrMaskerModule */],
+                __WEBPACK_IMPORTED_MODULE_4__components_components_module__["a" /* ComponentsModule */],
+            ],
+        })
+    ], RegisterPageModule);
+    return RegisterPageModule;
+}());
+
+//# sourceMappingURL=register.module.js.map
+
+/***/ }),
+
+/***/ 733:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ComponentsModule; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__msg_error_msg_error__ = __webpack_require__(734);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_common__ = __webpack_require__(33);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+
+
+var ComponentsModule = /** @class */ (function () {
+    function ComponentsModule() {
+    }
+    ComponentsModule = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["J" /* NgModule */])({
+            declarations: [__WEBPACK_IMPORTED_MODULE_1__msg_error_msg_error__["a" /* MsgErrorComponent */]],
+            imports: [__WEBPACK_IMPORTED_MODULE_2__angular_common__["b" /* CommonModule */]],
+            exports: [__WEBPACK_IMPORTED_MODULE_1__msg_error_msg_error__["a" /* MsgErrorComponent */]]
+        })
+    ], ComponentsModule);
+    return ComponentsModule;
+}());
+
+//# sourceMappingURL=components.module.js.map
+
+/***/ }),
+
+/***/ 734:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MsgErrorComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_forms__ = __webpack_require__(21);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_validation_validation__ = __webpack_require__(377);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+var MsgErrorComponent = /** @class */ (function () {
+    function MsgErrorComponent() {
+    }
+    Object.defineProperty(MsgErrorComponent.prototype, "errorMessage", {
+        get: function () {
+            for (var propertyName in this.control.errors) {
+                if (this.control.errors.hasOwnProperty(propertyName) && this.control.touched) {
+                    return __WEBPACK_IMPORTED_MODULE_2__providers_validation_validation__["a" /* ValidationProvider */].getValidatorErrorMessage(propertyName, this.control.errors[propertyName], this.name);
+                }
+            }
+            return false;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["E" /* Input */])(),
+        __metadata("design:type", __WEBPACK_IMPORTED_MODULE_1__angular_forms__["b" /* FormControl */])
+    ], MsgErrorComponent.prototype, "control", void 0);
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["E" /* Input */])(),
+        __metadata("design:type", String)
+    ], MsgErrorComponent.prototype, "name", void 0);
+    MsgErrorComponent = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+            selector: 'msg-error',
+            template: '<div><span *ngIf="errorMessage !== false">{{errorMessage}}</span></div>'
+        }),
+        __metadata("design:paramtypes", [])
+    ], MsgErrorComponent);
+    return MsgErrorComponent;
+}());
+
+//# sourceMappingURL=msg-error.js.map
+
+/***/ }),
+
+/***/ 750:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return RegisterPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(26);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_api__ = __webpack_require__(48);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_auth_user_auth_user__ = __webpack_require__(94);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_forms__ = __webpack_require__(21);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_modal_error_modal_error__ = __webpack_require__(67);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+
+var RegisterPage = /** @class */ (function () {
+    function RegisterPage(navCtrl, navParams, api, userProvider, loadingCtrl, modalCtrl, errorProvider) {
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+        this.api = api;
+        this.userProvider = userProvider;
+        this.loadingCtrl = loadingCtrl;
+        this.modalCtrl = modalCtrl;
+        this.errorProvider = errorProvider;
+        this.responseParams = null;
+        this.registerParams = null;
+        this.user_register = {
+            //datos obtenidos por el params
+            phone: null,
+            country_id: null,
+            user_verify_id: null,
+            confirm_verify: null,
+        };
+        this.type = 'password';
+        this.showPass = false;
+        this.type2 = 'password';
+        this.showPass2 = false;
+        this.imagen = 'assets/backgrounds/Background3.png';
+        this.ischecked = this.userProvider.check_terminos;
+        this.formGroup = new __WEBPACK_IMPORTED_MODULE_4__angular_forms__["c" /* FormGroup */]({
+            first_name: new __WEBPACK_IMPORTED_MODULE_4__angular_forms__["b" /* FormControl */]('', [
+                __WEBPACK_IMPORTED_MODULE_4__angular_forms__["h" /* Validators */].required,
+                __WEBPACK_IMPORTED_MODULE_4__angular_forms__["h" /* Validators */].minLength(3),
+                __WEBPACK_IMPORTED_MODULE_4__angular_forms__["h" /* Validators */].maxLength(20)
+            ]),
+            last_name: new __WEBPACK_IMPORTED_MODULE_4__angular_forms__["b" /* FormControl */]('', [
+                __WEBPACK_IMPORTED_MODULE_4__angular_forms__["h" /* Validators */].required,
+                __WEBPACK_IMPORTED_MODULE_4__angular_forms__["h" /* Validators */].minLength(5),
+                __WEBPACK_IMPORTED_MODULE_4__angular_forms__["h" /* Validators */].maxLength(20)
+            ]),
+            gender: new __WEBPACK_IMPORTED_MODULE_4__angular_forms__["b" /* FormControl */]('', [
+                __WEBPACK_IMPORTED_MODULE_4__angular_forms__["h" /* Validators */].required
+            ]),
+            mail: new __WEBPACK_IMPORTED_MODULE_4__angular_forms__["b" /* FormControl */]('', [
+                __WEBPACK_IMPORTED_MODULE_4__angular_forms__["h" /* Validators */].required,
+                __WEBPACK_IMPORTED_MODULE_4__angular_forms__["h" /* Validators */].email,
+            ]),
+            password: new __WEBPACK_IMPORTED_MODULE_4__angular_forms__["b" /* FormControl */]('', [
+                __WEBPACK_IMPORTED_MODULE_4__angular_forms__["h" /* Validators */].required,
+                __WEBPACK_IMPORTED_MODULE_4__angular_forms__["h" /* Validators */].minLength(6),
+                __WEBPACK_IMPORTED_MODULE_4__angular_forms__["h" /* Validators */].pattern("^(?=.*[A-Za-z])(?=.*\\d)[A-Za-z\\d]{8,}$")
+                // Validators.pattern("^(?=.{8,32}$)(?=.[A-Z])(?=.[a-z])(?=.[0-9]).")
+            ]),
+            password_conf: new __WEBPACK_IMPORTED_MODULE_4__angular_forms__["b" /* FormControl */]('', [
+                __WEBPACK_IMPORTED_MODULE_4__angular_forms__["h" /* Validators */].required,
+                __WEBPACK_IMPORTED_MODULE_4__angular_forms__["h" /* Validators */].minLength(6),
+                __WEBPACK_IMPORTED_MODULE_4__angular_forms__["h" /* Validators */].pattern("^(?=.*[A-Za-z])(?=.*\\d)[A-Za-z\\d]{8,}$")
+                // Validators.pattern("^(?=.{8,32}$)(?=.[A-Z])(?=.[a-z])(?=.[0-9]).")
+            ]),
+            mail_conf: new __WEBPACK_IMPORTED_MODULE_4__angular_forms__["b" /* FormControl */]('', [
+                __WEBPACK_IMPORTED_MODULE_4__angular_forms__["h" /* Validators */].required,
+                __WEBPACK_IMPORTED_MODULE_4__angular_forms__["h" /* Validators */].email
+            ]),
+            phone: new __WEBPACK_IMPORTED_MODULE_4__angular_forms__["b" /* FormControl */](),
+            country_id: new __WEBPACK_IMPORTED_MODULE_4__angular_forms__["b" /* FormControl */](),
+            user_verify_id: new __WEBPACK_IMPORTED_MODULE_4__angular_forms__["b" /* FormControl */](),
+            confirm_verify: new __WEBPACK_IMPORTED_MODULE_4__angular_forms__["b" /* FormControl */]()
+        });
+        this.getInfo();
+        this.ischecked = this.userProvider.check_terminos;
+    }
+    RegisterPage.prototype.getInfo = function () {
+        this.responseParams = this.navParams.get('response');
+        this.registerParams = this.navParams.get('register');
+    };
+    RegisterPage.prototype.showPassword = function () {
+        this.showPass = !this.showPass;
+        if (this.showPass) {
+            this.type = 'text';
+        }
+        else {
+            this.type = 'password';
+        }
+    };
+    RegisterPage.prototype.showPassword2 = function () {
+        this.showPass2 = !this.showPass2;
+        if (this.showPass2) {
+            this.type2 = 'text';
+        }
+        else {
+            this.type2 = 'password';
+        }
+    };
+    RegisterPage.prototype.cancel = function () {
+        this.navCtrl.pop();
+    };
+    RegisterPage.prototype.register = function () {
+        var _this = this;
+        if (this.formGroup.valid) {
+            this.formGroup.get('phone').setValue(this.registerParams.value);
+            this.formGroup.get('country_id').setValue(this.responseParams.country_id);
+            this.formGroup.get('user_verify_id').setValue(this.responseParams.id);
+            this.formGroup.get('confirm_verify').setValue("phone");
+            if ((this.formGroup.value.mail == this.formGroup.value.mail_conf) && (this.formGroup.value.password == this.formGroup.value.password_conf)) {
+                var loading_1 = this.loadingCtrl.create({
+                    spinner: 'hide',
+                    content: "<img src='assets/imgs/buho.png'>",
+                });
+                if (this.userProvider.check_terminos) {
+                    loading_1.present();
+                    this.user_register.phone = this.registerParams.value;
+                    this.user_register.country_id = this.responseParams.country_id;
+                    this.user_register.user_verify_id = this.responseParams.id;
+                    this.user_register.confirm_verify = 'phone';
+                    this.api.post('auth/sign-up', this.formGroup.value).then(function (data) {
+                        _this.userProvider.setUser(data);
+                        _this.verifyConfirm();
+                        loading_1.dismiss();
+                        _this.presentWelcomeModal();
+                    }).catch(function (error) {
+                        var mensaje = "";
+                        error.error.forEach(function (data) {
+                            mensaje += data.message + "\n";
+                        });
+                        _this.errorProvider.obj.message = mensaje;
+                        _this.errorProvider.presentModal();
+                        loading_1.dismiss();
+                    });
+                }
+                else {
+                    this.errorProvider.obj.message = 'Por favor lea y acepte las políticas de uso y tratamiento de datos';
+                    this.errorProvider.presentModal();
+                }
+            }
+            else {
+                // this.formGroup.setErrors(this.formGroup.errors)
+            }
+        }
+    };
+    RegisterPage.prototype.verifyConfirm = function () {
+        var _this = this;
+        this.api.get('account/confirm-verify', this.userProvider, {
+            id: this.responseParams.id,
+            type: 'phone'
+        }).then(function (data) {
+        }).catch(function (error) {
+            var mensaje = "";
+            error.error.forEach(function (data) {
+                mensaje += data.message + "\n";
+            });
+            _this.errorProvider.obj.message = mensaje;
+            _this.errorProvider.presentModal();
+        });
+    };
+    RegisterPage.prototype.politicas = function () {
+        var _this = this;
+        var poli = this.modalCtrl.create('PoliticasPage');
+        poli.present();
+        poli.onDidDismiss((function (data) {
+            _this.ischecked = true;
+        }));
+    };
+    RegisterPage.prototype.presentWelcomeModal = function () {
+        var _this = this;
+        var modalWelcome = this.modalCtrl.create('ModalWelcomePage', { name: this.userProvider.user_Info.first_name + " " + this.userProvider.user_Info.last_name });
+        modalWelcome.onWillDismiss(function () {
+            _this.navCtrl.setRoot('LoginPage');
+        });
+        modalWelcome.onDidDismiss(function (data) {
+        });
+        modalWelcome.present();
+        this.userProvider.setUser(null);
+    };
+    RegisterPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+            selector: 'page-register',template:/*ion-inline-start:"/Users/eyeline/Documents/GitHub/eyepaycashapp/src/pages/register/register.html"*/'<ion-content class="imgBackground vignette">\n	<div style="margin-top:12%" class="center">\n		<ion-img class="logo" src="assets/imgs/EPCLogo.png"></ion-img>\n	</div>\n	<div class="center">\n		<form [formGroup]="formGroup" (ngSubmit)="register()">\n			<ion-list>\n				<ion-item class="marginlists">\n					<ion-label stacked>Nombres</ion-label>\n					<ion-input type="text" required name="userregistronombre" formControlName="first_name"></ion-input>\n				</ion-item>\n				<ion-item no-lines *ngIf="formGroup.invalid">\n					<msg-error [control]="formGroup.controls.first_name" name="Nombres"></msg-error>\n				</ion-item>\n				<ion-item class="marginlists">\n					<ion-label stacked>Apellidos</ion-label>\n					<ion-input type="text" required name="userregistroapellido" formControlName="last_name">\n					</ion-input>\n				</ion-item>\n				<ion-item no-lines *ngIf="formGroup.invalid">\n					<msg-error [control]="formGroup.controls.last_name" name="Apellidos"></msg-error>\n				</ion-item>\n				<ion-item class="marginlists">\n					<ion-label stacked>Género</ion-label>\n					<ion-select okText="Guardar" cancelText="Cancelar" formControlName="gender" name="userregistrogenero" interface="popover">\n						<ion-option value="f">Femenino</ion-option>\n						<ion-option value="m">Masculino</ion-option>\n					</ion-select>\n				</ion-item>\n				<ion-item class="marginlists">\n					<ion-label stacked>Email</ion-label>\n					<ion-input type="email" required name="userregistroemail" formControlName="mail"></ion-input>\n				</ion-item>\n				<ion-item no-lines *ngIf="formGroup.invalid">\n					<msg-error [control]="formGroup.controls.mail" name="Email"></msg-error>\n				</ion-item>\n				<ion-item class="marginlists">\n					<ion-label stacked>Confirmar email</ion-label>\n					<ion-input type="email" required name="confirmacionmail" formControlName="mail_conf"></ion-input>\n				</ion-item>\n				<ion-item>\n					<ion-label stacked>Contraseña</ion-label>\n					<ion-input type="{{type}}" name="contrasena" formControlName="password">\n					</ion-input>\n					<button *ngIf="!showPass" class="btn_show" ion-button clear color="dark" type="button" required item-right (click)="showPassword()">\n						<ion-icon name="ios-eye-off-outline"></ion-icon>\n					</button>\n					<button *ngIf="showPass" class="btn_show" ion-button clear color="dark" type="button" item-right (click)="showPassword()">\n						<ion-icon name="ios-eye-outline"></ion-icon>\n					</button>\n				</ion-item>\n\n				<ion-item no-lines *ngIf="formGroup.invalid">\n					<msg-error [control]="formGroup.controls.password" name="Contraseña"></msg-error>\n				</ion-item>\n\n				<ion-item class="marginlists">\n					<ion-label stacked>Confirmar contraseña</ion-label>\n					<ion-input type="{{type2}}" name="confirmacontrasena" formControlName="password_conf">\n					</ion-input>\n					<button *ngIf="!showPass2" class="btn_show2" ion-button clear color="dark" type="button" required item-right\n					 (click)="showPassword2()">\n						<ion-icon name="ios-eye-off-outline"></ion-icon>\n					</button>\n					<button *ngIf="showPass2" class="btn_show2" ion-button clear color="dark" type="button" item-right (click)="showPassword2()">\n						<ion-icon name="ios-eye-outline"></ion-icon>\n					</button>\n				</ion-item>\n				<div >\n					<button class="buttonPayCash" ion-button small>Registrarse</button>\n				</div>\n			</ion-list>\n		</form>\n	</div>\n	<ion-list>\n		<ion-col col-2>\n			<ion-checkbox [(ngModel)]="ischecked"></ion-checkbox>\n		</ion-col>\n		<ion-col col-10><span (click)="politicas()"> Leí y acepto las políticas de uso y privacidad de la información</span></ion-col>\n	</ion-list>\n	<div style="margin-top: 6%" class="center">\n		<button class="buttonPayCash" (click)="cancel()" ion-button small>Cancelar</button>\n	</div>\n</ion-content>'/*ion-inline-end:"/Users/eyeline/Documents/GitHub/eyepaycashapp/src/pages/register/register.html"*/,
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */],
+            __WEBPACK_IMPORTED_MODULE_2__providers_api__["a" /* Api */],
+            __WEBPACK_IMPORTED_MODULE_3__providers_auth_user_auth_user__["a" /* AuthUserProvider */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* LoadingController */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* ModalController */],
+            __WEBPACK_IMPORTED_MODULE_5__providers_modal_error_modal_error__["a" /* ModalErrorProvider */]])
+    ], RegisterPage);
+    return RegisterPage;
+}());
+
+//# sourceMappingURL=register.js.map
+
+/***/ })
+
+});
+//# sourceMappingURL=1.js.map

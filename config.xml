@@ -87,6 +87,7 @@
     <plugin name="cordova-plugin-nativegeocoder" spec="^3.1.2" />
     <plugin name="cordova-clipboard" spec="1.2.1" />
     <plugin name="cordova-plugin-contacts" spec="3.0.1" />
+    <plugin name="cordova-plugin-fingerprint-aio" spec="1.4.1" />
     <engine name="ios" spec="4.5.5" />
     <engine name="android" spec="7.1.1" />
 </widget>

@@ -93,5 +93,23 @@
     },
     "is_top_level": true,
     "variables": {}
+  },
+  "cordova-plugin-fingerprint-aio": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-plugin-fingerprint-aio"
+    },
+    "is_top_level": true,
+    "variables": {
+      "FACEID_USAGE_DESCRIPTION": " "
+    }
+  },
+  "cordova-plugin-add-swift-support": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-plugin-add-swift-support@^1.7.1"
+    },
+    "is_top_level": false,
+    "variables": {}
   }
 }

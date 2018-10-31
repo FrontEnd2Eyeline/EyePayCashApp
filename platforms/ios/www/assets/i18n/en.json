@@ -1,0 +1,14 @@
+{
+  "INICIAR_SESION":"Login",
+  "REGISTRARME":"Sign up",
+  "RECUPERAR_CONTRASENA":"Recovery password",
+  "PRUEBA_EYEPAYCASH": "Try  EYEPAYCASH",
+  "TRANSACCION":"Transaction",
+  "HISTORIAL":"History",
+  "MAPA":"Maps",
+  "CUENTA":"Account",
+  "INICIO":"Home",
+  "MI_CUENTA":"My account",
+  "SEGURIDAD":"Security",
+  "CERRAR_SESION":"Log Out"
+}

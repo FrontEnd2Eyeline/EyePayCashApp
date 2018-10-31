@@ -1,1 +1,272 @@
-webpackJsonp([3],{682:function(l,n,u){"use strict";function a(l){return o._22(0,[(l()(),o.Z(0,0,null,null,12,"ion-item",[["class","item item-block"],["no-lines",""]],null,null,null,P.b,P.a)),o.Y(1,1097728,null,3,Z.a,[y.a,k.a,o.j,o.z,[2,j.a]],null,null),o._18(335544320,7,{contentLabel:0}),o._18(603979776,8,{_buttons:1}),o._18(603979776,9,{_icons:1}),o.Y(5,16384,null,0,E.a,[],null,null),(l()(),o._20(-1,2,["\n        "])),(l()(),o.Z(7,0,null,2,1,"msg-error",[["name","Email"]],null,null,null,I.b,I.a)),o.Y(8,49152,null,0,w.a,[],{control:[0,"control"],name:[1,"name"]},null),(l()(),o._20(-1,2,["\n        "])),(l()(),o.Z(10,0,null,2,1,"msg-error",[["name","Contraseña"]],null,null,null,I.b,I.a)),o.Y(11,49152,null,0,w.a,[],{control:[0,"control"],name:[1,"name"]},null),(l()(),o._20(-1,2,["\n      "]))],function(l,n){var u=n.component;l(n,8,0,u.formGroup.controls.mail,"Email");l(n,11,0,u.formGroup.controls.password,"Contraseña")},null)}function r(l){return o._22(0,[(l()(),o.Z(0,0,null,null,97,"ion-content",[["class","imgBackground vignette"]],[[2,"statusbar-padding",null],[2,"has-refresher",null]],null,null,z.b,z.a)),o.Y(1,4374528,null,0,R.a,[k.a,G.a,M.a,o.j,o.z,S.a,L.a,o.u,[2,N.a],[2,U.a]],null,null),(l()(),o._20(-1,1,["\n  "])),(l()(),o.Z(3,0,null,1,4,"div",[["class","center"]],null,null,null,null,null)),(l()(),o._20(-1,null,["\n    "])),(l()(),o.Z(5,0,null,null,1,"ion-img",[["class","logo"],["src","assets/imgs/EPCLogo.png"]],null,null,null,A.b,A.a)),o.Y(6,1228800,null,0,O.a,[o.j,o.z,G.a,[2,R.a],M.a],{src:[0,"src"]},null),(l()(),o._20(-1,null,["\n  "])),(l()(),o._20(-1,1,["\n  "])),(l()(),o._20(-1,1,["\n  "])),(l()(),o.Z(10,0,null,1,60,"form",[["novalidate",""]],[[2,"ng-untouched",null],[2,"ng-touched",null],[2,"ng-pristine",null],[2,"ng-dirty",null],[2,"ng-valid",null],[2,"ng-invalid",null],[2,"ng-pending",null]],[[null,"ngSubmit"],[null,"submit"],[null,"reset"]],function(l,n,u){var a=!0,r=l.component;if("submit"===n){a=!1!==o._11(l,12).onSubmit(u)&&a}if("reset"===n){a=!1!==o._11(l,12).onReset()&&a}if("ngSubmit"===n){a=!1!==r.login()&&a}return a},null,null)),o.Y(11,16384,null,0,e.u,[],null,null),o.Y(12,540672,null,0,e.h,[[8,null],[8,null]],{form:[0,"form"]},{ngSubmit:"ngSubmit"}),o._16(2048,null,e.b,null,[e.h]),o.Y(14,16384,null,0,e.o,[e.b],null,null),(l()(),o._20(-1,null,["\n    "])),(l()(),o.Z(16,0,null,null,53,"ion-list",[],null,null,null,null,null)),o.Y(17,16384,null,0,T.a,[k.a,o.j,o.z,G.a,V.l,M.a],null,null),(l()(),o._20(-1,null,["\n      "])),(l()(),o.Z(19,0,null,null,19,"ion-item",[["class","item item-block"]],null,null,null,P.b,P.a)),o.Y(20,1097728,null,3,Z.a,[y.a,k.a,o.j,o.z,[2,j.a]],null,null),o._18(335544320,1,{contentLabel:0}),o._18(603979776,2,{_buttons:1}),o._18(603979776,3,{_icons:1}),o.Y(24,16384,null,0,E.a,[],null,null),(l()(),o._20(-1,2,["\n        "])),(l()(),o.Z(26,0,null,3,5,"ion-input",[["class","inputClass marginItems"],["formControlName","mail"],["name","correo"],["placeholder","Email"]],[[2,"ng-untouched",null],[2,"ng-touched",null],[2,"ng-pristine",null],[2,"ng-dirty",null],[2,"ng-valid",null],[2,"ng-invalid",null],[2,"ng-pending",null]],null,null,q.b,q.a)),o.Y(27,671744,null,0,e.f,[[3,e.b],[8,null],[8,null],[8,null]],{name:[0,"name"]},null),o._16(2048,null,e.m,null,[e.f]),o.Y(29,16384,null,0,e.n,[e.m],null,null),o.Y(30,5423104,null,0,B.a,[k.a,G.a,y.a,S.a,o.j,o.z,[2,R.a],[2,Z.a],[2,e.m],M.a],{placeholder:[0,"placeholder"]},null),(l()(),o._20(-1,null,["\n        "])),(l()(),o._20(-1,2,["\n        "])),(l()(),o.Z(33,0,null,2,4,"div",[],null,null,null,null,null)),(l()(),o._20(-1,null,["\n          "])),(l()(),o.Z(35,0,null,null,1,"msg-error",[],null,null,null,I.b,I.a)),o.Y(36,49152,null,0,w.a,[],{control:[0,"control"]},null),(l()(),o._20(-1,null,["\n        "])),(l()(),o._20(-1,2,["\n      "])),(l()(),o._20(-1,null,["\n      "])),(l()(),o.Z(40,0,null,null,12,"ion-item",[["class","item item-block"]],null,null,null,P.b,P.a)),o.Y(41,1097728,null,3,Z.a,[y.a,k.a,o.j,o.z,[2,j.a]],null,null),o._18(335544320,4,{contentLabel:0}),o._18(603979776,5,{_buttons:1}),o._18(603979776,6,{_icons:1}),o.Y(45,16384,null,0,E.a,[],null,null),(l()(),o._20(-1,2,["\n        "])),(l()(),o.Z(47,0,null,3,4,"ion-input",[["class","inputClass marginItems"],["formControlName","password"],["name","contrasena"],["placeholder","Contraseña"],["type","password"]],[[2,"ng-untouched",null],[2,"ng-touched",null],[2,"ng-pristine",null],[2,"ng-dirty",null],[2,"ng-valid",null],[2,"ng-invalid",null],[2,"ng-pending",null]],null,null,q.b,q.a)),o.Y(48,671744,null,0,e.f,[[3,e.b],[8,null],[8,null],[8,null]],{name:[0,"name"]},null),o._16(2048,null,e.m,null,[e.f]),o.Y(50,16384,null,0,e.n,[e.m],null,null),o.Y(51,5423104,null,0,B.a,[k.a,G.a,y.a,S.a,o.j,o.z,[2,R.a],[2,Z.a],[2,e.m],M.a],{type:[0,"type"],placeholder:[1,"placeholder"]},null),(l()(),o._20(-1,2,["\n      "])),(l()(),o._20(-1,null,["\n      "])),(l()(),o.U(16777216,null,null,1,null,a)),o.Y(55,16384,null,0,D.l,[o.I,o.F],{ngIf:[0,"ngIf"]},null),(l()(),o._20(-1,null,["\n      "])),(l()(),o.Z(57,0,null,null,11,"ion-item",[["class","center item item-block"]],null,null,null,P.b,P.a)),o.Y(58,1097728,null,3,Z.a,[y.a,k.a,o.j,o.z,[2,j.a]],null,null),o._18(335544320,10,{contentLabel:0}),o._18(603979776,11,{_buttons:1}),o._18(603979776,12,{_icons:1}),o.Y(62,16384,null,0,E.a,[],null,null),(l()(),o._20(-1,2,["\n        "])),(l()(),o.Z(64,0,null,2,3,"button",[["class","buttonPayCash borderBtns"],["ion-button",""],["small",""]],null,null,null,F.b,F.a)),o.Y(65,1097728,[[11,4]],0,X.a,[[8,""],k.a,o.j,o.z],{small:[0,"small"]},null),(l()(),o._20(66,0,["",""])),o._13(131072,x.a,[H.a,o.g]),(l()(),o._20(-1,2,["\n      "])),(l()(),o._20(-1,null,["\n    "])),(l()(),o._20(-1,null,["\n  "])),(l()(),o._20(-1,1,["\n  "])),(l()(),o.Z(72,0,null,1,24,"ion-item",[["class","item item-block"]],null,null,null,P.b,P.a)),o.Y(73,1097728,null,3,Z.a,[y.a,k.a,o.j,o.z,[2,j.a]],null,null),o._18(335544320,13,{contentLabel:0}),o._18(603979776,14,{_buttons:1}),o._18(603979776,15,{_icons:1}),o.Y(77,16384,null,0,E.a,[],null,null),(l()(),o._20(-1,2,["\n    "])),(l()(),o.Z(79,0,null,2,7,"ion-col",[["class","col"],["col-6",""]],null,null,null,null,null)),o.Y(80,16384,null,0,J.a,[],null,null),(l()(),o._20(-1,null,["\n      "])),(l()(),o.Z(82,0,null,null,3,"button",[["block",""],["class","transparente"],["clear",""],["ion-button",""]],null,[[null,"click"]],function(l,n,u){var a=!0;if("click"===n){a=!1!==l.component.registro()&&a}return a},F.b,F.a)),o.Y(83,1097728,null,0,X.a,[[8,""],k.a,o.j,o.z],{clear:[0,"clear"],block:[1,"block"]},null),(l()(),o._20(84,0,["",""])),o._13(131072,x.a,[H.a,o.g]),(l()(),o._20(-1,null,["\n    "])),(l()(),o._20(-1,2,["\n    "])),(l()(),o.Z(88,0,null,2,7,"ion-col",[["class","col"],["col-6",""]],null,null,null,null,null)),o.Y(89,16384,null,0,J.a,[],null,null),(l()(),o._20(-1,null,["\n      "])),(l()(),o.Z(91,0,null,null,3,"button",[["block",""],["class","transparente"],["clear",""],["ion-button",""]],null,[[null,"click"]],function(l,n,u){var a=!0;if("click"===n){a=!1!==l.component.recuperarcontrasena()&&a}return a},F.b,F.a)),o.Y(92,1097728,null,0,X.a,[[8,""],k.a,o.j,o.z],{clear:[0,"clear"],block:[1,"block"]},null),(l()(),o._20(93,0,["",""])),o._13(131072,x.a,[H.a,o.g]),(l()(),o._20(-1,null,["\n    "])),(l()(),o._20(-1,2,["\n  "])),(l()(),o._20(-1,1,["\n"]))],function(l,n){var u=n.component;l(n,6,0,"assets/imgs/EPCLogo.png");l(n,12,0,u.formGroup);l(n,27,0,"mail");l(n,30,0,"Email");l(n,36,0,u.formGroup.controls.mail);l(n,48,0,"password");l(n,51,0,"password","Contraseña");l(n,55,0,u.formGroup.invalid);l(n,65,0,"");l(n,83,0,"","");l(n,92,0,"","")},function(l,n){l(n,0,0,o._11(n,1).statusbarPadding,o._11(n,1)._hasRefresher);l(n,10,0,o._11(n,14).ngClassUntouched,o._11(n,14).ngClassTouched,o._11(n,14).ngClassPristine,o._11(n,14).ngClassDirty,o._11(n,14).ngClassValid,o._11(n,14).ngClassInvalid,o._11(n,14).ngClassPending);l(n,26,0,o._11(n,29).ngClassUntouched,o._11(n,29).ngClassTouched,o._11(n,29).ngClassPristine,o._11(n,29).ngClassDirty,o._11(n,29).ngClassValid,o._11(n,29).ngClassInvalid,o._11(n,29).ngClassPending);l(n,47,0,o._11(n,50).ngClassUntouched,o._11(n,50).ngClassTouched,o._11(n,50).ngClassPristine,o._11(n,50).ngClassDirty,o._11(n,50).ngClassValid,o._11(n,50).ngClassInvalid,o._11(n,50).ngClassPending);l(n,66,0,o._21(n,66,0,o._11(n,67).transform("INICIAR_SESION")));l(n,84,0,o._21(n,84,0,o._11(n,85).transform("REGISTRARME")));l(n,93,0,o._21(n,93,0,o._11(n,94).transform("RECUPERAR_CONTRASENA")))})}Object.defineProperty(n,"__esModule",{value:!0});var o=u(0),t=(u(1),u(33),u(62)),e=u(17),s=u(63),i=function(){function l(l,n,u,a,r,o,t){this.navCtrl=l,this.loadingCtrl=n,this.userProvider=u,this.toastCtrl=a,this.modalCtrl=r,this.formBuilder=o,this.errorProvider=t,this.formGroup=new e.g({mail:new e.e("",[e.s.required,e.s.email]),password:new e.e("",[e.s.required,e.s.minLength(6)])})}return l.prototype.login=function(){var l=this;if(this.formGroup.valid){var n=this.loadingCtrl.create({spinner:"hide",content:"<img src='assets/imgs/buho.png'>"});this.userProvider.login(this.formGroup.value.mail,this.formGroup.value.password).then(function(u){n.present(),"ok"==u.success?(l.navCtrl.setRoot("HomePage"),n.dismiss()):n.dismiss()}).catch(function(u){n.dismiss();var a="";u.error.forEach(function(l){a+=l.message+"\n"}),l.errorProvider.obj.message=a,l.errorProvider.presentModal()})}},l.prototype.recuperarcontrasena=function(){this.modalCtrl.create("RecoveryPasswordPage").present()},l.prototype.registro=function(){this.navCtrl.push("RegNumberPhonePage")},l}(),c=u(699),_=u(87),g=function(){return function(){}}(),m=u(198),d=u(199),f=u(200),p=u(201),b=u(202),h=u(203),v=u(204),C=u(205),Y=u(206),P=u(140),Z=u(21),y=u(20),k=u(3),j=u(52),E=u(64),I=u(701),w=u(698),z=u(139),R=u(23),G=u(6),M=u(10),S=u(11),L=u(31),N=u(7),U=u(30),A=u(388),O=u(94),T=u(65),V=u(12),q=u(210),B=u(66),D=u(15),F=u(38),X=u(26),x=u(145),H=u(40),J=u(89),W=u(88),K=u(92),Q=u(95),$=o.X({encapsulation:2,styles:[],data:{}}),ll=o.V("page-login",i,function(l){return o._22(0,[(l()(),o.Z(0,0,null,null,1,"page-login",[],null,null,null,r,$)),o.Y(1,49152,null,0,i,[U.a,W.a,t.a,K.a,Q.a,e.d,s.a],null,null)],null,null)},{errorMsg:"errorMsg",displayError:"displayError"},{},[]),nl=u(138),ul=u(57);u.d(n,"LoginPageModuleNgFactory",function(){return al});var al=o.W(g,[],function(l){return o._7([o._8(512,o.i,o.S,[[8,[m.a,d.a,f.a,p.a,b.a,h.a,v.a,C.a,Y.a,ll]],[3,o.i],o.s]),o._8(4608,D.n,D.m,[o.r,[2,D.x]]),o._8(4608,e.v,e.v,[]),o._8(4608,e.d,e.d,[]),o._8(512,D.b,D.b,[]),o._8(512,e.t,e.t,[]),o._8(512,e.i,e.i,[]),o._8(512,e.q,e.q,[]),o._8(512,nl.a,nl.a,[]),o._8(512,nl.b,nl.b,[]),o._8(512,_.a,_.a,[]),o._8(512,c.a,c.a,[]),o._8(512,g,g,[]),o._8(256,ul.a,i,[])])})},698:function(l,n,u){"use strict";u.d(n,"a",function(){return r});u(1);var a=u(214),r=function(){function l(){}return Object.defineProperty(l.prototype,"errorMessage",{get:function(){for(var l in this.control.errors)if(this.control.errors.hasOwnProperty(l)&&this.control.touched)return a.a.getValidatorErrorMessage(l,this.control.errors[l],this.name);return!1},enumerable:!0,configurable:!0}),l}()},699:function(l,n,u){"use strict";u.d(n,"a",function(){return a});u(1),u(698);var a=function(){return function(){}}()},701:function(l,n,u){"use strict";function a(l){return o._22(0,[(l()(),o.Z(0,0,null,null,1,"span",[],null,null,null,null,null)),(l()(),o._20(1,null,["",""]))],null,function(l,n){l(n,1,0,n.component.errorMessage)})}function r(l){return o._22(0,[(l()(),o.Z(0,0,null,null,2,"div",[],null,null,null,null,null)),(l()(),o.U(16777216,null,null,1,null,a)),o.Y(2,16384,null,0,t.l,[o.I,o.F],{ngIf:[0,"ngIf"]},null)],function(l,n){l(n,2,0,!1!==n.component.errorMessage)},null)}u.d(n,"a",function(){return e}),n.b=r;var o=u(0),t=u(15),e=o.X({encapsulation:2,styles:[],data:{}})}});
+webpackJsonp([3],{
+
+/***/ 724:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PasswordUpdatePageModule", function() { return PasswordUpdatePageModule; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(26);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__password_update__ = __webpack_require__(747);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ngx_translate_core__ = __webpack_require__(93);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__components_components_module__ = __webpack_require__(733);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+
+
+
+
+var PasswordUpdatePageModule = /** @class */ (function () {
+    function PasswordUpdatePageModule() {
+    }
+    PasswordUpdatePageModule = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["J" /* NgModule */])({
+            declarations: [
+                __WEBPACK_IMPORTED_MODULE_2__password_update__["a" /* PasswordUpdatePage */],
+            ],
+            imports: [
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__password_update__["a" /* PasswordUpdatePage */]),
+                __WEBPACK_IMPORTED_MODULE_3__ngx_translate_core__["b" /* TranslateModule */],
+                __WEBPACK_IMPORTED_MODULE_4__components_components_module__["a" /* ComponentsModule */],
+            ],
+        })
+    ], PasswordUpdatePageModule);
+    return PasswordUpdatePageModule;
+}());
+
+//# sourceMappingURL=password-update.module.js.map
+
+/***/ }),
+
+/***/ 733:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ComponentsModule; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__msg_error_msg_error__ = __webpack_require__(734);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_common__ = __webpack_require__(33);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+
+
+var ComponentsModule = /** @class */ (function () {
+    function ComponentsModule() {
+    }
+    ComponentsModule = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["J" /* NgModule */])({
+            declarations: [__WEBPACK_IMPORTED_MODULE_1__msg_error_msg_error__["a" /* MsgErrorComponent */]],
+            imports: [__WEBPACK_IMPORTED_MODULE_2__angular_common__["b" /* CommonModule */]],
+            exports: [__WEBPACK_IMPORTED_MODULE_1__msg_error_msg_error__["a" /* MsgErrorComponent */]]
+        })
+    ], ComponentsModule);
+    return ComponentsModule;
+}());
+
+//# sourceMappingURL=components.module.js.map
+
+/***/ }),
+
+/***/ 734:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MsgErrorComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_forms__ = __webpack_require__(21);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_validation_validation__ = __webpack_require__(377);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+var MsgErrorComponent = /** @class */ (function () {
+    function MsgErrorComponent() {
+    }
+    Object.defineProperty(MsgErrorComponent.prototype, "errorMessage", {
+        get: function () {
+            for (var propertyName in this.control.errors) {
+                if (this.control.errors.hasOwnProperty(propertyName) && this.control.touched) {
+                    return __WEBPACK_IMPORTED_MODULE_2__providers_validation_validation__["a" /* ValidationProvider */].getValidatorErrorMessage(propertyName, this.control.errors[propertyName], this.name);
+                }
+            }
+            return false;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["E" /* Input */])(),
+        __metadata("design:type", __WEBPACK_IMPORTED_MODULE_1__angular_forms__["b" /* FormControl */])
+    ], MsgErrorComponent.prototype, "control", void 0);
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["E" /* Input */])(),
+        __metadata("design:type", String)
+    ], MsgErrorComponent.prototype, "name", void 0);
+    MsgErrorComponent = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+            selector: 'msg-error',
+            template: '<div><span *ngIf="errorMessage !== false">{{errorMessage}}</span></div>'
+        }),
+        __metadata("design:paramtypes", [])
+    ], MsgErrorComponent);
+    return MsgErrorComponent;
+}());
+
+//# sourceMappingURL=msg-error.js.map
+
+/***/ }),
+
+/***/ 747:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PasswordUpdatePage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(26);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_api__ = __webpack_require__(48);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_auth_user_auth_user__ = __webpack_require__(94);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_modal_error_modal_error__ = __webpack_require__(67);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_forms__ = __webpack_require__(21);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+
+/**
+ * Generated class for the PasswordUpdatePage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
+var PasswordUpdatePage = /** @class */ (function () {
+    function PasswordUpdatePage(navCtrl, navParams, api, toastCtrl, userProvider, loadingCtrl, errorProvider) {
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+        this.api = api;
+        this.toastCtrl = toastCtrl;
+        this.userProvider = userProvider;
+        this.loadingCtrl = loadingCtrl;
+        this.errorProvider = errorProvider;
+        this.infoRecovery = {
+            new_password: null,
+            new_password_conf: null,
+            reset_id: null,
+        };
+        this.formGroup = new __WEBPACK_IMPORTED_MODULE_5__angular_forms__["c" /* FormGroup */]({
+            new_password: new __WEBPACK_IMPORTED_MODULE_5__angular_forms__["b" /* FormControl */]('', [
+                __WEBPACK_IMPORTED_MODULE_5__angular_forms__["h" /* Validators */].required,
+            ]),
+            new_password_conf: new __WEBPACK_IMPORTED_MODULE_5__angular_forms__["b" /* FormControl */]('', [
+                __WEBPACK_IMPORTED_MODULE_5__angular_forms__["h" /* Validators */].required
+            ]),
+            reset_id: new __WEBPACK_IMPORTED_MODULE_5__angular_forms__["b" /* FormControl */](),
+        });
+        this.infoRecovery.reset_id = navParams.get('reset_id');
+        this.formGroup.get('reset_id').setValue(this.infoRecovery.reset_id);
+    }
+    PasswordUpdatePage.prototype.recovery = function () {
+        var _this = this;
+        if (this.formGroup.valid) {
+            var cargando_1 = this.loadingCtrl.create({
+                spinner: 'dots',
+            });
+            cargando_1.present();
+            this.api.post('auth/update-password', this.formGroup.value).then(function (data) {
+                cargando_1.dismiss();
+                _this.errorProvider.obj.message = 'Contraseña actualizada correctamente';
+                _this.errorProvider.presentModal();
+                _this.navCtrl.setRoot('LoginPage');
+            }).catch(function (error) {
+                var mensaje = '';
+                cargando_1.dismiss();
+                error.error.forEach(function (data) {
+                    mensaje += data.message + "\n";
+                });
+                _this.errorProvider.obj.message = mensaje;
+                _this.errorProvider.presentModal();
+            });
+        }
+        // if (this.infoRecovery.new_password != null && this.infoRecovery.new_password_conf != null) {
+        // 	if (this.infoRecovery.new_password_conf == this.infoRecovery.new_password) {
+        // 		if (this.infoRecovery.new_password.length >= 6 && this.infoRecovery.new_password_conf.length >= 6) {
+        // 			let loading = this.loadingCtrl.create({
+        // 				spinner: 'dots',
+        // 			});
+        // 			loading.present();
+        // 			this.api.post('auth/update-password', this.infoRecovery).then((data) => {
+        // 				loading.dismiss();
+        // 				this.errorProvider.obj.message = 'Contraseña actualizada correctamente';
+        // 				this.errorProvider.presentModal();
+        // 				this.navCtrl.setRoot('LoginPage');
+        // 			}).catch((error) => {
+        // 				let mensaje = '';
+        // 				loading.dismiss();
+        // 				error.error.forEach(data => {
+        // 					mensaje += data.message + "\n";
+        // 				});
+        // 				this.errorProvider.obj.message = mensaje;
+        // 				this.errorProvider.presentModal();
+        // 			});
+        // 		} else {
+        // 			this.errorProvider.obj.message = 'La contraseña debe tener mínimo 6 caracteres';
+        // 			this.errorProvider.presentModal();
+        // 		}
+        // 	} else {
+        // 		this.errorProvider.obj.message = 'Las contraseñas no cinciden';
+        // 		this.errorProvider.presentModal();
+        // 	}
+        // } else {
+        // 	this.errorProvider.obj.message = 'Los datos son obligatorios';
+        // 	this.errorProvider.presentModal();
+        // }
+    };
+    PasswordUpdatePage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+            selector: 'page-password-update',template:/*ion-inline-start:"/Users/eyeline/Documents/GitHub/eyepaycashapp/src/pages/password-update/password-update.html"*/'<!--\n  Generated template for the PasswordUpdatePage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-content padding class="fondo_gris">\n  <form [formGroup]="formGroup"  (ngSubmit)="recovery()">\n    <ion-list>\n\n      <ion-item>\n        <ion-label stacked>Ingrese la nueva contraseña</ion-label>\n        <ion-input type="password" required  name="recovery_pass" formControlName="new_password"></ion-input>\n      </ion-item>\n      <ion-item>\n        <ion-label stacked>Confirme la nueva contraseña</ion-label>\n        <ion-input type="password" required name="recovery_pass2" formControlName="new_password_conf"></ion-input>\n	  </ion-item>\n	  <ion-item no-lines *ngIf="formGroup.invalid">\n			<msg-error [control]="formGroup.controls.new_password" name="Recovery"></msg-error>\n			<msg-error [control]="formGroup.controls.new_password_conf" name="Recovery2"></msg-error>\n		</ion-item>\n      <ion-item>\n        <button ion-button class="buttonPayCash" block>Guardar</button>\n      </ion-item>\n    </ion-list>\n  </form>\n</ion-content>\n'/*ion-inline-end:"/Users/eyeline/Documents/GitHub/eyepaycashapp/src/pages/password-update/password-update.html"*/,
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */],
+            __WEBPACK_IMPORTED_MODULE_2__providers_api__["a" /* Api */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* ToastController */],
+            __WEBPACK_IMPORTED_MODULE_3__providers_auth_user_auth_user__["a" /* AuthUserProvider */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* LoadingController */],
+            __WEBPACK_IMPORTED_MODULE_4__providers_modal_error_modal_error__["a" /* ModalErrorProvider */]])
+    ], PasswordUpdatePage);
+    return PasswordUpdatePage;
+}());
+
+//# sourceMappingURL=password-update.js.map
+
+/***/ })
+
+});
+//# sourceMappingURL=3.js.map
