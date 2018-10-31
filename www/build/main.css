@@ -29213,6 +29213,10 @@ page-account .item-input ion-input, page-account .item-input ion-textarea {
   background: white !important;
 }
 
+page-history h1 {
+  font-size: 2.2rem;
+}
+
 page-history .imgLogoWidth {
   width: 55%;
 }

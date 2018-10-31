@@ -31,6 +31,10 @@
       <div class="centerIcoText">
         <img class="imgLogoWidth" src="assets/newIcons/27.png">
       </div>
+      <div class="centerIcoText">
+        <h1>Bienvenido a EyePayCash</h1>
+        <p>Para recibir fondos desliza hacia la derecha y para enviarlos desliza hacia la izquierda.</p>
+      </div>
       <ion-card *ngFor="let transaction of transactions" (click)="goDetalle(transaction)" class="center bground">
         <ion-card-content>
           <ion-row>
@@ -58,6 +62,10 @@
       <div class="centerIcoText">
         <img class="imgLogoWidthPen" src="assets/newIcons/26.png">
       </div>
+      <div class="centerIcoText">
+        <h1>Auuchh !</h1>
+        <p>No tiene transacciones enviadas aún.</p>
+      </div>
       <ion-card *ngFor="let transaction of transactions" (click)="goDetalle(transaction)" class="center bground">
         <ion-card-content>
           <ion-row>
@@ -82,13 +90,13 @@
       </ion-card>
     </ion-list>
     <ion-list *ngSwitchCase="'2'">
-      <ion-row>
-        <ion-col>
-          <div class="centerIcoText">
-            <img class="imgLogoWidth" src="assets/newIcons/25.png">
-          </div>
-        </ion-col>
-      </ion-row>
+      <div class="centerIcoText">
+        <img class="imgLogoWidth" src="assets/newIcons/25.png">
+      </div>
+      <div class="centerIcoText">
+        <h1>Auuchh !</h1>
+        <p>No tiene transacciones recibidas aún.</p>
+      </div>
       <ion-card *ngFor="let transaction of transactions" (click)="goDetalle(transaction)" class="center bground">
         <ion-card-content>
           <ion-row>

@@ -223,7 +223,8 @@ var LoginPage = /** @class */ (function () {
         modal.present();
     };
     LoginPage.prototype.registro = function () {
-        this.navCtrl.push("RegNumberPhonePage");
+        // this.navCtrl.push("RegNumberPhonePage");
+        this.navCtrl.setPages([{ page: "Login" }, { page: "RegNumberPhonePage" }]);
     };
     __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["E" /* Input */])(),
