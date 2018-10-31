@@ -1,1 +1,122 @@
-webpackJsonp([17],{680:function(l,n,u){"use strict";function a(l){return t._22(0,[(l()(),t.Z(0,0,null,null,55,"ion-content",[["class","BackGR"]],[[2,"statusbar-padding",null],[2,"has-refresher",null]],null,null,b.b,b.a)),t.Y(1,4374528,null,0,Y.a,[P.a,v.a,w.a,t.j,t.z,k.a,A.a,t.u,[2,y.a],[2,C.a]],null,null),(l()(),t._20(-1,1,["\n\n  "])),(l()(),t.Z(3,0,null,1,13,"ion-row",[["class","row"]],null,null,null,null,null)),t.Y(4,16384,null,0,j.a,[],null,null),(l()(),t._20(-1,null,["\n    "])),(l()(),t.Z(6,0,null,null,8,"ion-col",[["class","col"]],null,null,null,null,null)),t.Y(7,16384,null,0,I.a,[],null,null),(l()(),t._20(-1,null,["\n      "])),(l()(),t.Z(9,0,null,null,4,"ion-img",[["class","marginMenu textLeft"],["height","25"],["menuToggle",""],["src","assets/icon/Settings.png"],["width","25"]],[[8,"hidden",0]],[[null,"click"]],function(l,n,u){var a=!0;if("click"===n){a=!1!==t._11(l,11).toggle()&&a}return a},L.b,L.a)),t.Y(10,1228800,null,0,T.a,[t.j,t.z,v.a,[2,Y.a],w.a],{src:[0,"src"],width:[1,"width"],height:[2,"height"]},null),t.Y(11,1064960,null,0,z.a,[M.a,[2,y.a],[2,R.a],[2,S.a]],{menuToggle:[0,"menuToggle"]},null),t.Y(12,16384,null,1,E.a,[P.a,t.j,t.z,[2,H.a],[2,S.a]],null,null),t._18(603979776,1,{_buttons:1}),(l()(),t._20(-1,null,["\n    "])),(l()(),t._20(-1,null,["\n    "])),(l()(),t._20(-1,null,["\n\n  "])),(l()(),t._20(-1,1,["\n\n  "])),(l()(),t.Z(18,0,null,1,36,"div",[["class","marg5"]],null,null,null,null,null)),(l()(),t._20(-1,null,["\n    "])),(l()(),t.Z(20,0,null,null,8,"ion-row",[["class","row"]],null,null,null,null,null)),t.Y(21,16384,null,0,j.a,[],null,null),(l()(),t._20(-1,null,["\n      "])),(l()(),t.Z(23,0,null,null,4,"ion-col",[["class","center bounceInLeft col"]],null,null,null,null,null)),t.Y(24,16384,null,0,I.a,[],null,null),(l()(),t._20(-1,null,["\n        "])),(l()(),t.Z(26,0,null,null,0,"img",[["class","icoAnim2 animated animated2 bounceOutRight"],["src","assets/imgs/Billete2.png"]],null,null,null,null,null)),(l()(),t._20(-1,null,["\n      "])),(l()(),t._20(-1,null,["\n    "])),(l()(),t._20(-1,null,["\n    "])),(l()(),t.Z(30,0,null,null,10,"ion-row",[["class","row"]],null,null,null,null,null)),t.Y(31,16384,null,0,j.a,[],null,null),(l()(),t._20(-1,null,["\n      "])),(l()(),t.Z(33,0,null,null,6,"ion-col",[["class","center mrg40Top bounceInLeft col"]],null,null,null,null,null)),t.Y(34,16384,null,0,I.a,[],null,null),(l()(),t._20(-1,null,["\n        "])),(l()(),t.Z(36,0,null,null,0,"img",[["class","imgLogoAmin  animated animated2 ≈ bounceInLeft"],["src","assets/imgs/Billete.png"]],null,null,null,null,null)),(l()(),t._20(-1,null,["\n        "])),(l()(),t.Z(38,0,null,null,0,"img",[["class","imgLogo "],["src","assets/imgs/Mascota.png"]],null,null,null,null,null)),(l()(),t._20(-1,null,["\n      "])),(l()(),t._20(-1,null,["\n    "])),(l()(),t._20(-1,null,["\n    "])),(l()(),t.Z(42,0,null,null,11,"ion-item",[["class","center item item-block"]],null,null,null,B.b,B.a)),t.Y(43,1097728,null,3,N.a,[O.a,P.a,t.j,t.z,[2,q.a]],null,null),t._18(335544320,2,{contentLabel:0}),t._18(603979776,3,{_buttons:1}),t._18(603979776,4,{_icons:1}),t.Y(47,16384,null,0,x.a,[],null,null),(l()(),t._20(-1,2,["\n      "])),(l()(),t.Z(49,0,null,2,3,"button",[["class","buttonPayCash"],["ion-button",""]],null,[[null,"click"]],function(l,n,u){var a=!0;if("click"===n){a=!1!==l.component.goPage("contact")&&a}return a},U.b,U.a)),t.Y(50,1097728,[[3,4]],0,R.a,[[8,""],P.a,t.j,t.z],null,null),(l()(),t._20(51,0,["",""])),t._13(131072,V.a,[W.a,t.g]),(l()(),t._20(-1,2,["\n    "])),(l()(),t._20(-1,null,["\n\n  "])),(l()(),t._20(-1,1,["\n"])),(l()(),t._20(-1,null,["\n"])),(l()(),t.Z(57,0,null,null,51,"ion-footer",[],null,null,null,null,null)),t.Y(58,16384,null,0,F.a,[P.a,t.j,t.z,[2,y.a]],null,null),(l()(),t._20(-1,null,["\n  "])),(l()(),t.Z(60,0,null,null,47,"ion-toolbar",[["class","toolbar"]],[[2,"statusbar-padding",null]],null,null,G.b,G.a)),t.Y(61,49152,null,0,H.a,[P.a,t.j,t.z],null,null),(l()(),t._20(-1,3,["\n    "])),(l()(),t.Z(63,0,null,3,43,"ion-row",[["class","row"]],null,null,null,null,null)),t.Y(64,16384,null,0,j.a,[],null,null),(l()(),t._20(-1,null,["\n      "])),(l()(),t.Z(66,0,null,null,8,"ion-col",[["class","center col"],["col-3",""]],null,[[null,"click"]],function(l,n,u){var a=!0;if("click"===n){a=!1!==l.component.goPage("transaction")&&a}return a},null,null)),t.Y(67,16384,null,0,I.a,[],null,null),(l()(),t._20(-1,null,["\n        "])),(l()(),t.Z(69,0,null,null,0,"img",[["height","25"],["src","assets/icon/1.png"],["width","25"]],null,null,null,null,null)),(l()(),t._20(-1,null,["\n        "])),(l()(),t.Z(71,0,null,null,2,"p",[],null,null,null,null,null)),(l()(),t._20(72,null,["",""])),t._13(131072,V.a,[W.a,t.g]),(l()(),t._20(-1,null,["\n      "])),(l()(),t._20(-1,null,["\n      "])),(l()(),t.Z(76,0,null,null,9,"ion-col",[["class","center col"],["col-3",""]],null,[[null,"click"]],function(l,n,u){var a=!0;if("click"===n){a=!1!==l.component.goPage("history")&&a}return a},null,null)),t.Y(77,16384,null,0,I.a,[],null,null),(l()(),t._20(-1,null,["\n        "])),(l()(),t._20(-1,null,["\n        "])),(l()(),t.Z(80,0,null,null,0,"img",[["height","25"],["src","assets/icon/2.png"],["width","25"]],null,null,null,null,null)),(l()(),t._20(-1,null,["\n        "])),(l()(),t.Z(82,0,null,null,2,"p",[],null,null,null,null,null)),(l()(),t._20(83,null,["",""])),t._13(131072,V.a,[W.a,t.g]),(l()(),t._20(-1,null,["\n      "])),(l()(),t._20(-1,null,["\n      "])),(l()(),t.Z(87,0,null,null,8,"ion-col",[["class","center col"],["col-3",""]],null,[[null,"click"]],function(l,n,u){var a=!0;if("click"===n){a=!1!==l.component.goPage("maps")&&a}return a},null,null)),t.Y(88,16384,null,0,I.a,[],null,null),(l()(),t._20(-1,null,["\n        "])),(l()(),t.Z(90,0,null,null,0,"img",[["height","25"],["src","assets/icon/3.png"],["width","25"]],null,null,null,null,null)),(l()(),t._20(-1,null,["\n        "])),(l()(),t.Z(92,0,null,null,2,"p",[],null,null,null,null,null)),(l()(),t._20(93,null,["",""])),t._13(131072,V.a,[W.a,t.g]),(l()(),t._20(-1,null,["\n      "])),(l()(),t._20(-1,null,["\n      "])),(l()(),t.Z(97,0,null,null,8,"ion-col",[["class","center col"],["col-3",""]],null,[[null,"click"]],function(l,n,u){var a=!0;if("click"===n){a=!1!==l.component.goPage("account")&&a}return a},null,null)),t.Y(98,16384,null,0,I.a,[],null,null),(l()(),t._20(-1,null,["\n        "])),(l()(),t.Z(100,0,null,null,0,"img",[["height","25"],["src","assets/icon/4.png"],["width","25"]],null,null,null,null,null)),(l()(),t._20(-1,null,["\n        "])),(l()(),t.Z(102,0,null,null,2,"p",[],null,null,null,null,null)),(l()(),t._20(103,null,["",""])),t._13(131072,V.a,[W.a,t.g]),(l()(),t._20(-1,null,["\n      "])),(l()(),t._20(-1,null,["\n    "])),(l()(),t._20(-1,3,["\n  "])),(l()(),t._20(-1,null,["\n"]))],function(l,n){l(n,10,0,"assets/icon/Settings.png","25","25");l(n,11,0,"")},function(l,n){l(n,0,0,t._11(n,1).statusbarPadding,t._11(n,1)._hasRefresher);l(n,9,0,t._11(n,11).isHidden);l(n,51,0,t._21(n,51,0,t._11(n,52).transform("PRUEBA_EYEPAYCASH")));l(n,60,0,t._11(n,61)._sbPadding);l(n,72,0,t._21(n,72,0,t._11(n,73).transform("TRANSACCION")));l(n,83,0,t._21(n,83,0,t._11(n,84).transform("HISTORIAL")));l(n,93,0,t._21(n,93,0,t._11(n,94).transform("MAPA")));l(n,103,0,t._21(n,103,0,t._11(n,104).transform("CUENTA")))})}Object.defineProperty(n,"__esModule",{value:!0});var t=u(0),o=(u(1),u(33),u(50)),i=u(62),c=function(){function l(l,n,u,a,t){this.navCtrl=l,this.loadingCtrl=n,this.toastCtrl=u,this.api=a,this.userProvider=t,this.count=0,this.result=[]}return l.prototype.ionViewWillEnter=function(){this.getInfo()},l.prototype.getInfo=function(){var l=this;this.api.get("app/transactions",this.userProvider,{status:0}).then(function(n){l.count=n.items.length}).catch(function(l){console.log(l)})},l.prototype.goPage=function(l){this.navCtrl.push("account"==l?"AccountPage":"history"==l?"HistoryPage":"maps"==l?"MapPage":"contact"==l?"ContactsPage":"TransactionPage")},l}(),s=u(87),e=function(){return function(){}}(),r=u(198),_=u(199),g=u(200),h=u(201),m=u(202),f=u(203),p=u(204),d=u(205),Z=u(206),b=u(139),Y=u(23),P=u(3),v=u(6),w=u(10),k=u(11),A=u(31),y=u(7),C=u(30),j=u(90),I=u(89),L=u(388),T=u(94),z=u(222),M=u(34),R=u(26),S=u(49),E=u(218),H=u(51),B=u(140),N=u(21),O=u(20),q=u(52),x=u(64),U=u(38),V=u(145),W=u(40),F=u(224),G=u(390),J=u(88),X=u(92),D=t.X({encapsulation:2,styles:[],data:{}}),K=t.V("page-home",c,function(l){return t._22(0,[(l()(),t.Z(0,0,null,null,1,"page-home",[],null,null,null,a,D)),t.Y(1,49152,null,0,c,[C.a,J.a,X.a,o.a,i.a],null,null)],null,null)},{},{},[]),Q=u(15),$=u(17),ll=u(138),nl=u(57);u.d(n,"HomePageModuleNgFactory",function(){return ul});var ul=t.W(e,[],function(l){return t._7([t._8(512,t.i,t.S,[[8,[r.a,_.a,g.a,h.a,m.a,f.a,p.a,d.a,Z.a,K]],[3,t.i],t.s]),t._8(4608,Q.n,Q.m,[t.r,[2,Q.x]]),t._8(4608,$.v,$.v,[]),t._8(4608,$.d,$.d,[]),t._8(512,Q.b,Q.b,[]),t._8(512,$.t,$.t,[]),t._8(512,$.i,$.i,[]),t._8(512,$.q,$.q,[]),t._8(512,ll.a,ll.a,[]),t._8(512,ll.b,ll.b,[]),t._8(512,s.a,s.a,[]),t._8(512,e,e,[]),t._8(256,nl.a,c,[])])})}});
+webpackJsonp([17],{
+
+/***/ 712:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ContactsPageModule", function() { return ContactsPageModule; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(26);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__contacts__ = __webpack_require__(733);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ngx_translate_core__ = __webpack_require__(92);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+
+
+
+var ContactsPageModule = /** @class */ (function () {
+    function ContactsPageModule() {
+    }
+    ContactsPageModule = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["J" /* NgModule */])({
+            declarations: [
+                __WEBPACK_IMPORTED_MODULE_2__contacts__["a" /* ContactsPage */],
+            ],
+            imports: [
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__contacts__["a" /* ContactsPage */]),
+                __WEBPACK_IMPORTED_MODULE_3__ngx_translate_core__["b" /* TranslateModule */]
+            ],
+        })
+    ], ContactsPageModule);
+    return ContactsPageModule;
+}());
+
+//# sourceMappingURL=contacts.module.js.map
+
+/***/ }),
+
+/***/ 733:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ContactsPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(26);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_contacts__ = __webpack_require__(382);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+/**
+ * Generated class for the ContactsPage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
+var ContactsPage = /** @class */ (function () {
+    function ContactsPage(navCtrl, navParams, contacts, loadingCtrl) {
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+        this.contacts = contacts;
+        this.loadingCtrl = loadingCtrl;
+        this.listaContactos = [];
+        this.avatar = "./assets/icon/avatar.png";
+        this.cargarListaContactos();
+    }
+    ContactsPage.prototype.cargarListaContactos = function () {
+        var _this = this;
+        var loading = this.loadingCtrl.create({
+            spinner: 'hide',
+            content: "<img src='assets/imgs/buho.png'>",
+        });
+        loading.present();
+        this.contacts.find(["*"])
+            .then(function (data) {
+            var datosMostar = [];
+            data.map(function (item) {
+                if (item.displayName != null && item.phoneNumbers != null) {
+                    datosMostar.push({
+                        displayName: item.displayName,
+                        phoneNumbers: item.phoneNumbers
+                    });
+                }
+                loading.dismiss();
+            });
+            _this.listaContactos = datosMostar;
+        }, function (error) {
+            console.log({ error: error });
+            loading.dismiss();
+        });
+    };
+    ContactsPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+            selector: 'page-contacts',template:/*ion-inline-start:"/Users/eyeline/Documents/GitHub/eyepaycashapp/src/pages/contacts/contacts.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>\n      Listado de contactos\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n  <ion-list>\n    <ion-item *ngFor="let contacto of listaContactos">\n      <ion-avatar item-start>\n        <img src="assets/imgs/contacto.png">\n      </ion-avatar>\n      <h2>{{contacto.displayName | uppercase }}</h2>\n      <p>{{contacto.phoneNumbers[0].value}}</p>\n    </ion-item>\n  </ion-list>\n</ion-content>\n'/*ion-inline-end:"/Users/eyeline/Documents/GitHub/eyepaycashapp/src/pages/contacts/contacts.html"*/,
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */],
+            __WEBPACK_IMPORTED_MODULE_2__ionic_native_contacts__["a" /* Contacts */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* LoadingController */]])
+    ], ContactsPage);
+    return ContactsPage;
+}());
+
+//# sourceMappingURL=contacts.js.map
+
+/***/ })
+
+});
+//# sourceMappingURL=17.js.map

@@ -1,1 +1,258 @@
-webpackJsonp([4],{693:function(l,n,u){"use strict";function t(l){return c._22(0,[(l()(),c.Z(0,0,null,null,2,"ion-option",[],null,null,null,null,null)),c.Y(1,16384,[[1,4]],0,j.a,[c.j],{value:[0,"value"]},null),(l()(),c._20(2,null,["",""]))],function(l,n){l(n,1,0,c._2(1,"",n.context.$implicit.currency,""))},function(l,n){l(n,2,0,n.context.$implicit.name)})}function a(l){return c._22(0,[(l()(),c.Z(0,0,null,null,1,"label",[["stacked",""]],null,null,null,null,null)),(l()(),c._20(-1,null,["Precio del dolar en el país"]))],null,null)}function e(l){return c._22(0,[(l()(),c.Z(0,0,null,null,10,"ion-item",[["class","item item-block"],["style","margin-bottom: 2%; margin-top: 2%"]],null,null,null,I.b,I.a)),c.Y(1,1097728,null,3,x.a,[P.a,z.a,c.j,c.z,[2,U.a]],null,null),c._18(335544320,2,{contentLabel:0}),c._18(603979776,3,{_buttons:1}),c._18(603979776,4,{_icons:1}),c.Y(5,16384,null,0,F.a,[],null,null),(l()(),c._20(-1,2,["\n    "])),(l()(),c.Z(7,0,null,2,2,"h6",[["class","txtboldblack"]],null,null,null,null,null)),(l()(),c._20(8,null,["1 USD = "," ",""])),c._15(9,1),(l()(),c._20(-1,2,["\n  "]))],null,function(l,n){var u=n.component;l(n,8,0,c._21(n,8,0,l(n,9,0,c._11(n.parent,0),null==u.infoCountry?null:u.infoCountry.local_usd_value)),u.currency)})}function o(l){return c._22(0,[(l()(),c.Z(0,0,null,null,2,"h6",[],null,null,null,null,null)),(l()(),c._20(1,null,["1 "," = "," USD"])),c._15(2,1)],null,function(l,n){l(n,1,0,n.parent.context.$implicit.full_name,c._21(n,1,1,l(n,2,0,c._11(n.parent.parent,0),n.parent.context.$implicit.usd_value)))})}function i(l){return c._22(0,[(l()(),c.Z(0,0,null,null,36,"ion-card",[["class","item item-block"],["ion-item",""],["style","margin-top: 2%"]],null,[[null,"click"]],function(l,n,u){var t=!0;if("click"===n){t=!1!==l.component.monedaSelect(l.context.$implicit)&&t}return t},I.b,I.a)),c.Y(1,16384,null,0,S.a,[z.a,c.j,c.z],null,null),c.Y(2,1097728,null,3,x.a,[P.a,z.a,c.j,c.z,[2,U.a]],null,null),c._18(335544320,5,{contentLabel:0}),c._18(603979776,6,{_buttons:1}),c._18(603979776,7,{_icons:1}),c.Y(6,16384,null,0,F.a,[],null,null),(l()(),c._20(-1,2,["\n    "])),(l()(),c.Z(8,0,null,2,27,"ion-card-content",[],null,null,null,null,null)),c.Y(9,16384,null,0,M.a,[z.a,c.j,c.z],null,null),(l()(),c._20(-1,null,["\n      "])),(l()(),c.Z(11,0,null,null,23,"ion-row",[["class","row"]],null,null,null,null,null)),c.Y(12,16384,null,0,$.a,[],null,null),(l()(),c._20(-1,null,["\n        "])),(l()(),c.Z(14,0,null,null,12,"ion-col",[["class","col"],["col-10",""]],null,null,null,null,null)),c.Y(15,16384,null,0,q.a,[],null,null),(l()(),c._20(-1,null,["\n          "])),(l()(),c.Z(17,0,null,null,1,"h4",[],null,null,null,null,null)),(l()(),c._20(18,null,["Criptomoneda: ",""])),(l()(),c._20(-1,null,["\n          "])),(l()(),c.U(16777216,null,null,1,null,o)),c.Y(21,16384,null,0,w.l,[c.I,c.F],{ngIf:[0,"ngIf"]},null),(l()(),c._20(-1,null,["\n          "])),(l()(),c.Z(23,0,null,null,2,"h5",[["stacked",""]],null,null,null,null,null)),(l()(),c._20(24,null,[" 1 "," = "," "," "])),c._15(25,1),(l()(),c._20(-1,null,["\n        "])),(l()(),c._20(-1,null,["\n        "])),(l()(),c.Z(28,0,null,null,5,"ion-col",[["class","col"],["col-2",""]],null,null,null,null,null)),c.Y(29,16384,null,0,q.a,[],null,null),(l()(),c._20(-1,null,["\n          "])),(l()(),c.Z(31,0,null,null,1,"ion-icon",[["large",""],["name","ios-arrow-forward"],["role","img"]],[[2,"hide",null]],null,null,null,null)),c.Y(32,147456,null,0,D.a,[z.a,c.j,c.z],{name:[0,"name"]},null),(l()(),c._20(-1,null,["\n        "])),(l()(),c._20(-1,null,["\n      "])),(l()(),c._20(-1,null,["\n    "])),(l()(),c._20(-1,2,["\n  "]))],function(l,n){l(n,21,0,"USD"!=n.component.currency);l(n,32,0,"ios-arrow-forward")},function(l,n){var u=n.component;l(n,18,0,n.context.$implicit.full_name);l(n,24,0,n.context.$implicit.full_name,c._21(n,24,1,l(n,25,0,c._11(n.parent,0),n.context.$implicit.local_usd_value)),u.currency);l(n,31,0,c._11(n,32)._hidden)})}function r(l){return c._22(0,[c._13(0,w.c,[c.r]),(l()(),c.Z(1,0,null,null,10,"ion-header",[],null,null,null,null,null)),c.Y(2,16384,null,0,T.a,[z.a,c.j,c.z,[2,A.a]],null,null),(l()(),c._20(-1,null,["\n  "])),(l()(),c.Z(4,0,null,null,6,"ion-navbar",[["class","toolbar"]],[[8,"hidden",0],[2,"statusbar-padding",null]],null,null,O.b,O.a)),c.Y(5,49152,null,0,X.a,[B.a,[2,A.a],[2,E.a],z.a,c.j,c.z],null,null),(l()(),c._20(-1,3,["\n    "])),(l()(),c.Z(7,0,null,3,2,"ion-title",[],null,null,null,L.b,L.a)),c.Y(8,49152,null,0,V.a,[z.a,c.j,c.z,[2,J.a],[2,X.a]],null,null),(l()(),c._20(-1,0,["Transacciones"])),(l()(),c._20(-1,3,["\n  "])),(l()(),c._20(-1,null,["\n"])),(l()(),c._20(-1,null,["\n\n"])),(l()(),c.Z(13,0,null,null,30,"ion-content",[["padding",""]],[[2,"statusbar-padding",null],[2,"has-refresher",null]],null,null,N.b,N.a)),c.Y(14,4374528,null,0,R.a,[z.a,W.a,G.a,c.j,c.z,B.a,H.a,c.u,[2,A.a],[2,E.a]],null,null),(l()(),c._20(-1,1,["\n  "])),(l()(),c.Z(16,0,null,1,2,"ion-label",[["stacked",""]],null,null,null,null,null)),c.Y(17,16384,null,0,K.a,[z.a,c.j,c.z,[8,null],[8,""],[8,null],[8,null]],null,null),(l()(),c._20(-1,null,["Seleccione país de destino"])),(l()(),c._20(-1,1,["\n  "])),(l()(),c.Z(20,0,null,1,10,"ion-select",[["interface","popover"]],[[2,"select-disabled",null],[2,"ng-untouched",null],[2,"ng-touched",null],[2,"ng-pristine",null],[2,"ng-dirty",null],[2,"ng-valid",null],[2,"ng-invalid",null],[2,"ng-pending",null]],[[null,"ngModelChange"],[null,"ionChange"],[null,"click"],[null,"keyup.space"]],function(l,n,u){var t=!0,a=l.component;if("click"===n){t=!1!==c._11(l,21)._click(u)&&t}if("keyup.space"===n){t=!1!==c._11(l,21)._keyup()&&t}if("ngModelChange"===n){t=!1!==(a.currency=u)&&t}if("ionChange"===n){t=!1!==a.countrySelected()&&t}return t},Q.b,Q.a)),c.Y(21,1228800,null,1,ll.a,[B.a,P.a,z.a,c.j,c.z,[2,x.a],nl.a],{interface:[0,"interface"]},{ionChange:"ionChange"}),c._18(603979776,1,{options:1}),c._16(1024,null,ul.l,function(l){return[l]},[ll.a]),c.Y(24,671744,null,0,ul.p,[[8,null],[8,null],[8,null],[2,ul.l]],{model:[0,"model"]},{update:"ngModelChange"}),c._16(2048,null,ul.m,null,[ul.p]),c.Y(26,16384,null,0,ul.n,[ul.m],null,null),(l()(),c._20(-1,null,["\n    "])),(l()(),c.U(16777216,null,null,1,null,t)),c.Y(29,802816,null,0,w.k,[c.I,c.F,c.p],{ngForOf:[0,"ngForOf"]},null),(l()(),c._20(-1,null,["\n  "])),(l()(),c._20(-1,1,["\n  "])),(l()(),c.U(16777216,null,1,1,null,a)),c.Y(33,16384,null,0,w.l,[c.I,c.F],{ngIf:[0,"ngIf"]},null),(l()(),c._20(-1,1,["\n  "])),(l()(),c.U(16777216,null,1,1,null,e)),c.Y(36,16384,null,0,w.l,[c.I,c.F],{ngIf:[0,"ngIf"]},null),(l()(),c._20(-1,1,["\n  "])),(l()(),c.Z(38,0,null,1,1,"label",[["stacked",""]],null,null,null,null,null)),(l()(),c._20(-1,null,["Información de las monedas"])),(l()(),c._20(-1,1,["\n  "])),(l()(),c.U(16777216,null,1,1,null,i)),c.Y(42,802816,null,0,w.k,[c.I,c.F,c.p],{ngForOf:[0,"ngForOf"]},null),(l()(),c._20(-1,1,["\n"]))],function(l,n){var u=n.component;l(n,21,0,"popover");l(n,24,0,u.currency);l(n,29,0,u.countrys);l(n,33,0,"USD"!=u.currency);l(n,36,0,"USD"!=u.currency);l(n,42,0,u.monedas)},function(l,n){l(n,4,0,c._11(n,5)._hidden,c._11(n,5)._sbPadding);l(n,13,0,c._11(n,14).statusbarPadding,c._11(n,14)._hasRefresher);l(n,20,0,c._11(n,21)._disabled,c._11(n,26).ngClassUntouched,c._11(n,26).ngClassTouched,c._11(n,26).ngClassPristine,c._11(n,26).ngClassDirty,c._11(n,26).ngClassValid,c._11(n,26).ngClassInvalid,c._11(n,26).ngClassPending)})}Object.defineProperty(n,"__esModule",{value:!0});var c=u(0),s=(u(1),u(33),u(62)),_=u(97),d=u(63),f=function(){function l(l,n,u,t,a,e,o,i){this.navParams=l,this.userProvider=n,this.toastCtrl=u,this.modalCtrl=t,this.informationProvider=a,this.navCtrl=e,this.loadingCtrl=o,this.errorProvider=i,this.countrys=[],this.currency=null,this.infoCountry=null,this.monedas=[],this.currency=this.userProvider.user_Country.currency,this.getInfo(),this.countrySelected()}return l.prototype.getInfo=function(){var l=this,n=this.loadingCtrl.create({spinner:"hide",content:"<img src='assets/imgs/buho.png'>"});n.present(),this.informationProvider.getCountries().then(function(u){l.countrys=u,n.dismiss()}).catch(function(u){var t="";u.error.forEach(function(l){t+=l.message+"\n"}),l.errorProvider.obj.message=t,n.dismiss(),l.errorProvider.presentModal()})},l.prototype.countrySelected=function(){var l=this;this.informationProvider.getCurrencies(this.currency).then(function(n){l.infoCountry=n,l.monedas=n.coins}).catch(function(n){var u="";n.error.forEach(function(l){u+=l.message+"\n"}),l.errorProvider.obj.message=u,l.errorProvider.presentModal()})},l.prototype.monedaSelect=function(l){var n=this.informationProvider.getCountriesID(this.currency);this.navCtrl.push("ModalTransactionPage",{moneda:l,infoCountry:this.infoCountry,currency:this.currency,pais_id:n.id,code_phohe:n.phone_code,country:n})},l}(),p=u(87),b=function(){return function(){}}(),g=u(198),m=u(199),h=u(200),v=u(201),y=u(202),k=u(203),C=u(204),Y=u(205),Z=u(206),j=u(142),I=u(140),x=u(21),P=u(20),z=u(3),U=u(52),F=u(64),S=u(208),M=u(209),$=u(90),q=u(89),w=u(15),D=u(58),T=u(141),A=u(7),O=u(697),X=u(49),B=u(11),E=u(30),L=u(387),V=u(91),J=u(51),N=u(139),R=u(23),W=u(6),G=u(10),H=u(31),K=u(59),Q=u(700),ll=u(207),nl=u(27),ul=u(17),tl=u(16),al=u(92),el=u(95),ol=u(88),il=c.X({encapsulation:2,styles:[],data:{}}),rl=c.V("page-transaction",f,function(l){return c._22(0,[(l()(),c.Z(0,0,null,null,1,"page-transaction",[],null,null,null,r,il)),c.Y(1,49152,null,0,f,[tl.a,s.a,al.a,el.a,_.a,E.a,ol.a,d.a],null,null)],null,null)},{},{},[]),cl=u(138),sl=u(57);u.d(n,"TransactionPageModuleNgFactory",function(){return _l});var _l=c.W(b,[],function(l){return c._7([c._8(512,c.i,c.S,[[8,[g.a,m.a,h.a,v.a,y.a,k.a,C.a,Y.a,Z.a,rl]],[3,c.i],c.s]),c._8(4608,w.n,w.m,[c.r,[2,w.x]]),c._8(4608,ul.v,ul.v,[]),c._8(4608,ul.d,ul.d,[]),c._8(512,w.b,w.b,[]),c._8(512,ul.t,ul.t,[]),c._8(512,ul.i,ul.i,[]),c._8(512,ul.q,ul.q,[]),c._8(512,cl.a,cl.a,[]),c._8(512,cl.b,cl.b,[]),c._8(512,p.a,p.a,[]),c._8(512,b,b,[]),c._8(256,sl.a,f,[])])})},697:function(l,n,u){"use strict";function t(l){return a._22(0,[(l()(),a.Z(0,0,null,null,1,"div",[["class","toolbar-background"]],null,null,null,null,null)),a.Y(1,278528,null,0,e.j,[a.p,a.q,a.j,a.A],{klass:[0,"klass"],ngClass:[1,"ngClass"]},null),(l()(),a.Z(2,0,null,null,8,"button",[["class","back-button"],["ion-button","bar-button"]],[[8,"hidden",0]],[[null,"click"]],function(l,n,u){var t=!0;if("click"===n){t=!1!==l.component.backButtonClick(u)&&t}return t},o.b,o.a)),a.Y(3,278528,null,0,e.j,[a.p,a.q,a.j,a.A],{klass:[0,"klass"],ngClass:[1,"ngClass"]},null),a.Y(4,1097728,null,0,i.a,[[8,"bar-button"],r.a,a.j,a.z],null,null),(l()(),a.Z(5,0,null,0,2,"ion-icon",[["class","back-button-icon"],["role","img"]],[[2,"hide",null]],null,null,null,null)),a.Y(6,278528,null,0,e.j,[a.p,a.q,a.j,a.A],{klass:[0,"klass"],ngClass:[1,"ngClass"]},null),a.Y(7,147456,null,0,c.a,[r.a,a.j,a.z],{name:[0,"name"]},null),(l()(),a.Z(8,0,null,0,2,"span",[["class","back-button-text"]],null,null,null,null,null)),a.Y(9,278528,null,0,e.j,[a.p,a.q,a.j,a.A],{klass:[0,"klass"],ngClass:[1,"ngClass"]},null),(l()(),a._20(10,null,["",""])),a._10(null,0),a._10(null,1),a._10(null,2),(l()(),a.Z(14,0,null,null,2,"div",[["class","toolbar-content"]],null,null,null,null,null)),a.Y(15,278528,null,0,e.j,[a.p,a.q,a.j,a.A],{klass:[0,"klass"],ngClass:[1,"ngClass"]},null),a._10(null,3)],function(l,n){var u=n.component;l(n,1,0,"toolbar-background","toolbar-background-"+u._mode);l(n,3,0,"back-button","back-button-"+u._mode);l(n,6,0,"back-button-icon","back-button-icon-"+u._mode);l(n,7,0,u._bbIcon);l(n,9,0,"back-button-text","back-button-text-"+u._mode);l(n,15,0,"toolbar-content","toolbar-content-"+u._mode)},function(l,n){var u=n.component;l(n,2,0,u._hideBb);l(n,5,0,a._11(n,7)._hidden);l(n,10,0,u._backText)})}u.d(n,"a",function(){return s}),n.b=t;var a=u(0),e=u(15),o=u(38),i=u(26),r=u(3),c=u(58),s=(u(7),u(30),a.X({encapsulation:2,styles:[],data:{}}))},700:function(l,n,u){"use strict";function t(l){return o._22(0,[(l()(),o.Z(0,0,null,null,1,"div",[["class","select-placeholder select-text"]],null,null,null,null,null)),(l()(),o._20(1,null,["",""]))],null,function(l,n){l(n,1,0,n.component.placeholder)})}function a(l){return o._22(0,[(l()(),o.Z(0,0,null,null,1,"div",[["class","select-text"]],null,null,null,null,null)),(l()(),o._20(1,null,["",""]))],null,function(l,n){var u=n.component;l(n,1,0,u.selectedText||u._text)})}function e(l){return o._22(0,[(l()(),o.U(16777216,null,null,1,null,t)),o.Y(1,16384,null,0,i.l,[o.I,o.F],{ngIf:[0,"ngIf"]},null),(l()(),o.U(16777216,null,null,1,null,a)),o.Y(3,16384,null,0,i.l,[o.I,o.F],{ngIf:[0,"ngIf"]},null),(l()(),o.Z(4,0,null,null,1,"div",[["class","select-icon"]],null,null,null,null,null)),(l()(),o.Z(5,0,null,null,0,"div",[["class","select-icon-inner"]],null,null,null,null,null)),(l()(),o.Z(6,0,null,null,1,"button",[["aria-haspopup","true"],["class","item-cover"],["ion-button","item-cover"],["type","button"]],[[8,"id",0],[1,"aria-labelledby",0],[1,"aria-disabled",0]],null,null,r.b,r.a)),o.Y(7,1097728,null,0,c.a,[[8,"item-cover"],s.a,o.j,o.z],null,null)],function(l,n){var u=n.component;l(n,1,0,!u._text);l(n,3,0,u._text)},function(l,n){var u=n.component;l(n,6,0,u.id,u._labelId,u._disabled)})}u.d(n,"a",function(){return _}),n.b=e;var o=u(0),i=u(15),r=u(38),c=u(26),s=u(3),_=(u(20),u(27),o.X({encapsulation:2,styles:[],data:{}}))}});
+webpackJsonp([4],{
+
+/***/ 718:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LoginPageModule", function() { return LoginPageModule; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(26);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__login__ = __webpack_require__(739);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_components_module__ = __webpack_require__(731);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ngx_translate_core__ = __webpack_require__(92);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+
+
+
+
+var LoginPageModule = /** @class */ (function () {
+    function LoginPageModule() {
+    }
+    LoginPageModule = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["J" /* NgModule */])({
+            declarations: [
+                __WEBPACK_IMPORTED_MODULE_2__login__["a" /* LoginPage */],
+            ],
+            imports: [
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__login__["a" /* LoginPage */]),
+                __WEBPACK_IMPORTED_MODULE_4__ngx_translate_core__["b" /* TranslateModule */],
+                __WEBPACK_IMPORTED_MODULE_3__components_components_module__["a" /* ComponentsModule */],
+            ],
+        })
+    ], LoginPageModule);
+    return LoginPageModule;
+}());
+
+//# sourceMappingURL=login.module.js.map
+
+/***/ }),
+
+/***/ 731:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ComponentsModule; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__msg_error_msg_error__ = __webpack_require__(732);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_common__ = __webpack_require__(33);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+
+
+var ComponentsModule = /** @class */ (function () {
+    function ComponentsModule() {
+    }
+    ComponentsModule = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["J" /* NgModule */])({
+            declarations: [__WEBPACK_IMPORTED_MODULE_1__msg_error_msg_error__["a" /* MsgErrorComponent */]],
+            imports: [__WEBPACK_IMPORTED_MODULE_2__angular_common__["b" /* CommonModule */]],
+            exports: [__WEBPACK_IMPORTED_MODULE_1__msg_error_msg_error__["a" /* MsgErrorComponent */]]
+        })
+    ], ComponentsModule);
+    return ComponentsModule;
+}());
+
+//# sourceMappingURL=components.module.js.map
+
+/***/ }),
+
+/***/ 732:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MsgErrorComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_forms__ = __webpack_require__(21);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_validation_validation__ = __webpack_require__(377);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+var MsgErrorComponent = /** @class */ (function () {
+    function MsgErrorComponent() {
+    }
+    Object.defineProperty(MsgErrorComponent.prototype, "errorMessage", {
+        get: function () {
+            for (var propertyName in this.control.errors) {
+                if (this.control.errors.hasOwnProperty(propertyName) && this.control.touched) {
+                    return __WEBPACK_IMPORTED_MODULE_2__providers_validation_validation__["a" /* ValidationProvider */].getValidatorErrorMessage(propertyName, this.control.errors[propertyName], this.name);
+                }
+            }
+            return false;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["E" /* Input */])(),
+        __metadata("design:type", __WEBPACK_IMPORTED_MODULE_1__angular_forms__["b" /* FormControl */])
+    ], MsgErrorComponent.prototype, "control", void 0);
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["E" /* Input */])(),
+        __metadata("design:type", String)
+    ], MsgErrorComponent.prototype, "name", void 0);
+    MsgErrorComponent = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+            selector: 'msg-error',
+            template: '<div><span *ngIf="errorMessage !== false">{{errorMessage}}</span></div>'
+        }),
+        __metadata("design:paramtypes", [])
+    ], MsgErrorComponent);
+    return MsgErrorComponent;
+}());
+
+//# sourceMappingURL=msg-error.js.map
+
+/***/ }),
+
+/***/ 739:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LoginPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(26);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_auth_user_auth_user__ = __webpack_require__(93);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_forms__ = __webpack_require__(21);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_modal_error_modal_error__ = __webpack_require__(94);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+var LoginPage = /** @class */ (function () {
+    function LoginPage(navCtrl, loadingCtrl, userProvider, toastCtrl, modalCtrl, formBuilder, errorProvider, menuCtrl) {
+        this.navCtrl = navCtrl;
+        this.loadingCtrl = loadingCtrl;
+        this.userProvider = userProvider;
+        this.toastCtrl = toastCtrl;
+        this.modalCtrl = modalCtrl;
+        this.formBuilder = formBuilder;
+        this.errorProvider = errorProvider;
+        this.menuCtrl = menuCtrl;
+        // formGroup = this.formBuilder.group({
+        //   password: ['', Validators.compose([
+        //     Validators.required,
+        //     Validators.minLength(6)
+        //   ])],
+        //
+        //   mail: ['', Validators.compose([
+        //     Validators.required,
+        //     Validators.minLength(6),
+        //     Validators.email]),
+        //      Validators.pattern('^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$')
+        //   ],
+        // });
+        this.formGroup = new __WEBPACK_IMPORTED_MODULE_3__angular_forms__["c" /* FormGroup */]({
+            mail: new __WEBPACK_IMPORTED_MODULE_3__angular_forms__["b" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_3__angular_forms__["h" /* Validators */].required, __WEBPACK_IMPORTED_MODULE_3__angular_forms__["h" /* Validators */].email]),
+            password: new __WEBPACK_IMPORTED_MODULE_3__angular_forms__["b" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_3__angular_forms__["h" /* Validators */].required, __WEBPACK_IMPORTED_MODULE_3__angular_forms__["h" /* Validators */].minLength(6)]),
+        });
+    }
+    LoginPage.prototype.ionViewWillEnter = function () {
+        this.menuCtrl.enable(false);
+    };
+    LoginPage.prototype.login = function () {
+        var _this = this;
+        if (this.formGroup.valid) {
+            var cargando_1 = this.loadingCtrl.create({
+                spinner: 'hide',
+                content: "<img src='assets/imgs/buho.png'>",
+            });
+            this.userProvider.login(this.formGroup.value.mail, this.formGroup.value.password)
+                .then(function (data) {
+                cargando_1.present();
+                if (data.success == 'ok') {
+                    _this.navCtrl.setRoot("HomePage");
+                    cargando_1.dismiss();
+                }
+                else {
+                    cargando_1.dismiss();
+                }
+            }).catch(function (error) {
+                cargando_1.dismiss();
+                var mensaje = "";
+                error.error.forEach(function (data) {
+                    mensaje += data.message + "\n";
+                });
+                _this.errorProvider.obj.message = mensaje;
+                _this.errorProvider.presentModal();
+            });
+        }
+    };
+    LoginPage.prototype.recuperarcontrasena = function () {
+        var modal = this.modalCtrl.create('RecoveryPasswordPage');
+        modal.present();
+    };
+    LoginPage.prototype.registro = function () {
+        // this.navCtrl.push("RegNumberPhonePage");
+        this.navCtrl.setPages([{ page: "Login" }, { page: "RegNumberPhonePage" }]);
+    };
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["E" /* Input */])(),
+        __metadata("design:type", String)
+    ], LoginPage.prototype, "errorMsg", void 0);
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["E" /* Input */])(),
+        __metadata("design:type", Boolean)
+    ], LoginPage.prototype, "displayError", void 0);
+    LoginPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+            selector: 'page-login',template:/*ion-inline-start:"/Users/eyeline/Documents/GitHub/eyepaycashapp/src/pages/login/login.html"*/'<ion-content class="imgBackground vignette">\n  <div class="center">\n    <ion-img class="logo" src="assets/imgs/EPCLogo.png"></ion-img>\n  </div>\n  <!--<form #formulario >-->\n  <form [formGroup]="formGroup" (ngSubmit)="login()">\n    <ion-list>\n      <ion-item>\n        <ion-input placeholder="Email" class="inputClass marginItems" formControlName="mail" name="correo">\n        </ion-input>\n        <div>\n          <msg-error [control]="formGroup.controls.mail"></msg-error>\n        </div>\n      </ion-item>\n      <ion-item>\n        <ion-input placeholder="Contraseña" class="inputClass marginItems" type="password"\n                   name="contrasena" formControlName="password"></ion-input>\n      </ion-item>\n      <ion-item no-lines *ngIf="formGroup.invalid">\n        <msg-error [control]="formGroup.controls.mail" name="Email"></msg-error>\n        <msg-error [control]="formGroup.controls.password" name="Contraseña"></msg-error>\n      </ion-item>\n      <ion-item class="center">\n        <button class="buttonPayCash borderBtns" ion-button small>{{\'INICIAR_SESION\'|translate}}</button>\n      </ion-item>\n    </ion-list>\n  </form>\n  <ion-row>\n    <ion-col col-12>\n      <button class="textWhite" ion-button (click)="registro()" clear block class="transparente">{{\'REGISTRARME\'|translate}}</button>\n    </ion-col>\n    <ion-col col-12>\n      <button ion-button (click)="recuperarcontrasena()" clear block class="transparente">{{\'RECUPERAR_CONTRASENA\'|translate}}</button>\n    </ion-col>\n  </ion-row>\n</ion-content>'/*ion-inline-end:"/Users/eyeline/Documents/GitHub/eyepaycashapp/src/pages/login/login.html"*/,
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* LoadingController */],
+            __WEBPACK_IMPORTED_MODULE_2__providers_auth_user_auth_user__["a" /* AuthUserProvider */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* ToastController */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* ModalController */],
+            __WEBPACK_IMPORTED_MODULE_3__angular_forms__["a" /* FormBuilder */],
+            __WEBPACK_IMPORTED_MODULE_4__providers_modal_error_modal_error__["a" /* ModalErrorProvider */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* MenuController */]])
+    ], LoginPage);
+    return LoginPage;
+}());
+
+//# sourceMappingURL=login.js.map
+
+/***/ })
+
+});
+//# sourceMappingURL=4.js.map

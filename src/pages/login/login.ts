@@ -95,7 +95,8 @@ export class LoginPage {
   }
 
   registro() {
-    this.navCtrl.push("RegNumberPhonePage");
+	// this.navCtrl.push("RegNumberPhonePage");
+	this.navCtrl.setPages([{page:"Login"},{page:"RegNumberPhonePage"}])
   }
 
 }

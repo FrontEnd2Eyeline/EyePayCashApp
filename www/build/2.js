@@ -1,1 +1,277 @@
-webpackJsonp([2],{687:function(n,l,u){"use strict";function e(n){return a._22(0,[(n()(),a.Z(0,0,null,null,12,"ion-item",[["class","item item-block"],["no-lines",""]],null,null,null,Y.b,Y.a)),a.Y(1,1097728,null,3,P.a,[Z.a,j.a,a.j,a.z,[2,k.a]],null,null),a._18(335544320,7,{contentLabel:0}),a._18(603979776,8,{_buttons:1}),a._18(603979776,9,{_icons:1}),a.Y(5,16384,null,0,q.a,[],null,null),(n()(),a._20(-1,2,["\n\t\t\t"])),(n()(),a.Z(7,0,null,2,1,"msg-error",[["name","Recovery"]],null,null,null,z.b,z.a)),a.Y(8,49152,null,0,G.a,[],{control:[0,"control"],name:[1,"name"]},null),(n()(),a._20(-1,2,["\n\t\t\t"])),(n()(),a.Z(10,0,null,2,1,"msg-error",[["name","Recovery2"]],null,null,null,z.b,z.a)),a.Y(11,49152,null,0,G.a,[],{control:[0,"control"],name:[1,"name"]},null),(n()(),a._20(-1,2,["\n\t\t"]))],function(n,l){var u=l.component;n(l,8,0,u.formGroup.controls.new_password,"Recovery");n(l,11,0,u.formGroup.controls.new_password_conf,"Recovery2")},null)}function r(n){return a._22(0,[(n()(),a._20(-1,null,["\n"])),(n()(),a.Z(1,0,null,null,68,"ion-content",[["class","fondo_gris"],["padding",""]],[[2,"statusbar-padding",null],[2,"has-refresher",null]],null,null,I.b,I.a)),a.Y(2,4374528,null,0,R.a,[j.a,M.a,S.a,a.j,a.z,U.a,V.a,a.u,[2,L.a],[2,D.a]],null,null),(n()(),a._20(-1,1,["\n  "])),(n()(),a.Z(4,0,null,1,64,"form",[["novalidate",""]],[[2,"ng-untouched",null],[2,"ng-touched",null],[2,"ng-pristine",null],[2,"ng-dirty",null],[2,"ng-valid",null],[2,"ng-invalid",null],[2,"ng-pending",null]],[[null,"ngSubmit"],[null,"submit"],[null,"reset"]],function(n,l,u){var e=!0,r=n.component;if("submit"===l){e=!1!==a._11(n,6).onSubmit(u)&&e}if("reset"===l){e=!1!==a._11(n,6).onReset()&&e}if("ngSubmit"===l){e=!1!==r.recovery()&&e}return e},null,null)),a.Y(5,16384,null,0,i.u,[],null,null),a.Y(6,540672,null,0,i.h,[[8,null],[8,null]],{form:[0,"form"]},{ngSubmit:"ngSubmit"}),a._16(2048,null,i.b,null,[i.h]),a.Y(8,16384,null,0,i.o,[i.b],null,null),(n()(),a._20(-1,null,["\n    "])),(n()(),a.Z(10,0,null,null,57,"ion-list",[],null,null,null,null,null)),a.Y(11,16384,null,0,F.a,[j.a,a.j,a.z,M.a,N.l,S.a],null,null),(n()(),a._20(-1,null,["\n\n      "])),(n()(),a.Z(13,0,null,null,18,"ion-item",[["class","item item-block"]],null,null,null,Y.b,Y.a)),a.Y(14,1097728,null,3,P.a,[Z.a,j.a,a.j,a.z,[2,k.a]],null,null),a._18(335544320,1,{contentLabel:0}),a._18(603979776,2,{_buttons:1}),a._18(603979776,3,{_icons:1}),a.Y(18,16384,null,0,q.a,[],null,null),(n()(),a._20(-1,2,["\n        "])),(n()(),a.Z(20,0,null,1,2,"ion-label",[["stacked",""]],null,null,null,null,null)),a.Y(21,16384,[[1,4]],0,O.a,[j.a,a.j,a.z,[8,null],[8,""],[8,null],[8,null]],null,null),(n()(),a._20(-1,null,["Ingrese la nueva contraseña"])),(n()(),a._20(-1,2,["\n        "])),(n()(),a.Z(24,0,null,3,6,"ion-input",[["formControlName","new_password"],["name","recovery_pass"],["required",""],["type","password"]],[[1,"required",0],[2,"ng-untouched",null],[2,"ng-touched",null],[2,"ng-pristine",null],[2,"ng-dirty",null],[2,"ng-valid",null],[2,"ng-invalid",null],[2,"ng-pending",null]],null,null,T.b,T.a)),a.Y(25,16384,null,0,i.r,[],{required:[0,"required"]},null),a._16(1024,null,i.k,function(n){return[n]},[i.r]),a.Y(27,671744,null,0,i.f,[[3,i.b],[2,i.k],[8,null],[8,null]],{name:[0,"name"]},null),a._16(2048,null,i.m,null,[i.f]),a.Y(29,16384,null,0,i.n,[i.m],null,null),a.Y(30,5423104,null,0,E.a,[j.a,M.a,Z.a,U.a,a.j,a.z,[2,R.a],[2,P.a],[2,i.m],S.a],{type:[0,"type"]},null),(n()(),a._20(-1,2,["\n      "])),(n()(),a._20(-1,null,["\n      "])),(n()(),a.Z(33,0,null,null,18,"ion-item",[["class","item item-block"]],null,null,null,Y.b,Y.a)),a.Y(34,1097728,null,3,P.a,[Z.a,j.a,a.j,a.z,[2,k.a]],null,null),a._18(335544320,4,{contentLabel:0}),a._18(603979776,5,{_buttons:1}),a._18(603979776,6,{_icons:1}),a.Y(38,16384,null,0,q.a,[],null,null),(n()(),a._20(-1,2,["\n        "])),(n()(),a.Z(40,0,null,1,2,"ion-label",[["stacked",""]],null,null,null,null,null)),a.Y(41,16384,[[4,4]],0,O.a,[j.a,a.j,a.z,[8,null],[8,""],[8,null],[8,null]],null,null),(n()(),a._20(-1,null,["Confirme la nueva contraseña"])),(n()(),a._20(-1,2,["\n        "])),(n()(),a.Z(44,0,null,3,6,"ion-input",[["formControlName","new_password_conf"],["name","recovery_pass2"],["required",""],["type","password"]],[[1,"required",0],[2,"ng-untouched",null],[2,"ng-touched",null],[2,"ng-pristine",null],[2,"ng-dirty",null],[2,"ng-valid",null],[2,"ng-invalid",null],[2,"ng-pending",null]],null,null,T.b,T.a)),a.Y(45,16384,null,0,i.r,[],{required:[0,"required"]},null),a._16(1024,null,i.k,function(n){return[n]},[i.r]),a.Y(47,671744,null,0,i.f,[[3,i.b],[2,i.k],[8,null],[8,null]],{name:[0,"name"]},null),a._16(2048,null,i.m,null,[i.f]),a.Y(49,16384,null,0,i.n,[i.m],null,null),a.Y(50,5423104,null,0,E.a,[j.a,M.a,Z.a,U.a,a.j,a.z,[2,R.a],[2,P.a],[2,i.m],S.a],{type:[0,"type"]},null),(n()(),a._20(-1,2,["\n\t  "])),(n()(),a._20(-1,null,["\n\t  "])),(n()(),a.U(16777216,null,null,1,null,e)),a.Y(54,16384,null,0,X.l,[a.I,a.F],{ngIf:[0,"ngIf"]},null),(n()(),a._20(-1,null,["\n      "])),(n()(),a.Z(56,0,null,null,10,"ion-item",[["class","item item-block"]],null,null,null,Y.b,Y.a)),a.Y(57,1097728,null,3,P.a,[Z.a,j.a,a.j,a.z,[2,k.a]],null,null),a._18(335544320,10,{contentLabel:0}),a._18(603979776,11,{_buttons:1}),a._18(603979776,12,{_icons:1}),a.Y(61,16384,null,0,q.a,[],null,null),(n()(),a._20(-1,2,["\n        "])),(n()(),a.Z(63,0,null,2,2,"button",[["block",""],["class","buttonPayCash"],["ion-button",""]],null,null,null,x.b,x.a)),a.Y(64,1097728,[[11,4]],0,J.a,[[8,""],j.a,a.j,a.z],{block:[0,"block"]},null),(n()(),a._20(-1,0,["Guardar"])),(n()(),a._20(-1,2,["\n      "])),(n()(),a._20(-1,null,["\n    "])),(n()(),a._20(-1,null,["\n  "])),(n()(),a._20(-1,1,["\n"])),(n()(),a._20(-1,null,["\n"]))],function(n,l){var u=l.component;n(l,6,0,u.formGroup);n(l,25,0,"");n(l,27,0,"new_password");n(l,30,0,"password");n(l,45,0,"");n(l,47,0,"new_password_conf");n(l,50,0,"password");n(l,54,0,u.formGroup.invalid);n(l,64,0,"")},function(n,l){n(l,1,0,a._11(l,2).statusbarPadding,a._11(l,2)._hasRefresher);n(l,4,0,a._11(l,8).ngClassUntouched,a._11(l,8).ngClassTouched,a._11(l,8).ngClassPristine,a._11(l,8).ngClassDirty,a._11(l,8).ngClassValid,a._11(l,8).ngClassInvalid,a._11(l,8).ngClassPending);n(l,24,0,a._11(l,25).required?"":null,a._11(l,29).ngClassUntouched,a._11(l,29).ngClassTouched,a._11(l,29).ngClassPristine,a._11(l,29).ngClassDirty,a._11(l,29).ngClassValid,a._11(l,29).ngClassInvalid,a._11(l,29).ngClassPending);n(l,44,0,a._11(l,45).required?"":null,a._11(l,49).ngClassUntouched,a._11(l,49).ngClassTouched,a._11(l,49).ngClassPristine,a._11(l,49).ngClassDirty,a._11(l,49).ngClassValid,a._11(l,49).ngClassInvalid,a._11(l,49).ngClassPending)})}Object.defineProperty(l,"__esModule",{value:!0});var a=u(0),t=(u(1),u(33),u(50)),o=u(62),s=u(63),i=u(17),_=function(){function n(n,l,u,e,r,a,t){this.navCtrl=n,this.navParams=l,this.api=u,this.toastCtrl=e,this.userProvider=r,this.loadingCtrl=a,this.errorProvider=t,this.infoRecovery={new_password:null,new_password_conf:null,reset_id:null},this.formGroup=new i.g({new_password:new i.e("",[i.s.required]),new_password_conf:new i.e("",[i.s.required]),reset_id:new i.e}),this.infoRecovery.reset_id=l.get("reset_id"),this.formGroup.get("reset_id").setValue(this.infoRecovery.reset_id)}return n.prototype.recovery=function(){var n=this;if(this.formGroup.valid){var l=this.loadingCtrl.create({spinner:"dots"});l.present(),console.log("forgrup",this.formGroup.value),this.api.post("auth/update-password",this.formGroup.value).then(function(u){l.dismiss(),n.errorProvider.obj.message="Contraseña actualizada correctamente",n.errorProvider.presentModal(),n.navCtrl.setRoot("LoginPage")}).catch(function(u){var e="";l.dismiss(),u.error.forEach(function(n){e+=n.message+"\n"}),n.errorProvider.obj.message=e,n.errorProvider.presentModal()})}},n}(),c=u(87),d=u(699),g=function(){return function(){}}(),f=u(198),p=u(199),m=u(200),b=u(201),v=u(202),h=u(203),w=u(204),y=u(205),C=u(206),Y=u(140),P=u(21),Z=u(20),j=u(3),k=u(52),q=u(64),z=u(701),G=u(698),I=u(139),R=u(23),M=u(6),S=u(10),U=u(11),V=u(31),L=u(7),D=u(30),F=u(65),N=u(12),O=u(59),T=u(210),E=u(66),X=u(15),x=u(38),J=u(26),W=u(16),A=u(92),B=u(88),H=a.X({encapsulation:2,styles:[],data:{}}),K=a.V("page-password-update",_,function(n){return a._22(0,[(n()(),a.Z(0,0,null,null,1,"page-password-update",[],null,null,null,r,H)),a.Y(1,49152,null,0,_,[D.a,W.a,t.a,A.a,o.a,B.a,s.a],null,null)],null,null)},{},{},[]),Q=u(138),$=u(57);u.d(l,"PasswordUpdatePageModuleNgFactory",function(){return nn});var nn=a.W(g,[],function(n){return a._7([a._8(512,a.i,a.S,[[8,[f.a,p.a,m.a,b.a,v.a,h.a,w.a,y.a,C.a,K]],[3,a.i],a.s]),a._8(4608,X.n,X.m,[a.r,[2,X.x]]),a._8(4608,i.v,i.v,[]),a._8(4608,i.d,i.d,[]),a._8(512,X.b,X.b,[]),a._8(512,i.t,i.t,[]),a._8(512,i.i,i.i,[]),a._8(512,i.q,i.q,[]),a._8(512,Q.a,Q.a,[]),a._8(512,Q.b,Q.b,[]),a._8(512,c.a,c.a,[]),a._8(512,d.a,d.a,[]),a._8(512,g,g,[]),a._8(256,$.a,_,[])])})},698:function(n,l,u){"use strict";u.d(l,"a",function(){return r});u(1);var e=u(214),r=function(){function n(){}return Object.defineProperty(n.prototype,"errorMessage",{get:function(){for(var n in this.control.errors)if(this.control.errors.hasOwnProperty(n)&&this.control.touched)return e.a.getValidatorErrorMessage(n,this.control.errors[n],this.name);return!1},enumerable:!0,configurable:!0}),n}()},699:function(n,l,u){"use strict";u.d(l,"a",function(){return e});u(1),u(698);var e=function(){return function(){}}()},701:function(n,l,u){"use strict";function e(n){return a._22(0,[(n()(),a.Z(0,0,null,null,1,"span",[],null,null,null,null,null)),(n()(),a._20(1,null,["",""]))],null,function(n,l){n(l,1,0,l.component.errorMessage)})}function r(n){return a._22(0,[(n()(),a.Z(0,0,null,null,2,"div",[],null,null,null,null,null)),(n()(),a.U(16777216,null,null,1,null,e)),a.Y(2,16384,null,0,t.l,[a.I,a.F],{ngIf:[0,"ngIf"]},null)],function(n,l){n(l,2,0,!1!==l.component.errorMessage)},null)}u.d(l,"a",function(){return o}),l.b=r;var a=u(0),t=u(15),o=a.X({encapsulation:2,styles:[],data:{}})}});
+webpackJsonp([2],{
+
+/***/ 725:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RecoveryPasswordPageModule", function() { return RecoveryPasswordPageModule; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(26);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__recovery_password__ = __webpack_require__(747);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ngx_translate_core__ = __webpack_require__(92);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__components_components_module__ = __webpack_require__(731);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+
+
+
+
+var RecoveryPasswordPageModule = /** @class */ (function () {
+    function RecoveryPasswordPageModule() {
+    }
+    RecoveryPasswordPageModule = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["J" /* NgModule */])({
+            declarations: [
+                __WEBPACK_IMPORTED_MODULE_2__recovery_password__["a" /* RecoveryPasswordPage */],
+            ],
+            imports: [
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__recovery_password__["a" /* RecoveryPasswordPage */]),
+                __WEBPACK_IMPORTED_MODULE_3__ngx_translate_core__["b" /* TranslateModule */],
+                __WEBPACK_IMPORTED_MODULE_4__components_components_module__["a" /* ComponentsModule */],
+            ],
+        })
+    ], RecoveryPasswordPageModule);
+    return RecoveryPasswordPageModule;
+}());
+
+//# sourceMappingURL=recovery-password.module.js.map
+
+/***/ }),
+
+/***/ 731:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ComponentsModule; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__msg_error_msg_error__ = __webpack_require__(732);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_common__ = __webpack_require__(33);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+
+
+var ComponentsModule = /** @class */ (function () {
+    function ComponentsModule() {
+    }
+    ComponentsModule = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["J" /* NgModule */])({
+            declarations: [__WEBPACK_IMPORTED_MODULE_1__msg_error_msg_error__["a" /* MsgErrorComponent */]],
+            imports: [__WEBPACK_IMPORTED_MODULE_2__angular_common__["b" /* CommonModule */]],
+            exports: [__WEBPACK_IMPORTED_MODULE_1__msg_error_msg_error__["a" /* MsgErrorComponent */]]
+        })
+    ], ComponentsModule);
+    return ComponentsModule;
+}());
+
+//# sourceMappingURL=components.module.js.map
+
+/***/ }),
+
+/***/ 732:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MsgErrorComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_forms__ = __webpack_require__(21);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_validation_validation__ = __webpack_require__(377);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+var MsgErrorComponent = /** @class */ (function () {
+    function MsgErrorComponent() {
+    }
+    Object.defineProperty(MsgErrorComponent.prototype, "errorMessage", {
+        get: function () {
+            for (var propertyName in this.control.errors) {
+                if (this.control.errors.hasOwnProperty(propertyName) && this.control.touched) {
+                    return __WEBPACK_IMPORTED_MODULE_2__providers_validation_validation__["a" /* ValidationProvider */].getValidatorErrorMessage(propertyName, this.control.errors[propertyName], this.name);
+                }
+            }
+            return false;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["E" /* Input */])(),
+        __metadata("design:type", __WEBPACK_IMPORTED_MODULE_1__angular_forms__["b" /* FormControl */])
+    ], MsgErrorComponent.prototype, "control", void 0);
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["E" /* Input */])(),
+        __metadata("design:type", String)
+    ], MsgErrorComponent.prototype, "name", void 0);
+    MsgErrorComponent = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+            selector: 'msg-error',
+            template: '<div><span *ngIf="errorMessage !== false">{{errorMessage}}</span></div>'
+        }),
+        __metadata("design:paramtypes", [])
+    ], MsgErrorComponent);
+    return MsgErrorComponent;
+}());
+
+//# sourceMappingURL=msg-error.js.map
+
+/***/ }),
+
+/***/ 747:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return RecoveryPasswordPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(26);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_api__ = __webpack_require__(48);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_auth_user_auth_user__ = __webpack_require__(93);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_modal_error_modal_error__ = __webpack_require__(94);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_forms__ = __webpack_require__(21);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+
+/**
+ * Generated class for the RecoveryPasswordPage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
+var RecoveryPasswordPage = /** @class */ (function () {
+    function RecoveryPasswordPage(navCtrl, navParams, api, toastCtrl, userProvider, loadingCtrl, errorProvider) {
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+        this.api = api;
+        this.toastCtrl = toastCtrl;
+        this.userProvider = userProvider;
+        this.loadingCtrl = loadingCtrl;
+        this.errorProvider = errorProvider;
+        this.isvisible = true;
+        this.data = null;
+        this.type = 'phone';
+        this.codigo = null;
+        this.iscodigo = false;
+        this.iscodigo2 = false;
+        this.formGroup = new __WEBPACK_IMPORTED_MODULE_5__angular_forms__["c" /* FormGroup */]({
+            data: new __WEBPACK_IMPORTED_MODULE_5__angular_forms__["b" /* FormControl */]('', [
+                __WEBPACK_IMPORTED_MODULE_5__angular_forms__["h" /* Validators */].required,
+                __WEBPACK_IMPORTED_MODULE_5__angular_forms__["h" /* Validators */].pattern('^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$'),
+                __WEBPACK_IMPORTED_MODULE_5__angular_forms__["h" /* Validators */].maxLength(70),
+            ]),
+        });
+    }
+    RecoveryPasswordPage.prototype.sendMessage = function (type) {
+        var _this = this;
+        this.type = type;
+        if ((this.formGroup.value.data != "") || (this.data != "")) {
+            var loading_1 = this.loadingCtrl.create({
+                spinner: 'hide',
+                content: "<img src='assets/imgs/buho.png'>",
+            });
+            loading_1.present();
+            if (this.type != 'phone')
+                this.data = this.formGroup.value.data;
+            // this.api.post('auth/restar-password', { 'type': this.type, 'data': this.data }).then(
+            this.api.post('auth/restar-password', { 'type': this.type, 'data': this.data }).then(function (data) {
+                loading_1.dismiss();
+                if (type != "phone") {
+                    _this.iscodigo = true;
+                }
+                else {
+                    _this.iscodigo2 = true;
+                }
+                _this.reset = data;
+                _this.data = null;
+                _this.errorProvider.obj.message = 'Se ha enviado un código de verificación';
+                _this.errorProvider.presentModal();
+            }).catch(function (error) {
+                loading_1.dismiss();
+                var mensaje = "";
+                error.error.forEach(function (data) {
+                    mensaje += data.message + "\n";
+                });
+                _this.errorProvider.obj.message = mensaje;
+                _this.errorProvider.presentModal();
+            });
+        }
+        else {
+            var mensaje = "número celular";
+            if (type != "phone")
+                mensaje = "dirección email";
+            this.errorProvider.obj.message = 'Por favor ingrese su ' + mensaje;
+            this.errorProvider.presentModal();
+        }
+    };
+    RecoveryPasswordPage.prototype.changeVisible = function () {
+        this.isvisible = !this.isvisible;
+        this.data = null;
+    };
+    RecoveryPasswordPage.prototype.cancelar = function () {
+        this.navCtrl.pop();
+    };
+    RecoveryPasswordPage.prototype.confirmCode = function () {
+        if (this.codigo != null) {
+            if (this.reset.password_code_req == this.codigo) {
+                this.navCtrl.push('PasswordUpdatePage', { 'reset_id': this.reset.id });
+            }
+            else {
+                this.errorProvider.obj.message = 'El código ingresado no coincide';
+                this.errorProvider.presentModal();
+            }
+        }
+        else {
+            this.errorProvider.obj.message = 'Por favor ingrese el código de verificación';
+            this.errorProvider.presentModal();
+        }
+    };
+    RecoveryPasswordPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+            selector: 'page-recovery-password',template:/*ion-inline-start:"/Users/eyeline/Documents/GitHub/eyepaycashapp/src/pages/recovery-password/recovery-password.html"*/'<ion-content padding class="back vignette">\n	<div style="margin-top:12%" class="center">\n		<ion-img class="logo" src="assets/imgs/EPCLogo.png"></ion-img>\n	</div>\n\n	<div *ngIf="isvisible">\n		<ion-item>\n			<ion-label stacked>Ingrese número celular</ion-label>\n			<ion-input type="text" [(ngModel)]="data" name="userdata"></ion-input>\n		</ion-item>\n		<ion-item *ngIf="iscodigo2">\n			<ion-label stacked>Ingrese código de verificación</ion-label>\n			<ion-input type="text" [(ngModel)]="codigo" name="usercodigo"></ion-input>\n		</ion-item>\n		<ion-row class="divMargin">\n			<ion-col col-12 *ngIf="!iscodigo2">\n				<button ion-button (click)="sendMessage(\'phone\')" block class="buttonPayCash">Enviar mensaje</button>\n			</ion-col>\n			<ion-col col-12 *ngIf="iscodigo2">\n				<button ion-button (click)="confirmCode()" block class="buttonPayCash">Confirmar código</button>\n			</ion-col>\n		</ion-row>\n		<ion-row class="marginLft divMargin20">\n			<ion-col col-4>\n				<button ion-button (click)="cancelar()" class="buttonPayCash">Cancelar</button>\n			</ion-col>\n			<ion-col col-6 *ngIf="!iscodigo2">\n				<button ion-button (click)="changeVisible()" class="buttonPayCash">Recuperar por email</button>\n			</ion-col>\n		</ion-row>\n	</div>\n\n	<div *ngIf="!isvisible">\n			<div [formGroup]="formGroup">\n		<ion-item>\n			<ion-label stacked>Ingrese su email</ion-label>\n			<ion-input type="text"  name="dataname" required formControlName="data"></ion-input>		\n		</ion-item>\n		<ion-item no-lines *ngIf="formGroup.invalid">\n				<msg-error [control]="formGroup.controls.data"></msg-error>\n		</ion-item>\n	</div>\n		<ion-item *ngIf="iscodigo">\n			<ion-label stacked>Ingrese código de verificación</ion-label>\n			<ion-input type="text" [(ngModel)]="codigo" name="usercodigo"></ion-input>\n		</ion-item>\n		<ion-row class="divMargin">\n			<ion-col col-12 *ngIf="!iscodigo">\n				<button ion-button (click)="sendMessage(\'mail\')" block class="buttonPayCash">Enviar email</button>\n			</ion-col>\n			<ion-col col-12 *ngIf="iscodigo">\n				<button ion-button (click)="confirmCode()" block class="buttonPayCash">Confirmar código</button>\n			</ion-col>\n		</ion-row>\n		<ion-row class="marginLft divMargin">\n			<ion-col col-4>\n				<button ion-button (click)="cancelar()" class="buttonPayCash">Cancelar</button>\n			</ion-col>\n			<ion-col col-6>\n				<button ion-button (click)="changeVisible()" class="buttonPayCash">Recuperar por SMS</button>\n			</ion-col>\n		</ion-row>\n	</div>\n</ion-content>'/*ion-inline-end:"/Users/eyeline/Documents/GitHub/eyepaycashapp/src/pages/recovery-password/recovery-password.html"*/,
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */],
+            __WEBPACK_IMPORTED_MODULE_2__providers_api__["a" /* Api */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* ToastController */],
+            __WEBPACK_IMPORTED_MODULE_3__providers_auth_user_auth_user__["a" /* AuthUserProvider */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* LoadingController */],
+            __WEBPACK_IMPORTED_MODULE_4__providers_modal_error_modal_error__["a" /* ModalErrorProvider */]])
+    ], RecoveryPasswordPage);
+    return RecoveryPasswordPage;
+}());
+
+//# sourceMappingURL=recovery-password.js.map
+
+/***/ })
+
+});
+//# sourceMappingURL=2.js.map

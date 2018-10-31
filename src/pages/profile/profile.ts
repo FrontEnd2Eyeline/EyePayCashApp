@@ -36,6 +36,8 @@ export class ProfilePage {
 		  this.navCtrl.push("ContactsPage");
 		  else if (page =="security")
 		  this.navCtrl.push("SecurityPage");
+		  else if (page == "account")
+		  this.navCtrl.push("AccountPage")
 		else
 		  this.navCtrl.push("TransactionPage");
 	  }

@@ -1,1 +1,149 @@
-webpackJsonp([15],{684:function(l,n,u){"use strict";function t(l){return a._22(0,[(l()(),a.Z(0,0,null,null,17,"ion-content",[["style","background: transparent"]],[[2,"statusbar-padding",null],[2,"has-refresher",null]],null,null,g.b,g.a)),a.Y(1,4374528,null,0,h.a,[m.a,v.a,y.a,a.j,a.z,w.a,Z.a,a.u,[2,j.a],[2,P.a]],null,null),(l()(),a._20(-1,1,["\n\t"])),(l()(),a.Z(3,0,null,1,6,"div",[["class","gradient"],["style","\n\t color: white;\n    border-radius: 20px;\n    margin-top: 24%;\n    min-height: 180px;"]],null,null,null,null,null)),(l()(),a._20(-1,null,["\n    "])),(l()(),a.Z(5,0,null,null,0,"img",[["src","assets/imgs/error.png"],["style","max-width: 100px"]],null,null,null,null,null)),(l()(),a._20(-1,null,["\n    "])),(l()(),a.Z(7,0,null,null,1,"p",[["style","margin-top: 5%"]],null,null,null,null,null)),(l()(),a._20(8,null,["",""])),(l()(),a._20(-1,null,["\n  "])),(l()(),a._20(-1,1,["\n\t\t"])),(l()(),a.Z(11,0,null,1,5,"div",[["class","footer-button"]],null,null,null,null,null)),(l()(),a._20(-1,null,["\n\t\t\t\t"])),(l()(),a.Z(13,0,null,null,2,"button",[["class","buttonPayCash"],["ion-button",""],["style","color: white"]],null,[[null,"click"]],function(l,n,u){var t=!0;if("click"===n){t=!1!==l.component.closeModal()&&t}return t},x.b,x.a)),a.Y(14,1097728,null,0,M.a,[[8,""],m.a,a.j,a.z],null,null),(l()(),a._20(-1,0,["Aceptar"])),(l()(),a._20(-1,null,["\n\t\t"])),(l()(),a._20(-1,1,["\n\t\n"])),(l()(),a._20(-1,null,["\n"]))],null,function(l,n){var u=n.component;l(n,0,0,a._11(n,1).statusbarPadding,a._11(n,1)._hasRefresher);l(n,8,0,u.obj.message)})}Object.defineProperty(n,"__esModule",{value:!0});var a=u(0),r=(u(1),u(33),function(){function l(l,n,u){this.navCtrl=l,this.navParams=n,this.viewControll=u,this.obj={field:null,message:null}}return l.prototype.ionViewDidLoad=function(){this.obj=this.navParams.get("Error")},l.prototype.closeModal=function(){this.viewControll.dismiss()},l}()),o=function(){return function(){}}(),e=u(198),i=u(199),s=u(200),c=u(201),_=u(202),d=u(203),p=u(204),b=u(205),f=u(206),g=u(139),h=u(23),m=u(3),v=u(6),y=u(10),w=u(11),Z=u(31),j=u(7),P=u(30),x=u(38),M=u(26),k=u(16),C=a.X({encapsulation:2,styles:[],data:{}}),Y=a.V("page-modal-error",r,function(l){return a._22(0,[(l()(),a.Z(0,0,null,null,1,"page-modal-error",[],null,null,null,t,C)),a.Y(1,49152,null,0,r,[P.a,k.a,j.a],null,null)],null,null)},{},{},[]),q=u(15),z=u(17),E=u(138),V=u(57);u.d(n,"ModalErrorPageModuleNgFactory",function(){return A});var A=a.W(o,[],function(l){return a._7([a._8(512,a.i,a.S,[[8,[e.a,i.a,s.a,c.a,_.a,d.a,p.a,b.a,f.a,Y]],[3,a.i],a.s]),a._8(4608,q.n,q.m,[a.r,[2,q.x]]),a._8(4608,z.v,z.v,[]),a._8(4608,z.d,z.d,[]),a._8(512,q.b,q.b,[]),a._8(512,z.t,z.t,[]),a._8(512,z.i,z.i,[]),a._8(512,z.q,z.q,[]),a._8(512,E.a,E.a,[]),a._8(512,E.b,E.b,[]),a._8(512,o,o,[]),a._8(256,V.a,r,[])])})}});
+webpackJsonp([15],{
+
+/***/ 715:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HistoryPageModule", function() { return HistoryPageModule; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(26);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__history__ = __webpack_require__(736);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ngx_translate_core__ = __webpack_require__(92);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+
+
+
+var HistoryPageModule = /** @class */ (function () {
+    function HistoryPageModule() {
+    }
+    HistoryPageModule = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["J" /* NgModule */])({
+            declarations: [
+                __WEBPACK_IMPORTED_MODULE_2__history__["a" /* HistoryPage */],
+            ],
+            imports: [
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__history__["a" /* HistoryPage */]),
+                __WEBPACK_IMPORTED_MODULE_3__ngx_translate_core__["b" /* TranslateModule */]
+            ],
+        })
+    ], HistoryPageModule);
+    return HistoryPageModule;
+}());
+
+//# sourceMappingURL=history.module.js.map
+
+/***/ }),
+
+/***/ 736:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HistoryPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(26);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_api__ = __webpack_require__(48);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_auth_user_auth_user__ = __webpack_require__(93);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_modal_error_modal_error__ = __webpack_require__(94);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+/**
+ * Generated class for the HistoryPage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
+var HistoryPage = /** @class */ (function () {
+    function HistoryPage(navCtrl, navParams, api, userProvider, loadingCtrl, toastCtrl, errorProvider) {
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+        this.api = api;
+        this.userProvider = userProvider;
+        this.loadingCtrl = loadingCtrl;
+        this.toastCtrl = toastCtrl;
+        this.errorProvider = errorProvider;
+        this.transactions = null;
+        this.links = null;
+        this.meta = null;
+        this.filtro = {
+            status: 0,
+            page: 1,
+            perpage: 50
+        };
+        this.getInfo();
+    }
+    HistoryPage.prototype.getInfo = function () {
+        var _this = this;
+        var loading = this.loadingCtrl.create({
+            spinner: 'hide',
+            content: "<img src='assets/imgs/buho.png'>",
+        });
+        loading.present();
+        this.api.get('app/transactions', this.userProvider, {
+            'expand': 'country,coin,transactionCommission,coinHash',
+            'status': this.filtro.status,
+            'page': this.filtro.page,
+            'per-page': this.filtro.perpage
+        }).then(function (data) {
+            loading.dismiss();
+            _this.transactions = data.items;
+            _this.links = data.links;
+            _this.meta = data.meta;
+        }).catch(function (error) {
+            loading.dismiss();
+            var mensaje = '';
+            error.error.forEach(function (data) {
+                mensaje += data.message + "\n";
+            });
+            _this.errorProvider.obj.message = mensaje;
+            _this.errorProvider.presentModal();
+        });
+    };
+    HistoryPage.prototype.goDetalle = function (transaction) {
+        this.navCtrl.push('HistoryResumePage', { 'transaction': transaction });
+    };
+    HistoryPage.prototype.getDateLocale = function (tr) {
+        var date = new Date(Date.parse(tr));
+        date.setUTCDate(0);
+        date.setUTCDate(date.getDate());
+        return date;
+    };
+    HistoryPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+            selector: 'page-history',template:/*ion-inline-start:"/Users/eyeline/Documents/GitHub/eyepaycashapp/src/pages/history/history.html"*/'<ion-header>\n  <div class="BackgroundPpal">\n    <ion-row>\n      <ion-col>\n        <img class="imgLogoWidth marginlogo" src="assets/imgs/EPCLogo.png">\n      </ion-col>\n    </ion-row>\n    <ion-row>\n      <ion-col>\n        <h6> Saldo por pagar :</h6>\n      </ion-col>\n    </ion-row>\n    <ion-row class="styleSegment">\n      <ion-col>\n        <div padding>\n          <ion-segment class="backSegment marg4Top center " [(ngModel)]="filtro.status" (ionChange)="getInfo()">\n            <ion-segment-button value="0">\n              Todas\n            </ion-segment-button>\n            <ion-segment-button value="1">\n              Enviadas\n            </ion-segment-button>\n            <ion-segment-button value="2">\n              Recibidas\n            </ion-segment-button>\n          </ion-segment>\n        </div>\n      </ion-col>\n    </ion-row>\n  </div>\n</ion-header>\n  <ion-content >\n  <div padding [ngSwitch]="filtro.status">\n    <ion-list *ngSwitchCase="\'0\'">\n      <div class="centerIcoText">\n        <img class="imgLogoWidth" src="assets/newIcons/27.png">\n      </div>\n      <div class="centerIcoText">\n        <h1>Bienvenido a EyePayCash</h1>\n        <p>Para recibir fondos desliza hacia la derecha y para enviarlos desliza hacia la izquierda.</p>\n      </div>\n      <ion-card *ngFor="let transaction of transactions" (click)="goDetalle(transaction)" class="center bground">\n        <ion-card-content>\n          <ion-row>\n            <ion-col col-6>\n              <h6>{{transaction.country.name}}</h6>\n            </ion-col>\n            <ion-col col-6>\n              {{getDateLocale(transaction.date_request) |date:\'MM/dd/yyyy\'}}\n              <!--transaction.date_request |date:\'MM/dd/yyyy h:mma\'}}-->\n            </ion-col>\n            <ion-col col-4>\n              {{transaction.coin.full_name}}\n            </ion-col>\n            <ion-col col-5>\n              {{transaction.amount_local | currency:transaction.country.currency+" " : 2}}\n            </ion-col>\n            <ion-col col-3>\n              <ion-icon name="add"></ion-icon>\n            </ion-col>\n          </ion-row>\n        </ion-card-content>\n      </ion-card>\n    </ion-list>\n    <ion-list *ngSwitchCase="\'1\'">\n      <div class="centerIcoText">\n        <img class="imgLogoWidthPen" src="assets/newIcons/26.png">\n      </div>\n      <div class="centerIcoText">\n        <h1>Auuchh !</h1>\n        <p>No tiene transacciones enviadas aún.</p>\n      </div>\n      <ion-card *ngFor="let transaction of transactions" (click)="goDetalle(transaction)" class="center bground">\n        <ion-card-content>\n          <ion-row>\n            <ion-col col-6>\n              <h6>{{transaction.country.name}}</h6>\n            </ion-col>\n            <ion-col col-6>\n              {{getDateLocale(transaction.date_request) |date:\'MM/dd/yyyy\'}}\n              <!--transaction.date_request |date:\'MM/dd/yyyy h:mma\'}}-->\n            </ion-col>\n            <ion-col col-4>\n              {{transaction.coin.full_name}}\n            </ion-col>\n            <ion-col col-5>\n              {{transaction.amount_local | currency:transaction.country.currency+" " : 2}}\n            </ion-col>\n            <ion-col col-3>\n              <ion-icon name="add"></ion-icon>\n            </ion-col>\n          </ion-row>\n        </ion-card-content>\n      </ion-card>\n    </ion-list>\n    <ion-list *ngSwitchCase="\'2\'">\n      <div class="centerIcoText">\n        <img class="imgLogoWidth" src="assets/newIcons/25.png">\n      </div>\n      <div class="centerIcoText">\n        <h1>Auuchh !</h1>\n        <p>No tiene transacciones recibidas aún.</p>\n      </div>\n      <ion-card *ngFor="let transaction of transactions" (click)="goDetalle(transaction)" class="center bground">\n        <ion-card-content>\n          <ion-row>\n            <ion-col col-6>\n              <h6>{{transaction.country.name}}</h6>\n            </ion-col>\n            <ion-col col-6>\n              {{getDateLocale(transaction.date_request) |date:\'MM/dd/yyyy\'}}\n              <!--transaction.date_request |date:\'MM/dd/yyyy h:mma\'}}-->\n            </ion-col>\n            <ion-col col-4>\n              {{transaction.coin.full_name}}\n            </ion-col>\n            <ion-col col-5>\n              {{transaction.amount_local | currency:transaction.country.currency+" " : 2}}\n            </ion-col>\n            <ion-col col-3>\n              <ion-icon name="add"></ion-icon>\n            </ion-col>\n          </ion-row>\n        </ion-card-content>\n      </ion-card>\n    </ion-list>\n\n\n  </div>\n</ion-content>\n\n\n<!-- <ion-row>\n    <ion-col col-12>\n      <ion-label>Filtro de transacciones por estado:</ion-label>\n      <ion-select [(ngModel)]="filtro.status" (ionChange)="getInfo()" interface="popover">\n        <ion-option value="0">Pendiente de pago</ion-option>\n        <ion-option value="1">Pagado y pendiente por retirar</ion-option>\n        <ion-option value="2">Pagado y retirado</ion-option>\n      </ion-select>\n    </ion-col>\n  </ion-row>\n  <ion-list>\n    <ion-card *ngFor="let transaction of transactions" (click)="goDetalle(transaction)" class="center bground">\n      <ion-card-content>\n        <ion-row>\n          <ion-col col-6>\n            <h6>{{transaction.country.name}}</h6>\n          </ion-col>\n          <ion-col col-6>\n            {{getDateLocale(transaction.date_request) |date:\'MM/dd/yyyy\'}}\n            transaction.date_request |date:\'MM/dd/yyyy h:mma\'}}\n          </ion-col>\n          <ion-col col-4>\n            {{transaction.coin.full_name}}\n          </ion-col>\n          <ion-col col-4>\n            {{transaction.amount_local | currency:transaction.country.currency+" " : 2}}\n          </ion-col>\n          <ion-col col-4>\n            <ion-icon name="add"></ion-icon>\n          </ion-col>\n        </ion-row>\n      </ion-card-content>\n    </ion-card>\n  </ion-list> -->'/*ion-inline-end:"/Users/eyeline/Documents/GitHub/eyepaycashapp/src/pages/history/history.html"*/,
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */],
+            __WEBPACK_IMPORTED_MODULE_2__providers_api__["a" /* Api */],
+            __WEBPACK_IMPORTED_MODULE_3__providers_auth_user_auth_user__["a" /* AuthUserProvider */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* LoadingController */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* ToastController */],
+            __WEBPACK_IMPORTED_MODULE_4__providers_modal_error_modal_error__["a" /* ModalErrorProvider */]])
+    ], HistoryPage);
+    return HistoryPage;
+}());
+
+//# sourceMappingURL=history.js.map
+
+/***/ })
+
+});
+//# sourceMappingURL=15.js.map
