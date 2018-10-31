@@ -35,7 +35,7 @@
       <div class="centerIcoText">
         <img class="imgLogoWidth" src="assets/newIcons/27.png">
       </div>
-      <div class="centerIcoText">
+      <div class="centerIcoText" *ngIf="(transactions.length)<=0">
         <h1>Bienvenido a EyePayCash</h1>
         <p>Para recibir fondos desliza hacia la derecha y para enviarlos desliza hacia la izquierda.</p>
       </div>
@@ -63,7 +63,7 @@
       </ion-card>
     </ion-list>
     <ion-list *ngSwitchCase="'1'">
-      <div class="centerIcoText">
+      <div class="centerIcoText" *ngIf="(transactions.length)<=0">
         <img class="imgLogoWidthPen" src="assets/newIcons/26.png">
       </div>
       <div class="centerIcoText">
@@ -94,7 +94,7 @@
       </ion-card>
     </ion-list>
     <ion-list *ngSwitchCase="'2'">
-      <div class="centerIcoText">
+      <div class="centerIcoText" *ngIf="(transactions.length)<=0">
         <img class="imgLogoWidth" src="assets/newIcons/25.png">
       </div>
       <div class="centerIcoText">
