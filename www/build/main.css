@@ -29217,13 +29217,19 @@ page-history .imgLogoWidth {
   width: 55%;
 }
 
+page-history .imgLogoWidthPen {
+  width: 45%;
+}
+
 page-history .center {
   margin: auto;
 }
 
 page-history .centerIcoText {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
   text-align: center;
-  margin: 0;
 }
 
 page-history .marg4Top {

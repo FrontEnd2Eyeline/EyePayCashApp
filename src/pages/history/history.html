@@ -28,8 +28,8 @@
   </ion-row>
   <div padding [ngSwitch]="filtro.status">
     <ion-list *ngSwitchCase="'0'">
-      <div>
-        <img class="imgLogoWidth marginlogo" src="assets/newIcons/27.png">
+      <div class="centerIcoText">
+        <img class="imgLogoWidth" src="assets/newIcons/27.png">
       </div>
       <ion-card *ngFor="let transaction of transactions" (click)="goDetalle(transaction)" class="center bground">
         <ion-card-content>
@@ -55,8 +55,8 @@
       </ion-card>
     </ion-list>
     <ion-list *ngSwitchCase="'1'">
-      <div>
-        <img class="imgLogoWidth marginlogo" src="assets/newIcons/26.png">
+      <div class="centerIcoText">
+        <img class="imgLogoWidthPen" src="assets/newIcons/26.png">
       </div>
       <ion-card *ngFor="let transaction of transactions" (click)="goDetalle(transaction)" class="center bground">
         <ion-card-content>
@@ -83,9 +83,9 @@
     </ion-list>
     <ion-list *ngSwitchCase="'2'">
       <ion-row>
-        <ion-col col-10>
+        <ion-col>
           <div class="centerIcoText">
-            <img class="imgLogoWidth centerIcoText" src="assets/newIcons/25.png">
+            <img class="imgLogoWidth" src="assets/newIcons/25.png">
           </div>
         </ion-col>
       </ion-row>
