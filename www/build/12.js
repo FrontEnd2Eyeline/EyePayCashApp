@@ -1,1 +1,94 @@
-webpackJsonp([12],{683:function(l,n,a){"use strict";function t(l){return e._22(0,[(l()(),e.Z(0,0,null,null,10,"ion-header",[],null,null,null,null,null)),e.Y(1,16384,null,0,M.a,[j.a,e.j,e.z,[2,C.a]],null,null),(l()(),e._20(-1,null,["\n  "])),(l()(),e.Z(3,0,null,null,6,"ion-navbar",[["class","toolbar"]],[[8,"hidden",0],[2,"statusbar-padding",null]],null,null,Y.b,Y.a)),e.Y(4,49152,null,0,Z.a,[z.a,[2,C.a],[2,x.a],j.a,e.j,e.z],null,null),(l()(),e._20(-1,3,["\n    "])),(l()(),e.Z(6,0,null,3,2,"ion-title",[],null,null,null,A.b,A.a)),e.Y(7,49152,null,0,L.a,[j.a,e.j,e.z,[2,q.a],[2,Z.a]],null,null),(l()(),e._20(-1,0,["Lugares para retirar dinero"])),(l()(),e._20(-1,3,["\n  "])),(l()(),e._20(-1,null,["\n"])),(l()(),e._20(-1,null,["\n"])),(l()(),e.Z(12,0,null,null,4,"ion-content",[],[[2,"statusbar-padding",null],[2,"has-refresher",null]],null,null,R.b,R.a)),e.Y(13,4374528,null,0,D.a,[j.a,O.a,E.a,e.j,e.z,z.a,w.a,e.u,[2,C.a],[2,x.a]],null,null),(l()(),e._20(-1,1,["\n  "])),(l()(),e.Z(15,0,null,1,0,"div",[["id","map"]],null,null,null,null,null)),(l()(),e._20(-1,1,["\n"])),(l()(),e._20(-1,null,["\n"]))],null,function(l,n){l(n,3,0,e._11(n,4)._hidden,e._11(n,4)._sbPadding);l(n,12,0,e._11(n,13).statusbarPadding,e._11(n,13)._hasRefresher)})}Object.defineProperty(n,"__esModule",{value:!0});var e=a(0),i=(a(1),a(33),a(216)),o=a(96),s=a(50),u=a(62),r=[{featureType:"water",stylers:[{saturation:43},{lightness:-11},{hue:"#0088ff"}]},{featureType:"road",elementType:"geometry.fill",stylers:[{hue:"#ff0000"},{saturation:-100},{lightness:99}]},{featureType:"road",elementType:"geometry.stroke",stylers:[{color:"#808080"},{lightness:54}]},{featureType:"landscape.man_made",elementType:"geometry.fill",stylers:[{color:"#ece2d9"}]},{featureType:"poi.park",elementType:"geometry.fill",stylers:[{color:"#ccdca1"}]},{featureType:"road",elementType:"labels.text.fill",stylers:[{color:"#767676"}]},{featureType:"road",elementType:"labels.text.stroke",stylers:[{color:"#ffffff"}]},{featureType:"poi",stylers:[{visibility:"off"}]},{featureType:"landscape.natural",elementType:"geometry.fill",stylers:[{visibility:"on"},{color:"#b8cb93"}]},{featureType:"poi.park",stylers:[{visibility:"on"}]},{featureType:"poi.sports_complex",stylers:[{visibility:"on"}]},{featureType:"poi.medical",stylers:[{visibility:"on"}]},{featureType:"poi.business",stylers:[{visibility:"simplified"}]}],c=a(215),d=a(63),p=function(){function l(l,n,a,t,e,i,o,s){this.navCtrl=l,this.navParams=n,this.geolocation=a,this.api=t,this.user=e,this.mapProvider=i,this.loadCtl=o,this.errorProvider=s,this.idsLoaded=[]}return l.prototype.ionViewDidLoad=function(){this.loading=this.loadCtl.create({spinner:"hide",content:"<img src='assets/imgs/buho.png'>"}),this.loading.present(),this.loadMap(),this.loadMarkers()},l.prototype.loadMap=function(){var l=this;this.map=i.b.create("map",{camera:this.mapProvider.camera,styles:r}),this.map.one(i.c.MAP_READY).then(function(){l.getPosition()}).catch(function(l){}),this.map.on(i.c.CAMERA_MOVE_END).subscribe(function(n){var a=n[0];l.mapProvider.setCamera({target:{lat:a.target.lat,lng:a.target.lng},zoom:a.zoom,tilt:0,bearing:0}),a.zoom>=10&&l.loadPoints(a.target.lat,a.target.lng)})},l.prototype.loadMarkers=function(){var l=this;this.mapProvider.markers.forEach(function(n){-1==l.idsLoaded.indexOf(n.id)&&(l.map.addMarker({title:n.company_name+" "+n.address,icon:"blue",animation:"DROP",position:new i.d(n.lat,n.lng)}).then().catch(function(l){}),l.idsLoaded.push(n.id))})},l.prototype.loadPoints=function(l,n){var a=this;this.api.get("app/find-map",this.user,{lat:l,lng:n,rad:20}).then(function(l){a.mapProvider.setMarkers(l),a.loadMarkers()})},l.prototype.getPosition=function(){var l=this;null==this.mapProvider.userPosition?this.map.getMyLocation().then(function(n){l.map.moveCamera({target:n.latLng,zoom:14,bearing:0,tilt:0,duration:1e3}).then(function(){l.loading.dismiss()}),l.mapProvider.userPosition=n.latLng,l.map.addMarker({title:"Mi ubicación.",icon:"red",animation:"DROP",position:n.latLng})}).catch(function(n){l.loading.dismiss(),l.navCtrl.setRoot("HomePage"),l.errorProvider.obj.message="Por favor, permita el acceso a su ubicación",l.errorProvider.presentModal()}):(this.map.addMarker({title:"Mi ubicación.",icon:"red",animation:"DROP",position:this.mapProvider.userPosition}),this.loading.dismiss())},l}(),b=a(87),m=function(){return function(){}}(),f=a(198),g=a(199),_=a(200),h=a(201),y=a(202),k=a(203),v=a(204),P=a(205),T=a(206),M=a(141),j=a(3),C=a(7),Y=a(697),Z=a(49),z=a(11),x=a(30),A=a(387),L=a(91),q=a(51),R=a(139),D=a(23),O=a(6),E=a(10),w=a(31),V=a(16),B=a(88),N=e.X({encapsulation:2,styles:[],data:{}}),X=e.V("page-map",p,function(l){return e._22(0,[(l()(),e.Z(0,0,null,null,1,"page-map",[],null,null,null,t,N)),e.Y(1,49152,null,0,p,[x.a,V.a,o.a,s.a,u.a,c.a,B.a,d.a],null,null)],null,null)},{},{},[]),F=a(15),H=a(17),I=a(35),J=a(138),S=a(57);a.d(n,"MapPageModuleNgFactory",function(){return W});var W=e.W(m,[],function(l){return e._7([e._8(512,e.i,e.S,[[8,[f.a,g.a,_.a,h.a,y.a,k.a,v.a,P.a,T.a,X]],[3,e.i],e.s]),e._8(4608,F.n,F.m,[e.r,[2,F.x]]),e._8(4608,H.v,H.v,[]),e._8(4608,H.d,H.d,[]),e._8(4608,o.a,o.a,[]),e._8(4608,i.a,i.a,[]),e._8(4608,c.a,c.a,[I.c]),e._8(512,F.b,F.b,[]),e._8(512,H.t,H.t,[]),e._8(512,H.i,H.i,[]),e._8(512,H.q,H.q,[]),e._8(512,J.a,J.a,[]),e._8(512,J.b,J.b,[]),e._8(512,b.a,b.a,[]),e._8(512,m,m,[]),e._8(256,S.a,p,[])])})},697:function(l,n,a){"use strict";function t(l){return e._22(0,[(l()(),e.Z(0,0,null,null,1,"div",[["class","toolbar-background"]],null,null,null,null,null)),e.Y(1,278528,null,0,i.j,[e.p,e.q,e.j,e.A],{klass:[0,"klass"],ngClass:[1,"ngClass"]},null),(l()(),e.Z(2,0,null,null,8,"button",[["class","back-button"],["ion-button","bar-button"]],[[8,"hidden",0]],[[null,"click"]],function(l,n,a){var t=!0;if("click"===n){t=!1!==l.component.backButtonClick(a)&&t}return t},o.b,o.a)),e.Y(3,278528,null,0,i.j,[e.p,e.q,e.j,e.A],{klass:[0,"klass"],ngClass:[1,"ngClass"]},null),e.Y(4,1097728,null,0,s.a,[[8,"bar-button"],u.a,e.j,e.z],null,null),(l()(),e.Z(5,0,null,0,2,"ion-icon",[["class","back-button-icon"],["role","img"]],[[2,"hide",null]],null,null,null,null)),e.Y(6,278528,null,0,i.j,[e.p,e.q,e.j,e.A],{klass:[0,"klass"],ngClass:[1,"ngClass"]},null),e.Y(7,147456,null,0,r.a,[u.a,e.j,e.z],{name:[0,"name"]},null),(l()(),e.Z(8,0,null,0,2,"span",[["class","back-button-text"]],null,null,null,null,null)),e.Y(9,278528,null,0,i.j,[e.p,e.q,e.j,e.A],{klass:[0,"klass"],ngClass:[1,"ngClass"]},null),(l()(),e._20(10,null,["",""])),e._10(null,0),e._10(null,1),e._10(null,2),(l()(),e.Z(14,0,null,null,2,"div",[["class","toolbar-content"]],null,null,null,null,null)),e.Y(15,278528,null,0,i.j,[e.p,e.q,e.j,e.A],{klass:[0,"klass"],ngClass:[1,"ngClass"]},null),e._10(null,3)],function(l,n){var a=n.component;l(n,1,0,"toolbar-background","toolbar-background-"+a._mode);l(n,3,0,"back-button","back-button-"+a._mode);l(n,6,0,"back-button-icon","back-button-icon-"+a._mode);l(n,7,0,a._bbIcon);l(n,9,0,"back-button-text","back-button-text-"+a._mode);l(n,15,0,"toolbar-content","toolbar-content-"+a._mode)},function(l,n){var a=n.component;l(n,2,0,a._hideBb);l(n,5,0,e._11(n,7)._hidden);l(n,10,0,a._backText)})}a.d(n,"a",function(){return c}),n.b=t;var e=a(0),i=a(15),o=a(38),s=a(26),u=a(3),r=a(58),c=(a(7),a(30),e.X({encapsulation:2,styles:[],data:{}}))}});
+webpackJsonp([12],{
+
+/***/ 720:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ModalErrorPageModule", function() { return ModalErrorPageModule; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(26);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__modal_error__ = __webpack_require__(742);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+
+
+var ModalErrorPageModule = /** @class */ (function () {
+    function ModalErrorPageModule() {
+    }
+    ModalErrorPageModule = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["J" /* NgModule */])({
+            declarations: [
+                __WEBPACK_IMPORTED_MODULE_2__modal_error__["a" /* ModalErrorPage */],
+            ],
+            imports: [
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__modal_error__["a" /* ModalErrorPage */]),
+            ],
+        })
+    ], ModalErrorPageModule);
+    return ModalErrorPageModule;
+}());
+
+//# sourceMappingURL=modal-error.module.js.map
+
+/***/ }),
+
+/***/ 742:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ModalErrorPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(26);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+/**
+ * Generated class for the ModalErrorPage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
+var ModalErrorPage = /** @class */ (function () {
+    function ModalErrorPage(navCtrl, navParams, viewControll) {
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+        this.viewControll = viewControll;
+        this.obj = { field: null, message: null };
+    }
+    ModalErrorPage.prototype.ionViewDidLoad = function () {
+        this.obj = this.navParams.get('Error');
+    };
+    ModalErrorPage.prototype.closeModal = function () {
+        this.viewControll.dismiss();
+    };
+    ModalErrorPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+            selector: 'page-modal-error',template:/*ion-inline-start:"/Users/eyeline/Documents/GitHub/eyepaycashapp/src/pages/modal-error/modal-error.html"*/'<ion-content style="background: transparent">\n	<div class="gradient" style="\n	 color: white;\n    border-radius: 20px;\n    margin-top: 24%;\n    min-height: 180px;">\n    <img src="assets/imgs/error.png" style="max-width: 100px">\n    <p style="margin-top: 5%">{{obj.message}}</p>\n  </div>\n		<div class="footer-button">\n				<button ion-button (click)="closeModal()" class="buttonPayCash" style="color: white">Aceptar</button>\n		</div>\n	\n</ion-content>\n'/*ion-inline-end:"/Users/eyeline/Documents/GitHub/eyepaycashapp/src/pages/modal-error/modal-error.html"*/,
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* ViewController */]])
+    ], ModalErrorPage);
+    return ModalErrorPage;
+}());
+
+//# sourceMappingURL=modal-error.js.map
+
+/***/ })
+
+});
+//# sourceMappingURL=12.js.map
