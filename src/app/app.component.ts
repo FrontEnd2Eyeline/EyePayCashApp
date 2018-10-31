@@ -30,11 +30,11 @@ export class MyApp {
       this.langProvider.setLenguage();
       this.rootPage = 'LoginPage';
     }
-    if(auth.trylogin()) {
-        this.langProvider.setLenguage();
-        this.rootPage = 'HomePage';
-        this.informationProvider.init()
-    }
+    // if(auth.trylogin()) {
+    //     this.langProvider.setLenguage();
+    //     this.rootPage = 'HomePage';
+    //     this.informationProvider.init()
+    // }
     platform.ready().then(() => {
       statusBar.styleDefault();
       if (platform.is('cordova'))
@@ -47,14 +47,13 @@ export class MyApp {
   }
 
   openPage(page) {
-    // this.nav.setPages([{page: "HomePage"}, {page: page.component}]);
     this.nav.setPages([{page:'HomePage'},{page:page}]);
     this.menuCtrl.toggle();
   }
 
   cerrarSesion() {
     window.localStorage.clear();
-    this.storage.remove('user')
+    this.storage.remove('user');
     this.storage.clear();
     this.menuCtrl.toggle();
     this.nav.setRoot("LoginPage");
@@ -63,8 +62,6 @@ export class MyApp {
   seleccionar(idioma){
     this.langProvider.seleccionar(idioma);
     this.langProvider.setLenguage();
-    // this.menuCtrl.toggle();
-    // this.nav.push('HomePage');
   }
 
 }

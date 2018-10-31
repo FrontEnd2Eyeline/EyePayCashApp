@@ -2,6 +2,8 @@ import {Injectable} from "@angular/core";
 import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {Storage} from "@ionic/storage";
 import {AuthUserProvider} from "./auth-user/auth-user";
+import {ModalErrorProvider} from "./modal-error/modal-error";
+import {isArray} from "ionic-angular/util/util";
 
 @Injectable()
 export class Api {
@@ -10,7 +12,7 @@ export class Api {
   // url: string = 'http://35557b72.ngrok.io/eyepaycash/frontend/web/apiapp/';
   headers: HttpHeaders;
 
-  constructor(public http: HttpClient, public storage: Storage
+  constructor(public http: HttpClient, public storage: Storage, public errorProvider: ModalErrorProvider
   ) {
     this.headers = new HttpHeaders({
       'Content-Type': 'application/x-www-form-urlencoded',
@@ -32,14 +34,22 @@ export class Api {
       }
       this.http.get(url + '?' + urlParams, {headers: this.headers}).toPromise()
         .then(value => {
-          this.storage.set(endpoint, value);
           resolve(value);
-        }).catch(err => {
-        this.storage.get(endpoint).then(value => {
-          resolve(value)
-        }).catch(err => {
-          reject("Lo sentimos. No hemos podido mostrar información. Comunícate con nuestro equipo de soporte")
-        })
+        }).catch(error => {
+          console.log(error);
+        let mensaje = "";
+        if (isArray(error.error)) {
+          let next = true;
+          error.error.forEach((data:any)=> {
+            mensaje += data.message;
+          });
+        } else if(error.error.name == "Unauthorized"){
+          mensaje = "EL USUARIO SE ENCUENTA INACTIVO";
+        }else {
+          mensaje = error.error.message;
+        }
+        this.errorProvider.obj.message = mensaje;
+        this.errorProvider.presentModal();
       })
     });
   }
@@ -54,7 +64,21 @@ export class Api {
     }
     return this.http.post(url, this.jsonToURLEncoded(body), {
       headers: this.headers
-    }).toPromise();
+    }).toPromise().catch((error)=>{
+      console.log(error);
+      let mensaje = "";
+      if (isArray(error.error)) {
+        error.error.forEach( (data:any) => {
+          mensaje += data.message;
+        });
+      } else if(error.error.name == "Unauthorized"){
+        mensaje = "EL USUARIO SE ENCUENTA INACTIVO";
+      }else {
+        mensaje = error.error.message;
+      }
+      this.errorProvider.obj.message = mensaje;
+      this.errorProvider.presentModal();
+    });
   }
 
   jsonToURLEncoded(jsonString) {

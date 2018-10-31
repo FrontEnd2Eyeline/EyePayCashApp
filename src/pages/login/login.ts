@@ -66,7 +66,13 @@ export class LoginPage {
         .then((data: any) => {
           cargando.present();
           if (data.success == 'ok') {
-            this.navCtrl.setRoot("HomePage");
+            if(this.userProvider.isActivo){
+              this.navCtrl.setRoot("HomePage");
+            }else{
+              this.errorProvider.obj.message = "Por seguridad el usuario ha sido bloqueado";
+              this.errorProvider.presentModal();
+              this.navCtrl.setRoot('LoginPage');
+            }
             cargando.dismiss();
           } else {
             cargando.dismiss();

@@ -42,6 +42,8 @@ export class AuthUserProvider {
     codigoVerify: null,
   };
 
+  public isActivo: false;
+
   public check_terminos = false;
 
   constructor(protected api: Api,
@@ -58,6 +60,7 @@ export class AuthUserProvider {
         .then((data: any) => {
           if (data.success == 'ok') {
             this.setUser(data.user);
+            this.setActivo(this.user_Info.is_active);
             this.setUserCountry(data.user.country);
             this.setUserVerify(data.user.userVerify);
             resolve(data);
@@ -126,5 +129,14 @@ export class AuthUserProvider {
   setCheck_Terminos(check) {
     this.check_terminos = check;
   }
+
+  setActivo(estado){
+    if(estado ==0)
+      estado = false;
+    else if(estado == 1)
+      estado = true;
+    this.isActivo = estado;
+  }
+
 
 }

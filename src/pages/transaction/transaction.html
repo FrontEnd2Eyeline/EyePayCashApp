@@ -6,7 +6,7 @@
 
 <ion-content padding>
   <ion-label stacked>Seleccione país de destino</ion-label>
-  <ion-select [(ngModel)]="currency" (ionChange)="countrySelected()" interface="popover">
+  <ion-select *ngIf="countrys!=undefined" [(ngModel)]="currency" (ionChange)="countrySelected()" interface="popover">
     <ion-option *ngFor="let pais of countrys" value="{{pais.currency}}">{{pais.name}}</ion-option>
   </ion-select>
   <label stacked *ngIf="currency != 'USD'">Precio del dolar en el país</label>

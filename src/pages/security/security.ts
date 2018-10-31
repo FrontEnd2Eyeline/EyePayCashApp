@@ -241,39 +241,6 @@ export class SecurityPage {
 					this.errorProvider.presentModal();
 				});
 		}
-		// if (this.valueMail.value != null && this.valueMail.value != '') {
-		//   let loading = this.loadingCtrl.create({
-		//     spinner: 'hide',
-		//     content: "<img src='assets/imgs/buho.png'>",
-		//   });
-		//   this.infoPhone.value = null;
-		//   loading.present();
-		//   this.valueMail.type = 'mail';
-		//   this.api.post('account/update-contact', this.valueMail, this.userProvider)
-		//     .then((data: any) => {
-		//     loading.dismiss();
-		//     this.errorProvider.obj.message = 'Se ha enviado un correo electrónico de verificacioón a su direccioón e-mail';
-		//     this.errorProvider.presentModal();
-		//     this.response_verify = data;
-		//     this.codigoSend.phone_code = null;
-		//     this.codigoSend.mail_code = this.response_verify.mail_code;
-		//   }).catch(error => {
-		//     let mensaje = '';
-		//     if (isArray(error.error)){
-		//       error.error.forEach(data => {
-		//         mensaje += data.message + "\n";
-		//       });
-		//     } else{
-		//       mensaje = error.error;
-		//       this.errorProvider.obj.message = mensaje;
-		//     }
-		//     loading.dismiss();
-		//     this.errorProvider.presentModal();
-		//   });
-		// } else {
-		//   this.errorProvider.obj.message = 'Por favor ingrese una direccioón e-mail';
-		//   this.errorProvider.presentModal();
-		// }
 	}
 
 	showPassword() {

@@ -3,6 +3,7 @@ import {IonicPage, LoadingController, ModalController, NavController, NavParams,
 import {AuthUserProvider} from "../../providers/auth-user/auth-user";
 import {LoadInformationProvider} from "../../providers/load-information/load-information";
 import {ModalErrorProvider} from '../../providers/modal-error/modal-error';
+import {isArray} from "ionic-angular/util/util";
 
 /**
  * Generated class for the TransactionPage page.
@@ -41,9 +42,9 @@ export class TransactionPage {
   getInfo() {
 
     let loading = this.loadingCtrl.create({
-      spinner: 'hide',
-      content: "<img src='assets/imgs/buho.png'>",
-  })
+        spinner: 'hide',
+        content: "<img src='assets/imgs/buho.png'>",
+      })
     ;
     loading.present();
     this.informationProvider.getCountries()
@@ -51,13 +52,8 @@ export class TransactionPage {
         this.countrys = value;
         loading.dismiss();
       }).catch(error => {
-      let mensaje = "";
-      error.error.forEach(data => {
-        mensaje += data.message + "\n";
-      });
-      this.errorProvider.obj.message = mensaje;
+      console.log(error);
       loading.dismiss();
-      this.errorProvider.presentModal();
     });
 
   }
@@ -68,12 +64,7 @@ export class TransactionPage {
         this.infoCountry = value;
         this.monedas = value.coins;
       }).catch(error => {
-      let mensaje = "";
-      error.error.forEach(data => {
-        mensaje += data.message + "\n";
-      });
-      this.errorProvider.obj.message = mensaje;
-      this.errorProvider.presentModal();
+      console.log(error);
     });
   }
 
