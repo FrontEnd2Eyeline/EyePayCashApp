@@ -32,7 +32,11 @@ page-transaction {
   color: white;
 }
 
-
+.card-content-md {
+  padding: 0px 0px;
+  font-size: 1.4rem;
+  line-height: 1.5;
+}
 
 .card-md + ion-card {
   margin-top: 0;

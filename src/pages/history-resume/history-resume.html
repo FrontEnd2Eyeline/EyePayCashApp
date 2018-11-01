@@ -3,9 +3,9 @@
     <ion-title>Resumen de la transacción</ion-title>
   </ion-navbar>
 </ion-header>
-<ion-content padding>
+<ion-content class="BackGR3" padding>
 
-  <ion-card>
+  <ion-card class="backCardsTransp">
     <ion-card-header>
       <ion-icon name="list"></ion-icon>
       <label> Estado de la transacción</label>
@@ -28,33 +28,7 @@
     </ion-card-content>
   </ion-card>
 
-  <ion-card *ngIf="historyInfo?.process_status==0">
-    <ion-card-header>
-      <ion-icon name="cash"></ion-icon>
-      <label stacked> Información de pago:</label>
-    </ion-card-header>
-    <ion-card-content>
-      <ion-row>
-        <ion-col col-6 text-left>Total a pagar</ion-col>
-        <ion-col col-6 text-right> {{historyInfo.amount_btc}} {{coin.short_name}}</ion-col>
-      </ion-row>
-      <ion-row text-center>
-        <ion-col col-12>
-          Dirección de pago {{coin.full_name}}: <br>
-          <h2>{{coinHash.eye_hash}}</h2>
-          <button outline ion-button (click)="copiarToken()" class="buttonPayCash">Copiar</button>
-        </ion-col>
-      </ion-row>
-      <ion-row text-center>
-        <ion-col col-12>
-          Código QR de pago:
-          <img src="{{coinHash.qr_url}}">
-        </ion-col>
-      </ion-row>
-    </ion-card-content>
-  </ion-card>
-
-  <ion-card>
+  <ion-card class="backCardsTransp">
     <ion-card-header>
       <ion-icon name="card"></ion-icon>
       <label stacked> Información transacción:</label>
@@ -95,5 +69,31 @@
       </ion-list>
     </ion-card-content>
   </ion-card>
+
+  <ion-card *ngIf="historyInfo?.process_status==0" class="backCardsTransp">
+      <ion-card-header>
+        <ion-icon name="cash"></ion-icon>
+        <label stacked> Información de pago:</label>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-row>
+          <ion-col col-6 text-left>Total a pagar</ion-col>
+          <ion-col col-6 text-right> {{historyInfo.amount_btc}} {{coin.short_name}}</ion-col>
+        </ion-row>
+        <ion-row text-center>
+          <ion-col col-12>
+            Dirección de pago {{coin.full_name}}: <br>
+            <h2>{{coinHash.eye_hash}}</h2>
+            <button outline ion-button (click)="copiarToken()" class="buttonPayCash">Copiar</button>
+          </ion-col>
+        </ion-row>
+        <ion-row text-center>
+          <ion-col col-12>
+            Código QR de pago:
+            <img src="{{coinHash.qr_url}}">
+          </ion-col>
+        </ion-row>
+      </ion-card-content>
+    </ion-card>
 
 </ion-content>

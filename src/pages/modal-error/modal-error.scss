@@ -1,17 +1,46 @@
 page-modal-error {
+
 	top: 20% !important;
 	left: 10% !important;
-	display: block !important;
+	// display: block !important;
 	width: 80% !important;
-	height: 50% !important;
+	height: 60% !important;
 	border-radius: 25px !important;
+	background: #000000b3;;
+
+	.md .modal-wrapper {
+		-webkit-transform: translate3d(0, 40px, 0);
+		transform: translate3d(0, 40px, 0);
+		// opacity: .01;
+		opacity: 1;
+    	background: #000000cc !important;
+	}
+
+	.BackGRa {
+		background-image: url('../assets/newBackgrounds/4.png'); 
+		background-position: center top;
+		background-size: 100%; 
+		background-repeat: no-repeat;
+	  }
+
+	.mrg10Top{
+		margin-top: 10%;
+		max-width: 100px
+	}
+
+	.mrg5Top{
+		margin-top: 5%;
+	}
 
 	ion-content{
 		text-align: center
 	}
-
 	.gradient{
 		background: linear-gradient(to right, rgba(149, 105, 252, 1) 0%, rgba(89, 116, 251, 1) 100%);
+		margin: 5%;
+		height: 14em;
+		border-radius: 12px;
+		color: white;
 	}
 
 	.footer-button{
@@ -24,7 +53,7 @@ page-modal-error {
 	}
 
 	.button-md {
-		border-radius: 2px;
+		border-radius: 12px;
 		overflow: hidden;
 		height: 3.6rem;
 		font-size: 1.4rem;
@@ -52,6 +81,14 @@ page-modal-error {
 		background-position: center top;
 		background-size: 80%;
 		background-repeat: no-repeat;
+	}
+
+
+	.eRror{
+		color: white;
+    	border-radius: 20px;
+    	margin-top: 24%;
+    	min-height: 180px;
 	}
 
 }

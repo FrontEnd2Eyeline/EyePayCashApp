@@ -4,7 +4,7 @@
   </ion-navbar>
 </ion-header>
 <ion-content padding class="BackGR3">
-  <ion-card>
+  <ion-card class="backCardsTransp">
     <ion-card-header>
       {{moneda.full_name}}
     </ion-card-header>
@@ -13,7 +13,7 @@
       <h6 *ngIf="currency != 'USD'">1 {{moneda?.full_name}} = {{moneda?.local_usd_value| currency}} {{currency}} </h6>
     </ion-card-content>
   </ion-card>
-  <ion-card>
+  <ion-card class="backCardsTransp">
     <ion-card-header>
       Información de la transacción
     </ion-card-header>

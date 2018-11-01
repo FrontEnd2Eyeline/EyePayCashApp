@@ -17,14 +17,14 @@
   <ion-card style="margin-top: 2%" ion-item *ngFor="let moneda of monedas" (click)="monedaSelect(moneda)">
     <ion-card-content>
       <ion-row>
-        <ion-col col-10>
+        <ion-col col-12>
           <h4>Criptomoneda: {{moneda.full_name}}</h4>
           <h6 *ngIf="currency != 'USD'">1 {{moneda.full_name}} = {{moneda.usd_value | currency }} USD</h6>
           <h5 stacked> 1 {{moneda.full_name}} = {{moneda.local_usd_value | currency }} {{currency}} </h5>
         </ion-col>
-        <ion-col col-2>
+        <!-- <ion-col col-2>
           <ion-icon name="ios-arrow-forward" large></ion-icon>
-        </ion-col>
+        </ion-col> -->
       </ion-row>
     </ion-card-content>
   </ion-card>
