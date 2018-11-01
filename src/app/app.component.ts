@@ -14,7 +14,7 @@ import {Storage} from "@ionic/storage";
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 //   rootPage: string = 'LoginPage';
-	rootPage: string = 'TouchLoginPage';
+	rootPage: string = 'LoginPage';
   constructor(platform: Platform,
               statusBar: StatusBar,
               splashScreen: SplashScreen,
@@ -26,11 +26,11 @@ export class MyApp {
               private storage: Storage,
   ) {
 	if (!this.langProvider.verifyIsLanguage())
-	this.rootPage = 'TouchLoginPage';
+	this.rootPage = 'LoginPage';
     //   this.rootPage = 'LanguagePage';
     else {
 	  this.langProvider.setLenguage();
-	  this.rootPage = 'TouchLoginPage';
+	  this.rootPage = 'LoginPage';
     //   this.rootPage = 'LoginPage';
     }
     // if(auth.trylogin()) {
