@@ -1,1 +1,221 @@
-webpackJsonp([12],{683:function(l,n,a){"use strict";function t(l){return e._22(0,[(l()(),e.Z(0,0,null,null,10,"ion-header",[],null,null,null,null,null)),e.Y(1,16384,null,0,M.a,[j.a,e.j,e.z,[2,C.a]],null,null),(l()(),e._20(-1,null,["\n  "])),(l()(),e.Z(3,0,null,null,6,"ion-navbar",[["class","toolbar"]],[[8,"hidden",0],[2,"statusbar-padding",null]],null,null,Y.b,Y.a)),e.Y(4,49152,null,0,Z.a,[z.a,[2,C.a],[2,x.a],j.a,e.j,e.z],null,null),(l()(),e._20(-1,3,["\n    "])),(l()(),e.Z(6,0,null,3,2,"ion-title",[],null,null,null,A.b,A.a)),e.Y(7,49152,null,0,L.a,[j.a,e.j,e.z,[2,q.a],[2,Z.a]],null,null),(l()(),e._20(-1,0,["Lugares para retirar dinero"])),(l()(),e._20(-1,3,["\n  "])),(l()(),e._20(-1,null,["\n"])),(l()(),e._20(-1,null,["\n"])),(l()(),e.Z(12,0,null,null,4,"ion-content",[],[[2,"statusbar-padding",null],[2,"has-refresher",null]],null,null,R.b,R.a)),e.Y(13,4374528,null,0,D.a,[j.a,O.a,E.a,e.j,e.z,z.a,w.a,e.u,[2,C.a],[2,x.a]],null,null),(l()(),e._20(-1,1,["\n  "])),(l()(),e.Z(15,0,null,1,0,"div",[["id","map"]],null,null,null,null,null)),(l()(),e._20(-1,1,["\n"])),(l()(),e._20(-1,null,["\n"]))],null,function(l,n){l(n,3,0,e._11(n,4)._hidden,e._11(n,4)._sbPadding);l(n,12,0,e._11(n,13).statusbarPadding,e._11(n,13)._hasRefresher)})}Object.defineProperty(n,"__esModule",{value:!0});var e=a(0),i=(a(1),a(33),a(216)),o=a(96),s=a(50),u=a(62),r=[{featureType:"water",stylers:[{saturation:43},{lightness:-11},{hue:"#0088ff"}]},{featureType:"road",elementType:"geometry.fill",stylers:[{hue:"#ff0000"},{saturation:-100},{lightness:99}]},{featureType:"road",elementType:"geometry.stroke",stylers:[{color:"#808080"},{lightness:54}]},{featureType:"landscape.man_made",elementType:"geometry.fill",stylers:[{color:"#ece2d9"}]},{featureType:"poi.park",elementType:"geometry.fill",stylers:[{color:"#ccdca1"}]},{featureType:"road",elementType:"labels.text.fill",stylers:[{color:"#767676"}]},{featureType:"road",elementType:"labels.text.stroke",stylers:[{color:"#ffffff"}]},{featureType:"poi",stylers:[{visibility:"off"}]},{featureType:"landscape.natural",elementType:"geometry.fill",stylers:[{visibility:"on"},{color:"#b8cb93"}]},{featureType:"poi.park",stylers:[{visibility:"on"}]},{featureType:"poi.sports_complex",stylers:[{visibility:"on"}]},{featureType:"poi.medical",stylers:[{visibility:"on"}]},{featureType:"poi.business",stylers:[{visibility:"simplified"}]}],c=a(215),d=a(63),p=function(){function l(l,n,a,t,e,i,o,s){this.navCtrl=l,this.navParams=n,this.geolocation=a,this.api=t,this.user=e,this.mapProvider=i,this.loadCtl=o,this.errorProvider=s,this.idsLoaded=[]}return l.prototype.ionViewDidLoad=function(){this.loading=this.loadCtl.create({spinner:"hide",content:"<img src='assets/imgs/buho.png'>"}),this.loading.present(),this.loadMap(),this.loadMarkers()},l.prototype.loadMap=function(){var l=this;this.map=i.b.create("map",{camera:this.mapProvider.camera,styles:r}),this.map.one(i.c.MAP_READY).then(function(){l.getPosition()}).catch(function(l){}),this.map.on(i.c.CAMERA_MOVE_END).subscribe(function(n){var a=n[0];l.mapProvider.setCamera({target:{lat:a.target.lat,lng:a.target.lng},zoom:a.zoom,tilt:0,bearing:0}),a.zoom>=10&&l.loadPoints(a.target.lat,a.target.lng)})},l.prototype.loadMarkers=function(){var l=this;this.mapProvider.markers.forEach(function(n){-1==l.idsLoaded.indexOf(n.id)&&(l.map.addMarker({title:n.company_name+" "+n.address,icon:"blue",animation:"DROP",position:new i.d(n.lat,n.lng)}).then().catch(function(l){}),l.idsLoaded.push(n.id))})},l.prototype.loadPoints=function(l,n){var a=this;this.api.get("app/find-map",this.user,{lat:l,lng:n,rad:20}).then(function(l){a.mapProvider.setMarkers(l),a.loadMarkers()})},l.prototype.getPosition=function(){var l=this;null==this.mapProvider.userPosition?this.map.getMyLocation().then(function(n){l.map.moveCamera({target:n.latLng,zoom:14,bearing:0,tilt:0,duration:1e3}).then(function(){l.loading.dismiss()}),l.mapProvider.userPosition=n.latLng,l.map.addMarker({title:"Mi ubicación.",icon:"red",animation:"DROP",position:n.latLng})}).catch(function(n){l.loading.dismiss(),l.navCtrl.setRoot("HomePage"),l.errorProvider.obj.message="Por favor, permita el acceso a su ubicación",l.errorProvider.presentModal()}):(this.map.addMarker({title:"Mi ubicación.",icon:"red",animation:"DROP",position:this.mapProvider.userPosition}),this.loading.dismiss())},l}(),b=a(87),m=function(){return function(){}}(),f=a(198),g=a(199),_=a(200),h=a(201),y=a(202),k=a(203),v=a(204),P=a(205),T=a(206),M=a(141),j=a(3),C=a(7),Y=a(697),Z=a(49),z=a(11),x=a(30),A=a(387),L=a(91),q=a(51),R=a(139),D=a(23),O=a(6),E=a(10),w=a(31),V=a(16),B=a(88),N=e.X({encapsulation:2,styles:[],data:{}}),X=e.V("page-map",p,function(l){return e._22(0,[(l()(),e.Z(0,0,null,null,1,"page-map",[],null,null,null,t,N)),e.Y(1,49152,null,0,p,[x.a,V.a,o.a,s.a,u.a,c.a,B.a,d.a],null,null)],null,null)},{},{},[]),F=a(15),H=a(17),I=a(35),J=a(138),S=a(57);a.d(n,"MapPageModuleNgFactory",function(){return W});var W=e.W(m,[],function(l){return e._7([e._8(512,e.i,e.S,[[8,[f.a,g.a,_.a,h.a,y.a,k.a,v.a,P.a,T.a,X]],[3,e.i],e.s]),e._8(4608,F.n,F.m,[e.r,[2,F.x]]),e._8(4608,H.v,H.v,[]),e._8(4608,H.d,H.d,[]),e._8(4608,o.a,o.a,[]),e._8(4608,i.a,i.a,[]),e._8(4608,c.a,c.a,[I.c]),e._8(512,F.b,F.b,[]),e._8(512,H.t,H.t,[]),e._8(512,H.i,H.i,[]),e._8(512,H.q,H.q,[]),e._8(512,J.a,J.a,[]),e._8(512,J.b,J.b,[]),e._8(512,b.a,b.a,[]),e._8(512,m,m,[]),e._8(256,S.a,p,[])])})},697:function(l,n,a){"use strict";function t(l){return e._22(0,[(l()(),e.Z(0,0,null,null,1,"div",[["class","toolbar-background"]],null,null,null,null,null)),e.Y(1,278528,null,0,i.j,[e.p,e.q,e.j,e.A],{klass:[0,"klass"],ngClass:[1,"ngClass"]},null),(l()(),e.Z(2,0,null,null,8,"button",[["class","back-button"],["ion-button","bar-button"]],[[8,"hidden",0]],[[null,"click"]],function(l,n,a){var t=!0;if("click"===n){t=!1!==l.component.backButtonClick(a)&&t}return t},o.b,o.a)),e.Y(3,278528,null,0,i.j,[e.p,e.q,e.j,e.A],{klass:[0,"klass"],ngClass:[1,"ngClass"]},null),e.Y(4,1097728,null,0,s.a,[[8,"bar-button"],u.a,e.j,e.z],null,null),(l()(),e.Z(5,0,null,0,2,"ion-icon",[["class","back-button-icon"],["role","img"]],[[2,"hide",null]],null,null,null,null)),e.Y(6,278528,null,0,i.j,[e.p,e.q,e.j,e.A],{klass:[0,"klass"],ngClass:[1,"ngClass"]},null),e.Y(7,147456,null,0,r.a,[u.a,e.j,e.z],{name:[0,"name"]},null),(l()(),e.Z(8,0,null,0,2,"span",[["class","back-button-text"]],null,null,null,null,null)),e.Y(9,278528,null,0,i.j,[e.p,e.q,e.j,e.A],{klass:[0,"klass"],ngClass:[1,"ngClass"]},null),(l()(),e._20(10,null,["",""])),e._10(null,0),e._10(null,1),e._10(null,2),(l()(),e.Z(14,0,null,null,2,"div",[["class","toolbar-content"]],null,null,null,null,null)),e.Y(15,278528,null,0,i.j,[e.p,e.q,e.j,e.A],{klass:[0,"klass"],ngClass:[1,"ngClass"]},null),e._10(null,3)],function(l,n){var a=n.component;l(n,1,0,"toolbar-background","toolbar-background-"+a._mode);l(n,3,0,"back-button","back-button-"+a._mode);l(n,6,0,"back-button-icon","back-button-icon-"+a._mode);l(n,7,0,a._bbIcon);l(n,9,0,"back-button-text","back-button-text-"+a._mode);l(n,15,0,"toolbar-content","toolbar-content-"+a._mode)},function(l,n){var a=n.component;l(n,2,0,a._hideBb);l(n,5,0,e._11(n,7)._hidden);l(n,10,0,a._backText)})}a.d(n,"a",function(){return c}),n.b=t;var e=a(0),i=a(15),o=a(38),s=a(26),u=a(3),r=a(58),c=(a(7),a(30),e.X({encapsulation:2,styles:[],data:{}}))}});
+webpackJsonp([12],{
+
+/***/ 721:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ModalTransactionPageModule", function() { return ModalTransactionPageModule; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(26);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__modal_transaction__ = __webpack_require__(744);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_brmasker_ionic_3__ = __webpack_require__(378);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ngx_translate_core__ = __webpack_require__(93);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+
+
+
+
+var ModalTransactionPageModule = /** @class */ (function () {
+    function ModalTransactionPageModule() {
+    }
+    ModalTransactionPageModule = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["J" /* NgModule */])({
+            declarations: [
+                __WEBPACK_IMPORTED_MODULE_2__modal_transaction__["a" /* ModalTransactionPage */],
+            ],
+            imports: [
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__modal_transaction__["a" /* ModalTransactionPage */]),
+                __WEBPACK_IMPORTED_MODULE_4__ngx_translate_core__["b" /* TranslateModule */],
+                __WEBPACK_IMPORTED_MODULE_3_brmasker_ionic_3__["a" /* BrMaskerModule */],
+            ],
+        })
+    ], ModalTransactionPageModule);
+    return ModalTransactionPageModule;
+}());
+
+//# sourceMappingURL=modal-transaction.module.js.map
+
+/***/ }),
+
+/***/ 744:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ModalTransactionPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(26);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_api__ = __webpack_require__(48);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_auth_user_auth_user__ = __webpack_require__(94);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_common__ = __webpack_require__(33);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_modal_error_modal_error__ = __webpack_require__(67);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+
+/**
+ * Generated class for the ModalTransactionPage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
+var ModalTransactionPage = /** @class */ (function () {
+    function ModalTransactionPage(navParams, viewCtrl, toastCtrl, loadingCtrl, api, userProvider, navCtrl, alertCtrl, pipe, errorProvider) {
+        this.navParams = navParams;
+        this.viewCtrl = viewCtrl;
+        this.toastCtrl = toastCtrl;
+        this.loadingCtrl = loadingCtrl;
+        this.api = api;
+        this.userProvider = userProvider;
+        this.navCtrl = navCtrl;
+        this.alertCtrl = alertCtrl;
+        this.pipe = pipe;
+        this.errorProvider = errorProvider;
+        this.moneda = null;
+        this.userCountry = null;
+        this.currency = null;
+        this.transaction = {
+            amount_local: null,
+            phone_user_des: null,
+            key_user: null,
+            country_id: null,
+            coin_id: null,
+            code_phone: null,
+        };
+    }
+    ModalTransactionPage.prototype.ionViewWillLoad = function () {
+        this.userCountry = this.navParams.get('infoCountry');
+        this.moneda = this.navParams.get('moneda');
+        this.currency = this.navParams.get('currency');
+        console.log(this.currency);
+        this.transaction.country_id = this.navParams.get('pais_id');
+        this.transaction.code_phone = this.navParams.get('code_phohe');
+        this.transaction.coin_id = this.moneda.id;
+        this.country = this.navParams.get('country');
+    };
+    ModalTransactionPage.prototype.closeModal = function () {
+        this.viewCtrl.dismiss();
+    };
+    ModalTransactionPage.prototype.doTrasaction = function () {
+        var _this = this;
+        var loading = this.loadingCtrl.create({
+            spinner: 'hide',
+            content: "<img src='assets/imgs/buho.png'>",
+        });
+        loading.present();
+        // let objtoSub = this.transaction;
+        // let amount = objtoSub.amount_local + "";
+        // let index = amount.indexOf(',');
+        // if (index > 0) {
+        // objtoSub.amount_local = this.transaction.amount_local.replace(new RegExp('\\.', 'g'), '');
+        //   objtoSub.amount_local = this.transaction.amount_local.replace(',', '.');
+        if (this.userProvider.accessParam() != null) {
+            this.api.post('app/transaction', this.transaction, this.userProvider).then(function (data) {
+                _this.closeModal();
+                _this.errorProvider.obj.message = 'Transacción solicitada correctamente';
+                _this.errorProvider.presentModal();
+                _this.navCtrl.setPages([{ page: 'HomePage' }, { page: 'TransactionResumePage', params: data }]);
+                loading.dismiss();
+            }).catch(function (error) {
+                loading.dismiss();
+                var mensaje = "";
+                error.error.forEach(function (data) {
+                    mensaje += data.message + "\n";
+                });
+                _this.errorProvider.obj.message = mensaje;
+                _this.errorProvider.presentModal();
+            });
+        }
+        else {
+            this.errorProvider.obj.message = 'No se pudo realizar la solicitud. Por favor intentelo de nuevo.';
+            this.errorProvider.presentModal();
+        }
+    };
+    ModalTransactionPage.prototype.confirmTrasaction = function () {
+        var _this = this;
+        if (this.transaction.amount_local != null &&
+            this.transaction.phone_user_des != null &&
+            this.transaction.key_user != null &&
+            this.transaction.key_user != '' &&
+            this.transaction.country_id != null &&
+            this.transaction.coin_id != null) {
+            if (this.transaction.phone_user_des > 8) {
+                if (this.transaction.amount_local > 0) {
+                    var alerta = this.alertCtrl.create({
+                        title: 'Confirmar transacción',
+                        message: 'Destino: ' + this.transaction.phone_user_des + ' <br> Clave:' + this.transaction.key_user + '<br>' +
+                            'Monto:' + this.getCurrency(this.transaction.amount_local) + " " + this.country.currency_code,
+                        buttons: [
+                            {
+                                text: 'Cancelar',
+                                role: 'cancel',
+                            },
+                            {
+                                text: 'Solicitar',
+                                handler: function () {
+                                    _this.doTrasaction();
+                                }
+                            }
+                        ]
+                    });
+                    alerta.present();
+                }
+                else {
+                    this.errorProvider.obj.message = 'El monto de la transacción debe ser mayor a cero';
+                    this.errorProvider.presentModal();
+                }
+            }
+            else {
+                this.errorProvider.obj.message = 'Número telefónico debe tener más de 9 dígitos';
+                this.errorProvider.presentModal();
+            }
+        }
+        else {
+            this.errorProvider.obj.message = 'Todos los datos son obligatorios';
+            this.errorProvider.presentModal();
+        }
+    };
+    ModalTransactionPage.prototype.getCurrency = function (amount) {
+        return this.pipe.transform(amount, '$ ', true, '1.0-0');
+    };
+    ModalTransactionPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+            selector: 'page-modal-transaction',template:/*ion-inline-start:"/Users/eyeline/Documents/GitHub/eyepaycashapp/src/pages/modal-transaction/modal-transaction.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>Solicitar transacción</ion-title>\n  </ion-navbar>\n</ion-header>\n<ion-content padding class="BackGR3">\n  <ion-card>\n    <ion-card-header>\n      {{moneda.full_name}}\n    </ion-card-header>\n    <ion-card-content>\n      <h6>1 {{moneda.full_name}} ={{moneda?.usd_value | currency}} USD </h6>\n      <h6 *ngIf="currency != \'USD\'">1 {{moneda?.full_name}} = {{moneda?.local_usd_value| currency}} {{currency}} </h6>\n    </ion-card-content>\n  </ion-card>\n  <ion-card>\n    <ion-card-header>\n      Información de la transacción\n    </ion-card-header>\n    <ion-card-content>\n      <label stacked>Ingresar número celular de destino</label>\n      <ion-row>\n        <ion-col col-3><h2 style="margin-top: 40%!important;">(+{{transaction.code_phone}})</h2></ion-col>\n        <ion-col col-9>\n          <ion-input type="number" class="margBott" name="transaction-celular" [(ngModel)]="transaction.phone_user_des" [brmasker]="{len:12}"></ion-input>\n        </ion-col>\n      </ion-row>\n      <label stacked>Ingresar una clave de seguridad</label>\n      <ion-input class="margBott" name="transaction-clave" [brmasker]="{len:4}" [(ngModel)]="transaction.key_user"\n                 type="number"></ion-input>\n      <label stacked>Ingresar valor de transacción en {{currency}}</label>\n      <ion-input class="margBott" name="transaction-valor" type="number" value=""\n                 [(ngModel)]="transaction.amount_local">\n\n      </ion-input>\n      <button class="buttonPayCash" ion-button (click)="confirmTrasaction()" block>Solicitar transacción</button>\n    </ion-card-content>\n  </ion-card>\n\n</ion-content>\n'/*ion-inline-end:"/Users/eyeline/Documents/GitHub/eyepaycashapp/src/pages/modal-transaction/modal-transaction.html"*/,
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* ViewController */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* ToastController */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* LoadingController */],
+            __WEBPACK_IMPORTED_MODULE_2__providers_api__["a" /* Api */],
+            __WEBPACK_IMPORTED_MODULE_3__providers_auth_user_auth_user__["a" /* AuthUserProvider */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */],
+            __WEBPACK_IMPORTED_MODULE_4__angular_common__["c" /* CurrencyPipe */],
+            __WEBPACK_IMPORTED_MODULE_5__providers_modal_error_modal_error__["a" /* ModalErrorProvider */]])
+    ], ModalTransactionPage);
+    return ModalTransactionPage;
+}());
+
+//# sourceMappingURL=modal-transaction.js.map
+
+/***/ })
+
+});
+//# sourceMappingURL=12.js.map

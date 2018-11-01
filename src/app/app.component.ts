@@ -13,7 +13,8 @@ import {Storage} from "@ionic/storage";
 })
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
-  rootPage: string = 'LoginPage';
+//   rootPage: string = 'LoginPage';
+	rootPage: string = 'TouchLoginPage';
   constructor(platform: Platform,
               statusBar: StatusBar,
               splashScreen: SplashScreen,
@@ -24,11 +25,13 @@ export class MyApp {
               public menuCtrl: MenuController,
               private storage: Storage,
   ) {
-    if (!this.langProvider.verifyIsLanguage())
-      this.rootPage = 'LanguagePage';
+	if (!this.langProvider.verifyIsLanguage())
+	this.rootPage = 'TouchLoginPage';
+    //   this.rootPage = 'LanguagePage';
     else {
-      this.langProvider.setLenguage();
-      this.rootPage = 'LoginPage';
+	  this.langProvider.setLenguage();
+	  this.rootPage = 'TouchLoginPage';
+    //   this.rootPage = 'LoginPage';
     }
     // if(auth.trylogin()) {
     //     this.langProvider.setLenguage();

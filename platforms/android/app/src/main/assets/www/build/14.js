@@ -1,1 +1,99 @@
-webpackJsonp([14],{686:function(l,n,u){"use strict";function a(l){return o._22(0,[(l()(),o._20(-1,null,["\n"])),(l()(),o.Z(1,0,null,null,31,"ion-content",[["class","tamano"],["padding",""]],[[2,"statusbar-padding",null],[2,"has-refresher",null]],null,null,b.b,b.a)),o.Y(2,4374528,null,0,g.a,[v.a,Z.a,Y.a,o.j,o.z,y.a,j.a,o.u,[2,w.a],[2,M.a]],null,null),(l()(),o._20(-1,1,["\n  "])),(l()(),o.Z(4,0,null,1,25,"ion-row",[["class","row"]],null,null,null,null,null)),o.Y(5,16384,null,0,P.a,[],null,null),(l()(),o._20(-1,null,["\n    "])),(l()(),o.Z(7,0,null,null,5,"ion-col",[["class","col"],["col-10",""]],null,null,null,null,null)),o.Y(8,16384,null,0,k.a,[],null,null),(l()(),o._20(-1,null,["\n      "])),(l()(),o.Z(10,0,null,null,1,"h4",[],null,null,null,null,null)),(l()(),o._20(11,null,["Bienvenido ",""])),(l()(),o._20(-1,null,["\n    "])),(l()(),o._20(-1,null,["\n    "])),(l()(),o.Z(14,0,null,null,14,"ion-col",[["class","col"],["col-2",""]],null,null,null,null,null)),o.Y(15,16384,null,0,k.a,[],null,null),(l()(),o._20(-1,null,["\n      "])),(l()(),o.Z(17,0,null,null,10,"ion-buttons",[["end",""]],null,null,null,null,null)),o.Y(18,16384,null,1,z.a,[v.a,o.j,o.z,[2,q.a],[2,C.a]],null,null),o._18(603979776,1,{_buttons:1}),(l()(),o._20(-1,null,["\n        "])),(l()(),o.Z(21,0,null,null,5,"button",[["icon-only",""],["ion-button",""]],null,[[null,"click"]],function(l,n,u){var a=!0;if("click"===n){a=!1!==l.component.closeModal()&&a}return a},I.b,I.a)),o.Y(22,1097728,[[1,4]],0,W.a,[[8,""],v.a,o.j,o.z],null,null),(l()(),o._20(-1,0,["\n          "])),(l()(),o.Z(24,0,null,0,1,"ion-icon",[["item-right",""],["name","ios-close-outline"],["role","img"]],[[2,"hide",null]],null,null,null,null)),o.Y(25,147456,null,0,x.a,[v.a,o.j,o.z],{name:[0,"name"]},null),(l()(),o._20(-1,0,["\n        "])),(l()(),o._20(-1,null,["\n      "])),(l()(),o._20(-1,null,["\n    "])),(l()(),o._20(-1,null,["\n  "])),(l()(),o._20(-1,1,["\n  "])),(l()(),o.Z(31,0,null,1,0,"img",[["src","assets/ok.png"]],null,null,null,null,null)),(l()(),o._20(-1,1,["\n"])),(l()(),o._20(-1,null,["\n"]))],function(l,n){l(n,25,0,"ios-close-outline")},function(l,n){var u=n.component;l(n,1,0,o._11(n,2).statusbarPadding,o._11(n,2)._hasRefresher);l(n,11,0,u.name);l(n,24,0,o._11(n,25)._hidden)})}Object.defineProperty(n,"__esModule",{value:!0});var o=u(0),t=(u(1),u(33),function(){function l(l,n){this.navCtrl=l,this.navParams=n,this.name=null,this.getInfo()}return l.prototype.getInfo=function(){this.name=this.navParams.get("name")},l.prototype.closeModal=function(){this.navCtrl.pop()},l}()),e=u(87),i=function(){return function(){}}(),c=u(198),s=u(199),_=u(200),r=u(201),d=u(202),m=u(203),f=u(204),p=u(205),h=u(206),b=u(139),g=u(23),v=u(3),Z=u(6),Y=u(10),y=u(11),j=u(31),w=u(7),M=u(30),P=u(90),k=u(89),z=u(218),q=u(51),C=u(49),I=u(38),W=u(26),x=u(58),B=u(16),F=o.X({encapsulation:2,styles:[],data:{}}),J=o.V("page-modal-welcome",t,function(l){return o._22(0,[(l()(),o.Z(0,0,null,null,1,"page-modal-welcome",[],null,null,null,a,F)),o.Y(1,49152,null,0,t,[M.a,B.a],null,null)],null,null)},{},{},[]),N=u(15),O=u(17),R=u(138),S=u(57);u.d(n,"ModalWelcomePageModuleNgFactory",function(){return V});var V=o.W(i,[],function(l){return o._7([o._8(512,o.i,o.S,[[8,[c.a,s.a,_.a,r.a,d.a,m.a,f.a,p.a,h.a,J]],[3,o.i],o.s]),o._8(4608,N.n,N.m,[o.r,[2,N.x]]),o._8(4608,O.v,O.v,[]),o._8(4608,O.d,O.d,[]),o._8(512,N.b,N.b,[]),o._8(512,O.t,O.t,[]),o._8(512,O.i,O.i,[]),o._8(512,O.q,O.q,[]),o._8(512,R.a,R.a,[]),o._8(512,R.b,R.b,[]),o._8(512,e.a,e.a,[]),o._8(512,i,i,[]),o._8(256,S.a,t,[])])})}});
+webpackJsonp([14],{
+
+/***/ 716:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LanguagePageModule", function() { return LanguagePageModule; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(26);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__language__ = __webpack_require__(738);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+
+
+var LanguagePageModule = /** @class */ (function () {
+    function LanguagePageModule() {
+    }
+    LanguagePageModule = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["J" /* NgModule */])({
+            declarations: [
+                __WEBPACK_IMPORTED_MODULE_2__language__["a" /* LanguagePage */],
+            ],
+            imports: [
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__language__["a" /* LanguagePage */]),
+            ],
+        })
+    ], LanguagePageModule);
+    return LanguagePageModule;
+}());
+
+//# sourceMappingURL=language.module.js.map
+
+/***/ }),
+
+/***/ 738:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LanguagePage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(26);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_lenguage_lenguage__ = __webpack_require__(167);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+/**
+ * Generated class for the LanguagePage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
+var LanguagePage = /** @class */ (function () {
+    function LanguagePage(navCtrl, navParams, languageProvider, menuCtrl) {
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+        this.languageProvider = languageProvider;
+        this.menuCtrl = menuCtrl;
+    }
+    // ionViewWillEnter() {
+    //   this.menuCtrl.enable(false);
+    // }
+    LanguagePage.prototype.seleccionar = function (idioma) {
+        this.languageProvider.seleccionar(idioma);
+        this.languageProvider.setLenguage();
+        this.navCtrl.setRoot('LoginPage');
+    };
+    LanguagePage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+            selector: 'page-language',template:/*ion-inline-start:"/Users/eyeline/Documents/GitHub/eyepaycashapp/src/pages/language/language.html"*/'<ion-content class="img_background">\n  <ion-list>\n    <div class="center mrgTop">\n      <ion-item class="center">\n        <button ion-button  (click)="seleccionar(\'es\')" class="buttonPayCash">Español</button>\n      </ion-item>\n\n      <ion-item class="center">\n        <button ion-button  (click)="seleccionar(\'en\')" class="buttonPayCash">English</button>\n      </ion-item>\n    </div>\n  </ion-list>\n</ion-content>'/*ion-inline-end:"/Users/eyeline/Documents/GitHub/eyepaycashapp/src/pages/language/language.html"*/,
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */],
+            __WEBPACK_IMPORTED_MODULE_2__providers_lenguage_lenguage__["a" /* LenguageProvider */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* MenuController */]])
+    ], LanguagePage);
+    return LanguagePage;
+}());
+
+//# sourceMappingURL=language.js.map
+
+/***/ })
+
+});
+//# sourceMappingURL=14.js.map

@@ -28,6 +28,7 @@ import {TranslateHttpLoader} from "@ngx-translate/http-loader";
 import {TranslateLoader, TranslateModule} from "@ngx-translate/core";
 import {LenguageProvider} from '../providers/lenguage/lenguage';
 import {ModalErrorProvider} from "../providers/modal-error/modal-error";
+import { FingerprintAIO } from "@ionic-native/fingerprint-aio";
 
 
 export function createTranslateLoader(http: HttpClient) {
@@ -78,7 +79,9 @@ export function createTranslateLoader(http: HttpClient) {
     CurrencyPipe,
     Contacts,
     LenguageProvider,
-    ModalErrorProvider,
+	ModalErrorProvider,
+	FingerprintAIO,
+	
   ]
 })
 export class AppModule {

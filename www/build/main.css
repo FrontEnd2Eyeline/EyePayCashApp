@@ -30107,6 +30107,31 @@ page-select-code .flag {
   height: 15px;
 }
 
+page-touch-login .login-row {
+  height: 100%;
+}
+
+page-touch-login .lock-col {
+  height: 100%;
+}
+
+page-touch-login .lock-bg {
+  width: 2px;
+  height: 100%;
+  background: #cecece;
+  margin-left: 50%;
+}
+
+page-touch-login .lock-img {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  padding: 2px;
+}
+
 page-transaction ion-select {
   max-width: 100% !important;
 }

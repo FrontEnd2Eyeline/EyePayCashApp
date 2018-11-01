@@ -22,10 +22,8 @@ apply plugin: 'com.android.application'
 buildscript {
     repositories {
         mavenCentral()
-        maven {
-            url "https://maven.google.com"
-        }
-        jcenter()
+maven { url "https://maven.google.com" }	
+jcenter { url "http://jcenter.bintray.com/"}
     }
 
     dependencies {
@@ -91,7 +89,7 @@ ext {
 }
 
 // PLUGIN GRADLE EXTENSIONS START
-apply from: "../cordova-plugin-googlemaps/starter-tbxml-android.gradle"
+apply from: "../cordova-plugin-googlemaps/app-tbxml-android.gradle"
 // PLUGIN GRADLE EXTENSIONS END
 
 def hasBuildExtras = file('build-extras.gradle').exists()
