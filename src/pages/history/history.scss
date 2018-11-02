@@ -1,5 +1,22 @@
 page-history {
 
+
+  
+  .footer-md::before, .tabs-md[tabsPlacement="bottom"] > .tabbar::before {
+    top: -2px;
+    bottom: auto;
+    background-position: left 0 top 0;
+    height: 1px;
+    background: rgba(149,105,252,1);
+    background: -moz-linear-gradient(left, rgba(149,105,252,1) 0%, rgba(6,56,150,1) 100%);
+    background: -webkit-gradient(left top, right top, color-stop(0%, rgba(149,105,252,1)), color-stop(100%, rgba(6,56,150,1)));
+    background: -webkit-linear-gradient(left, rgba(149,105,252,1) 0%, rgba(6,56,150,1) 100%);
+    background: -o-linear-gradient(left, rgba(149,105,252,1) 0%, rgba(6,56,150,1) 100%);
+    background: -ms-linear-gradient(left, rgba(149,105,252,1) 0%, rgba(6,56,150,1) 100%);
+    background: linear-gradient(to right, rgba(149,105,252,1) 0%, rgba(6,56,150,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#9569fc', endColorstr='#063896', GradientType=1 );
+  }
+
   h1 {
     // margin-top: 2rem;
     font-size: 2.2rem;
@@ -14,6 +31,17 @@ page-history {
   }
 .center{
   margin: auto;
+}
+
+.center2 {
+  display: block;
+  text-align: center;
+  margin: auto;
+}
+
+
+.content-md {
+  background-color: #f5f5f5;
 }
 
 .centerIcoText{
@@ -102,18 +130,18 @@ page-history {
     max-width: 100%;
   }
 
-  .toolbar-background-md {
-    border-color: transparent;
-    background: rgba(149,105,252,1);
-  background: -moz-linear-gradient(left, rgba(149,105,252,1) 0%, rgba(89,116,252,1) 100%);
-  background: -webkit-gradient(left top, right top, color-stop(0%, rgba(149,105,252,1)), color-stop(100%, rgba(89,116,252,1)));
-  background: -webkit-linear-gradient(left, rgba(149,105,252,1) 0%, rgba(89,116,252,1) 100%);
-  background: -o-linear-gradient(left, rgba(149,105,252,1) 0%, rgba(89,116,252,1) 100%);
-  background: -ms-linear-gradient(left, rgba(149,105,252,1) 0%, rgba(89,116,252,1) 100%);
-  background: linear-gradient(to right, rgba(149,105,252,1) 0%, rgba(89,116,252,1) 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#9569fc', endColorstr='#5974fc', GradientType=1 );
-  color: white;
-  }
+  // .toolbar-background-md {
+  //   border-color: transparent;
+  //   background: rgba(149,105,252,1);
+  // background: -moz-linear-gradient(left, rgba(149,105,252,1) 0%, rgba(89,116,252,1) 100%);
+  // background: -webkit-gradient(left top, right top, color-stop(0%, rgba(149,105,252,1)), color-stop(100%, rgba(89,116,252,1)));
+  // background: -webkit-linear-gradient(left, rgba(149,105,252,1) 0%, rgba(89,116,252,1) 100%);
+  // background: -o-linear-gradient(left, rgba(149,105,252,1) 0%, rgba(89,116,252,1) 100%);
+  // background: -ms-linear-gradient(left, rgba(149,105,252,1) 0%, rgba(89,116,252,1) 100%);
+  // background: linear-gradient(to right, rgba(149,105,252,1) 0%, rgba(89,116,252,1) 100%);
+  // filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#9569fc', endColorstr='#5974fc', GradientType=1 );
+  // color: white;
+  // }
 
 
   .toolbar-title-md {

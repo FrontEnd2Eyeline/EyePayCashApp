@@ -16,13 +16,12 @@
           <ion-col col-1>
             <ion-img style="background: transparent" width="15" height="15" src="assets/newIcons/34.png"></ion-img>
           </ion-col>
-          <ion-col col-11>
+          <ion-col col-11 class="mrg1Top">
             <h6>
               Transacción solicitada
             </h6>
           </ion-col>
         </ion-row>
-
       </div>
       <div>
         <ion-row>
@@ -30,15 +29,12 @@
             <ion-img *ngIf="historyInfo?.process_status==0" style="background: transparent" width="15" height="15" src="assets/newIcons/33.png"></ion-img>
             <ion-img *ngIf="historyInfo?.process_status!=0" style="background: transparent" width="15" height="15" src="assets/newIcons/34.png"></ion-img>
           </ion-col>
-        </ion-row>
-        <ion-row>
-          <ion-col col-11>
+          <ion-col col-11 class="mrg1Top">
             <h6>
               1- Realizar pago (Dirección o Código QR)
             </h6>
           </ion-col>
         </ion-row>
-
       </div>
       <div>
         <ion-row>
@@ -46,24 +42,20 @@
             <ion-img *ngIf="historyInfo?.process_status==1 || historyInfo?.process_status==0" class="styleIcospeq" src="assets/newIcons/33.png"></ion-img>
             <ion-img *ngIf="historyInfo?.process_status==2" class="styleIcospeq" src="assets/newIcons/34.png"></ion-img>
           </ion-col>
-        </ion-row>
-        <ion-row>
-          <ion-col col-11>
+          <ion-col col-11 class="mrg1Top">
             <h6>
               2- Realizar el retiro del efectivo
             </h6>
           </ion-col>
         </ion-row>
-
       </div>
-
       <button class="buttonPayCash" ion-button outline block (click)="goMaps()"> Ver mapa</button>
     </ion-card-content>
   </ion-card>
 
   <ion-card class="backCardsTransp">
     <ion-card-header>
-      <ion-img style="background: transparent" width="15" height="15" src="assets/newIcons/31.png"></ion-img>
+      <ion-img class="mrg10Top" style="background: transparent" width="15" height="15" src="assets/newIcons/31.png"></ion-img>
       <label stacked> Información transacción:</label>
     </ion-card-header>
     <ion-card-content>
