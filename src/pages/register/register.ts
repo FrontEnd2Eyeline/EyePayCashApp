@@ -163,7 +163,8 @@ export class RegisterPage {
 	verifyConfirm() {
 		this.api.get('account/confirm-verify', this.userProvider, {
 			id: this.responseParams.id,
-			type: 'phone'
+			type: 'phone',
+			mail: this.userProvider.user_Info.mail,
 		}).then((data: any) => {
 
 		}).catch(error => {

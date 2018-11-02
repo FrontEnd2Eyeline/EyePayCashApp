@@ -7,14 +7,15 @@ import {AuthUserProvider} from "../providers/auth-user/auth-user";
 import {LoadInformationProvider} from "../providers/load-information/load-information";
 import {LenguageProvider} from "../providers/lenguage/lenguage";
 import {Storage} from "@ionic/storage";
+import { TouchLoginProvider } from '../providers/touch-login/touch-login';
 
 @Component({
   templateUrl: 'app.html'
 })
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
-//   rootPage: string = 'LoginPage';
-	rootPage: string = 'TouchLoginPage';
+   rootPage: string = 'LoginPage';
+	// rootPage: string = 'TouchLoginPage';
   constructor(platform: Platform,
               statusBar: StatusBar,
               splashScreen: SplashScreen,
@@ -23,15 +24,16 @@ export class MyApp {
               private informationProvider: LoadInformationProvider,
               public langProvider: LenguageProvider,
               public menuCtrl: MenuController,
-              private storage: Storage,
+			  private storage: Storage,
+			  loockScreen: TouchLoginProvider,
   ) {
 	if (!this.langProvider.verifyIsLanguage())
-	this.rootPage = 'TouchLoginPage';
-    //   this.rootPage = 'LanguagePage';
+	// this.rootPage = 'TouchLoginPage';
+      this.rootPage = 'LanguagePage';
     else {
 	  this.langProvider.setLenguage();
-	  this.rootPage = 'TouchLoginPage';
-    //   this.rootPage = 'LoginPage';
+	//   this.rootPage = 'TouchLoginPage';
+      this.rootPage = 'LoginPage';
     }
     // if(auth.trylogin()) {
     //     this.langProvider.setLenguage();
@@ -39,6 +41,7 @@ export class MyApp {
     //     this.informationProvider.init()
     // }
     platform.ready().then(() => {
+		loockScreen.init();
       statusBar.styleDefault();
       if (platform.is('cordova'))
         this.getLocation();
