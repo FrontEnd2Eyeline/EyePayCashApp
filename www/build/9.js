@@ -1,15 +1,15 @@
 webpackJsonp([9],{
 
-/***/ 728:
+/***/ 726:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ProfilePageModule", function() { return ProfilePageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(26);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__profile__ = __webpack_require__(751);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ngx_translate_core__ = __webpack_require__(93);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(21);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__profile__ = __webpack_require__(749);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ngx_translate_core__ = __webpack_require__(94);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -29,7 +29,7 @@ var ProfilePageModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_2__profile__["a" /* ProfilePage */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__profile__["a" /* ProfilePage */]),
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__profile__["a" /* ProfilePage */]),
                 __WEBPACK_IMPORTED_MODULE_3__ngx_translate_core__["b" /* TranslateModule */]
             ],
         })
@@ -41,13 +41,13 @@ var ProfilePageModule = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 751:
+/***/ 749:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ProfilePage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(26);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(21);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -91,10 +91,10 @@ var ProfilePage = /** @class */ (function () {
     };
     ProfilePage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-            selector: 'page-profile',template:/*ion-inline-start:"/Users/eyeline/Documents/GitHub/eyepaycashapp/src/pages/profile/profile.html"*/'<!--\n  Generated template for the ProfilePage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>profile</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n<ion-row>\n	<ion-col col-3 (click)="goPage(\'security\')">\n		Seguridad\n	</ion-col>\n	<ion-col col-9 (click)="goPage(\'account\')">\n		Mi perfil\n	</ion-col>\n</ion-row>\n</ion-content>\n<ion-footer>\n		<ion-toolbar>\n		  <ion-row>\n			<ion-col class="center" col-3 (click)="goPage(\'transaction\')">\n			  <img width="25" height="25" src="assets/icon/1.png">\n			  <p>{{\'TRANSACCION\'|translate}}</p>\n			</ion-col>\n			<ion-col class="center" col-3 (click)="goPage(\'history\')">\n			  <!-- <ion-badge item-end>{{count}}</ion-badge> -->\n			  <img width="25" height="25" src="assets/icon/2.png">\n			  <p>{{\'HISTORIAL\'|translate}}</p>\n			</ion-col>\n			<ion-col class="center" col-3 (click)="goPage(\'maps\')">\n			  <img width="25" height="25" src="assets/icon/3.png">\n			  <p>{{\'MAPA\'|translate}}</p>\n			</ion-col>\n			<ion-col class="center" col-3 (click)="goPage(\'profile\')">\n			  <img width="25" height="25" src="assets/icon/4.png">\n			  <p>{{\'CUENTA\'|translate}}</p>\n			</ion-col>\n		  </ion-row>\n		</ion-toolbar>\n	  </ion-footer>'/*ion-inline-end:"/Users/eyeline/Documents/GitHub/eyepaycashapp/src/pages/profile/profile.html"*/,
+            selector: 'page-profile',template:/*ion-inline-start:"/Users/eyeline/Documents/eyepaycashappGitHub/src/pages/profile/profile.html"*/'<ion-content class="BackGRa" padding>\n	<div class="center">\n		<img class="logo mrgLogoTopBut" src="assets/imgs/EPCLogo.png" />\n	</div>\n	<div class="center mrg36Top">\n		<ion-row>\n			<ion-col (click)="goPage(\'account\')" class="lineRight lineRight2 linerig" col-6 >\n				<img class="tamaIcos" src="assets/newIcons/13.png" />\n				<h6 class="colWhite">Mi cuenta</h6>\n			</ion-col>\n			<ion-col (click)="goPage(\'security\')" class="lineRight2" col-6 >\n				<img class="tamaIcos" src="assets/newIcons/14.png" />\n				<h6 class="colWhite">Seguridad</h6>\n			</ion-col>\n		</ion-row>\n		<ion-row>\n			<ion-col (click)="goPage(\'TransactionPage\')" class="lineRight" col-6>\n				<img class="tamaIcos" src="assets/newIcons/15.png" />\n				<h6 class="colWhite">Transacciones</h6>\n			</ion-col>\n			<ion-col (click)="goPage(\'history\')" >\n				<img class="tamaIcos" src="assets/newIcons/16.png" />\n				<h6 class="colWhite">Historial</h6>\n			</ion-col>\n		</ion-row>\n		<ion-item class="center bacTransp">\n			<button class="buttonPayCash borderBtns" ion-button small>CONOCE MÁS</button>\n		</ion-item>\n	</div>\n</ion-content>'/*ion-inline-end:"/Users/eyeline/Documents/eyepaycashappGitHub/src/pages/profile/profile.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavController */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* NavParams */]])
     ], ProfilePage);
     return ProfilePage;
 }());
