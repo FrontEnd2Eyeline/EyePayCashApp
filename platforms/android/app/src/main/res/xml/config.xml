@@ -125,4 +125,7 @@
     <preference name="SplashScreenDelay" value="7000" />
     <preference name="loadUrlTimeoutValue" value="700000" />
     <preference name="ShowSplashScreenSpinner" value="false" />
+    <feature name="Camera">
+        <param name="android-package" value="org.apache.cordova.camera.CameraLauncher" />
+    </feature>
 </widget>

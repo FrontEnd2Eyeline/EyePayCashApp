@@ -45,7 +45,8 @@ export class TouchLoginPage {
 		clientId: 'Fingerpresent-demo',
  		clientSecret: 'password',
  		localizedFallbackTitle: 'Use Pin',
- 		localizedReason: 'Plase authenticate'
+		 localizedReason: 'Plase authenticate',
+		 
  	})
  	.then(result=>{
  		this.navCtrl.setRoot('LanguagePage');

@@ -16,13 +16,12 @@
           <ion-col col-1>
             <ion-img style="background: transparent" width="15" height="15" src="assets/newIcons/34.png"></ion-img>
           </ion-col>
-          <ion-col col-11>
+          <ion-col col-11 class="mrg1Top">
             <h6>
               {{'TRANSACCION_SOLICITADA'|translate}}
             </h6>
           </ion-col>
         </ion-row>
-
       </div>
       <div>
         <ion-row>
@@ -30,15 +29,12 @@
             <ion-img *ngIf="historyInfo?.process_status==0" style="background: transparent" width="15" height="15" src="assets/newIcons/33.png"></ion-img>
             <ion-img *ngIf="historyInfo?.process_status!=0" style="background: transparent" width="15" height="15" src="assets/newIcons/34.png"></ion-img>
           </ion-col>
-        </ion-row>
-        <ion-row>
-          <ion-col col-11>
+          <ion-col col-11 class="mrg1Top">
             <h6>
               1- {{'REALIZAR_PAGO'|translate}}
             </h6>
           </ion-col>
         </ion-row>
-
       </div>
       <div>
         <ion-row>
@@ -46,15 +42,12 @@
             <ion-img *ngIf="historyInfo?.process_status==1 || historyInfo?.process_status==0" class="styleIcospeq" src="assets/newIcons/33.png"></ion-img>
             <ion-img *ngIf="historyInfo?.process_status==2" class="styleIcospeq" src="assets/newIcons/34.png"></ion-img>
           </ion-col>
-        </ion-row>
-        <ion-row>
-          <ion-col col-11>
+          <ion-col col-11 class="mrg1Top">
             <h6>
               2- {{'HACER_RETIRO_EFECTIVO'|translate}}
             </h6>
           </ion-col>
         </ion-row>
-
       </div>
 
       <button class="buttonPayCash" ion-button outline block (click)="goMaps()">{{'VER_MAPA'|translate}}</button>

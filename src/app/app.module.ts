@@ -28,8 +28,10 @@ import {TranslateHttpLoader} from "@ngx-translate/http-loader";
 import {TranslateLoader, TranslateModule} from "@ngx-translate/core";
 import {LenguageProvider} from '../providers/lenguage/lenguage';
 import {ModalErrorProvider} from "../providers/modal-error/modal-error";
-import { FingerprintAIO } from "@ionic-native/fingerprint-aio";
-import { TouchLoginProvider } from '../providers/touch-login/touch-login';
+import {FingerprintAIO} from "@ionic-native/fingerprint-aio";
+import {TouchLoginProvider} from '../providers/touch-login/touch-login';
+import {Camera} from "@ionic-native/camera";
+import {CameraProvider} from "../providers/camera/camera";
 
 
 export function createTranslateLoader(http: HttpClient) {
@@ -80,10 +82,11 @@ export function createTranslateLoader(http: HttpClient) {
     CurrencyPipe,
     Contacts,
     LenguageProvider,
-	ModalErrorProvider,
-	FingerprintAIO,
-	TouchLoginProvider,
-	
+    ModalErrorProvider,
+    FingerprintAIO,
+    TouchLoginProvider,
+    Camera,
+    CameraProvider,
   ]
 })
 export class AppModule {

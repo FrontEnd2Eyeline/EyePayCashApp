@@ -11,6 +11,8 @@ import {
 import {Api} from "../../providers/api";
 import {AuthUserProvider} from "../../providers/auth-user/auth-user";
 import {ModalErrorProvider} from '../../providers/modal-error/modal-error';
+import {Camera} from "@ionic-native/camera";
+import {CameraProvider} from "../../providers/camera/camera";
 
 /**
  * Generated class for the AccountPage page.
@@ -45,8 +47,7 @@ export class AccountPage {
 
   private responseVerify: any = null;
 //=========================== CONTROL DE INPUTS
-  public control_label :string = "label";
-
+  public control_label: string = "label";
 
 
   constructor(public navCtrl: NavController,
@@ -56,8 +57,9 @@ export class AccountPage {
               public toastCtrl: ToastController,
               public loadingCtrl: LoadingController,
               public modal: ModalController,
-			  public alertCtrl: AlertController,
-			  public errorProvider: ModalErrorProvider,
+              public alertCtrl: AlertController,
+              public errorProvider: ModalErrorProvider,
+              private camera: CameraProvider
   ) {
     this.getInfo();
   }
@@ -92,40 +94,39 @@ export class AccountPage {
               if (this.usuario.first_name.length > 2 && this.usuario.last_name.length > 2) {
                 this.api.post('account/update-info', this.usuario, this.userProvider)
                   .then((data: any) => {
-					  this.errorProvider.obj.message = 'Información personal acrtualizada correctamente';
-					  this.errorProvider.presentModal();
+                    this.errorProvider.obj.message = 'Información personal acrtualizada correctamente';
+                    this.errorProvider.presentModal();
 
                     this.usuario = data;
-                     loading.dismiss();
+                    loading.dismiss();
                   }).catch(error => {
                   // let mensaje = 'Por favor corrija lo siguiente \n';
                   let mensaje = '';
                   error.error.forEach(data => {
                     mensaje += data.field + ": " + data.message + "\n";
-				  });
-				  this.errorProvider.obj.message = mensaje;
-				  this.errorProvider.presentModal();
+                  });
+                  this.errorProvider.obj.message = mensaje;
+                  this.errorProvider.presentModal();
 
                   loading.dismiss();
                 });
               } else {
-				loading.dismiss();
-				this.errorProvider.obj.message = 'Nombre y apellido deben contener más de 2 caracteres';
-				this.errorProvider.presentModal();
+                loading.dismiss();
+                this.errorProvider.obj.message = 'Nombre y apellido deben contener más de 2 caracteres';
+                this.errorProvider.presentModal();
 
               }
             } else {
-				this.errorProvider.obj.message = 'Todos los campos son obligatorios';
-				this.errorProvider.presentModal();
+              this.errorProvider.obj.message = 'Todos los campos son obligatorios';
+              this.errorProvider.presentModal();
 
-               loading.dismiss();
+              loading.dismiss();
             }
           }
         }
       ]
     });
     confirm.present();
-
 
 
   }
@@ -160,18 +161,18 @@ export class AccountPage {
       if (this.code_Verify_Mail == this.responseVerify.mail_code) {
         guardar = true;
       } else {
-		guardar = false;
-		this.errorProvider.obj.message = 'El código no coincide';
-		this.errorProvider.presentModal();
+        guardar = false;
+        this.errorProvider.obj.message = 'El código no coincide';
+        this.errorProvider.presentModal();
 
       }
     } else {
       if (this.code_Verify_Phone == this.responseVerify.phone_code) {
         guardar = true;
       } else {
-		guardar = false;
-		this.errorProvider.obj.message = 'El código no coincide';
-		this.errorProvider.presentModal();
+        guardar = false;
+        this.errorProvider.obj.message = 'El código no coincide';
+        this.errorProvider.presentModal();
 
       }
     }
@@ -210,6 +211,62 @@ export class AccountPage {
       this.view_Btn_phone = true;
     else
       this.view_Btn_phone = false;
+  }
+
+  goPage(page) {
+    if (page == 'profile')
+      this.navCtrl.push("ProfilePage");
+    else if (page == 'history')
+      this.navCtrl.push("HistoryPage");
+    else if(page=="maps")
+      this.navCtrl.push("MapPage");
+    else if(page =="contact")
+      this.navCtrl.push("ContactsPage");
+    else
+      this.navCtrl.push("TransactionPage");
+  }
+  
+  foto() {
+    this.alertCtrl.create({
+      buttons: [
+        {
+          text: 'Tomar una foto',
+          handler: () => this.tomarFoto()
+        },
+        {
+          text: 'Seleccionar una foto',
+          handler: () => this.seleccionarFoto()
+        },
+        {
+          text: 'Cancelar',
+          role: 'cancel',
+        }
+      ]
+    }).present();
+  }
+
+  tomarFoto() {
+    this.camera.getPhoto().then( (data:any )=>{
+      this.enviarServidor(data);
+    });
+  }
+
+  seleccionarFoto() {
+    this.camera.getPhotoDirectory().then((data:any)=>{
+      this.enviarServidor(data);
+    })
+  }
+  
+  enviarServidor(data64){
+    this.api.post('account/perfil',{pic:data64},this.userProvider).then( (data)=>{
+      //  AQUI HAY QUE HACER QUE RECIBA LA DATA DEL THEN Y ACTUALIZE LA VARIABLE USER. A LA VARIABLE USER HAY QUE ANEXARLE
+      // EL ATTRIBUTO URL_FOTO
+      let toast = this.toastCtrl.create({
+        message:'Foto cambiada correctamente',
+        duration:3000,
+      });
+      toast.present();
+    }).catch()
   }
 
 }

@@ -47,8 +47,11 @@ export class HomePage {
       this.navCtrl.push("MapPage");
     else if(page =="contact")
       this.navCtrl.push("ContactsPage");
+    else if(page =="precios")
+    this.navCtrl.push("CoinsPage")
     else
       this.navCtrl.push("TransactionPage");
+      
   }
 
 

@@ -10,6 +10,7 @@ import {
 import {AuthUserProvider} from "../../providers/auth-user/auth-user";
 import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
 import {ModalErrorProvider} from '../../providers/modal-error/modal-error';
+import {isArray} from "ionic-angular/util/util";
 
 @IonicPage()
 @Component({
@@ -80,9 +81,12 @@ export class LoginPage {
         }).catch((error) => {
         cargando.dismiss();
         let mensaje = "";
-        error.error.forEach(data => {
-          mensaje += data.message + "\n";
-        });
+        if(isArray(error.error)){
+          error.error.forEach(data => {
+            mensaje += data.message + "\n";
+          });
+        }else
+        mensaje = "Usuario o contraseña incorrecta";
         this.errorProvider.obj.message = mensaje;
         this.errorProvider.presentModal();
       });

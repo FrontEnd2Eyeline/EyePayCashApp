@@ -41,20 +41,13 @@ export class Api {
         .then(value => {
           resolve(value);
         }).catch(error => {
-        let mensaje = "";
-        if (isArray(error.error)) {
-          let next = true;
-          error.error.forEach((data:any)=> {
-            mensaje += data.message;
-          });
-        } else if(error.error.name == "Unauthorized"){
-          this.goHome();
-          mensaje = "EL USUARIO SE ENCUENTA INACTIVO";
-        }else {
-          mensaje = error.error.message;
-        }
-        this.errorProvider.obj.message = mensaje;
-        this.errorProvider.presentModal();
+          if(isArray(!error.error)){
+            if(error.error.name == "Unauthorized"){
+              this.goHome();
+              this.errorProvider.obj.message = "Upps!! El usuario no tiene permisos";
+              this.errorProvider.presentModal();
+            }
+          }
       })
     });
   }
@@ -70,20 +63,13 @@ export class Api {
     return this.http.post(url, this.jsonToURLEncoded(body), {
       headers: this.headers
     }).toPromise().catch((error)=>{
-      let mensaje = "";
-      if (isArray(error.error)) {
-        error.error.forEach( (data:any) => {
-          mensaje += data.message;
-        });
-      } else if(error.error.name == "Unauthorized"){
-        this.goHome();
-        mensaje = "EL USUARIO SE ENCUENTA INACTIVO";
-
-      }else {
-        mensaje = error.error.message;
+      if(isArray(!error.error)){
+        if(error.error.name == "Unauthorized"){
+          this.goHome();
+          this.errorProvider.obj.message = "Upps!! El usuario no tiene permisos";
+          this.errorProvider.presentModal();
+        }
       }
-      this.errorProvider.obj.message = mensaje;
-      this.errorProvider.presentModal();
     });
   }
 

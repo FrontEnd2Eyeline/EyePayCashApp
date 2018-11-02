@@ -1,14 +1,15 @@
 webpackJsonp([8],{
 
-/***/ 729:
+/***/ 735:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TouchLoginPageModule", function() { return TouchLoginPageModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TransactionResumePageModule", function() { return TransactionResumePageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(26);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__touch_login__ = __webpack_require__(752);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(21);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__transaction_resume__ = __webpack_require__(760);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ngx_translate_core__ = __webpack_require__(94);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -18,35 +19,36 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var TouchLoginPageModule = /** @class */ (function () {
-    function TouchLoginPageModule() {
+
+var TransactionResumePageModule = /** @class */ (function () {
+    function TransactionResumePageModule() {
     }
-    TouchLoginPageModule = __decorate([
+    TransactionResumePageModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["J" /* NgModule */])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_2__touch_login__["a" /* TouchLoginPage */],
+                __WEBPACK_IMPORTED_MODULE_2__transaction_resume__["a" /* TransactionResumePage */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__touch_login__["a" /* TouchLoginPage */]),
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__transaction_resume__["a" /* TransactionResumePage */]),
+                __WEBPACK_IMPORTED_MODULE_3__ngx_translate_core__["b" /* TranslateModule */]
             ],
         })
-    ], TouchLoginPageModule);
-    return TouchLoginPageModule;
+    ], TransactionResumePageModule);
+    return TransactionResumePageModule;
 }());
 
-//# sourceMappingURL=touch-login.module.js.map
+//# sourceMappingURL=transaction-resume.module.js.map
 
 /***/ }),
 
-/***/ 752:
+/***/ 760:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TouchLoginPage; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TransactionResumePage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(26);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_fingerprint_aio__ = __webpack_require__(384);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(168);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(21);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_clipboard__ = __webpack_require__(382);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -59,122 +61,53 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
-
-/**
- * Generated class for the TouchLoginPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-var TouchLoginPage = /** @class */ (function () {
-    function TouchLoginPage(navCtrl, navParams, faio, platform, splashScreen, modalCtrl) {
+var TransactionResumePage = /** @class */ (function () {
+    function TransactionResumePage(navCtrl, navParams, loadingCtrl, clipboard) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
-        this.faio = faio;
-        this.platform = platform;
-        this.splashScreen = splashScreen;
-        this.modalCtrl = modalCtrl;
-        this.initialized = false;
-        this.isLocked = false;
-        this.fingerOptions = {
-            clientId: 'fingerprint-demo',
-            clientSecret: 'password',
-            disableBackup: true
-        };
+        this.loadingCtrl = loadingCtrl;
+        this.clipboard = clipboard;
+        this.result = null;
+        this.transaction = null;
+        this.coinhas = null;
+        this.coin = null;
+        this.country = null;
+        this.qrlink = null;
+        this.getIngfo();
     }
-    //   init(){
-    // 	if (this.initialized) {
-    // 		return;
-    // 	  }
-    // 	  this.lockScreen = this.modalCtrl.create("TouchLoginPage");
-    // 	  this.platform.ready().then(() => {
-    // 		this.onPauseSubscription = this.platform.pause.subscribe(() => {
-    // 		  this.splashScreen.show();
-    // 		});
-    // 		this.onResumeSubscription = this.platform.resume.subscribe(() => {
-    // 		  if (!this.isLocked) {
-    // 			this.isLocked = true;
-    // 			this.lockScreen.present();
-    // 			this.showFingerPrint();
-    // 		  }
-    // 		  this.splashScreen.hide();
-    // 		});
-    // 	  });
-    // 	}
-    // 	showFingerPrint() {
-    // 		this.faio.show({
-    // 			clientId: 'FingerPrintLockScreen',
-    // 			clientSecret: 'lasd08aah@981',   //Only necessary for Android
-    // 			disableBackup:true,              //Only for Android(optional)
-    // 			localizedFallbackTitle: 'Use Pin',      //Only for iOS
-    // 			localizedReason: 'Please authenticate' //Only for iOS
-    // 		  })
-    // 		  .then((result: any) => {
-    // 			this.lockScreen.dismiss();
-    // 			this.isLocked = false;
-    // 		  })
-    // 		  .catch((error: any) => console.log(error));
-    // 	}
-    //   }
-    // async showFingerprintDialog(){
-    // 	try {
-    // 		await this.platform.ready();
-    // 		const available = await this.faio.isAvailable();
-    // 		console.log(available);
-    // 		if(available === "OK"){
-    // 			const result = await this.faio.show(this.fingerOptions);
-    // 			console.log(result)
-    // 		}
-    // 	}
-    // 	catch(e){
-    // 		console.error(e);
-    // 	}
-    // }
-    //  public showFingerprintAuthDlg(){
-    //     this.fingerOptions = {
-    //         clientId: 'fingerprint-Demo',
-    //         clientSecret: 'password', //Only necessary for Android
-    //         disableBackup:true  //Only for Android(optional)
-    //     }
-    //     this.faio.isAvailable().then(result =>{
-    //     if(result === "OK")
-    //     {
-    //         this.faio.show(this.fingerOptions)
-    //         .then((result: any) => console.log(result))
-    //         .catch((error: any) => console.log(error));
-    //     }
-    //     });
-    // }
-    TouchLoginPage.prototype.login = function () {
-        var _this = this;
-        this.faio.show({
-            clientId: 'Fingerpresent-demo',
-            clientSecret: 'password',
-            localizedFallbackTitle: 'Use Pin',
-            localizedReason: 'Plase authenticate'
-        })
-            .then(function (result) {
-            _this.navCtrl.setRoot('LanguagePage');
-        })
-            .catch(function (err) {
-            console.log('Err: ', err);
-        });
+    TransactionResumePage.prototype.getIngfo = function () {
+        // Toda el response de la transacción
+        var parametros = this.navParams.data;
+        this.result = parametros.result;
+        this.coin = parametros.coin;
+        this.country = parametros.country;
+        this.transaction = parametros.transaction;
+        this.coinhas = parametros.coinhash;
+        this.qrlink = parametros.qrlink;
     };
-    TouchLoginPage = __decorate([
+    TransactionResumePage.prototype.goMaps = function () {
+        // this.navCtrl.push("MapPage");
+        this.navCtrl.setPages([
+            { page: 'HomePage' },
+            { page: 'MapPage' },
+        ]);
+    };
+    TransactionResumePage.prototype.copiarToken = function () {
+        this.clipboard.copy(this.coinhas.eye_hash);
+    };
+    TransactionResumePage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-            selector: 'page-touch-login',template:/*ion-inline-start:"/Users/eyeline/Documents/GitHub/eyepaycashapp/src/pages/touch-login/touch-login.html"*/'<!--\n  Generated template for the TouchLoginPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>touch-login</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n<ion-row class="login-row" aling-items-center>\n	<ion-col col-5></ion-col>\n	<ion-col col-2 class="lock-col">\n		<div class="lock-bg"></div>\n		<img src="assets/imgs/Mascota.png" class="lock-img" tappable (click)="login()">\n	</ion-col>\n</ion-row>\n</ion-content>\n'/*ion-inline-end:"/Users/eyeline/Documents/GitHub/eyepaycashapp/src/pages/touch-login/touch-login.html"*/,
+            selector: 'page-transaction-resume',template:/*ion-inline-start:"/Users/santiago/Documents/GitHub/eyepaycashapp/src/pages/transaction-resume/transaction-resume.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>Resumen de la transacción</ion-title>\n  </ion-navbar>\n</ion-header>\n<ion-content padding>\n\n  <ion-card>\n    <ion-card-header>\n      <ion-icon name="information-circle"></ion-icon>\n      <label> A continuación</label>\n    </ion-card-header>\n    <ion-card-content>\n      <ul>\n        <li>Transacción solicitada\n          <ion-icon name="checkmark-circle" end></ion-icon>\n        </li>\n        <li>1- Realizar pago (Dirección o Código QR)</li>\n        <li>2- Realizar el retiro del efectivo</li>\n\n      </ul>\n      <button class="buttonPayCash" ion-button outline block (click)="goMaps()"> Ver mapa</button>\n    </ion-card-content>\n  </ion-card>\n\n  <ion-card>\n    <ion-card-header>\n      <ion-icon name="cash"></ion-icon>\n      <label stacked> Información de pago:</label>\n    </ion-card-header>\n    <ion-card-content>\n      <ion-row>\n        <ion-col col-6 text-left>Total a pagar</ion-col>\n        <ion-col col-6 text-right> {{transaction.amount_btc}} {{coin.short_name}}</ion-col>\n      </ion-row>\n      <ion-row text-center>\n        <ion-col col-12>\n          Dirección de pago {{coin.full_name}}: <br>\n          <h2>{{coinhas.eye_hash}}</h2>\n          <button outline ion-button (click)="copiarToken()" class="buttonPayCash">Copiar</button>\n        </ion-col>\n      </ion-row>\n      <ion-row text-center>\n        <ion-col col-12>\n          Código QR de pago:\n          <img src="{{qrlink}}">\n        </ion-col>\n      </ion-row>\n    </ion-card-content>\n  </ion-card>\n\n  <ion-card>\n    <ion-card-header>\n      <ion-icon name="card"></ion-icon>\n      <label stacked> Información transacción:</label>\n    </ion-card-header>\n    <ion-card-content>\n      <ion-list>\n        <ion-row>\n          <ion-col col-6 text-left>Nº Celular destino</ion-col>\n          <ion-col col-6 text-right>\n            {{transaction?.phone_user_des}}\n          </ion-col>\n        </ion-row>\n        <ion-row>\n          <ion-col col-6 text-left>Criptomoneda</ion-col>\n          <ion-col col-6 text-right> {{coin.full_name}}</ion-col>\n        </ion-row>\n        <ion-row>\n          <ion-col col-6 text-left>Fecha transacción</ion-col>\n          <ion-col col-6 text-right>{{transaction?.date_request | date:\'dd/MM/yyyy h:mma\'}}</ion-col>\n        </ion-row>\n        <!--<ion-row>-->\n          <!--<ion-col col-6 text-left>TRM: </ion-col>-->\n          <!--<ion-col col-6 text-right> {{result.money_local_to_usd}} {{country.currency}}</ion-col>-->\n        <!--</ion-row>-->\n        <hr>\n        <ion-row>\n          <ion-col col-12 text-center>\n            <h1>Total de la transacción</h1>\n          </ion-col>\n          <ion-col col-12 text-center>\n            {{transaction.amount_local | number }} {{country.currency}} = {{transaction.amount_usd}} USD\n          </ion-col>\n        </ion-row>\n      </ion-list>\n    </ion-card-content>\n  </ion-card>\n\n</ion-content>'/*ion-inline-end:"/Users/santiago/Documents/GitHub/eyepaycashapp/src/pages/transaction-resume/transaction-resume.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */],
-            __WEBPACK_IMPORTED_MODULE_2__ionic_native_fingerprint_aio__["a" /* FingerprintAIO */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* Platform */],
-            __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* ModalController */]])
-    ], TouchLoginPage);
-    return TouchLoginPage;
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavController */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* NavParams */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* LoadingController */],
+            __WEBPACK_IMPORTED_MODULE_2__ionic_native_clipboard__["a" /* Clipboard */]])
+    ], TransactionResumePage);
+    return TransactionResumePage;
 }());
 
-//# sourceMappingURL=touch-login.js.map
+//# sourceMappingURL=transaction-resume.js.map
 
 /***/ })
 
