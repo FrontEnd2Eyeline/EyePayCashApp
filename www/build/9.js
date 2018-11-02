@@ -1,15 +1,14 @@
 webpackJsonp([9],{
 
-/***/ 726:
+/***/ 733:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ProfilePageModule", function() { return ProfilePageModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TouchLoginPageModule", function() { return TouchLoginPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(21);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__profile__ = __webpack_require__(749);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ngx_translate_core__ = __webpack_require__(94);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__touch_login__ = __webpack_require__(758);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -19,35 +18,35 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-
-var ProfilePageModule = /** @class */ (function () {
-    function ProfilePageModule() {
+var TouchLoginPageModule = /** @class */ (function () {
+    function TouchLoginPageModule() {
     }
-    ProfilePageModule = __decorate([
+    TouchLoginPageModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["J" /* NgModule */])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_2__profile__["a" /* ProfilePage */],
+                __WEBPACK_IMPORTED_MODULE_2__touch_login__["a" /* TouchLoginPage */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__profile__["a" /* ProfilePage */]),
-                __WEBPACK_IMPORTED_MODULE_3__ngx_translate_core__["b" /* TranslateModule */]
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__touch_login__["a" /* TouchLoginPage */]),
             ],
         })
-    ], ProfilePageModule);
-    return ProfilePageModule;
+    ], TouchLoginPageModule);
+    return TouchLoginPageModule;
 }());
 
-//# sourceMappingURL=profile.module.js.map
+//# sourceMappingURL=touch-login.module.js.map
 
 /***/ }),
 
-/***/ 749:
+/***/ 758:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ProfilePage; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TouchLoginPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(21);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_fingerprint_aio__ = __webpack_require__(169);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(96);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -59,47 +58,60 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
+
+
 /**
- * Generated class for the ProfilePage page.
+ * Generated class for the TouchLoginPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
  */
-var ProfilePage = /** @class */ (function () {
-    function ProfilePage(navCtrl, navParams) {
+var TouchLoginPage = /** @class */ (function () {
+    function TouchLoginPage(navCtrl, navParams, faio, platform, splashScreen, modalCtrl) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
+        this.faio = faio;
+        this.platform = platform;
+        this.splashScreen = splashScreen;
+        this.modalCtrl = modalCtrl;
+        this.initialized = false;
+        this.isLocked = false;
+        this.fingerOptions = {
+            clientId: 'fingerprint-demo',
+            clientSecret: 'password',
+            disableBackup: true
+        };
     }
-    ProfilePage.prototype.ionViewDidLoad = function () {
-        console.log('ionViewDidLoad ProfilePage');
+    TouchLoginPage.prototype.login = function () {
+        var _this = this;
+        this.faio.show({
+            clientId: 'Fingerpresent-demo',
+            clientSecret: 'password',
+            localizedFallbackTitle: 'Use Pin',
+            localizedReason: 'Plase authenticate',
+        })
+            .then(function (result) {
+            _this.navCtrl.setRoot('LanguagePage');
+        })
+            .catch(function (err) {
+            console.log('Err: ', err);
+        });
     };
-    ProfilePage.prototype.goPage = function (page) {
-        if (page == 'profile')
-            this.navCtrl.push("ProfilePage");
-        else if (page == 'history')
-            this.navCtrl.push("HistoryPage");
-        else if (page == "maps")
-            this.navCtrl.push("MapPage");
-        else if (page == "contact")
-            this.navCtrl.push("ContactsPage");
-        else if (page == "security")
-            this.navCtrl.push("SecurityPage");
-        else if (page == "account")
-            this.navCtrl.push("AccountPage");
-        else
-            this.navCtrl.push("TransactionPage");
-    };
-    ProfilePage = __decorate([
+    TouchLoginPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-            selector: 'page-profile',template:/*ion-inline-start:"/Users/eyeline/Documents/eyepaycashappGitHub/src/pages/profile/profile.html"*/'<ion-content class="BackGRa" padding>\n	<div class="center">\n		<img class="logo mrgLogoTopBut" src="assets/imgs/EPCLogo.png" />\n	</div>\n	<div class="center mrg36Top">\n		<ion-row>\n			<ion-col (click)="goPage(\'account\')" class="lineRight lineRight2 linerig" col-6 >\n				<img class="tamaIcos" src="assets/newIcons/13.png" />\n				<h6 class="colWhite">Mi cuenta</h6>\n			</ion-col>\n			<ion-col (click)="goPage(\'security\')" class="lineRight2" col-6 >\n				<img class="tamaIcos" src="assets/newIcons/14.png" />\n				<h6 class="colWhite">Seguridad</h6>\n			</ion-col>\n		</ion-row>\n		<ion-row>\n			<ion-col (click)="goPage(\'TransactionPage\')" class="lineRight" col-6>\n				<img class="tamaIcos" src="assets/newIcons/15.png" />\n				<h6 class="colWhite">Transacciones</h6>\n			</ion-col>\n			<ion-col (click)="goPage(\'history\')" >\n				<img class="tamaIcos" src="assets/newIcons/16.png" />\n				<h6 class="colWhite">Historial</h6>\n			</ion-col>\n		</ion-row>\n		<ion-item class="center bacTransp">\n			<button class="buttonPayCash borderBtns" ion-button small>CONOCE MÁS</button>\n		</ion-item>\n	</div>\n</ion-content>'/*ion-inline-end:"/Users/eyeline/Documents/eyepaycashappGitHub/src/pages/profile/profile.html"*/,
+            selector: 'page-touch-login',template:/*ion-inline-start:"/Users/eyeline/Documents/GitHub/eyepaycashapp/src/pages/touch-login/touch-login.html"*/'<!--\n  Generated template for the TouchLoginPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>touch-login</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n<ion-row class="login-row" aling-items-center>\n	<ion-col col-5></ion-col>\n	<ion-col col-2 class="lock-col">\n		<div class="lock-bg"></div>\n		<img src="assets/imgs/Mascota.png" class="lock-img" tappable (click)="login()">\n	</ion-col>\n</ion-row>\n</ion-content>\n'/*ion-inline-end:"/Users/eyeline/Documents/GitHub/eyepaycashapp/src/pages/touch-login/touch-login.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavController */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* NavParams */]])
-    ], ProfilePage);
-    return ProfilePage;
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* NavParams */],
+            __WEBPACK_IMPORTED_MODULE_2__ionic_native_fingerprint_aio__["a" /* FingerprintAIO */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* Platform */],
+            __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* ModalController */]])
+    ], TouchLoginPage);
+    return TouchLoginPage;
 }());
 
-//# sourceMappingURL=profile.js.map
+//# sourceMappingURL=touch-login.js.map
 
 /***/ })
 

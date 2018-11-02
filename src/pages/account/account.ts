@@ -213,7 +213,6 @@ export class AccountPage {
       this.view_Btn_phone = false;
   }
 
-<<<<<<< HEAD
   goPage(page) {
     if (page == 'profile')
       this.navCtrl.push("ProfilePage");
@@ -225,7 +224,8 @@ export class AccountPage {
       this.navCtrl.push("ContactsPage");
     else
       this.navCtrl.push("TransactionPage");
-=======
+  }
+  
   foto() {
     this.alertCtrl.create({
       buttons: [
@@ -266,7 +266,6 @@ export class AccountPage {
       });
       toast.present();
     }).catch()
->>>>>>> 8be1c97b00e5ad9ed20f3efc058dafaf65d75264
   }
 
 }
