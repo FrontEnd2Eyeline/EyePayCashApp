@@ -1,7 +1,7 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      Información de cuenta
+      {{'INFORMACION_DE_CUENTA'|translate}}
     </ion-title>
   </ion-navbar>
 </ion-header>
@@ -15,29 +15,29 @@
     <ion-card-header>
         <ion-img style="background: transparent" width="15" height="15" src="assets/icon/Account.png"></ion-img>
       <!-- <ion-icon name="person" item-start></ion-icon> -->
-      Información personal
+    {{'INFORMACION_PERSONAL'|translate}}
     </ion-card-header>
     <ion-card-content>
       <ion-list>
         <ion-item>
-          <ion-label stacked>Nombres</ion-label>
+          <ion-label stacked>{{'NOMBRES'|translate}}</ion-label>
           <ion-input type="text" required name="userregistronombre" [(ngModel)]="usuario.first_name"></ion-input>
         </ion-item>
 
         <ion-item>
-          <ion-label stacked>Apellidos</ion-label>
+          <ion-label stacked>{{'APELLIDOS'|translate}}</ion-label>
           <ion-input type="text" required name="userregistroapellido"
                      [(ngModel)]="usuario.last_name"></ion-input>
         </ion-item>
         <ion-item>
-          <ion-label stacked>Género</ion-label>
+          <ion-label stacked>{{'GENERO'| translate}}</ion-label>
           <ion-select okText="Guardar" cancelText="Cancelar" [(ngModel)]="usuario.gender" name="userregistrogenero"
                       interface="popover">
             <ion-option value="f">Femenino</ion-option>
             <ion-option value="m">Masculino</ion-option>
           </ion-select>
         </ion-item>
-        <button ion-button block class="buttonPayCash" (click)="actualizar()">Editar información</button>
+        <button ion-button block class="buttonPayCash" (click)="actualizar()">{{'EDITAR_INFORMACION'|translate}}</button>
       </ion-list>
     </ion-card-content>
   </ion-card>
@@ -45,15 +45,15 @@
   <ion-card>
     <ion-card-header>
         <ion-img style="background: transparent" width="15" height="15" src="assets/icon/key.png"></ion-img>
-      Información de cuenta
+      {{'INFORMACION_DE_CUENTA'|translate}}
     </ion-card-header>
     <ion-card-content>
       <ion-row>
-        <ion-label stacked>Email</ion-label>
+        <ion-label stacked>{{'EMAIL'|translate}}</ion-label>
         {{usuario.mail}}
       </ion-row>
       <ion-row>
-        <ion-label stacked>Teléfono</ion-label>
+        <ion-label stacked>{{'TELEFONO'|translate}}</ion-label>
         {{usuario.phone}}
       </ion-row>
 
@@ -63,8 +63,8 @@
           <ion-input type="text" [(ngModel)]="code_Verify_Mail"></ion-input>
         </ion-col>
         <ion-col col-12>
-          <button ion-button (click)="validateCode('mail')">Confirmar código email</button>
-          <button ion-button block (click)="cancelValidation()">Cancelar</button>
+          <button ion-button (click)="validateCode('mail')">{{'CONFIRMAR_EMAIL'|translate}}</button>
+          <button ion-button block (click)="cancelValidation()">{{'CANCELAR'|translate}}</button>
         </ion-col>
       </ion-row>
 
@@ -74,8 +74,8 @@
           <ion-input type="text" [(ngModel)]="code_Verify_Phone"></ion-input>
         </ion-col>
         <ion-col col-12>
-          <button ion-button block (click)="validateCode('phone')">Confirmar código telefono</button>
-          <button ion-button block (click)="cancelValidation()">Cancelar</button>
+          <button ion-button block (click)="validateCode('phone')">{{'CONFIRMAR_CODIGO_TELEFONO'|translate}}</button>
+          <button ion-button block (click)="cancelValidation()">{{'CANCELAR'|translate}}</button>
         </ion-col>
       </ion-row>
 
@@ -83,12 +83,12 @@
       <ion-row>
         <button ion-button block class="buttonPayCash"
                 *ngIf=" (view_Btn_phone) && (view_Verify_Phone == false)"
-                (click)="reenviarConfirm('phone')">Reenviar confirmación móvil
+                (click)="reenviarConfirm('phone')">{{'REENVIAR_CONFIRMACION_MOVIL'| translate}}
         </button>
 
         <button ion-button block class="buttonPayCash"
                 *ngIf=" (view_Btn_mail) && view_Verify_Mail == false"
-                (click)="reenviarConfirm('mail')">Reenviar confirmación email
+                (click)="reenviarConfirm('mail')">{{'REENVIAR_CONFIRMACION_EMAIL'| translate}}
         </button>
       </ion-row>
 
@@ -98,23 +98,23 @@
   <ion-card>
     <ion-card-header>
         <ion-img style="background: transparent" width="15" height="15" src="assets/icon/Ubicacion.png"></ion-img>
-      Información de ubicación
+      {{'INFORMACION_DE_UBICACION'|translate}}
     </ion-card-header>
     <ion-card-content>
       <ion-row>
-        <ion-label stacked>País</ion-label>
+        <ion-label stacked>{{'PAIS'|translate}}</ion-label>
         {{country.name}}
       </ion-row>
       <ion-row>
-        <ion-label stacked>Código de teléfono</ion-label>
+        <ion-label stacked>{{'CODIGO_DE_TELEFONO'|translate}}</ion-label>
         {{country.phone_code}}
       </ion-row>
       <ion-row>
-        <ion-label stacked>Código de país</ion-label>
+        <ion-label stacked>{{'CODIGO_DE_PAIS'|translate}}</ion-label>
         {{country.country_code}}
       </ion-row>
       <ion-row>
-        <ion-label stacked>Moneda del país</ion-label>
+        <ion-label stacked>{{'MONEDA_DE_PAIS'|translate}}</ion-label>
         {{country.currency}}
       </ion-row>
     </ion-card-content>

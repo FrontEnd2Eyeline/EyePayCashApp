@@ -1,19 +1,19 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>Transacciones</ion-title>
+    <ion-title>{{'TRANSACCION'|translate}}</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  <ion-label stacked>Seleccione país de destino</ion-label>
+  <ion-label stacked>{{'SELECCIONAR_EL_PAIS_DE_DESTINO'|translate}}</ion-label>
   <ion-select *ngIf="countrys!=undefined" [(ngModel)]="currency" (ionChange)="countrySelected()" interface="popover">
     <ion-option *ngFor="let pais of countrys" value="{{pais.currency}}">{{pais.name}}</ion-option>
   </ion-select>
-  <label stacked *ngIf="currency != 'USD'">Precio del dolar en el país</label>
+  <label stacked *ngIf="currency != 'USD'">{{'PRECIO_DEL_DOLAR_EN_EL_PAIS'|translate}}</label>
   <ion-item style="margin-bottom: 2%; margin-top: 2%" *ngIf="currency != 'USD'">
     <h6 class="txtboldblack">1 USD = {{infoCountry?.local_usd_value | currency}} {{currency}}</h6>
   </ion-item>
-  <label stacked>Información de las monedas</label>
+  <label stacked>{{'INFORMACION_DE_LA_MONEDA'|translate}}</label>
   <ion-card style="margin-top: 2%" ion-item *ngFor="let moneda of monedas" (click)="monedaSelect(moneda)">
     <ion-card-content>
       <ion-row>

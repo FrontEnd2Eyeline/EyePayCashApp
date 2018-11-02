@@ -6,14 +6,14 @@
 		<form [formGroup]="formGroup" (ngSubmit)="register()">
 			<ion-list>
 				<ion-item class="marginlists">
-					<ion-label stacked>Nombres</ion-label>
+					<ion-label stacked>{{'NOMBRES'|translate}}</ion-label>
 					<ion-input type="text" required name="userregistronombre" formControlName="first_name"></ion-input>
 				</ion-item>
 				<ion-item no-lines *ngIf="formGroup.invalid">
 					<msg-error [control]="formGroup.controls.first_name" name="Nombres"></msg-error>
 				</ion-item>
 				<ion-item class="marginlists">
-					<ion-label stacked>Apellidos</ion-label>
+					<ion-label stacked>{{'APELLIDOS'||translate}}</ion-label>
 					<ion-input type="text" required name="userregistroapellido" formControlName="last_name">
 					</ion-input>
 				</ion-item>
@@ -21,25 +21,25 @@
 					<msg-error [control]="formGroup.controls.last_name" name="Apellidos"></msg-error>
 				</ion-item>
 				<ion-item class="marginlists">
-					<ion-label stacked>Género</ion-label>
+					<ion-label stacked>{{'GENERO'|translate}}</ion-label>
 					<ion-select okText="Guardar" cancelText="Cancelar" formControlName="gender" name="userregistrogenero" interface="popover">
 						<ion-option value="f">Femenino</ion-option>
 						<ion-option value="m">Masculino</ion-option>
 					</ion-select>
 				</ion-item>
 				<ion-item class="marginlists">
-					<ion-label stacked>Email</ion-label>
+					<ion-label stacked>{{'EMAIL'|translate}}</ion-label>
 					<ion-input type="email" required name="userregistroemail" formControlName="mail"></ion-input>
 				</ion-item>
 				<ion-item no-lines *ngIf="formGroup.invalid">
 					<msg-error [control]="formGroup.controls.mail" name="Email"></msg-error>
 				</ion-item>
 				<ion-item class="marginlists">
-					<ion-label stacked>Confirmar email</ion-label>
+					<ion-label stacked>{{'CONFIRMAR_EMAIL'|translate}}</ion-label>
 					<ion-input type="email" required name="confirmacionmail" formControlName="mail_conf"></ion-input>
 				</ion-item>
 				<ion-item>
-					<ion-label stacked>Contraseña</ion-label>
+					<ion-label stacked>{{'CONTRASEÑA'|translate}}</ion-label>
 					<ion-input type="{{type}}" name="contrasena" formControlName="password">
 					</ion-input>
 					<button *ngIf="!showPass" class="btn_show" ion-button clear color="dark" type="button" required item-right (click)="showPassword()">
@@ -55,7 +55,7 @@
 				</ion-item>
 
 				<ion-item class="marginlists">
-					<ion-label stacked>Confirmar contraseña</ion-label>
+					<ion-label stacked>{{'CONFIRMACION_CONTRASEÑA'|translate}}</ion-label>
 					<ion-input type="{{type2}}" name="confirmacontrasena" formControlName="password_conf">
 					</ion-input>
 					<button *ngIf="!showPass2" class="btn_show2" ion-button clear color="dark" type="button" required item-right
@@ -67,7 +67,7 @@
 					</button>
 				</ion-item>
 				<div >
-					<button class="buttonPayCash" ion-button small type="submit">Registrarse</button>
+					<button class="buttonPayCash" ion-button small type="submit">{{'REGISTRARSE'|translate}}</button>
 				</div>
 			</ion-list>
 		</form>
@@ -76,9 +76,9 @@
 		<ion-col col-2>
 			<ion-checkbox [(ngModel)]="ischecked"></ion-checkbox>
 		</ion-col>
-		<ion-col col-10><span (click)="politicas()"> Leí y acepto las políticas de uso y privacidad de la información</span></ion-col>
+		<ion-col col-10><span (click)="politicas()">{{'POLITICAS_USO'|translate}}</span></ion-col>
 	</ion-list>
 	<div style="margin-top: 6%" class="center">
-		<button class="buttonPayCash" (click)="cancel()" ion-button small>Cancelar</button>
+		<button class="buttonPayCash" (click)="cancel()" ion-button small>{{'CANCELAR'|translate}}</button>
 	</div>
 </ion-content>

@@ -7,7 +7,7 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>Seguridad</ion-title>
+    <ion-title>{{'SEGURIDAD'|translate}}</ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -19,16 +19,16 @@
   <ion-card>
     <ion-card-header>
       <ion-icon name="lock" item-start></ion-icon>
-      Información de seguridad
+      {{'INFORMACION_SEGURIDAD'|translate}}
     </ion-card-header>
     <ion-card-content>
       <div padding>
         <ion-segment [(ngModel)]="updateInfo">
           <ion-segment-button value="celular">
-            Número celular
+            {{'NUMERO_CELULAR'|translate}}
           </ion-segment-button>
           <ion-segment-button value="correo">
-            Dirección email
+            {{'DIRECCION_EMAIL'|translate}}
           </ion-segment-button>
         </ion-segment>
       </div>
@@ -36,7 +36,7 @@
       <div [ngSwitch]="updateInfo">
         <ion-list *ngSwitchCase="'celular'">
           <ion-row>
-            <label stacked>Seleccione el país e ingrese su nuevo número celular</label>
+            <label stacked>{{'NUEVO_CELULAR'|translate}}</label>
             <ion-col col-4>
               <ion-item class="item-flag">
                 <img [src]="infoPhone.flag" class="flagphone" *ngIf="infoPhone.flag !=null">
@@ -48,20 +48,20 @@
                          placeholder="Número móvil (celular)" [brmasker]="{len:14}"></ion-input>
             </ion-col>
             <ion-col col-12 *ngIf="codigoSend.phone_code != null && infoPhone.value != ''">
-              <label stacked>Ingrese el código de verificación (SMS)</label>
+              <label stacked>{{'CODIGO_VERIFICACION_SMS'|translate}}</label>
               <ion-input name="verifycode" [(ngModel)]="codeVerify" type="number" [brmasker]="{len:6}"></ion-input>
-              <button class="buttonPayCash" (click)="verifyCode()" ion-button block>Verificar código</button>
+              <button class="buttonPayCash" (click)="verifyCode()" ion-button block>{{'VERIFICAR_CODIGO'|translate}}</button>
             </ion-col>
           </ion-row>
           <button ion-button block class="buttonPayCash" (click)="changePhone()"
                   *ngIf=" codigoSend.phone_code == null ">
-            Enviar código de verificación
+            {{'ENVIAR_CODIGO_VERIFICACION'|translate}}
           </button>
         </ion-list>
 <form [formGroup]="formGroup">
         <ion-list *ngSwitchCase="'correo'">
           <ion-row>
-            <label stacked> Por favor ingrese la nueva dirección email</label>
+            <label stacked>{{'NUEVA_DIRECCION_EMAIL'|translate}}</label>
             <ion-col col-12 row>
               <ion-input name="correoelectronico" 
                          placeholder="Dirección email correo electrónico" formControlName="value" type="mail" ></ion-input>
@@ -78,7 +78,7 @@
             </ion-col>
           </ion-row>
           <button ion-button block class="buttonPayCash" (click)="changeMail()" *ngIf="codigoSend.mail_code==null">
-            Actualizar dirección email
+            {{'ACTUALIZAR_EMAIL'|translate}}
           </button>
 		</ion-list>
 	</form>
@@ -89,18 +89,18 @@
   <ion-card>
     <ion-card-header>
       <ion-icon name="key" item-start></ion-icon>
-      Actualizar contraseña
+      {{'ACTUALIZAR_CONTRASEÑA'|translate}}
     </ion-card-header>
     <ion-card-content>
       <ion-item>
 
-        <ion-label stacked>Contraseña actual</ion-label>
+        <ion-label stacked>{{'CONTRASEÑA_ACTUAL'|translate}}</ion-label>
         <ion-input type="password" name="useractual"
                    required [(ngModel)]="password.old_password"></ion-input>
       </ion-item>
       <ion-item>
 
-        <ion-label stacked>Contraseña nueva</ion-label>
+        <ion-label stacked>{{'NUEVA_CONTRASEÑA'|translate}}</ion-label>
         <ion-input type="{{type}}" name="usernueva"
                    required [(ngModel)]="password.new_password"></ion-input>
         <button *ngIf="!showPass" class="btn_show" ion-button clear color="dark" type="button" item-right (click)="showPassword()">
@@ -112,7 +112,7 @@
 
       </ion-item>
       <ion-item>
-        <ion-label stacked>Confirmación de contraseña</ion-label>
+        <ion-label stacked>{{'CONFIRMACION_CONTRASEÑA'|translate}}</ion-label>
         <ion-input type="{{type2}}" name="userconfirmacion"
                    required [(ngModel)]="password.new_password_conf"></ion-input>
         <button *ngIf="!showPass2" class="btn_show2" ion-button clear color="dark" type="button" item-right (click)="showPassword2()">
@@ -122,7 +122,7 @@
           <ion-icon name="ios-eye-outline"></ion-icon>
         </button>
       </ion-item>
-      <button ion-button block class="buttonPayCash" (click)="actualizarPass()">Confirmar y actualizar</button>
+      <button ion-button block class="buttonPayCash" (click)="actualizarPass()">{{'CONFIRMAR_ACTUALIZAR'|translate}}</button>
     </ion-card-content>
   </ion-card>
 

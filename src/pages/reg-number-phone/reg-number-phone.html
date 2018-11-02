@@ -1,9 +1,7 @@
 <ion-content class="imgBackground vignette">
   <div style="margin-top:12%" class="center">
     <ion-img style="margin-bottom: 10%;" class="logo" src="assets/imgs/EPCLogo.png"></ion-img>
-    <div class="center">
-      <ion-label style="color:white" class="center"> Enviaremos un CÓDIGO de verificación al número<br> que registres
-        a continuación.
+    <div class="center"><ion-label> {{'MENSAJE_CODIGO_VERIFICACION1'|translate}}<br> {{'MENSAJE_CODIGO_VERIFICACION2'|translate}}
       </ion-label>
     </div>
   </div>
@@ -31,12 +29,12 @@
     </ion-item>
   </div>
   <div class="center marginBts">
-    <button class="buttonPayCash borderBtns" (click)="cancel()" ion-button small>Cancelar</button>
+    <button class="buttonPayCash borderBtns" (click)="cancel()" ion-button small>{{'CANCELAR'|translate}}</button>
     <button class="buttonPayCash borderBtns" (click)="sendNumberPhone()" ion-button small
-            *ngIf="response_verify.phone_code == null">Confirmar número móvil
+            *ngIf="response_verify.phone_code == null">{{'CONFIRMAR_CELULAR'|translate}}
     </button>
     <button class="buttonPayCash borderBtns" (click)="verifyCode()" ion-button small
-            *ngIf="response_verify.phone_code != null">Continuar
+            *ngIf="response_verify.phone_code != null">{{'CONTINUAR'|translate}}
     </button>
   </div>
 

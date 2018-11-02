@@ -1,6 +1,6 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>Resumen de la transacción</ion-title>
+    <ion-title>{{'RESUMEN_HISTORIAL'|translate}}</ion-title>
   </ion-navbar>
 </ion-header>
 <ion-content class="BackGR3" padding>
@@ -8,7 +8,7 @@
   <ion-card class="backCardsTransp">
     <ion-card-header>
       <ion-img style="background: transparent" width="15" height="15" src="assets/newIcons/30.png"></ion-img>
-      <label> Estado de la transacción</label>
+      <label>{{'INFORMACION_TRANSACCION'|translate}}</label>
     </ion-card-header>
     <ion-card-content>
       <div>
@@ -18,7 +18,7 @@
           </ion-col>
           <ion-col col-11>
             <h6>
-              Transacción solicitada
+              {{'TRANSACCION_SOLICITADA'|translate}}
             </h6>
           </ion-col>
         </ion-row>
@@ -34,7 +34,7 @@
         <ion-row>
           <ion-col col-11>
             <h6>
-              1- Realizar pago (Dirección o Código QR)
+              1- {{'REALIZAR_PAGO'|translate}}
             </h6>
           </ion-col>
         </ion-row>
@@ -50,53 +50,53 @@
         <ion-row>
           <ion-col col-11>
             <h6>
-              2- Realizar el retiro del efectivo
+              2- {{'HACER_RETIRO_EFECTIVO'|translate}}
             </h6>
           </ion-col>
         </ion-row>
 
       </div>
 
-      <button class="buttonPayCash" ion-button outline block (click)="goMaps()"> Ver mapa</button>
+      <button class="buttonPayCash" ion-button outline block (click)="goMaps()">{{'VER_MAPA'|translate}}</button>
     </ion-card-content>
   </ion-card>
 
   <ion-card class="backCardsTransp">
     <ion-card-header>
       <ion-img style="background: transparent" width="15" height="15" src="assets/newIcons/31.png"></ion-img>
-      <label stacked> Información transacción:</label>
+      <label stacked>{{'INFO_TRANSACCION'|translate}}:</label>
     </ion-card-header>
     <ion-card-content>
       <ion-list>
         <ion-row>
-          <ion-col col-6 text-left>Nº Celular destino</ion-col>
+          <ion-col col-6 text-left>{{'NRO_CELULAR_DESTINO'|translate}}</ion-col>
           <ion-col col-6 text-right>
             {{historyInfo?.phone_user_des}}
           </ion-col>
         </ion-row>
         <ion-row>
-          <ion-col col-6 text-left>Criptomoneda</ion-col>
+          <ion-col col-6 text-left>{{'TIPO_CRIPTOMONEDA'|translate}}</ion-col>
           <ion-col col-6 text-right> {{coin.full_name}}</ion-col>
         </ion-row>
         <ion-row>
-          <ion-col col-6 text-left>Fecha transacción</ion-col>
+          <ion-col col-6 text-left>{{'FECHA_TRANSACCION'|translate}}</ion-col>
           <ion-col col-6 text-right>{{dateLocal.getDateLocale(historyInfo?.date_request)| date:'dd/MM/yyyy h:mma' }}</ion-col>
         </ion-row>
         <ion-row>
-          <ion-col col-6 text-left>Moneda local: </ion-col>
+          <ion-col col-6 text-left>{{'MONEDA_LOCAL'|translate}}: </ion-col>
           <ion-col col-6 text-right> {{historyInfo.amount_local | currency}} {{country.currency}}</ion-col>
         </ion-row>
-        <ion-row>
-          <ion-col col-6 text-left>TRM: </ion-col>
+        <!--<ion-row>
+          <ion-col col-6 text-left>{{'TRM'|translate}}: </ion-col>
           <ion-col col-6 text-right> {{comision.money_local_to_usd| currency}} {{country.currency}}</ion-col>
-        </ion-row>
+        </ion-row>-->
 
         <ion-row>
-          <ion-col col-6 text-left>Costo {{currency}}: </ion-col>
+          <ion-col col-6 text-left>{{'COSTO'|translate}} {{currency}}: </ion-col>
           <ion-col col-6 text-right> {{historyInfo.amount_usd|currency}} USD</ion-col>
         </ion-row>
         <ion-row>
-          <ion-col col-6 text-left>Costo {{coin.full_name}}: </ion-col>
+          <ion-col col-6 text-left>{{'COSTO_BITCOIN'|translate}} {{coin.full_name}}: </ion-col>
           <ion-col col-6 text-right> {{historyInfo.amount_btc}} {{coin.short_name}}</ion-col>
         </ion-row>
       </ion-list>
@@ -106,23 +106,23 @@
   <ion-card *ngIf="historyInfo?.process_status==0" class="backCardsTransp">
     <ion-card-header>
       <ion-img style="background: transparent" width="15" height="15" src="assets/newIcons/32.png"></ion-img>
-      <label stacked> Información de pago:</label>
+      <label stacked> Información de pago{{'INFORMACION_PAGO'| translate}}:</label>
     </ion-card-header>
     <ion-card-content>
       <ion-row>
-        <ion-col col-6 text-left>Total a pagar</ion-col>
+        <ion-col col-6 text-left>{{'TOTAL_A_PAGAR'|translate}}</ion-col>
         <ion-col col-6 text-right> {{historyInfo.amount_btc}} {{coin.short_name}}</ion-col>
       </ion-row>
       <ion-row text-center>
         <ion-col col-12>
-          Dirección de pago {{coin.full_name}}: <br>
+          {{'DIRECCION_PAGO_BITCOIN'|translate}} {{coin.full_name}}: <br>
           <h2>{{coinHash.eye_hash}}</h2>
-          <button outline ion-button (click)="copiarToken()" class="buttonPayCash">Copiar</button>
+          <button outline ion-button (click)="copiarToken()" class="buttonPayCash">{{'COPIAR'|translate}}</button>
         </ion-col>
       </ion-row>
       <ion-row text-center>
         <ion-col col-12>
-          Código QR de pago:
+          {{'CODIGO_QR_PAGO'|translate}}:
           <img src="{{coinHash.qr_url}}">
         </ion-col>
       </ion-row>
