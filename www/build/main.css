@@ -29295,6 +29295,7 @@ page-history .segment-md .segment-button {
   font-weight: bold;
   height: 3.2rem;
   line-height: 3rem;
+  font-size: 1.0rem;
   background-color: transparent;
 }
 
@@ -29392,6 +29393,49 @@ page-history .label-md[stacked] {
 page-history .styleSegment {
   background: transparent;
   margin-top: -10%;
+}
+
+page-history-resume .styleIcospeq {
+  background: transparent;
+  width: 15;
+  height: 15;
+}
+
+page-history-resume .BackGR3 {
+  background-image: url("../assets/icon/B3.png");
+  background-position: center top;
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+
+page-history-resume .toolbar-background-md {
+  border-color: transparent;
+  background: #9569fc;
+  background: -webkit-gradient(left top, right top, color-stop(0%, #9569fc), color-stop(100%, #5974fc));
+  background: -webkit-gradient(linear, left top, right top, from(#9569fc), to(#5974fc));
+  background: linear-gradient(to right, #9569fc 0%, #5974fc 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#9569fc', endColorstr='#5974fc', GradientType=1 );
+  color: white;
+}
+
+page-history-resume .toolbar-title-md {
+  padding: 0 12px;
+  font-size: 2rem;
+  font-weight: 500;
+  color: white;
+}
+
+page-history-resume .item-md.item-block .item-inner {
+  padding-right: 8px;
+  border-bottom: 0px solid #dedede !important;
+}
+
+page-history-resume .bar-button-default-md, page-history-resume .bar-button-clear-md-default, page-history-resume .bar-button-md-default {
+  color: white;
+}
+
+page-history-resume .backCardsTransp {
+  background: #ffffffe0;
 }
 
 page-home .content-md {
@@ -29744,10 +29788,33 @@ page-map .bar-button-default-md, page-map .bar-button-clear-md-default, page-map
 page-modal-error {
   top: 20% !important;
   left: 10% !important;
-  display: block !important;
   width: 80% !important;
-  height: 50% !important;
+  height: 60% !important;
   border-radius: 25px !important;
+  background: #000000b3;
+}
+
+page-modal-error .md .modal-wrapper {
+  -webkit-transform: translate3d(0, 40px, 0);
+  transform: translate3d(0, 40px, 0);
+  opacity: 1;
+  background: #000000cc !important;
+}
+
+page-modal-error .BackGRa {
+  background-image: url("../assets/newBackgrounds/4.png");
+  background-position: center top;
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+
+page-modal-error .mrg10Top {
+  margin-top: 10%;
+  max-width: 100px;
+}
+
+page-modal-error .mrg5Top {
+  margin-top: 5%;
 }
 
 page-modal-error ion-content {
@@ -29757,6 +29824,10 @@ page-modal-error ion-content {
 page-modal-error .gradient {
   background: -webkit-gradient(linear, left top, right top, from(#9569fc), to(#5974fb));
   background: linear-gradient(to right, #9569fc 0%, #5974fb 100%);
+  margin: 5%;
+  height: 14em;
+  border-radius: 12px;
+  color: white;
 }
 
 page-modal-error .footer-button {
@@ -29769,7 +29840,7 @@ page-modal-error .footer-button {
 }
 
 page-modal-error .button-md {
-  border-radius: 2px;
+  border-radius: 12px;
   overflow: hidden;
   height: 3.6rem;
   font-size: 1.4rem;
@@ -29799,6 +29870,13 @@ page-modal-error .img_background {
   background-repeat: no-repeat;
 }
 
+page-modal-error .eRror {
+  color: white;
+  border-radius: 20px;
+  margin-top: 24%;
+  min-height: 180px;
+}
+
 page-modal-transaction ion-select {
   max-width: 100% !important;
 }
@@ -29819,6 +29897,10 @@ page-modal-transaction .toolbar-background-md {
   background: linear-gradient(to right, #9569fc 0%, #5974fc 100%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#9569fc', endColorstr='#5974fc', GradientType=1 );
   color: white;
+}
+
+page-modal-transaction .backCardsTransp {
+  background: #ffffffe0;
 }
 
 page-modal-transaction .toolbar-title-md {
@@ -29972,6 +30054,51 @@ page-politicas .btnStyle {
   font-size: 14px;
   width: 32%;
   height: 34px;
+}
+
+page-profile .BackGRa {
+  background-image: url("../assets/newBackgrounds/6.png");
+  background-position: center top;
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+
+page-profile .bacTransp {
+  background: transparent;
+}
+
+page-profile .lineRight {
+  border-color: #848181;
+  border-style: solid;
+  border-width: 0px 1px 0px 0px;
+}
+
+page-profile .lineRight2 {
+  border-color: #848181;
+  border-style: solid;
+  border-width: 0px 0px 1px 0px;
+}
+
+page-profile .linerig {
+  border-color: #848181;
+  border-style: solid;
+  border-width: 0px 1px 1px 0px;
+}
+
+page-profile .tamaIcos {
+  width: 50%;
+}
+
+page-profile .colWhite {
+  color: white;
+}
+
+page-profile .mrg36Top {
+  margin-top: 36% !important;
+}
+
+page-profile .clsT {
+  width: 70%;
 }
 
 page-profile .content-md {
@@ -30157,6 +30284,12 @@ page-transaction .back-button.show-back-button {
   display: inline-block;
   background: transparent;
   color: white;
+}
+
+page-transaction .card-content-md {
+  padding: 0px 0px;
+  font-size: 1.4rem;
+  line-height: 1.5;
 }
 
 page-transaction .card-md + ion-card {

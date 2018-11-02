@@ -35,11 +35,11 @@ export class MyApp {
 	//   this.rootPage = 'TouchLoginPage';
       this.rootPage = 'LoginPage';
     }
-    // if(auth.trylogin()) {
-    //     this.langProvider.setLenguage();
-    //     this.rootPage = 'HomePage';
-    //     this.informationProvider.init()
-    // }
+     if(auth.trylogin()) {
+        this.langProvider.setLenguage();
+         this.rootPage = 'HomePage';
+        this.informationProvider.init()
+     }
     platform.ready().then(() => {
 		loockScreen.init();
       statusBar.styleDefault();
