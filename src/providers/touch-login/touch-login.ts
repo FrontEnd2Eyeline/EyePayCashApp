@@ -81,7 +81,10 @@ export class TouchLoginProvider {
 					.then((result: any) => {
 						this.login();
 						this.isLocked = false;
-					}).catch((error: any)=> console.log('cancelo',error));
+					}).catch((error: any)=> 
+					this.onPauseSubscription = this.platform.pause.subscribe(() => {
+				this.splashScreen.show();
+			}));
 
 			}).catch((error: any) => console.log(error));
 	}
