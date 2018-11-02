@@ -29143,6 +29143,26 @@ ion-input, ion-textarea {
   max-width: 40%;
 }
 
+page-account .styleLogo {
+  padding: 5%;
+  width: 35%;
+}
+
+page-account .icoClose {
+  width: 30%;
+  padding: 5%;
+  position: absolute;
+  margin-left: 18.5em;
+  margin-top: -6%;
+}
+
+page-account .BackgroundPpal {
+  background-image: url("../assets/newBackgrounds/7.png");
+  background-position: center top;
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+
 page-account .BackGR3 {
   background-image: url("../assets/icon/B3.png");
   background-position: center top;
@@ -29213,6 +29233,18 @@ page-account .item-input ion-input, page-account .item-input ion-textarea {
   background: white !important;
 }
 
+page-history .footer-md::before, page-history .tabs-md[tabsPlacement="bottom"] > .tabbar::before {
+  top: -2px;
+  bottom: auto;
+  background-position: left 0 top 0;
+  height: 1px;
+  background: #9569fc;
+  background: -webkit-gradient(left top, right top, color-stop(0%, #9569fc), color-stop(100%, #063896));
+  background: -webkit-gradient(linear, left top, right top, from(#9569fc), to(#063896));
+  background: linear-gradient(to right, #9569fc 0%, #063896 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#9569fc', endColorstr='#063896', GradientType=1 );
+}
+
 page-history h1 {
   font-size: 2.2rem;
 }
@@ -29227,6 +29259,16 @@ page-history .imgLogoWidthPen {
 
 page-history .center {
   margin: auto;
+}
+
+page-history .center2 {
+  display: block;
+  text-align: center;
+  margin: auto;
+}
+
+page-history .content-md {
+  background-color: #f5f5f5;
 }
 
 page-history .centerIcoText {
@@ -29308,16 +29350,6 @@ page-history .BackgroundPpal {
 
 page-history ion-select {
   max-width: 100%;
-}
-
-page-history .toolbar-background-md {
-  border-color: transparent;
-  background: #9569fc;
-  background: -webkit-gradient(left top, right top, color-stop(0%, #9569fc), color-stop(100%, #5974fc));
-  background: -webkit-gradient(linear, left top, right top, from(#9569fc), to(#5974fc));
-  background: linear-gradient(to right, #9569fc 0%, #5974fc 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#9569fc', endColorstr='#5974fc', GradientType=1 );
-  color: white;
 }
 
 page-history .toolbar-title-md {
@@ -29436,6 +29468,14 @@ page-history-resume .bar-button-default-md, page-history-resume .bar-button-clea
 
 page-history-resume .backCardsTransp {
   background: #ffffffe0;
+}
+
+page-history-resume .mrg1Top {
+  margin-top: 1%;
+}
+
+page-history-resume .mrg10Top {
+  margin-top: 10%;
 }
 
 page-home .content-md {
@@ -30054,6 +30094,12 @@ page-politicas .btnStyle {
   font-size: 14px;
   width: 32%;
   height: 34px;
+}
+
+page-profile .mrgLogoTopBut {
+  margin-top: 30%;
+  margin-bottom: -24%;
+  width: 70%;
 }
 
 page-profile .BackGRa {

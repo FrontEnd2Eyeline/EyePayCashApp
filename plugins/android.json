@@ -46,6 +46,9 @@
     },
     "cordova-plugin-fingerprint-aio": {
       "PACKAGE_NAME": "com.eyepaycash.app"
+    },
+    "cordova-plugin-camera": {
+      "PACKAGE_NAME": "com.eyepaycash.app"
     }
   },
   "dependent_plugins": {}

@@ -1,17 +1,17 @@
 webpackJsonp([1],{
 
-/***/ 727:
+/***/ 728:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RegisterPageModule", function() { return RegisterPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(26);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__register__ = __webpack_require__(750);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_brmasker_ionic_3__ = __webpack_require__(378);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__components_components_module__ = __webpack_require__(733);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ngx_translate_core__ = __webpack_require__(93);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(21);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__register__ = __webpack_require__(751);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_brmasker_ionic_3__ = __webpack_require__(380);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__components_components_module__ = __webpack_require__(734);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ngx_translate_core__ = __webpack_require__(94);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -33,7 +33,7 @@ var RegisterPageModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_2__register__["a" /* RegisterPage */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__register__["a" /* RegisterPage */]),
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__register__["a" /* RegisterPage */]),
                 __WEBPACK_IMPORTED_MODULE_5__ngx_translate_core__["b" /* TranslateModule */],
                 __WEBPACK_IMPORTED_MODULE_3_brmasker_ionic_3__["a" /* BrMaskerModule */],
                 __WEBPACK_IMPORTED_MODULE_4__components_components_module__["a" /* ComponentsModule */],
@@ -47,13 +47,13 @@ var RegisterPageModule = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 733:
+/***/ 734:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ComponentsModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__msg_error_msg_error__ = __webpack_require__(734);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__msg_error_msg_error__ = __webpack_require__(735);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_common__ = __webpack_require__(33);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -81,14 +81,14 @@ var ComponentsModule = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 734:
+/***/ 735:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MsgErrorComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_forms__ = __webpack_require__(21);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_validation_validation__ = __webpack_require__(377);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_forms__ = __webpack_require__(22);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_validation_validation__ = __webpack_require__(379);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -138,17 +138,17 @@ var MsgErrorComponent = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 750:
+/***/ 751:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return RegisterPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(26);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(21);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_api__ = __webpack_require__(48);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_auth_user_auth_user__ = __webpack_require__(94);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_forms__ = __webpack_require__(21);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_modal_error_modal_error__ = __webpack_require__(67);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_auth_user_auth_user__ = __webpack_require__(67);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_forms__ = __webpack_require__(22);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_modal_error_modal_error__ = __webpack_require__(68);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -302,7 +302,8 @@ var RegisterPage = /** @class */ (function () {
         var _this = this;
         this.api.get('account/confirm-verify', this.userProvider, {
             id: this.responseParams.id,
-            type: 'phone'
+            type: 'phone',
+            mail: this.userProvider.user_Info.mail,
         }).then(function (data) {
         }).catch(function (error) {
             var mensaje = "";
@@ -334,14 +335,14 @@ var RegisterPage = /** @class */ (function () {
     };
     RegisterPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-            selector: 'page-register',template:/*ion-inline-start:"/Users/eyeline/Documents/GitHub/eyepaycashapp/src/pages/register/register.html"*/'<ion-content class="imgBackground vignette">\n	<div style="margin-top:12%" class="center">\n		<ion-img class="logo" src="assets/imgs/EPCLogo.png"></ion-img>\n	</div>\n	<div class="center">\n		<form [formGroup]="formGroup" (ngSubmit)="register()">\n			<ion-list>\n				<ion-item class="marginlists">\n					<ion-label stacked>Nombres</ion-label>\n					<ion-input type="text" required name="userregistronombre" formControlName="first_name"></ion-input>\n				</ion-item>\n				<ion-item no-lines *ngIf="formGroup.invalid">\n					<msg-error [control]="formGroup.controls.first_name" name="Nombres"></msg-error>\n				</ion-item>\n				<ion-item class="marginlists">\n					<ion-label stacked>Apellidos</ion-label>\n					<ion-input type="text" required name="userregistroapellido" formControlName="last_name">\n					</ion-input>\n				</ion-item>\n				<ion-item no-lines *ngIf="formGroup.invalid">\n					<msg-error [control]="formGroup.controls.last_name" name="Apellidos"></msg-error>\n				</ion-item>\n				<ion-item class="marginlists">\n					<ion-label stacked>Género</ion-label>\n					<ion-select okText="Guardar" cancelText="Cancelar" formControlName="gender" name="userregistrogenero" interface="popover">\n						<ion-option value="f">Femenino</ion-option>\n						<ion-option value="m">Masculino</ion-option>\n					</ion-select>\n				</ion-item>\n				<ion-item class="marginlists">\n					<ion-label stacked>Email</ion-label>\n					<ion-input type="email" required name="userregistroemail" formControlName="mail"></ion-input>\n				</ion-item>\n				<ion-item no-lines *ngIf="formGroup.invalid">\n					<msg-error [control]="formGroup.controls.mail" name="Email"></msg-error>\n				</ion-item>\n				<ion-item class="marginlists">\n					<ion-label stacked>Confirmar email</ion-label>\n					<ion-input type="email" required name="confirmacionmail" formControlName="mail_conf"></ion-input>\n				</ion-item>\n				<ion-item>\n					<ion-label stacked>Contraseña</ion-label>\n					<ion-input type="{{type}}" name="contrasena" formControlName="password">\n					</ion-input>\n					<button *ngIf="!showPass" class="btn_show" ion-button clear color="dark" type="button" required item-right (click)="showPassword()">\n						<ion-icon name="ios-eye-off-outline"></ion-icon>\n					</button>\n					<button *ngIf="showPass" class="btn_show" ion-button clear color="dark" type="button" item-right (click)="showPassword()">\n						<ion-icon name="ios-eye-outline"></ion-icon>\n					</button>\n				</ion-item>\n\n				<ion-item no-lines *ngIf="formGroup.invalid">\n					<msg-error [control]="formGroup.controls.password" name="Contraseña"></msg-error>\n				</ion-item>\n\n				<ion-item class="marginlists">\n					<ion-label stacked>Confirmar contraseña</ion-label>\n					<ion-input type="{{type2}}" name="confirmacontrasena" formControlName="password_conf">\n					</ion-input>\n					<button *ngIf="!showPass2" class="btn_show2" ion-button clear color="dark" type="button" required item-right\n					 (click)="showPassword2()">\n						<ion-icon name="ios-eye-off-outline"></ion-icon>\n					</button>\n					<button *ngIf="showPass2" class="btn_show2" ion-button clear color="dark" type="button" item-right (click)="showPassword2()">\n						<ion-icon name="ios-eye-outline"></ion-icon>\n					</button>\n				</ion-item>\n				<div >\n					<button class="buttonPayCash" ion-button small>Registrarse</button>\n				</div>\n			</ion-list>\n		</form>\n	</div>\n	<ion-list>\n		<ion-col col-2>\n			<ion-checkbox [(ngModel)]="ischecked"></ion-checkbox>\n		</ion-col>\n		<ion-col col-10><span (click)="politicas()"> Leí y acepto las políticas de uso y privacidad de la información</span></ion-col>\n	</ion-list>\n	<div style="margin-top: 6%" class="center">\n		<button class="buttonPayCash" (click)="cancel()" ion-button small>Cancelar</button>\n	</div>\n</ion-content>'/*ion-inline-end:"/Users/eyeline/Documents/GitHub/eyepaycashapp/src/pages/register/register.html"*/,
+            selector: 'page-register',template:/*ion-inline-start:"/Users/eyeline/Documents/eyepaycashappGitHub/src/pages/register/register.html"*/'<ion-content class="imgBackground vignette">\n	<div style="margin-top:12%" class="center">\n		<ion-img class="logo" src="assets/imgs/EPCLogo.png"></ion-img>\n	</div>\n	<div class="center">\n		<form [formGroup]="formGroup" (ngSubmit)="register()">\n			<ion-list>\n				<ion-item class="marginlists">\n					<ion-label stacked>Nombres</ion-label>\n					<ion-input type="text" required name="userregistronombre" formControlName="first_name"></ion-input>\n				</ion-item>\n				<ion-item no-lines *ngIf="formGroup.invalid">\n					<msg-error [control]="formGroup.controls.first_name" name="Nombres"></msg-error>\n				</ion-item>\n				<ion-item class="marginlists">\n					<ion-label stacked>Apellidos</ion-label>\n					<ion-input type="text" required name="userregistroapellido" formControlName="last_name">\n					</ion-input>\n				</ion-item>\n				<ion-item no-lines *ngIf="formGroup.invalid">\n					<msg-error [control]="formGroup.controls.last_name" name="Apellidos"></msg-error>\n				</ion-item>\n				<ion-item class="marginlists">\n					<ion-label stacked>Género</ion-label>\n					<ion-select okText="Guardar" cancelText="Cancelar" formControlName="gender" name="userregistrogenero" interface="popover">\n						<ion-option value="f">Femenino</ion-option>\n						<ion-option value="m">Masculino</ion-option>\n					</ion-select>\n				</ion-item>\n				<ion-item class="marginlists">\n					<ion-label stacked>Email</ion-label>\n					<ion-input type="email" required name="userregistroemail" formControlName="mail"></ion-input>\n				</ion-item>\n				<ion-item no-lines *ngIf="formGroup.invalid">\n					<msg-error [control]="formGroup.controls.mail" name="Email"></msg-error>\n				</ion-item>\n				<ion-item class="marginlists">\n					<ion-label stacked>Confirmar email</ion-label>\n					<ion-input type="email" required name="confirmacionmail" formControlName="mail_conf"></ion-input>\n				</ion-item>\n				<ion-item>\n					<ion-label stacked>Contraseña</ion-label>\n					<ion-input type="{{type}}" name="contrasena" formControlName="password">\n					</ion-input>\n					<button *ngIf="!showPass" class="btn_show" ion-button clear color="dark" type="button" required item-right (click)="showPassword()">\n						<ion-icon name="ios-eye-off-outline"></ion-icon>\n					</button>\n					<button *ngIf="showPass" class="btn_show" ion-button clear color="dark" type="button" item-right (click)="showPassword()">\n						<ion-icon name="ios-eye-outline"></ion-icon>\n					</button>\n				</ion-item>\n\n				<ion-item no-lines *ngIf="formGroup.invalid">\n					<msg-error [control]="formGroup.controls.password" name="Contraseña"></msg-error>\n				</ion-item>\n\n				<ion-item class="marginlists">\n					<ion-label stacked>Confirmar contraseña</ion-label>\n					<ion-input type="{{type2}}" name="confirmacontrasena" formControlName="password_conf">\n					</ion-input>\n					<button *ngIf="!showPass2" class="btn_show2" ion-button clear color="dark" type="button" required item-right\n					 (click)="showPassword2()">\n						<ion-icon name="ios-eye-off-outline"></ion-icon>\n					</button>\n					<button *ngIf="showPass2" class="btn_show2" ion-button clear color="dark" type="button" item-right (click)="showPassword2()">\n						<ion-icon name="ios-eye-outline"></ion-icon>\n					</button>\n				</ion-item>\n				<div >\n					<button class="buttonPayCash" ion-button small type="submit">Registrarse</button>\n				</div>\n			</ion-list>\n		</form>\n	</div>\n	<ion-list>\n		<ion-col col-2>\n			<ion-checkbox [(ngModel)]="ischecked"></ion-checkbox>\n		</ion-col>\n		<ion-col col-10><span (click)="politicas()"> Leí y acepto las políticas de uso y privacidad de la información</span></ion-col>\n	</ion-list>\n	<div style="margin-top: 6%" class="center">\n		<button class="buttonPayCash" (click)="cancel()" ion-button small>Cancelar</button>\n	</div>\n</ion-content>'/*ion-inline-end:"/Users/eyeline/Documents/eyepaycashappGitHub/src/pages/register/register.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */],
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavController */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* NavParams */],
             __WEBPACK_IMPORTED_MODULE_2__providers_api__["a" /* Api */],
             __WEBPACK_IMPORTED_MODULE_3__providers_auth_user_auth_user__["a" /* AuthUserProvider */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* LoadingController */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* ModalController */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* LoadingController */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* ModalController */],
             __WEBPACK_IMPORTED_MODULE_5__providers_modal_error_modal_error__["a" /* ModalErrorProvider */]])
     ], RegisterPage);
     return RegisterPage;

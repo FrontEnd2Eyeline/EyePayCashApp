@@ -10,7 +10,7 @@
   <ion-list>
     <ion-item *ngFor="let contacto of listaContactos">
       <ion-avatar item-start>
-        <img src="assets/imgs/contacto.png">
+        <img src="assets/imgs/contacto.png" (click)="Send()">
       </ion-avatar>
       <h2>{{contacto.displayName | uppercase }}</h2>
       <p>{{contacto.phoneNumbers[0].value}}</p>
