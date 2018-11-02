@@ -146,4 +146,17 @@ export class MapPage {
 			this.loading.dismiss()
 		}
 	}
+
+	goPage(page) {
+		if (page == 'profile')
+		  this.navCtrl.push("ProfilePage");
+		else if (page == 'history')
+		  this.navCtrl.push("HistoryPage");
+		else if(page=="maps")
+		  this.navCtrl.push("MapPage");
+		else if(page =="contact")
+		  this.navCtrl.push("ContactsPage");
+		else
+		  this.navCtrl.push("TransactionPage");
+	  }
 }

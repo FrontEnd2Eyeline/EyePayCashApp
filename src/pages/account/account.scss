@@ -1,5 +1,25 @@
 page-account {
 
+.styleLogo{
+    padding: 5%;
+    width: 37%;
+}
+
+.icoClose{
+    width: 15%;
+    padding: 5%;
+    position: absolute;
+    margin-left: 21em;
+}
+    
+    .BackgroundPpal{
+        background-image: url('../assets/newBackgrounds/7.png'); 
+        background-position: center top;
+        background-size: 100%; 
+        background-repeat: no-repeat;
+      }
+    
+
     .BackGR3 {
         background-image: url('../assets/icon/B3.png'); 
         background-position: center top;
