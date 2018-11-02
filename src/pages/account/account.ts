@@ -243,6 +243,7 @@ export class AccountPage {
       this.enviarServidor(data);
     })
   }
+  
   enviarServidor(data64){
     this.api.post('account/perfil',{pic:data64},this.userProvider).then( (data)=>{
       //  AQUI HAY QUE HACER QUE RECIBA LA DATA DEL THEN Y ACTUALIZE LA VARIABLE USER. A LA VARIABLE USER HAY QUE ANEXARLE
