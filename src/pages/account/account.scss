@@ -1,8 +1,38 @@
 page-account {
 
+    .text-input[disabled] {
+        opacity: 1.4;
+    }
+    
+    .center2 {
+        display: block;
+        text-align: center;
+        margin: auto;
+      }
+
+      .pStyle{
+          font-size: 10px;
+      }
 .styleLogo{
     padding: 5%;
-    width: 37%;
+    width: 35%;
+}
+
+.styleTextName{
+    text-align: center;
+    margin-top: -4em;
+    color: white;
+    font-size: 20px;
+    
+}
+.styleTextName2{
+    text-align: center;
+    color: white;
+    
+}
+
+.styleDivTitle{
+    height: 9.5em;
 }
 
 .icoClose{
@@ -27,18 +57,18 @@ page-account {
         background-size: 100%; 
         background-repeat: no-repeat;
       }
-    .toolbar-background-md {
-        border-color: transparent;
-        background: rgba(149,105,252,1);
-        background: -moz-linear-gradient(left, rgba(149,105,252,1) 0%, rgba(89,116,252,1) 100%);
-        background: -webkit-gradient(left top, right top, color-stop(0%, rgba(149,105,252,1)), color-stop(100%, rgba(89,116,252,1)));
-        background: -webkit-linear-gradient(left, rgba(149,105,252,1) 0%, rgba(89,116,252,1) 100%);
-        background: -o-linear-gradient(left, rgba(149,105,252,1) 0%, rgba(89,116,252,1) 100%);
-        background: -ms-linear-gradient(left, rgba(149,105,252,1) 0%, rgba(89,116,252,1) 100%);
-        background: linear-gradient(to right, rgba(149,105,252,1) 0%, rgba(89,116,252,1) 100%);
-        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#9569fc', endColorstr='#5974fc', GradientType=1 );
-        color: white;
-    }
+    // .toolbar-background-md {
+    //     border-color: transparent;
+    //     background: rgba(149,105,252,1);
+    //     background: -moz-linear-gradient(left, rgba(149,105,252,1) 0%, rgba(89,116,252,1) 100%);
+    //     background: -webkit-gradient(left top, right top, color-stop(0%, rgba(149,105,252,1)), color-stop(100%, rgba(89,116,252,1)));
+    //     background: -webkit-linear-gradient(left, rgba(149,105,252,1) 0%, rgba(89,116,252,1) 100%);
+    //     background: -o-linear-gradient(left, rgba(149,105,252,1) 0%, rgba(89,116,252,1) 100%);
+    //     background: -ms-linear-gradient(left, rgba(149,105,252,1) 0%, rgba(89,116,252,1) 100%);
+    //     background: linear-gradient(to right, rgba(149,105,252,1) 0%, rgba(89,116,252,1) 100%);
+    //     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#9569fc', endColorstr='#5974fc', GradientType=1 );
+    //     color: white;
+    // }
 
     .toolbar-title-md {
         padding: 0 12px;
@@ -63,10 +93,15 @@ page-account {
         background: transparent;
     }
 
+    // ion-input, ion-textarea {
+    //     border: 0.5px #9669fc solid !important;
+    //     border-radius: 12px !important;
+    // }
+
     ion-input, ion-textarea {
-        border: 0.5px #9669fc solid !important;
-        border-radius: 12px !important;
-      }
+        border: 0px transparent solid !important;
+        border-radius: 0px !important;
+    }
       
       .item-label-stacked .text-input-md, .item-label-floating .text-input-md {
         margin-left: 0;
