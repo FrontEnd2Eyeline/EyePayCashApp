@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { Subscription } from 'rxjs/Subscription';
 import { FingerprintAIO, FingerprintOptions } from '@ionic-native/fingerprint-aio';
-import { ModalController, Platform, NavController, App } from 'ionic-angular';
+import { ModalController, Platform, NavController, App, IonicApp } from 'ionic-angular';
 import { flatten } from '@angular/compiler';
 import { AuthUserProvider } from '../auth-user/auth-user';
 
@@ -74,18 +74,16 @@ export class TouchLoginProvider {
 				this.faio.show({
 					clientId: 'Identificar de huella',
 					clientSecret: 'password',   //Only necessary for Android
-					disableBackup: true,              //Only for Android(optional)
+					disableBackup: false,              //Only for Android(optional)
 					localizedFallbackTitle: 'Use Pin',      //Only for iOS
 					localizedReason: 'Please authenticate', //Only for iOS
 				})
 					.then((result: any) => {
 						this.login();
 						this.isLocked = false;
-					}).catch((error: any)=> 
-					this.onPauseSubscription = this.platform.pause.subscribe(() => {
-				this.splashScreen.show();
-			}));
-
+					}).catch((error: any)=> {
+						this.exitApp();
+					});
 			}).catch((error: any) => console.log(error));
 	}
 
@@ -93,6 +91,10 @@ export class TouchLoginProvider {
 		let nav = this.app.getActiveNav();
 		nav.setRoot('HomePage');
 		nav.popToRoot;
+	}
+
+	 exitApp(){
+		this.platform.exitApp();
 	}
 
 
