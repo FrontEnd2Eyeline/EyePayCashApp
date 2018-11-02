@@ -31,20 +31,24 @@
 <ion-footer>
   <ion-toolbar>
     <ion-row>
-      <ion-col class="center" col-3 (click)="goPage('transaction')">
+      <ion-col class="center" col-2 (click)="goPage('precios')">
+        <img width="25" height="25" src="assets/newIcons/11.png">
+        <p>Precios</p>
+      </ion-col>
+      <ion-col class="center" col-2 (click)="goPage('transaction')">
         <img width="25" height="25" src="assets/icon/1.png">
         <p>{{'TRANSACCION'|translate}}</p>
       </ion-col>
-      <ion-col class="center" col-3 (click)="goPage('history')">
+      <ion-col class="center" col-2 (click)="goPage('history')">
         <!-- <ion-badge item-end>{{count}}</ion-badge> -->
         <img width="25" height="25" src="assets/icon/2.png">
         <p>{{'HISTORIAL'|translate}}</p>
       </ion-col>
-      <ion-col class="center" col-3 (click)="goPage('maps')">
+      <ion-col class="center" col-2 (click)="goPage('maps')">
         <img width="25" height="25" src="assets/icon/3.png">
         <p>{{'MAPA'|translate}}</p>
       </ion-col>
-      <ion-col class="center" col-3 (click)="goPage('profile')">
+      <ion-col class="center" col-2 (click)="goPage('profile')">
         <img width="25" height="25" src="assets/icon/4.png">
         <p>{{'CUENTA'|translate}}</p>
       </ion-col>

@@ -1,6 +1,6 @@
 webpackJsonp([2],{
 
-/***/ 727:
+/***/ 731:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -8,9 +8,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RecoveryPasswordPageModule", function() { return RecoveryPasswordPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(21);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__recovery_password__ = __webpack_require__(750);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__recovery_password__ = __webpack_require__(756);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ngx_translate_core__ = __webpack_require__(94);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__components_components_module__ = __webpack_require__(734);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__components_components_module__ = __webpack_require__(738);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -44,14 +44,14 @@ var RecoveryPasswordPageModule = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 734:
+/***/ 738:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ComponentsModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__msg_error_msg_error__ = __webpack_require__(735);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_common__ = __webpack_require__(33);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__msg_error_msg_error__ = __webpack_require__(739);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_common__ = __webpack_require__(34);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -78,14 +78,14 @@ var ComponentsModule = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 735:
+/***/ 739:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MsgErrorComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_forms__ = __webpack_require__(22);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_validation_validation__ = __webpack_require__(379);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_validation_validation__ = __webpack_require__(380);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -135,7 +135,7 @@ var MsgErrorComponent = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 750:
+/***/ 756:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -256,7 +256,7 @@ var RecoveryPasswordPage = /** @class */ (function () {
     };
     RecoveryPasswordPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-            selector: 'page-recovery-password',template:/*ion-inline-start:"/Users/eyeline/Documents/eyepaycashappGitHub/src/pages/recovery-password/recovery-password.html"*/'<ion-content padding class="back vignette">\n	<div style="margin-top:12%" class="center">\n		<ion-img class="logo" src="assets/imgs/EPCLogo.png"></ion-img>\n	</div>\n\n	<div *ngIf="isvisible">\n		<ion-item>\n			<ion-label stacked>Ingrese número celular</ion-label>\n			<ion-input type="text" [(ngModel)]="data" name="userdata"></ion-input>\n		</ion-item>\n		<ion-item *ngIf="iscodigo2">\n			<ion-label stacked>Ingrese código de verificación</ion-label>\n			<ion-input type="text" [(ngModel)]="codigo" name="usercodigo"></ion-input>\n		</ion-item>\n		<ion-row class="divMargin">\n			<ion-col col-12 *ngIf="!iscodigo2">\n				<button ion-button (click)="sendMessage(\'phone\')" block class="buttonPayCash">Enviar mensaje</button>\n			</ion-col>\n			<ion-col col-12 *ngIf="iscodigo2">\n				<button ion-button (click)="confirmCode()" block class="buttonPayCash">Confirmar código</button>\n			</ion-col>\n		</ion-row>\n		<ion-row class="marginLft divMargin20">\n			<ion-col col-4>\n				<button ion-button (click)="cancelar()" class="buttonPayCash">Cancelar</button>\n			</ion-col>\n			<ion-col col-6 *ngIf="!iscodigo2">\n				<button ion-button (click)="changeVisible()" class="buttonPayCash">Recuperar por email</button>\n			</ion-col>\n		</ion-row>\n	</div>\n\n	<div *ngIf="!isvisible">\n			<div [formGroup]="formGroup">\n		<ion-item>\n			<ion-label stacked>Ingrese su email</ion-label>\n			<ion-input type="text"  name="dataname" required formControlName="data"></ion-input>		\n		</ion-item>\n		<ion-item no-lines *ngIf="formGroup.invalid">\n				<msg-error [control]="formGroup.controls.data"></msg-error>\n		</ion-item>\n	</div>\n		<ion-item *ngIf="iscodigo">\n			<ion-label stacked>Ingrese código de verificación</ion-label>\n			<ion-input type="text" [(ngModel)]="codigo" name="usercodigo"></ion-input>\n		</ion-item>\n		<ion-row class="divMargin">\n			<ion-col col-12 *ngIf="!iscodigo">\n				<button ion-button (click)="sendMessage(\'mail\')" block class="buttonPayCash">Enviar email</button>\n			</ion-col>\n			<ion-col col-12 *ngIf="iscodigo">\n				<button ion-button (click)="confirmCode()" block class="buttonPayCash">Confirmar código</button>\n			</ion-col>\n		</ion-row>\n		<ion-row class="marginLft divMargin">\n			<ion-col col-4>\n				<button ion-button (click)="cancelar()" class="buttonPayCash">Cancelar</button>\n			</ion-col>\n			<ion-col col-6>\n				<button ion-button (click)="changeVisible()" class="buttonPayCash">Recuperar por SMS</button>\n			</ion-col>\n		</ion-row>\n	</div>\n</ion-content>'/*ion-inline-end:"/Users/eyeline/Documents/eyepaycashappGitHub/src/pages/recovery-password/recovery-password.html"*/,
+            selector: 'page-recovery-password',template:/*ion-inline-start:"/Users/eyeline/Documents/GitHub/eyepaycashapp/src/pages/recovery-password/recovery-password.html"*/'<ion-content padding class="back vignette">\n	<div style="margin-top:12%" class="center">\n		<ion-img class="logo" src="assets/imgs/EPCLogo.png"></ion-img>\n	</div>\n\n	<div *ngIf="isvisible">\n		<ion-item>\n			<ion-label stacked>Ingrese número celular</ion-label>\n			<ion-input type="text" [(ngModel)]="data" name="userdata"></ion-input>\n		</ion-item>\n		<ion-item *ngIf="iscodigo2">\n			<ion-label stacked>Ingrese código de verificación</ion-label>\n			<ion-input type="text" [(ngModel)]="codigo" name="usercodigo"></ion-input>\n		</ion-item>\n		<ion-row class="divMargin">\n			<ion-col col-12 *ngIf="!iscodigo2">\n				<button ion-button (click)="sendMessage(\'phone\')" block class="buttonPayCash">Enviar mensaje</button>\n			</ion-col>\n			<ion-col col-12 *ngIf="iscodigo2">\n				<button ion-button (click)="confirmCode()" block class="buttonPayCash">Confirmar código</button>\n			</ion-col>\n		</ion-row>\n		<ion-row class="marginLft divMargin20">\n			<ion-col col-4>\n				<button ion-button (click)="cancelar()" class="buttonPayCash">Cancelar</button>\n			</ion-col>\n			<ion-col col-6 *ngIf="!iscodigo2">\n				<button ion-button (click)="changeVisible()" class="buttonPayCash">Recuperar por email</button>\n			</ion-col>\n		</ion-row>\n	</div>\n\n	<div *ngIf="!isvisible">\n			<div [formGroup]="formGroup">\n		<ion-item>\n			<ion-label stacked>Ingrese su email</ion-label>\n			<ion-input type="text"  name="dataname" required formControlName="data"></ion-input>		\n		</ion-item>\n		<ion-item no-lines *ngIf="formGroup.invalid">\n				<msg-error [control]="formGroup.controls.data"></msg-error>\n		</ion-item>\n	</div>\n		<ion-item *ngIf="iscodigo">\n			<ion-label stacked>Ingrese código de verificación</ion-label>\n			<ion-input type="text" [(ngModel)]="codigo" name="usercodigo"></ion-input>\n		</ion-item>\n		<ion-row class="divMargin">\n			<ion-col col-12 *ngIf="!iscodigo">\n				<button ion-button (click)="sendMessage(\'mail\')" block class="buttonPayCash">Enviar email</button>\n			</ion-col>\n			<ion-col col-12 *ngIf="iscodigo">\n				<button ion-button (click)="confirmCode()" block class="buttonPayCash">Confirmar código</button>\n			</ion-col>\n		</ion-row>\n		<ion-row class="marginLft divMargin">\n			<ion-col col-4>\n				<button ion-button (click)="cancelar()" class="buttonPayCash">Cancelar</button>\n			</ion-col>\n			<ion-col col-6>\n				<button ion-button (click)="changeVisible()" class="buttonPayCash">Recuperar por SMS</button>\n			</ion-col>\n		</ion-row>\n	</div>\n</ion-content>'/*ion-inline-end:"/Users/eyeline/Documents/GitHub/eyepaycashapp/src/pages/recovery-password/recovery-password.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavController */],
             __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* NavParams */],

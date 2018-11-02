@@ -1,5 +1,5 @@
 <ion-header>
-  <div class="BackgroundPpal">
+  <div class="BackgroundPpal styleDivTitle">
     <div style="background: transparent">
         <img class="icoClose" icon-end src="assets/newIcons/17.png">
     </div>
@@ -8,20 +8,82 @@
         <img class="styleLogo " src="assets/newIcons/24.png" (click)="foto()">
       </ion-col>
     </ion-row>
-   
+    <div class="center">
+      <h6 class="styleTextName">{{usuario.first_name}} {{usuario.last_name}}</h6>
+    </div>
   </div>
 </ion-header>
-<ion-content padding class="BackGR3">
+<ion-content>
+  <ion-list>
+    <ion-list>
+      <ion-item>
+        <ion-label text-wrap color="primary" fixed>Email</ion-label>
+        <ion-input disabled text-right placeholder="{{usuario.mail}}"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label text-wrap color="primary" fixed>Teléfono</ion-label>
+        <ion-input disabled text-right placeholder="{{usuario.phone}}"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label text-wrap color="primary" fixed>Sexo</ion-label>
+        <ion-input disabled *ngIf="usuario.gender=='m'" text-right placeholder="Masculino"></ion-input>
+        <ion-input disabled *ngIf="usuario.gender=='f'" text-right placeholder="Femenino"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label text-wrap color="primary" fixed>País</ion-label>
+        <ion-input disabled text-right placeholder="{{country.name}}"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label text-wrap color="primary" fixed>Indicativo del país</ion-label>
+        <ion-input disabled text-right placeholder=" {{country.phone_code}}"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label text-wrap color="primary" fixed>Código del país</ion-label>
+        <ion-input disabled text-right placeholder=" {{country.country_code}}"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label text-wrap color="primary" fixed>Moneda del país</ion-label>
+        <ion-input disabled text-right placeholder=" {{country.currency}}"></ion-input>
+      </ion-item>
+    </ion-list>
+  </ion-list>
+  <div>
+      <h1 style="color: red; text-align: center; font-size: 14px">Eliminar cuenta</h1>
+  </div>
+</ion-content>
+<ion-footer>
+    <ion-toolbar>
+      <ion-row>
+        <ion-col class="center2" col-3 (click)="goPage('transaction')">
+          <img width="25" height="25" src="assets/icon/1.png">
+          <p class="pStyle">{{'TRANSACCION'|translate}}</p>
+        </ion-col>
+        <ion-col class="center2" col-3 (click)="goPage('history')">
+          <!-- <ion-badge item-end>{{count}}</ion-badge> -->
+          <img width="25" height="25" src="assets/icon/2.png">
+          <p class="pStyle">{{'HISTORIAL'|translate}}</p>
+        </ion-col>
+        <ion-col class="center2" col-3 (click)="goPage('maps')">
+          <img width="25" height="25" src="assets/icon/3.png">
+          <p class="pStyle">{{'MAPA'|translate}}</p>
+        </ion-col>
+        <ion-col class="center2" col-3 (click)="goPage('profile')">
+          <img width="25" height="25" src="assets/icon/4.png">
+          <p class="pStyle">{{'CUENTA'|translate}}</p>
+        </ion-col>
+      </ion-row>
+    </ion-toolbar>
+  </ion-footer>
+<!-- <ion-content padding class="BackGR3">
   <ion-row>
     <ion-col col-12>
       <button ion-button (click)="cerrarSesion()" block class="buttonPayCash">Cerrar sesión</button>
     </ion-col>
-
   </ion-row>
   <ion-card style="background: transparent">
     <ion-card-header>
       <ion-img style="background: transparent" width="15" height="15" src="assets/icon/Account.png"></ion-img>
-      <!-- <ion-icon name="person" item-start></ion-icon> -->
       Información personal
     </ion-card-header>
     <ion-card-content>
@@ -47,7 +109,6 @@
       </ion-list>
     </ion-card-content>
   </ion-card>
-
   <ion-card>
     <ion-card-header>
       <ion-img style="background: transparent" width="15" height="15" src="assets/icon/key.png"></ion-img>
@@ -62,8 +123,6 @@
         <ion-label stacked>Teléfono</ion-label>
         {{usuario.phone}}
       </ion-row>
-
-
       <ion-row *ngIf="view_Verify_Mail">
         <ion-col col-12>
           <ion-input type="text" [(ngModel)]="code_Verify_Mail"></ion-input>
@@ -73,8 +132,6 @@
           <button ion-button block (click)="cancelValidation()">Cancelar</button>
         </ion-col>
       </ion-row>
-
-
       <ion-row *ngIf="view_Verify_Phone">
         <ion-col col-12>
           <ion-input type="text" [(ngModel)]="code_Verify_Phone"></ion-input>
@@ -84,21 +141,16 @@
           <button ion-button block (click)="cancelValidation()">Cancelar</button>
         </ion-col>
       </ion-row>
-
-
       <ion-row>
         <button ion-button block class="buttonPayCash" *ngIf=" (view_Btn_phone) && (view_Verify_Phone == false)"
           (click)="reenviarConfirm('phone')">Reenviar confirmación móvil
         </button>
-
         <button ion-button block class="buttonPayCash" *ngIf=" (view_Btn_mail) && view_Verify_Mail == false" (click)="reenviarConfirm('mail')">Reenviar
           confirmación email
         </button>
       </ion-row>
-
     </ion-card-content>
   </ion-card>
-
   <ion-card>
     <ion-card-header>
       <ion-img style="background: transparent" width="15" height="15" src="assets/icon/Ubicacion.png"></ion-img>
@@ -123,6 +175,4 @@
       </ion-row>
     </ion-card-content>
   </ion-card>
-
-
-</ion-content>
+</ion-content> -->
