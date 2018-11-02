@@ -1,4 +1,47 @@
 page-profile {
+
+	.BackGRa {
+		background-image: url('../assets/newBackgrounds/6.png'); 
+		background-position: center top;
+		background-size: 100%; 
+		background-repeat: no-repeat;
+		}
+
+		.bacTransp{
+			background: transparent;
+		}
+		
+		.lineRight{
+			border-color: #848181;
+			border-style: solid;
+			border-width: 0px 1px 0px 0px;
+		}
+
+		.lineRight2{
+			border-color: #848181;
+			border-style: solid;
+			border-width: 0px 0px 1px 0px;
+		}
+.linerig{
+	border-color: #848181;
+			border-style: solid;
+			border-width: 0px 1px 1px 0px;
+}
+		.tamaIcos{
+			width: 50%;
+		}
+		.colWhite{
+			color: white
+		}
+
+		.mrg36Top{
+			margin-top: 36% !important;
+		}
+
+		.clsT{
+			width: 70%;
+		}
+
 	.content-md {
 		background-color: #f5f5f5;
 	  }

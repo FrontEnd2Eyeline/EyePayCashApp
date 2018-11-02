@@ -1,3 +1,49 @@
 page-history-resume {
 
+
+    .styleIcospeq{
+        background: transparent;
+        width: 15;
+        height: 15;
+    }
+    .BackGR3 {
+        background-image: url('../assets/icon/B3.png'); 
+        background-position: center top;
+        background-size: 100%; 
+        background-repeat: no-repeat;
+    }
+
+    .toolbar-background-md {
+        border-color: transparent;
+        background: rgba(149,105,252,1);
+      background: -moz-linear-gradient(left, rgba(149,105,252,1) 0%, rgba(89,116,252,1) 100%);
+      background: -webkit-gradient(left top, right top, color-stop(0%, rgba(149,105,252,1)), color-stop(100%, rgba(89,116,252,1)));
+      background: -webkit-linear-gradient(left, rgba(149,105,252,1) 0%, rgba(89,116,252,1) 100%);
+      background: -o-linear-gradient(left, rgba(149,105,252,1) 0%, rgba(89,116,252,1) 100%);
+      background: -ms-linear-gradient(left, rgba(149,105,252,1) 0%, rgba(89,116,252,1) 100%);
+      background: linear-gradient(to right, rgba(149,105,252,1) 0%, rgba(89,116,252,1) 100%);
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#9569fc', endColorstr='#5974fc', GradientType=1 );
+      color: white;
+    }
+
+    .toolbar-title-md {
+        padding: 0 12px;
+        font-size: 2rem;
+        font-weight: 500;
+        color: white;
+    }
+
+    .item-md.item-block .item-inner {
+        padding-right: 8px;
+        border-bottom: 0px solid #dedede !important;
+    }
+
+    .bar-button-default-md, .bar-button-clear-md-default, .bar-button-md-default {
+    color: white;
+}
+
+.backCardsTransp{
+    background: #ffffffe0;
+}
+
 }

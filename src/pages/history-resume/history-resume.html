@@ -3,34 +3,109 @@
     <ion-title>Resumen de la transacción</ion-title>
   </ion-navbar>
 </ion-header>
-<ion-content padding>
+<ion-content class="BackGR3" padding>
 
-  <ion-card>
+  <ion-card class="backCardsTransp">
     <ion-card-header>
-      <ion-icon name="list"></ion-icon>
+      <ion-img style="background: transparent" width="15" height="15" src="assets/newIcons/30.png"></ion-img>
       <label> Estado de la transacción</label>
     </ion-card-header>
     <ion-card-content>
-      <ul>
-        <li>Transacción solicitada
-          <ion-icon name="checkmark-circle" end></ion-icon>
-        </li>
-        <li>1- Realizar pago (Dirección o Código QR)
-          <ion-icon name="close-circle" end *ngIf="historyInfo?.process_status==0"></ion-icon>
-          <ion-icon name="checkmark-circle" end *ngIf="historyInfo?.process_status!=0"></ion-icon>
-        </li>
-        <li>2- Realizar el retiro del efectivo
-          <ion-icon name="close-circle" end *ngIf="historyInfo?.process_status==1 || historyInfo?.process_status==0"></ion-icon>
-          <ion-icon name="checkmark-circle" end *ngIf="historyInfo?.process_status==2"></ion-icon>
-        </li>
-      </ul>
+      <div>
+        <ion-row>
+          <ion-col col-1>
+            <ion-img style="background: transparent" width="15" height="15" src="assets/newIcons/34.png"></ion-img>
+          </ion-col>
+          <ion-col col-11>
+            <h6>
+              Transacción solicitada
+            </h6>
+          </ion-col>
+        </ion-row>
+
+      </div>
+      <div>
+        <ion-row>
+          <ion-col col-1>
+            <ion-img *ngIf="historyInfo?.process_status==0" style="background: transparent" width="15" height="15" src="assets/newIcons/33.png"></ion-img>
+            <ion-img *ngIf="historyInfo?.process_status!=0" style="background: transparent" width="15" height="15" src="assets/newIcons/34.png"></ion-img>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col col-11>
+            <h6>
+              1- Realizar pago (Dirección o Código QR)
+            </h6>
+          </ion-col>
+        </ion-row>
+
+      </div>
+      <div>
+        <ion-row>
+          <ion-col col-1>
+            <ion-img *ngIf="historyInfo?.process_status==1 || historyInfo?.process_status==0" class="styleIcospeq" src="assets/newIcons/33.png"></ion-img>
+            <ion-img *ngIf="historyInfo?.process_status==2" class="styleIcospeq" src="assets/newIcons/34.png"></ion-img>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col col-11>
+            <h6>
+              2- Realizar el retiro del efectivo
+            </h6>
+          </ion-col>
+        </ion-row>
+
+      </div>
+
       <button class="buttonPayCash" ion-button outline block (click)="goMaps()"> Ver mapa</button>
     </ion-card-content>
   </ion-card>
 
-  <ion-card *ngIf="historyInfo?.process_status==0">
+  <ion-card class="backCardsTransp">
     <ion-card-header>
-      <ion-icon name="cash"></ion-icon>
+      <ion-img style="background: transparent" width="15" height="15" src="assets/newIcons/31.png"></ion-img>
+      <label stacked> Información transacción:</label>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list>
+        <ion-row>
+          <ion-col col-6 text-left>Nº Celular destino</ion-col>
+          <ion-col col-6 text-right>
+            {{historyInfo?.phone_user_des}}
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col col-6 text-left>Criptomoneda</ion-col>
+          <ion-col col-6 text-right> {{coin.full_name}}</ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col col-6 text-left>Fecha transacción</ion-col>
+          <ion-col col-6 text-right>{{dateLocal.getDateLocale(historyInfo?.date_request)| date:'dd/MM/yyyy h:mma' }}</ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col col-6 text-left>Moneda local: </ion-col>
+          <ion-col col-6 text-right> {{historyInfo.amount_local | currency}} {{country.currency}}</ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col col-6 text-left>TRM: </ion-col>
+          <ion-col col-6 text-right> {{comision.money_local_to_usd| currency}} {{country.currency}}</ion-col>
+        </ion-row>
+
+        <ion-row>
+          <ion-col col-6 text-left>Costo {{currency}}: </ion-col>
+          <ion-col col-6 text-right> {{historyInfo.amount_usd|currency}} USD</ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col col-6 text-left>Costo {{coin.full_name}}: </ion-col>
+          <ion-col col-6 text-right> {{historyInfo.amount_btc}} {{coin.short_name}}</ion-col>
+        </ion-row>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card *ngIf="historyInfo?.process_status==0" class="backCardsTransp">
+    <ion-card-header>
+      <ion-img style="background: transparent" width="15" height="15" src="assets/newIcons/32.png"></ion-img>
       <label stacked> Información de pago:</label>
     </ion-card-header>
     <ion-card-content>
@@ -51,48 +126,6 @@
           <img src="{{coinHash.qr_url}}">
         </ion-col>
       </ion-row>
-    </ion-card-content>
-  </ion-card>
-
-  <ion-card>
-    <ion-card-header>
-      <ion-icon name="card"></ion-icon>
-      <label stacked> Información transacción:</label>
-    </ion-card-header>
-    <ion-card-content>
-      <ion-list>
-        <ion-row>
-          <ion-col col-6 text-left>Nº Celular destino</ion-col>
-          <ion-col col-6 text-right>
-            {{historyInfo?.phone_user_des}}
-          </ion-col>
-        </ion-row>
-        <ion-row>
-          <ion-col col-6 text-left>Criptomoneda</ion-col>
-          <ion-col col-6 text-right> {{coin.full_name}}</ion-col>
-        </ion-row>
-        <ion-row>
-          <ion-col col-6 text-left>Fecha transacción</ion-col>
-          <ion-col col-6 text-right>{{dateLocal.getDateLocale(historyInfo?.date_request)| date:'dd/MM/yyyy h:mma' }}</ion-col>
-        </ion-row>
-        <ion-row>
-        <ion-col col-6 text-left>Moneda local: </ion-col>
-        <ion-col col-6 text-right> {{historyInfo.amount_local | currency}} {{country.currency}}</ion-col>
-      </ion-row>
-        <ion-row>
-          <ion-col col-6 text-left>TRM: </ion-col>
-          <ion-col col-6 text-right> {{comision.money_local_to_usd| currency}} {{country.currency}}</ion-col>
-        </ion-row>
-
-        <ion-row>
-          <ion-col col-6 text-left>Costo {{currency}}: </ion-col>
-          <ion-col col-6 text-right> {{historyInfo.amount_usd|currency}} USD</ion-col>
-        </ion-row>
-        <ion-row>
-          <ion-col col-6 text-left>Costo {{coin.full_name}}: </ion-col>
-          <ion-col col-6 text-right> {{historyInfo.amount_btc}} {{coin.short_name}}</ion-col>
-        </ion-row>
-      </ion-list>
     </ion-card-content>
   </ion-card>
 

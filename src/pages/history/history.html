@@ -15,13 +15,13 @@
         <div padding>
           <ion-segment class="backSegment marg4Top center " [(ngModel)]="filtro.status" (ionChange)="getInfo()">
             <ion-segment-button value="0">
-              Todas
+              Solicitadas
             </ion-segment-button>
             <ion-segment-button value="1">
-              Enviadas
+              Pagadas
             </ion-segment-button>
             <ion-segment-button value="2">
-              Recibidas
+              Retiradas
             </ion-segment-button>
           </ion-segment>
         </div>
@@ -29,16 +29,19 @@
     </ion-row>
   </div>
 </ion-header>
-  <ion-content >
+<ion-content>
   <div padding [ngSwitch]="filtro.status">
     <ion-list *ngSwitchCase="'0'">
-      <div class="centerIcoText" *ngIf="( (transactions!= null)  && (transactions.length)<=0)">
-        <img class="imgLogoWidth" src="assets/newIcons/27.png">
+      <div *ngIf="( (transactions!= null)  && (transactions.length)<=0)">
+        <div class="centerIcoText">
+          <img class="imgLogoWidth" src="assets/newIcons/27.png">
+        </div>
+        <div class="centerIcoText">
+          <h1>Bienvenido a EyePayCash</h1>
+          <p>Para recibir fondos desliza hacia la derecha y para enviarlos desliza hacia la izquierda.</p>
+        </div>
       </div>
-      <div class="centerIcoText">
-        <h1>Bienvenido a EyePayCash</h1>
-        <p>Para recibir fondos desliza hacia la derecha y para enviarlos desliza hacia la izquierda.</p>
-      </div>
+
       <ion-card *ngFor="let transaction of transactions" (click)="goDetalle(transaction)" class="center bground">
         <ion-card-content>
           <ion-row>
@@ -46,29 +49,27 @@
               <h6>{{transaction.country.name}}</h6>
             </ion-col>
             <ion-col col-6>
-              {{getDateLocale(transaction.date_request) |date:'MM/dd/yyyy'}}
-              <!--transaction.date_request |date:'MM/dd/yyyy h:mma'}}-->
+              <h6>{{getDateLocale(transaction.date_request) |date:'MM/dd/yyyy'}}</h6>
             </ion-col>
-            <ion-col col-4>
-              {{transaction.coin.full_name}}
+            <ion-col col-6>
+              <h6>{{transaction.coin.full_name}}</h6>
             </ion-col>
-            <ion-col col-5>
-              {{transaction.amount_local | currency:transaction.country.currency+" " : 2}}
-            </ion-col>
-            <ion-col col-3>
-              <ion-icon name="add"></ion-icon>
+            <ion-col col-6>
+              <h6>{{transaction.amount_local | currency:transaction.country.currency+" " : 2}}</h6>
             </ion-col>
           </ion-row>
         </ion-card-content>
       </ion-card>
     </ion-list>
     <ion-list *ngSwitchCase="'1'">
-      <div class="centerIcoText" *ngIf="( (transactions!= null)  && (transactions.length)<=0)">
-        <img class="imgLogoWidthPen" src="assets/newIcons/26.png">
-      </div>
-      <div class="centerIcoText">
-        <h1>Auuchh !</h1>
-        <p>No tiene transacciones enviadas aún.</p>
+      <div *ngIf="( (transactions!= null)  && (transactions.length)<=0)">
+        <div class="centerIcoText" *ngIf="( (transactions!= null)  && (transactions.length)<=0)">
+          <img class="imgLogoWidthPen" src="assets/newIcons/26.png">
+        </div>
+        <div class="centerIcoText">
+          <h1>Auuchh !</h1>
+          <p>No tiene transacciones enviadas aún.</p>
+        </div>
       </div>
       <ion-card *ngFor="let transaction of transactions" (click)="goDetalle(transaction)" class="center bground">
         <ion-card-content>
@@ -77,29 +78,27 @@
               <h6>{{transaction.country.name}}</h6>
             </ion-col>
             <ion-col col-6>
-              {{getDateLocale(transaction.date_request) |date:'MM/dd/yyyy'}}
-              <!--transaction.date_request |date:'MM/dd/yyyy h:mma'}}-->
+              <h6>{{getDateLocale(transaction.date_request) |date:'MM/dd/yyyy'}}</h6>
             </ion-col>
-            <ion-col col-4>
-              {{transaction.coin.full_name}}
+            <ion-col col-6>
+              <h6>{{transaction.coin.full_name}}</h6>
             </ion-col>
-            <ion-col col-5>
-              {{transaction.amount_local | currency:transaction.country.currency+" " : 2}}
-            </ion-col>
-            <ion-col col-3>
-              <ion-icon name="add"></ion-icon>
+            <ion-col col-6>
+              <h6>{{transaction.amount_local | currency:transaction.country.currency+" " : 2}}</h6>
             </ion-col>
           </ion-row>
         </ion-card-content>
       </ion-card>
     </ion-list>
     <ion-list *ngSwitchCase="'2'">
-      <div class="centerIcoText" *ngIf="( (transactions!= null)  && (transactions.length)<=0)">
-        <img class="imgLogoWidth" src="assets/newIcons/25.png">
-      </div>
-      <div class="centerIcoText" *ngIf="( (transactions!= null)  && (transactions.length)<=0)">
-        <h1>Auuchh !</h1>
-        <p>No tiene transacciones recibidas aún.</p>
+      <div *ngIf="( (transactions!= null)  && (transactions.length)<=0)">
+        <div class="centerIcoText">
+          <img class="imgLogoWidth" src="assets/newIcons/25.png">
+        </div>
+        <div class="centerIcoText">
+          <h1>Auuchh !</h1>
+          <p>No tiene transacciones recibidas aún.</p>
+        </div>
       </div>
       <ion-card *ngFor="let transaction of transactions" (click)="goDetalle(transaction)" class="center bground">
         <ion-card-content>
@@ -108,24 +107,17 @@
               <h6>{{transaction.country.name}}</h6>
             </ion-col>
             <ion-col col-6>
-              {{getDateLocale(transaction.date_request) |date:'MM/dd/yyyy'}}
-              <!--transaction.date_request |date:'MM/dd/yyyy h:mma'}}-->
+              <h6>{{getDateLocale(transaction.date_request) |date:'MM/dd/yyyy'}}</h6>
             </ion-col>
-            <ion-col col-4>
-              {{transaction.coin.full_name}}
+            <ion-col col-6>
+              <h6>{{transaction.coin.full_name}}</h6>
             </ion-col>
-            <ion-col col-5>
-              {{transaction.amount_local | currency:transaction.country.currency+" " : 2}}
-            </ion-col>
-            <ion-col col-3>
-              <ion-icon name="add"></ion-icon>
+            <ion-col col-6>
+              <h6>{{transaction.amount_local | currency:transaction.country.currency+" " : 2}}</h6>
             </ion-col>
           </ion-row>
         </ion-card-content>
       </ion-card>
     </ion-list>
-
-
   </div>
 </ion-content>
-

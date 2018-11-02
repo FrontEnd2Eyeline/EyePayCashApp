@@ -1,14 +1,11 @@
-<ion-content style="background: transparent">
-	<div class="gradient" style="
-	 color: white;
-    border-radius: 20px;
-    margin-top: 24%;
-    min-height: 180px;">
-    <img src="assets/imgs/error.png" style="max-width: 100px">
-    <p style="margin-top: 5%">{{obj.message}}</p>
+<ion-content class="BackGRa">
+  <div>
+    <div class="gradient">
+      <img class="mrg10Top" src="assets/imgs/error.png" >
+      <p class="mrg5Top">{{obj.message}}</p>
+    </div>
+    <div class="footer-button">
+      <button ion-button (click)="closeModal()" class="buttonPayCash" style="color: white">Aceptar</button>
+    </div>
   </div>
-		<div class="footer-button">
-				<button ion-button (click)="closeModal()" class="buttonPayCash" style="color: white">Aceptar</button>
-		</div>
-	
 </ion-content>
