@@ -73,7 +73,7 @@
                 <button class="buttonPayCash" (click)="verifyCodeMail()" ion-button block>Verificar código</button>
               </ion-col>
             </ion-row>
-            <button ion-button block class="buttonPayCash" (click)="changeMail()" *ngIf="codigoSend.mail_code==null">
+            <button ion-button block class="buttonPayCash martopBtns" (click)="changeMail()" *ngIf="codigoSend.mail_code==null">
               {{'ACTUALIZAR_EMAIL'|translate}}
             </button>
           </ion-list>
