@@ -29884,6 +29884,12 @@ page-language .item-ios .item-button, page-language .item-md .item-button {
   font-size: 1.3rem;
 }
 
+page-login .item-md.item-input.ng-valid.item-input-has-value:not(.input-has-focus):not(.item-input-has-focus) .item-inner, page-login .item-md.item-input.ng-valid.input-has-value:not(.input-has-focus):not(.item-input-has-focus) .item-inner {
+  border-bottom-color: transparent;
+  -webkit-box-shadow: inset 0 -1px 0 0 transparent;
+  box-shadow: inset 0 -1px 0 0 transparent;
+}
+
 page-login .logo {
   width: 100%;
   display: unset;
