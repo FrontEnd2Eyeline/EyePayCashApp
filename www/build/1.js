@@ -5,13 +5,14 @@ webpackJsonp([1],{
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RegisterPageModule", function() { return RegisterPageModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SecurityPageModule", function() { return SecurityPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(21);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__register__ = __webpack_require__(757);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__security__ = __webpack_require__(760);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_brmasker_ionic_3__ = __webpack_require__(381);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__components_components_module__ = __webpack_require__(738);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ngx_translate_core__ = __webpack_require__(94);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ngx_translate_core__ = __webpack_require__(94);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__components_components_module__ = __webpack_require__(738);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__angular_forms__ = __webpack_require__(22);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -24,26 +25,29 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var RegisterPageModule = /** @class */ (function () {
-    function RegisterPageModule() {
+
+var SecurityPageModule = /** @class */ (function () {
+    function SecurityPageModule() {
     }
-    RegisterPageModule = __decorate([
+    SecurityPageModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["J" /* NgModule */])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_2__register__["a" /* RegisterPage */],
+                __WEBPACK_IMPORTED_MODULE_2__security__["a" /* SecurityPage */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__register__["a" /* RegisterPage */]),
-                __WEBPACK_IMPORTED_MODULE_5__ngx_translate_core__["b" /* TranslateModule */],
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__security__["a" /* SecurityPage */]),
+                __WEBPACK_IMPORTED_MODULE_4__ngx_translate_core__["b" /* TranslateModule */],
                 __WEBPACK_IMPORTED_MODULE_3_brmasker_ionic_3__["a" /* BrMaskerModule */],
-                __WEBPACK_IMPORTED_MODULE_4__components_components_module__["a" /* ComponentsModule */],
+                __WEBPACK_IMPORTED_MODULE_5__components_components_module__["a" /* ComponentsModule */],
+                __WEBPACK_IMPORTED_MODULE_6__angular_forms__["d" /* FormsModule */],
+                __WEBPACK_IMPORTED_MODULE_6__angular_forms__["g" /* ReactiveFormsModule */]
             ],
         })
-    ], RegisterPageModule);
-    return RegisterPageModule;
+    ], SecurityPageModule);
+    return SecurityPageModule;
 }());
 
-//# sourceMappingURL=register.module.js.map
+//# sourceMappingURL=security.module.js.map
 
 /***/ }),
 
@@ -138,17 +142,18 @@ var MsgErrorComponent = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 757:
+/***/ 760:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return RegisterPage; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SecurityPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(21);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_api__ = __webpack_require__(48);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_auth_user_auth_user__ = __webpack_require__(67);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_forms__ = __webpack_require__(22);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_modal_error_modal_error__ = __webpack_require__(68);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_modal_error_modal_error__ = __webpack_require__(68);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_ionic_angular_util_util__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__angular_forms__ = __webpack_require__(22);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -164,86 +169,120 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
-var RegisterPage = /** @class */ (function () {
-    function RegisterPage(navCtrl, navParams, api, userProvider, loadingCtrl, modalCtrl, errorProvider) {
+
+/**
+ * Generated class for the SecurityPage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
+var SecurityPage = /** @class */ (function () {
+    function SecurityPage(navCtrl, navParams, modal, loadingCtrl, api, userProvider, errorProvider) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
+        this.modal = modal;
+        this.loadingCtrl = loadingCtrl;
         this.api = api;
         this.userProvider = userProvider;
-        this.loadingCtrl = loadingCtrl;
-        this.modalCtrl = modalCtrl;
         this.errorProvider = errorProvider;
-        this.responseParams = null;
-        this.registerParams = null;
-        this.user_register = {
-            //datos obtenidos por el params
-            phone: null,
-            country_id: null,
-            user_verify_id: null,
-            confirm_verify: null,
+        this.usuario = null;
+        this.infoPhone = {
+            flag: null,
+            type: null,
+            value: null,
+            country_code: null
         };
+        this.valueMail = {
+            value: null,
+            type: null,
+        };
+        this.response_verify = {
+            id: null,
+            is_mail_verify: null,
+            mail_code: null,
+            phone_code: null,
+            country_id: null,
+        };
+        this.codigoSend = {
+            phone_code: null,
+            mail_code: null,
+        };
+        this.codeVerify = null;
+        this.codeVerifyMail = null;
         this.type = 'password';
         this.showPass = false;
         this.type2 = 'password';
         this.showPass2 = false;
-        this.imagen = 'assets/backgrounds/Background3.png';
-        this.ischecked = this.userProvider.check_terminos;
-        this.formGroup = new __WEBPACK_IMPORTED_MODULE_4__angular_forms__["c" /* FormGroup */]({
-            first_name: new __WEBPACK_IMPORTED_MODULE_4__angular_forms__["b" /* FormControl */]('', [
-                __WEBPACK_IMPORTED_MODULE_4__angular_forms__["h" /* Validators */].required,
-                __WEBPACK_IMPORTED_MODULE_4__angular_forms__["h" /* Validators */].minLength(3),
-                __WEBPACK_IMPORTED_MODULE_4__angular_forms__["h" /* Validators */].maxLength(20)
+        this.isphone = true;
+        this.ismail = false;
+        this.password = {
+            old_password: null,
+            new_password: null,
+            new_password_conf: null,
+        };
+        this.formGroup = new __WEBPACK_IMPORTED_MODULE_6__angular_forms__["c" /* FormGroup */]({
+            value: new __WEBPACK_IMPORTED_MODULE_6__angular_forms__["b" /* FormControl */]('', [
+                __WEBPACK_IMPORTED_MODULE_6__angular_forms__["h" /* Validators */].required,
+                __WEBPACK_IMPORTED_MODULE_6__angular_forms__["h" /* Validators */].email,
             ]),
-            last_name: new __WEBPACK_IMPORTED_MODULE_4__angular_forms__["b" /* FormControl */]('', [
-                __WEBPACK_IMPORTED_MODULE_4__angular_forms__["h" /* Validators */].required,
-                __WEBPACK_IMPORTED_MODULE_4__angular_forms__["h" /* Validators */].minLength(5),
-                __WEBPACK_IMPORTED_MODULE_4__angular_forms__["h" /* Validators */].maxLength(20)
-            ]),
-            gender: new __WEBPACK_IMPORTED_MODULE_4__angular_forms__["b" /* FormControl */]('', [
-                __WEBPACK_IMPORTED_MODULE_4__angular_forms__["h" /* Validators */].required
-            ]),
-            mail: new __WEBPACK_IMPORTED_MODULE_4__angular_forms__["b" /* FormControl */]('', [
-                __WEBPACK_IMPORTED_MODULE_4__angular_forms__["h" /* Validators */].required,
-                __WEBPACK_IMPORTED_MODULE_4__angular_forms__["h" /* Validators */].email,
-            ]),
-            password: new __WEBPACK_IMPORTED_MODULE_4__angular_forms__["b" /* FormControl */]('', [
-                __WEBPACK_IMPORTED_MODULE_4__angular_forms__["h" /* Validators */].required,
-                __WEBPACK_IMPORTED_MODULE_4__angular_forms__["h" /* Validators */].minLength(6),
-                __WEBPACK_IMPORTED_MODULE_4__angular_forms__["h" /* Validators */].pattern("^(?=.*[A-Za-z])(?=.*\\d)[A-Za-z\\d]{8,}$")
-                // Validators.pattern("^(?=.{8,32}$)(?=.[A-Z])(?=.[a-z])(?=.[0-9]).")
-            ]),
-            password_conf: new __WEBPACK_IMPORTED_MODULE_4__angular_forms__["b" /* FormControl */]('', [
-                __WEBPACK_IMPORTED_MODULE_4__angular_forms__["h" /* Validators */].required,
-                __WEBPACK_IMPORTED_MODULE_4__angular_forms__["h" /* Validators */].minLength(6),
-                __WEBPACK_IMPORTED_MODULE_4__angular_forms__["h" /* Validators */].pattern("^(?=.*[A-Za-z])(?=.*\\d)[A-Za-z\\d]{8,}$")
-                // Validators.pattern("^(?=.{8,32}$)(?=.[A-Z])(?=.[a-z])(?=.[0-9]).")
-            ]),
-            mail_conf: new __WEBPACK_IMPORTED_MODULE_4__angular_forms__["b" /* FormControl */]('', [
-                __WEBPACK_IMPORTED_MODULE_4__angular_forms__["h" /* Validators */].required,
-                __WEBPACK_IMPORTED_MODULE_4__angular_forms__["h" /* Validators */].email
-            ]),
-            phone: new __WEBPACK_IMPORTED_MODULE_4__angular_forms__["b" /* FormControl */](),
-            country_id: new __WEBPACK_IMPORTED_MODULE_4__angular_forms__["b" /* FormControl */](),
-            user_verify_id: new __WEBPACK_IMPORTED_MODULE_4__angular_forms__["b" /* FormControl */](),
-            confirm_verify: new __WEBPACK_IMPORTED_MODULE_4__angular_forms__["b" /* FormControl */]()
+            type: new __WEBPACK_IMPORTED_MODULE_6__angular_forms__["b" /* FormControl */](),
         });
-        this.getInfo();
-        this.ischecked = this.userProvider.check_terminos;
     }
-    RegisterPage.prototype.getInfo = function () {
-        this.responseParams = this.navParams.get('response');
-        this.registerParams = this.navParams.get('register');
+    SecurityPage.prototype.ionViewWillEnter = function () {
+        this.updateInfo = "celular";
     };
-    RegisterPage.prototype.showPassword = function () {
-        this.showPass = !this.showPass;
-        if (this.showPass) {
-            this.type = 'text';
+    SecurityPage.prototype.selectcountry = function () {
+        var _this = this;
+        var modal = this.modal.create('SelectCodePage');
+        modal.present();
+        modal.onDidDismiss(function (data) {
+            if (data !== undefined) {
+                _this.infoPhone.country_code = data.code;
+                _this.infoPhone.flag = data.flag;
+            }
+        });
+    };
+    //  VERIFICAR POR SMS
+    SecurityPage.prototype.verifyCode = function () {
+        var _this = this;
+        if (this.response_verify.phone_code === this.codeVerify) {
+            var loading_1 = this.loadingCtrl.create({
+                spinner: 'hide',
+                content: "<img src='assets/imgs/buho.png'>",
+            });
+            this.api.get('account/confirm-verify', this.userProvider, {
+                id: this.response_verify.id,
+                type: 'phone',
+            }).then(function (data) {
+                loading_1.dismiss();
+                _this.errorProvider.obj.message = 'Información actualizada correctamente';
+                _this.usuario.phone = data.phone;
+                _this.errorProvider.presentModal();
+                _this.userProvider.user_Info.phone = _this.infoPhone.value;
+                _this.userProvider.setUser(_this.userProvider.user_Info);
+                _this.usuario = _this.userProvider.user_Info;
+                _this.clearVar();
+            }).catch(function (error) {
+                var mensaje = '';
+                if (Object(__WEBPACK_IMPORTED_MODULE_5_ionic_angular_util_util__["e" /* isArray */])(error.error)) {
+                    error.error.forEach(function (data) {
+                        mensaje += data.message;
+                    });
+                }
+                else {
+                    mensaje = error.error;
+                    loading_1.dismiss();
+                    _this.errorProvider.obj.message = mensaje;
+                    _this.errorProvider.presentModal();
+                }
+            });
         }
         else {
-            this.type = 'password';
+            this.errorProvider.obj.message = 'Código incorrecto';
+            this.errorProvider.presentModal();
         }
     };
-    RegisterPage.prototype.showPassword2 = function () {
+    SecurityPage.prototype.showPassword2 = function () {
         this.showPass2 = !this.showPass2;
         if (this.showPass2) {
             this.type2 = 'text';
@@ -252,103 +291,177 @@ var RegisterPage = /** @class */ (function () {
             this.type2 = 'password';
         }
     };
-    RegisterPage.prototype.cancel = function () {
-        this.navCtrl.pop();
-    };
-    RegisterPage.prototype.register = function () {
+    SecurityPage.prototype.changePhone = function () {
         var _this = this;
-        if (this.formGroup.valid) {
-            this.formGroup.get('phone').setValue(this.registerParams.value);
-            this.formGroup.get('country_id').setValue(this.responseParams.country_id);
-            this.formGroup.get('user_verify_id').setValue(this.responseParams.id);
-            this.formGroup.get('confirm_verify').setValue("phone");
-            if ((this.formGroup.value.mail == this.formGroup.value.mail_conf) && (this.formGroup.value.password == this.formGroup.value.password_conf)) {
-                var loading_1 = this.loadingCtrl.create({
-                    spinner: 'hide',
-                    content: "<img src='assets/imgs/buho.png'>",
+        if (this.infoPhone.country_code != null && this.infoPhone.value != null) {
+            var loading_2 = this.loadingCtrl.create({
+                spinner: 'hide',
+                content: "<img src='assets/imgs/buho.png'>",
+            });
+            loading_2.present();
+            this.infoPhone.type = "phone";
+            this.infoPhone.value = this.infoPhone.country_code + this.infoPhone.value;
+            this.api.post('account/update-contact', this.infoPhone, this.userProvider).then(function (data) {
+                loading_2.dismiss();
+                _this.errorProvider.obj.message = 'Se ha enviado un código de verificación al número celular.';
+                _this.errorProvider.presentModal();
+                _this.response_verify = data;
+                _this.codigoSend.phone_code = _this.response_verify.phone_code;
+                _this.codigoSend.mail_code = null;
+            }).catch(function (error) {
+                loading_2.dismiss();
+                var mensaje = '';
+                error.error.forEach(function (data) {
+                    mensaje += data.message + "\n";
                 });
-                if (this.userProvider.check_terminos) {
-                    loading_1.present();
-                    this.user_register.phone = this.registerParams.value;
-                    this.user_register.country_id = this.responseParams.country_id;
-                    this.user_register.user_verify_id = this.responseParams.id;
-                    this.user_register.confirm_verify = 'phone';
-                    this.api.post('auth/sign-up', this.formGroup.value).then(function (data) {
-                        _this.userProvider.setUser(data);
-                        _this.verifyConfirm();
-                        loading_1.dismiss();
-                        _this.presentWelcomeModal();
-                    }).catch(function (error) {
-                        var mensaje = "";
-                        error.error.forEach(function (data) {
-                            mensaje += data.message + "\n";
-                        });
-                        _this.errorProvider.obj.message = mensaje;
-                        _this.errorProvider.presentModal();
-                        loading_1.dismiss();
+                _this.errorProvider.obj.message = mensaje;
+                _this.errorProvider.presentModal();
+            });
+        }
+        else {
+            this.errorProvider.obj.message = 'Por favor seleccione el país e ingrese su nuemo número celular';
+            this.errorProvider.presentModal();
+        }
+    };
+    SecurityPage.prototype.verifyCodeMail = function () {
+        var _this = this;
+        if (this.response_verify.mail_code === this.codeVerifyMail) {
+            this.api.get('account/confirm-verify', this.userProvider, {
+                id: this.response_verify.id,
+                type: 'mail',
+                mail: this.valueMail.value
+            }).then(function (data) {
+                _this.errorProvider.obj.message = 'Informacion actualizada correctamente';
+                _this.errorProvider.presentModal();
+                // this.usuario.mail = data.mail;
+                _this.clearVar();
+            }).catch(function (error) {
+                var mensaje = '';
+                if (Object(__WEBPACK_IMPORTED_MODULE_5_ionic_angular_util_util__["e" /* isArray */])(error.error)) {
+                    error.error.forEach(function (data) {
+                        mensaje += data.message + "\n";
                     });
                 }
                 else {
-                    this.errorProvider.obj.message = 'Por favor lea y acepte las políticas de uso y tratamiento de datos';
-                    this.errorProvider.presentModal();
+                    mensaje = error.error;
+                    _this.errorProvider.obj.message = mensaje;
+                    _this.errorProvider.presentModal();
                 }
-            }
-            else {
-                // this.formGroup.setErrors(this.formGroup.errors)
-            }
+            });
+        }
+        else {
+            this.errorProvider.obj.message = 'Los códigos de verificación no coinciden';
+            this.errorProvider.presentModal();
         }
     };
-    RegisterPage.prototype.verifyConfirm = function () {
+    SecurityPage.prototype.changeMail = function () {
         var _this = this;
-        this.api.get('account/confirm-verify', this.userProvider, {
-            id: this.responseParams.id,
-            type: 'phone',
-            mail: this.userProvider.user_Info.mail,
-        }).then(function (data) {
-        }).catch(function (error) {
-            var mensaje = "";
-            error.error.forEach(function (data) {
-                mensaje += data.message + "\n";
+        if (this.formGroup.valid) {
+            var cargando_1 = this.loadingCtrl.create({
+                spinner: 'hide',
+                content: "<img src='assets/imgs/buho.png'>",
             });
+            cargando_1.present();
+            this.infoPhone.value = null;
+            this.formGroup.get('type').setValue("mail");
+            this.api.post('account/update-contact', this.formGroup.value, this.userProvider)
+                .then(function (data) {
+                cargando_1.dismiss();
+                _this.errorProvider.obj.message = 'Se ha enviado un correo electrónico de verificacioón a su direccioón e-mail';
+                _this.errorProvider.presentModal();
+                _this.response_verify = data;
+                _this.codigoSend.phone_code = null;
+                _this.codigoSend.mail_code = _this.response_verify.mail_code;
+                console.log('variable control', _this.valueMail.value);
+            }).catch(function (error) {
+                var mensaje = '';
+                if (Object(__WEBPACK_IMPORTED_MODULE_5_ionic_angular_util_util__["e" /* isArray */])(error.error)) {
+                    error.error.forEach(function (data) {
+                        mensaje += data.message + "\n";
+                    });
+                }
+                else {
+                    mensaje = error.error;
+                    _this.errorProvider.obj.message = mensaje;
+                }
+                cargando_1.dismiss();
+                _this.errorProvider.presentModal();
+            });
+        }
+    };
+    SecurityPage.prototype.showPassword = function () {
+        this.showPass = !this.showPass;
+        if (this.showPass) {
+            this.type = 'text';
+        }
+        else {
+            this.type = 'password';
+        }
+    };
+    SecurityPage.prototype.actualizarPass = function () {
+        var _this = this;
+        var loading = this.loadingCtrl.create({
+            spinner: 'hide',
+            content: "<img src='assets/imgs/buho.png'>",
+        });
+        loading.present();
+        this.api.post('account/update-password', this.password, this.userProvider).then(function (data) {
+            loading.dismiss();
+            _this.errorProvider.obj.message = 'Información actualizada correctamente';
+            _this.errorProvider.presentModal();
+            _this.password.new_password = null;
+            _this.password.new_password_conf = null;
+            _this.password.old_password = null;
+        }).catch(function (error) {
+            loading.dismiss();
+            var mensaje = "";
+            if (Object(__WEBPACK_IMPORTED_MODULE_5_ionic_angular_util_util__["e" /* isArray */])(error.error)) {
+                error.error.forEach(function (data) {
+                    mensaje += data.message + "\n";
+                });
+            }
+            else {
+                mensaje = error.error;
+            }
             _this.errorProvider.obj.message = mensaje;
             _this.errorProvider.presentModal();
         });
     };
-    RegisterPage.prototype.politicas = function () {
-        var _this = this;
-        var poli = this.modalCtrl.create('PoliticasPage');
-        poli.present();
-        poli.onDidDismiss((function (data) {
-            _this.ischecked = true;
-        }));
+    SecurityPage.prototype.clearVar = function () {
+        this.isphone = true;
+        this.ismail = false;
+        this.infoPhone = {
+            flag: null,
+            type: null,
+            value: null,
+            country_code: null
+        };
+        this.response_verify = {
+            id: null,
+            is_mail_verify: null,
+            mail_code: null,
+            phone_code: null,
+            country_id: null,
+        };
+        this.codeVerify = null;
+        this.codeVerifyMail = null;
     };
-    RegisterPage.prototype.presentWelcomeModal = function () {
-        var _this = this;
-        var modalWelcome = this.modalCtrl.create('ModalWelcomePage', { name: this.userProvider.user_Info.first_name + " " + this.userProvider.user_Info.last_name });
-        modalWelcome.onWillDismiss(function () {
-            _this.navCtrl.setRoot('LoginPage');
-        });
-        modalWelcome.onDidDismiss(function (data) {
-        });
-        modalWelcome.present();
-        this.userProvider.setUser(null);
-    };
-    RegisterPage = __decorate([
+    SecurityPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-            selector: 'page-register',template:/*ion-inline-start:"/Users/santiago/Documents/GitHub/eyepaycashapp/src/pages/register/register.html"*/'<ion-content class="imgBackground vignette">\n	<div style="margin-top:12%" class="center">\n		<ion-img class="logo" src="assets/imgs/EPCLogo.png"></ion-img>\n	</div>\n	<div class="center">\n		<form [formGroup]="formGroup" (ngSubmit)="register()">\n			<ion-list>\n				<ion-item class="marginlists">\n					<ion-label stacked>{{\'NOMBRES\'|translate}}</ion-label>\n					<ion-input type="text" required name="userregistronombre" formControlName="first_name"></ion-input>\n				</ion-item>\n				<ion-item no-lines *ngIf="formGroup.invalid">\n					<msg-error [control]="formGroup.controls.first_name" name="Nombres"></msg-error>\n				</ion-item>\n				<ion-item class="marginlists">\n					<ion-label stacked>{{\'APELLIDOS\'||translate}}</ion-label>\n					<ion-input type="text" required name="userregistroapellido" formControlName="last_name">\n					</ion-input>\n				</ion-item>\n				<ion-item no-lines *ngIf="formGroup.invalid">\n					<msg-error [control]="formGroup.controls.last_name" name="Apellidos"></msg-error>\n				</ion-item>\n				<ion-item class="marginlists">\n					<ion-label stacked>{{\'GENERO\'|translate}}</ion-label>\n					<ion-select okText="Guardar" cancelText="Cancelar" formControlName="gender" name="userregistrogenero" interface="popover">\n						<ion-option value="f">Femenino</ion-option>\n						<ion-option value="m">Masculino</ion-option>\n					</ion-select>\n				</ion-item>\n				<ion-item class="marginlists">\n					<ion-label stacked>{{\'EMAIL\'|translate}}</ion-label>\n					<ion-input type="email" required name="userregistroemail" formControlName="mail"></ion-input>\n				</ion-item>\n				<ion-item no-lines *ngIf="formGroup.invalid">\n					<msg-error [control]="formGroup.controls.mail" name="Email"></msg-error>\n				</ion-item>\n				<ion-item class="marginlists">\n					<ion-label stacked>{{\'CONFIRMAR_EMAIL\'|translate}}</ion-label>\n					<ion-input type="email" required name="confirmacionmail" formControlName="mail_conf"></ion-input>\n				</ion-item>\n				<ion-item>\n					<ion-label stacked>{{\'CONTRASEÑA\'|translate}}</ion-label>\n					<ion-input type="{{type}}" name="contrasena" formControlName="password">\n					</ion-input>\n					<button *ngIf="!showPass" class="btn_show" ion-button clear color="dark" type="button" required item-right (click)="showPassword()">\n						<ion-icon name="ios-eye-off-outline"></ion-icon>\n					</button>\n					<button *ngIf="showPass" class="btn_show" ion-button clear color="dark" type="button" item-right (click)="showPassword()">\n						<ion-icon name="ios-eye-outline"></ion-icon>\n					</button>\n				</ion-item>\n\n				<ion-item no-lines *ngIf="formGroup.invalid">\n					<msg-error [control]="formGroup.controls.password" name="Contraseña"></msg-error>\n				</ion-item>\n\n				<ion-item class="marginlists">\n					<ion-label stacked>{{\'CONFIRMACION_CONTRASEÑA\'|translate}}</ion-label>\n					<ion-input type="{{type2}}" name="confirmacontrasena" formControlName="password_conf">\n					</ion-input>\n					<button *ngIf="!showPass2" class="btn_show2" ion-button clear color="dark" type="button" required item-right\n					 (click)="showPassword2()">\n						<ion-icon name="ios-eye-off-outline"></ion-icon>\n					</button>\n					<button *ngIf="showPass2" class="btn_show2" ion-button clear color="dark" type="button" item-right (click)="showPassword2()">\n						<ion-icon name="ios-eye-outline"></ion-icon>\n					</button>\n				</ion-item>\n				<div >\n					<button class="buttonPayCash" ion-button small type="submit">{{\'REGISTRARSE\'|translate}}</button>\n				</div>\n			</ion-list>\n		</form>\n	</div>\n	<ion-list>\n		<ion-col col-2>\n			<ion-checkbox [(ngModel)]="ischecked"></ion-checkbox>\n		</ion-col>\n		<ion-col col-10><span (click)="politicas()">{{\'POLITICAS_USO\'|translate}}</span></ion-col>\n	</ion-list>\n	<div style="margin-top: 6%" class="center">\n		<button class="buttonPayCash" (click)="cancel()" ion-button small>{{\'CANCELAR\'|translate}}</button>\n	</div>\n</ion-content>'/*ion-inline-end:"/Users/santiago/Documents/GitHub/eyepaycashapp/src/pages/register/register.html"*/,
+            selector: 'page-security',template:/*ion-inline-start:"/Users/eyeline/Documents/GitHub/eyepaycashapp/src/pages/security/security.html"*/'<!--\n  Generated template for the SecurityPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>{{\'SEGURIDAD\'|translate}}</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n\n\n  <ion-card>\n    <ion-card-header>\n      <ion-icon name="lock" item-start></ion-icon>\n      {{\'INFORMACION_SEGURIDAD\'|translate}}\n    </ion-card-header>\n    <ion-card-content>\n      <div padding>\n        <ion-segment [(ngModel)]="updateInfo">\n          <ion-segment-button value="celular">\n            {{\'NUMERO_CELULAR\'|translate}}\n          </ion-segment-button>\n          <ion-segment-button value="correo">\n            {{\'DIRECCION_EMAIL\'|translate}}\n          </ion-segment-button>\n        </ion-segment>\n      </div>\n\n      <div [ngSwitch]="updateInfo">\n        <ion-list *ngSwitchCase="\'celular\'">\n          <ion-row>\n            <label stacked>{{\'NUEVO_CELULAR\'|translate}}</label>\n            <ion-col col-4>\n              <ion-item class="item-flag">\n                <img [src]="infoPhone.flag" class="flagphone" *ngIf="infoPhone.flag !=null">\n                <button ion-button (click)="selectcountry()">+ {{infoPhone.country_code}}</button>\n              </ion-item>\n            </ion-col>\n            <ion-col col-8>\n              <ion-input required type="number" name="numerocelular" [(ngModel)]="infoPhone.value"\n                         placeholder="Número móvil (celular)" [brmasker]="{len:14}"></ion-input>\n            </ion-col>\n            <ion-col col-12 *ngIf="codigoSend.phone_code != null && infoPhone.value != \'\'">\n              <label stacked>{{\'CODIGO_VERIFICACION_SMS\'|translate}}</label>\n              <ion-input name="verifycode" [(ngModel)]="codeVerify" type="number" [brmasker]="{len:6}"></ion-input>\n              <button class="buttonPayCash" (click)="verifyCode()" ion-button block>{{\'VERIFICAR_CODIGO\'|translate}}</button>\n            </ion-col>\n          </ion-row>\n          <button ion-button block class="buttonPayCash" (click)="changePhone()"\n                  *ngIf=" codigoSend.phone_code == null ">\n            {{\'ENVIAR_CODIGO_VERIFICACION\'|translate}}\n          </button>\n        </ion-list>\n<form [formGroup]="formGroup">\n        <ion-list *ngSwitchCase="\'correo\'">\n          <ion-row>\n            <label stacked>{{\'NUEVA_DIRECCION_EMAIL\'|translate}}</label>\n            <ion-col col-12 row>\n              <ion-input name="correoelectronico" \n                         placeholder="Dirección email correo electrónico" formControlName="value" type="mail" ></ion-input>\n			</ion-col>\n			<ion-item no-lines *ngIf="formGroup.invalid">\n					<msg-error [control]="formGroup.controls.value" name="update-email"></msg-error>\n				</ion-item>\n            <ion-col col-12 *ngIf="codigoSend.mail_code != null && valueMail.value == null">\n              <label stacked>Ingrese el código de verificación (E-mail)</label>\n              <br>\n              <ion-input name="verifycode" [(ngModel)]="codeVerifyMail" [brmasker]="{len:6}" type="number"></ion-input>\n			  <button class="buttonPayCash" (click)="verifyCodeMail()" ion-button block>Verificar código</button>\n\n            </ion-col>\n          </ion-row>\n          <button ion-button block class="buttonPayCash" (click)="changeMail()" *ngIf="codigoSend.mail_code==null">\n            {{\'ACTUALIZAR_EMAIL\'|translate}}\n          </button>\n		</ion-list>\n	</form>\n      </div>\n    </ion-card-content>\n  </ion-card>\n\n  <ion-card>\n    <ion-card-header>\n      <ion-icon name="key" item-start></ion-icon>\n      {{\'ACTUALIZAR_CONTRASEÑA\'|translate}}\n    </ion-card-header>\n    <ion-card-content>\n      <ion-item>\n\n        <ion-label stacked>{{\'CONTRASEÑA_ACTUAL\'|translate}}</ion-label>\n        <ion-input type="password" name="useractual"\n                   required [(ngModel)]="password.old_password"></ion-input>\n      </ion-item>\n      <ion-item>\n\n        <ion-label stacked>{{\'NUEVA_CONTRASEÑA\'|translate}}</ion-label>\n        <ion-input type="{{type}}" name="usernueva"\n                   required [(ngModel)]="password.new_password"></ion-input>\n        <button *ngIf="!showPass" class="btn_show" ion-button clear color="dark" type="button" item-right (click)="showPassword()">\n          <ion-icon name="ios-eye-off-outline"></ion-icon>\n        </button>\n        <button *ngIf="showPass" class="btn_show" ion-button clear color="dark" type="button" item-right (click)="showPassword()">\n          <ion-icon name="ios-eye-outline"></ion-icon>\n        </button>\n\n      </ion-item>\n      <ion-item>\n        <ion-label stacked>{{\'CONFIRMACION_CONTRASEÑA\'|translate}}</ion-label>\n        <ion-input type="{{type2}}" name="userconfirmacion"\n                   required [(ngModel)]="password.new_password_conf"></ion-input>\n        <button *ngIf="!showPass2" class="btn_show2" ion-button clear color="dark" type="button" item-right (click)="showPassword2()">\n          <ion-icon name="ios-eye-off-outline"></ion-icon>\n        </button>\n        <button *ngIf="showPass2" class="btn_show2" ion-button clear color="dark" type="button" item-right (click)="showPassword2()">\n          <ion-icon name="ios-eye-outline"></ion-icon>\n        </button>\n      </ion-item>\n      <button ion-button block class="buttonPayCash" (click)="actualizarPass()">{{\'CONFIRMAR_ACTUALIZAR\'|translate}}</button>\n    </ion-card-content>\n  </ion-card>\n\n\n</ion-content>\n'/*ion-inline-end:"/Users/eyeline/Documents/GitHub/eyepaycashapp/src/pages/security/security.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavController */],
             __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* NavParams */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* ModalController */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* LoadingController */],
             __WEBPACK_IMPORTED_MODULE_2__providers_api__["a" /* Api */],
             __WEBPACK_IMPORTED_MODULE_3__providers_auth_user_auth_user__["a" /* AuthUserProvider */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* LoadingController */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* ModalController */],
-            __WEBPACK_IMPORTED_MODULE_5__providers_modal_error_modal_error__["a" /* ModalErrorProvider */]])
-    ], RegisterPage);
-    return RegisterPage;
+            __WEBPACK_IMPORTED_MODULE_4__providers_modal_error_modal_error__["a" /* ModalErrorProvider */]])
+    ], SecurityPage);
+    return SecurityPage;
 }());
 
-//# sourceMappingURL=register.js.map
+//# sourceMappingURL=security.js.map
 
 /***/ })
 

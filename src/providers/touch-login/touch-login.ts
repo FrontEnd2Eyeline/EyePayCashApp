@@ -1,21 +1,20 @@
 import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { Injectable, ViewChild } from '@angular/core';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { Subscription } from 'rxjs/Subscription';
 import { FingerprintAIO, FingerprintOptions } from '@ionic-native/fingerprint-aio';
-import { ModalController, Platform, NavController, App, IonicApp } from 'ionic-angular';
+import { ModalController, Platform, NavController, App, IonicApp, Nav } from 'ionic-angular';
 import { flatten } from '@angular/compiler';
 import { AuthUserProvider } from '../auth-user/auth-user';
 
-/*
-  Generated class for the TouchLoginProvider provider.
 
-  See https://angular.io/guide/dependency-injection for more info on providers
-  and Angular DI.
-*/
+
 @Injectable()
+
+
 export class TouchLoginProvider {
 
+	public isTouch = true;
 	private onPauseSubscription: Subscription;
 	private onResumeSubscription: Subscription;
 	private lockScreen: any;
@@ -53,9 +52,11 @@ export class TouchLoginProvider {
 				if (!this.isLocked) {
 					this.isLocked = true;
 					if (this.login = this.isLogin.isLogin) {
-						this.showFingerPrint();
-						this.login();
-						console.log('bloqueado', this.isLocked)
+						if (this.isTouch) {
+							this.showFingerPrint();
+							this.login();
+							console.log('bloqueado', this.isLocked)
+						}
 					} else {
 						let nav = this.app.getActiveNav();
 						nav.setRoot('LoginPage');
@@ -67,6 +68,13 @@ export class TouchLoginProvider {
 			});
 		});
 	}
+
+
+
+	// isActive() {
+	// 	const path: string[] = this.platform.url().split('/');
+	// 	return (String)(path[path.length - 1]);
+	// }
 
 	showFingerPrint() {
 		this.faio.isAvailable()
@@ -81,19 +89,19 @@ export class TouchLoginProvider {
 					.then((result: any) => {
 						this.login();
 						this.isLocked = false;
-					}).catch((error: any)=> {
+					}).catch((error: any) => {
 						this.exitApp();
 					});
 			}).catch((error: any) => console.log(error));
 	}
 
-	public login(): void {
+	login() {
 		let nav = this.app.getActiveNav();
 		nav.setRoot('HomePage');
 		nav.popToRoot;
 	}
 
-	 exitApp(){
+	exitApp() {
 		this.platform.exitApp();
 	}
 
