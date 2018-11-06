@@ -29,7 +29,8 @@ export class RegisterPage {
 	public type2 = 'password';
 	public showPass2 = false;
 	imagen = 'assets/backgrounds/Background3.png';
-	ischecked = this.userProvider.check_terminos;
+	ischecked = false;
+	
 
 	
 
@@ -87,7 +88,7 @@ export class RegisterPage {
 		public errorProvider: ModalErrorProvider
 	) {
 		this.getInfo();
-		this.ischecked = this.userProvider.check_terminos;
+		userProvider.check_terminos = false;
 	}
 
 	getInfo() {
@@ -115,6 +116,11 @@ export class RegisterPage {
 
 	cancel() {
 		this.navCtrl.pop();
+	}
+
+	verificarChecked(ischecked){
+		console.log(ischecked);
+		ischecked = true;
 	}
 
 	register() {

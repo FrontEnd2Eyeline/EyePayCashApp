@@ -15,7 +15,7 @@ import { TouchLoginProvider } from '../providers/touch-login/touch-login';
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 //   rootPage: string = 'LoginPage';
-	rootPage: string = 'LoginPage';
+	rootPage: string = 'RegisterPage';
   constructor(platform: Platform,
               statusBar: StatusBar,
               splashScreen: SplashScreen,
@@ -27,6 +27,7 @@ export class MyApp {
 			  private storage: Storage,
 			  loockScreen: TouchLoginProvider,
   ) {
+    this.seleccionar('es');
 	if (!this.langProvider.verifyIsLanguage())
 	// this.rootPage = 'TouchLoginPage';
       this.rootPage = 'LoginPage';
@@ -37,7 +38,7 @@ export class MyApp {
     }
      if(auth.trylogin()) {
         this.langProvider.setLenguage();
-         this.rootPage = 'HomePage';
+         this.rootPage = 'LoginPage';
         this.informationProvider.init()
      }
     platform.ready().then(() => {

@@ -1,7 +1,7 @@
 <ion-header>
   <div class="BackgroundPpal styleDivTitle">
     <div style="background: transparent">
-        <img class="icoClose" icon-end src="assets/newIcons/17.png">
+      <img (click)="cerrarSesion()"  class="icoClose" icon-end src="assets/newIcons/17.png">
     </div>
     <ion-row>
       <ion-col>
@@ -34,7 +34,7 @@
         <ion-input disabled text-right placeholder="{{country.name}}"></ion-input>
       </ion-item>
       <ion-item>
-        <ion-label text-wrap color="primary" fixed>Indicativo del país</ion-label>
+        <ion-label text-wrap color="primary" fixed>Indicativo</ion-label>
         <ion-input disabled text-right placeholder=" {{country.phone_code}}"></ion-input>
       </ion-item>
       <ion-item>
@@ -42,39 +42,44 @@
         <ion-input disabled text-right placeholder=" {{country.country_code}}"></ion-input>
       </ion-item>
       <ion-item>
-        <ion-label text-wrap color="primary" fixed>Moneda del país</ion-label>
+        <ion-label text-wrap color="primary" fixed>Moneda</ion-label>
         <ion-input disabled text-right placeholder=" {{country.currency}}"></ion-input>
       </ion-item>
     </ion-list>
   </ion-list>
   <div>
-      <h1 style="color: red; text-align: center; font-size: 14px">Eliminar cuenta</h1>
+    <h1 style="color: red; text-align: center; font-size: 14px">Eliminar cuenta</h1>
   </div>
 </ion-content>
 <ion-footer>
+  <ion-footer>
     <ion-toolbar>
       <ion-row>
+        <ion-col class="center2" col-2 (click)="goPage('precios')">
+          <img width="40" height="40" src="assets/newIcons/11.png">
+          <p>Precios</p>
+        </ion-col>
         <ion-col class="center2" col-3 (click)="goPage('transaction')">
-          <img width="25" height="25" src="assets/icon/1.png">
-          <p class="pStyle">{{'TRANSACCION'|translate}}</p>
+          <img width="40" height="40" src="assets/icon/1.png">
+          <p>{{'TRANSACCION'|translate}}</p>
         </ion-col>
-        <ion-col class="center2" col-3 (click)="goPage('history')">
+        <ion-col class="center2 mar1Left" col-2 (click)="goPage('history')">
           <!-- <ion-badge item-end>{{count}}</ion-badge> -->
-          <img width="25" height="25" src="assets/icon/2.png">
-          <p class="pStyle">{{'HISTORIAL'|translate}}</p>
+          <img width="40" height="40" src="assets/icon/2.png">
+          <p>{{'HISTORIAL'|translate}}</p>
         </ion-col>
-        <ion-col class="center2" col-3 (click)="goPage('maps')">
-          <img width="25" height="25" src="assets/icon/3.png">
-          <p class="pStyle">{{'MAPA'|translate}}</p>
+        <ion-col class="center2" col-2 (click)="goPage('maps')">
+          <img width="40" height="40" src="assets/icon/3.png">
+          <p>{{'MAPA'|translate}}</p>
         </ion-col>
-        <ion-col class="center2" col-3 (click)="goPage('profile')">
-          <img width="25" height="25" src="assets/icon/4.png">
-          <p class="pStyle">{{'CUENTA'|translate}}</p>
+        <ion-col class="center2" col-2 (click)="goPage('profile')">
+          <img width="40" height="40" src="assets/icon/4.png">
+          <p>{{'CUENTA'|translate}}</p>
         </ion-col>
       </ion-row>
     </ion-toolbar>
   </ion-footer>
-<!-- <ion-content padding class="BackGR3">
+  <!-- <ion-content padding class="BackGR3">
   <ion-row>
     <ion-col col-12>
       <button ion-button (click)="cerrarSesion()" block class="buttonPayCash">Cerrar sesión</button>

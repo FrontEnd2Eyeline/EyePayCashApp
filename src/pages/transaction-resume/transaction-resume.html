@@ -31,7 +31,7 @@
     <ion-card-content>
       <ion-row>
         <ion-col col-6 text-left>Total a pagar</ion-col>
-        <ion-col col-6 text-right> {{transaction.amount_btc}} {{coin.short_name}}</ion-col>
+        <ion-col col-6 text-right> {{transaction.amount_btc | number : '3.2-6'}} {{coin.short_name}}</ion-col>
       </ion-row>
       <ion-row text-center>
         <ion-col col-12>
@@ -80,7 +80,7 @@
             <h1>Total de la transacción</h1>
           </ion-col>
           <ion-col col-12 text-center>
-            {{transaction.amount_local | number }} {{country.currency}} = {{transaction.amount_usd}} USD
+            {{transaction.amount_local | number: '3.2-6' }} {{country.currency}} = {{transaction.amount_usd}} USD
           </ion-col>
         </ion-row>
       </ion-list>

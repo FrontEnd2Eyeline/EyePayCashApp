@@ -1,5 +1,5 @@
-import {Component} from '@angular/core';
-import {IonicPage, NavController, NavParams} from 'ionic-angular';
+import {Component, ViewChild} from '@angular/core';
+import {IonicPage, NavController, NavParams, ToastController, ToastOptions } from 'ionic-angular';
 import {FormatterDateProvider} from "../../providers/formatter-date/formatter-date";
 import {Clipboard} from "@ionic-native/clipboard";
 
@@ -22,12 +22,15 @@ export class HistoryResumePage {
   public coin: any = null;
   public comision: any = null;
   public coinHash: any = null;
+  toastOp: ToastOptions;
+  
 
   constructor(
     public navParams: NavParams,
     public navCtrl: NavController,
     public dateLocal: FormatterDateProvider,
-    private clipboard: Clipboard
+    private clipboard: Clipboard,
+    private toastCtrl: ToastController
   ) {
     this.getInfo();
   }
@@ -46,5 +49,18 @@ export class HistoryResumePage {
 
   copiarToken(){
     this.clipboard.copy(this.coinHash.eye_hash);
+    const toast = this.toastCtrl.create({
+      message: 'Copiado',
+      duration: 3000,
+      position: 'middle'
+      //showCloseButton: true,
+      //closeButtonText: OK
+    });
+    toast.onDidDismiss(this.dismissHandler);
+    toast.present();
+  }
+
+  private dismissHandler() {
+    console.info('Toast onDidDismiss()');
   }
 }
