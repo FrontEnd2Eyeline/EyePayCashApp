@@ -29143,6 +29143,12 @@ ion-input, ion-textarea {
   max-width: 40%;
 }
 
+.item-md.item-input.ng-invalid.ng-touched:not(.input-has-focus):not(.item-input-has-focus) .item-inner {
+  border-bottom-color: transparent;
+  -webkit-box-shadow: inset 0 -1px 0 0 transparent;
+  box-shadow: inset 0 -1px 0 0 transparent;
+}
+
 page-account p {
   font-size: 10px;
   text-align: center;
@@ -30265,6 +30271,19 @@ page-politicas .btnStyle {
   height: 34px;
 }
 
+page-profile .icoCenter {
+  width: 20%;
+  position: initial;
+}
+
+page-profile .mr10Top {
+  margin-top: -10%;
+}
+
+page-profile .margtop2 {
+  margin-top: -2.5%;
+}
+
 page-profile .mrgLogoTopBut {
   margin-top: 30%;
   margin-bottom: -24%;
@@ -30374,6 +30393,106 @@ page-recovery-password .logo {
   display: unset;
 }
 
+page-reg-number-phone .mar3Left {
+  margin-left: 3%;
+}
+
+page-reg-number-phone .Lgo {
+  width: 70%;
+}
+
+page-reg-number-phone .whiteText {
+  color: white;
+}
+
+page-reg-number-phone .center {
+  display: block;
+  text-align: center;
+  margin: auto;
+}
+
+page-reg-number-phone .martop20 {
+  margin-top: -20%;
+}
+
+page-reg-number-phone .mrgtop12 {
+  margin-top: -12%;
+}
+
+page-reg-number-phone .widflag {
+  width: 90%;
+}
+
+page-reg-number-phone .item-md.item-block .item-inner {
+  padding-right: 0px;
+  border-bottom: 0px solid #dedede;
+}
+
+page-reg-number-phone .flagWid {
+  width: 4.5em;
+}
+
+page-reg-number-phone .heigFlag {
+  height: 2em;
+}
+
+page-reg-number-phone .wid120 {
+  width: 120%;
+}
+
+page-reg-number-phone .marleft8 {
+  margin-left: -8%;
+}
+
+page-reg-number-phone .marlef3 {
+  margin-left: -3%;
+}
+
+page-reg-number-phone .martopBtns {
+  margin-top: -4%;
+}
+
+page-reg-number-phone .item-md {
+  padding-left: 16px;
+  padding-right: 0;
+  position: relative;
+  font-size: 1.6rem;
+  font-weight: normal;
+  text-transform: none;
+  color: #000;
+  background-color: transparent;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  -webkit-transition: background-color 300ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color 300ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+page-reg-number-phone .btnFlagCountry {
+  width: 40px;
+  height: 40px !important;
+  border-color: transparent;
+  background: #9569fc;
+  background: -webkit-gradient(left top, right top, color-stop(0%, #9569fc), color-stop(100%, #5974fc));
+  background: -webkit-gradient(linear, left top, right top, from(#9569fc), to(#5974fc));
+  background: linear-gradient(to right, #9569fc 0%, #5974fc 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#9569fc', endColorstr='#5974fc', GradientType=1 );
+  color: white;
+}
+
+page-reg-number-phone .marTop24 {
+  margin-top: -16%;
+}
+
+page-reg-number-phone .backTransp {
+  background: transparent;
+}
+
+page-reg-number-phone ion-input, page-reg-number-phone ion-textarea {
+  border: 0.5px #9669fc solid !important;
+  border-radius: 12px !important;
+  background: white;
+}
+
 page-reg-number-phone .imgBackground {
   background-image: url(http://subirimagen.me/uploads/20180921121235.png);
   background-repeat: initial;
@@ -30387,12 +30506,75 @@ page-reg-number-phone .logo {
   display: unset;
 }
 
+page-register .togleEfect {
+  -webkit-transform: rotate(-90deg);
+  transform: rotate(-90deg);
+}
+
+page-register .marMen12Top {
+  margin-top: -10% !important;
+}
+
+page-register .mrg6Top {
+  margin-top: 6%;
+}
+
+page-register .mrgMen10 {
+  margin-top: -10%;
+}
+
+page-register .logo2 {
+  width: 70%;
+}
+
+page-register .tamaInputs {
+  width: 70%;
+}
+
+page-register .item-input .label-md, page-register .item-select .label-md, page-register .item-datetime .label-md {
+  color: white;
+}
+
+page-register .iten-input-has-focus .label-md[stacked], page-register .input-has-focus .label-md[stacked] {
+  color: white;
+}
+
+page-register .toggle-md .toggle-icon {
+  border-radius: 14px;
+  position: relative;
+  display: block;
+  width: 100%;
+  height: auto;
+  background-color: transparent;
+  -webkit-transition: background-color 300ms;
+  transition: background-color 300ms;
+  pointer-events: none;
+}
+
+page-register .toggle-md.toggle-checked .toggle-inner {
+  -webkit-transform: translate3d(16px, 0, 0);
+  transform: translate3d(16px, 0, 0);
+  background: #9569fc;
+  background: -webkit-gradient(left top, right top, color-stop(0%, #9569fc), color-stop(100%, #063896));
+  background: -webkit-gradient(linear, left top, right top, from(#9569fc), to(#063896));
+  background: linear-gradient(to right, #9569fc 0%, #063896 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#9569fc', endColorstr='#063896', GradientType=1 );
+}
+
 page-register .imgBackground {
   background-image: url(http://subirimagen.me/uploads/20180921121235.png);
   background-repeat: initial;
   background-attachment: fixed;
   background-position: center center;
   background-size: cover;
+}
+
+page-register .cWhite {
+  color: white;
+}
+
+page-register .txtCenter {
+  text-align: center;
 }
 
 page-register .vignette {
@@ -30420,7 +30602,7 @@ page-register .btn_show2 {
 }
 
 page-register .logo {
-  width: 100%;
+  width: 70%;
   display: unset;
 }
 
@@ -30428,6 +30610,25 @@ page-register .center {
   display: block;
   text-align: center;
   margin: auto;
+}
+
+page-register .centerLogo {
+  display: block;
+  text-align: center;
+  margin: auto;
+}
+
+page-register .backTransp {
+  background: transparent;
+}
+
+page-register .styleInput {
+  background: white;
+  border-radius: 10px;
+}
+
+page-register .list-md .item-block .item-inner {
+  border-bottom: 0px solid #dedede;
 }
 
 page-security .flagWid {

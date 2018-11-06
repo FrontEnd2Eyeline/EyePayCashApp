@@ -1,10 +1,80 @@
 page-register {
+
+  .togleEfect{
+    -webkit-transform: rotate(-90deg);
+ -moz-transform: rotate(-90deg);
+ -ms-transform: rotate(-90deg);
+ transform: rotate(-90deg);
+  }
+  
+
+  .marMen12Top{
+    margin-top: -10% !important;
+  }
+
+  .mrg6Top{
+    margin-top: 6%;
+  }
+
+  .mrgMen10{
+    margin-top: -10%;
+  }
+
+  .logo2{
+    width: 70%;
+  }
+
+  .tamaInputs{
+    width: 70%;
+  }
+
+  .item-input .label-md, .item-select .label-md, .item-datetime .label-md {
+    color: white;
+}
+
+.iten-input-has-focus .label-md[stacked], .input-has-focus .label-md[stacked],{
+  color: white
+}
+
+  .toggle-md .toggle-icon {
+    border-radius: 14px;
+    position: relative;
+    display: block;
+    width: 100%;
+    height: auto;
+    background-color: transparent;
+    -webkit-transition: background-color 300ms;
+    transition: background-color 300ms;
+    pointer-events: none;
+}
+
+.toggle-md.toggle-checked .toggle-inner {
+  -webkit-transform: translate3d(16px, 0, 0);
+  transform: translate3d(16px, 0, 0);
+  background: rgba(149,105,252,1);
+  background: -moz-linear-gradient(left, rgba(149,105,252,1) 0%, rgba(6,56,150,1) 100%);
+  background: -webkit-gradient(left top, right top, color-stop(0%, rgba(149,105,252,1)), color-stop(100%, rgba(6,56,150,1)));
+  background: -webkit-linear-gradient(left, rgba(149,105,252,1) 0%, rgba(6,56,150,1) 100%);
+  background: -o-linear-gradient(left, rgba(149,105,252,1) 0%, rgba(6,56,150,1) 100%);
+  background: -ms-linear-gradient(left, rgba(149,105,252,1) 0%, rgba(6,56,150,1) 100%);
+  background: linear-gradient(to right, rgba(149,105,252,1) 0%, rgba(6,56,150,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#9569fc', endColorstr='#063896', GradientType=1 );
+}
+
   .imgBackground {
     background-image: url(http://subirimagen.me/uploads/20180921121235.png);
     background-repeat: initial;
     background-attachment: fixed;
     background-position: center center;
     background-size: cover;
+  }
+
+  .cWhite{
+    color: white;
+  }
+  
+  .txtCenter{
+    text-align: center;
   }
 
   .vignette {
@@ -33,7 +103,7 @@ page-register {
   //================   END DE LA CLASE PARA VER LA CONTRASEÑA
 
   .logo {
-    width: 100%;
+    width: 70%;
     display: unset;
   }
 
@@ -42,4 +112,26 @@ page-register {
 	text-align: center;
 	margin: auto;
   }
+
+
+  .centerLogo {
+    display: block;
+    text-align: center;
+    margin: auto;
+    }
+
+  .backTransp{
+    background: transparent;
+  }
+
+  .styleInput{
+    background: white;
+    border-radius: 10px;
+  }
+
+  .list-md .item-block .item-inner {
+    border-bottom: 0px solid #dedede;
+}
+
+
 }

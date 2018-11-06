@@ -1,6 +1,6 @@
 webpackJsonp([1],{
 
-/***/ 728:
+/***/ 732:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -8,7 +8,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RegisterPageModule", function() { return RegisterPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(21);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__register__ = __webpack_require__(753);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__register__ = __webpack_require__(757);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_brmasker_ionic_3__ = __webpack_require__(381);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__components_components_module__ = __webpack_require__(738);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ngx_translate_core__ = __webpack_require__(94);
@@ -138,7 +138,7 @@ var MsgErrorComponent = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 753:
+/***/ 757:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -187,7 +187,7 @@ var RegisterPage = /** @class */ (function () {
         this.type2 = 'password';
         this.showPass2 = false;
         this.imagen = 'assets/backgrounds/Background3.png';
-        this.ischecked = this.userProvider.check_terminos;
+        this.ischecked = false;
         this.formGroup = new __WEBPACK_IMPORTED_MODULE_4__angular_forms__["c" /* FormGroup */]({
             first_name: new __WEBPACK_IMPORTED_MODULE_4__angular_forms__["b" /* FormControl */]('', [
                 __WEBPACK_IMPORTED_MODULE_4__angular_forms__["h" /* Validators */].required,
@@ -228,7 +228,7 @@ var RegisterPage = /** @class */ (function () {
             confirm_verify: new __WEBPACK_IMPORTED_MODULE_4__angular_forms__["b" /* FormControl */]()
         });
         this.getInfo();
-        this.ischecked = this.userProvider.check_terminos;
+        userProvider.check_terminos = false;
     }
     RegisterPage.prototype.getInfo = function () {
         this.responseParams = this.navParams.get('response');
@@ -254,6 +254,10 @@ var RegisterPage = /** @class */ (function () {
     };
     RegisterPage.prototype.cancel = function () {
         this.navCtrl.pop();
+    };
+    RegisterPage.prototype.verificarChecked = function (ischecked) {
+        console.log(ischecked);
+        ischecked = true;
     };
     RegisterPage.prototype.register = function () {
         var _this = this;
@@ -335,7 +339,7 @@ var RegisterPage = /** @class */ (function () {
     };
     RegisterPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-            selector: 'page-register',template:/*ion-inline-start:"/Users/eyeline/Documents/GitHub/eyepaycashapp/src/pages/register/register.html"*/'<ion-content class="imgBackground vignette">\n	<div style="margin-top:12%" class="center">\n		<ion-img class="logo" src="assets/imgs/EPCLogo.png"></ion-img>\n	</div>\n	<div class="center">\n		<form [formGroup]="formGroup" (ngSubmit)="register()">\n			<ion-list>\n				<ion-item class="marginlists">\n					<ion-label stacked>{{\'NOMBRES\'|translate}}</ion-label>\n					<ion-input type="text" required name="userregistronombre" formControlName="first_name"></ion-input>\n				</ion-item>\n				<ion-item no-lines *ngIf="formGroup.invalid">\n					<msg-error [control]="formGroup.controls.first_name" name="Nombres"></msg-error>\n				</ion-item>\n				<ion-item class="marginlists">\n					<ion-label stacked>{{\'APELLIDOS\'||translate}}</ion-label>\n					<ion-input type="text" required name="userregistroapellido" formControlName="last_name">\n					</ion-input>\n				</ion-item>\n				<ion-item no-lines *ngIf="formGroup.invalid">\n					<msg-error [control]="formGroup.controls.last_name" name="Apellidos"></msg-error>\n				</ion-item>\n				<ion-item class="marginlists">\n					<ion-label stacked>{{\'GENERO\'|translate}}</ion-label>\n					<ion-select okText="Guardar" cancelText="Cancelar" formControlName="gender" name="userregistrogenero" interface="popover">\n						<ion-option value="f">Femenino</ion-option>\n						<ion-option value="m">Masculino</ion-option>\n					</ion-select>\n				</ion-item>\n				<ion-item class="marginlists">\n					<ion-label stacked>{{\'EMAIL\'|translate}}</ion-label>\n					<ion-input type="email" required name="userregistroemail" formControlName="mail"></ion-input>\n				</ion-item>\n				<ion-item no-lines *ngIf="formGroup.invalid">\n					<msg-error [control]="formGroup.controls.mail" name="Email"></msg-error>\n				</ion-item>\n				<ion-item class="marginlists">\n					<ion-label stacked>{{\'CONFIRMAR_EMAIL\'|translate}}</ion-label>\n					<ion-input type="email" required name="confirmacionmail" formControlName="mail_conf"></ion-input>\n				</ion-item>\n				<ion-item>\n					<ion-label stacked>{{\'CONTRASEÑA\'|translate}}</ion-label>\n					<ion-input type="{{type}}" name="contrasena" formControlName="password">\n					</ion-input>\n					<button *ngIf="!showPass" class="btn_show" ion-button clear color="dark" type="button" required item-right (click)="showPassword()">\n						<ion-icon name="ios-eye-off-outline"></ion-icon>\n					</button>\n					<button *ngIf="showPass" class="btn_show" ion-button clear color="dark" type="button" item-right (click)="showPassword()">\n						<ion-icon name="ios-eye-outline"></ion-icon>\n					</button>\n				</ion-item>\n\n				<ion-item no-lines *ngIf="formGroup.invalid">\n					<msg-error [control]="formGroup.controls.password" name="Contraseña"></msg-error>\n				</ion-item>\n\n				<ion-item class="marginlists">\n					<ion-label stacked>{{\'CONFIRMACION_CONTRASEÑA\'|translate}}</ion-label>\n					<ion-input type="{{type2}}" name="confirmacontrasena" formControlName="password_conf">\n					</ion-input>\n					<button *ngIf="!showPass2" class="btn_show2" ion-button clear color="dark" type="button" required item-right\n					 (click)="showPassword2()">\n						<ion-icon name="ios-eye-off-outline"></ion-icon>\n					</button>\n					<button *ngIf="showPass2" class="btn_show2" ion-button clear color="dark" type="button" item-right (click)="showPassword2()">\n						<ion-icon name="ios-eye-outline"></ion-icon>\n					</button>\n				</ion-item>\n				<div >\n					<button class="buttonPayCash" ion-button small type="submit">{{\'REGISTRARSE\'|translate}}</button>\n				</div>\n			</ion-list>\n		</form>\n	</div>\n	<ion-list>\n		<ion-col col-2>\n			<ion-checkbox [(ngModel)]="ischecked"></ion-checkbox>\n		</ion-col>\n		<ion-col col-10><span (click)="politicas()">{{\'POLITICAS_USO\'|translate}}</span></ion-col>\n	</ion-list>\n	<div style="margin-top: 6%" class="center">\n		<button class="buttonPayCash" (click)="cancel()" ion-button small>{{\'CANCELAR\'|translate}}</button>\n	</div>\n</ion-content>'/*ion-inline-end:"/Users/eyeline/Documents/GitHub/eyepaycashapp/src/pages/register/register.html"*/,
+            selector: 'page-register',template:/*ion-inline-start:"/Users/eyeline/Documents/GitHub/eyepaycashapp/src/pages/register/register.html"*/'<ion-content class="imgBackground vignette">\n	<div style="margin-top:20%" class="center">\n		<img class="logo" src="assets/imgs/EPCLogo.png">\n	</div>\n	<div class="center">\n		<form [formGroup]="formGroup" (ngSubmit)="register()">\n			<ion-item class="backTransp cWhite txtCenter" no-lines *ngIf="formGroup.invalid">\n				<msg-error [control]="formGroup.controls.first_name" name="Nombres"></msg-error>\n				<msg-error [control]="formGroup.controls.last_name" name="Apellidos"></msg-error>\n				<msg-error [control]="formGroup.controls.mail" name="Email"></msg-error>\n				<msg-error [control]="formGroup.controls.password" name="Contraseña"></msg-error>\n			</ion-item>\n			<ion-list class="mrgMen10">\n				<ion-item class="marginlists backTransp tamaInputs center">\n					<ion-label stacked>{{\'NOMBRES\'|translate}}</ion-label>\n					<ion-input class="styleInput" type="text" required name="userregistronombre" formControlName="first_name"></ion-input>\n				</ion-item>\n\n				<ion-item class="marginlists backTransp tamaInputs center">\n					<ion-label stacked>{{\'APELLIDOS\'|translate}}</ion-label>\n					<ion-input class="styleInput" type="text" required name="userregistroapellido" formControlName="last_name">\n					</ion-input>\n				</ion-item>\n				<ion-item class="marginlists backTransp tamaInputs center">\n					<ion-label stacked>{{\'GENERO\'|translate}}</ion-label>\n					<ion-select class="styleInput" okText="Guardar" cancelText="Cancelar" formControlName="gender" name="userregistrogenero"\n					 interface="popover">\n						<ion-option value="f">Femenino</ion-option>\n						<ion-option value="m">Masculino</ion-option>\n					</ion-select>\n				</ion-item>\n				<ion-item class="marginlists backTransp tamaInputs center">\n					<ion-label stacked>{{\'EMAIL\'|translate}}</ion-label>\n					<ion-input class="styleInput" type="email" required name="userregistroemail" formControlName="mail"></ion-input>\n				</ion-item>\n				<ion-item class="marginlists backTransp tamaInputs center">\n					<ion-label stacked>{{\'CONFIRMAR_EMAIL\'|translate}}</ion-label>\n					<ion-input class="styleInput" type="email" required name="confirmacionmail" formControlName="mail_conf"></ion-input>\n				</ion-item>\n				<ion-item class="backTransp tamaInputs center">\n					<ion-label stacked>{{\'CONTRASEÑA\'|translate}}</ion-label>\n					<ion-input class="styleInput" type="{{type}}" name="contrasena" formControlName="password">\n					</ion-input>\n					<button *ngIf="!showPass" class="btn_show" ion-button clear color="dark" type="button" required item-right (click)="showPassword()">\n						<ion-icon name="ios-eye-off"></ion-icon>\n					</button>\n					<button *ngIf="showPass" class="btn_show" ion-button clear color="dark" type="button" item-right (click)="showPassword()">\n						<ion-icon name="ios-eye-off"></ion-icon>\n					</button>\n				</ion-item>\n				<ion-item class="marginlists backTransp tamaInputs center">\n					<ion-label stacked>{{\'CONFIRMACION_CONTRASEÑA\'|translate}}</ion-label>\n					<ion-input class="styleInput" type="{{type2}}" name="confirmacontrasena" formControlName="password_conf">\n					</ion-input>\n					<button *ngIf="!showPass2" class="btn_show2" ion-button clear color="dark" type="button" required item-right\n					 (click)="showPassword2()">\n						<ion-icon name="ios-eye-off"></ion-icon>\n					</button>\n					<button *ngIf="showPass2" class="btn_show2" ion-button clear color="dark" type="button" item-right (click)="showPassword2()">\n						<ion-icon name="ios-eye-off"></ion-icon>\n					</button>\n				</ion-item>\n				<div class="mrg6Top">\n					<button class="buttonPayCash " ion-button small type="submit">{{\'REGISTRARSE\'|translate}}</button>\n				</div>\n			</ion-list>\n		</form>\n	</div>\n\n	<ion-list padding>\n		<ion-row>\n			<ion-col col-2 class="center">\n				<ion-toggle class="center togleEfect" (click)="verificarChecked()"></ion-toggle>\n			</ion-col>\n			<ion-col col-10 padding>\n				<span class="cWhite" (click)="politicas()">{{\'POLITICAS_USO\'|translate}}</span>\n			</ion-col>\n		</ion-row>\n	</ion-list>\n	<!-- <ion-list padding>\n		<ion-row>\n			<ion-col col-12>\n				<span class="cWhite" (click)="politicas()">{{\'POLITICAS_USO\'|translate}}</span>\n			</ion-col>\n		</ion-row>\n		<ion-row>\n			<ion-col col-12 class="center">\n				<ion-toggle class="center" (click)="verificarChecked()"></ion-toggle>\n			</ion-col>\n		</ion-row>\n	</ion-list> -->\n	<div class="center marMen12Top">\n		<button class="buttonPayCash" (click)="cancel()" ion-button small>{{\'CANCELAR\'|translate}}</button>\n	</div>\n</ion-content>\n<!--[disabled]="ischecked" (ionChange)="ischecked = !ischecked" -->'/*ion-inline-end:"/Users/eyeline/Documents/GitHub/eyepaycashapp/src/pages/register/register.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavController */],
             __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* NavParams */],
