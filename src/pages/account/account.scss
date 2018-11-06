@@ -1,5 +1,10 @@
 page-account {
 
+    p{
+        font-size: 10px;
+        text-align: center;
+      }
+
     .text-input[disabled] {
         opacity: 1.4;
     }
@@ -38,9 +43,13 @@ page-account {
 .icoClose{
     width: 30%;
     padding: 5%;
-    position: absolute;
+    position: inherit;
     margin-left: 18.5em;
     margin-top: -6%;
+}
+
+.mrgTop25{
+    margin-top: -25%;
 }
     
     .BackgroundPpal{

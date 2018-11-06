@@ -29143,6 +29143,11 @@ ion-input, ion-textarea {
   max-width: 40%;
 }
 
+page-account p {
+  font-size: 10px;
+  text-align: center;
+}
+
 page-account .text-input[disabled] {
   opacity: 1.4;
 }
@@ -29181,9 +29186,13 @@ page-account .styleDivTitle {
 page-account .icoClose {
   width: 30%;
   padding: 5%;
-  position: absolute;
+  position: inherit;
   margin-left: 18.5em;
   margin-top: -6%;
+}
+
+page-account .mrgTop25 {
+  margin-top: -25%;
 }
 
 page-account .BackgroundPpal {
@@ -29251,6 +29260,142 @@ page-account .item-md {
 page-account .item-input ion-input, page-account .item-input ion-textarea {
   position: static;
   background: white !important;
+}
+
+page-coins h1 {
+  font-size: 2.2rem;
+}
+
+page-coins p {
+  font-size: 10px;
+  text-align: center;
+}
+
+page-coins .imgLogoWidthPen {
+  width: 45%;
+}
+
+page-coins .imgLogoWidth {
+  width: 50%;
+}
+
+page-coins .imgIcoin {
+  width: 30%;
+}
+
+page-coins .marginlogo {
+  margin-top: 2%;
+  margin-left: 2%;
+}
+
+page-coins .textCoinsmon {
+  text-align: center;
+  margin-top: -24%;
+  margin-left: 0%;
+}
+
+page-coins .textSecon {
+  margin-left: -16.5%;
+  margin-top: -3%;
+  color: gray;
+  font-size: 14px !important;
+}
+
+page-coins .mrgLeftSegment {
+  margin-left: -45%;
+}
+
+page-coins .textTaman {
+  font-size: 14px !important;
+}
+
+page-coins .center {
+  margin: auto;
+}
+
+page-coins .center2 {
+  display: block;
+  text-align: center;
+  margin: auto;
+}
+
+page-coins .mar1Left {
+  margin-left: -1%;
+}
+
+page-coins .mrg10Top {
+  margin-top: 9%;
+  font-weight: bold;
+}
+
+page-coins .brder {
+  border-bottom: 1px solid gray;
+}
+
+page-coins .colorwhite {
+  color: white;
+  margin-left: 6%;
+}
+
+page-coins .BackgroundPpal {
+  background-image: url("../assets/newBackgrounds/9.png");
+  background-position: center top;
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+
+page-coins ion-segment {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  width: 30%;
+}
+
+page-coins .backSegment {
+  background: #9569fc;
+  background: -webkit-gradient(left top, right top, color-stop(0%, #9569fc), color-stop(100%, #5974fb));
+  background: -webkit-gradient(linear, left top, right top, from(#9569fc), to(#5974fb));
+  background: linear-gradient(to right, #9569fc 0%, #5974fb 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#9569fc', endColorstr='#5974fb', GradientType=1);
+  color: white;
+  font-weight: bold;
+  border-radius: 10px;
+}
+
+page-coins .segment-button.segment-activated {
+  border-color: transparent !important;
+  opacity: 1;
+  color: white;
+  height: 3.2rem;
+  font-weight: bold;
+}
+
+page-coins .segment-md .segment-button.segment-activated {
+  border-color: transparent;
+  opacity: 0.5;
+}
+
+page-coins .segment-md .segment-button {
+  opacity: 1;
+  color: white;
+  font-weight: bold;
+  height: 3.2rem;
+  line-height: 3rem;
+  font-size: 1.0rem;
+  background-color: transparent;
 }
 
 page-history .footer-md::before, page-history .tabs-md[tabsPlacement="bottom"] > .tabbar::before {
@@ -29541,6 +29686,10 @@ page-home .center {
   display: block;
   text-align: center;
   margin: auto;
+}
+
+page-home .mar1Left {
+  margin-left: -1%;
 }
 
 page-home .footer-md::before, page-home .tabs-md[tabsPlacement="bottom"] > .tabbar::before {
@@ -30281,6 +30430,62 @@ page-register .center {
   margin: auto;
 }
 
+page-security .flagWid {
+  width: 4.5em;
+}
+
+page-security .heigFlag {
+  height: 2em;
+}
+
+page-security .wid120 {
+  width: 120%;
+}
+
+page-security .marleft8 {
+  margin-left: -8%;
+}
+
+page-security .item-md {
+  padding-left: 16px;
+  padding-right: 0;
+  position: relative;
+  font-size: 1.6rem;
+  font-weight: normal;
+  text-transform: none;
+  color: #000;
+  background-color: transparent;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  -webkit-transition: background-color 300ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color 300ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+page-security .btnFlagCountry {
+  width: 40px;
+  height: 40px !important;
+  border-color: transparent;
+  background: #9569fc;
+  background: -webkit-gradient(left top, right top, color-stop(0%, #9569fc), color-stop(100%, #5974fc));
+  background: -webkit-gradient(linear, left top, right top, from(#9569fc), to(#5974fc));
+  background: linear-gradient(to right, #9569fc 0%, #5974fc 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#9569fc', endColorstr='#5974fc', GradientType=1 );
+  color: white;
+}
+
+page-security .marTop24 {
+  margin-top: -16%;
+}
+
+page-security .backTransp {
+  background: transparent;
+}
+
+page-security ion-input, page-security ion-textarea {
+  border: 0.5px #9669fc solid !important;
+  border-radius: 12px !important;
+}
+
 page-security .btn_show {
   position: absolute;
   min-width: 50px;
@@ -30293,6 +30498,57 @@ page-security .btn_show2 {
   min-width: 50px;
   right: 0;
   top: 42%;
+}
+
+page-security .styleIcospeq {
+  background: transparent;
+  width: 15;
+  height: 15;
+}
+
+page-security .BackGR3 {
+  background-image: url("../assets/icon/B3.png");
+  background-position: center top;
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+
+page-security .toolbar-background-md {
+  border-color: transparent;
+  background: #9569fc;
+  background: -webkit-gradient(left top, right top, color-stop(0%, #9569fc), color-stop(100%, #5974fc));
+  background: -webkit-gradient(linear, left top, right top, from(#9569fc), to(#5974fc));
+  background: linear-gradient(to right, #9569fc 0%, #5974fc 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#9569fc', endColorstr='#5974fc', GradientType=1 );
+  color: white;
+}
+
+page-security .toolbar-title-md {
+  padding: 0 12px;
+  font-size: 2rem;
+  font-weight: 500;
+  color: white;
+}
+
+page-security .item-md.item-block .item-inner {
+  padding-right: 8px;
+  border-bottom: 0px solid #dedede !important;
+}
+
+page-security .bar-button-default-md, page-security .bar-button-clear-md-default, page-security .bar-button-md-default {
+  color: white;
+}
+
+page-security .backCardsTransp {
+  background: #ffffffe0;
+}
+
+page-security .mrg1Top {
+  margin-top: 1%;
+}
+
+page-security .mrg10Top {
+  margin-top: 10%;
 }
 
 page-select-code .flag {

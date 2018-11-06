@@ -50,8 +50,7 @@ export class HomePage {
     else if(page =="precios")
     this.navCtrl.push("CoinsPage")
     else
-      this.navCtrl.push("TransactionPage");
-      
+      this.navCtrl.push("TransactionPage"); 
   }
 
 
