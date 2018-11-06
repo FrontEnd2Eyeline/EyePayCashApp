@@ -44,6 +44,8 @@ export class ProfilePage {
 		else if (page == "account")
 			//this.navCtrl.push("AccountPage");
 			this.navCtrl.setPages([{page: 'HomePage'}, {page: 'AccountPage'}]);
+		else if (page =="HomePage")
+			this.navCtrl.setRoot('HomePage');
 		else
 			//this.navCtrl.push("TransactionPage");
 			this.navCtrl.setPages([{page: 'HomePage'}, {page: 'TransactionPage'}]);
