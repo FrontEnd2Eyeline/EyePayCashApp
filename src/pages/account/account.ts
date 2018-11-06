@@ -117,10 +117,12 @@ export class AccountPage {
 
               }
             } else {
+              //this.errorProvider.cambiarFoto = true;
               this.errorProvider.obj.message = 'Todos los campos son obligatorios';
               this.errorProvider.presentModal();
 
               loading.dismiss();
+              //this.errorProvider.cambiarFoto = false;
             }
           }
         }
