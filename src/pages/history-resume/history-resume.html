@@ -79,18 +79,13 @@
           <ion-col col-6 text-left>{{'MONEDA_LOCAL'|translate}}: </ion-col>
           <ion-col col-6 text-right> {{historyInfo.amount_local | currency}} {{country.currency}}</ion-col>
         </ion-row>
-        <!--<ion-row>
-          <ion-col col-6 text-left>{{'TRM'|translate}}: </ion-col>
-          <ion-col col-6 text-right> {{comision.money_local_to_usd| currency}} {{country.currency}}</ion-col>
-        </ion-row>-->
-
         <ion-row>
           <ion-col col-6 text-left>{{'COSTO'|translate}} {{currency}}: </ion-col>
           <ion-col col-6 text-right> {{historyInfo.amount_usd|currency}} USD</ion-col>
         </ion-row>
         <ion-row>
           <ion-col col-6 text-left>{{'COSTO_BITCOIN'|translate}} {{coin.full_name}}: </ion-col>
-          <ion-col col-6 text-right> {{historyInfo.amount_btc}} {{coin.short_name}}</ion-col>
+          <ion-col col-12 text-right>{{historyInfo.amount_btc|number: '3.2-6'}} {{coin.short_name}}</ion-col>
         </ion-row>
       </ion-list>
     </ion-card-content>
@@ -104,7 +99,7 @@
     <ion-card-content>
       <ion-row>
         <ion-col col-6 text-left>{{'TOTAL_A_PAGAR'|translate}}</ion-col>
-        <ion-col col-6 text-right> {{historyInfo.amount_btc}} {{coin.short_name}}</ion-col>
+        <ion-col col-6 text-right> {{historyInfo.amount_btc | number: '3.2-6'}} {{coin.short_name}}</ion-col>
       </ion-row>
       <ion-row text-center>
         <ion-col col-12>

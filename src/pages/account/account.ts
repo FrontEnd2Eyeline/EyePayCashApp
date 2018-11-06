@@ -216,17 +216,20 @@ export class AccountPage {
 
   goPage(page) {
     if (page == 'profile')
-      this.navCtrl.push("ProfilePage");
+      //this.navCtrl.push("ProfilePage");
+      this.navCtrl.setPages([{page: 'HomePage' },{page: 'ProfilePage'}]);
     else if (page == 'history')
-      this.navCtrl.push("HistoryPage");
+      //this.navCtrl.push("HistoryPage");
+      this.navCtrl.setPages([{page: 'HomePage'},{page: 'HistoryPage'}]);
     else if(page=="maps")
-      this.navCtrl.push("MapPage");
+      //this.navCtrl.push("MapPage");
+      this.navCtrl.setPages([{page: 'HomePage'},{page: 'MapPage'}]);
     else if(page =="contact")
-      this.navCtrl.push("ContactsPage");
-    else if(page =="precios")
-    this.navCtrl.push("CoinsPage")
+      //this.navCtrl.push("ContactsPage");
+      this.navCtrl.setPages([{page: 'HomePage'},{page: 'ContactsPage'}]);
     else
-      this.navCtrl.push("TransactionPage"); 
+      //this.navCtrl.push("TransactionPage");
+      this.navCtrl.setPages([{page:'HomePage'}, {page: 'TransactionPage'}]);
   }
 
 

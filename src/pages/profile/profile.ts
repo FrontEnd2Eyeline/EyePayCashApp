@@ -27,19 +27,26 @@ export class ProfilePage {
 
 	goPage(page) {
 		if (page == 'profile')
-		  this.navCtrl.push("ProfilePage");
+			//this.navCtrl.push("ProfilePage");
+			this.navCtrl.setPages([{page: 'HomePage'}, {page: 'ProfilePage'}]);
 		else if (page == 'history')
-		  this.navCtrl.push("HistoryPage");
+			//this.navCtrl.push("HistoryPage");
+			this.navCtrl.setPages([{page: 'HomePage'}, {page: 'HistoryPage'}]);
 		else if(page=="maps")
-		  this.navCtrl.push("MapPage");
+			//this.navCtrl.push("MapPage");
+			this.navCtrl.setPages([{page:'HomePage'}, {page:'MapPage'}]);
 		else if(page =="contact")
-		  this.navCtrl.push("ContactsPage");
-		  else if (page =="security")
-		  this.navCtrl.push("SecurityPage");
-		  else if (page == "account")
-		  this.navCtrl.push("AccountPage")
+			//this.navCtrl.push("ContactsPage");
+			this.navCtrl.setPages([{page:'HomePage'}, {page: 'ContactsPage'}]);
+		else if (page =="security")
+			//this.navCtrl.push("SecurityPage");
+			this.navCtrl.setPages([{page: 'HomePage'}, {page: 'SecurityPage'}]);	
+		else if (page == "account")
+			//this.navCtrl.push("AccountPage");
+			this.navCtrl.setPages([{page: 'HomePage'}, {page: 'AccountPage'}]);
 		else
-		  this.navCtrl.push("TransactionPage");
+			//this.navCtrl.push("TransactionPage");
+			this.navCtrl.setPages([{page: 'HomePage'}, {page: 'TransactionPage'}]);
 	  }
 
 }
