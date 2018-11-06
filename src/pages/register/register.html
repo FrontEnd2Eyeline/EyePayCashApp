@@ -13,7 +13,7 @@
 					<msg-error [control]="formGroup.controls.first_name" name="Nombres"></msg-error>
 				</ion-item>
 				<ion-item class="marginlists">
-					<ion-label stacked>{{'APELLIDOS'||translate}}</ion-label>
+					<ion-label stacked>{{'APELLIDOS'|translate}}</ion-label>
 					<ion-input type="text" required name="userregistroapellido" formControlName="last_name">
 					</ion-input>
 				</ion-item>
@@ -73,12 +73,14 @@
 		</form>
 	</div>
 	<ion-list>
-		<ion-col col-2>
-			<ion-checkbox [(ngModel)]="ischecked"></ion-checkbox>
-		</ion-col>
-		<ion-col col-10><span (click)="politicas()">{{'POLITICAS_USO'|translate}}</span></ion-col>
+		<ion-col col-6>
+			<!--<ion-checkbox [(ngModel)]="ischecked"></ion-checkbox>-->
+			<ion-toggle (click)="verificarChecked()"></ion-toggle>
+		</ion-col> 
+		<ion-col col-6><span (click)="politicas()" >{{'POLITICAS_USO'|translate}}</span></ion-col>
 	</ion-list>
 	<div style="margin-top: 6%" class="center">
 		<button class="buttonPayCash" (click)="cancel()" ion-button small>{{'CANCELAR'|translate}}</button>
 	</div>
 </ion-content>
+<!--[disabled]="ischecked" (ionChange)="ischecked = !ischecked" -->
