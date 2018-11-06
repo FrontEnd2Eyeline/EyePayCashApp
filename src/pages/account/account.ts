@@ -132,6 +132,7 @@ export class AccountPage {
   }
 
   cerrarSesion() {
+    console.log("cualquiercosa")
     window.localStorage.clear();
     this.navCtrl.setRoot('LoginPage');
   }
@@ -230,7 +231,8 @@ export class AccountPage {
       //this.navCtrl.push("TransactionPage");
       this.navCtrl.setPages([{page:'HomePage'}, {page: 'TransactionPage'}]);
   }
-  
+
+
   foto() {
     this.alertCtrl.create({
       buttons: [
