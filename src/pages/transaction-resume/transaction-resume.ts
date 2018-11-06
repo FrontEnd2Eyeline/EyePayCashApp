@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {IonicPage, LoadingController, NavController, NavParams} from 'ionic-angular';
+import {IonicPage, LoadingController, NavController, NavParams, ToastController, ToastOptions} from 'ionic-angular';
 import {Clipboard} from "@ionic-native/clipboard";
 
 
@@ -16,12 +16,14 @@ export class TransactionResumePage {
   private coin: any = null;
   private country: any = null;
   private qrlink: any = null;
+  toastOp: ToastOptions;
 
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
     public loadingCtrl: LoadingController,
-    private clipboard: Clipboard
+    private clipboard: Clipboard,
+    private toastCtrl: ToastController
   ) {
     this.getIngfo();
   }
@@ -45,7 +47,20 @@ export class TransactionResumePage {
      ]);
   }
   copiarToken(){
-    this.clipboard.copy(this.coinhas.eye_hash)
+    this.clipboard.copy(this.coinhas.eye_hash);
+    const toast = this.toastCtrl.create({
+      message: 'Copiado',
+      duration: 3000,
+      position: 'middle'
+      //showCloseButton: true,
+      //closeButtonText: OK
+    });
+    toast.onDidDismiss(this.dismissHandler);
+    toast.present();
+  }
+
+  private dismissHandler() {
+    console.info('Toast onDidDismiss()');
   }
 
 }

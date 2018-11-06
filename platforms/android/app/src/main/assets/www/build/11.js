@@ -1,15 +1,15 @@
 webpackJsonp([11],{
 
-/***/ 723:
+/***/ 729:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ModalWelcomePageModule", function() { return ModalWelcomePageModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ProfilePageModule", function() { return ProfilePageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(26);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__modal_welcome__ = __webpack_require__(746);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ngx_translate_core__ = __webpack_require__(93);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(21);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__profile__ = __webpack_require__(757);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ngx_translate_core__ = __webpack_require__(94);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -20,34 +20,34 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var ModalWelcomePageModule = /** @class */ (function () {
-    function ModalWelcomePageModule() {
+var ProfilePageModule = /** @class */ (function () {
+    function ProfilePageModule() {
     }
-    ModalWelcomePageModule = __decorate([
+    ProfilePageModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["J" /* NgModule */])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_2__modal_welcome__["a" /* ModalWelcomePage */],
+                __WEBPACK_IMPORTED_MODULE_2__profile__["a" /* ProfilePage */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__modal_welcome__["a" /* ModalWelcomePage */]),
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__profile__["a" /* ProfilePage */]),
                 __WEBPACK_IMPORTED_MODULE_3__ngx_translate_core__["b" /* TranslateModule */]
             ],
         })
-    ], ModalWelcomePageModule);
-    return ModalWelcomePageModule;
+    ], ProfilePageModule);
+    return ProfilePageModule;
 }());
 
-//# sourceMappingURL=modal-welcome.module.js.map
+//# sourceMappingURL=profile.module.js.map
 
 /***/ }),
 
-/***/ 746:
+/***/ 757:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ModalWelcomePage; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ProfilePage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(26);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(21);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -60,35 +60,46 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 /**
- * Generated class for the ModalWelcomePage page.
+ * Generated class for the ProfilePage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
  */
-var ModalWelcomePage = /** @class */ (function () {
-    function ModalWelcomePage(navCtrl, navParams) {
+var ProfilePage = /** @class */ (function () {
+    function ProfilePage(navCtrl, navParams) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
-        this.name = null;
-        this.getInfo();
     }
-    ModalWelcomePage.prototype.getInfo = function () {
-        this.name = this.navParams.get('name');
+    ProfilePage.prototype.ionViewDidLoad = function () {
+        console.log('ionViewDidLoad ProfilePage');
     };
-    ModalWelcomePage.prototype.closeModal = function () {
-        this.navCtrl.pop();
+    ProfilePage.prototype.goPage = function (page) {
+        if (page == 'profile')
+            this.navCtrl.push("ProfilePage");
+        else if (page == 'history')
+            this.navCtrl.push("HistoryPage");
+        else if (page == "maps")
+            this.navCtrl.push("MapPage");
+        else if (page == "contact")
+            this.navCtrl.push("ContactsPage");
+        else if (page == "security")
+            this.navCtrl.push("SecurityPage");
+        else if (page == "account")
+            this.navCtrl.push("AccountPage");
+        else
+            this.navCtrl.push("TransactionPage");
     };
-    ModalWelcomePage = __decorate([
+    ProfilePage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-            selector: 'page-modal-welcome',template:/*ion-inline-start:"/Users/eyeline/Documents/GitHub/eyepaycashapp/src/pages/modal-welcome/modal-welcome.html"*/'<!--\n  Generated template for the ModalWelcomePage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-content padding class="tamano">\n  <ion-row>\n    <ion-col col-10>\n      <h4>Bienvenido {{name}}</h4>\n    </ion-col>\n    <ion-col col-2>\n      <ion-buttons end>\n        <button ion-button icon-only (click)="closeModal()">\n          <ion-icon item-right name="ios-close-outline"></ion-icon>\n        </button>\n      </ion-buttons>\n    </ion-col>\n  </ion-row>\n  <img src="assets/ok.png">\n</ion-content>\n'/*ion-inline-end:"/Users/eyeline/Documents/GitHub/eyepaycashapp/src/pages/modal-welcome/modal-welcome.html"*/,
+            selector: 'page-profile',template:/*ion-inline-start:"/Users/eyeline/Documents/GitHub/eyepaycashapp/src/pages/profile/profile.html"*/'<ion-content class="BackGRa" padding>\n	<div class="center">\n		<img class="logo mrgLogoTopBut" src="assets/imgs/EPCLogo.png" />\n	</div>\n	<div class="center mrg36Top">\n		<ion-row>\n			<ion-col (click)="goPage(\'account\')" class="lineRight lineRight2 linerig" col-6 >\n				<img class="tamaIcos" src="assets/newIcons/13.png" />\n				<h6 class="colWhite">{{\'MI_CUENTA\'|translate}}</h6>\n			</ion-col>\n			<ion-col (click)="goPage(\'security\')" class="lineRight2" col-6 >\n				<img class="tamaIcos" src="assets/newIcons/14.png" />\n				<h6 class="colWhite">{{\'SEGURIDAD\'|translate}}</h6>\n			</ion-col>\n		</ion-row>\n		<ion-row>\n			<ion-col (click)="goPage(\'TransactionPage\')" class="lineRight" col-6>\n				<img class="tamaIcos" src="assets/newIcons/15.png" />\n				<h6 class="colWhite">{{\'TRANSACCION\'|translate}}</h6>\n			</ion-col>\n			<ion-col (click)="goPage(\'history\')" >\n				<img class="tamaIcos" src="assets/newIcons/16.png" />\n				<h6 class="colWhite">Historial</h6>\n			</ion-col>\n		</ion-row>\n		<ion-item class="center bacTransp">\n			<button class="buttonPayCash borderBtns" ion-button small>CONOCE MÁS</button>\n		</ion-item>\n	</div>\n</ion-content>'/*ion-inline-end:"/Users/eyeline/Documents/GitHub/eyepaycashapp/src/pages/profile/profile.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */]])
-    ], ModalWelcomePage);
-    return ModalWelcomePage;
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavController */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* NavParams */]])
+    ], ProfilePage);
+    return ProfilePage;
 }());
 
-//# sourceMappingURL=modal-welcome.js.map
+//# sourceMappingURL=profile.js.map
 
 /***/ })
 

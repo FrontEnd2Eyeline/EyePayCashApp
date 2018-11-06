@@ -27,6 +27,7 @@ export class MyApp {
 			  private storage: Storage,
 			  loockScreen: TouchLoginProvider,
   ) {
+    this.seleccionar('es');
 	if (!this.langProvider.verifyIsLanguage())
 	// this.rootPage = 'TouchLoginPage';
       this.rootPage = 'LoginPage';

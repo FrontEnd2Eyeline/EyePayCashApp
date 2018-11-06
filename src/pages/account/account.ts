@@ -1,18 +1,20 @@
-import {Component} from '@angular/core';
+import { Component } from '@angular/core';
 import {
-  AlertController,
-  IonicPage,
-  LoadingController,
-  ModalController,
-  NavController,
-  NavParams,
-  ToastController
+	AlertController,
+	IonicPage,
+	LoadingController,
+	ModalController,
+	NavController,
+	NavParams,
+	ToastController
 } from 'ionic-angular';
-import {Api} from "../../providers/api";
-import {AuthUserProvider} from "../../providers/auth-user/auth-user";
-import {ModalErrorProvider} from '../../providers/modal-error/modal-error';
-import {Camera} from "@ionic-native/camera";
-import {CameraProvider} from "../../providers/camera/camera";
+import { Api } from "../../providers/api";
+import { AuthUserProvider } from "../../providers/auth-user/auth-user";
+import { ModalErrorProvider } from '../../providers/modal-error/modal-error';
+import { Camera } from "@ionic-native/camera";
+import { CameraProvider } from "../../providers/camera/camera";
+import { TouchLoginProvider } from '../../providers/touch-login/touch-login';
+import { isArray } from 'util';
 
 /**
  * Generated class for the AccountPage page.
@@ -23,257 +25,272 @@ import {CameraProvider} from "../../providers/camera/camera";
 
 @IonicPage()
 @Component({
-  selector: 'page-account',
-  templateUrl: 'account.html',
+	selector: 'page-account',
+	templateUrl: 'account.html',
 })
 export class AccountPage {
 
-  private usuario: any = null;
-  private country: any = null;
-  public type = 'password';
-  public showPass = false;
-  public type2 = 'password';
-  public showPass2 = false;
+	private usuario: any = null;
+	private country: any = null;
+	public type = 'password';
+	public showPass = false;
+	public type2 = 'password';
+	public showPass2 = false;
 
-//=========================  CONTROL DE VALIDACIÓN DEL USUARIO
-  private view_Verify_Phone = false;
-  private view_Verify_Mail = false;
+	//=========================  CONTROL DE VALIDACIÓN DEL USUARIO
+	private view_Verify_Phone = false;
+	private view_Verify_Mail = false;
 
-  private view_Btn_phone = false;
-  private view_Btn_mail = false;
+	private view_Btn_phone = false;
+	private view_Btn_mail = false;
 
-  private code_Verify_Phone = null;
-  private code_Verify_Mail = null;
+	private code_Verify_Phone = null;
+	private code_Verify_Mail = null;
 
-  private responseVerify: any = null;
-//=========================== CONTROL DE INPUTS
-  public control_label: string = "label";
-
-
-  constructor(public navCtrl: NavController,
-              public navParams: NavParams,
-              protected api: Api,
-              protected userProvider: AuthUserProvider,
-              public toastCtrl: ToastController,
-              public loadingCtrl: LoadingController,
-              public modal: ModalController,
-              public alertCtrl: AlertController,
-              public errorProvider: ModalErrorProvider,
-              private camera: CameraProvider
-  ) {
-    this.getInfo();
-  }
+	private responseVerify: any = null;
+	//=========================== CONTROL DE INPUTS
+	public control_label: string = "label";
 
 
-  private getInfo() {
-    this.usuario = this.userProvider.user_Info;
-    this.country = this.userProvider.user_Country;
-    this.controlBtns();
-  }
+	constructor(public navCtrl: NavController,
+		public navParams: NavParams,
+		protected api: Api,
+		protected userProvider: AuthUserProvider,
+		public toastCtrl: ToastController,
+		public loadingCtrl: LoadingController,
+		public modal: ModalController,
+		public alertCtrl: AlertController,
+		public errorProvider: ModalErrorProvider,
+		private camera: CameraProvider,
+		private loginProvider: TouchLoginProvider
+	) {
+		this.getInfo();
+	}
 
 
-  actualizar() {
-
-    const confirm = this.alertCtrl.create({
-      message: '¿Desea actualizar la información?',
-      buttons: [
-        {
-          text: 'Cancelar',
-          role: 'cancel',
-        },
-        {
-          text: 'Actualizar',
-          handler: () => {
-            let loading = this.loadingCtrl.create({
-              spinner: 'hide',
-              content: "<img src='assets/imgs/buho.png'>",
-            });
-            loading.present();
-            if (this.usuario.first_name != null && this.usuario.last_name != null &&
-              this.usuario.first_name != "" && this.usuario.last_name != "") {
-              if (this.usuario.first_name.length > 2 && this.usuario.last_name.length > 2) {
-                this.api.post('account/update-info', this.usuario, this.userProvider)
-                  .then((data: any) => {
-                    this.errorProvider.obj.message = 'Información personal acrtualizada correctamente';
-                    this.errorProvider.presentModal();
-
-                    this.usuario = data;
-                    loading.dismiss();
-                  }).catch(error => {
-                  // let mensaje = 'Por favor corrija lo siguiente \n';
-                  let mensaje = '';
-                  error.error.forEach(data => {
-                    mensaje += data.field + ": " + data.message + "\n";
-                  });
-                  this.errorProvider.obj.message = mensaje;
-                  this.errorProvider.presentModal();
-
-                  loading.dismiss();
-                });
-              } else {
-                loading.dismiss();
-                this.errorProvider.obj.message = 'Nombre y apellido deben contener más de 2 caracteres';
-                this.errorProvider.presentModal();
-
-              }
-            } else {
-              this.errorProvider.obj.message = 'Todos los campos son obligatorios';
-              this.errorProvider.presentModal();
-
-              loading.dismiss();
-            }
-          }
-        }
-      ]
-    });
-    confirm.present();
+	private getInfo() {
+		this.usuario = this.userProvider.user_Info;
+		this.country = this.userProvider.user_Country;
+		this.controlBtns();
+	}
 
 
-  }
+	actualizar() {
 
-  cerrarSesion() {
-    console.log("cualquiercosa")
-    window.localStorage.clear();
-    this.navCtrl.setRoot('LoginPage');
-  }
+		const confirm = this.alertCtrl.create({
+			message: '¿Desea actualizar la información?',
+			buttons: [
+				{
+					text: 'Cancelar',
+					role: 'cancel',
+				},
+				{
+					text: 'Actualizar',
+					handler: () => {
+						let loading = this.loadingCtrl.create({
+							spinner: 'hide',
+							content: "<img src='assets/imgs/buho.png'>",
+						});
+						loading.present();
+						if (this.usuario.first_name != null && this.usuario.last_name != null &&
+							this.usuario.first_name != "" && this.usuario.last_name != "") {
+							if (this.usuario.first_name.length > 2 && this.usuario.last_name.length > 2) {
+								this.api.post('account/update-info', this.usuario, this.userProvider)
+									.then((data: any) => {
+										this.errorProvider.obj.message = 'Información personal acrtualizada correctamente';
+										this.errorProvider.presentModal();
 
-  reenviarConfirm(tipo) {
-    this.code_Verify_Phone = null;
-    this.code_Verify_Mail = null;
-    this.responseVerify = null;
-    if (tipo == 'phone') {
-      this.view_Verify_Phone = true;
-      this.view_Verify_Mail = false;
-      this.view_Btn_mail = false;
+										this.usuario = data;
+										loading.dismiss();
+									}).catch(error => {
+										// let mensaje = 'Por favor corrija lo siguiente \n';
+										let mensaje = '';
+										error.error.forEach(data => {
+											mensaje += data.field + ": " + data.message + "\n";
+										});
+										this.errorProvider.obj.message = mensaje;
+										this.errorProvider.presentModal();
 
-    } else {
-      this.view_Verify_Phone = false;
-      this.view_Btn_phone = false;
-      this.view_Verify_Mail = true;
-    }
-    this.api.get("account/re-send-verify", this.userProvider, {type: tipo}).then((data: any) => {
-      this.responseVerify = data;
-    }).catch()
-  }
+										loading.dismiss();
+									});
+							} else {
+								loading.dismiss();
+								this.errorProvider.obj.message = 'Nombre y apellido deben contener más de 2 caracteres';
+								this.errorProvider.presentModal();
 
-  validateCode(tipo) {
-    let guardar = false;
-    if (tipo == 'mail') {
-      if (this.code_Verify_Mail == this.responseVerify.mail_code) {
-        guardar = true;
-      } else {
-        guardar = false;
-        this.errorProvider.obj.message = 'El código no coincide';
-        this.errorProvider.presentModal();
+							}
+						} else {
+							this.errorProvider.obj.message = 'Todos los campos son obligatorios';
+							this.errorProvider.presentModal();
 
-      }
-    } else {
-      if (this.code_Verify_Phone == this.responseVerify.phone_code) {
-        guardar = true;
-      } else {
-        guardar = false;
-        this.errorProvider.obj.message = 'El código no coincide';
-        this.errorProvider.presentModal();
-
-      }
-    }
-    this.code_Verify_Mail = null;
-    this.code_Verify_Phone = null;
-    if (guardar)
-      this.api.get("account/confirm-verify", this.userProvider, {"type": tipo, id: this.responseVerify.id})
-        .then((data: any) => {
-          if (data.success == "ok") {
-            if (tipo == 'mail')
-              this.userProvider.User_Verify.is_mail_verify = 1;
-            else
-              this.userProvider.User_Verify.is_phone_verify = 1;
-          }
-          this.responseVerify = null;
-          this.view_Verify_Mail = false;
-          this.view_Verify_Phone = false;
-          this.controlBtns();
-        })
-  }
-
-  cancelValidation() {
-    this.responseVerify = null;
-    this.view_Verify_Mail = false;
-    this.view_Verify_Mail = false;
-    this.code_Verify_Phone = null;
-    this.code_Verify_Mail = null;
-  }
-
-  controlBtns() {
-    if (this.userProvider.User_Verify.is_mail_verify == 0)
-      this.view_Btn_mail = true;
-    else
-      this.view_Btn_mail = false;
-    if (this.userProvider.User_Verify.is_phone_verify == 0)
-      this.view_Btn_phone = true;
-    else
-      this.view_Btn_phone = false;
-  }
-
-  goPage(page) {
-    if (page == 'profile')
-      //this.navCtrl.push("ProfilePage");
-      this.navCtrl.setPages([{page: 'HomePage' },{page: 'ProfilePage'}]);
-    else if (page == 'history')
-      //this.navCtrl.push("HistoryPage");
-      this.navCtrl.setPages([{page: 'HomePage'},{page: 'HistoryPage'}]);
-    else if(page=="maps")
-      //this.navCtrl.push("MapPage");
-      this.navCtrl.setPages([{page: 'HomePage'},{page: 'MapPage'}]);
-    else if(page =="contact")
-      //this.navCtrl.push("ContactsPage");
-      this.navCtrl.setPages([{page: 'HomePage'},{page: 'ContactsPage'}]);
-    else
-      //this.navCtrl.push("TransactionPage");
-      this.navCtrl.setPages([{page:'HomePage'}, {page: 'TransactionPage'}]);
-  }
+							loading.dismiss();
+						}
+					}
+				}
+			]
+		});
+		confirm.present();
 
 
-  foto() {
-    this.alertCtrl.create({
-      buttons: [
-        {
-          text: 'Tomar una foto',
-          handler: () => this.tomarFoto()
-        },
-        {
-          text: 'Seleccionar una foto',
-          handler: () => this.seleccionarFoto()
-        },
-        {
-          text: 'Cancelar',
-          role: 'cancel',
-        }
-      ]
-    }).present();
-  }
+	}
 
-  tomarFoto() {
-    this.camera.getPhoto().then( (data:any )=>{
-      this.enviarServidor(data);
-    });
-  }
+	cerrarSesion() {
+		window.localStorage.clear();
+		this.navCtrl.setRoot('LoginPage');
+	}
 
-  seleccionarFoto() {
-    this.camera.getPhotoDirectory().then((data:any)=>{
-      this.enviarServidor(data);
-    })
-  }
-  
-  enviarServidor(data64){
-    this.api.post('account/perfil',{pic:data64},this.userProvider).then( (data)=>{
-      //  AQUI HAY QUE HACER QUE RECIBA LA DATA DEL THEN Y ACTUALIZE LA VARIABLE USER. A LA VARIABLE USER HAY QUE ANEXARLE
-      // EL ATTRIBUTO URL_FOTO
-      let toast = this.toastCtrl.create({
-        message:'Foto cambiada correctamente',
-        duration:3000,
-      });
-      toast.present();
-    }).catch()
-  }
+	reenviarConfirm(tipo) {
+		this.code_Verify_Phone = null;
+		this.code_Verify_Mail = null;
+		this.responseVerify = null;
+		if (tipo == 'phone') {
+			this.view_Verify_Phone = true;
+			this.view_Verify_Mail = false;
+			this.view_Btn_mail = false;
+
+		} else {
+			this.view_Verify_Phone = false;
+			this.view_Btn_phone = false;
+			this.view_Verify_Mail = true;
+		}
+		this.api.get("account/re-send-verify", this.userProvider, { type: tipo }).then((data: any) => {
+			this.responseVerify = data;
+		}).catch()
+	}
+
+	validateCode(tipo) {
+		let guardar = false;
+		if (tipo == 'mail') {
+			if (this.code_Verify_Mail == this.responseVerify.mail_code) {
+				guardar = true;
+			} else {
+				guardar = false;
+				this.errorProvider.obj.message = 'El código no coincide';
+				this.errorProvider.presentModal();
+
+			}
+		} else {
+			if (this.code_Verify_Phone == this.responseVerify.phone_code) {
+				guardar = true;
+			} else {
+				guardar = false;
+				this.errorProvider.obj.message = 'El código no coincide';
+				this.errorProvider.presentModal();
+
+			}
+		}
+		this.code_Verify_Mail = null;
+		this.code_Verify_Phone = null;
+		if (guardar)
+			this.api.get("account/confirm-verify", this.userProvider, { "type": tipo, id: this.responseVerify.id })
+				.then((data: any) => {
+					if (data.success == "ok") {
+						if (tipo == 'mail')
+							this.userProvider.User_Verify.is_mail_verify = 1;
+						else
+							this.userProvider.User_Verify.is_phone_verify = 1;
+					}
+					this.responseVerify = null;
+					this.view_Verify_Mail = false;
+					this.view_Verify_Phone = false;
+					this.controlBtns();
+				})
+	}
+
+	cancelValidation() {
+		this.responseVerify = null;
+		this.view_Verify_Mail = false;
+		this.view_Verify_Mail = false;
+		this.code_Verify_Phone = null;
+		this.code_Verify_Mail = null;
+	}
+
+	controlBtns() {
+		if (this.userProvider.User_Verify.is_mail_verify == 0)
+			this.view_Btn_mail = true;
+		else
+			this.view_Btn_mail = false;
+		if (this.userProvider.User_Verify.is_phone_verify == 0)
+			this.view_Btn_phone = true;
+		else
+			this.view_Btn_phone = false;
+	}
+
+	goPage(page) {
+		if (page == 'profile')
+			this.navCtrl.push("ProfilePage");
+		else if (page == 'history')
+			this.navCtrl.push("HistoryPage");
+		else if (page == "maps")
+			this.navCtrl.push("MapPage");
+		else if (page == "contact")
+			this.navCtrl.push("ContactsPage");
+		else
+			this.navCtrl.push("TransactionPage");
+	}
+
+	foto() {
+		this.alertCtrl.create({
+			buttons: [
+				{
+					text: 'Tomar una foto',
+					handler: () => this.tomarFoto()
+				},
+				{
+					text: 'Seleccionar una foto',
+					handler: () => this.seleccionarFoto()
+				},
+				{
+					text: 'Cancelar',
+					role: 'cancel',
+				}
+			]
+		}).present();
+	}
+
+	tomarFoto() {
+		this.loginProvider.isTouch = false;
+		this.camera.getPhoto().then((data: any) => {
+			this.enviarServidor(data);
+		}).catch(() => {
+			this.loginProvider.isTouch = true;
+		});
+	}
+
+	seleccionarFoto() {
+		this.loginProvider.isTouch = false;
+		this.camera.getPhotoDirectory().then((data: any) => {
+			this.enviarServidor(data);
+		}).catch((error) => {
+			let mensaje = "";
+			if(isArray(error.error)){
+				error.error.forEach(data => {
+					mensaje += data.mensaje + "\n";
+				});
+			
+				this.errorProvider.obj.message = mensaje;
+				this.errorProvider.presentModal();
+			}else{
+				this.errorProvider.obj.message = error.message;
+				this.errorProvider.presentModal();
+			}
+			this.loginProvider.isTouch = true;
+		});
+	}
+
+	enviarServidor(data64) {
+		this.api.post('account/upload-photo', { pic: data64 }, this.userProvider).then((data) => {
+			this.loginProvider.isTouch = true;
+			console.log('data imagen', data)
+			this.userProvider.user_Info.url_img = data;
+			let toast = this.toastCtrl.create({
+				message: 'Foto cambiada correctamente',
+				duration: 3000,
+			});
+			toast.present();
+		}).catch(() => {
+			this.loginProvider.isTouch = true;
+		});
+	}
 
 }

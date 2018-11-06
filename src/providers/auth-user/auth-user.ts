@@ -16,7 +16,8 @@ export class AuthUserProvider {
     access_token: null,
     is_active: null,
     gender: null,
-    mail: null,
+	mail: null,
+	url_img: null,
   };
   public user_Country: any = {
     id: null,
