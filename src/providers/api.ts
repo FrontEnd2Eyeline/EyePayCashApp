@@ -9,8 +9,9 @@ import {LoginPage} from "../pages/login/login";
 
 @Injectable()
 export class Api {
-  url: string = 'http://globalone2onemarketing.com/frontend/web/apiapp/';
+  // url: string = 'http://globalone2onemarketing.com/frontend/web/apiapp/';
   // url: string = 'http://10.160.170.114/eyepaycash/frontend/web/apiapp/';
+  url: string = 'http://3ef8564b.ngrok.io/eyepaycash/frontend/web/apiapp/';
   // url: string = 'http://35557b72.ngrok.io/eyepaycash/frontend/web/apiapp/';
   headers: HttpHeaders;
 
