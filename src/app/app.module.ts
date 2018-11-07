@@ -32,6 +32,8 @@ import {FingerprintAIO} from "@ionic-native/fingerprint-aio";
 import {TouchLoginProvider} from '../providers/touch-login/touch-login';
 import {Camera} from "@ionic-native/camera";
 import {CameraProvider} from "../providers/camera/camera";
+import { SocialSharing } from "@ionic-native/social-sharing";
+import { SocialSharingProvider } from '../providers/social-sharing/social-sharing';
 
 
 export function createTranslateLoader(http: HttpClient) {
@@ -86,7 +88,9 @@ export function createTranslateLoader(http: HttpClient) {
     FingerprintAIO,
     TouchLoginProvider,
     Camera,
-    CameraProvider,
+	CameraProvider,
+	SocialSharing,
+    SocialSharingProvider
   ]
 })
 export class AppModule {

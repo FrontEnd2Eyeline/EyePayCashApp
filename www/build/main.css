@@ -29404,6 +29404,12 @@ page-coins .segment-md .segment-button {
   background-color: transparent;
 }
 
+page-contacts .center2 {
+  display: block;
+  text-align: center;
+  margin: auto;
+}
+
 page-history .footer-md::before, page-history .tabs-md[tabsPlacement="bottom"] > .tabbar::before {
   top: -2px;
   bottom: auto;

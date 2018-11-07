@@ -49,7 +49,14 @@
     },
     "cordova-plugin-camera": {
       "PACKAGE_NAME": "com.eyepaycash.app"
+    },
+    "cordova-plugin-x-socialsharing": {
+      "PACKAGE_NAME": "com.eyepaycash.app"
     }
   },
-  "dependent_plugins": {}
+  "dependent_plugins": {
+    "es6-promise-plugin": {
+      "PACKAGE_NAME": "com.eyepaycash.app"
+    }
+  }
 }
