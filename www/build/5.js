@@ -1,18 +1,16 @@
 webpackJsonp([5],{
 
-/***/ 723:
+/***/ 726:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MapPageModule", function() { return MapPageModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LoginPageModule", function() { return LoginPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(21);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__map__ = __webpack_require__(747);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_geolocation__ = __webpack_require__(95);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_google_maps__ = __webpack_require__(383);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_map_map__ = __webpack_require__(384);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__ngx_translate_core__ = __webpack_require__(94);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__login__ = __webpack_require__(754);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_components_module__ = __webpack_require__(738);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ngx_translate_core__ = __webpack_require__(94);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -24,48 +22,130 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-
-
-var MapPageModule = /** @class */ (function () {
-    function MapPageModule() {
+var LoginPageModule = /** @class */ (function () {
+    function LoginPageModule() {
     }
-    MapPageModule = __decorate([
+    LoginPageModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["J" /* NgModule */])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_2__map__["a" /* MapPage */],
+                __WEBPACK_IMPORTED_MODULE_2__login__["a" /* LoginPage */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__map__["a" /* MapPage */]),
-                __WEBPACK_IMPORTED_MODULE_6__ngx_translate_core__["b" /* TranslateModule */]
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__login__["a" /* LoginPage */]),
+                __WEBPACK_IMPORTED_MODULE_4__ngx_translate_core__["b" /* TranslateModule */],
+                __WEBPACK_IMPORTED_MODULE_3__components_components_module__["a" /* ComponentsModule */],
             ],
-            providers: [
-                __WEBPACK_IMPORTED_MODULE_3__ionic_native_geolocation__["a" /* Geolocation */],
-                __WEBPACK_IMPORTED_MODULE_4__ionic_native_google_maps__["a" /* Geocoder */],
-                __WEBPACK_IMPORTED_MODULE_5__providers_map_map__["a" /* MapProvider */]
-            ]
         })
-    ], MapPageModule);
-    return MapPageModule;
+    ], LoginPageModule);
+    return LoginPageModule;
 }());
 
-//# sourceMappingURL=map.module.js.map
+//# sourceMappingURL=login.module.js.map
 
 /***/ }),
 
-/***/ 747:
+/***/ 738:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MapPage; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ComponentsModule; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__msg_error_msg_error__ = __webpack_require__(739);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_common__ = __webpack_require__(34);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+
+
+var ComponentsModule = /** @class */ (function () {
+    function ComponentsModule() {
+    }
+    ComponentsModule = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["J" /* NgModule */])({
+            declarations: [__WEBPACK_IMPORTED_MODULE_1__msg_error_msg_error__["a" /* MsgErrorComponent */]],
+            imports: [__WEBPACK_IMPORTED_MODULE_2__angular_common__["b" /* CommonModule */]],
+            exports: [__WEBPACK_IMPORTED_MODULE_1__msg_error_msg_error__["a" /* MsgErrorComponent */]]
+        })
+    ], ComponentsModule);
+    return ComponentsModule;
+}());
+
+//# sourceMappingURL=components.module.js.map
+
+/***/ }),
+
+/***/ 739:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MsgErrorComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_forms__ = __webpack_require__(22);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_validation_validation__ = __webpack_require__(380);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+var MsgErrorComponent = /** @class */ (function () {
+    function MsgErrorComponent() {
+    }
+    Object.defineProperty(MsgErrorComponent.prototype, "errorMessage", {
+        get: function () {
+            for (var propertyName in this.control.errors) {
+                if (this.control.errors.hasOwnProperty(propertyName) && this.control.touched) {
+                    return __WEBPACK_IMPORTED_MODULE_2__providers_validation_validation__["a" /* ValidationProvider */].getValidatorErrorMessage(propertyName, this.control.errors[propertyName], this.name);
+                }
+            }
+            return false;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["E" /* Input */])(),
+        __metadata("design:type", __WEBPACK_IMPORTED_MODULE_1__angular_forms__["b" /* FormControl */])
+    ], MsgErrorComponent.prototype, "control", void 0);
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["E" /* Input */])(),
+        __metadata("design:type", String)
+    ], MsgErrorComponent.prototype, "name", void 0);
+    MsgErrorComponent = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+            selector: 'msg-error',
+            template: '<div><span *ngIf="errorMessage !== false">{{errorMessage}}</span></div>'
+        }),
+        __metadata("design:paramtypes", [])
+    ], MsgErrorComponent);
+    return MsgErrorComponent;
+}());
+
+//# sourceMappingURL=msg-error.js.map
+
+/***/ }),
+
+/***/ 754:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LoginPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(21);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_google_maps__ = __webpack_require__(383);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_geolocation__ = __webpack_require__(95);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_api__ = __webpack_require__(48);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_auth_user_auth_user__ = __webpack_require__(67);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__app_mapStyle__ = __webpack_require__(748);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__providers_map_map__ = __webpack_require__(384);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__providers_modal_error_modal_error__ = __webpack_require__(68);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_auth_user_auth_user__ = __webpack_require__(67);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_forms__ = __webpack_require__(22);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_modal_error_modal_error__ = __webpack_require__(68);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_ionic_angular_util_util__ = __webpack_require__(2);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -81,208 +161,109 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
-
-
-
-/**
- * Generated class for the MapPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-var MapPage = /** @class */ (function () {
-    function MapPage(navCtrl, navParams, geolocation, api, user, mapProvider, loadCtl, errorProvider) {
+var LoginPage = /** @class */ (function () {
+    function LoginPage(navCtrl, loadingCtrl, userProvider, toastCtrl, modalCtrl, formBuilder, errorProvider, menuCtrl) {
         this.navCtrl = navCtrl;
-        this.navParams = navParams;
-        this.geolocation = geolocation;
-        this.api = api;
-        this.user = user;
-        this.mapProvider = mapProvider;
-        this.loadCtl = loadCtl;
+        this.loadingCtrl = loadingCtrl;
+        this.userProvider = userProvider;
+        this.toastCtrl = toastCtrl;
+        this.modalCtrl = modalCtrl;
+        this.formBuilder = formBuilder;
         this.errorProvider = errorProvider;
-        this.idsLoaded = [];
+        this.menuCtrl = menuCtrl;
+        // formGroup = this.formBuilder.group({
+        //   password: ['', Validators.compose([
+        //     Validators.required,
+        //     Validators.minLength(6)
+        //   ])],
+        //
+        //   mail: ['', Validators.compose([
+        //     Validators.required,
+        //     Validators.minLength(6),
+        //     Validators.email]),
+        //      Validators.pattern('^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$')
+        //   ],
+        // });
+        this.formGroup = new __WEBPACK_IMPORTED_MODULE_3__angular_forms__["c" /* FormGroup */]({
+            mail: new __WEBPACK_IMPORTED_MODULE_3__angular_forms__["b" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_3__angular_forms__["h" /* Validators */].required, __WEBPACK_IMPORTED_MODULE_3__angular_forms__["h" /* Validators */].email]),
+            password: new __WEBPACK_IMPORTED_MODULE_3__angular_forms__["b" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_3__angular_forms__["h" /* Validators */].required, __WEBPACK_IMPORTED_MODULE_3__angular_forms__["h" /* Validators */].minLength(6)]),
+        });
     }
-    MapPage.prototype.ionViewDidLoad = function () {
-        this.loading = this.loadCtl.create({
-            spinner: 'hide',
-            content: "<img src='assets/imgs/buho.png'>",
-        });
-        this.loading.present();
-        this.loadMap();
-        this.loadMarkers();
+    LoginPage.prototype.ionViewWillEnter = function () {
+        this.menuCtrl.enable(false);
     };
-    MapPage.prototype.loadMap = function () {
+    LoginPage.prototype.login = function () {
         var _this = this;
-        var mapOptions = {
-            camera: this.mapProvider.camera,
-            styles: __WEBPACK_IMPORTED_MODULE_6__app_mapStyle__["a" /* mapStyle */]
-        };
-        this.map = __WEBPACK_IMPORTED_MODULE_2__ionic_native_google_maps__["b" /* GoogleMaps */].create('map', mapOptions);
-        // Wait the MAP_READY before using any methods.
-        this.map.one(__WEBPACK_IMPORTED_MODULE_2__ionic_native_google_maps__["c" /* GoogleMapsEvent */].MAP_READY)
-            .then(function () {
-            _this.getPosition();
-        })
-            .catch(function (error) {
-        });
-        this.map.on(__WEBPACK_IMPORTED_MODULE_2__ionic_native_google_maps__["c" /* GoogleMapsEvent */].CAMERA_MOVE_END).subscribe(function (value) {
-            var mapStop = value[0];
-            _this.mapProvider.setCamera({
-                target: {
-                    lat: mapStop.target.lat,
-                    lng: mapStop.target.lng
-                },
-                zoom: mapStop.zoom,
-                tilt: 0,
-                bearing: 0
+        if (this.formGroup.valid) {
+            var cargando_1 = this.loadingCtrl.create({
+                spinner: 'hide',
+                content: "<img src='assets/imgs/buho.png'>",
             });
-            if (mapStop.zoom >= 10) {
-                _this.loadPoints(mapStop.target.lat, mapStop.target.lng);
-            }
-        });
-    };
-    MapPage.prototype.loadMarkers = function () {
-        var _this = this;
-        this.mapProvider.markers.forEach((function (value) {
-            if (_this.idsLoaded.indexOf(value.id) == -1) {
-                _this.map.addMarker({
-                    title: value.company_name + " " + value.address,
-                    icon: 'blue',
-                    animation: 'DROP',
-                    position: new __WEBPACK_IMPORTED_MODULE_2__ionic_native_google_maps__["d" /* LatLng */](value.lat, value.lng)
-                }).then().catch(function (data) {
-                });
-                _this.idsLoaded.push(value.id);
-            }
-        }));
-    };
-    MapPage.prototype.loadPoints = function (lat, lng) {
-        var _this = this;
-        this.api.get('app/find-map', this.user, {
-            lat: lat,
-            lng: lng,
-            rad: 20 //20 km a la redonda
-        }).then(function (value) {
-            _this.mapProvider.setMarkers(value);
-            _this.loadMarkers();
-        });
-    };
-    MapPage.prototype.getPosition = function () {
-        var _this = this;
-        if (this.mapProvider.userPosition == null) {
-            this.map.getMyLocation()
-                .then(function (response) {
-                _this.map.moveCamera({
-                    target: response.latLng,
-                    zoom: 14,
-                    bearing: 0,
-                    tilt: 0,
-                    duration: 1000,
-                }).then(function () {
-                    _this.loading.dismiss();
-                });
-                _this.mapProvider.userPosition = response.latLng;
-                _this.map.addMarker({
-                    title: 'Mi ubicación.',
-                    icon: 'red',
-                    animation: 'DROP',
-                    position: response.latLng
-                });
-            })
-                .catch(function (error) {
-                _this.loading.dismiss();
-                _this.navCtrl.setRoot("HomePage");
-                _this.errorProvider.obj.message = 'Por favor, permita el acceso a su ubicación';
+            this.userProvider.login(this.formGroup.value.mail, this.formGroup.value.password)
+                .then(function (data) {
+                cargando_1.present();
+                if (data.success == 'ok') {
+                    if (_this.userProvider.isActivo) {
+                        _this.navCtrl.setRoot("HomePage");
+                    }
+                    else {
+                        _this.errorProvider.obj.message = "Por seguridad el usuario ha sido bloqueado";
+                        _this.errorProvider.presentModal();
+                        _this.navCtrl.setRoot('LoginPage');
+                    }
+                    cargando_1.dismiss();
+                }
+                else {
+                    cargando_1.dismiss();
+                }
+            }).catch(function (error) {
+                cargando_1.dismiss();
+                var mensaje = "";
+                if (Object(__WEBPACK_IMPORTED_MODULE_5_ionic_angular_util_util__["e" /* isArray */])(error.error)) {
+                    error.error.forEach(function (data) {
+                        mensaje += data.message + "\n";
+                    });
+                }
+                else
+                    mensaje = "Usuario o contraseña incorrecta";
+                _this.errorProvider.obj.message = mensaje;
                 _this.errorProvider.presentModal();
             });
         }
-        else {
-            this.map.addMarker({
-                title: 'Mi ubicación.',
-                icon: 'red',
-                animation: 'DROP',
-                position: this.mapProvider.userPosition
-            });
-            this.loading.dismiss();
-        }
     };
-    MapPage.prototype.goPage = function (page) {
-        if (page == 'profile')
-            this.navCtrl.push("ProfilePage");
-        else if (page == 'history')
-            this.navCtrl.push("HistoryPage");
-        else if (page == "maps")
-            this.navCtrl.push("MapPage");
-        else if (page == "contact")
-            this.navCtrl.push("ContactsPage");
-        else
-            this.navCtrl.push("TransactionPage");
+    LoginPage.prototype.recuperarcontrasena = function () {
+        var modal = this.modalCtrl.create('RecoveryPasswordPage');
+        modal.present();
     };
-    MapPage = __decorate([
+    LoginPage.prototype.registro = function () {
+        // this.navCtrl.push("RegNumberPhonePage");
+        this.navCtrl.setPages([{ page: "LoginPage" }, { page: "RegNumberPhonePage" }]);
+    };
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["E" /* Input */])(),
+        __metadata("design:type", String)
+    ], LoginPage.prototype, "errorMsg", void 0);
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["E" /* Input */])(),
+        __metadata("design:type", Boolean)
+    ], LoginPage.prototype, "displayError", void 0);
+    LoginPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-            selector: 'page-map',template:/*ion-inline-start:"/Users/santiago/Documents/GitHub/eyepaycashapp/src/pages/map/map.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>Lugares para retirar dinero</ion-title>\n  </ion-navbar>\n</ion-header>\n<ion-content>\n  <div id="map"></div>\n</ion-content>\n<ion-footer>\n  <ion-toolbar>\n    <ion-row>\n      <ion-col class="center" col-3 (click)="goPage(\'transaction\')">\n        <img width="25" height="25" src="assets/icon/1.png">\n        <p>{{\'TRANSACCION\'|translate}}</p>\n      </ion-col>\n      <ion-col class="center" col-3 (click)="goPage(\'history\')">\n        <!-- <ion-badge item-end>{{count}}</ion-badge> -->\n        <img width="25" height="25" src="assets/icon/2.png">\n        <p>{{\'HISTORIAL\'|translate}}</p>\n      </ion-col>\n      <ion-col class="center" col-3 (click)="goPage(\'maps\')">\n        <img width="25" height="25" src="assets/icon/3.png">\n        <p>{{\'MAPA\'|translate}}</p>\n      </ion-col>\n      <ion-col class="center" col-3 (click)="goPage(\'profile\')">\n        <img width="25" height="25" src="assets/icon/4.png">\n        <p>{{\'CUENTA\'|translate}}</p>\n      </ion-col>\n    </ion-row>\n  </ion-toolbar>\n</ion-footer>\n'/*ion-inline-end:"/Users/santiago/Documents/GitHub/eyepaycashapp/src/pages/map/map.html"*/,
+            selector: 'page-login',template:/*ion-inline-start:"/Users/eyeline/Documents/GitHub/eyepaycashapp/src/pages/login/login.html"*/'<ion-content class="imgBackground vignette">\n  <div class="center">\n    <img class="logo" src="assets/imgs/EPCLogo.png">\n  </div>\n  <!--<form #formulario >-->\n  <form [formGroup]="formGroup" (ngSubmit)="login()">\n    <ion-list>\n      <ion-item>\n        <ion-input placeholder="Email" class="inputClass marginItems" formControlName="mail" name="correo">\n        </ion-input>\n        <div>\n          <msg-error [control]="formGroup.controls.mail"></msg-error>\n        </div>\n      </ion-item>\n      <ion-item>\n        <ion-input placeholder="Contraseña" class="inputClass marginItems" type="password"\n                   name="contrasena" formControlName="password"></ion-input>\n      </ion-item>\n      <ion-item no-lines *ngIf="formGroup.invalid">\n        <msg-error [control]="formGroup.controls.mail" name="Email"></msg-error>\n        <msg-error [control]="formGroup.controls.password" name="Contraseña"></msg-error>\n      </ion-item>\n      <ion-item class="center">\n        <button class="buttonPayCash borderBtns" ion-button small>{{\'INICIAR_SESION\'|translate}}</button>\n      </ion-item>\n    </ion-list>\n  </form>\n  <ion-row>\n    <ion-col col-12>\n      <button class="textWhite" ion-button (click)="registro()" clear block class="transparente">{{\'REGISTRARME\'|translate}}</button>\n    </ion-col>\n    <ion-col col-12>\n      <button ion-button (click)="recuperarcontrasena()" clear block class="transparente">{{\'RECUPERAR_CONTRASENA\'|translate}}</button>\n    </ion-col>\n  </ion-row>\n</ion-content>'/*ion-inline-end:"/Users/eyeline/Documents/GitHub/eyepaycashapp/src/pages/login/login.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavController */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* NavParams */],
-            __WEBPACK_IMPORTED_MODULE_3__ionic_native_geolocation__["a" /* Geolocation */],
-            __WEBPACK_IMPORTED_MODULE_4__providers_api__["a" /* Api */],
-            __WEBPACK_IMPORTED_MODULE_5__providers_auth_user_auth_user__["a" /* AuthUserProvider */],
-            __WEBPACK_IMPORTED_MODULE_7__providers_map_map__["a" /* MapProvider */],
             __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* LoadingController */],
-            __WEBPACK_IMPORTED_MODULE_8__providers_modal_error_modal_error__["a" /* ModalErrorProvider */]])
-    ], MapPage);
-    return MapPage;
+            __WEBPACK_IMPORTED_MODULE_2__providers_auth_user_auth_user__["a" /* AuthUserProvider */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* ToastController */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* ModalController */],
+            __WEBPACK_IMPORTED_MODULE_3__angular_forms__["a" /* FormBuilder */],
+            __WEBPACK_IMPORTED_MODULE_4__providers_modal_error_modal_error__["a" /* ModalErrorProvider */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* MenuController */]])
+    ], LoginPage);
+    return LoginPage;
 }());
 
-//# sourceMappingURL=map.js.map
-
-/***/ }),
-
-/***/ 748:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return mapStyle; });
-var mapStyle = [{
-        "featureType": "water",
-        "stylers": [{ "saturation": 43 }, { "lightness": -11 }, { "hue": "#0088ff" }]
-    }, {
-        "featureType": "road",
-        "elementType": "geometry.fill",
-        "stylers": [{ "hue": "#ff0000" }, { "saturation": -100 }, { "lightness": 99 }]
-    }, {
-        "featureType": "road",
-        "elementType": "geometry.stroke",
-        "stylers": [{ "color": "#808080" }, { "lightness": 54 }]
-    }, {
-        "featureType": "landscape.man_made",
-        "elementType": "geometry.fill",
-        "stylers": [{ "color": "#ece2d9" }]
-    }, {
-        "featureType": "poi.park",
-        "elementType": "geometry.fill",
-        "stylers": [{ "color": "#ccdca1" }]
-    }, {
-        "featureType": "road",
-        "elementType": "labels.text.fill",
-        "stylers": [{ "color": "#767676" }]
-    }, {
-        "featureType": "road",
-        "elementType": "labels.text.stroke",
-        "stylers": [{ "color": "#ffffff" }]
-    }, { "featureType": "poi", "stylers": [{ "visibility": "off" }] }, {
-        "featureType": "landscape.natural",
-        "elementType": "geometry.fill",
-        "stylers": [{ "visibility": "on" }, { "color": "#b8cb93" }]
-    }, { "featureType": "poi.park", "stylers": [{ "visibility": "on" }] }, {
-        "featureType": "poi.sports_complex",
-        "stylers": [{ "visibility": "on" }]
-    }, { "featureType": "poi.medical", "stylers": [{ "visibility": "on" }] }, {
-        "featureType": "poi.business",
-        "stylers": [{ "visibility": "simplified" }]
-    }
-];
-//# sourceMappingURL=mapStyle.js.map
+//# sourceMappingURL=login.js.map
 
 /***/ })
 

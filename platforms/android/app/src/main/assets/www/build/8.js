@@ -1,14 +1,15 @@
 webpackJsonp([8],{
 
-/***/ 729:
+/***/ 733:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TouchLoginPageModule", function() { return TouchLoginPageModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TransactionPageModule", function() { return TransactionPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(26);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__touch_login__ = __webpack_require__(752);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(21);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__transaction__ = __webpack_require__(761);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ngx_translate_core__ = __webpack_require__(94);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -18,35 +19,38 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var TouchLoginPageModule = /** @class */ (function () {
-    function TouchLoginPageModule() {
+
+var TransactionPageModule = /** @class */ (function () {
+    function TransactionPageModule() {
     }
-    TouchLoginPageModule = __decorate([
+    TransactionPageModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["J" /* NgModule */])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_2__touch_login__["a" /* TouchLoginPage */],
+                __WEBPACK_IMPORTED_MODULE_2__transaction__["a" /* TransactionPage */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__touch_login__["a" /* TouchLoginPage */]),
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__transaction__["a" /* TransactionPage */]),
+                __WEBPACK_IMPORTED_MODULE_3__ngx_translate_core__["b" /* TranslateModule */]
             ],
         })
-    ], TouchLoginPageModule);
-    return TouchLoginPageModule;
+    ], TransactionPageModule);
+    return TransactionPageModule;
 }());
 
-//# sourceMappingURL=touch-login.module.js.map
+//# sourceMappingURL=transaction.module.js.map
 
 /***/ }),
 
-/***/ 752:
+/***/ 761:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TouchLoginPage; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TransactionPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(26);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_fingerprint_aio__ = __webpack_require__(384);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(168);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(21);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_auth_user_auth_user__ = __webpack_require__(67);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_load_information_load_information__ = __webpack_require__(171);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_modal_error_modal_error__ = __webpack_require__(68);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -60,121 +64,85 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 /**
- * Generated class for the TouchLoginPage page.
+ * Generated class for the TransactionPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
  */
-var TouchLoginPage = /** @class */ (function () {
-    function TouchLoginPage(navCtrl, navParams, faio, platform, splashScreen, modalCtrl) {
-        this.navCtrl = navCtrl;
+var TransactionPage = /** @class */ (function () {
+    function TransactionPage(navParams, userProvider, toastCtrl, modalCtrl, informationProvider, navCtrl, loadingCtrl, errorProvider) {
         this.navParams = navParams;
-        this.faio = faio;
-        this.platform = platform;
-        this.splashScreen = splashScreen;
+        this.userProvider = userProvider;
+        this.toastCtrl = toastCtrl;
         this.modalCtrl = modalCtrl;
-        this.initialized = false;
-        this.isLocked = false;
-        this.fingerOptions = {
-            clientId: 'fingerprint-demo',
-            clientSecret: 'password',
-            disableBackup: true
-        };
+        this.informationProvider = informationProvider;
+        this.navCtrl = navCtrl;
+        this.loadingCtrl = loadingCtrl;
+        this.errorProvider = errorProvider;
+        this.countrys = [];
+        this.currency = null;
+        this.infoCountry = null;
+        this.monedas = [];
+        this.currency = this.userProvider.user_Country.currency;
+        this.getInfo();
+        this.countrySelected();
     }
-    //   init(){
-    // 	if (this.initialized) {
-    // 		return;
-    // 	  }
-    // 	  this.lockScreen = this.modalCtrl.create("TouchLoginPage");
-    // 	  this.platform.ready().then(() => {
-    // 		this.onPauseSubscription = this.platform.pause.subscribe(() => {
-    // 		  this.splashScreen.show();
-    // 		});
-    // 		this.onResumeSubscription = this.platform.resume.subscribe(() => {
-    // 		  if (!this.isLocked) {
-    // 			this.isLocked = true;
-    // 			this.lockScreen.present();
-    // 			this.showFingerPrint();
-    // 		  }
-    // 		  this.splashScreen.hide();
-    // 		});
-    // 	  });
-    // 	}
-    // 	showFingerPrint() {
-    // 		this.faio.show({
-    // 			clientId: 'FingerPrintLockScreen',
-    // 			clientSecret: 'lasd08aah@981',   //Only necessary for Android
-    // 			disableBackup:true,              //Only for Android(optional)
-    // 			localizedFallbackTitle: 'Use Pin',      //Only for iOS
-    // 			localizedReason: 'Please authenticate' //Only for iOS
-    // 		  })
-    // 		  .then((result: any) => {
-    // 			this.lockScreen.dismiss();
-    // 			this.isLocked = false;
-    // 		  })
-    // 		  .catch((error: any) => console.log(error));
-    // 	}
-    //   }
-    // async showFingerprintDialog(){
-    // 	try {
-    // 		await this.platform.ready();
-    // 		const available = await this.faio.isAvailable();
-    // 		console.log(available);
-    // 		if(available === "OK"){
-    // 			const result = await this.faio.show(this.fingerOptions);
-    // 			console.log(result)
-    // 		}
-    // 	}
-    // 	catch(e){
-    // 		console.error(e);
-    // 	}
-    // }
-    //  public showFingerprintAuthDlg(){
-    //     this.fingerOptions = {
-    //         clientId: 'fingerprint-Demo',
-    //         clientSecret: 'password', //Only necessary for Android
-    //         disableBackup:true  //Only for Android(optional)
-    //     }
-    //     this.faio.isAvailable().then(result =>{
-    //     if(result === "OK")
-    //     {
-    //         this.faio.show(this.fingerOptions)
-    //         .then((result: any) => console.log(result))
-    //         .catch((error: any) => console.log(error));
-    //     }
-    //     });
-    // }
-    TouchLoginPage.prototype.login = function () {
+    TransactionPage.prototype.getInfo = function () {
         var _this = this;
-        this.faio.show({
-            clientId: 'Fingerpresent-demo',
-            clientSecret: 'password',
-            localizedFallbackTitle: 'Use Pin',
-            localizedReason: 'Plase authenticate'
-        })
-            .then(function (result) {
-            _this.navCtrl.setRoot('LanguagePage');
-        })
-            .catch(function (err) {
-            console.log('Err: ', err);
+        var loading = this.loadingCtrl.create({
+            spinner: 'hide',
+            content: "<img src='assets/imgs/buho.png'>",
+        });
+        loading.present();
+        this.informationProvider.getCountries()
+            .then(function (value) {
+            _this.countrys = value;
+            loading.dismiss();
+        }).catch(function (error) {
+            console.log(error);
+            loading.dismiss();
         });
     };
-    TouchLoginPage = __decorate([
+    TransactionPage.prototype.countrySelected = function () {
+        var _this = this;
+        this.informationProvider.getCurrencies(this.currency)
+            .then(function (value) {
+            _this.infoCountry = value;
+            _this.monedas = value.coins;
+        }).catch(function (error) {
+            console.log(error);
+        });
+    };
+    TransactionPage.prototype.monedaSelect = function (moneda) {
+        var info = this.informationProvider.getCountriesID(this.currency);
+        this.navCtrl.push('ModalTransactionPage', {
+            'moneda': moneda,
+            'infoCountry': this.infoCountry,
+            'currency': this.currency,
+            'pais_id': info.id,
+            'code_phohe': info.phone_code,
+            country: info
+        });
+    };
+    TransactionPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-            selector: 'page-touch-login',template:/*ion-inline-start:"/Users/eyeline/Documents/GitHub/eyepaycashapp/src/pages/touch-login/touch-login.html"*/'<!--\n  Generated template for the TouchLoginPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>touch-login</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n<ion-row class="login-row" aling-items-center>\n	<ion-col col-5></ion-col>\n	<ion-col col-2 class="lock-col">\n		<div class="lock-bg"></div>\n		<img src="assets/imgs/Mascota.png" class="lock-img" tappable (click)="login()">\n	</ion-col>\n</ion-row>\n</ion-content>\n'/*ion-inline-end:"/Users/eyeline/Documents/GitHub/eyepaycashapp/src/pages/touch-login/touch-login.html"*/,
+            selector: 'page-transaction',template:/*ion-inline-start:"/Users/eyeline/Documents/GitHub/eyepaycashapp/src/pages/transaction/transaction.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>{{\'TRANSACCION\'|translate}}</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n  <ion-label stacked>{{\'SELECCIONAR_EL_PAIS_DE_DESTINO\'|translate}}</ion-label>\n  <ion-select *ngIf="countrys!=undefined" [(ngModel)]="currency" (ionChange)="countrySelected()" interface="popover">\n    <ion-option *ngFor="let pais of countrys" value="{{pais.currency}}">{{pais.name}}</ion-option>\n  </ion-select>\n  <label stacked *ngIf="currency != \'USD\'">{{\'PRECIO_DEL_DOLAR_EN_EL_PAIS\'|translate}}</label>\n  <ion-item style="margin-bottom: 2%; margin-top: 2%" *ngIf="currency != \'USD\'">\n    <h6 class="txtboldblack">1 USD = {{infoCountry?.local_usd_value | currency}} {{currency}}</h6>\n  </ion-item>\n  <label stacked>{{\'INFORMACION_DE_LA_MONEDA\'|translate}}</label>\n  <ion-card style="margin-top: 2%" ion-item *ngFor="let moneda of monedas" (click)="monedaSelect(moneda)">\n    <ion-card-content>\n      <ion-row>\n        <ion-col col-12>\n          <h4>Criptomoneda: {{moneda.full_name}}</h4>\n          <h6 *ngIf="currency != \'USD\'">1 {{moneda.full_name}} = {{moneda.usd_value | currency }} USD</h6>\n          <h5 stacked> 1 {{moneda.full_name}} = {{moneda.local_usd_value | currency }} {{currency}} </h5>\n        </ion-col>\n        <!-- <ion-col col-2>\n          <ion-icon name="ios-arrow-forward" large></ion-icon>\n        </ion-col> -->\n      </ion-row>\n    </ion-card-content>\n  </ion-card>\n</ion-content>'/*ion-inline-end:"/Users/eyeline/Documents/GitHub/eyepaycashapp/src/pages/transaction/transaction.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */],
-            __WEBPACK_IMPORTED_MODULE_2__ionic_native_fingerprint_aio__["a" /* FingerprintAIO */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* Platform */],
-            __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* ModalController */]])
-    ], TouchLoginPage);
-    return TouchLoginPage;
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* NavParams */],
+            __WEBPACK_IMPORTED_MODULE_2__providers_auth_user_auth_user__["a" /* AuthUserProvider */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* ToastController */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* ModalController */],
+            __WEBPACK_IMPORTED_MODULE_3__providers_load_information_load_information__["a" /* LoadInformationProvider */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavController */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* LoadingController */],
+            __WEBPACK_IMPORTED_MODULE_4__providers_modal_error_modal_error__["a" /* ModalErrorProvider */]])
+    ], TransactionPage);
+    return TransactionPage;
 }());
 
-//# sourceMappingURL=touch-login.js.map
+//# sourceMappingURL=transaction.js.map
 
 /***/ })
 

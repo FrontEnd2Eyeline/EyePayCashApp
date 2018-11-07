@@ -1,16 +1,15 @@
 webpackJsonp([19],{
 
-/***/ 713:
+/***/ 718:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AccountPageModule", function() { return AccountPageModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HistoryResumePageModule", function() { return HistoryResumePageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(26);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__account__ = __webpack_require__(735);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_brmasker_ionic_3__ = __webpack_require__(378);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ngx_translate_core__ = __webpack_require__(93);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(21);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__history_resume__ = __webpack_require__(742);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ngx_translate_core__ = __webpack_require__(94);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -21,39 +20,36 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-
-var AccountPageModule = /** @class */ (function () {
-    function AccountPageModule() {
+var HistoryResumePageModule = /** @class */ (function () {
+    function HistoryResumePageModule() {
     }
-    AccountPageModule = __decorate([
+    HistoryResumePageModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["J" /* NgModule */])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_2__account__["a" /* AccountPage */],
+                __WEBPACK_IMPORTED_MODULE_2__history_resume__["a" /* HistoryResumePage */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__account__["a" /* AccountPage */]),
-                __WEBPACK_IMPORTED_MODULE_4__ngx_translate_core__["b" /* TranslateModule */],
-                __WEBPACK_IMPORTED_MODULE_3_brmasker_ionic_3__["a" /* BrMaskerModule */],
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__history_resume__["a" /* HistoryResumePage */]),
+                __WEBPACK_IMPORTED_MODULE_3__ngx_translate_core__["b" /* TranslateModule */]
             ],
         })
-    ], AccountPageModule);
-    return AccountPageModule;
+    ], HistoryResumePageModule);
+    return HistoryResumePageModule;
 }());
 
-//# sourceMappingURL=account.module.js.map
+//# sourceMappingURL=history-resume.module.js.map
 
 /***/ }),
 
-/***/ 735:
+/***/ 742:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AccountPage; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HistoryResumePage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(26);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_api__ = __webpack_require__(48);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_auth_user_auth_user__ = __webpack_require__(94);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_modal_error_modal_error__ = __webpack_require__(67);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(21);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_formatter_date_formatter_date__ = __webpack_require__(386);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_clipboard__ = __webpack_require__(382);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -67,199 +63,52 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
-
 /**
- * Generated class for the AccountPage page.
+ * Generated class for the HistoryResumePage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
  */
-var AccountPage = /** @class */ (function () {
-    function AccountPage(navCtrl, navParams, api, userProvider, toastCtrl, loadingCtrl, modal, alertCtrl, errorProvider) {
-        this.navCtrl = navCtrl;
+var HistoryResumePage = /** @class */ (function () {
+    function HistoryResumePage(navParams, navCtrl, dateLocal, clipboard) {
         this.navParams = navParams;
-        this.api = api;
-        this.userProvider = userProvider;
-        this.toastCtrl = toastCtrl;
-        this.loadingCtrl = loadingCtrl;
-        this.modal = modal;
-        this.alertCtrl = alertCtrl;
-        this.errorProvider = errorProvider;
-        this.usuario = null;
+        this.navCtrl = navCtrl;
+        this.dateLocal = dateLocal;
+        this.clipboard = clipboard;
+        this.historyInfo = null;
         this.country = null;
-        this.type = 'password';
-        this.showPass = false;
-        this.type2 = 'password';
-        this.showPass2 = false;
-        //=========================  CONTROL DE VALIDACIÓN DEL USUARIO
-        this.view_Verify_Phone = false;
-        this.view_Verify_Mail = false;
-        this.view_Btn_phone = false;
-        this.view_Btn_mail = false;
-        this.code_Verify_Phone = null;
-        this.code_Verify_Mail = null;
-        this.responseVerify = null;
-        //=========================== CONTROL DE INPUTS
-        this.control_label = "label";
+        this.coin = null;
+        this.comision = null;
+        this.coinHash = null;
         this.getInfo();
     }
-    AccountPage.prototype.getInfo = function () {
-        this.usuario = this.userProvider.user_Info;
-        this.country = this.userProvider.user_Country;
-        this.controlBtns();
+    HistoryResumePage.prototype.getInfo = function () {
+        this.historyInfo = this.navParams.get('transaction');
+        this.country = this.historyInfo.country;
+        this.coin = this.historyInfo.coin;
+        this.comision = this.historyInfo.transactionCommission;
+        this.coinHash = this.historyInfo.coinHash;
     };
-    AccountPage.prototype.actualizar = function () {
-        var _this = this;
-        var confirm = this.alertCtrl.create({
-            message: '¿Desea actualizar la información?',
-            buttons: [
-                {
-                    text: 'Cancelar',
-                    role: 'cancel',
-                },
-                {
-                    text: 'Actualizar',
-                    handler: function () {
-                        var loading = _this.loadingCtrl.create({
-                            spinner: 'hide',
-                            content: "<img src='assets/imgs/buho.png'>",
-                        });
-                        loading.present();
-                        if (_this.usuario.first_name != null && _this.usuario.last_name != null &&
-                            _this.usuario.first_name != "" && _this.usuario.last_name != "") {
-                            if (_this.usuario.first_name.length > 2 && _this.usuario.last_name.length > 2) {
-                                _this.api.post('account/update-info', _this.usuario, _this.userProvider)
-                                    .then(function (data) {
-                                    _this.errorProvider.obj.message = 'Información personal acrtualizada correctamente';
-                                    _this.errorProvider.presentModal();
-                                    _this.usuario = data;
-                                    loading.dismiss();
-                                }).catch(function (error) {
-                                    // let mensaje = 'Por favor corrija lo siguiente \n';
-                                    var mensaje = '';
-                                    error.error.forEach(function (data) {
-                                        mensaje += data.field + ": " + data.message + "\n";
-                                    });
-                                    _this.errorProvider.obj.message = mensaje;
-                                    _this.errorProvider.presentModal();
-                                    loading.dismiss();
-                                });
-                            }
-                            else {
-                                loading.dismiss();
-                                _this.errorProvider.obj.message = 'Nombre y apellido deben contener más de 2 caracteres';
-                                _this.errorProvider.presentModal();
-                            }
-                        }
-                        else {
-                            _this.errorProvider.obj.message = 'Todos los campos son obligatorios';
-                            _this.errorProvider.presentModal();
-                            loading.dismiss();
-                        }
-                    }
-                }
-            ]
-        });
-        confirm.present();
+    HistoryResumePage.prototype.goMaps = function () {
+        // this.navCtrl.push("MapPage")
+        this.navCtrl.setPages([{ page: "HomePage" }, { page: "MapPage" }]);
     };
-    AccountPage.prototype.cerrarSesion = function () {
-        window.localStorage.clear();
-        this.navCtrl.setRoot('LoginPage');
+    HistoryResumePage.prototype.copiarToken = function () {
+        this.clipboard.copy(this.coinHash.eye_hash);
     };
-    AccountPage.prototype.reenviarConfirm = function (tipo) {
-        var _this = this;
-        this.code_Verify_Phone = null;
-        this.code_Verify_Mail = null;
-        this.responseVerify = null;
-        if (tipo == 'phone') {
-            this.view_Verify_Phone = true;
-            this.view_Verify_Mail = false;
-            this.view_Btn_mail = false;
-        }
-        else {
-            this.view_Verify_Phone = false;
-            this.view_Btn_phone = false;
-            this.view_Verify_Mail = true;
-        }
-        this.api.get("account/re-send-verify", this.userProvider, { type: tipo }).then(function (data) {
-            _this.responseVerify = data;
-        }).catch();
-    };
-    AccountPage.prototype.validateCode = function (tipo) {
-        var _this = this;
-        var guardar = false;
-        if (tipo == 'mail') {
-            if (this.code_Verify_Mail == this.responseVerify.mail_code) {
-                guardar = true;
-            }
-            else {
-                guardar = false;
-                this.errorProvider.obj.message = 'El código no coincide';
-                this.errorProvider.presentModal();
-            }
-        }
-        else {
-            if (this.code_Verify_Phone == this.responseVerify.phone_code) {
-                guardar = true;
-            }
-            else {
-                guardar = false;
-                this.errorProvider.obj.message = 'El código no coincide';
-                this.errorProvider.presentModal();
-            }
-        }
-        this.code_Verify_Mail = null;
-        this.code_Verify_Phone = null;
-        if (guardar)
-            this.api.get("account/confirm-verify", this.userProvider, { "type": tipo, id: this.responseVerify.id })
-                .then(function (data) {
-                if (data.success == "ok") {
-                    if (tipo == 'mail')
-                        _this.userProvider.User_Verify.is_mail_verify = 1;
-                    else
-                        _this.userProvider.User_Verify.is_phone_verify = 1;
-                }
-                _this.responseVerify = null;
-                _this.view_Verify_Mail = false;
-                _this.view_Verify_Phone = false;
-                _this.controlBtns();
-            });
-    };
-    AccountPage.prototype.cancelValidation = function () {
-        this.responseVerify = null;
-        this.view_Verify_Mail = false;
-        this.view_Verify_Mail = false;
-        this.code_Verify_Phone = null;
-        this.code_Verify_Mail = null;
-    };
-    AccountPage.prototype.controlBtns = function () {
-        if (this.userProvider.User_Verify.is_mail_verify == 0)
-            this.view_Btn_mail = true;
-        else
-            this.view_Btn_mail = false;
-        if (this.userProvider.User_Verify.is_phone_verify == 0)
-            this.view_Btn_phone = true;
-        else
-            this.view_Btn_phone = false;
-    };
-    AccountPage = __decorate([
+    HistoryResumePage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-            selector: 'page-account',template:/*ion-inline-start:"/Users/eyeline/Documents/GitHub/eyepaycashapp/src/pages/account/account.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>\n      Información de cuenta\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n<ion-content padding class="BackGR3">\n  <ion-row>\n    <ion-col col-12>\n      <button ion-button (click)="cerrarSesion()" block class="buttonPayCash">Cerrar sesión</button>\n    </ion-col>\n  </ion-row>\n  <ion-card style="background: transparent">\n    <ion-card-header>\n        <ion-img style="background: transparent" width="15" height="15" src="assets/icon/Account.png"></ion-img>\n      <!-- <ion-icon name="person" item-start></ion-icon> -->\n      Información personal\n    </ion-card-header>\n    <ion-card-content>\n      <ion-list>\n        <ion-item>\n          <ion-label stacked>Nombres</ion-label>\n          <ion-input type="text" required name="userregistronombre" [(ngModel)]="usuario.first_name"></ion-input>\n        </ion-item>\n\n        <ion-item>\n          <ion-label stacked>Apellidos</ion-label>\n          <ion-input type="text" required name="userregistroapellido"\n                     [(ngModel)]="usuario.last_name"></ion-input>\n        </ion-item>\n        <ion-item>\n          <ion-label stacked>Género</ion-label>\n          <ion-select okText="Guardar" cancelText="Cancelar" [(ngModel)]="usuario.gender" name="userregistrogenero"\n                      interface="popover">\n            <ion-option value="f">Femenino</ion-option>\n            <ion-option value="m">Masculino</ion-option>\n          </ion-select>\n        </ion-item>\n        <button ion-button block class="buttonPayCash" (click)="actualizar()">Editar información</button>\n      </ion-list>\n    </ion-card-content>\n  </ion-card>\n\n  <ion-card>\n    <ion-card-header>\n        <ion-img style="background: transparent" width="15" height="15" src="assets/icon/key.png"></ion-img>\n      Información de cuenta\n    </ion-card-header>\n    <ion-card-content>\n      <ion-row>\n        <ion-label stacked>Email</ion-label>\n        {{usuario.mail}}\n      </ion-row>\n      <ion-row>\n        <ion-label stacked>Teléfono</ion-label>\n        {{usuario.phone}}\n      </ion-row>\n\n\n      <ion-row *ngIf="view_Verify_Mail">\n        <ion-col col-12>\n          <ion-input type="text" [(ngModel)]="code_Verify_Mail"></ion-input>\n        </ion-col>\n        <ion-col col-12>\n          <button ion-button (click)="validateCode(\'mail\')">Confirmar código email</button>\n          <button ion-button block (click)="cancelValidation()">Cancelar</button>\n        </ion-col>\n      </ion-row>\n\n\n      <ion-row *ngIf="view_Verify_Phone">\n        <ion-col col-12>\n          <ion-input type="text" [(ngModel)]="code_Verify_Phone"></ion-input>\n        </ion-col>\n        <ion-col col-12>\n          <button ion-button block (click)="validateCode(\'phone\')">Confirmar código telefono</button>\n          <button ion-button block (click)="cancelValidation()">Cancelar</button>\n        </ion-col>\n      </ion-row>\n\n\n      <ion-row>\n        <button ion-button block class="buttonPayCash"\n                *ngIf=" (view_Btn_phone) && (view_Verify_Phone == false)"\n                (click)="reenviarConfirm(\'phone\')">Reenviar confirmación móvil\n        </button>\n\n        <button ion-button block class="buttonPayCash"\n                *ngIf=" (view_Btn_mail) && view_Verify_Mail == false"\n                (click)="reenviarConfirm(\'mail\')">Reenviar confirmación email\n        </button>\n      </ion-row>\n\n    </ion-card-content>\n  </ion-card>\n\n  <ion-card>\n    <ion-card-header>\n        <ion-img style="background: transparent" width="15" height="15" src="assets/icon/Ubicacion.png"></ion-img>\n      Información de ubicación\n    </ion-card-header>\n    <ion-card-content>\n      <ion-row>\n        <ion-label stacked>País</ion-label>\n        {{country.name}}\n      </ion-row>\n      <ion-row>\n        <ion-label stacked>Código de teléfono</ion-label>\n        {{country.phone_code}}\n      </ion-row>\n      <ion-row>\n        <ion-label stacked>Código de país</ion-label>\n        {{country.country_code}}\n      </ion-row>\n      <ion-row>\n        <ion-label stacked>Moneda del país</ion-label>\n        {{country.currency}}\n      </ion-row>\n    </ion-card-content>\n  </ion-card>\n\n\n</ion-content>\n'/*ion-inline-end:"/Users/eyeline/Documents/GitHub/eyepaycashapp/src/pages/account/account.html"*/,
+            selector: 'page-history-resume',template:/*ion-inline-start:"/Users/eyeline/Documents/GitHub/eyepaycashapp/src/pages/history-resume/history-resume.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>{{\'RESUMEN_HISTORIAL\'|translate}}</ion-title>\n  </ion-navbar>\n</ion-header>\n<ion-content class="BackGR3" padding>\n\n  <ion-card class="backCardsTransp">\n    <ion-card-header>\n      <ion-img style="background: transparent" width="15" height="15" src="assets/newIcons/30.png"></ion-img>\n      <label>{{\'INFORMACION_TRANSACCION\'|translate}}</label>\n    </ion-card-header>\n    <ion-card-content>\n      <div>\n        <ion-row>\n          <ion-col col-1>\n            <ion-img style="background: transparent" width="15" height="15" src="assets/newIcons/34.png"></ion-img>\n          </ion-col>\n          <ion-col col-11 class="mrg1Top">\n            <h6>\n              {{\'TRANSACCION_SOLICITADA\'|translate}}\n            </h6>\n          </ion-col>\n        </ion-row>\n      </div>\n      <div>\n        <ion-row>\n          <ion-col col-1>\n            <ion-img *ngIf="historyInfo?.process_status==0" style="background: transparent" width="15" height="15" src="assets/newIcons/33.png"></ion-img>\n            <ion-img *ngIf="historyInfo?.process_status!=0" style="background: transparent" width="15" height="15" src="assets/newIcons/34.png"></ion-img>\n          </ion-col>\n          <ion-col col-11 class="mrg1Top">\n            <h6>\n              1- {{\'REALIZAR_PAGO\'|translate}}\n            </h6>\n          </ion-col>\n        </ion-row>\n      </div>\n      <div>\n        <ion-row>\n          <ion-col col-1>\n            <ion-img *ngIf="historyInfo?.process_status==1 || historyInfo?.process_status==0" class="styleIcospeq" src="assets/newIcons/33.png"></ion-img>\n            <ion-img *ngIf="historyInfo?.process_status==2" class="styleIcospeq" src="assets/newIcons/34.png"></ion-img>\n          </ion-col>\n          <ion-col col-11 class="mrg1Top">\n            <h6>\n              2- {{\'HACER_RETIRO_EFECTIVO\'|translate}}\n            </h6>\n          </ion-col>\n        </ion-row>\n      </div>\n\n      <button class="buttonPayCash" ion-button outline block (click)="goMaps()">{{\'VER_MAPA\'|translate}}</button>\n    </ion-card-content>\n  </ion-card>\n\n  <ion-card class="backCardsTransp">\n    <ion-card-header>\n      <ion-img style="background: transparent" width="15" height="15" src="assets/newIcons/31.png"></ion-img>\n      <label stacked>{{\'INFO_TRANSACCION\'|translate}}:</label>\n    </ion-card-header>\n    <ion-card-content>\n      <ion-list>\n        <ion-row>\n          <ion-col col-6 text-left>{{\'NRO_CELULAR_DESTINO\'|translate}}</ion-col>\n          <ion-col col-6 text-right>\n            {{historyInfo?.phone_user_des}}\n          </ion-col>\n        </ion-row>\n        <ion-row>\n          <ion-col col-6 text-left>{{\'TIPO_CRIPTOMONEDA\'|translate}}</ion-col>\n          <ion-col col-6 text-right> {{coin.full_name}}</ion-col>\n        </ion-row>\n        <ion-row>\n          <ion-col col-6 text-left>{{\'FECHA_TRANSACCION\'|translate}}</ion-col>\n          <ion-col col-6 text-right>{{dateLocal.getDateLocale(historyInfo?.date_request)| date:\'dd/MM/yyyy h:mma\' }}</ion-col>\n        </ion-row>\n        <ion-row>\n          <ion-col col-6 text-left>{{\'MONEDA_LOCAL\'|translate}}: </ion-col>\n          <ion-col col-6 text-right> {{historyInfo.amount_local | currency}} {{country.currency}}</ion-col>\n        </ion-row>\n        <!--<ion-row>\n          <ion-col col-6 text-left>{{\'TRM\'|translate}}: </ion-col>\n          <ion-col col-6 text-right> {{comision.money_local_to_usd| currency}} {{country.currency}}</ion-col>\n        </ion-row>-->\n\n        <ion-row>\n          <ion-col col-6 text-left>{{\'COSTO\'|translate}} {{currency}}: </ion-col>\n          <ion-col col-6 text-right> {{historyInfo.amount_usd|currency}} USD</ion-col>\n        </ion-row>\n        <ion-row>\n          <ion-col col-6 text-left>{{\'COSTO_BITCOIN\'|translate}} {{coin.full_name}}: </ion-col>\n          <ion-col col-6 text-right> {{historyInfo.amount_btc}} {{coin.short_name}}</ion-col>\n        </ion-row>\n      </ion-list>\n    </ion-card-content>\n  </ion-card>\n\n  <ion-card *ngIf="historyInfo?.process_status==0" class="backCardsTransp">\n    <ion-card-header>\n      <ion-img style="background: transparent" width="15" height="15" src="assets/newIcons/32.png"></ion-img>\n      <label stacked> Información de pago{{\'INFORMACION_PAGO\'| translate}}:</label>\n    </ion-card-header>\n    <ion-card-content>\n      <ion-row>\n        <ion-col col-6 text-left>{{\'TOTAL_A_PAGAR\'|translate}}</ion-col>\n        <ion-col col-6 text-right> {{historyInfo.amount_btc}} {{coin.short_name}}</ion-col>\n      </ion-row>\n      <ion-row text-center>\n        <ion-col col-12>\n          {{\'DIRECCION_PAGO_BITCOIN\'|translate}} {{coin.full_name}}: <br>\n          <h2>{{coinHash.eye_hash}}</h2>\n          <button outline ion-button (click)="copiarToken()" class="buttonPayCash">{{\'COPIAR\'|translate}}</button>\n        </ion-col>\n      </ion-row>\n      <ion-row text-center>\n        <ion-col col-12>\n          {{\'CODIGO_QR_PAGO\'|translate}}:\n          <img src="{{coinHash.qr_url}}">\n        </ion-col>\n      </ion-row>\n    </ion-card-content>\n  </ion-card>\n\n</ion-content>'/*ion-inline-end:"/Users/eyeline/Documents/GitHub/eyepaycashapp/src/pages/history-resume/history-resume.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */],
-            __WEBPACK_IMPORTED_MODULE_2__providers_api__["a" /* Api */],
-            __WEBPACK_IMPORTED_MODULE_3__providers_auth_user_auth_user__["a" /* AuthUserProvider */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* ToastController */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* LoadingController */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* ModalController */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */],
-            __WEBPACK_IMPORTED_MODULE_4__providers_modal_error_modal_error__["a" /* ModalErrorProvider */]])
-    ], AccountPage);
-    return AccountPage;
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* NavParams */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavController */],
+            __WEBPACK_IMPORTED_MODULE_2__providers_formatter_date_formatter_date__["a" /* FormatterDateProvider */],
+            __WEBPACK_IMPORTED_MODULE_3__ionic_native_clipboard__["a" /* Clipboard */]])
+    ], HistoryResumePage);
+    return HistoryResumePage;
 }());
 
-//# sourceMappingURL=account.js.map
+//# sourceMappingURL=history-resume.js.map
 
 /***/ })
 

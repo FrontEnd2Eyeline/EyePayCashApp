@@ -10,7 +10,8 @@ import {ModalController} from 'ionic-angular';
 */
 @Injectable()
 export class ModalErrorProvider {
-public obj: any = {field:null, message:null};
+public cambiarFoto = false;
+public obj: any = {field:null, icon:null, message:null};
   constructor(public http: HttpClient,
 			  public modalCtrl: ModalController) {
 			
@@ -20,6 +21,7 @@ public obj: any = {field:null, message:null};
 
 
   presentModal(){
+ (this.cambiarFoto == false)?this.obj.icon = '../assets/imgs/error.png':this.obj.icon = "../assets/img/ok.png";
 	let modalPresent = this.modalCtrl.create('ModalErrorPage', {
 		'Error':this.obj
 	 });

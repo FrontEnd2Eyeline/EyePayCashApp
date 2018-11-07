@@ -1,11 +1,11 @@
 <ion-header>
   <div class="BackgroundPpal styleDivTitle">
     <div style="background: transparent">
-        <img class="icoClose" icon-end src="assets/newIcons/17.png">
+      <img (click)="cerrarSesion()"  class="icoClose" icon-end src="assets/newIcons/17.png">
     </div>
-    <ion-row>
+    <ion-row class="mrgPhoto">
       <ion-col>
-        <img class="styleLogo " src="assets/newIcons/24.png" (click)="foto()">
+        <img class="styleLogo " src="{{usuario?.url_img}}" (click)="foto()">
       </ion-col>
     </ion-row>
     <div class="center">
@@ -20,7 +20,6 @@
         <ion-label text-wrap color="primary" fixed>Email</ion-label>
         <ion-input disabled text-right placeholder="{{usuario.mail}}"></ion-input>
       </ion-item>
-
       <ion-item>
         <ion-label text-wrap color="primary" fixed>Teléfono</ion-label>
         <ion-input disabled text-right placeholder="{{usuario.phone}}"></ion-input>
@@ -35,7 +34,7 @@
         <ion-input disabled text-right placeholder="{{country.name}}"></ion-input>
       </ion-item>
       <ion-item>
-        <ion-label text-wrap color="primary" fixed>Indicativo del país</ion-label>
+        <ion-label text-wrap color="primary" fixed>Indicativo</ion-label>
         <ion-input disabled text-right placeholder=" {{country.phone_code}}"></ion-input>
       </ion-item>
       <ion-item>
@@ -43,39 +42,44 @@
         <ion-input disabled text-right placeholder=" {{country.country_code}}"></ion-input>
       </ion-item>
       <ion-item>
-        <ion-label text-wrap color="primary" fixed>Moneda del país</ion-label>
+        <ion-label text-wrap color="primary" fixed>Moneda</ion-label>
         <ion-input disabled text-right placeholder=" {{country.currency}}"></ion-input>
       </ion-item>
     </ion-list>
   </ion-list>
   <div>
-      <h1 style="color: red; text-align: center; font-size: 14px">Eliminar cuenta</h1>
+    <h1 style="color: red; text-align: center; font-size: 14px">Eliminar cuenta</h1>
   </div>
 </ion-content>
 <ion-footer>
+  <ion-footer>
     <ion-toolbar>
       <ion-row>
+        <ion-col class="center2" col-2 (click)="goPage('precios')">
+          <img width="40" height="40" src="assets/newIcons/11.png">
+          <p>Precios</p>
+        </ion-col>
         <ion-col class="center2" col-3 (click)="goPage('transaction')">
-          <img width="25" height="25" src="assets/icon/1.png">
-          <p class="pStyle">{{'TRANSACCION'|translate}}</p>
+          <img width="40" height="40" src="assets/icon/1.png">
+          <p>{{'TRANSACCION'|translate}}</p>
         </ion-col>
-        <ion-col class="center2" col-3 (click)="goPage('history')">
+        <ion-col class="center2 mar1Left" col-2 (click)="goPage('history')">
           <!-- <ion-badge item-end>{{count}}</ion-badge> -->
-          <img width="25" height="25" src="assets/icon/2.png">
-          <p class="pStyle">{{'HISTORIAL'|translate}}</p>
+          <img width="40" height="40" src="assets/icon/2.png">
+          <p>{{'HISTORIAL'|translate}}</p>
         </ion-col>
-        <ion-col class="center2" col-3 (click)="goPage('maps')">
-          <img width="25" height="25" src="assets/icon/3.png">
-          <p class="pStyle">{{'MAPA'|translate}}</p>
+        <ion-col class="center2" col-2 (click)="goPage('maps')">
+          <img width="40" height="40" src="assets/icon/3.png">
+          <p>{{'MAPA'|translate}}</p>
         </ion-col>
-        <ion-col class="center2" col-3 (click)="goPage('profile')">
-          <img width="25" height="25" src="assets/icon/4.png">
-          <p class="pStyle">{{'CUENTA'|translate}}</p>
+        <ion-col class="center2" col-2 (click)="goPage('profile')">
+          <img width="40" height="40" src="assets/icon/4.png">
+          <p>{{'CUENTA'|translate}}</p>
         </ion-col>
       </ion-row>
     </ion-toolbar>
   </ion-footer>
-<!-- <ion-content padding class="BackGR3">
+  <!-- <ion-content padding class="BackGR3">
   <ion-row>
     <ion-col col-12>
       <button ion-button (click)="cerrarSesion()" block class="buttonPayCash">Cerrar sesión</button>
@@ -83,14 +87,9 @@
   </ion-row>
   <ion-card style="background: transparent">
     <ion-card-header>
-<<<<<<< HEAD
         <ion-img style="background: transparent" width="15" height="15" src="assets/icon/Account.png"></ion-img>
-      <!-- <ion-icon name="person" item-start></ion-icon> -->
+      <ion-icon name="person" item-start></ion-icon>
     {{'INFORMACION_PERSONAL'|translate}}
-=======
-      <ion-img style="background: transparent" width="15" height="15" src="assets/icon/Account.png"></ion-img>
-      Información personal
->>>>>>> 25643b37f3576b268c07d204dc7cdbfa702d89e3
     </ion-card-header>
     <ion-card-content>
       <ion-list>
@@ -100,14 +99,9 @@
         </ion-item>
 
         <ion-item>
-<<<<<<< HEAD
           <ion-label stacked>{{'APELLIDOS'|translate}}</ion-label>
           <ion-input type="text" required name="userregistroapellido"
                      [(ngModel)]="usuario.last_name"></ion-input>
-=======
-          <ion-label stacked>Apellidos</ion-label>
-          <ion-input type="text" required name="userregistroapellido" [(ngModel)]="usuario.last_name"></ion-input>
->>>>>>> 25643b37f3576b268c07d204dc7cdbfa702d89e3
         </ion-item>
         <ion-item>
           <ion-label stacked>{{'GENERO'| translate}}</ion-label>
@@ -123,13 +117,8 @@
   </ion-card>
   <ion-card>
     <ion-card-header>
-<<<<<<< HEAD
         <ion-img style="background: transparent" width="15" height="15" src="assets/icon/key.png"></ion-img>
       {{'INFORMACION_DE_CUENTA'|translate}}
-=======
-      <ion-img style="background: transparent" width="15" height="15" src="assets/icon/key.png"></ion-img>
-      Información de cuenta
->>>>>>> 25643b37f3576b268c07d204dc7cdbfa702d89e3
     </ion-card-header>
     <ion-card-content>
       <ion-row>
@@ -159,7 +148,6 @@
         </ion-col>
       </ion-row>
       <ion-row>
-<<<<<<< HEAD
         <button ion-button block class="buttonPayCash"
                 *ngIf=" (view_Btn_phone) && (view_Verify_Phone == false)"
                 (click)="reenviarConfirm('phone')">{{'REENVIAR_CONFIRMACION_MOVIL'| translate}}
@@ -168,26 +156,14 @@
         <button ion-button block class="buttonPayCash"
                 *ngIf=" (view_Btn_mail) && view_Verify_Mail == false"
                 (click)="reenviarConfirm('mail')">{{'REENVIAR_CONFIRMACION_EMAIL'| translate}}
-=======
-        <button ion-button block class="buttonPayCash" *ngIf=" (view_Btn_phone) && (view_Verify_Phone == false)"
-          (click)="reenviarConfirm('phone')">Reenviar confirmación móvil
-        </button>
-        <button ion-button block class="buttonPayCash" *ngIf=" (view_Btn_mail) && view_Verify_Mail == false" (click)="reenviarConfirm('mail')">Reenviar
-          confirmación email
->>>>>>> 25643b37f3576b268c07d204dc7cdbfa702d89e3
         </button>
       </ion-row>
     </ion-card-content>
   </ion-card>
   <ion-card>
     <ion-card-header>
-<<<<<<< HEAD
         <ion-img style="background: transparent" width="15" height="15" src="assets/icon/Ubicacion.png"></ion-img>
       {{'INFORMACION_DE_UBICACION'|translate}}
-=======
-      <ion-img style="background: transparent" width="15" height="15" src="assets/icon/Ubicacion.png"></ion-img>
-      Información de ubicación
->>>>>>> 25643b37f3576b268c07d204dc7cdbfa702d89e3
     </ion-card-header>
     <ion-card-content>
       <ion-row>

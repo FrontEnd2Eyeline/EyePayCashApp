@@ -1,14 +1,14 @@
 webpackJsonp([3],{
 
-/***/ 727:
+/***/ 729:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PasswordUpdatePageModule", function() { return PasswordUpdatePageModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RecoveryPasswordPageModule", function() { return RecoveryPasswordPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(21);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__password_update__ = __webpack_require__(752);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__recovery_password__ = __webpack_require__(757);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ngx_translate_core__ = __webpack_require__(94);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__components_components_module__ = __webpack_require__(738);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -22,25 +22,25 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var PasswordUpdatePageModule = /** @class */ (function () {
-    function PasswordUpdatePageModule() {
+var RecoveryPasswordPageModule = /** @class */ (function () {
+    function RecoveryPasswordPageModule() {
     }
-    PasswordUpdatePageModule = __decorate([
+    RecoveryPasswordPageModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["J" /* NgModule */])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_2__password_update__["a" /* PasswordUpdatePage */],
+                __WEBPACK_IMPORTED_MODULE_2__recovery_password__["a" /* RecoveryPasswordPage */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__password_update__["a" /* PasswordUpdatePage */]),
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__recovery_password__["a" /* RecoveryPasswordPage */]),
                 __WEBPACK_IMPORTED_MODULE_3__ngx_translate_core__["b" /* TranslateModule */],
                 __WEBPACK_IMPORTED_MODULE_4__components_components_module__["a" /* ComponentsModule */],
             ],
         })
-    ], PasswordUpdatePageModule);
-    return PasswordUpdatePageModule;
+    ], RecoveryPasswordPageModule);
+    return RecoveryPasswordPageModule;
 }());
 
-//# sourceMappingURL=password-update.module.js.map
+//# sourceMappingURL=recovery-password.module.js.map
 
 /***/ }),
 
@@ -135,11 +135,11 @@ var MsgErrorComponent = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 752:
+/***/ 757:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PasswordUpdatePage; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return RecoveryPasswordPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(21);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_api__ = __webpack_require__(48);
@@ -162,13 +162,13 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 /**
- * Generated class for the PasswordUpdatePage page.
+ * Generated class for the RecoveryPasswordPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
  */
-var PasswordUpdatePage = /** @class */ (function () {
-    function PasswordUpdatePage(navCtrl, navParams, api, toastCtrl, userProvider, loadingCtrl, errorProvider) {
+var RecoveryPasswordPage = /** @class */ (function () {
+    function RecoveryPasswordPage(navCtrl, navParams, api, toastCtrl, userProvider, loadingCtrl, errorProvider) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
         this.api = api;
@@ -176,38 +176,47 @@ var PasswordUpdatePage = /** @class */ (function () {
         this.userProvider = userProvider;
         this.loadingCtrl = loadingCtrl;
         this.errorProvider = errorProvider;
-        this.infoRecovery = {
-            new_password: null,
-            new_password_conf: null,
-            reset_id: null,
-        };
+        this.isvisible = true;
+        this.data = null;
+        this.type = 'phone';
+        this.codigo = null;
+        this.iscodigo = false;
+        this.iscodigo2 = false;
         this.formGroup = new __WEBPACK_IMPORTED_MODULE_5__angular_forms__["c" /* FormGroup */]({
-            new_password: new __WEBPACK_IMPORTED_MODULE_5__angular_forms__["b" /* FormControl */]('', [
+            data: new __WEBPACK_IMPORTED_MODULE_5__angular_forms__["b" /* FormControl */]('', [
                 __WEBPACK_IMPORTED_MODULE_5__angular_forms__["h" /* Validators */].required,
+                __WEBPACK_IMPORTED_MODULE_5__angular_forms__["h" /* Validators */].pattern('^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$'),
+                __WEBPACK_IMPORTED_MODULE_5__angular_forms__["h" /* Validators */].maxLength(70),
             ]),
-            new_password_conf: new __WEBPACK_IMPORTED_MODULE_5__angular_forms__["b" /* FormControl */]('', [
-                __WEBPACK_IMPORTED_MODULE_5__angular_forms__["h" /* Validators */].required
-            ]),
-            reset_id: new __WEBPACK_IMPORTED_MODULE_5__angular_forms__["b" /* FormControl */](),
         });
-        this.infoRecovery.reset_id = navParams.get('reset_id');
-        this.formGroup.get('reset_id').setValue(this.infoRecovery.reset_id);
     }
-    PasswordUpdatePage.prototype.recovery = function () {
+    RecoveryPasswordPage.prototype.sendMessage = function (type) {
         var _this = this;
-        if (this.formGroup.valid) {
-            var cargando_1 = this.loadingCtrl.create({
-                spinner: 'dots',
+        this.type = type;
+        if ((this.formGroup.value.data != "") || (this.data != "")) {
+            var loading_1 = this.loadingCtrl.create({
+                spinner: 'hide',
+                content: "<img src='assets/imgs/buho.png'>",
             });
-            cargando_1.present();
-            this.api.post('auth/update-password', this.formGroup.value).then(function (data) {
-                cargando_1.dismiss();
-                _this.errorProvider.obj.message = 'Contraseña actualizada correctamente';
+            loading_1.present();
+            if (this.type != 'phone')
+                this.data = this.formGroup.value.data;
+            // this.api.post('auth/restar-password', { 'type': this.type, 'data': this.data }).then(
+            this.api.post('auth/restar-password', { 'type': this.type, 'data': this.data }).then(function (data) {
+                loading_1.dismiss();
+                if (type != "phone") {
+                    _this.iscodigo = true;
+                }
+                else {
+                    _this.iscodigo2 = true;
+                }
+                _this.reset = data;
+                _this.data = null;
+                _this.errorProvider.obj.message = 'Se ha enviado un código de verificación';
                 _this.errorProvider.presentModal();
-                _this.navCtrl.setRoot('LoginPage');
             }).catch(function (error) {
-                var mensaje = '';
-                cargando_1.dismiss();
+                loading_1.dismiss();
+                var mensaje = "";
                 error.error.forEach(function (data) {
                     mensaje += data.message + "\n";
                 });
@@ -215,43 +224,39 @@ var PasswordUpdatePage = /** @class */ (function () {
                 _this.errorProvider.presentModal();
             });
         }
-        // if (this.infoRecovery.new_password != null && this.infoRecovery.new_password_conf != null) {
-        // 	if (this.infoRecovery.new_password_conf == this.infoRecovery.new_password) {
-        // 		if (this.infoRecovery.new_password.length >= 6 && this.infoRecovery.new_password_conf.length >= 6) {
-        // 			let loading = this.loadingCtrl.create({
-        // 				spinner: 'dots',
-        // 			});
-        // 			loading.present();
-        // 			this.api.post('auth/update-password', this.infoRecovery).then((data) => {
-        // 				loading.dismiss();
-        // 				this.errorProvider.obj.message = 'Contraseña actualizada correctamente';
-        // 				this.errorProvider.presentModal();
-        // 				this.navCtrl.setRoot('LoginPage');
-        // 			}).catch((error) => {
-        // 				let mensaje = '';
-        // 				loading.dismiss();
-        // 				error.error.forEach(data => {
-        // 					mensaje += data.message + "\n";
-        // 				});
-        // 				this.errorProvider.obj.message = mensaje;
-        // 				this.errorProvider.presentModal();
-        // 			});
-        // 		} else {
-        // 			this.errorProvider.obj.message = 'La contraseña debe tener mínimo 6 caracteres';
-        // 			this.errorProvider.presentModal();
-        // 		}
-        // 	} else {
-        // 		this.errorProvider.obj.message = 'Las contraseñas no cinciden';
-        // 		this.errorProvider.presentModal();
-        // 	}
-        // } else {
-        // 	this.errorProvider.obj.message = 'Los datos son obligatorios';
-        // 	this.errorProvider.presentModal();
-        // }
+        else {
+            var mensaje = "número celular";
+            if (type != "phone")
+                mensaje = "dirección email";
+            this.errorProvider.obj.message = 'Por favor ingrese su ' + mensaje;
+            this.errorProvider.presentModal();
+        }
     };
-    PasswordUpdatePage = __decorate([
+    RecoveryPasswordPage.prototype.changeVisible = function () {
+        this.isvisible = !this.isvisible;
+        this.data = null;
+    };
+    RecoveryPasswordPage.prototype.cancelar = function () {
+        this.navCtrl.pop();
+    };
+    RecoveryPasswordPage.prototype.confirmCode = function () {
+        if (this.codigo != null) {
+            if (this.reset.password_code_req == this.codigo) {
+                this.navCtrl.push('PasswordUpdatePage', { 'reset_id': this.reset.id });
+            }
+            else {
+                this.errorProvider.obj.message = 'El código ingresado no coincide';
+                this.errorProvider.presentModal();
+            }
+        }
+        else {
+            this.errorProvider.obj.message = 'Por favor ingrese el código de verificación';
+            this.errorProvider.presentModal();
+        }
+    };
+    RecoveryPasswordPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-            selector: 'page-password-update',template:/*ion-inline-start:"/Users/santiago/Documents/GitHub/eyepaycashapp/src/pages/password-update/password-update.html"*/'<!--\n  Generated template for the PasswordUpdatePage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-content padding class="fondo_gris">\n  <form [formGroup]="formGroup"  (ngSubmit)="recovery()">\n    <ion-list>\n\n      <ion-item>\n        <ion-label stacked>Ingrese la nueva contraseña</ion-label>\n        <ion-input type="password" required  name="recovery_pass" formControlName="new_password"></ion-input>\n      </ion-item>\n      <ion-item>\n        <ion-label stacked>Confirme la nueva contraseña</ion-label>\n        <ion-input type="password" required name="recovery_pass2" formControlName="new_password_conf"></ion-input>\n	  </ion-item>\n	  <ion-item no-lines *ngIf="formGroup.invalid">\n			<msg-error [control]="formGroup.controls.new_password" name="Recovery"></msg-error>\n			<msg-error [control]="formGroup.controls.new_password_conf" name="Recovery2"></msg-error>\n		</ion-item>\n      <ion-item>\n        <button ion-button class="buttonPayCash" block>Guardar</button>\n      </ion-item>\n    </ion-list>\n  </form>\n</ion-content>\n'/*ion-inline-end:"/Users/santiago/Documents/GitHub/eyepaycashapp/src/pages/password-update/password-update.html"*/,
+            selector: 'page-recovery-password',template:/*ion-inline-start:"/Users/eyeline/Documents/GitHub/eyepaycashapp/src/pages/recovery-password/recovery-password.html"*/'<ion-content padding class="imgBackground vignette">\n	<div style="margin-top:12%" class="center marbutt">\n		<img class="logo" src="assets/imgs/EPCLogo.png">\n	</div>\n	<div *ngIf="isvisible" class="center">\n		<ion-item class="backTransparent ">\n			<ion-label stacked>{{\'INGRESE_CELULAR\'|translate}}</ion-label>\n			<ion-input type="text" [(ngModel)]="data" name="userdata"></ion-input>\n		</ion-item>\n		<ion-item class="backTransparent" *ngIf="iscodigo2">\n			<ion-label stacked>{{\'INGRESE_CODIGO_VERIFICACION\'|translate}}</ion-label>\n			<ion-input type="text" [(ngModel)]="codigo" name="usercodigo"></ion-input>\n		</ion-item>\n		<ion-row class="divMargin">\n			<ion-col col-12 *ngIf="!iscodigo2">\n				<button ion-button (click)="sendMessage(\'phone\')" block class="buttonPayCash">{{\'ENVIAR_MENSAJE\'|translate}}</button>\n			</ion-col>\n			<ion-col col-12 *ngIf="iscodigo2">\n				<button ion-button (click)="confirmCode()" block class="buttonPayCash">{{\'CONFIRMAR_CODIGO\'|translate}}</button>\n			</ion-col>\n		</ion-row>\n		<ion-row class="marginLft divMargin20">\n			<ion-col col-4>\n				<button ion-button (click)="cancelar()" class="buttonPayCash">{{\'CANCELAR\'|translate}}</button>\n			</ion-col>\n			<ion-col col-6 *ngIf="!iscodigo2">\n				<button ion-button (click)="changeVisible()" class="buttonPayCash wi132Tam">{{\'RECUPERAR_X_EMAIL\'|translate}}</button>\n			</ion-col>\n		</ion-row>\n	</div>\n	<div *ngIf="!isvisible">\n		<div [formGroup]="formGroup">\n			<ion-item class="backTransparent colWhite" no-lines *ngIf="formGroup.invalid">\n				<msg-error [control]="formGroup.controls.data"></msg-error>\n			</ion-item>\n			<ion-item class="backTransparent">\n				<ion-label stacked>{{\'INGRESE_EMAIL\'|translate}}</ion-label>\n				<ion-input type="text" name="dataname" required formControlName="data"></ion-input>\n			</ion-item>\n		</div>\n		<ion-item *ngIf="iscodigo">\n			<ion-label stacked>{{\'INGRESE_CODIGO_VERIFICACION\'|translate}}</ion-label>\n			<ion-input type="text" [(ngModel)]="codigo" name="usercodigo"></ion-input>\n		</ion-item>\n		<ion-row class="divMargin">\n			<ion-col col-12 *ngIf="!iscodigo">\n				<button ion-button (click)="sendMessage(\'mail\')" block class="buttonPayCash">{{\'ENVIAR_EMAIL\'|translate}}</button>\n			</ion-col>\n			<ion-col col-12 *ngIf="iscodigo">\n				<button ion-button (click)="confirmCode()" block class="buttonPayCash">{{\'CONFIRMAR_CODIGO\'|translate}}</button>\n			</ion-col>\n		</ion-row>\n		<ion-row class="marginLft divMargin">\n			<ion-col col-4>\n				<button ion-button (click)="cancelar()" class="buttonPayCash">{{\'CANCELAR\'|translate}}</button>\n			</ion-col>\n			<ion-col col-6>\n				<button ion-button (click)="changeVisible()" class="buttonPayCash wi132Tam">{{\'RECUPERAR_X_SMS\'|translate}}</button>\n			</ion-col>\n		</ion-row>\n	</div>\n</ion-content>'/*ion-inline-end:"/Users/eyeline/Documents/GitHub/eyepaycashapp/src/pages/recovery-password/recovery-password.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavController */],
             __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* NavParams */],
@@ -260,11 +265,11 @@ var PasswordUpdatePage = /** @class */ (function () {
             __WEBPACK_IMPORTED_MODULE_3__providers_auth_user_auth_user__["a" /* AuthUserProvider */],
             __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* LoadingController */],
             __WEBPACK_IMPORTED_MODULE_4__providers_modal_error_modal_error__["a" /* ModalErrorProvider */]])
-    ], PasswordUpdatePage);
-    return PasswordUpdatePage;
+    ], RecoveryPasswordPage);
+    return RecoveryPasswordPage;
 }());
 
-//# sourceMappingURL=password-update.js.map
+//# sourceMappingURL=recovery-password.js.map
 
 /***/ })
 

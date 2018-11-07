@@ -102,6 +102,12 @@ ion-input, ion-textarea {
   max-width: 40%;
 }
 
+.item-md.item-input.ng-invalid.ng-touched:not(.input-has-focus):not(.item-input-has-focus) .item-inner {
+  border-bottom-color: transparent;
+  -webkit-box-shadow: inset 0 -1px 0 0 transparent;
+  box-shadow: inset 0 -1px 0 0 transparent;
+}
+
 
 
 

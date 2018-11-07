@@ -1,14 +1,15 @@
 webpackJsonp([13],{
 
-/***/ 720:
+/***/ 727:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ModalErrorPageModule", function() { return ModalErrorPageModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ModalWelcomePageModule", function() { return ModalWelcomePageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(26);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__modal_error__ = __webpack_require__(743);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(21);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__modal_welcome__ = __webpack_require__(755);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ngx_translate_core__ = __webpack_require__(94);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -18,33 +19,35 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var ModalErrorPageModule = /** @class */ (function () {
-    function ModalErrorPageModule() {
+
+var ModalWelcomePageModule = /** @class */ (function () {
+    function ModalWelcomePageModule() {
     }
-    ModalErrorPageModule = __decorate([
+    ModalWelcomePageModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["J" /* NgModule */])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_2__modal_error__["a" /* ModalErrorPage */],
+                __WEBPACK_IMPORTED_MODULE_2__modal_welcome__["a" /* ModalWelcomePage */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__modal_error__["a" /* ModalErrorPage */]),
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__modal_welcome__["a" /* ModalWelcomePage */]),
+                __WEBPACK_IMPORTED_MODULE_3__ngx_translate_core__["b" /* TranslateModule */]
             ],
         })
-    ], ModalErrorPageModule);
-    return ModalErrorPageModule;
+    ], ModalWelcomePageModule);
+    return ModalWelcomePageModule;
 }());
 
-//# sourceMappingURL=modal-error.module.js.map
+//# sourceMappingURL=modal-welcome.module.js.map
 
 /***/ }),
 
-/***/ 743:
+/***/ 755:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ModalErrorPage; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ModalWelcomePage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(26);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(21);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -57,36 +60,35 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 /**
- * Generated class for the ModalErrorPage page.
+ * Generated class for the ModalWelcomePage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
  */
-var ModalErrorPage = /** @class */ (function () {
-    function ModalErrorPage(navCtrl, navParams, viewControll) {
+var ModalWelcomePage = /** @class */ (function () {
+    function ModalWelcomePage(navCtrl, navParams) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
-        this.viewControll = viewControll;
-        this.obj = { field: null, message: null };
+        this.name = null;
+        this.getInfo();
     }
-    ModalErrorPage.prototype.ionViewDidLoad = function () {
-        this.obj = this.navParams.get('Error');
+    ModalWelcomePage.prototype.getInfo = function () {
+        this.name = this.navParams.get('name');
     };
-    ModalErrorPage.prototype.closeModal = function () {
-        this.viewControll.dismiss();
+    ModalWelcomePage.prototype.closeModal = function () {
+        this.navCtrl.pop();
     };
-    ModalErrorPage = __decorate([
+    ModalWelcomePage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-            selector: 'page-modal-error',template:/*ion-inline-start:"/Users/eyeline/Documents/GitHub/eyepaycashapp/src/pages/modal-error/modal-error.html"*/'<ion-content style="background: transparent">\n	<div class="gradient" style="\n	 color: white;\n    border-radius: 20px;\n    margin-top: 24%;\n    min-height: 180px;">\n    <img src="assets/imgs/error.png" style="max-width: 100px">\n    <p style="margin-top: 5%">{{obj.message}}</p>\n  </div>\n		<div class="footer-button">\n				<button ion-button (click)="closeModal()" class="buttonPayCash" style="color: white">Aceptar</button>\n		</div>\n	\n</ion-content>\n'/*ion-inline-end:"/Users/eyeline/Documents/GitHub/eyepaycashapp/src/pages/modal-error/modal-error.html"*/,
+            selector: 'page-modal-welcome',template:/*ion-inline-start:"/Users/eyeline/Documents/GitHub/eyepaycashapp/src/pages/modal-welcome/modal-welcome.html"*/'<!--\n  Generated template for the ModalWelcomePage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-content padding class="tamano">\n  <ion-row>\n    <ion-col col-10>\n      <h4>Bienvenido {{name}}</h4>\n    </ion-col>\n    <ion-col col-2>\n      <ion-buttons end>\n        <button ion-button icon-only (click)="closeModal()">\n          <ion-icon item-right name="ios-close-outline"></ion-icon>\n        </button>\n      </ion-buttons>\n    </ion-col>\n  </ion-row>\n  <img src="assets/ok.png">\n</ion-content>\n'/*ion-inline-end:"/Users/eyeline/Documents/GitHub/eyepaycashapp/src/pages/modal-welcome/modal-welcome.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* ViewController */]])
-    ], ModalErrorPage);
-    return ModalErrorPage;
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavController */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* NavParams */]])
+    ], ModalWelcomePage);
+    return ModalWelcomePage;
 }());
 
-//# sourceMappingURL=modal-error.js.map
+//# sourceMappingURL=modal-welcome.js.map
 
 /***/ })
 
