@@ -34,6 +34,7 @@ import {Camera} from "@ionic-native/camera";
 import {CameraProvider} from "../providers/camera/camera";
 import { SocialSharing } from "@ionic-native/social-sharing";
 import { SocialSharingProvider } from '../providers/social-sharing/social-sharing';
+import { VozProvider } from '../providers/voz/voz';
 
 
 export function createTranslateLoader(http: HttpClient) {
@@ -90,7 +91,8 @@ export function createTranslateLoader(http: HttpClient) {
     Camera,
 	CameraProvider,
 	SocialSharing,
-    SocialSharingProvider
+    SocialSharingProvider,
+    VozProvider
   ]
 })
 export class AppModule {
