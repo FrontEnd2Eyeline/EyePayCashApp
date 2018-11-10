@@ -1,6 +1,10 @@
 webpackJsonp([3],{
 
+<<<<<<< HEAD
 /***/ 733:
+=======
+/***/ 732:
+>>>>>>> 7d406fad9a5f532f03931ef87515a4af24c7aa84
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -8,7 +12,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RecoveryPasswordPageModule", function() { return RecoveryPasswordPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(21);
+<<<<<<< HEAD
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__recovery_password__ = __webpack_require__(758);
+=======
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__recovery_password__ = __webpack_require__(760);
+>>>>>>> 7d406fad9a5f532f03931ef87515a4af24c7aa84
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ngx_translate_core__ = __webpack_require__(94);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__components_components_module__ = __webpack_require__(742);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -135,7 +143,11 @@ var MsgErrorComponent = /** @class */ (function () {
 
 /***/ }),
 
+<<<<<<< HEAD
 /***/ 758:
+=======
+/***/ 760:
+>>>>>>> 7d406fad9a5f532f03931ef87515a4af24c7aa84
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -279,7 +291,11 @@ var RecoveryPasswordPage = /** @class */ (function () {
     };
     RecoveryPasswordPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+<<<<<<< HEAD
             selector: 'page-recovery-password',template:/*ion-inline-start:"/Users/eyeline/Documents/GitHub/eyepaycashapp/src/pages/recovery-password/recovery-password.html"*/'<ion-content padding class="imgBackground vignette">\n	<div style="margin-top:12%" class="center marbutt">\n		<img class="logo" src="assets/imgs/EPCLogo.png">\n	</div>\n	<form [formGroup]="formGroup">\n		<ion-item class="backTransparent colWhite" no-lines *ngIf="formGroup.invalid">\n			<msg-error [control]="formGroup.controls.data" name="Email"></msg-error>\n			<msg-error [control]="formGroup.controls.codigo" name="VerifiCode"></msg-error>\n		</ion-item>\n		<div *ngIf="isvisible" class="center">\n			<ion-item class="backTransparent ">\n				<ion-label stacked>{{\'INGRESE_CELULAR\'|translate}}</ion-label>\n				<ion-input type="text" formControlName="data" name="userdata"></ion-input>\n			</ion-item>\n			<ion-item class="backTransparent" *ngIf="iscodigo2">\n				<ion-label stacked>{{\'INGRESE_CODIGO_VERIFICACION\'|translate}}</ion-label>\n				<ion-input type="text" formControlName="codigo" name="usercodigo"></ion-input>\n			</ion-item>\n			<ion-row class="divMargin">\n				<ion-col col-12 *ngIf="!iscodigo2">\n					<button ion-button (click)="sendMessage(\'phone\')" block class="buttonPayCash">{{\'ENVIAR_MENSAJE\'|translate}}</button>\n				</ion-col>\n				<ion-col col-12 *ngIf="iscodigo2">\n					<button ion-button (click)="confirmCode()" block class="buttonPayCash">{{\'CONFIRMAR_CODIGO\'|translate}}</button>\n				</ion-col>\n			</ion-row>\n			<ion-row class="marginLft divMargin20">\n				<ion-col col-4>\n					<button ion-button (click)="cancelar()" class="buttonPayCash">{{\'CANCELAR\'|translate}}</button>\n				</ion-col>\n				<ion-col col-6 *ngIf="!iscodigo2">\n					<button ion-button (click)="changeVisible()" class="buttonPayCash wi132Tam">{{\'RECUPERAR_X_EMAIL\'|translate}}</button>\n				</ion-col>\n			</ion-row>\n		</div>\n		<div *ngIf="!isvisible">\n			<ion-item class="backTransparent">\n				<ion-label stacked>{{\'INGRESE_EMAIL\'|translate}}</ion-label>\n				<ion-input type="text" name="dataname" required formControlName="data"></ion-input>\n			</ion-item>\n\n			<ion-item *ngIf="iscodigo">\n				<ion-label stacked>{{\'INGRESE_CODIGO_VERIFICACION\'|translate}}</ion-label>\n				<ion-input type="text" required formControlName="codigo" name="usercodigo"></ion-input>\n			</ion-item>\n			<ion-row class="divMargin">\n				<ion-col col-12 *ngIf="!iscodigo">\n					<button ion-button (click)="sendMessage(\'mail\')" required  block class="buttonPayCash">{{\'ENVIAR_EMAIL\'|translate}}</button>\n				</ion-col>\n				<ion-col col-12 *ngIf="iscodigo">\n					<button ion-button (click)="confirmCode()" required block class="buttonPayCash">{{\'CONFIRMAR_CODIGO\'|translate}}</button>\n				</ion-col>\n			</ion-row>\n\n			<ion-row class="marginLft divMargin">\n				<ion-col col-4>\n					<button ion-button (click)="cancelar()" class="buttonPayCash">{{\'CANCELAR\'|translate}}</button>\n				</ion-col>\n				<ion-col col-6>\n					<button ion-button (click)="changeVisible()" class="buttonPayCash wi132Tam">{{\'RECUPERAR_X_SMS\'|translate}}</button>\n				</ion-col>\n			</ion-row>\n		</div>\n	</form>\n</ion-content>'/*ion-inline-end:"/Users/eyeline/Documents/GitHub/eyepaycashapp/src/pages/recovery-password/recovery-password.html"*/,
+=======
+            selector: 'page-recovery-password',template:/*ion-inline-start:"/Users/frontend/Documents/GitHub/eyepaycashapp/src/pages/recovery-password/recovery-password.html"*/'<ion-content padding class="imgBackground vignette">\n	<div style="margin-top:12%" class="center marbutt">\n		<img class="logo" src="assets/imgs/EPCLogo.png">\n	</div>\n	<div *ngIf="isvisible" class="center">\n		<ion-item class="backTransparent ">\n			<ion-label stacked>{{\'INGRESE_CELULAR\'|translate}}</ion-label>\n			<ion-input type="text" [(ngModel)]="data" name="userdata"></ion-input>\n		</ion-item>\n		<ion-item class="backTransparent" *ngIf="iscodigo2">\n			<ion-label stacked>{{\'INGRESE_CODIGO_VERIFICACION\'|translate}}</ion-label>\n			<ion-input type="text" [(ngModel)]="codigo" name="usercodigo"></ion-input>\n		</ion-item>\n		<ion-row class="divMargin">\n			<ion-col col-12 *ngIf="!iscodigo2">\n				<button ion-button (click)="sendMessage(\'phone\')" block class="buttonPayCash">{{\'ENVIAR_MENSAJE\'|translate}}</button>\n			</ion-col>\n			<ion-col col-12 *ngIf="iscodigo2">\n				<button ion-button (click)="confirmCode()" block class="buttonPayCash">{{\'CONFIRMAR_CODIGO\'|translate}}</button>\n			</ion-col>\n		</ion-row>\n		<ion-row class="marginLft divMargin20">\n			<ion-col col-4>\n				<button ion-button (click)="cancelar()" class="buttonPayCash">{{\'CANCELAR\'|translate}}</button>\n			</ion-col>\n			<ion-col col-6 *ngIf="!iscodigo2">\n				<button ion-button (click)="changeVisible()" class="buttonPayCash wi132Tam">{{\'RECUPERAR_X_EMAIL\'|translate}}</button>\n			</ion-col>\n		</ion-row>\n	</div>\n	<div *ngIf="!isvisible">\n		<div [formGroup]="formGroup">\n			<ion-item class="backTransparent colWhite" no-lines *ngIf="formGroup.invalid">\n				<msg-error [control]="formGroup.controls.data"></msg-error>\n			</ion-item>\n			<ion-item class="backTransparent">\n				<ion-label stacked>{{\'INGRESE_EMAIL\'|translate}}</ion-label>\n				<ion-input type="text" name="dataname" required formControlName="data"></ion-input>\n			</ion-item>\n		</div>\n		<ion-item *ngIf="iscodigo">\n			<ion-label stacked>{{\'INGRESE_CODIGO_VERIFICACION\'|translate}}</ion-label>\n			<ion-input type="text" [(ngModel)]="codigo" name="usercodigo"></ion-input>\n		</ion-item>\n		<ion-row class="divMargin">\n			<ion-col col-12 *ngIf="!iscodigo">\n				<button ion-button (click)="sendMessage(\'mail\')" block class="buttonPayCash">{{\'ENVIAR_EMAIL\'|translate}}</button>\n			</ion-col>\n			<ion-col col-12 *ngIf="iscodigo">\n				<button ion-button (click)="confirmCode()" block class="buttonPayCash">{{\'CONFIRMAR_CODIGO\'|translate}}</button>\n			</ion-col>\n		</ion-row>\n		<ion-row class="marginLft divMargin">\n			<ion-col col-4>\n				<button ion-button (click)="cancelar()" class="buttonPayCash">{{\'CANCELAR\'|translate}}</button>\n			</ion-col>\n			<ion-col col-6>\n				<button ion-button (click)="changeVisible()" class="buttonPayCash wi132Tam">{{\'RECUPERAR_X_SMS\'|translate}}</button>\n			</ion-col>\n		</ion-row>\n	</div>\n</ion-content>'/*ion-inline-end:"/Users/frontend/Documents/GitHub/eyepaycashapp/src/pages/recovery-password/recovery-password.html"*/,
+>>>>>>> 7d406fad9a5f532f03931ef87515a4af24c7aa84
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* NavController */],
             __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* NavParams */],

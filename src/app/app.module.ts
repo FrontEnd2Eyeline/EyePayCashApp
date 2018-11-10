@@ -36,6 +36,7 @@ import { SocialSharing } from "@ionic-native/social-sharing";
 import { SocialSharingProvider } from '../providers/social-sharing/social-sharing';
 import { NetworkProvider } from '../providers/network/network';
 import { Network } from '@ionic-native/network';
+import { VozProvider } from '../providers/voz/voz';
 
 
 export function createTranslateLoader(http: HttpClient) {
@@ -94,7 +95,9 @@ export function createTranslateLoader(http: HttpClient) {
     SocialSharing,
     SocialSharingProvider,
     NetworkProvider,
-    Network
+    Network,
+    VozProvider
+
   ]
 })
 export class AppModule {

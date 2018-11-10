@@ -1,6 +1,10 @@
 webpackJsonp([20],{
 
+<<<<<<< HEAD
 /***/ 721:
+=======
+/***/ 720:
+>>>>>>> 7d406fad9a5f532f03931ef87515a4af24c7aa84
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -8,7 +12,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ContactsPageModule", function() { return ContactsPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(21);
+<<<<<<< HEAD
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__contacts__ = __webpack_require__(745);
+=======
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__contacts__ = __webpack_require__(747);
+>>>>>>> 7d406fad9a5f532f03931ef87515a4af24c7aa84
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ngx_translate_core__ = __webpack_require__(94);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -41,7 +49,11 @@ var ContactsPageModule = /** @class */ (function () {
 
 /***/ }),
 
+<<<<<<< HEAD
 /***/ 745:
+=======
+/***/ 747:
+>>>>>>> 7d406fad9a5f532f03931ef87515a4af24c7aa84
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -118,7 +130,11 @@ var ContactsPage = /** @class */ (function () {
     };
     ContactsPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+<<<<<<< HEAD
             selector: 'page-contacts',template:/*ion-inline-start:"/Users/eyeline/Documents/GitHub/eyepaycashapp/src/pages/contacts/contacts.html"*/'<ion-header>\n	<ion-navbar>\n		<ion-title>\n			Listado de contactos\n		</ion-title>\n	</ion-navbar>\n</ion-header>\n\n<ion-content padding>\n	<ion-list>\n		<ion-item (click)="sharing()" class="center2">\n			<ion-icon name="logo-whatsapp"></ion-icon>\n			<ion-icon name="logo-facebook"></ion-icon>\n			<ion-icon name="logo-twitter"></ion-icon>\n		</ion-item>\n		<ion-item *ngFor="let contacto of listaContactos">\n			<div (click)="whatsAppInvite(contacto.phoneNumbers[0].value)">\n				<ion-avatar item-start>\n					<img src="assets/imgs/contacto.png">\n				</ion-avatar>\n				<h2>{{contacto.displayName | uppercase }}</h2>\n				<p>{{contacto.phoneNumbers[0].value}}</p>\n			</div>\n		</ion-item>\n	</ion-list>\n</ion-content>'/*ion-inline-end:"/Users/eyeline/Documents/GitHub/eyepaycashapp/src/pages/contacts/contacts.html"*/,
+=======
+            selector: 'page-contacts',template:/*ion-inline-start:"/Users/frontend/Documents/GitHub/eyepaycashapp/src/pages/contacts/contacts.html"*/'<ion-header>\n	<ion-navbar>\n		<ion-title>\n			Listado de contactos\n		</ion-title>\n	</ion-navbar>\n</ion-header>\n\n<ion-content padding>\n	<ion-list>\n		<ion-item (click)="sharing()" class="center2">\n			<ion-icon name="logo-whatsapp"></ion-icon>\n			<ion-icon name="logo-facebook"></ion-icon>\n			<ion-icon name="logo-twitter"></ion-icon>\n		</ion-item>\n		<ion-item *ngFor="let contacto of listaContactos">\n			<div (click)="whatsAppInvite(contacto.phoneNumbers[0].value)">\n				<ion-avatar item-start>\n					<img src="assets/imgs/contacto.png">\n				</ion-avatar>\n				<h2>{{contacto.displayName | uppercase }}</h2>\n				<p>{{contacto.phoneNumbers[0].value}}</p>\n			</div>\n		</ion-item>\n	</ion-list>\n</ion-content>'/*ion-inline-end:"/Users/frontend/Documents/GitHub/eyepaycashapp/src/pages/contacts/contacts.html"*/,
+>>>>>>> 7d406fad9a5f532f03931ef87515a4af24c7aa84
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* NavController */],
             __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* NavParams */],

@@ -36,6 +36,10 @@
   content: "\f377";
 }
 
+.list-ios > .item-block:first-child {
+  border-top: 0px !important;
+}
+
 .bar-button-default-md, .bar-button-clear-md-default, .bar-button-md-default {
   color: rgba(149, 105, 252, 1);
   color: -moz-linear-gradient(left, rgba(149, 105, 252, 1) 0%, rgba(6, 56, 150, 1) 100%);

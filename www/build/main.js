@@ -101,7 +101,11 @@ var GeolocationProvider = /** @class */ (function () {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CountryProvider; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+<<<<<<< HEAD
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_add_operator_map__ = __webpack_require__(127);
+=======
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_add_operator_map__ = __webpack_require__(130);
+>>>>>>> 7d406fad9a5f532f03931ef87515a4af24c7aa84
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_rxjs_add_operator_map__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_common_http__ = __webpack_require__(23);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -161,11 +165,21 @@ var CountryProvider = /** @class */ (function () {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+<<<<<<< HEAD
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return NetworkProvider; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_common_http__ = __webpack_require__(23);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(21);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_network__ = __webpack_require__(251);
+=======
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TouchLoginProvider; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_common_http__ = __webpack_require__(27);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_splash_screen__ = __webpack_require__(96);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_fingerprint_aio__ = __webpack_require__(169);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_ionic_angular__ = __webpack_require__(21);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__auth_user_auth_user__ = __webpack_require__(67);
+>>>>>>> 7d406fad9a5f532f03931ef87515a4af24c7aa84
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -179,6 +193,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+<<<<<<< HEAD
 var NetworkProvider = /** @class */ (function () {
     function NetworkProvider(http, network, eventCtrl, alertCtrl, toastCtrl) {
         this.http = http;
@@ -239,6 +254,105 @@ var NetworkProvider = /** @class */ (function () {
 /***/ }),
 
 /***/ 169:
+=======
+
+
+var TouchLoginProvider = /** @class */ (function () {
+    function TouchLoginProvider(http, faio, modalCtrl, platform, splashScreen, app, isLogin) {
+        this.http = http;
+        this.faio = faio;
+        this.modalCtrl = modalCtrl;
+        this.platform = platform;
+        this.splashScreen = splashScreen;
+        this.app = app;
+        this.isLogin = isLogin;
+        this.isTouch = true;
+        this.initialized = false;
+        this.isLocked = false;
+        this.navCtrl = app.getActiveNav();
+        console.log('Hello TouchLoginProvider Provider');
+    }
+    TouchLoginProvider.prototype.init = function () {
+        var _this = this;
+        if (this.initialized) {
+            return;
+        }
+        this.platform.ready().then(function () {
+            _this.onPauseSubscription = _this.platform.pause.subscribe(function () {
+                _this.splashScreen.show();
+            });
+            _this.onResumeSubscription = _this.platform.resume.subscribe(function () {
+                if (!_this.isLocked) {
+                    _this.isLocked = true;
+                    if (_this.login = _this.isLogin.isLogin) {
+                        if (_this.isTouch) {
+                            _this.showFingerPrint();
+                            _this.login();
+                            console.log('bloqueado', _this.isLocked);
+                        }
+                    }
+                    else {
+                        var nav = _this.app.getActiveNav();
+                        nav.setRoot('LoginPage');
+                        nav.popToRoot;
+                    }
+                }
+                console.log('no bloqueado', _this.isLocked);
+                _this.splashScreen.hide();
+                _this.isLocked = false;
+            });
+        });
+    };
+    // isActive() {
+    // 	const path: string[] = this.platform.url().split('/');
+    // 	return (String)(path[path.length - 1]);
+    // }
+    TouchLoginProvider.prototype.showFingerPrint = function () {
+        var _this = this;
+        this.faio.isAvailable()
+            .then(function (result) {
+            _this.faio.show({
+                clientId: 'Identificar de huella',
+                clientSecret: 'password',
+                disableBackup: false,
+                localizedFallbackTitle: 'Use Pin',
+                localizedReason: 'Please authenticate',
+            })
+                .then(function (result) {
+                _this.login();
+                _this.isLocked = false;
+            }).catch(function (error) {
+                _this.exitApp();
+            });
+        }).catch(function (error) { return console.log(error); });
+    };
+    TouchLoginProvider.prototype.login = function () {
+        var nav = this.app.getActiveNav();
+        nav.setRoot('HomePage');
+        nav.popToRoot;
+    };
+    TouchLoginProvider.prototype.exitApp = function () {
+        this.platform.exitApp();
+    };
+    TouchLoginProvider = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["B" /* Injectable */])(),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_0__angular_common_http__["a" /* HttpClient */],
+            __WEBPACK_IMPORTED_MODULE_3__ionic_native_fingerprint_aio__["a" /* FingerprintAIO */],
+            __WEBPACK_IMPORTED_MODULE_4_ionic_angular__["i" /* ModalController */],
+            __WEBPACK_IMPORTED_MODULE_4_ionic_angular__["m" /* Platform */],
+            __WEBPACK_IMPORTED_MODULE_2__ionic_native_splash_screen__["a" /* SplashScreen */],
+            __WEBPACK_IMPORTED_MODULE_4_ionic_angular__["b" /* App */],
+            __WEBPACK_IMPORTED_MODULE_5__auth_user_auth_user__["a" /* AuthUserProvider */]])
+    ], TouchLoginProvider);
+    return TouchLoginProvider;
+}());
+
+//# sourceMappingURL=touch-login.js.map
+
+/***/ }),
+
+/***/ 170:
+>>>>>>> 7d406fad9a5f532f03931ef87515a4af24c7aa84
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -296,7 +410,7 @@ var LenguageProvider = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 170:
+/***/ 171:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -393,6 +507,7 @@ var LoadInformationProvider = /** @class */ (function () {
 
 /***/ }),
 
+<<<<<<< HEAD
 /***/ 172:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -514,6 +629,9 @@ var TouchLoginProvider = /** @class */ (function () {
 /***/ }),
 
 /***/ 183:
+=======
+/***/ 182:
+>>>>>>> 7d406fad9a5f532f03931ef87515a4af24c7aa84
 /***/ (function(module, exports) {
 
 function webpackEmptyAsyncContext(req) {
@@ -535,6 +653,7 @@ webpackEmptyAsyncContext.id = 183;
 
 var map = {
 	"../pages/account/account.module": [
+<<<<<<< HEAD
 		739,
 		0
 	],
@@ -560,6 +679,33 @@ var map = {
 	],
 	"../pages/language/language.module": [
 		725,
+=======
+		718,
+		0
+	],
+	"../pages/coins/coins.module": [
+		719,
+		21
+	],
+	"../pages/contacts/contacts.module": [
+		720,
+		20
+	],
+	"../pages/history-resume/history-resume.module": [
+		721,
+		19
+	],
+	"../pages/history/history.module": [
+		722,
+		18
+	],
+	"../pages/home/home.module": [
+		723,
+		17
+	],
+	"../pages/language/language.module": [
+		724,
+>>>>>>> 7d406fad9a5f532f03931ef87515a4af24c7aa84
 		16
 	],
 	"../pages/login/login.module": [
@@ -567,6 +713,7 @@ var map = {
 		5
 	],
 	"../pages/map/map.module": [
+<<<<<<< HEAD
 		726,
 		6
 	],
@@ -588,6 +735,29 @@ var map = {
 	],
 	"../pages/politicas/politicas.module": [
 		741,
+=======
+		725,
+		6
+	],
+	"../pages/modal-error/modal-error.module": [
+		727,
+		15
+	],
+	"../pages/modal-transaction/modal-transaction.module": [
+		728,
+		14
+	],
+	"../pages/modal-welcome/modal-welcome.module": [
+		729,
+		13
+	],
+	"../pages/password-update/password-update.module": [
+		730,
+		4
+	],
+	"../pages/politicas/politicas.module": [
+		739,
+>>>>>>> 7d406fad9a5f532f03931ef87515a4af24c7aa84
 		12
 	],
 	"../pages/profile/profile.module": [
@@ -595,6 +765,7 @@ var map = {
 		11
 	],
 	"../pages/recovery-password/recovery-password.module": [
+<<<<<<< HEAD
 		733,
 		3
 	],
@@ -618,6 +789,31 @@ var map = {
 	],
 	"../pages/transaction-resume/transaction-resume.module": [
 		737,
+=======
+		732,
+		3
+	],
+	"../pages/reg-number-phone/reg-number-phone.module": [
+		254
+	],
+	"../pages/register/register.module": [
+		733,
+		2
+	],
+	"../pages/security/security.module": [
+		734,
+		1
+	],
+	"../pages/select-code/select-code.module": [
+		255
+	],
+	"../pages/touch-login/touch-login.module": [
+		737,
+		10
+	],
+	"../pages/transaction-resume/transaction-resume.module": [
+		738,
+>>>>>>> 7d406fad9a5f532f03931ef87515a4af24c7aa84
 		9
 	],
 	"../pages/transaction/transaction.module": [
@@ -625,7 +821,11 @@ var map = {
 		8
 	],
 	"../pages/update-acount/update-acount.module": [
+<<<<<<< HEAD
 		738,
+=======
+		736,
+>>>>>>> 7d406fad9a5f532f03931ef87515a4af24c7aa84
 		7
 	]
 };
@@ -645,7 +845,11 @@ module.exports = webpackAsyncContext;
 
 /***/ }),
 
+<<<<<<< HEAD
 /***/ 255:
+=======
+/***/ 254:
+>>>>>>> 7d406fad9a5f532f03931ef87515a4af24c7aa84
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -697,7 +901,11 @@ var RegNumberPhonePageModule = /** @class */ (function () {
 
 /***/ }),
 
+<<<<<<< HEAD
 /***/ 256:
+=======
+/***/ 255:
+>>>>>>> 7d406fad9a5f532f03931ef87515a4af24c7aa84
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -705,8 +913,13 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SelectCodePageModule", function() { return SelectCodePageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(21);
+<<<<<<< HEAD
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__select_code__ = __webpack_require__(434);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ionic2_auto_complete__ = __webpack_require__(257);
+=======
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__select_code__ = __webpack_require__(432);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ionic2_auto_complete__ = __webpack_require__(256);
+>>>>>>> 7d406fad9a5f532f03931ef87515a4af24c7aa84
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -847,6 +1060,7 @@ var MapProvider = /** @class */ (function () {
 
 /***/ }),
 
+<<<<<<< HEAD
 /***/ 389:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -942,12 +1156,19 @@ var FormatterDateProvider = /** @class */ (function () {
 /***/ }),
 
 /***/ 392:
+=======
+/***/ 386:
+>>>>>>> 7d406fad9a5f532f03931ef87515a4af24c7aa84
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CameraProvider; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+<<<<<<< HEAD
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ionic_native_camera__ = __webpack_require__(342);
+=======
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ionic_native_camera__ = __webpack_require__(230);
+>>>>>>> 7d406fad9a5f532f03931ef87515a4af24c7aa84
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1025,7 +1246,105 @@ var CameraProvider = /** @class */ (function () {
 
 /***/ }),
 
+<<<<<<< HEAD
 /***/ 393:
+=======
+/***/ 389:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SocialSharingProvider; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_common_http__ = __webpack_require__(27);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_social_sharing__ = __webpack_require__(252);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+/*
+  Generated class for the SocialSharingProvider provider.
+
+  See https://angular.io/guide/dependency-injection for more info on providers
+  and Angular DI.
+*/
+var SocialSharingProvider = /** @class */ (function () {
+    function SocialSharingProvider(http, socialSharing) {
+        this.http = http;
+        this.socialSharing = socialSharing;
+        this.phoneNumber = null;
+        console.log('Hello SocialSharingProvider Provider');
+    }
+    SocialSharingProvider.prototype.socialShare = function () {
+        var msg = "Hola";
+        this.socialSharing.share(msg, null, null, null);
+    };
+    SocialSharingProvider.prototype.whatsAppShare = function (phoneNumber) {
+        var mensaje = "Hola, te invitamos a que descargues nuestra Aplicación EyePayCash™:";
+        var link = "http://globalone2onemarketing.com/frontend/web/apk.apk";
+        this.socialSharing.shareViaWhatsAppToReceiver(phoneNumber, mensaje, null, link);
+    };
+    SocialSharingProvider = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["B" /* Injectable */])(),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_0__angular_common_http__["a" /* HttpClient */],
+            __WEBPACK_IMPORTED_MODULE_2__ionic_native_social_sharing__["a" /* SocialSharing */]])
+    ], SocialSharingProvider);
+    return SocialSharingProvider;
+}());
+
+//# sourceMappingURL=social-sharing.js.map
+
+/***/ }),
+
+/***/ 390:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FormatterDateProvider; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+/*
+  Generated class for the FormatterDateProvider provider.
+
+  See https://angular.io/guide/dependency-injection for more info on providers
+  and Angular DI.
+*/
+var FormatterDateProvider = /** @class */ (function () {
+    function FormatterDateProvider() {
+    }
+    FormatterDateProvider.prototype.getDateLocale = function (tr) {
+        var date = new Date(Date.parse(tr));
+        return (date.getTime() - (date.getTimezoneOffset() * 60000));
+    };
+    FormatterDateProvider = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["B" /* Injectable */])(),
+        __metadata("design:paramtypes", [])
+    ], FormatterDateProvider);
+    return FormatterDateProvider;
+}());
+
+//# sourceMappingURL=formatter-date.js.map
+
+/***/ }),
+
+/***/ 391:
+>>>>>>> 7d406fad9a5f532f03931ef87515a4af24c7aa84
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1052,14 +1371,22 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_status_bar__ = __webpack_require__(382);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__app_component__ = __webpack_require__(716);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__providers_country_country__ = __webpack_require__(139);
+<<<<<<< HEAD
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_select_code_select_code_module__ = __webpack_require__(256);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__angular_common_http__ = __webpack_require__(23);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__providers_api__ = __webpack_require__(49);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__ionic_storage__ = __webpack_require__(82);
+=======
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_select_code_select_code_module__ = __webpack_require__(255);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__angular_common_http__ = __webpack_require__(27);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__providers_api__ = __webpack_require__(48);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__ionic_storage__ = __webpack_require__(80);
+>>>>>>> 7d406fad9a5f532f03931ef87515a4af24c7aa84
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__providers_geolocation_geolocation__ = __webpack_require__(138);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__ionic_native_geolocation__ = __webpack_require__(95);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__ionic_native_native_geocoder__ = __webpack_require__(140);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__providers_auth_user_auth_user__ = __webpack_require__(67);
+<<<<<<< HEAD
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__pages_reg_number_phone_reg_number_phone_module__ = __webpack_require__(255);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__providers_verification_verification__ = __webpack_require__(717);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__providers_load_information_load_information__ = __webpack_require__(170);
@@ -1082,6 +1409,28 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_34__providers_social_sharing_social_sharing__ = __webpack_require__(389);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_35__providers_network_network__ = __webpack_require__(168);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_36__ionic_native_network__ = __webpack_require__(251);
+=======
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__pages_reg_number_phone_reg_number_phone_module__ = __webpack_require__(254);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__providers_verification_verification__ = __webpack_require__(715);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__providers_load_information_load_information__ = __webpack_require__(171);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__ionic_native_google_maps__ = __webpack_require__(384);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__providers_validation_validation__ = __webpack_require__(381);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__providers_formatter_date_formatter_date__ = __webpack_require__(390);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__ionic_native_clipboard__ = __webpack_require__(383);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__providers_map_map__ = __webpack_require__(385);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__angular_common__ = __webpack_require__(34);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__ionic_native_contacts__ = __webpack_require__(388);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__ngx_translate_http_loader__ = __webpack_require__(716);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__ngx_translate_core__ = __webpack_require__(94);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__providers_lenguage_lenguage__ = __webpack_require__(170);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__providers_modal_error_modal_error__ = __webpack_require__(68);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_29__ionic_native_fingerprint_aio__ = __webpack_require__(169);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_30__providers_touch_login_touch_login__ = __webpack_require__(168);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_31__ionic_native_camera__ = __webpack_require__(230);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_32__providers_camera_camera__ = __webpack_require__(386);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_33__ionic_native_social_sharing__ = __webpack_require__(252);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_34__providers_social_sharing_social_sharing__ = __webpack_require__(389);
+>>>>>>> 7d406fad9a5f532f03931ef87515a4af24c7aa84
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1141,6 +1490,10 @@ var AppModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_8__angular_common_http__["b" /* HttpClientModule */],
                 __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["f" /* IonicModule */].forRoot(__WEBPACK_IMPORTED_MODULE_5__app_component__["a" /* MyApp */], {}, {
                     links: [
+<<<<<<< HEAD
+=======
+                        { loadChildren: '../pages/account/account.module#AccountPageModule', name: 'AccountPage', segment: 'account', priority: 'low', defaultHistory: [] },
+>>>>>>> 7d406fad9a5f532f03931ef87515a4af24c7aa84
                         { loadChildren: '../pages/coins/coins.module#CoinsPageModule', name: 'CoinsPage', segment: 'coins', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/contacts/contacts.module#ContactsPageModule', name: 'ContactsPage', segment: 'contacts', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/history-resume/history-resume.module#HistoryResumePageModule', name: 'HistoryResumePage', segment: 'history-resume', priority: 'low', defaultHistory: [] },
@@ -1159,11 +1512,17 @@ var AppModule = /** @class */ (function () {
                         { loadChildren: '../pages/reg-number-phone/reg-number-phone.module#RegNumberPhonePageModule', name: 'RegNumberPhonePage', segment: 'reg-number-phone', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/select-code/select-code.module#SelectCodePageModule', name: 'SelectCodePage', segment: 'select-code', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/transaction/transaction.module#TransactionPageModule', name: 'TransactionPage', segment: 'transaction', priority: 'low', defaultHistory: [] },
+<<<<<<< HEAD
                         { loadChildren: '../pages/touch-login/touch-login.module#TouchLoginPageModule', name: 'TouchLoginPage', segment: 'touch-login', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/transaction-resume/transaction-resume.module#TransactionResumePageModule', name: 'TransactionResumePage', segment: 'transaction-resume', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/update-acount/update-acount.module#UpdateAcountPageModule', name: 'UpdateAcountPage', segment: 'update-acount', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/account/account.module#AccountPageModule', name: 'AccountPage', segment: 'account', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/security/security.module#SecurityPageModule', name: 'SecurityPage', segment: 'security', priority: 'low', defaultHistory: [] },
+=======
+                        { loadChildren: '../pages/update-acount/update-acount.module#UpdateAcountPageModule', name: 'UpdateAcountPage', segment: 'update-acount', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/touch-login/touch-login.module#TouchLoginPageModule', name: 'TouchLoginPage', segment: 'touch-login', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/transaction-resume/transaction-resume.module#TransactionResumePageModule', name: 'TransactionResumePage', segment: 'transaction-resume', priority: 'low', defaultHistory: [] },
+>>>>>>> 7d406fad9a5f532f03931ef87515a4af24c7aa84
                         { loadChildren: '../pages/politicas/politicas.module#PoliticasPageModule', name: 'PoliticasPage', segment: 'politicas', priority: 'low', defaultHistory: [] }
                     ]
                 }),
@@ -1347,7 +1706,7 @@ var RegNumberPhonePage = /** @class */ (function () {
     };
     RegNumberPhonePage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-            selector: 'page-reg-number-phone',template:/*ion-inline-start:"/Users/eyeline/Documents/GitHub/eyepaycashapp/src/pages/reg-number-phone/reg-number-phone.html"*/'<ion-content class="imgBackground vignette">\n  <div style="margin-top:20%" class="center">\n    <img style="margin-bottom: 15%" class="Lgo center" src="assets/imgs/EPCLogo.png">\n    <div class="center">\n      <ion-label class="whiteText"> {{\'MENSAJE_CODIGO_VERIFICACION1\'|translate}}<br>\n        {{\'MENSAJE_CODIGO_VERIFICACION2\'|translate}}\n      </ion-label>\n    </div>\n  </div>\n\n  <div class="center divMargin">\n    <ion-grid class="center marGrid">\n      <ion-row>\n        <ion-col col-3 class="mar3Left">\n          <ion-item class="item-flag item-md2 item-ios2 mrgtop12">\n            <img [src]="user_register.flag" class="flagphone banderaWidt widflag">\n          </ion-item>\n        </ion-col>\n        <ion-col col-3 class="marlef3">\n          <ion-item class="item-flag item-md2 item-ios2 martop20">\n            <button ion-button (click)="selectcountry()" class="transparente item-md2 item-button2 button-md btnFlagCountry">+\n              {{user_register.country_code}}\n            </button>\n          </ion-item>\n        </ion-col>\n        <ion-col col-6 class="marleft8">\n          <ion-item class="stylCel">\n            <ion-input required type="number" name="numerocelular" [(ngModel)]="user_register.value" placeholder="Número movil (celular)"\n              [brmasker]="{len:12}"></ion-input>\n          </ion-item>\n        </ion-col>\n      </ion-row>\n    </ion-grid>\n    <ion-item class="inputClass" *ngIf="response_verify.mail_code != null || response_verify.phone_code != null">\n      <ion-input placeholder="Introduce el código" maxlength="6" required style="text-align: center" type="number"\n        [(ngModel)]="code_verify" [brmasker]="{len:6}"></ion-input>\n    </ion-item>\n  </div>\n  <div class="center marginBts">\n    <button class="buttonPayCash borderBtns" (click)="cancel()" ion-button small>{{\'CANCELAR\'|translate}}</button>\n    <button class="buttonPayCash borderBtns" (click)="sendNumberPhone()" ion-button small *ngIf="response_verify.phone_code == null">{{\'CONFIRMAR_CELULAR\'|translate}}\n    </button>\n    <button class="buttonPayCash borderBtns" (click)="verifyCode()" ion-button small *ngIf="response_verify.phone_code != null">{{\'CONTINUAR\'|translate}}\n    </button>\n  </div>\n\n</ion-content>'/*ion-inline-end:"/Users/eyeline/Documents/GitHub/eyepaycashapp/src/pages/reg-number-phone/reg-number-phone.html"*/,
+            selector: 'page-reg-number-phone',template:/*ion-inline-start:"/Users/frontend/Documents/GitHub/eyepaycashapp/src/pages/reg-number-phone/reg-number-phone.html"*/'<ion-content class="imgBackground vignette">\n  <div style="margin-top:20%" class="center">\n    <img style="margin-bottom: 15%" class="Lgo center" src="assets/imgs/EPCLogo.png">\n    <div class="center">\n      <ion-label class="whiteText"> {{\'MENSAJE_CODIGO_VERIFICACION1\'|translate}}<br>\n        {{\'MENSAJE_CODIGO_VERIFICACION2\'|translate}}\n      </ion-label>\n    </div>\n  </div>\n\n  <div class="center divMargin">\n    <ion-grid class="center marGrid">\n      <ion-row>\n        <ion-col col-3 class="mar3Left">\n          <ion-item class="item-flag item-md2 item-ios2 mrgtop12">\n            <img [src]="user_register.flag" class="flagphone banderaWidt widflag">\n          </ion-item>\n        </ion-col>\n        <ion-col col-3 class="marlef3">\n          <ion-item class="item-flag item-md2 item-ios2 martop20">\n            <button ion-button (click)="selectcountry()" class="transparente item-md2 item-button2 button-md btnFlagCountry">+\n              {{user_register.country_code}}\n            </button>\n          </ion-item>\n        </ion-col>\n        <ion-col col-6 class="marleft8">\n          <ion-item class="stylCel">\n            <ion-input required type="number" name="numerocelular" [(ngModel)]="user_register.value" placeholder="Número movil (celular)"\n              [brmasker]="{len:12}"></ion-input>\n          </ion-item>\n        </ion-col>\n      </ion-row>\n    </ion-grid>\n    <ion-item class="inputClass" *ngIf="response_verify.mail_code != null || response_verify.phone_code != null">\n      <ion-input placeholder="Introduce el código" maxlength="6" required style="text-align: center" type="number"\n        [(ngModel)]="code_verify" [brmasker]="{len:6}"></ion-input>\n    </ion-item>\n  </div>\n  <div class="center marginBts">\n    <button class="buttonPayCash borderBtns" (click)="cancel()" ion-button small>{{\'CANCELAR\'|translate}}</button>\n    <button class="buttonPayCash borderBtns" (click)="sendNumberPhone()" ion-button small *ngIf="response_verify.phone_code == null">{{\'CONFIRMAR_CELULAR\'|translate}}\n    </button>\n    <button class="buttonPayCash borderBtns" (click)="verifyCode()" ion-button small *ngIf="response_verify.phone_code != null">{{\'CONTINUAR\'|translate}}\n    </button>\n  </div>\n\n</ion-content>'/*ion-inline-end:"/Users/frontend/Documents/GitHub/eyepaycashapp/src/pages/reg-number-phone/reg-number-phone.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* NavController */],
             __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* NavParams */],
@@ -1373,7 +1732,11 @@ var RegNumberPhonePage = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(21);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_country_country__ = __webpack_require__(139);
+<<<<<<< HEAD
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ionic2_auto_complete__ = __webpack_require__(257);
+=======
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ionic2_auto_complete__ = __webpack_require__(256);
+>>>>>>> 7d406fad9a5f532f03931ef87515a4af24c7aa84
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1415,7 +1778,7 @@ var SelectCodePage = /** @class */ (function () {
     ], SelectCodePage.prototype, "searchbar", void 0);
     SelectCodePage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-            selector: 'page-select-code',template:/*ion-inline-start:"/Users/eyeline/Documents/GitHub/eyepaycashapp/src/pages/select-code/select-code.html"*/'<ion-content padding>\n  <ng-template #withFlags let-attrs="attrs">\n    <img src="{{attrs.data.flag}}" class="flag"/>\n    <span\n        [innerHTML]="\'+\'+attrs.data.callingCodes[0]+\' \'+attrs.data.name"></span>\n  </ng-template>\n  <ion-auto-complete #search item-content [dataProvider]="country"\n                     [options]="{placeholder : \'Search your country\'}"\n                     [template]="withFlags"\n                     [showResultsFirst]="true"\n                     (itemSelected)="selectItem($event)"></ion-auto-complete>\n</ion-content>\n'/*ion-inline-end:"/Users/eyeline/Documents/GitHub/eyepaycashapp/src/pages/select-code/select-code.html"*/,
+            selector: 'page-select-code',template:/*ion-inline-start:"/Users/frontend/Documents/GitHub/eyepaycashapp/src/pages/select-code/select-code.html"*/'<ion-content padding>\n  <ng-template #withFlags let-attrs="attrs">\n    <img src="{{attrs.data.flag}}" class="flag"/>\n    <span\n        [innerHTML]="\'+\'+attrs.data.callingCodes[0]+\' \'+attrs.data.name"></span>\n  </ng-template>\n  <ion-auto-complete #search item-content [dataProvider]="country"\n                     [options]="{placeholder : \'Search your country\'}"\n                     [template]="withFlags"\n                     [showResultsFirst]="true"\n                     (itemSelected)="selectItem($event)"></ion-auto-complete>\n</ion-content>\n'/*ion-inline-end:"/Users/frontend/Documents/GitHub/eyepaycashapp/src/pages/select-code/select-code.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* NavController */],
             __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* NavParams */],
@@ -1435,8 +1798,13 @@ var SelectCodePage = /** @class */ (function () {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Api; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+<<<<<<< HEAD
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common_http__ = __webpack_require__(23);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(82);
+=======
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common_http__ = __webpack_require__(27);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(80);
+>>>>>>> 7d406fad9a5f532f03931ef87515a4af24c7aa84
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__modal_error_modal_error__ = __webpack_require__(68);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_ionic_angular_util_util__ = __webpack_require__(2);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_ionic_angular__ = __webpack_require__(21);
@@ -1753,11 +2121,18 @@ var ModalErrorProvider = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(96);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_geolocation_geolocation__ = __webpack_require__(138);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_auth_user_auth_user__ = __webpack_require__(67);
+<<<<<<< HEAD
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__providers_load_information_load_information__ = __webpack_require__(170);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__providers_lenguage_lenguage__ = __webpack_require__(169);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__ionic_storage__ = __webpack_require__(82);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__providers_touch_login_touch_login__ = __webpack_require__(172);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__providers_network_network__ = __webpack_require__(168);
+=======
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__providers_load_information_load_information__ = __webpack_require__(171);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__providers_lenguage_lenguage__ = __webpack_require__(170);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__ionic_storage__ = __webpack_require__(80);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__providers_touch_login_touch_login__ = __webpack_require__(168);
+>>>>>>> 7d406fad9a5f532f03931ef87515a4af24c7aa84
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1837,7 +2212,11 @@ var MyApp = /** @class */ (function () {
         __metadata("design:type", __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* Nav */])
     ], MyApp.prototype, "nav", void 0);
     MyApp = __decorate([
+<<<<<<< HEAD
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({template:/*ion-inline-start:"/Users/eyeline/Documents/GitHub/eyepaycashapp/src/app/app.html"*/'\n<ion-menu [content]="content">\n  <ion-header>\n    <ion-toolbar>\n      <ion-title>Menu</ion-title>\n    </ion-toolbar>\n  </ion-header>\n\n  <ion-content style="background-color: #f5f5f5">\n    <ion-row class="gradient">\n      <ion-col>\n        <img style="width: 60%" src="../assets//imgs/EPCLogo.png" alt="">\n      </ion-col>\n    </ion-row>\n    <ion-list>\n      <button ion-item (click)="openPage(\'HomePage\')">{{\'INICIO\'|translate}}</button>\n      <button ion-item (click)="openPage(\'TransactionPage\')">{{\'TRANSACCION\'|translate}}</button>\n      <button ion-item (click)="openPage(\'HistoryPage\')">{{\'HISTORIAL\'|translate}}</button>\n      <button ion-item (click)="openPage(\'MapPage\')">{{\'MAPA\'|translate}}</button>\n      <button ion-item (click)="openPage(\'AccountPage\')">{{\'MI_CUENTA\'|translate}}</button>\n      <button ion-item (click)="openPage(\'SecurityPage\')">{{\'SEGURIDAD\'|translate}}</button>\n      <button ion-item (click)="cerrarSesion()">{{\'CERRAR_SESION\'|translate}}</button>\n    </ion-list>\n    <ion-list style="text-align: center">\n      <ion-item class="center" style="background: transparent; border-top: 0px solid #c8c7cc !important; border-bottom: 0px solid #c8c7cc !important;">\n        <button ion-button  (click)="seleccionar(\'es\')" class="buttonPayCash">Español</button>\n        <button ion-button  (click)="seleccionar(\'en\')" class="buttonPayCash">English</button>\n      </ion-item>\n    </ion-list>\n  </ion-content>\n\n</ion-menu>\n<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>\n'/*ion-inline-end:"/Users/eyeline/Documents/GitHub/eyepaycashapp/src/app/app.html"*/
+=======
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({template:/*ion-inline-start:"/Users/frontend/Documents/GitHub/eyepaycashapp/src/app/app.html"*/'\n<ion-menu [content]="content">\n  <ion-header>\n    <ion-toolbar>\n      <ion-title>Menu</ion-title>\n    </ion-toolbar>\n  </ion-header>\n\n  <ion-content style="background-color: #f5f5f5">\n    <ion-row class="gradient">\n      <ion-col>\n        <img style="width: 60%" src="assets/imgs/EPCLogo.png" alt="">\n      </ion-col>\n    </ion-row>\n    <ion-list>\n      <button ion-item (click)="openPage(\'HomePage\')">{{\'INICIO\'|translate}}</button>\n      <button ion-item (click)="openPage(\'TransactionPage\')">{{\'TRANSACCION\'|translate}}</button>\n      <button ion-item (click)="openPage(\'HistoryPage\')">{{\'HISTORIAL\'|translate}}</button>\n      <button ion-item (click)="openPage(\'MapPage\')">{{\'MAPA\'|translate}}</button>\n      <button ion-item (click)="openPage(\'AccountPage\')">{{\'MI_CUENTA\'|translate}}</button>\n      <button ion-item (click)="openPage(\'SecurityPage\')">{{\'SEGURIDAD\'|translate}}</button>\n      <button ion-item (click)="cerrarSesion()">{{\'CERRAR_SESION\'|translate}}</button>\n    </ion-list>\n    <ion-list style="text-align: center">\n      <ion-item class="center" style="background: transparent; border-top: 0px solid #c8c7cc !important; border-bottom: 0px solid #c8c7cc !important;">\n        <button ion-button  (click)="seleccionar(\'es\')" class="buttonPayCash">Español</button>\n        <button ion-button  (click)="seleccionar(\'en\')" class="buttonPayCash">English</button>\n      </ion-item>\n    </ion-list>\n  </ion-content>\n\n</ion-menu>\n<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>\n'/*ion-inline-end:"/Users/frontend/Documents/GitHub/eyepaycashapp/src/app/app.html"*/
+>>>>>>> 7d406fad9a5f532f03931ef87515a4af24c7aa84
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* Platform */],
             __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */],

@@ -1,6 +1,10 @@
 webpackJsonp([15],{
 
+<<<<<<< HEAD
 /***/ 728:
+=======
+/***/ 727:
+>>>>>>> 7d406fad9a5f532f03931ef87515a4af24c7aa84
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -8,7 +12,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ModalErrorPageModule", function() { return ModalErrorPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(21);
+<<<<<<< HEAD
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__modal_error__ = __webpack_require__(753);
+=======
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__modal_error__ = __webpack_require__(755);
+>>>>>>> 7d406fad9a5f532f03931ef87515a4af24c7aa84
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -38,7 +46,11 @@ var ModalErrorPageModule = /** @class */ (function () {
 
 /***/ }),
 
+<<<<<<< HEAD
 /***/ 753:
+=======
+/***/ 755:
+>>>>>>> 7d406fad9a5f532f03931ef87515a4af24c7aa84
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -77,7 +89,7 @@ var ModalErrorPage = /** @class */ (function () {
     };
     ModalErrorPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-            selector: 'page-modal-error',template:/*ion-inline-start:"/Users/eyeline/Documents/GitHub/eyepaycashapp/src/pages/modal-error/modal-error.html"*/'<ion-content class="BackGRa">\n  <div>\n    <div class="gradient">\n      <img class="mrg10Top" src="assets/imgs/error.png" >\n      <p class="mrg5Top">{{obj.message}}</p>\n    </div>\n    <div class="footer-button">\n      <button ion-button (click)="closeModal()" class="buttonPayCash" style="color: white">Aceptar</button>\n    </div>\n  </div>\n</ion-content>'/*ion-inline-end:"/Users/eyeline/Documents/GitHub/eyepaycashapp/src/pages/modal-error/modal-error.html"*/,
+            selector: 'page-modal-error',template:/*ion-inline-start:"/Users/frontend/Documents/GitHub/eyepaycashapp/src/pages/modal-error/modal-error.html"*/'<ion-content class="BackGRa">\n  <div>\n    <div class="gradient">\n      <img class="mrg10Top" src="assets/imgs/error.png" >\n      <p class="mrg5Top">{{obj.message}}</p>\n    </div>\n    <div class="footer-button">\n      <button ion-button (click)="closeModal()" class="buttonPayCash" style="color: white">Aceptar</button>\n    </div>\n  </div>\n</ion-content>'/*ion-inline-end:"/Users/frontend/Documents/GitHub/eyepaycashapp/src/pages/modal-error/modal-error.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* NavController */],
             __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* NavParams */],
