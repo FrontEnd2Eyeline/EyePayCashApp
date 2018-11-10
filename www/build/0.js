@@ -1,10 +1,6 @@
 webpackJsonp([0],{
 
-<<<<<<< HEAD
-/***/ 738:
-=======
-/***/ 716:
->>>>>>> 3950783bd88485802166fcda61286b84fb77c589
+/***/ 739:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -12,13 +8,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AccountPageModule", function() { return AccountPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(21);
-<<<<<<< HEAD
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__account__ = __webpack_require__(763);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_brmasker_ionic_3__ = __webpack_require__(382);
-=======
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__account__ = __webpack_require__(740);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_brmasker_ionic_3__ = __webpack_require__(381);
->>>>>>> 3950783bd88485802166fcda61286b84fb77c589
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__account__ = __webpack_require__(764);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_brmasker_ionic_3__ = __webpack_require__(384);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ngx_translate_core__ = __webpack_require__(94);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -40,7 +31,7 @@ var AccountPageModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_2__account__["a" /* AccountPage */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__account__["a" /* AccountPage */]),
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__account__["a" /* AccountPage */]),
                 __WEBPACK_IMPORTED_MODULE_4__ngx_translate_core__["b" /* TranslateModule */],
                 __WEBPACK_IMPORTED_MODULE_3_brmasker_ionic_3__["a" /* BrMaskerModule */],
             ],
@@ -53,30 +44,21 @@ var AccountPageModule = /** @class */ (function () {
 
 /***/ }),
 
-<<<<<<< HEAD
-/***/ 763:
-=======
-/***/ 740:
->>>>>>> 3950783bd88485802166fcda61286b84fb77c589
+/***/ 764:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AccountPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(21);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_api__ = __webpack_require__(48);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_api__ = __webpack_require__(49);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_auth_user_auth_user__ = __webpack_require__(67);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_modal_error_modal_error__ = __webpack_require__(68);
-<<<<<<< HEAD
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_camera_camera__ = __webpack_require__(390);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__providers_touch_login_touch_login__ = __webpack_require__(171);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_util__ = __webpack_require__(764);
-=======
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_camera_camera__ = __webpack_require__(385);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__providers_touch_login_touch_login__ = __webpack_require__(168);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_util__ = __webpack_require__(741);
->>>>>>> 3950783bd88485802166fcda61286b84fb77c589
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_camera_camera__ = __webpack_require__(392);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__providers_touch_login_touch_login__ = __webpack_require__(172);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_util__ = __webpack_require__(765);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_util___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7_util__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__providers_network_network__ = __webpack_require__(168);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -94,6 +76,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 /**
  * Generated class for the AccountPage page.
  *
@@ -101,7 +84,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
  * Ionic pages and navigation.
  */
 var AccountPage = /** @class */ (function () {
-    function AccountPage(navCtrl, navParams, api, userProvider, toastCtrl, loadingCtrl, modal, alertCtrl, errorProvider, camera, loginProvider) {
+    function AccountPage(navCtrl, navParams, api, userProvider, toastCtrl, loadingCtrl, modal, alertCtrl, errorProvider, camera, loginProvider, networkProvider) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
         this.api = api;
@@ -113,6 +96,7 @@ var AccountPage = /** @class */ (function () {
         this.errorProvider = errorProvider;
         this.camera = camera;
         this.loginProvider = loginProvider;
+        this.networkProvider = networkProvider;
         this.usuario = null;
         this.country = null;
         this.type = 'password';
@@ -271,16 +255,33 @@ var AccountPage = /** @class */ (function () {
             this.view_Btn_phone = false;
     };
     AccountPage.prototype.goPage = function (page) {
-        if (page == 'profile')
-            this.navCtrl.push("ProfilePage");
-        else if (page == 'history')
-            this.navCtrl.push("HistoryPage");
-        else if (page == "maps")
-            this.navCtrl.push("MapPage");
-        else if (page == "contact")
-            this.navCtrl.push("ContactsPage");
-        else
-            this.navCtrl.push("TransactionPage");
+        this.buttonDisabbled = this.networkProvider.buttonDisabled;
+        if (this.buttonDisabbled != true) {
+            if (page == 'profile')
+                //this.navCtrl.push("ProfilePage");
+                this.navCtrl.setPages([{ page: 'HomePage' }, { page: 'ProfilePage' }]);
+            else if (page == 'history')
+                //this.navCtrl.push("HistoryPage");
+                this.navCtrl.setPages([{ page: 'HomePage' }, { page: 'HistoryPage' }]);
+            else if (page == "maps")
+                //this.navCtrl.push("MapPage");
+                this.navCtrl.setPages([{ page: 'HomePage' }, { page: 'MapPage' }]);
+            else if (page == "contact")
+                //this.navCtrl.push("ContactsPage");
+                this.navCtrl.setPages([{ page: 'HomePage' }, { page: 'ContactsPage' }]);
+            else if (page == "precios")
+                //this.navCtrl.push("CoinsPage")
+                this.navCtrl.setPages([{ page: 'HomePage' }, { page: 'CoinsPage' }]);
+            else
+                //this.navCtrl.push("TransactionPage");
+                this.navCtrl.setPages([{ page: 'HomePage' }, { page: 'TransactionPage' }]);
+        }
+        else {
+            this.toastCtrl.create({
+                message: 'no connection, please, turn on your connection internet',
+                showCloseButton: true,
+            }).present();
+        }
     };
     AccountPage.prototype.foto = function () {
         var _this = this;
@@ -348,23 +349,20 @@ var AccountPage = /** @class */ (function () {
     };
     AccountPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-<<<<<<< HEAD
-            selector: 'page-account',template:/*ion-inline-start:"/Users/eyeline/Documents/GitHub/eyepaycashapp/src/pages/account/account.html"*/'<ion-header>\n  <div class="BackgroundPpal styleDivTitle">\n    <div style="background: transparent">\n      <img (click)="cerrarSesion()"  class="icoClose" icon-end src="assets/newIcons/17.png">\n    </div>\n    <ion-row>\n      <ion-col>\n        <img class="styleLogo " src="{{usuario?.url_img}}" (click)="foto()">\n      </ion-col>\n    </ion-row>\n    <div class="center">\n      <h6 class="styleTextName">{{usuario.first_name}} {{usuario.last_name}}</h6>\n    </div>\n  </div>\n</ion-header>\n<ion-content>\n  <ion-list>\n    <ion-list>\n      <ion-item>\n        <ion-label text-wrap color="primary" fixed>Email</ion-label>\n        <ion-input disabled text-right placeholder="{{usuario.mail}}"></ion-input>\n      </ion-item>\n      <ion-item>\n        <ion-label text-wrap color="primary" fixed>Teléfono</ion-label>\n        <ion-input disabled text-right placeholder="{{usuario.phone}}"></ion-input>\n      </ion-item>\n      <ion-item>\n        <ion-label text-wrap color="primary" fixed>Sexo</ion-label>\n        <ion-input disabled *ngIf="usuario.gender==\'m\'" text-right placeholder="Masculino"></ion-input>\n        <ion-input disabled *ngIf="usuario.gender==\'f\'" text-right placeholder="Femenino"></ion-input>\n      </ion-item>\n      <ion-item>\n        <ion-label text-wrap color="primary" fixed>País</ion-label>\n        <ion-input disabled text-right placeholder="{{country.name}}"></ion-input>\n      </ion-item>\n      <ion-item>\n        <ion-label text-wrap color="primary" fixed>Indicativo</ion-label>\n        <ion-input disabled text-right placeholder=" {{country.phone_code}}"></ion-input>\n      </ion-item>\n      <ion-item>\n        <ion-label text-wrap color="primary" fixed>Código del país</ion-label>\n        <ion-input disabled text-right placeholder=" {{country.country_code}}"></ion-input>\n      </ion-item>\n      <ion-item>\n        <ion-label text-wrap color="primary" fixed>Moneda</ion-label>\n        <ion-input disabled text-right placeholder=" {{country.currency}}"></ion-input>\n      </ion-item>\n    </ion-list>\n  </ion-list>\n  <div>\n    <h1 style="color: red; text-align: center; font-size: 14px">Eliminar cuenta</h1>\n  </div>\n</ion-content>\n<ion-footer>\n  <ion-footer>\n    <ion-toolbar>\n      <ion-row>\n        <ion-col class="center2" col-2 (click)="goPage(\'precios\')">\n          <img width="40" height="40" src="assets/newIcons/11.png">\n          <p>Precios</p>\n        </ion-col>\n        <ion-col class="center2" col-3 (click)="goPage(\'transaction\')">\n          <img width="40" height="40" src="assets/icon/1.png">\n          <p>{{\'TRANSACCION\'|translate}}</p>\n        </ion-col>\n        <ion-col class="center2 mar1Left" col-2 (click)="goPage(\'history\')">\n          <!-- <ion-badge item-end>{{count}}</ion-badge> -->\n          <img width="40" height="40" src="assets/icon/2.png">\n          <p>{{\'HISTORIAL\'|translate}}</p>\n        </ion-col>\n        <ion-col class="center2" col-2 (click)="goPage(\'maps\')">\n          <img width="40" height="40" src="assets/icon/3.png">\n          <p>{{\'MAPA\'|translate}}</p>\n        </ion-col>\n        <ion-col class="center2" col-2 (click)="goPage(\'profile\')">\n          <img width="40" height="40" src="assets/icon/4.png">\n          <p>{{\'CUENTA\'|translate}}</p>\n        </ion-col>\n      </ion-row>\n    </ion-toolbar>\n  </ion-footer>\n  <!-- <ion-content padding class="BackGR3">\n  <ion-row>\n    <ion-col col-12>\n      <button ion-button (click)="cerrarSesion()" block class="buttonPayCash">Cerrar sesión</button>\n    </ion-col>\n  </ion-row>\n  <ion-card style="background: transparent">\n    <ion-card-header>\n        <ion-img style="background: transparent" width="15" height="15" src="assets/icon/Account.png"></ion-img>\n      <ion-icon name="person" item-start></ion-icon>\n    {{\'INFORMACION_PERSONAL\'|translate}}\n    </ion-card-header>\n    <ion-card-content>\n      <ion-list>\n        <ion-item>\n          <ion-label stacked>{{\'NOMBRES\'|translate}}</ion-label>\n          <ion-input type="text" required name="userregistronombre" [(ngModel)]="usuario.first_name"></ion-input>\n        </ion-item>\n\n        <ion-item>\n          <ion-label stacked>{{\'APELLIDOS\'|translate}}</ion-label>\n          <ion-input type="text" required name="userregistroapellido"\n                     [(ngModel)]="usuario.last_name"></ion-input>\n        </ion-item>\n        <ion-item>\n          <ion-label stacked>{{\'GENERO\'| translate}}</ion-label>\n          <ion-select okText="Guardar" cancelText="Cancelar" [(ngModel)]="usuario.gender" name="userregistrogenero"\n            interface="popover">\n            <ion-option value="f">Femenino</ion-option>\n            <ion-option value="m">Masculino</ion-option>\n          </ion-select>\n        </ion-item>\n        <button ion-button block class="buttonPayCash" (click)="actualizar()">{{\'EDITAR_INFORMACION\'|translate}}</button>\n      </ion-list>\n    </ion-card-content>\n  </ion-card>\n  <ion-card>\n    <ion-card-header>\n        <ion-img style="background: transparent" width="15" height="15" src="assets/icon/key.png"></ion-img>\n      {{\'INFORMACION_DE_CUENTA\'|translate}}\n    </ion-card-header>\n    <ion-card-content>\n      <ion-row>\n        <ion-label stacked>{{\'EMAIL\'|translate}}</ion-label>\n        {{usuario.mail}}\n      </ion-row>\n      <ion-row>\n        <ion-label stacked>{{\'TELEFONO\'|translate}}</ion-label>\n        {{usuario.phone}}\n      </ion-row>\n      <ion-row *ngIf="view_Verify_Mail">\n        <ion-col col-12>\n          <ion-input type="text" [(ngModel)]="code_Verify_Mail"></ion-input>\n        </ion-col>\n        <ion-col col-12>\n          <button ion-button (click)="validateCode(\'mail\')">{{\'CONFIRMAR_EMAIL\'|translate}}</button>\n          <button ion-button block (click)="cancelValidation()">{{\'CANCELAR\'|translate}}</button>\n        </ion-col>\n      </ion-row>\n      <ion-row *ngIf="view_Verify_Phone">\n        <ion-col col-12>\n          <ion-input type="text" [(ngModel)]="code_Verify_Phone"></ion-input>\n        </ion-col>\n        <ion-col col-12>\n          <button ion-button block (click)="validateCode(\'phone\')">{{\'CONFIRMAR_CODIGO_TELEFONO\'|translate}}</button>\n          <button ion-button block (click)="cancelValidation()">{{\'CANCELAR\'|translate}}</button>\n        </ion-col>\n      </ion-row>\n      <ion-row>\n        <button ion-button block class="buttonPayCash"\n                *ngIf=" (view_Btn_phone) && (view_Verify_Phone == false)"\n                (click)="reenviarConfirm(\'phone\')">{{\'REENVIAR_CONFIRMACION_MOVIL\'| translate}}\n        </button>\n\n        <button ion-button block class="buttonPayCash"\n                *ngIf=" (view_Btn_mail) && view_Verify_Mail == false"\n                (click)="reenviarConfirm(\'mail\')">{{\'REENVIAR_CONFIRMACION_EMAIL\'| translate}}\n        </button>\n      </ion-row>\n    </ion-card-content>\n  </ion-card>\n  <ion-card>\n    <ion-card-header>\n        <ion-img style="background: transparent" width="15" height="15" src="assets/icon/Ubicacion.png"></ion-img>\n      {{\'INFORMACION_DE_UBICACION\'|translate}}\n    </ion-card-header>\n    <ion-card-content>\n      <ion-row>\n        <ion-label stacked>{{\'PAIS\'|translate}}</ion-label>\n        {{country.name}}\n      </ion-row>\n      <ion-row>\n        <ion-label stacked>{{\'CODIGO_DE_TELEFONO\'|translate}}</ion-label>\n        {{country.phone_code}}\n      </ion-row>\n      <ion-row>\n        <ion-label stacked>{{\'CODIGO_DE_PAIS\'|translate}}</ion-label>\n        {{country.country_code}}\n      </ion-row>\n      <ion-row>\n        <ion-label stacked>{{\'MONEDA_DE_PAIS\'|translate}}</ion-label>\n        {{country.currency}}\n      </ion-row>\n    </ion-card-content>\n  </ion-card>\n</ion-content> -->'/*ion-inline-end:"/Users/eyeline/Documents/GitHub/eyepaycashapp/src/pages/account/account.html"*/,
-=======
-            selector: 'page-account',template:/*ion-inline-start:"/Users/eyeline/Documents/GitHub/eyepaycashapp/src/pages/account/account.html"*/'<ion-header>\n  <div class="BackgroundPpal styleDivTitle">\n    <div style="background: transparent">\n      <img (click)="cerrarSesion()"  class="icoClose" icon-end src="assets/newIcons/17.png">\n    </div>\n    <ion-row class="mrgPhoto">\n      <ion-col>\n        <img class="styleLogo " src="{{usuario?.url_img}}" (click)="foto()">\n      </ion-col>\n    </ion-row>\n    <div class="center">\n      <h6 class="styleTextName">{{usuario.first_name}} {{usuario.last_name}}</h6>\n    </div>\n  </div>\n</ion-header>\n<ion-content>\n  <ion-list>\n    <ion-list>\n      <ion-item>\n        <ion-label text-wrap color="primary" fixed>Email</ion-label>\n        <ion-input disabled text-right placeholder="{{usuario.mail}}"></ion-input>\n      </ion-item>\n      <ion-item>\n        <ion-label text-wrap color="primary" fixed>Teléfono</ion-label>\n        <ion-input disabled text-right placeholder="{{usuario.phone}}"></ion-input>\n      </ion-item>\n      <ion-item>\n        <ion-label text-wrap color="primary" fixed>Sexo</ion-label>\n        <ion-input disabled *ngIf="usuario.gender==\'m\'" text-right placeholder="Masculino"></ion-input>\n        <ion-input disabled *ngIf="usuario.gender==\'f\'" text-right placeholder="Femenino"></ion-input>\n      </ion-item>\n      <ion-item>\n        <ion-label text-wrap color="primary" fixed>País</ion-label>\n        <ion-input disabled text-right placeholder="{{country.name}}"></ion-input>\n      </ion-item>\n      <ion-item>\n        <ion-label text-wrap color="primary" fixed>Indicativo</ion-label>\n        <ion-input disabled text-right placeholder=" {{country.phone_code}}"></ion-input>\n      </ion-item>\n      <ion-item>\n        <ion-label text-wrap color="primary" fixed>Código del país</ion-label>\n        <ion-input disabled text-right placeholder=" {{country.country_code}}"></ion-input>\n      </ion-item>\n      <ion-item>\n        <ion-label text-wrap color="primary" fixed>Moneda</ion-label>\n        <ion-input disabled text-right placeholder=" {{country.currency}}"></ion-input>\n      </ion-item>\n    </ion-list>\n  </ion-list>\n  <div>\n    <h1 style="color: red; text-align: center; font-size: 14px">Eliminar cuenta</h1>\n  </div>\n</ion-content>\n<ion-footer>\n  <ion-footer>\n    <ion-toolbar>\n      <ion-row>\n        <ion-col class="center2" col-2 (click)="goPage(\'precios\')">\n          <img width="40" height="40" src="assets/newIcons/11.png">\n          <p>Precios</p>\n        </ion-col>\n        <ion-col class="center2" col-3 (click)="goPage(\'transaction\')">\n          <img width="40" height="40" src="assets/icon/1.png">\n          <p>{{\'TRANSACCION\'|translate}}</p>\n        </ion-col>\n        <ion-col class="center2 mar1Left" col-2 (click)="goPage(\'history\')">\n          <!-- <ion-badge item-end>{{count}}</ion-badge> -->\n          <img width="40" height="40" src="assets/icon/2.png">\n          <p>{{\'HISTORIAL\'|translate}}</p>\n        </ion-col>\n        <ion-col class="center2" col-2 (click)="goPage(\'maps\')">\n          <img width="40" height="40" src="assets/icon/3.png">\n          <p>{{\'MAPA\'|translate}}</p>\n        </ion-col>\n        <ion-col class="center2" col-2 (click)="goPage(\'profile\')">\n          <img width="40" height="40" src="assets/icon/4.png">\n          <p>{{\'CUENTA\'|translate}}</p>\n        </ion-col>\n      </ion-row>\n    </ion-toolbar>\n  </ion-footer>\n  <!-- <ion-content padding class="BackGR3">\n  <ion-row>\n    <ion-col col-12>\n      <button ion-button (click)="cerrarSesion()" block class="buttonPayCash">Cerrar sesión</button>\n    </ion-col>\n  </ion-row>\n  <ion-card style="background: transparent">\n    <ion-card-header>\n        <ion-img style="background: transparent" width="15" height="15" src="assets/icon/Account.png"></ion-img>\n      <ion-icon name="person" item-start></ion-icon>\n    {{\'INFORMACION_PERSONAL\'|translate}}\n    </ion-card-header>\n    <ion-card-content>\n      <ion-list>\n        <ion-item>\n          <ion-label stacked>{{\'NOMBRES\'|translate}}</ion-label>\n          <ion-input type="text" required name="userregistronombre" [(ngModel)]="usuario.first_name"></ion-input>\n        </ion-item>\n\n        <ion-item>\n          <ion-label stacked>{{\'APELLIDOS\'|translate}}</ion-label>\n          <ion-input type="text" required name="userregistroapellido"\n                     [(ngModel)]="usuario.last_name"></ion-input>\n        </ion-item>\n        <ion-item>\n          <ion-label stacked>{{\'GENERO\'| translate}}</ion-label>\n          <ion-select okText="Guardar" cancelText="Cancelar" [(ngModel)]="usuario.gender" name="userregistrogenero"\n            interface="popover">\n            <ion-option value="f">Femenino</ion-option>\n            <ion-option value="m">Masculino</ion-option>\n          </ion-select>\n        </ion-item>\n        <button ion-button block class="buttonPayCash" (click)="actualizar()">{{\'EDITAR_INFORMACION\'|translate}}</button>\n      </ion-list>\n    </ion-card-content>\n  </ion-card>\n  <ion-card>\n    <ion-card-header>\n        <ion-img style="background: transparent" width="15" height="15" src="assets/icon/key.png"></ion-img>\n      {{\'INFORMACION_DE_CUENTA\'|translate}}\n    </ion-card-header>\n    <ion-card-content>\n      <ion-row>\n        <ion-label stacked>{{\'EMAIL\'|translate}}</ion-label>\n        {{usuario.mail}}\n      </ion-row>\n      <ion-row>\n        <ion-label stacked>{{\'TELEFONO\'|translate}}</ion-label>\n        {{usuario.phone}}\n      </ion-row>\n      <ion-row *ngIf="view_Verify_Mail">\n        <ion-col col-12>\n          <ion-input type="text" [(ngModel)]="code_Verify_Mail"></ion-input>\n        </ion-col>\n        <ion-col col-12>\n          <button ion-button (click)="validateCode(\'mail\')">{{\'CONFIRMAR_EMAIL\'|translate}}</button>\n          <button ion-button block (click)="cancelValidation()">{{\'CANCELAR\'|translate}}</button>\n        </ion-col>\n      </ion-row>\n      <ion-row *ngIf="view_Verify_Phone">\n        <ion-col col-12>\n          <ion-input type="text" [(ngModel)]="code_Verify_Phone"></ion-input>\n        </ion-col>\n        <ion-col col-12>\n          <button ion-button block (click)="validateCode(\'phone\')">{{\'CONFIRMAR_CODIGO_TELEFONO\'|translate}}</button>\n          <button ion-button block (click)="cancelValidation()">{{\'CANCELAR\'|translate}}</button>\n        </ion-col>\n      </ion-row>\n      <ion-row>\n        <button ion-button block class="buttonPayCash"\n                *ngIf=" (view_Btn_phone) && (view_Verify_Phone == false)"\n                (click)="reenviarConfirm(\'phone\')">{{\'REENVIAR_CONFIRMACION_MOVIL\'| translate}}\n        </button>\n\n        <button ion-button block class="buttonPayCash"\n                *ngIf=" (view_Btn_mail) && view_Verify_Mail == false"\n                (click)="reenviarConfirm(\'mail\')">{{\'REENVIAR_CONFIRMACION_EMAIL\'| translate}}\n        </button>\n      </ion-row>\n    </ion-card-content>\n  </ion-card>\n  <ion-card>\n    <ion-card-header>\n        <ion-img style="background: transparent" width="15" height="15" src="assets/icon/Ubicacion.png"></ion-img>\n      {{\'INFORMACION_DE_UBICACION\'|translate}}\n    </ion-card-header>\n    <ion-card-content>\n      <ion-row>\n        <ion-label stacked>{{\'PAIS\'|translate}}</ion-label>\n        {{country.name}}\n      </ion-row>\n      <ion-row>\n        <ion-label stacked>{{\'CODIGO_DE_TELEFONO\'|translate}}</ion-label>\n        {{country.phone_code}}\n      </ion-row>\n      <ion-row>\n        <ion-label stacked>{{\'CODIGO_DE_PAIS\'|translate}}</ion-label>\n        {{country.country_code}}\n      </ion-row>\n      <ion-row>\n        <ion-label stacked>{{\'MONEDA_DE_PAIS\'|translate}}</ion-label>\n        {{country.currency}}\n      </ion-row>\n    </ion-card-content>\n  </ion-card>\n</ion-content> -->'/*ion-inline-end:"/Users/eyeline/Documents/GitHub/eyepaycashapp/src/pages/account/account.html"*/,
->>>>>>> 3950783bd88485802166fcda61286b84fb77c589
+            selector: 'page-account',template:/*ion-inline-start:"/Users/eyeline/Documents/GitHub/eyepaycashapp/src/pages/account/account.html"*/'<ion-header>\n  <div class="BackgroundPpal styleDivTitle">\n    <div style="background: transparent">\n      <img (click)="cerrarSesion()"  class="icoClose" icon-end src="assets/newIcons/17.png">\n    </div>\n    <ion-row class="mrgPhoto">\n      <ion-col>\n        <img class="styleLogo " src="{{usuario?.url_img}}" (click)="foto()">\n      </ion-col>\n    </ion-row>\n    <div class="center">\n      <h6 class="styleTextName">{{usuario.first_name}} {{usuario.last_name}}</h6>\n    </div>\n  </div>\n</ion-header>\n<ion-content>\n  <ion-list>\n    <ion-list>\n      <ion-item>\n        <ion-label text-wrap color="primary" fixed>Email</ion-label>\n        <ion-input disabled text-right placeholder="{{usuario.mail}}"></ion-input>\n      </ion-item>\n      <ion-item>\n        <ion-label text-wrap color="primary" fixed>Teléfono</ion-label>\n        <ion-input disabled text-right placeholder="{{usuario.phone}}"></ion-input>\n      </ion-item>\n      <ion-item>\n        <ion-label text-wrap color="primary" fixed>Sexo</ion-label>\n        <ion-input disabled *ngIf="usuario.gender==\'m\'" text-right placeholder="Masculino"></ion-input>\n        <ion-input disabled *ngIf="usuario.gender==\'f\'" text-right placeholder="Femenino"></ion-input>\n      </ion-item>\n      <ion-item>\n        <ion-label text-wrap color="primary" fixed>País</ion-label>\n        <ion-input disabled text-right placeholder="{{country.name}}"></ion-input>\n      </ion-item>\n      <ion-item>\n        <ion-label text-wrap color="primary" fixed>Indicativo</ion-label>\n        <ion-input disabled text-right placeholder=" {{country.phone_code}}"></ion-input>\n      </ion-item>\n      <ion-item>\n        <ion-label text-wrap color="primary" fixed>Código del país</ion-label>\n        <ion-input disabled text-right placeholder=" {{country.country_code}}"></ion-input>\n      </ion-item>\n      <ion-item>\n        <ion-label text-wrap color="primary" fixed>Moneda</ion-label>\n        <ion-input disabled text-right placeholder=" {{country.currency}}"></ion-input>\n      </ion-item>\n    </ion-list>\n  </ion-list>\n  <div>\n    <h1 style="color: red; text-align: center; font-size: 14px">Eliminar cuenta</h1>\n  </div>\n</ion-content>\n<ion-footer >\n	<ion-toolbar >\n		<ion-row >\n			<ion-col class="center" col-2 (click)="goPage(\'precios\')">\n				<img width="40" height="40" src="assets/newIcons/11.png">\n				<p>Precios</p>\n			</ion-col>\n			<ion-col class="center" col-3 (click)="goPage(\'transaction\')">\n				<img width="40" height="40" src="assets/icon/1.png">\n				<p>{{\'TRANSACCION\'|translate}}</p>\n			</ion-col>\n			<ion-col class="center mar1Left" col-2 (click)="goPage(\'history\')">\n				<!-- <ion-badge item-end>{{count}}</ion-badge> -->\n				<img width="40" height="40" src="assets/icon/2.png">\n				<p>{{\'HISTORIAL\'|translate}}</p>\n			</ion-col>\n			<ion-col class="center" col-2 (click)="goPage(\'maps\')">\n				<img width="40" height="40" src="assets/icon/3.png">\n				<p>{{\'MAPA\'|translate}}</p>\n			</ion-col>\n			<ion-col  class="center" col-2 (click)="goPage(\'profile\')">\n				<img width="40" height="40" src="assets/icon/4.png">\n				<p>{{\'CUENTA\'|translate}}</p>\n			</ion-col>\n		</ion-row>\n	</ion-toolbar>\n</ion-footer>\n  <!-- <ion-content padding class="BackGR3">\n  <ion-row>\n    <ion-col col-12>\n      <button ion-button (click)="cerrarSesion()" block class="buttonPayCash">Cerrar sesión</button>\n    </ion-col>\n  </ion-row>\n  <ion-card style="background: transparent">\n    <ion-card-header>\n        <ion-img style="background: transparent" width="15" height="15" src="assets/icon/Account.png"></ion-img>\n      <ion-icon name="person" item-start></ion-icon>\n    {{\'INFORMACION_PERSONAL\'|translate}}\n    </ion-card-header>\n    <ion-card-content>\n      <ion-list>\n        <ion-item>\n          <ion-label stacked>{{\'NOMBRES\'|translate}}</ion-label>\n          <ion-input type="text" required name="userregistronombre" [(ngModel)]="usuario.first_name"></ion-input>\n        </ion-item>\n\n        <ion-item>\n          <ion-label stacked>{{\'APELLIDOS\'|translate}}</ion-label>\n          <ion-input type="text" required name="userregistroapellido"\n                     [(ngModel)]="usuario.last_name"></ion-input>\n        </ion-item>\n        <ion-item>\n          <ion-label stacked>{{\'GENERO\'| translate}}</ion-label>\n          <ion-select okText="Guardar" cancelText="Cancelar" [(ngModel)]="usuario.gender" name="userregistrogenero"\n            interface="popover">\n            <ion-option value="f">Femenino</ion-option>\n            <ion-option value="m">Masculino</ion-option>\n          </ion-select>\n        </ion-item>\n        <button ion-button block class="buttonPayCash" (click)="actualizar()">{{\'EDITAR_INFORMACION\'|translate}}</button>\n      </ion-list>\n    </ion-card-content>\n  </ion-card>\n  <ion-card>\n    <ion-card-header>\n        <ion-img style="background: transparent" width="15" height="15" src="assets/icon/key.png"></ion-img>\n      {{\'INFORMACION_DE_CUENTA\'|translate}}\n    </ion-card-header>\n    <ion-card-content>\n      <ion-row>\n        <ion-label stacked>{{\'EMAIL\'|translate}}</ion-label>\n        {{usuario.mail}}\n      </ion-row>\n      <ion-row>\n        <ion-label stacked>{{\'TELEFONO\'|translate}}</ion-label>\n        {{usuario.phone}}\n      </ion-row>\n      <ion-row *ngIf="view_Verify_Mail">\n        <ion-col col-12>\n          <ion-input type="text" [(ngModel)]="code_Verify_Mail"></ion-input>\n        </ion-col>\n        <ion-col col-12>\n          <button ion-button (click)="validateCode(\'mail\')">{{\'CONFIRMAR_EMAIL\'|translate}}</button>\n          <button ion-button block (click)="cancelValidation()">{{\'CANCELAR\'|translate}}</button>\n        </ion-col>\n      </ion-row>\n      <ion-row *ngIf="view_Verify_Phone">\n        <ion-col col-12>\n          <ion-input type="text" [(ngModel)]="code_Verify_Phone"></ion-input>\n        </ion-col>\n        <ion-col col-12>\n          <button ion-button block (click)="validateCode(\'phone\')">{{\'CONFIRMAR_CODIGO_TELEFONO\'|translate}}</button>\n          <button ion-button block (click)="cancelValidation()">{{\'CANCELAR\'|translate}}</button>\n        </ion-col>\n      </ion-row>\n      <ion-row>\n        <button ion-button block class="buttonPayCash"\n                *ngIf=" (view_Btn_phone) && (view_Verify_Phone == false)"\n                (click)="reenviarConfirm(\'phone\')">{{\'REENVIAR_CONFIRMACION_MOVIL\'| translate}}\n        </button>\n\n        <button ion-button block class="buttonPayCash"\n                *ngIf=" (view_Btn_mail) && view_Verify_Mail == false"\n                (click)="reenviarConfirm(\'mail\')">{{\'REENVIAR_CONFIRMACION_EMAIL\'| translate}}\n        </button>\n      </ion-row>\n    </ion-card-content>\n  </ion-card>\n  <ion-card>\n    <ion-card-header>\n        <ion-img style="background: transparent" width="15" height="15" src="assets/icon/Ubicacion.png"></ion-img>\n      {{\'INFORMACION_DE_UBICACION\'|translate}}\n    </ion-card-header>\n    <ion-card-content>\n      <ion-row>\n        <ion-label stacked>{{\'PAIS\'|translate}}</ion-label>\n        {{country.name}}\n      </ion-row>\n      <ion-row>\n        <ion-label stacked>{{\'CODIGO_DE_TELEFONO\'|translate}}</ion-label>\n        {{country.phone_code}}\n      </ion-row>\n      <ion-row>\n        <ion-label stacked>{{\'CODIGO_DE_PAIS\'|translate}}</ion-label>\n        {{country.country_code}}\n      </ion-row>\n      <ion-row>\n        <ion-label stacked>{{\'MONEDA_DE_PAIS\'|translate}}</ion-label>\n        {{country.currency}}\n      </ion-row>\n    </ion-card-content>\n  </ion-card>\n</ion-content> -->'/*ion-inline-end:"/Users/eyeline/Documents/GitHub/eyepaycashapp/src/pages/account/account.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavController */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* NavParams */],
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* NavController */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* NavParams */],
             __WEBPACK_IMPORTED_MODULE_2__providers_api__["a" /* Api */],
             __WEBPACK_IMPORTED_MODULE_3__providers_auth_user_auth_user__["a" /* AuthUserProvider */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* ToastController */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* LoadingController */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* ModalController */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["o" /* ToastController */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* LoadingController */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* ModalController */],
             __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */],
             __WEBPACK_IMPORTED_MODULE_4__providers_modal_error_modal_error__["a" /* ModalErrorProvider */],
             __WEBPACK_IMPORTED_MODULE_5__providers_camera_camera__["a" /* CameraProvider */],
-            __WEBPACK_IMPORTED_MODULE_6__providers_touch_login_touch_login__["a" /* TouchLoginProvider */]])
+            __WEBPACK_IMPORTED_MODULE_6__providers_touch_login_touch_login__["a" /* TouchLoginProvider */],
+            __WEBPACK_IMPORTED_MODULE_8__providers_network_network__["a" /* NetworkProvider */]])
     ], AccountPage);
     return AccountPage;
 }());
@@ -373,11 +371,7 @@ var AccountPage = /** @class */ (function () {
 
 /***/ }),
 
-<<<<<<< HEAD
-/***/ 764:
-=======
-/***/ 741:
->>>>>>> 3950783bd88485802166fcda61286b84fb77c589
+/***/ 765:
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global, process) {// Copyright Joyent, Inc. and other Node contributors.
@@ -905,11 +899,7 @@ function isPrimitive(arg) {
 }
 exports.isPrimitive = isPrimitive;
 
-<<<<<<< HEAD
-exports.isBuffer = __webpack_require__(765);
-=======
-exports.isBuffer = __webpack_require__(742);
->>>>>>> 3950783bd88485802166fcda61286b84fb77c589
+exports.isBuffer = __webpack_require__(766);
 
 function objectToString(o) {
   return Object.prototype.toString.call(o);
@@ -953,11 +943,7 @@ exports.log = function() {
  *     prototype.
  * @param {function} superCtor Constructor function to inherit prototype from.
  */
-<<<<<<< HEAD
-exports.inherits = __webpack_require__(766);
-=======
-exports.inherits = __webpack_require__(743);
->>>>>>> 3950783bd88485802166fcda61286b84fb77c589
+exports.inherits = __webpack_require__(767);
 
 exports._extend = function(origin, add) {
   // Don't do anything if add isn't an object
@@ -975,19 +961,11 @@ function hasOwnProperty(obj, prop) {
   return Object.prototype.hasOwnProperty.call(obj, prop);
 }
 
-<<<<<<< HEAD
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(49), __webpack_require__(389)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(50), __webpack_require__(391)))
 
 /***/ }),
 
-/***/ 765:
-=======
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(49), __webpack_require__(386)))
-
-/***/ }),
-
-/***/ 742:
->>>>>>> 3950783bd88485802166fcda61286b84fb77c589
+/***/ 766:
 /***/ (function(module, exports) {
 
 module.exports = function isBuffer(arg) {
@@ -999,11 +977,7 @@ module.exports = function isBuffer(arg) {
 
 /***/ }),
 
-<<<<<<< HEAD
-/***/ 766:
-=======
-/***/ 743:
->>>>>>> 3950783bd88485802166fcda61286b84fb77c589
+/***/ 767:
 /***/ (function(module, exports) {
 
 if (typeof Object.create === 'function') {

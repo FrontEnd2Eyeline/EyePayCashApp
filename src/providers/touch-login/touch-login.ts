@@ -59,6 +59,7 @@ export class TouchLoginProvider {
 						}
 					} else {
 						let nav = this.app.getActiveNav();
+						
 						nav.setRoot('LoginPage');
 						nav.popToRoot;
 					}

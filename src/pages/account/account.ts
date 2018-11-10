@@ -15,6 +15,7 @@ import { Camera } from "@ionic-native/camera";
 import { CameraProvider } from "../../providers/camera/camera";
 import { TouchLoginProvider } from '../../providers/touch-login/touch-login';
 import { isArray } from 'util';
+import { NetworkProvider } from '../../providers/network/network';
 
 /**
  * Generated class for the AccountPage page.
@@ -29,6 +30,8 @@ import { isArray } from 'util';
 	templateUrl: 'account.html',
 })
 export class AccountPage {
+
+	buttonDisabbled:any;
 
 	private usuario: any = null;
 	private country: any = null;
@@ -62,7 +65,8 @@ export class AccountPage {
 		public alertCtrl: AlertController,
 		public errorProvider: ModalErrorProvider,
 		private camera: CameraProvider,
-		private loginProvider: TouchLoginProvider
+		private loginProvider: TouchLoginProvider,
+		public networkProvider: NetworkProvider
 	) {
 		this.getInfo();
 	}
@@ -217,17 +221,35 @@ export class AccountPage {
 	}
 
 	goPage(page) {
-		if (page == 'profile')
-			this.navCtrl.push("ProfilePage");
+		this.buttonDisabbled = this.networkProvider.buttonDisabled;
+		  if(this.buttonDisabbled != true){
+			if (page == 'profile')
+		  //this.navCtrl.push("ProfilePage");
+		  this.navCtrl.setPages([{page:'HomePage'},{page:'ProfilePage'}]);
 		else if (page == 'history')
-			this.navCtrl.push("HistoryPage");
-		else if (page == "maps")
-			this.navCtrl.push("MapPage");
-		else if (page == "contact")
-			this.navCtrl.push("ContactsPage");
+		  //this.navCtrl.push("HistoryPage");
+		  this.navCtrl.setPages([{page:'HomePage'},{page:'HistoryPage'}]);
+		else if(page=="maps")
+		  //this.navCtrl.push("MapPage");
+		  this.navCtrl.setPages([{page:'HomePage'}, {page:'MapPage'}]);
+		else if(page =="contact")
+		  //this.navCtrl.push("ContactsPage");
+		  this.navCtrl.setPages([{page:'HomePage'}, {page:'ContactsPage'}]);
+		else if(page =="precios")
+		  //this.navCtrl.push("CoinsPage")
+		  this.navCtrl.setPages([{page:'HomePage'}, {page:'CoinsPage'}]);
 		else
-			this.navCtrl.push("TransactionPage");
-	}
+		  //this.navCtrl.push("TransactionPage");
+		  this.navCtrl.setPages([{page:'HomePage'}, {page: 'TransactionPage'}]);
+		  
+		  }else{
+			  this.toastCtrl.create({
+				message: 'no connection, please, turn on your connection internet',
+				showCloseButton : true,
+			  }).present();
+		  }
+		
+	  }
 
 	foto() {
 		this.alertCtrl.create({

@@ -81,6 +81,7 @@ export class AuthUserProvider {
 
 
   trylogin() {
+	  
       // this.user_Info = JSON.parse(window.localStorage.getItem('user'));
       this.storage.get('user').then((data)=>{
         this.user_Info = JSON.parse(data);

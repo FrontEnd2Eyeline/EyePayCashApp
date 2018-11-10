@@ -1,53 +1,53 @@
 <ion-content class="BackGR">
-  <ion-row>
-    <ion-col>
-      <ion-img class="marginMenu textLeft" menuToggle width="25" height="25" src="assets/icon/Settings.png"></ion-img>
-    </ion-col>
-    <!-- <ion-col>
+	<ion-row>
+		<ion-col>
+			<ion-img class="marginMenu textLeft" menuToggle width="25" height="25" src="assets/icon/Settings.png"></ion-img>
+		</ion-col>
+		<!-- <ion-col>
       <ion-img class="marginMenu textRight backTransparent" width="80%" height="45px" src="assets/imgs/EPCLogo.png"></ion-img>
     </ion-col> -->
-  </ion-row>
-  <div class="marg5">
-    <ion-row>
-      <ion-col class="center bounceInLeft">
-        <img class="icoAnim2 animated animated2 bounceOutRight" src="assets/imgs/Billete2.png">
-      </ion-col>
-    </ion-row>
-    <ion-row>
-      <ion-col class="center mrg40Top bounceInLeft">
-        <img class="imgLogoAmin  animated animated2 ≈ bounceInLeft" src="assets/imgs/Billete.png">
-        <img class="imgLogo " src="assets/imgs/Mascota.png">
-      </ion-col>
-    </ion-row>
-    <ion-item class="center">
-      <button ion-button (click)="goPage('contact')" class="buttonPayCash">{{'PRUEBA_EYEPAYCASH'|translate}}</button>
-    </ion-item>
-  </div>
+	</ion-row>
+	<div class="marg5">
+		<ion-row>
+			<ion-col class="center bounceInLeft">
+				<img class="icoAnim2 animated animated2 bounceOutRight" src="assets/imgs/Billete2.png">
+			</ion-col>
+		</ion-row>
+		<ion-row>
+			<ion-col class="center mrg40Top bounceInLeft">
+				<img class="imgLogoAmin  animated animated2 ≈ bounceInLeft" src="assets/imgs/Billete.png">
+				<img class="imgLogo " src="assets/imgs/Mascota.png">
+			</ion-col>
+		</ion-row>
+		<ion-item class="center">
+			<button ion-button (click)="goPage('contact')" class="buttonPayCash">{{'PRUEBA_EYEPAYCASH'|translate}}</button>
+		</ion-item>
+	</div>
 </ion-content>
-<ion-footer>
-  <ion-toolbar>
-    <ion-row>
-      <ion-col class="center" col-2 (click)="goPage('precios')">
-        <img width="40" height="40" src="assets/newIcons/11.png">
-        <p>Precios</p>
-      </ion-col>
-      <ion-col class="center" col-3 (click)="goPage('transaction')">
-        <img width="40" height="40" src="assets/icon/1.png">
-        <p>{{'TRANSACCION'|translate}}</p>
-      </ion-col>
-      <ion-col class="center mar1Left" col-2 (click)="goPage('history')">
-        <!-- <ion-badge item-end>{{count}}</ion-badge> -->
-        <img width="40" height="40" src="assets/icon/2.png">
-        <p>{{'HISTORIAL'|translate}}</p>
-      </ion-col>
-      <ion-col class="center" col-2 (click)="goPage('maps')">
-        <img width="40" height="40" src="assets/icon/3.png">
-        <p>{{'MAPA'|translate}}</p>
-      </ion-col>
-      <ion-col class="center" col-2 (click)="goPage('profile')">
-        <img width="40" height="40" src="assets/icon/4.png">
-        <p>{{'CUENTA'|translate}}</p>
-      </ion-col>
-    </ion-row>
-  </ion-toolbar>
+<ion-footer >
+	<ion-toolbar >
+		<ion-row >
+			<ion-col class="center" col-2 (click)="goPage('precios')">
+				<img width="40" height="40" src="assets/newIcons/11.png">
+				<p>Precios</p>
+			</ion-col>
+			<ion-col class="center" col-3 (click)="goPage('transaction')">
+				<img width="40" height="40" src="assets/icon/1.png">
+				<p>{{'TRANSACCION'|translate}}</p>
+			</ion-col>
+			<ion-col class="center mar1Left" col-2 (click)="goPage('history')">
+				<!-- <ion-badge item-end>{{count}}</ion-badge> -->
+				<img width="40" height="40" src="assets/icon/2.png">
+				<p>{{'HISTORIAL'|translate}}</p>
+			</ion-col>
+			<ion-col class="center" col-2 (click)="goPage('maps')">
+				<img width="40" height="40" src="assets/icon/3.png">
+				<p>{{'MAPA'|translate}}</p>
+			</ion-col>
+			<ion-col  class="center" col-2 (click)="goPage('profile')">
+				<img width="40" height="40" src="assets/icon/4.png">
+				<p>{{'CUENTA'|translate}}</p>
+			</ion-col>
+		</ion-row>
+	</ion-toolbar>
 </ion-footer>

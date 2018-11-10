@@ -3,6 +3,7 @@ import {IonicPage, LoadingController, NavController, NavParams, ToastController}
 import {Api} from "../../providers/api";
 import {AuthUserProvider} from "../../providers/auth-user/auth-user";
 import {ModalErrorProvider} from '../../providers/modal-error/modal-error';
+import { NetworkProvider } from '../../providers/network/network';
 
 /**
  * Generated class for the HistoryPage page.
@@ -17,6 +18,8 @@ import {ModalErrorProvider} from '../../providers/modal-error/modal-error';
 	templateUrl: 'history.html',
 })
 export class HistoryPage {
+
+	buttonDisabbled: any;
 
 	public transactions: any = null;
 	public links: any = null;
@@ -34,7 +37,9 @@ export class HistoryPage {
 		protected userProvider: AuthUserProvider,
 		public loadingCtrl: LoadingController,
 		public toastCtrl: ToastController,
-		public errorProvider: ModalErrorProvider
+		public errorProvider: ModalErrorProvider,
+		public networkProvider: NetworkProvider,
+
 	) {
 
 		this.getInfo();
@@ -42,9 +47,9 @@ export class HistoryPage {
 
 	getInfo() {
 		let loading = this.loadingCtrl.create({
-      spinner: 'hide',
-      content: "<img src='assets/imgs/buho.png'>",
-		});
+			spinner: 'crescent',
+			cssClass: 'my-loading',
+		  });
 		loading.present();
 		this.api.get('app/transactions',
 			this.userProvider,
@@ -54,12 +59,12 @@ export class HistoryPage {
 				'page': this.filtro.page,
 				'per-page': this.filtro.perpage
 			}).then((data: any) => {
-				loading.dismiss();
+				 loading.dismiss();
 				this.transactions = data.items;
 				this.links = data.links;
 				this.meta = data.meta;
 			}).catch(error => {
-				loading.dismiss();
+				 loading.dismiss();
 				let mensaje = '';
 				error.error.forEach(data => {
 					mensaje += data.message + "\n";
@@ -82,20 +87,33 @@ export class HistoryPage {
 	}
 
 	goPage(page) {
-		if (page == 'profile')
+		this.buttonDisabbled = this.networkProvider.buttonDisabled;
+		  if(this.buttonDisabbled != true){
+			if (page == 'profile')
 		  //this.navCtrl.push("ProfilePage");
-		  this.navCtrl.setPages([{page: 'HomePage'}, {page: 'ProfilePage'}]);
+		  this.navCtrl.setPages([{page:'HomePage'},{page:'ProfilePage'}]);
 		else if (page == 'history')
 		  //this.navCtrl.push("HistoryPage");
-		  this.navCtrl.setPages([{page: 'HomePage'}, {page: 'HistoryPage'}]);
+		  this.navCtrl.setPages([{page:'HomePage'},{page:'HistoryPage'}]);
 		else if(page=="maps")
 		  //this.navCtrl.push("MapPage");
-		  this.navCtrl.setPages([{page: 'HomePage'}, {page: 'MapPage'}]);
+		  this.navCtrl.setPages([{page:'HomePage'}, {page:'MapPage'}]);
 		else if(page =="contact")
 		  //this.navCtrl.push("ContactsPage");
-		  this.navCtrl.setPages([{page: 'HomePage'}, {page: 'ContactsPage'}]);
+		  this.navCtrl.setPages([{page:'HomePage'}, {page:'ContactsPage'}]);
+		else if(page =="precios")
+		  //this.navCtrl.push("CoinsPage")
+		  this.navCtrl.setPages([{page:'HomePage'}, {page:'CoinsPage'}]);
 		else
 		  //this.navCtrl.push("TransactionPage");
-		  this.navCtrl.setPages([{page: 'HomePage'}, {page: 'TransactionPage'}]);
+		  this.navCtrl.setPages([{page:'HomePage'}, {page: 'TransactionPage'}]);
+		  
+		  }else{
+			  this.toastCtrl.create({
+				message: 'no connection, please, turn on your connection internet',
+				showCloseButton : true,
+			  }).present();
+		  }
+		
 	  }
 }

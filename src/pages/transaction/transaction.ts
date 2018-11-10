@@ -42,10 +42,9 @@ export class TransactionPage {
   getInfo() {
 
     let loading = this.loadingCtrl.create({
-        spinner: 'hide',
-        content: "<img src='assets/imgs/buho.png'>",
-      })
-    ;
+        spinner: 'crescent',
+		cssClass: 'my-loading',
+      });
     loading.present();
     this.informationProvider.getCountries()
       .then(value => {

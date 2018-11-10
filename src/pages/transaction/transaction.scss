@@ -1,5 +1,38 @@
 page-transaction {
 
+
+
+	//======================  CSS PARA CAMBIAR LOS DOTS EN EL SPINNER DEL LOADING
+// ion-backdrop {
+//    background: linear-gradient(to right, rgba(149, 105, 252, 1) 0%, rgba(89, 116, 251, 1) 100%);
+//    opacity: 1 !important;
+//  }
+
+.loading-md .loading-wrapper, .loading-ios .loading-wrapper {
+	background-color: transparent !important;
+	box-shadow: none;
+ //    transform: scale(2) !important;
+  }
+ 
+ // .loading-md .spinner-dots circle, .loading-ios .spinner-dots circle {
+ //   //fill:#7357df;
+ //   fill: white;
+ // }
+ 
+ // ion-spinner {
+ //   width: 50px;
+ //   height: 50px;
+ // }
+ 
+ //==================   LISTADOS DE SELECTS
+ .popover-md .popover-content, .popover-ios .popover-content {
+   width: 85%;
+ }
+ 
+ ion-popover ion-backdrop {
+   opacity: 0 !important;
+ }
+
   ion-select {
     max-width: 100% !important;
   }

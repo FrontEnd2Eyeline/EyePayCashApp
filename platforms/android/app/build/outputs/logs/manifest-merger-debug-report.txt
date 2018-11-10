@@ -1,15 +1,15 @@
 -- Merging decision tree log ---
 provider#org.apache.cordova.camera.FileProvider
-INJECTED from /Users/eyeline/Documents/GitHub/eyepaycashapp/platforms/android/app/src/main/AndroidManifest.xml:14:9-16:20
+INJECTED from /Users/eyeline/Documents/GitHub/eyepaycashapp/platforms/android/app/src/main/AndroidManifest.xml:12:9-14:20
 	android:grantUriPermissions
-		ADDED from /Users/eyeline/Documents/GitHub/eyepaycashapp/platforms/android/app/src/main/AndroidManifest.xml:14:92-126
+		ADDED from /Users/eyeline/Documents/GitHub/eyepaycashapp/platforms/android/app/src/main/AndroidManifest.xml:12:92-126
 	android:authorities
 		INJECTED from /Users/eyeline/Documents/GitHub/eyepaycashapp/platforms/android/app/src/main/AndroidManifest.xml
-		ADDED from /Users/eyeline/Documents/GitHub/eyepaycashapp/platforms/android/app/src/main/AndroidManifest.xml:14:19-66
+		ADDED from /Users/eyeline/Documents/GitHub/eyepaycashapp/platforms/android/app/src/main/AndroidManifest.xml:12:19-66
 	android:exported
-		ADDED from /Users/eyeline/Documents/GitHub/eyepaycashapp/platforms/android/app/src/main/AndroidManifest.xml:14:67-91
+		ADDED from /Users/eyeline/Documents/GitHub/eyepaycashapp/platforms/android/app/src/main/AndroidManifest.xml:12:67-91
 	android:name
-		ADDED from /Users/eyeline/Documents/GitHub/eyepaycashapp/platforms/android/app/src/main/AndroidManifest.xml:14:127-180
+		ADDED from /Users/eyeline/Documents/GitHub/eyepaycashapp/platforms/android/app/src/main/AndroidManifest.xml:12:127-180
 provider#nl.xservices.plugins.FileProvider
 INJECTED from /Users/eyeline/Documents/GitHub/eyepaycashapp/platforms/android/app/src/main/AndroidManifest.xml:22:9-24:20
 	android:grantUriPermissions
@@ -137,19 +137,19 @@ ADDED from /Users/eyeline/Documents/GitHub/eyepaycashapp/platforms/android/app/s
 	android:name
 		ADDED from /Users/eyeline/Documents/GitHub/eyepaycashapp/platforms/android/app/src/main/AndroidManifest.xml:9:27-74
 meta-data#com.google.android.geo.API_KEY
-ADDED from /Users/eyeline/Documents/GitHub/eyepaycashapp/platforms/android/app/src/main/AndroidManifest.xml:12:9-124
+ADDED from /Users/eyeline/Documents/GitHub/eyepaycashapp/platforms/android/app/src/main/AndroidManifest.xml:15:9-124
 	android:value
-		ADDED from /Users/eyeline/Documents/GitHub/eyepaycashapp/platforms/android/app/src/main/AndroidManifest.xml:12:66-121
+		ADDED from /Users/eyeline/Documents/GitHub/eyepaycashapp/platforms/android/app/src/main/AndroidManifest.xml:15:66-121
 	android:name
-		ADDED from /Users/eyeline/Documents/GitHub/eyepaycashapp/platforms/android/app/src/main/AndroidManifest.xml:12:20-65
+		ADDED from /Users/eyeline/Documents/GitHub/eyepaycashapp/platforms/android/app/src/main/AndroidManifest.xml:15:20-65
 meta-data#com.google.android.gms.version
-ADDED from /Users/eyeline/Documents/GitHub/eyepaycashapp/platforms/android/app/src/main/AndroidManifest.xml:13:9-122
+ADDED from /Users/eyeline/Documents/GitHub/eyepaycashapp/platforms/android/app/src/main/AndroidManifest.xml:16:9-122
 MERGED from [com.google.android.gms:play-services-basement:15.0.1] /Users/eyeline/.gradle/caches/transforms-1/files-1.1/play-services-basement-15.0.1.aar/8805d52754037871a4f36bbc9152f0bc/AndroidManifest.xml:23:9-25:69
 MERGED from [com.google.android.gms:play-services-basement:15.0.1] /Users/eyeline/.gradle/caches/transforms-1/files-1.1/play-services-basement-15.0.1.aar/8805d52754037871a4f36bbc9152f0bc/AndroidManifest.xml:23:9-25:69
 	android:value
-		ADDED from /Users/eyeline/Documents/GitHub/eyepaycashapp/platforms/android/app/src/main/AndroidManifest.xml:13:66-119
+		ADDED from /Users/eyeline/Documents/GitHub/eyepaycashapp/platforms/android/app/src/main/AndroidManifest.xml:16:66-119
 	android:name
-		ADDED from /Users/eyeline/Documents/GitHub/eyepaycashapp/platforms/android/app/src/main/AndroidManifest.xml:13:20-65
+		ADDED from /Users/eyeline/Documents/GitHub/eyepaycashapp/platforms/android/app/src/main/AndroidManifest.xml:16:20-65
 receiver#nl.xservices.plugins.ShareChooserPendingIntent
 ADDED from /Users/eyeline/Documents/GitHub/eyepaycashapp/platforms/android/app/src/main/AndroidManifest.xml:17:9-21:20
 	android:enabled
@@ -200,62 +200,62 @@ MERGED from [android.arch.lifecycle:runtime:1.1.0] /Users/eyeline/.gradle/caches
 		ADDED from /Users/eyeline/Documents/GitHub/eyepaycashapp/platforms/android/app/src/main/AndroidManifest.xml:26:42-71
 	android:minSdkVersion
 		ADDED from /Users/eyeline/Documents/GitHub/eyepaycashapp/platforms/android/app/src/main/AndroidManifest.xml:26:15-41
+uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
+ADDED from /Users/eyeline/Documents/GitHub/eyepaycashapp/platforms/android/app/src/main/AndroidManifest.xml:27:5-81
+	android:name
+		ADDED from /Users/eyeline/Documents/GitHub/eyepaycashapp/platforms/android/app/src/main/AndroidManifest.xml:27:22-78
 uses-permission#android.permission.READ_CONTACTS
-ADDED from /Users/eyeline/Documents/GitHub/eyepaycashapp/platforms/android/app/src/main/AndroidManifest.xml:27:5-72
+ADDED from /Users/eyeline/Documents/GitHub/eyepaycashapp/platforms/android/app/src/main/AndroidManifest.xml:28:5-72
 	android:name
-		ADDED from /Users/eyeline/Documents/GitHub/eyepaycashapp/platforms/android/app/src/main/AndroidManifest.xml:27:22-69
+		ADDED from /Users/eyeline/Documents/GitHub/eyepaycashapp/platforms/android/app/src/main/AndroidManifest.xml:28:22-69
 uses-permission#android.permission.WRITE_CONTACTS
-ADDED from /Users/eyeline/Documents/GitHub/eyepaycashapp/platforms/android/app/src/main/AndroidManifest.xml:28:5-73
+ADDED from /Users/eyeline/Documents/GitHub/eyepaycashapp/platforms/android/app/src/main/AndroidManifest.xml:29:5-73
 	android:name
-		ADDED from /Users/eyeline/Documents/GitHub/eyepaycashapp/platforms/android/app/src/main/AndroidManifest.xml:28:22-70
+		ADDED from /Users/eyeline/Documents/GitHub/eyepaycashapp/platforms/android/app/src/main/AndroidManifest.xml:29:22-70
 uses-permission#android.permission.GET_ACCOUNTS
-ADDED from /Users/eyeline/Documents/GitHub/eyepaycashapp/platforms/android/app/src/main/AndroidManifest.xml:29:5-71
+ADDED from /Users/eyeline/Documents/GitHub/eyepaycashapp/platforms/android/app/src/main/AndroidManifest.xml:30:5-71
 	android:name
-		ADDED from /Users/eyeline/Documents/GitHub/eyepaycashapp/platforms/android/app/src/main/AndroidManifest.xml:29:22-68
+		ADDED from /Users/eyeline/Documents/GitHub/eyepaycashapp/platforms/android/app/src/main/AndroidManifest.xml:30:22-68
+uses-permission#android.permission.USE_FINGERPRINT
+ADDED from /Users/eyeline/Documents/GitHub/eyepaycashapp/platforms/android/app/src/main/AndroidManifest.xml:31:5-74
+	android:name
+		ADDED from /Users/eyeline/Documents/GitHub/eyepaycashapp/platforms/android/app/src/main/AndroidManifest.xml:31:22-71
 uses-permission#android.permission.ACCESS_COARSE_LOCATION
-ADDED from /Users/eyeline/Documents/GitHub/eyepaycashapp/platforms/android/app/src/main/AndroidManifest.xml:30:5-81
+ADDED from /Users/eyeline/Documents/GitHub/eyepaycashapp/platforms/android/app/src/main/AndroidManifest.xml:32:5-81
 	android:name
-		ADDED from /Users/eyeline/Documents/GitHub/eyepaycashapp/platforms/android/app/src/main/AndroidManifest.xml:30:22-78
+		ADDED from /Users/eyeline/Documents/GitHub/eyepaycashapp/platforms/android/app/src/main/AndroidManifest.xml:32:22-78
 uses-permission#android.permission.ACCESS_FINE_LOCATION
-ADDED from /Users/eyeline/Documents/GitHub/eyepaycashapp/platforms/android/app/src/main/AndroidManifest.xml:31:5-79
-	android:name
-		ADDED from /Users/eyeline/Documents/GitHub/eyepaycashapp/platforms/android/app/src/main/AndroidManifest.xml:31:22-76
-uses-feature#android.hardware.location.gps
-ADDED from /Users/eyeline/Documents/GitHub/eyepaycashapp/platforms/android/app/src/main/AndroidManifest.xml:32:5-66
-	android:name
-		ADDED from /Users/eyeline/Documents/GitHub/eyepaycashapp/platforms/android/app/src/main/AndroidManifest.xml:32:19-63
-uses-permission#android.permission.ACCESS_NETWORK_STATE
 ADDED from /Users/eyeline/Documents/GitHub/eyepaycashapp/platforms/android/app/src/main/AndroidManifest.xml:33:5-79
-MERGED from [com.google.android.gms:play-services-maps:15.0.1] /Users/eyeline/.gradle/caches/transforms-1/files-1.1/play-services-maps-15.0.1.aar/bb0764e2d7ccdc7ec40d148197415bb7/AndroidManifest.xml:23:5-79
-MERGED from [com.google.android.gms:play-services-maps:15.0.1] /Users/eyeline/.gradle/caches/transforms-1/files-1.1/play-services-maps-15.0.1.aar/bb0764e2d7ccdc7ec40d148197415bb7/AndroidManifest.xml:23:5-79
 	android:name
 		ADDED from /Users/eyeline/Documents/GitHub/eyepaycashapp/platforms/android/app/src/main/AndroidManifest.xml:33:22-76
+uses-feature#android.hardware.location.gps
+ADDED from /Users/eyeline/Documents/GitHub/eyepaycashapp/platforms/android/app/src/main/AndroidManifest.xml:34:5-66
+	android:name
+		ADDED from /Users/eyeline/Documents/GitHub/eyepaycashapp/platforms/android/app/src/main/AndroidManifest.xml:34:19-63
+uses-permission#android.permission.ACCESS_NETWORK_STATE
+ADDED from /Users/eyeline/Documents/GitHub/eyepaycashapp/platforms/android/app/src/main/AndroidManifest.xml:35:5-79
+MERGED from [com.google.android.gms:play-services-maps:15.0.1] /Users/eyeline/.gradle/caches/transforms-1/files-1.1/play-services-maps-15.0.1.aar/bb0764e2d7ccdc7ec40d148197415bb7/AndroidManifest.xml:23:5-79
+MERGED from [com.google.android.gms:play-services-maps:15.0.1] /Users/eyeline/.gradle/caches/transforms-1/files-1.1/play-services-maps-15.0.1.aar/bb0764e2d7ccdc7ec40d148197415bb7/AndroidManifest.xml:23:5-79
+	android:name
+		ADDED from /Users/eyeline/Documents/GitHub/eyepaycashapp/platforms/android/app/src/main/AndroidManifest.xml:35:22-76
 uses-feature#0x00020000
-ADDED from /Users/eyeline/Documents/GitHub/eyepaycashapp/platforms/android/app/src/main/AndroidManifest.xml:34:5-78
+ADDED from /Users/eyeline/Documents/GitHub/eyepaycashapp/platforms/android/app/src/main/AndroidManifest.xml:36:5-78
 MERGED from [com.google.android.gms:play-services-maps:15.0.1] /Users/eyeline/.gradle/caches/transforms-1/files-1.1/play-services-maps-15.0.1.aar/bb0764e2d7ccdc7ec40d148197415bb7/AndroidManifest.xml:26:5-28:35
 MERGED from [com.google.android.gms:play-services-maps:15.0.1] /Users/eyeline/.gradle/caches/transforms-1/files-1.1/play-services-maps-15.0.1.aar/bb0764e2d7ccdc7ec40d148197415bb7/AndroidManifest.xml:26:5-28:35
 	android:glEsVersion
-		ADDED from /Users/eyeline/Documents/GitHub/eyepaycashapp/platforms/android/app/src/main/AndroidManifest.xml:34:19-51
+		ADDED from /Users/eyeline/Documents/GitHub/eyepaycashapp/platforms/android/app/src/main/AndroidManifest.xml:36:19-51
 	android:required
-		ADDED from /Users/eyeline/Documents/GitHub/eyepaycashapp/platforms/android/app/src/main/AndroidManifest.xml:34:52-75
+		ADDED from /Users/eyeline/Documents/GitHub/eyepaycashapp/platforms/android/app/src/main/AndroidManifest.xml:36:52-75
 uses-feature#android.hardware.location
-ADDED from /Users/eyeline/Documents/GitHub/eyepaycashapp/platforms/android/app/src/main/AndroidManifest.xml:35:5-62
+ADDED from /Users/eyeline/Documents/GitHub/eyepaycashapp/platforms/android/app/src/main/AndroidManifest.xml:37:5-62
 	android:name
-		ADDED from /Users/eyeline/Documents/GitHub/eyepaycashapp/platforms/android/app/src/main/AndroidManifest.xml:35:19-59
-uses-permission#android.permission.USE_FINGERPRINT
-ADDED from /Users/eyeline/Documents/GitHub/eyepaycashapp/platforms/android/app/src/main/AndroidManifest.xml:36:5-74
-	android:name
-		ADDED from /Users/eyeline/Documents/GitHub/eyepaycashapp/platforms/android/app/src/main/AndroidManifest.xml:36:22-71
-uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
-ADDED from /Users/eyeline/Documents/GitHub/eyepaycashapp/platforms/android/app/src/main/AndroidManifest.xml:37:5-81
-	android:name
-		ADDED from /Users/eyeline/Documents/GitHub/eyepaycashapp/platforms/android/app/src/main/AndroidManifest.xml:37:22-78
+		ADDED from /Users/eyeline/Documents/GitHub/eyepaycashapp/platforms/android/app/src/main/AndroidManifest.xml:37:19-59
 meta-data#android.support.FILE_PROVIDER_PATHS
-ADDED from /Users/eyeline/Documents/GitHub/eyepaycashapp/platforms/android/app/src/main/AndroidManifest.xml:15:13-123
+ADDED from /Users/eyeline/Documents/GitHub/eyepaycashapp/platforms/android/app/src/main/AndroidManifest.xml:13:13-123
 	android:resource
-		ADDED from /Users/eyeline/Documents/GitHub/eyepaycashapp/platforms/android/app/src/main/AndroidManifest.xml:15:75-120
+		ADDED from /Users/eyeline/Documents/GitHub/eyepaycashapp/platforms/android/app/src/main/AndroidManifest.xml:13:75-120
 	android:name
-		ADDED from /Users/eyeline/Documents/GitHub/eyepaycashapp/platforms/android/app/src/main/AndroidManifest.xml:15:24-74
+		ADDED from /Users/eyeline/Documents/GitHub/eyepaycashapp/platforms/android/app/src/main/AndroidManifest.xml:13:24-74
 activity#com.google.android.gms.common.api.GoogleApiActivity
 ADDED from [com.google.android.gms:play-services-base:15.0.1] /Users/eyeline/.gradle/caches/transforms-1/files-1.1/play-services-base-15.0.1.aar/e7c72fd01d31c1ffe4d693d8e0f7dbab/AndroidManifest.xml:23:9-26:75
 	android:exported

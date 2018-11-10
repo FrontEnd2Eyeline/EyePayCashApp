@@ -65,6 +65,8 @@ export class SecurityPage {
 			Validators.email,
 		]),
 		type: new FormControl(),
+
+		codeVerifyMail: new FormControl(),
 	});
 
 	constructor(public navCtrl: NavController,
@@ -95,21 +97,17 @@ export class SecurityPage {
 	//  VERIFICAR POR SMS
 	verifyCode() {
 		if (this.response_verify.phone_code === this.codeVerify) {
-			let loading = this.loadingCtrl.create({
-				spinner: 'hide',
-				content: "<img src='assets/imgs/buho.png'>",
-			});
 			this.api.get('account/confirm-verify', this.userProvider, {
 				id: this.response_verify.id,
 				type: 'phone',
+				mail: this.userProvider.user_Info.mail,
 			}).then((data: any) => {
-				loading.dismiss();
 				this.errorProvider.obj.message = 'Información actualizada correctamente';
-				this.usuario.phone = data.phone;
+				// this.usuario.phone = data.phone;
 				this.errorProvider.presentModal();
-				this.userProvider.user_Info.phone = this.infoPhone.value;
-				this.userProvider.setUser(this.userProvider.user_Info);
-				this.usuario = this.userProvider.user_Info;
+				// this.userProvider.user_Info.phone = this.infoPhone.value;
+				// this.userProvider.setUser(this.userProvider.user_Info);
+				// this.usuario = this.userProvider.user_Info;
 				this.clearVar();
 			}).catch((error) => {
 				let mensaje = '';
@@ -120,7 +118,7 @@ export class SecurityPage {
 				}
 				else {
 					mensaje = error.error;
-					loading.dismiss();
+					// loading.dismiss();
 					this.errorProvider.obj.message = mensaje;
 					this.errorProvider.presentModal();
 				}
@@ -177,24 +175,27 @@ export class SecurityPage {
 	}
 
 	verifyCodeMail() {
-		if (this.response_verify.mail_code === this.codeVerifyMail) {
+		if (this.response_verify.mail_code === this.formGroup.value.codeVerifyMail) {
 			this.api.get('account/confirm-verify', this.userProvider, {
 				id: this.response_verify.id,
 				type: 'mail',
-				mail: this.valueMail.value
+				mail: this.formGroup.value.value,
 			}).then((data: any) => {
 				this.errorProvider.obj.message = 'Informacion actualizada correctamente';
 				this.errorProvider.presentModal();
-				// this.usuario.mail = data.mail;
+				//  this.usuario.mail = data.mail;
 				this.clearVar();
+				this.navCtrl.setRoot('HomePage');
 			}).catch(error => {
 				let mensaje = '';
 				if (isArray(error.error)) {
+
 					error.error.forEach(data => {
 						mensaje += data.message + "\n";
 					});
 				}
 				else {
+
 					mensaje = error.error;
 					this.errorProvider.obj.message = mensaje;
 					this.errorProvider.presentModal();
@@ -226,13 +227,13 @@ export class SecurityPage {
 					this.codigoSend.phone_code = null;
 					this.codigoSend.mail_code = this.response_verify.mail_code;
 					console.log('variable control', this.valueMail.value)
-				}).catch(error =>{
+				}).catch(error => {
 					let mensaje = '';
 					if (isArray(error.error)) {
-						error.error.forEach(data =>{
-							mensaje += data.message +"\n";
+						error.error.forEach(data => {
+							mensaje += data.message + "\n";
 						});
-					}else{
+					} else {
 						mensaje = error.error;
 						this.errorProvider.obj.message = mensaje;
 					}
@@ -240,6 +241,46 @@ export class SecurityPage {
 					this.errorProvider.presentModal();
 				});
 		}
+	}
+
+	resendVerifyPhone() {
+		this.infoPhone.type = "phone";
+		this.api.get('account/re-send-verify', this.userProvider, this.infoPhone)
+			.then(() => {
+				this.errorProvider.obj.message = 'Código reenviado';
+				this.errorProvider.presentModal();
+			}).catch(error => {
+				let mensaje = '';
+				if (isArray(error.error)) {
+					error.error.forEach(data => {
+						mensaje += data.message = "\n";
+					});
+				} else {
+					mensaje = error.error;
+					this.errorProvider.obj.message = mensaje;
+				}
+				this.errorProvider.presentModal();
+			})
+	}
+
+	resendVerifyMail() {
+		this.infoPhone.type = "mail";
+		this.api.get('account/re-send-verify', this.userProvider, this.infoPhone)
+			.then(() => {
+				this.errorProvider.obj.message = 'Código reenviado';
+				this.errorProvider.presentModal();
+			}).catch(error => {
+				let mensaje = '';
+				if (isArray(error.error)) {
+					error.error.forEach(data => {
+						mensaje += data.message = "\n";
+					});
+				} else {
+					mensaje = error.error;
+					this.errorProvider.obj.message = mensaje;
+				}
+				this.errorProvider.presentModal();
+			})
 	}
 
 	showPassword() {
@@ -250,6 +291,8 @@ export class SecurityPage {
 			this.type = 'password';
 		}
 	}
+
+
 
 
 	actualizarPass() {

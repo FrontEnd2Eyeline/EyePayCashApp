@@ -1,10 +1,6 @@
 webpackJsonp([20],{
 
-<<<<<<< HEAD
-/***/ 719:
-=======
-/***/ 717:
->>>>>>> 3950783bd88485802166fcda61286b84fb77c589
+/***/ 721:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -12,11 +8,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ContactsPageModule", function() { return ContactsPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(21);
-<<<<<<< HEAD
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__contacts__ = __webpack_require__(743);
-=======
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__contacts__ = __webpack_require__(744);
->>>>>>> 3950783bd88485802166fcda61286b84fb77c589
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__contacts__ = __webpack_require__(745);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ngx_translate_core__ = __webpack_require__(94);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -37,7 +29,7 @@ var ContactsPageModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_2__contacts__["a" /* ContactsPage */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__contacts__["a" /* ContactsPage */]),
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__contacts__["a" /* ContactsPage */]),
                 __WEBPACK_IMPORTED_MODULE_3__ngx_translate_core__["b" /* TranslateModule */]
             ],
         })
@@ -49,23 +41,15 @@ var ContactsPageModule = /** @class */ (function () {
 
 /***/ }),
 
-<<<<<<< HEAD
-/***/ 743:
-=======
-/***/ 744:
->>>>>>> 3950783bd88485802166fcda61286b84fb77c589
+/***/ 745:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ContactsPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(21);
-<<<<<<< HEAD
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_contacts__ = __webpack_require__(386);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_social_sharing_social_sharing__ = __webpack_require__(387);
-=======
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_contacts__ = __webpack_require__(387);
->>>>>>> 3950783bd88485802166fcda61286b84fb77c589
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_contacts__ = __webpack_require__(388);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_social_sharing_social_sharing__ = __webpack_require__(389);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -126,7 +110,6 @@ var ContactsPage = /** @class */ (function () {
             loading.dismiss();
         });
     };
-<<<<<<< HEAD
     ContactsPage.prototype.sharing = function () {
         this.socialSharing.socialShare();
     };
@@ -136,16 +119,11 @@ var ContactsPage = /** @class */ (function () {
     ContactsPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
             selector: 'page-contacts',template:/*ion-inline-start:"/Users/eyeline/Documents/GitHub/eyepaycashapp/src/pages/contacts/contacts.html"*/'<ion-header>\n	<ion-navbar>\n		<ion-title>\n			Listado de contactos\n		</ion-title>\n	</ion-navbar>\n</ion-header>\n\n<ion-content padding>\n	<ion-list>\n		<ion-item (click)="sharing()" class="center2">\n			<ion-icon name="logo-whatsapp"></ion-icon>\n			<ion-icon name="logo-facebook"></ion-icon>\n			<ion-icon name="logo-twitter"></ion-icon>\n		</ion-item>\n		<ion-item *ngFor="let contacto of listaContactos">\n			<div (click)="whatsAppInvite(contacto.phoneNumbers[0].value)">\n				<ion-avatar item-start>\n					<img src="assets/imgs/contacto.png">\n				</ion-avatar>\n				<h2>{{contacto.displayName | uppercase }}</h2>\n				<p>{{contacto.phoneNumbers[0].value}}</p>\n			</div>\n		</ion-item>\n	</ion-list>\n</ion-content>'/*ion-inline-end:"/Users/eyeline/Documents/GitHub/eyepaycashapp/src/pages/contacts/contacts.html"*/,
-=======
-    ContactsPage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-            selector: 'page-contacts',template:/*ion-inline-start:"/Users/eyeline/Documents/GitHub/eyepaycashapp/src/pages/contacts/contacts.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>\n      Listado de contactos\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n  <ion-list>\n    <ion-item *ngFor="let contacto of listaContactos">\n      <ion-avatar item-start>\n        <img src="assets/imgs/contacto.png" (click)="Send()">\n      </ion-avatar>\n      <h2>{{contacto.displayName | uppercase }}</h2>\n      <p>{{contacto.phoneNumbers[0].value}}</p>\n    </ion-item>\n  </ion-list>\n</ion-content>\n'/*ion-inline-end:"/Users/eyeline/Documents/GitHub/eyepaycashapp/src/pages/contacts/contacts.html"*/,
->>>>>>> 3950783bd88485802166fcda61286b84fb77c589
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavController */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* NavParams */],
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* NavController */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* NavParams */],
             __WEBPACK_IMPORTED_MODULE_2__ionic_native_contacts__["a" /* Contacts */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* LoadingController */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* LoadingController */],
             __WEBPACK_IMPORTED_MODULE_3__providers_social_sharing_social_sharing__["a" /* SocialSharingProvider */]])
     ], ContactsPage);
     return ContactsPage;

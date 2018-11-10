@@ -1,10 +1,6 @@
 webpackJsonp([5],{
 
-<<<<<<< HEAD
-/***/ 724:
-=======
-/***/ 726:
->>>>>>> 3950783bd88485802166fcda61286b84fb77c589
+/***/ 727:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -12,13 +8,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LoginPageModule", function() { return LoginPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(21);
-<<<<<<< HEAD
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__login__ = __webpack_require__(748);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_components_module__ = __webpack_require__(740);
-=======
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__login__ = __webpack_require__(754);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_components_module__ = __webpack_require__(738);
->>>>>>> 3950783bd88485802166fcda61286b84fb77c589
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__login__ = __webpack_require__(752);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_components_module__ = __webpack_require__(742);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ngx_translate_core__ = __webpack_require__(94);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -40,7 +31,7 @@ var LoginPageModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_2__login__["a" /* LoginPage */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__login__["a" /* LoginPage */]),
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__login__["a" /* LoginPage */]),
                 __WEBPACK_IMPORTED_MODULE_4__ngx_translate_core__["b" /* TranslateModule */],
                 __WEBPACK_IMPORTED_MODULE_3__components_components_module__["a" /* ComponentsModule */],
             ],
@@ -53,13 +44,13 @@ var LoginPageModule = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 740:
+/***/ 742:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ComponentsModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__msg_error_msg_error__ = __webpack_require__(741);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__msg_error_msg_error__ = __webpack_require__(743);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_common__ = __webpack_require__(34);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -87,14 +78,14 @@ var ComponentsModule = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 741:
+/***/ 743:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MsgErrorComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_forms__ = __webpack_require__(22);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_validation_validation__ = __webpack_require__(381);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_validation_validation__ = __webpack_require__(383);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -144,7 +135,7 @@ var MsgErrorComponent = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 754:
+/***/ 752:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -258,20 +249,16 @@ var LoginPage = /** @class */ (function () {
     ], LoginPage.prototype, "displayError", void 0);
     LoginPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-<<<<<<< HEAD
-            selector: 'page-login',template:/*ion-inline-start:"/Users/eyeline/Documents/GitHub/eyepaycashapp/src/pages/login/login.html"*/'<ion-content class="imgBackground vignette">\n  <div class="center">\n    <ion-img class="logo" src="assets/imgs/EPCLogo.png"></ion-img>\n  </div>\n  <!--<form #formulario >-->\n  <form [formGroup]="formGroup" (ngSubmit)="login()">\n    <ion-list>\n      <ion-item>\n        <ion-input placeholder="Email" class="inputClass marginItems" formControlName="mail" name="correo">\n        </ion-input>\n        <div>\n          <msg-error [control]="formGroup.controls.mail"></msg-error>\n        </div>\n      </ion-item>\n      <ion-item>\n        <ion-input placeholder="Contraseña" class="inputClass marginItems" type="password"\n                   name="contrasena" formControlName="password"></ion-input>\n      </ion-item>\n      <ion-item no-lines *ngIf="formGroup.invalid">\n        <msg-error [control]="formGroup.controls.mail" name="Email"></msg-error>\n        <msg-error [control]="formGroup.controls.password" name="Contraseña"></msg-error>\n      </ion-item>\n      <ion-item class="center">\n        <button class="buttonPayCash borderBtns" ion-button small>{{\'INICIAR_SESION\'|translate}}</button>\n      </ion-item>\n    </ion-list>\n  </form>\n  <ion-row>\n    <ion-col col-12>\n      <button class="textWhite" ion-button (click)="registro()" clear block class="transparente">{{\'REGISTRARME\'|translate}}</button>\n    </ion-col>\n    <ion-col col-12>\n      <button ion-button (click)="recuperarcontrasena()" clear block class="transparente">{{\'RECUPERAR_CONTRASENA\'|translate}}</button>\n    </ion-col>\n  </ion-row>\n</ion-content>'/*ion-inline-end:"/Users/eyeline/Documents/GitHub/eyepaycashapp/src/pages/login/login.html"*/,
-=======
             selector: 'page-login',template:/*ion-inline-start:"/Users/eyeline/Documents/GitHub/eyepaycashapp/src/pages/login/login.html"*/'<ion-content class="imgBackground vignette">\n  <div class="center">\n    <img class="logo" src="assets/imgs/EPCLogo.png">\n  </div>\n  <!--<form #formulario >-->\n  <form [formGroup]="formGroup" (ngSubmit)="login()">\n    <ion-list>\n      <ion-item>\n        <ion-input placeholder="Email" class="inputClass marginItems" formControlName="mail" name="correo">\n        </ion-input>\n        <div>\n          <msg-error [control]="formGroup.controls.mail"></msg-error>\n        </div>\n      </ion-item>\n      <ion-item>\n        <ion-input placeholder="Contraseña" class="inputClass marginItems" type="password"\n                   name="contrasena" formControlName="password"></ion-input>\n      </ion-item>\n      <ion-item no-lines *ngIf="formGroup.invalid">\n        <msg-error [control]="formGroup.controls.mail" name="Email"></msg-error>\n        <msg-error [control]="formGroup.controls.password" name="Contraseña"></msg-error>\n      </ion-item>\n      <ion-item class="center">\n        <button class="buttonPayCash borderBtns" ion-button small>{{\'INICIAR_SESION\'|translate}}</button>\n      </ion-item>\n    </ion-list>\n  </form>\n  <ion-row>\n    <ion-col col-12>\n      <button class="textWhite" ion-button (click)="registro()" clear block class="transparente">{{\'REGISTRARME\'|translate}}</button>\n    </ion-col>\n    <ion-col col-12>\n      <button ion-button (click)="recuperarcontrasena()" clear block class="transparente">{{\'RECUPERAR_CONTRASENA\'|translate}}</button>\n    </ion-col>\n  </ion-row>\n</ion-content>'/*ion-inline-end:"/Users/eyeline/Documents/GitHub/eyepaycashapp/src/pages/login/login.html"*/,
->>>>>>> 3950783bd88485802166fcda61286b84fb77c589
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavController */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* LoadingController */],
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* NavController */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* LoadingController */],
             __WEBPACK_IMPORTED_MODULE_2__providers_auth_user_auth_user__["a" /* AuthUserProvider */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* ToastController */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* ModalController */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["o" /* ToastController */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* ModalController */],
             __WEBPACK_IMPORTED_MODULE_3__angular_forms__["a" /* FormBuilder */],
             __WEBPACK_IMPORTED_MODULE_4__providers_modal_error_modal_error__["a" /* ModalErrorProvider */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* MenuController */]])
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* MenuController */]])
     ], LoginPage);
     return LoginPage;
 }());
