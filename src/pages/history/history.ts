@@ -88,32 +88,31 @@ export class HistoryPage {
 
 	goPage(page) {
 		this.buttonDisabbled = this.networkProvider.buttonDisabled;
-		  if(this.buttonDisabbled != true){
+		if (this.buttonDisabbled != true) {
 			if (page == 'profile')
-		  //this.navCtrl.push("ProfilePage");
-		  this.navCtrl.setPages([{page:'HomePage'},{page:'ProfilePage'}]);
-		else if (page == 'history')
-		  //this.navCtrl.push("HistoryPage");
-		  this.navCtrl.setPages([{page:'HomePage'},{page:'HistoryPage'}]);
-		else if(page=="maps")
-		  //this.navCtrl.push("MapPage");
-		  this.navCtrl.setPages([{page:'HomePage'}, {page:'MapPage'}]);
-		else if(page =="contact")
-		  //this.navCtrl.push("ContactsPage");
-		  this.navCtrl.setPages([{page:'HomePage'}, {page:'ContactsPage'}]);
-		else if(page =="precios")
-		  //this.navCtrl.push("CoinsPage")
-		  this.navCtrl.setPages([{page:'HomePage'}, {page:'CoinsPage'}]);
-		else
-		  //this.navCtrl.push("TransactionPage");
-		  this.navCtrl.setPages([{page:'HomePage'}, {page: 'TransactionPage'}]);
-		  
-		  }else{
-			  this.toastCtrl.create({
+				//this.navCtrl.push("ProfilePage");
+				this.navCtrl.setPages([{ page: 'HomePage' }, { page: 'ProfilePage' }]);
+			else if (page == 'home')
+				//this.navCtrl.push("HistoryPage");
+				this.navCtrl.setPages([{ page: 'HomePage' }]);
+			else if (page == "maps")
+				//this.navCtrl.push("MapPage");
+				this.navCtrl.setPages([{ page: 'HomePage' }, { page: 'MapPage' }]);
+			else if (page == "contact")
+				//this.navCtrl.push("ContactsPage");
+				this.navCtrl.setPages([{ page: 'HomePage' }, { page: 'ContactsPage' }]);
+			else if (page == "precios")
+				//this.navCtrl.push("CoinsPage")
+				this.navCtrl.setPages([{ page: 'HomePage' }, { page: 'CoinsPage' }]);
+			else
+				//this.navCtrl.push("TransactionPage");
+				this.navCtrl.setPages([{ page: 'HomePage' }, { page: 'TransactionPage' }]);
+
+		} else {
+			this.toastCtrl.create({
 				message: 'no connection, please, turn on your connection internet',
-				showCloseButton : true,
-			  }).present();
-		  }
-		
-	  }
+				showCloseButton: true,
+			}).present();
+		}
+	}
 }

@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {IonicPage, LoadingController, NavController, NavParams} from 'ionic-angular';
+import {IonicPage, LoadingController, NavController, NavParams, ToastController} from 'ionic-angular';
 import {GoogleMap, GoogleMapOptions, GoogleMaps, GoogleMapsEvent, LatLng} from "@ionic-native/google-maps";
 import {Geolocation} from "@ionic-native/geolocation";
 import {Api} from "../../providers/api";
@@ -7,6 +7,7 @@ import {AuthUserProvider} from "../../providers/auth-user/auth-user";
 import {mapStyle} from "../../app/mapStyle";
 import {MapProvider} from "../../providers/map/map";
 import {ModalErrorProvider} from '../../providers/modal-error/modal-error';
+import { NetworkProvider } from '../../providers/network/network';
 
 /**
  * Generated class for the MapPage page.
@@ -24,6 +25,7 @@ export class MapPage {
 
 	map: GoogleMap;
 	idsLoaded: any[];
+	buttonDisabbled: any;
 
 	loading;
 
@@ -35,7 +37,10 @@ export class MapPage {
 		protected user: AuthUserProvider,
 		public mapProvider: MapProvider,
 		public loadCtl: LoadingController,
-		public errorProvider: ModalErrorProvider) {
+		public errorProvider: ModalErrorProvider,
+		public toastCtrl: ToastController,
+		public networkProvider: NetworkProvider,
+		) {
 		this.idsLoaded = [];
 	}
 
@@ -148,20 +153,32 @@ export class MapPage {
 	}
 
 	goPage(page) {
-		if (page == 'profile')
-		  //this.navCtrl.push("ProfilePage");
-		  this.navCtrl.setPages([{page:'HomePage'},{page:'ProfilePage'}]);
-		else if (page == 'history')
-		  //this.navCtrl.push("HistoryPage");
-		  this.navCtrl.setPages([{page: 'HomePage'}, {page: 'HistoryPage'}]);
-		else if(page=="maps")
-		  //this.navCtrl.push("MapPage");
-		  this.navCtrl.setPages([{page: 'HomePage'}, {page: 'MapPage'}]);
-		else if(page =="contact")
-		  //this.navCtrl.push("ContactsPage");
-		  this.navCtrl.setPages([{page: 'HomePage'}, {page: 'ContactsPage'}]);
-		else
-		  //this.navCtrl.push("TransactionPage");
-		  this.navCtrl.setPages([{page:'HomePage'}, {page:'TransactionPage'}]);
-	  }
+		this.buttonDisabbled = this.networkProvider.buttonDisabled;
+		if (this.buttonDisabbled != true) {
+			if (page == 'profile')
+				//this.navCtrl.push("ProfilePage");
+				this.navCtrl.setPages([{ page: 'HomePage' }, { page: 'ProfilePage' }]);
+			else if (page == 'home')
+				//this.navCtrl.push("HistoryPage");
+				this.navCtrl.setPages([{ page: 'HomePage' }]);
+			else if (page == "maps")
+				//this.navCtrl.push("MapPage");
+				this.navCtrl.setPages([{ page: 'HomePage' }, { page: 'MapPage' }]);
+			else if (page == "contact")
+				//this.navCtrl.push("ContactsPage");
+				this.navCtrl.setPages([{ page: 'HomePage' }, { page: 'ContactsPage' }]);
+			else if (page == "precios")
+				//this.navCtrl.push("CoinsPage")
+				this.navCtrl.setPages([{ page: 'HomePage' }, { page: 'CoinsPage' }]);
+			else
+				//this.navCtrl.push("TransactionPage");
+				this.navCtrl.setPages([{ page: 'HomePage' }, { page: 'TransactionPage' }]);
+
+		} else {
+			this.toastCtrl.create({
+				message: 'no connection, please, turn on your connection internet',
+				showCloseButton: true,
+			}).present();
+		}
+	}
 }
