@@ -13,9 +13,6 @@
   border-radius: 8px;
 }
 
-
-
-
 //======================  CSS PARA CAMBIAR LOS COLORES DE LOS ICONOS
 
 .bar-buttons-md {
@@ -36,10 +33,6 @@
   content: "\f377";
 }
 
-.list-ios > .item-block:first-child {
-  border-top: 0px !important;
-}
-
 .bar-button-default-md, .bar-button-clear-md-default, .bar-button-md-default {
   color: rgba(149, 105, 252, 1);
   color: -moz-linear-gradient(left, rgba(149, 105, 252, 1) 0%, rgba(6, 56, 150, 1) 100%);
@@ -54,47 +47,26 @@
 }
 
 //======================  CSS PARA CAMBIAR LOS DOTS EN EL SPINNER DEL LOADING
-// ion-backdrop {
-//    background: linear-gradient(to right, rgba(149, 105, 252, 1) 0%, rgba(89, 116, 251, 1) 100%);
-//    opacity: 1 !important;
-//  }
-
-.my-loading {
-	ion-backdrop {
-	   top: 23%;
-		height: 78%; 
-		left: 0;
-	   position: absolute;
-	   z-index: 2;
-		display: block;
-		width: 100%;
-	   background-color: #000;
-		opacity: .01;
-		-webkit-transform: translateZ(0);
-	   transform: translateZ(0);
-	   background: #000;
-	   opacity: 0 !important;
-	}
-	ion-spinner svg {
-		top: -4em;
-	}
+ion-backdrop {
+  background: linear-gradient(to right, rgba(149, 105, 252, 1) 0%, rgba(89, 116, 251, 1) 100%);
+  opacity: 1 !important;
 }
 
- .loading-md .loading-wrapper, .loading-ios .loading-wrapper {
-   background-color: transparent !important;
-   box-shadow: none;
-   transform: scale(2) !important;
- }
+.loading-md .loading-wrapper, .loading-ios .loading-wrapper {
+  background-color: transparent !important;
+  box-shadow: none;
+  transform: scale(2) !important;
+}
 
 .loading-md .spinner-dots circle, .loading-ios .spinner-dots circle {
   //fill:#7357df;
   fill: white;
 }
 
-// ion-spinner {
-//   width: 50px;
-//   height: 50px;
-//  }
+ion-spinner {
+  width: 50px;
+  height: 50px;
+}
 
 //==================   LISTADOS DE SELECTS
 .popover-md .popover-content, .popover-ios .popover-content {

@@ -3,7 +3,6 @@ import {IonicPage, LoadingController, NavController, NavParams, ToastController}
 import {Api} from "../../providers/api";
 import {AuthUserProvider} from "../../providers/auth-user/auth-user";
 import {ModalErrorProvider} from '../../providers/modal-error/modal-error';
-import { NetworkProvider } from '../../providers/network/network';
 
 /**
  * Generated class for the HistoryPage page.
@@ -18,8 +17,6 @@ import { NetworkProvider } from '../../providers/network/network';
 	templateUrl: 'history.html',
 })
 export class HistoryPage {
-
-	buttonDisabbled: any;
 
 	public transactions: any = null;
 	public links: any = null;
@@ -37,9 +34,7 @@ export class HistoryPage {
 		protected userProvider: AuthUserProvider,
 		public loadingCtrl: LoadingController,
 		public toastCtrl: ToastController,
-		public errorProvider: ModalErrorProvider,
-		public networkProvider: NetworkProvider,
-
+		public errorProvider: ModalErrorProvider
 	) {
 
 		this.getInfo();
@@ -47,9 +42,9 @@ export class HistoryPage {
 
 	getInfo() {
 		let loading = this.loadingCtrl.create({
-			spinner: 'crescent',
-			cssClass: 'my-loading',
-		  });
+      spinner: 'hide',
+      content: "<img src='assets/imgs/buho.png'>",
+		});
 		loading.present();
 		this.api.get('app/transactions',
 			this.userProvider,
@@ -59,12 +54,12 @@ export class HistoryPage {
 				'page': this.filtro.page,
 				'per-page': this.filtro.perpage
 			}).then((data: any) => {
-				 loading.dismiss();
+				loading.dismiss();
 				this.transactions = data.items;
 				this.links = data.links;
 				this.meta = data.meta;
 			}).catch(error => {
-				 loading.dismiss();
+				loading.dismiss();
 				let mensaje = '';
 				error.error.forEach(data => {
 					mensaje += data.message + "\n";
@@ -87,6 +82,7 @@ export class HistoryPage {
 	}
 
 	goPage(page) {
+<<<<<<< HEAD
 		this.buttonDisabbled = this.networkProvider.buttonDisabled;
 		if (this.buttonDisabbled != true) {
 			if (page == 'profile')
@@ -115,4 +111,22 @@ export class HistoryPage {
 			}).present();
 		}
 	}
+=======
+		if (page == 'profile')
+		  //this.navCtrl.push("ProfilePage");
+		  this.navCtrl.setPages([{page: 'HomePage'}, {page: 'ProfilePage'}]);
+		else if (page == 'history')
+		  //this.navCtrl.push("HistoryPage");
+		  this.navCtrl.setPages([{page: 'HomePage'}, {page: 'HistoryPage'}]);
+		else if(page=="maps")
+		  //this.navCtrl.push("MapPage");
+		  this.navCtrl.setPages([{page: 'HomePage'}, {page: 'MapPage'}]);
+		else if(page =="contact")
+		  //this.navCtrl.push("ContactsPage");
+		  this.navCtrl.setPages([{page: 'HomePage'}, {page: 'ContactsPage'}]);
+		else
+		  //this.navCtrl.push("TransactionPage");
+		  this.navCtrl.setPages([{page: 'HomePage'}, {page: 'TransactionPage'}]);
+	  }
+>>>>>>> 4a55f90fa4fc064d9270454e1920be4559831bc6
 }

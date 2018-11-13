@@ -14,9 +14,6 @@ public cambiarFoto = false;
 public obj: any = {field:null, icon:null, message:null};
   constructor(public http: HttpClient,
 			  public modalCtrl: ModalController) {
-			
-		
-    
   }
 
 

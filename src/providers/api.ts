@@ -4,13 +4,14 @@ import {Storage} from "@ionic/storage";
 import {AuthUserProvider} from "./auth-user/auth-user";
 import {ModalErrorProvider} from "./modal-error/modal-error";
 import {isArray} from "ionic-angular/util/util";
-import {App} from "ionic-angular";
+import {App, NavController} from "ionic-angular";
+import {LoginPage} from "../pages/login/login";
 
 @Injectable()
 export class Api {
-   url: string = 'http://globalone2onemarketing.com/frontend/web/apiapp/';
+  url: string = 'http://globalone2onemarketing.com/frontend/web/apiapp/';
   // url: string = 'http://10.160.170.114/eyepaycash/frontend/web/apiapp/';
-    // url: string = 'http://843b1a56.ngrok.io/eyepaycash/frontend/web/apiapp/';
+//   url: string = 'http://3ef8564b.ngrok.io/eyepaycash/frontend/web/apiapp/';
   headers: HttpHeaders;
 
   constructor(public http: HttpClient,

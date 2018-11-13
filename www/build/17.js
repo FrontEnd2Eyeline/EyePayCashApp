@@ -1,6 +1,10 @@
 webpackJsonp([17],{
 
+<<<<<<< HEAD
 /***/ 725:
+=======
+/***/ 721:
+>>>>>>> 4a55f90fa4fc064d9270454e1920be4559831bc6
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -8,7 +12,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HomePageModule", function() { return HomePageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(21);
+<<<<<<< HEAD
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__home__ = __webpack_require__(749);
+=======
+<<<<<<< HEAD
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__home__ = __webpack_require__(745);
+=======
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__home__ = __webpack_require__(748);
+>>>>>>> 3950783bd88485802166fcda61286b84fb77c589
+>>>>>>> 4a55f90fa4fc064d9270454e1920be4559831bc6
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ngx_translate_core__ = __webpack_require__(94);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -29,7 +41,7 @@ var HomePageModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_2__home__["a" /* HomePage */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__home__["a" /* HomePage */]),
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__home__["a" /* HomePage */]),
                 __WEBPACK_IMPORTED_MODULE_3__ngx_translate_core__["b" /* TranslateModule */]
             ],
         })
@@ -41,16 +53,23 @@ var HomePageModule = /** @class */ (function () {
 
 /***/ }),
 
+<<<<<<< HEAD
 /***/ 749:
+=======
+<<<<<<< HEAD
+/***/ 745:
+=======
+/***/ 748:
+>>>>>>> 3950783bd88485802166fcda61286b84fb77c589
+>>>>>>> 4a55f90fa4fc064d9270454e1920be4559831bc6
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HomePage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(21);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_api__ = __webpack_require__(49);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_api__ = __webpack_require__(48);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_auth_user_auth_user__ = __webpack_require__(67);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_network_network__ = __webpack_require__(168);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -64,16 +83,14 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
-
 var HomePage = /** @class */ (function () {
-    function HomePage(navCtrl, loadingCtrl, toastCtrl, api, userProvider, menuCtrl, networkProvider) {
+    function HomePage(navCtrl, loadingCtrl, toastCtrl, api, userProvider, menuCtrl) {
         this.navCtrl = navCtrl;
         this.loadingCtrl = loadingCtrl;
         this.toastCtrl = toastCtrl;
         this.api = api;
         this.userProvider = userProvider;
         this.menuCtrl = menuCtrl;
-        this.networkProvider = networkProvider;
         this.count = 0;
         this.result = [];
     }
@@ -89,45 +106,39 @@ var HomePage = /** @class */ (function () {
         });
     };
     HomePage.prototype.goPage = function (page) {
-        this.buttonDisabbled = this.networkProvider.buttonDisabled;
-        if (this.buttonDisabbled != true) {
-            if (page == 'profile')
-                //this.navCtrl.push("ProfilePage");
-                this.navCtrl.setPages([{ page: 'HomePage' }, { page: 'ProfilePage' }]);
-            else if (page == 'history')
-                //this.navCtrl.push("HistoryPage");
-                this.navCtrl.setPages([{ page: 'HomePage' }, { page: 'HistoryPage' }]);
-            else if (page == "maps")
-                //this.navCtrl.push("MapPage");
-                this.navCtrl.setPages([{ page: 'HomePage' }, { page: 'MapPage' }]);
-            else if (page == "contact")
-                //this.navCtrl.push("ContactsPage");
-                this.navCtrl.setPages([{ page: 'HomePage' }, { page: 'ContactsPage' }]);
-            else if (page == "precios")
-                //this.navCtrl.push("CoinsPage")
-                this.navCtrl.setPages([{ page: 'HomePage' }, { page: 'CoinsPage' }]);
-            else
-                //this.navCtrl.push("TransactionPage");
-                this.navCtrl.setPages([{ page: 'HomePage' }, { page: 'TransactionPage' }]);
-        }
-        else {
-            this.toastCtrl.create({
-                message: 'no connection, please, turn on your connection internet',
-                showCloseButton: true,
-            }).present();
-        }
+        if (page == 'profile')
+            //this.navCtrl.push("ProfilePage");
+            this.navCtrl.setPages([{ page: 'HomePage' }, { page: 'ProfilePage' }]);
+        else if (page == 'history')
+            //this.navCtrl.push("HistoryPage");
+            this.navCtrl.setPages([{ page: 'HomePage' }, { page: 'HistoryPage' }]);
+        else if (page == "maps")
+            //this.navCtrl.push("MapPage");
+            this.navCtrl.setPages([{ page: 'HomePage' }, { page: 'MapPage' }]);
+        else if (page == "contact")
+            //this.navCtrl.push("ContactsPage");
+            this.navCtrl.setPages([{ page: 'HomePage' }, { page: 'ContactsPage' }]);
+        else if (page == "precios")
+            //this.navCtrl.push("CoinsPage")
+            this.navCtrl.setPages([{ page: 'HomePage' }, { page: 'CoinsPage' }]);
+        else
+            //this.navCtrl.push("TransactionPage");
+            this.navCtrl.setPages([{ page: 'HomePage' }, { page: 'TransactionPage' }]);
     };
     HomePage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+<<<<<<< HEAD
             selector: 'page-home',template:/*ion-inline-start:"/Users/eyeline/Documents/GitHub/eyepaycashapp/src/pages/home/home.html"*/'<ion-content class="BackGR">\n	<ion-row>\n		<ion-col>\n			<ion-img class="marginMenu textLeft" menuToggle width="25" height="25" src="assets/icon/Settings.png"></ion-img>\n		</ion-col>\n		<!-- <ion-col>\n      <ion-img class="marginMenu textRight backTransparent" width="80%" height="45px" src="assets/imgs/EPCLogo.png"></ion-img>\n    </ion-col> -->\n	</ion-row>\n	<div class="marg5">\n		<ion-row>\n			<ion-col class="center bounceInLeft">\n				<img class="icoAnim2 animated animated2 bounceOutRight" src="assets/imgs/Billete2.png">\n			</ion-col>\n		</ion-row>\n		<ion-row>\n			<ion-col class="center mrg40Top bounceInLeft">\n				<img class="imgLogoAmin  animated animated2 ≈ bounceInLeft" src="assets/imgs/Billete.png">\n				<img class="imgLogo " src="assets/imgs/Mascota.png">\n			</ion-col>\n		</ion-row>\n		<ion-item class="center">\n			<button ion-button (click)="goPage(\'contact\')" class="buttonPayCash">{{\'PRUEBA_EYEPAYCASH\'|translate}}</button>\n		</ion-item>\n	</div>\n</ion-content>\n<ion-footer>\n  <ion-toolbar>\n    <ion-row>\n      <ion-col class="center" col-2 (click)="goPage(\'precios\')">\n        <img width="40" height="40" src="assets/newIcons/11.png">\n        <p>Precios</p>\n      </ion-col>\n      <ion-col class="center" col-3 (click)="goPage(\'transaction\')">\n        <img width="40" height="40" src="assets/icon/1.png">\n        <p>{{\'TRANSACCION\'|translate}}</p>\n      </ion-col>\n      <ion-col class="center mar1Left" col-2 (click)="goPage(\'home\')">\n        <!-- <ion-badge item-end>{{count}}</ion-badge> -->\n        <img width="40" height="40" src="assets/newIcons/12.png">\n        <p>{{\'INICIO\'|translate}}</p>\n      </ion-col>\n      <ion-col class="center" col-2 (click)="goPage(\'maps\')">\n        <img width="40" height="40" src="assets/icon/3.png">\n        <p>{{\'MAPA\'|translate}}</p>\n      </ion-col>\n      <ion-col class="center" col-2 (click)="goPage(\'profile\')">\n        <img width="40" height="40" src="assets/icon/4.png">\n        <p>{{\'CUENTA\'|translate}}</p>\n      </ion-col>\n    </ion-row>\n  </ion-toolbar>\n</ion-footer>'/*ion-inline-end:"/Users/eyeline/Documents/GitHub/eyepaycashapp/src/pages/home/home.html"*/
+=======
+            selector: 'page-home',template:/*ion-inline-start:"/Users/eyeline/Documents/GitHub/eyepaycashapp/src/pages/home/home.html"*/'<ion-content class="BackGR">\n  <ion-row>\n    <ion-col>\n      <ion-img class="marginMenu textLeft" menuToggle width="25" height="25" src="assets/icon/Settings.png"></ion-img>\n    </ion-col>\n    <!-- <ion-col>\n      <ion-img class="marginMenu textRight backTransparent" width="80%" height="45px" src="assets/imgs/EPCLogo.png"></ion-img>\n    </ion-col> -->\n  </ion-row>\n  <div class="marg5">\n    <ion-row>\n      <ion-col class="center bounceInLeft">\n        <img class="icoAnim2 animated animated2 bounceOutRight" src="assets/imgs/Billete2.png">\n      </ion-col>\n    </ion-row>\n    <ion-row>\n      <ion-col class="center mrg40Top bounceInLeft">\n        <img class="imgLogoAmin  animated animated2 ≈ bounceInLeft" src="assets/imgs/Billete.png">\n        <img class="imgLogo " src="assets/imgs/Mascota.png">\n      </ion-col>\n    </ion-row>\n    <ion-item class="center">\n      <button ion-button (click)="goPage(\'contact\')" class="buttonPayCash">{{\'PRUEBA_EYEPAYCASH\'|translate}}</button>\n    </ion-item>\n  </div>\n</ion-content>\n<ion-footer>\n  <ion-toolbar>\n    <ion-row>\n      <ion-col class="center" col-2 (click)="goPage(\'precios\')">\n        <img width="40" height="40" src="assets/newIcons/11.png">\n        <p>Precios</p>\n      </ion-col>\n      <ion-col class="center" col-3 (click)="goPage(\'transaction\')">\n        <img width="40" height="40" src="assets/icon/1.png">\n        <p>{{\'TRANSACCION\'|translate}}</p>\n      </ion-col>\n      <ion-col class="center mar1Left" col-2 (click)="goPage(\'history\')">\n        <!-- <ion-badge item-end>{{count}}</ion-badge> -->\n        <img width="40" height="40" src="assets/icon/2.png">\n        <p>{{\'HISTORIAL\'|translate}}</p>\n      </ion-col>\n      <ion-col class="center" col-2 (click)="goPage(\'maps\')">\n        <img width="40" height="40" src="assets/icon/3.png">\n        <p>{{\'MAPA\'|translate}}</p>\n      </ion-col>\n      <ion-col class="center" col-2 (click)="goPage(\'profile\')">\n        <img width="40" height="40" src="assets/icon/4.png">\n        <p>{{\'CUENTA\'|translate}}</p>\n      </ion-col>\n    </ion-row>\n  </ion-toolbar>\n</ion-footer>'/*ion-inline-end:"/Users/eyeline/Documents/GitHub/eyepaycashapp/src/pages/home/home.html"*/
+>>>>>>> 4a55f90fa4fc064d9270454e1920be4559831bc6
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* NavController */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* LoadingController */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["o" /* ToastController */],
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavController */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* LoadingController */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* ToastController */],
             __WEBPACK_IMPORTED_MODULE_2__providers_api__["a" /* Api */],
             __WEBPACK_IMPORTED_MODULE_3__providers_auth_user_auth_user__["a" /* AuthUserProvider */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* MenuController */],
-            __WEBPACK_IMPORTED_MODULE_4__providers_network_network__["a" /* NetworkProvider */]])
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* MenuController */]])
     ], HomePage);
     return HomePage;
 }());

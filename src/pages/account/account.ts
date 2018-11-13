@@ -15,7 +15,6 @@ import { Camera } from "@ionic-native/camera";
 import { CameraProvider } from "../../providers/camera/camera";
 import { TouchLoginProvider } from '../../providers/touch-login/touch-login';
 import { isArray } from 'util';
-import { NetworkProvider } from '../../providers/network/network';
 
 /**
  * Generated class for the AccountPage page.
@@ -30,8 +29,6 @@ import { NetworkProvider } from '../../providers/network/network';
 	templateUrl: 'account.html',
 })
 export class AccountPage {
-
-	buttonDisabbled:any;
 
 	private usuario: any = null;
 	private country: any = null;
@@ -65,8 +62,7 @@ export class AccountPage {
 		public alertCtrl: AlertController,
 		public errorProvider: ModalErrorProvider,
 		private camera: CameraProvider,
-		private loginProvider: TouchLoginProvider,
-		public networkProvider: NetworkProvider
+		private loginProvider: TouchLoginProvider
 	) {
 		this.getInfo();
 	}
@@ -221,6 +217,7 @@ export class AccountPage {
 	}
 
 	goPage(page) {
+<<<<<<< HEAD
 		this.buttonDisabbled = this.networkProvider.buttonDisabled;
 		if (this.buttonDisabbled != true) {
 			if (page == 'profile')
@@ -248,6 +245,18 @@ export class AccountPage {
 				showCloseButton: true,
 			}).present();
 		}
+=======
+		if (page == 'profile')
+			this.navCtrl.push("ProfilePage");
+		else if (page == 'history')
+			this.navCtrl.push("HistoryPage");
+		else if (page == "maps")
+			this.navCtrl.push("MapPage");
+		else if (page == "contact")
+			this.navCtrl.push("ContactsPage");
+		else
+			this.navCtrl.push("TransactionPage");
+>>>>>>> 4a55f90fa4fc064d9270454e1920be4559831bc6
 	}
 
 	foto() {

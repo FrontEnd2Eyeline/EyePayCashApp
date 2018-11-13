@@ -3,6 +3,7 @@
   "REGISTRARME":"Registrate",
   "RECUPERAR_CONTRASENA":"Recuperar contraseña",
   "PRUEBA_EYEPAYCASH": "Prueba EYEPAYCASH",
+  "PRECIOS": "Precios",
   "TRANSACCION":"Transacción",
   "HISTORIAL":"Historial",
   "MAPA":"Mapa",
@@ -32,6 +33,7 @@
   "CODIGO_DE_TELEFONO": "Código de teléfono",
   "CODIGO_DE_PAIS": "Código de país",
   "MONEDA_DE_PAIS": "Moneda de país",
+  "ELIMINAR_CUENTA": "Eliminar cuenta",
   "INFORMACION_SEGURIDAD": "Información de seguridad",
   "NUMERO_CELULAR": "Número celular",
   "NUEVO_CELULAR": "Seleccione el país e ingrese su nuevo número celular",
@@ -44,7 +46,7 @@
   "CONTRASEÑA_ACTUAL": "Contraseña actual",
   "NUEVA_CONTRASEÑA": "Nueva contraseña",
   "CONFIRMACION_CONTRASEÑA": "Confirmación de contraseña",
-  "ENVIAR_CODIGO_VERIFICACION": "Cambiar Número de celular",
+  "ENVIAR_CODIGO_VERIFICACION": "Enviar código de verificación",
   "CONFIRMAR_ACTUALIZAR": "Confirmar y actualizar",
   "SALDO_POR_PAGAR": "Saldo a pagar",
   "SOLICITADAS": "Solitadas",
@@ -89,8 +91,10 @@
   "MENSAJE_CODIGO_VERIFICACION1": "Enviaremos un CÓDIGO de verificación al número",
   "MENSAJE_CODIGO_VERIFICACION2": "que registres a continuación",
   "CONFIRMAR_CELULAR": "Confirmar número móvil",
-  "CONTINUAR": "Continuar"
-  
-
+  "CONTINUAR": "Continuar",
+  "INFORMACION_DE_TRANSACCION": "Información de la transacción",
+  "INGRESAR_NUMERO_DESTINO": "Ingresar número celular de destino",
+  "INGRESAR_VALOR_TRANSACCION": "Ingresar el valor de transacción en  ",
+  "SOLICITAR_TRANSACCION": "Solicitar transacción"
 
 }

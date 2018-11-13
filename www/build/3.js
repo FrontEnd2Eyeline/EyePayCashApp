@@ -1,6 +1,14 @@
 webpackJsonp([3],{
 
+<<<<<<< HEAD
 /***/ 734:
+=======
+<<<<<<< HEAD
+/***/ 731:
+=======
+/***/ 729:
+>>>>>>> 3950783bd88485802166fcda61286b84fb77c589
+>>>>>>> 4a55f90fa4fc064d9270454e1920be4559831bc6
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -8,9 +16,19 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RecoveryPasswordPageModule", function() { return RecoveryPasswordPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(21);
+<<<<<<< HEAD
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__recovery_password__ = __webpack_require__(759);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ngx_translate_core__ = __webpack_require__(94);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__components_components_module__ = __webpack_require__(743);
+=======
+<<<<<<< HEAD
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__recovery_password__ = __webpack_require__(756);
+=======
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__recovery_password__ = __webpack_require__(757);
+>>>>>>> 3950783bd88485802166fcda61286b84fb77c589
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ngx_translate_core__ = __webpack_require__(94);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__components_components_module__ = __webpack_require__(740);
+>>>>>>> 4a55f90fa4fc064d9270454e1920be4559831bc6
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -31,7 +49,7 @@ var RecoveryPasswordPageModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_2__recovery_password__["a" /* RecoveryPasswordPage */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__recovery_password__["a" /* RecoveryPasswordPage */]),
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__recovery_password__["a" /* RecoveryPasswordPage */]),
                 __WEBPACK_IMPORTED_MODULE_3__ngx_translate_core__["b" /* TranslateModule */],
                 __WEBPACK_IMPORTED_MODULE_4__components_components_module__["a" /* ComponentsModule */],
             ],
@@ -44,13 +62,21 @@ var RecoveryPasswordPageModule = /** @class */ (function () {
 
 /***/ }),
 
+<<<<<<< HEAD
 /***/ 743:
+=======
+/***/ 740:
+>>>>>>> 4a55f90fa4fc064d9270454e1920be4559831bc6
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ComponentsModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+<<<<<<< HEAD
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__msg_error_msg_error__ = __webpack_require__(744);
+=======
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__msg_error_msg_error__ = __webpack_require__(741);
+>>>>>>> 4a55f90fa4fc064d9270454e1920be4559831bc6
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_common__ = __webpack_require__(34);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -78,14 +104,23 @@ var ComponentsModule = /** @class */ (function () {
 
 /***/ }),
 
+<<<<<<< HEAD
 /***/ 744:
+=======
+/***/ 741:
+>>>>>>> 4a55f90fa4fc064d9270454e1920be4559831bc6
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MsgErrorComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+<<<<<<< HEAD
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_forms__ = __webpack_require__(23);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_validation_validation__ = __webpack_require__(383);
+=======
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_forms__ = __webpack_require__(22);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_validation_validation__ = __webpack_require__(381);
+>>>>>>> 4a55f90fa4fc064d9270454e1920be4559831bc6
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -135,14 +170,22 @@ var MsgErrorComponent = /** @class */ (function () {
 
 /***/ }),
 
+<<<<<<< HEAD
 /***/ 759:
+=======
+<<<<<<< HEAD
+/***/ 756:
+=======
+/***/ 757:
+>>>>>>> 3950783bd88485802166fcda61286b84fb77c589
+>>>>>>> 4a55f90fa4fc064d9270454e1920be4559831bc6
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return RecoveryPasswordPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(21);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_api__ = __webpack_require__(49);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_api__ = __webpack_require__(48);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_auth_user_auth_user__ = __webpack_require__(67);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_modal_error_modal_error__ = __webpack_require__(68);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_forms__ = __webpack_require__(23);
@@ -161,6 +204,12 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+/**
+ * Generated class for the RecoveryPasswordPage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
 var RecoveryPasswordPage = /** @class */ (function () {
     function RecoveryPasswordPage(navCtrl, navParams, api, toastCtrl, userProvider, loadingCtrl, errorProvider) {
         this.navCtrl = navCtrl;
@@ -181,71 +230,42 @@ var RecoveryPasswordPage = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_5__angular_forms__["h" /* Validators */].required,
                 __WEBPACK_IMPORTED_MODULE_5__angular_forms__["h" /* Validators */].pattern('^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$'),
                 __WEBPACK_IMPORTED_MODULE_5__angular_forms__["h" /* Validators */].maxLength(70),
-                __WEBPACK_IMPORTED_MODULE_5__angular_forms__["h" /* Validators */].minLength(5),
-            ]),
-            codigo: new __WEBPACK_IMPORTED_MODULE_5__angular_forms__["b" /* FormControl */]('', [
-                __WEBPACK_IMPORTED_MODULE_5__angular_forms__["h" /* Validators */].required,
             ]),
         });
-        console.log('mail', this.mail);
-        console.log('phone', this.phone);
     }
     RecoveryPasswordPage.prototype.sendMessage = function (type) {
         var _this = this;
-        if ((this.formGroup.value.data != "") || (this.data != null)) {
+        this.type = type;
+        if ((this.formGroup.value.data != "") || (this.data != "")) {
             var loading_1 = this.loadingCtrl.create({
                 spinner: 'hide',
                 content: "<img src='assets/imgs/buho.png'>",
             });
-            // if(this.mail = this.formGroup.value.value){
             loading_1.present();
-            console.log('data antes de', this.formGroup.value.data);
+            if (this.type != 'phone')
+                this.data = this.formGroup.value.data;
             // this.api.post('auth/restar-password', { 'type': this.type, 'data': this.data }).then(
-            this.api.post('auth/restar-password', { 'type': type, 'data': this.formGroup.value.data })
-                .then(function (data) {
-                console.log('datos', data);
-                if (data != undefined) {
-                    loading_1.dismiss();
-                    if (type != "phone") {
-                        _this.iscodigo = true;
-                    }
-                    else {
-                        _this.iscodigo2 = true;
-                    }
-                    _this.errorProvider.obj.message = 'Se ha enviado un código de verificación';
-                    _this.errorProvider.presentModal();
-                    console.log('despues de', _this.formGroup.value.data);
-                    console.log('tipo de dato', type);
-                    _this.reset = data;
-                    _this.data = null;
+            this.api.post('auth/restar-password', { 'type': this.type, 'data': this.data }).then(function (data) {
+                loading_1.dismiss();
+                if (type != "phone") {
+                    _this.iscodigo = true;
                 }
                 else {
-                    loading_1.dismiss();
-                    _this.errorProvider.obj.message = 'datos no existentes';
-                    _this.errorProvider.presentModal();
+                    _this.iscodigo2 = true;
                 }
+                _this.reset = data;
+                _this.data = null;
+                _this.errorProvider.obj.message = 'Se ha enviado un código de verificación';
+                _this.errorProvider.presentModal();
             }).catch(function (error) {
                 loading_1.dismiss();
-                if (error.error.name = 'Unauthorized') {
-                    _this.errorProvider.obj.message = 'usuario bloqueado';
-                    _this.errorProvider.presentModal();
-                }
-                else {
-                    var mensaje_1 = "";
-                    error.error.forEach(function (data) {
-                        mensaje_1 += data.message + "\n";
-                    });
-                    _this.errorProvider.obj.message = mensaje_1;
-                    _this.errorProvider.presentModal();
-                }
+                var mensaje = "";
+                error.error.forEach(function (data) {
+                    mensaje += data.message + "\n";
+                });
+                _this.errorProvider.obj.message = mensaje;
+                _this.errorProvider.presentModal();
             });
-            // }else{
-            // 	let mensaje = "número celular";
-            // 	if (type != "phone")
-            // 		mensaje = "dirección email";
-            // 	this.errorProvider.obj.message = 'la ' + mensaje + ' no existe';
-            // 	this.errorProvider.presentModal();
-            // }
         }
         else {
             var mensaje = "número celular";
@@ -263,8 +283,8 @@ var RecoveryPasswordPage = /** @class */ (function () {
         this.navCtrl.pop();
     };
     RecoveryPasswordPage.prototype.confirmCode = function () {
-        if (this.formGroup.value.codigo != null) {
-            if (this.reset.password_code_req == this.formGroup.value.codigo) {
+        if (this.codigo != null) {
+            if (this.reset.password_code_req == this.codigo) {
                 this.navCtrl.push('PasswordUpdatePage', { 'reset_id': this.reset.id });
             }
             else {
@@ -279,14 +299,22 @@ var RecoveryPasswordPage = /** @class */ (function () {
     };
     RecoveryPasswordPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+<<<<<<< HEAD
             selector: 'page-recovery-password',template:/*ion-inline-start:"/Users/eyeline/Documents/GitHub/eyepaycashapp/src/pages/recovery-password/recovery-password.html"*/'<ion-content padding class="imgBackground vignette">\n	<div style="margin-top:12%" class="center marbutt">\n		<img class="logo" src="assets/imgs/EPCLogo.png">\n	</div>\n	<form [formGroup]="formGroup">\n		<ion-item class="backTransparent colWhite" no-lines *ngIf="formGroup.invalid">\n			<msg-error [control]="formGroup.controls.data" name="Email"></msg-error>\n			<msg-error [control]="formGroup.controls.codigo" name="VerifiCode"></msg-error>\n		</ion-item>\n		<div *ngIf="isvisible" class="center">\n			<ion-item class="backTransparent ">\n				<ion-label stacked>{{\'INGRESE_CELULAR\'|translate}}</ion-label>\n				<ion-input type="text" formControlName="data" name="userdata"></ion-input>\n			</ion-item>\n			<ion-item class="backTransparent" *ngIf="iscodigo2">\n				<ion-label stacked>{{\'INGRESE_CODIGO_VERIFICACION\'|translate}}</ion-label>\n				<ion-input type="text" formControlName="codigo" name="usercodigo"></ion-input>\n			</ion-item>\n			<ion-row class="divMargin">\n				<ion-col col-12 *ngIf="!iscodigo2">\n					<button ion-button (click)="sendMessage(\'phone\')" block class="buttonPayCash">{{\'ENVIAR_MENSAJE\'|translate}}</button>\n				</ion-col>\n				<ion-col col-12 *ngIf="iscodigo2">\n					<button ion-button (click)="confirmCode()" block class="buttonPayCash">{{\'CONFIRMAR_CODIGO\'|translate}}</button>\n				</ion-col>\n			</ion-row>\n			<ion-row class="marginLft divMargin20">\n				<ion-col col-4>\n					<button ion-button (click)="cancelar()" class="buttonPayCash">{{\'CANCELAR\'|translate}}</button>\n				</ion-col>\n				<ion-col col-6 *ngIf="!iscodigo2">\n					<button ion-button (click)="changeVisible()" class="buttonPayCash wi132Tam">{{\'RECUPERAR_X_EMAIL\'|translate}}</button>\n				</ion-col>\n			</ion-row>\n		</div>\n		<div *ngIf="!isvisible">\n			<ion-item class="backTransparent">\n				<ion-label stacked>{{\'INGRESE_EMAIL\'|translate}}</ion-label>\n				<ion-input type="text" name="dataname" required formControlName="data"></ion-input>\n			</ion-item>\n\n			<ion-item *ngIf="iscodigo">\n				<ion-label stacked>{{\'INGRESE_CODIGO_VERIFICACION\'|translate}}</ion-label>\n				<ion-input type="text" required formControlName="codigo" name="usercodigo"></ion-input>\n			</ion-item>\n			<ion-row class="divMargin">\n				<ion-col col-12 *ngIf="!iscodigo">\n					<button ion-button (click)="sendMessage(\'mail\')" required  block class="buttonPayCash">{{\'ENVIAR_EMAIL\'|translate}}</button>\n				</ion-col>\n				<ion-col col-12 *ngIf="iscodigo">\n					<button ion-button (click)="confirmCode()" required block class="buttonPayCash">{{\'CONFIRMAR_CODIGO\'|translate}}</button>\n				</ion-col>\n			</ion-row>\n\n			<ion-row class="marginLft divMargin">\n				<ion-col col-4>\n					<button ion-button (click)="cancelar()" class="buttonPayCash">{{\'CANCELAR\'|translate}}</button>\n				</ion-col>\n				<ion-col col-6>\n					<button ion-button (click)="changeVisible()" class="buttonPayCash wi132Tam">{{\'RECUPERAR_X_SMS\'|translate}}</button>\n				</ion-col>\n			</ion-row>\n		</div>\n	</form>\n</ion-content>'/*ion-inline-end:"/Users/eyeline/Documents/GitHub/eyepaycashapp/src/pages/recovery-password/recovery-password.html"*/,
+=======
+<<<<<<< HEAD
+            selector: 'page-recovery-password',template:/*ion-inline-start:"/Users/eyeline/Documents/GitHub/eyepaycashapp/src/pages/recovery-password/recovery-password.html"*/'<ion-content padding class="back vignette">\n	<div style="margin-top:12%" class="center">\n		<ion-img class="logo" src="assets/imgs/EPCLogo.png"></ion-img>\n	</div>\n\n	<div *ngIf="isvisible">\n		<ion-item>\n			<ion-label stacked>{{\'INGRESE_CELULAR\'|translate}}</ion-label>\n			<ion-input type="text" [(ngModel)]="data" name="userdata"></ion-input>\n		</ion-item>\n		<ion-item *ngIf="iscodigo2">\n			<ion-label stacked>{{\'INGRESE_CODIGO_VERIFICACION\'|translate}}</ion-label>\n			<ion-input type="text" [(ngModel)]="codigo" name="usercodigo"></ion-input>\n		</ion-item>\n		<ion-row class="divMargin">\n			<ion-col col-12 *ngIf="!iscodigo2">\n				<button ion-button (click)="sendMessage(\'phone\')" block class="buttonPayCash">{{\'ENVIAR_MENSAJE\'|translate}}</button>\n			</ion-col>\n			<ion-col col-12 *ngIf="iscodigo2">\n				<button ion-button (click)="confirmCode()" block class="buttonPayCash">{{\'CONFIRMAR_CODIGO\'|translate}}Confirmar código</button>\n			</ion-col>\n		</ion-row>\n		<ion-row class="marginLft divMargin20">\n			<ion-col col-4>\n				<button ion-button (click)="cancelar()" class="buttonPayCash">{{\'CANCELAR\'|translate}}</button>\n			</ion-col>\n			<ion-col col-6 *ngIf="!iscodigo2">\n				<button ion-button (click)="changeVisible()" class="buttonPayCash">{{\'RECUPERAR_X_EMAIL\'|translate}}</button>\n			</ion-col>\n		</ion-row>\n	</div>\n\n	<div *ngIf="!isvisible">\n			<div [formGroup]="formGroup">\n		<ion-item>\n			<ion-label stacked>{{\'INGRESE_EMAIL\'|translate}}</ion-label>\n			<ion-input type="text"  name="dataname" required formControlName="data"></ion-input>		\n		</ion-item>\n		<ion-item no-lines *ngIf="formGroup.invalid">\n				<msg-error [control]="formGroup.controls.data"></msg-error>\n		</ion-item>\n	</div>\n		<ion-item *ngIf="iscodigo">\n			<ion-label stacked>{{\'INGRESE_CODIGO_VERIFICACION\'|translate}}</ion-label>\n			<ion-input type="text" [(ngModel)]="codigo" name="usercodigo"></ion-input>\n		</ion-item>\n		<ion-row class="divMargin">\n			<ion-col col-12 *ngIf="!iscodigo">\n				<button ion-button (click)="sendMessage(\'mail\')" block class="buttonPayCash">{{\'ENVIAR_EMAIL\'|translate}}</button>\n			</ion-col>\n			<ion-col col-12 *ngIf="iscodigo">\n				<button ion-button (click)="confirmCode()" block class="buttonPayCash">{{\'CONFIRMAR_CODIGO\'|translate}}</button>\n			</ion-col>\n		</ion-row>\n		<ion-row class="marginLft divMargin">\n			<ion-col col-4>\n				<button ion-button (click)="cancelar()" class="buttonPayCash">{{\'CANCELAR\'|translate}}</button>\n			</ion-col>\n			<ion-col col-6>\n				<button ion-button (click)="changeVisible()" class="buttonPayCash">{{\'RECUPERAR_X_SMS\'|translate}}</button>\n			</ion-col>\n		</ion-row>\n	</div>\n</ion-content>'/*ion-inline-end:"/Users/eyeline/Documents/GitHub/eyepaycashapp/src/pages/recovery-password/recovery-password.html"*/,
+=======
+            selector: 'page-recovery-password',template:/*ion-inline-start:"/Users/eyeline/Documents/GitHub/eyepaycashapp/src/pages/recovery-password/recovery-password.html"*/'<ion-content padding class="imgBackground vignette">\n	<div style="margin-top:12%" class="center marbutt">\n		<img class="logo" src="assets/imgs/EPCLogo.png">\n	</div>\n	<div *ngIf="isvisible" class="center">\n		<ion-item class="backTransparent ">\n			<ion-label stacked>{{\'INGRESE_CELULAR\'|translate}}</ion-label>\n			<ion-input type="text" [(ngModel)]="data" name="userdata"></ion-input>\n		</ion-item>\n		<ion-item class="backTransparent" *ngIf="iscodigo2">\n			<ion-label stacked>{{\'INGRESE_CODIGO_VERIFICACION\'|translate}}</ion-label>\n			<ion-input type="text" [(ngModel)]="codigo" name="usercodigo"></ion-input>\n		</ion-item>\n		<ion-row class="divMargin">\n			<ion-col col-12 *ngIf="!iscodigo2">\n				<button ion-button (click)="sendMessage(\'phone\')" block class="buttonPayCash">{{\'ENVIAR_MENSAJE\'|translate}}</button>\n			</ion-col>\n			<ion-col col-12 *ngIf="iscodigo2">\n				<button ion-button (click)="confirmCode()" block class="buttonPayCash">{{\'CONFIRMAR_CODIGO\'|translate}}</button>\n			</ion-col>\n		</ion-row>\n		<ion-row class="marginLft divMargin20">\n			<ion-col col-4>\n				<button ion-button (click)="cancelar()" class="buttonPayCash">{{\'CANCELAR\'|translate}}</button>\n			</ion-col>\n			<ion-col col-6 *ngIf="!iscodigo2">\n				<button ion-button (click)="changeVisible()" class="buttonPayCash wi132Tam">{{\'RECUPERAR_X_EMAIL\'|translate}}</button>\n			</ion-col>\n		</ion-row>\n	</div>\n	<div *ngIf="!isvisible">\n		<div [formGroup]="formGroup">\n			<ion-item class="backTransparent colWhite" no-lines *ngIf="formGroup.invalid">\n				<msg-error [control]="formGroup.controls.data"></msg-error>\n			</ion-item>\n			<ion-item class="backTransparent">\n				<ion-label stacked>{{\'INGRESE_EMAIL\'|translate}}</ion-label>\n				<ion-input type="text" name="dataname" required formControlName="data"></ion-input>\n			</ion-item>\n		</div>\n		<ion-item *ngIf="iscodigo">\n			<ion-label stacked>{{\'INGRESE_CODIGO_VERIFICACION\'|translate}}</ion-label>\n			<ion-input type="text" [(ngModel)]="codigo" name="usercodigo"></ion-input>\n		</ion-item>\n		<ion-row class="divMargin">\n			<ion-col col-12 *ngIf="!iscodigo">\n				<button ion-button (click)="sendMessage(\'mail\')" block class="buttonPayCash">{{\'ENVIAR_EMAIL\'|translate}}</button>\n			</ion-col>\n			<ion-col col-12 *ngIf="iscodigo">\n				<button ion-button (click)="confirmCode()" block class="buttonPayCash">{{\'CONFIRMAR_CODIGO\'|translate}}</button>\n			</ion-col>\n		</ion-row>\n		<ion-row class="marginLft divMargin">\n			<ion-col col-4>\n				<button ion-button (click)="cancelar()" class="buttonPayCash">{{\'CANCELAR\'|translate}}</button>\n			</ion-col>\n			<ion-col col-6>\n				<button ion-button (click)="changeVisible()" class="buttonPayCash wi132Tam">{{\'RECUPERAR_X_SMS\'|translate}}</button>\n			</ion-col>\n		</ion-row>\n	</div>\n</ion-content>'/*ion-inline-end:"/Users/eyeline/Documents/GitHub/eyepaycashapp/src/pages/recovery-password/recovery-password.html"*/,
+>>>>>>> 3950783bd88485802166fcda61286b84fb77c589
+>>>>>>> 4a55f90fa4fc064d9270454e1920be4559831bc6
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* NavController */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* NavParams */],
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavController */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* NavParams */],
             __WEBPACK_IMPORTED_MODULE_2__providers_api__["a" /* Api */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["o" /* ToastController */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* ToastController */],
             __WEBPACK_IMPORTED_MODULE_3__providers_auth_user_auth_user__["a" /* AuthUserProvider */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* LoadingController */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* LoadingController */],
             __WEBPACK_IMPORTED_MODULE_4__providers_modal_error_modal_error__["a" /* ModalErrorProvider */]])
     ], RecoveryPasswordPage);
     return RecoveryPasswordPage;

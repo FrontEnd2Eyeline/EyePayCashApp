@@ -44,7 +44,7 @@
   "CONTRASEÑA_ACTUAL": "Contraseña actual",
   "NUEVA_CONTRASEÑA": "Nueva contraseña",
   "CONFIRMACION_CONTRASEÑA": "Confirmación de contraseña",
-  "ENVIAR_CODIGO_VERIFICACION": "Cambiar Número de celular",
+  "ENVIAR_CODIGO_VERIFICACION": "Enviar código de verificación",
   "CONFIRMAR_ACTUALIZAR": "Confirmar y actualizar",
   "SALDO_POR_PAGAR": "Saldo a pagar",
   "SOLICITADAS": "Solitadas",
@@ -90,7 +90,5 @@
   "MENSAJE_CODIGO_VERIFICACION2": "que registres a continuación",
   "CONFIRMAR_CELULAR": "Confirmar número móvil",
   "CONTINUAR": "Continuar"
-  
-
 
 }

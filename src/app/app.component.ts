@@ -1,75 +1,60 @@
-import { Component, ViewChild } from '@angular/core';
-import { MenuController, Nav, Platform } from 'ionic-angular';
-import { StatusBar } from '@ionic-native/status-bar';
-import { SplashScreen } from '@ionic-native/splash-screen';
-import { GeolocationProvider } from "../providers/geolocation/geolocation";
-import { AuthUserProvider } from "../providers/auth-user/auth-user";
-import { LoadInformationProvider } from "../providers/load-information/load-information";
-import { LenguageProvider } from "../providers/lenguage/lenguage";
-import { Storage } from "@ionic/storage";
+import {Component, ViewChild} from '@angular/core';
+import {MenuController, Nav, Platform} from 'ionic-angular';
+import {StatusBar} from '@ionic-native/status-bar';
+import {SplashScreen} from '@ionic-native/splash-screen';
+import {GeolocationProvider} from "../providers/geolocation/geolocation";
+import {AuthUserProvider} from "../providers/auth-user/auth-user";
+import {LoadInformationProvider} from "../providers/load-information/load-information";
+import {LenguageProvider} from "../providers/lenguage/lenguage";
+import {Storage} from "@ionic/storage";
 import { TouchLoginProvider } from '../providers/touch-login/touch-login';
-import { NetworkProvider } from '../providers/network/network';
 
 @Component({
   templateUrl: 'app.html'
 })
 export class MyApp {
-	avatar: any;
   @ViewChild(Nav) nav: Nav;
-  //   rootPage: string = 'LoginPage';
-  rootPage: string = 'RegisterPage';
+//   rootPage: string = 'LoginPage';
+	rootPage: string = 'RegisterPage';
   constructor(platform: Platform,
-    statusBar: StatusBar,
-    splashScreen: SplashScreen,
-    public locationProvider: GeolocationProvider,
-    private auth: AuthUserProvider,
-    private informationProvider: LoadInformationProvider,
-    public langProvider: LenguageProvider,
-    public menuCtrl: MenuController,
-    private storage: Storage,
-    loockScreen: TouchLoginProvider,
-    public networkProvider: NetworkProvider,
-  
+              statusBar: StatusBar,
+              splashScreen: SplashScreen,
+              public locationProvider: GeolocationProvider,
+              private auth: AuthUserProvider,
+              private informationProvider: LoadInformationProvider,
+              public langProvider: LenguageProvider,
+              public menuCtrl: MenuController,
+			  private storage: Storage,
+			  loockScreen: TouchLoginProvider,
   ) {
-	  
-	  
-      
     this.seleccionar('es');
-    if (!this.langProvider.verifyIsLanguage())
-      // this.rootPage = 'TouchLoginPage';
+	if (!this.langProvider.verifyIsLanguage())
+	// this.rootPage = 'TouchLoginPage';
       this.rootPage = 'LoginPage';
     else {
-      this.langProvider.setLenguage();
-      //   this.rootPage = 'TouchLoginPage';
+	  this.langProvider.setLenguage();
+	//   this.rootPage = 'TouchLoginPage';
       this.rootPage = 'LoginPage';
     }
-    if (auth.trylogin()) {
-      this.langProvider.setLenguage();
-      this.rootPage = 'LoginPage';
-	  this.informationProvider.init();
-	  this.getInfo();
-	  console.log('imagen', this.avatar)
-    }
+     if(auth.trylogin()) {
+        this.langProvider.setLenguage();
+         this.rootPage = 'LoginPage';
+        this.informationProvider.init()
+     }
     platform.ready().then(() => {
-      loockScreen.init();
-	  this.networkProvider.networkState();
-	 
-	
+		loockScreen.init();
+      statusBar.styleDefault();
+      if (platform.is('cordova'))
+        this.getLocation();
     });
   }
-
- 
-  private getInfo() {
-	this.avatar = this.auth.user_Info.url_img;
-  }
-  
 
   getLocation() {
     this.locationProvider.basicInformacion;
   }
 
   openPage(page) {
-    this.nav.setPages([{ page: 'HomePage' }, { page: page }]);
+    this.nav.setPages([{page:'HomePage'},{page:page}]);
     this.menuCtrl.toggle();
   }
 
@@ -81,7 +66,7 @@ export class MyApp {
     this.nav.setRoot("LoginPage");
   }
 
-  seleccionar(idioma) {
+  seleccionar(idioma){
     this.langProvider.seleccionar(idioma);
     this.langProvider.setLenguage();
   }

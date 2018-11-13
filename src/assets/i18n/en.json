@@ -2,7 +2,8 @@
   "INICIAR_SESION":"Login",
   "REGISTRARME":"Sign up",
   "RECUPERAR_CONTRASENA":"Recovery password",
-  "PRUEBA_EYEPAYCASH": "Try  EYEPAYCASH",
+  "PRUEBA_EYEPAYCASH": "Try EYEPAYCASH",
+  "PRECIOS": "Prices",
   "TRANSACCION":"Transaction",
   "HISTORIAL":"History",
   "MAPA":"Maps",
@@ -32,6 +33,7 @@
   "CODIGO_DE_TELEFONO": "Telephone code",
   "CODIGO_DE_PAIS": "Country code",
   "MONEDA_DE_PAIS": "Currency of the country",
+  "ELIMINAR_CUENTA": "Delete account",
   "INFORMACION_SEGURIDAD": "Information security",
   "NUMERO_CELULAR": "Cellphone number",
   "NUEVO_CELULAR": "Select the country and enter your new cell number",
@@ -89,5 +91,9 @@
   "MENSAJE_CODIGO_VERIFICACION1": "We send a verification CODE to the phone ",
   "MENSAJE_CODIGO_VERIFICACION2": "that you registered below",
   "CONFIRMAR_CELULAR": "Confirm cell number",
-  "CONTINUAR": "Continue"
+  "CONTINUAR": "Continue",
+  "INFORMACION_DE_TRANSACCION": "Transaction information",
+  "INGRESAR_NUMERO_DESTINO": "Enter destination cell phone number",
+  "INGRESAR_VALOR_TRANSACCION": "Enter the value of the transaction in  ",
+  "SOLICITAR_TRANSACCION": "Request transaction"
 }

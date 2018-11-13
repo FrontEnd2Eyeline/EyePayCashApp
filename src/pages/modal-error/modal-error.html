@@ -1,7 +1,7 @@
 <ion-content class="BackGRa">
   <div>
-    <div class="gradient">
-      <img class="mrg10Top" src="assets/imgs/error.png" >
+    <div class="gradient"> <!--*ngFor="let xx from message"-->
+      <img class="mrg10Top" [src]="obj.icon" >
       <p class="mrg5Top">{{obj.message}}</p>
     </div>
     <div class="footer-button">
